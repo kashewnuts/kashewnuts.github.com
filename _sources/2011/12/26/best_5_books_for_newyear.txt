@@ -1,0 +1,87 @@
+年末年始に向けて読みたい本5選
+==============================
+
+| `エキスパートPythonプログラミング読書会 <https://connpass.com/series/31/>`__\ だけでなく
+| 新宿Book-a-thonなど他の読書会にも顔を出すようになったきたので、
+| ここいらで読みたい本をまとめてみます。
+
+|エキスパートPythonプログラミング|
+
+| `エキスパートPythonプログラミング <http://www.amazon.co.jp/exec/obidos/ASIN/4048686291/naoyadyndnsor-22/ref=nosim/>`__
+| posted with
+| `amazlet <http://www.amazlet.com/browse/ASIN/4048686291//ref=nosim/>`__
+| at 11.12.26
+| Tarek Ziade
+| アスキー・メディアワークス
+| 売り上げランキング: 5309
+| `Amazon.co.jp で詳細を見る <http://www.amazon.co.jp/exec/obidos/ASIN/4048686291/naoyadyndnsor-22/ref=nosim/>`__
+| こちらは言わずもがな。
+
+|アジャイルサムライ−達人開発者への道−|
+
+| `アジャイルサムライ−達人開発者への道− <http://www.amazon.co.jp/exec/obidos/ASIN/4274068560/naoyadyndnsor-22/ref=nosim/>`__
+| posted with
+| `amazlet <http://www.amazlet.com/browse/ASIN/4274068560//ref=nosim/>`__
+| at 11.12.26
+| Jonathan Rasmusson
+| オーム社
+| 売り上げランキング: 966
+| `Amazon.co.jp で詳細を見る <http://www.amazon.co.jp/exec/obidos/ASIN/4274068560/naoyadyndnsor-22/ref=nosim/>`__
+| まだ通して読んでないので一度読み通す。
+| その上で本の中にでてくる問も考えていきたい。
+
+|Being Geek ―ギークであり続けるためのキャリア戦略|
+
+| `Being Geek ―ギークであり続けるためのキャリア戦略 <http://www.amazon.co.jp/exec/obidos/ASIN/4873114993/naoyadyndnsor-22/ref=nosim/>`__
+| posted with
+| `amazlet <http://www.amazlet.com/browse/ASIN/4873114993//ref=nosim/>`__
+| at 11.12.26
+| Michael Lopp
+| オライリージャパン
+| 売り上げランキング: 76875
+| `Amazon.co.jp で詳細を見る <http://www.amazon.co.jp/exec/obidos/ASIN/4873114993/naoyadyndnsor-22/ref=nosim/>`__
+| 評価面談も近いことだし、こちらも一度何が書いてあるのか通し見する。
+
+|グロービスMBAマネジメント・ブック【改訂3版】|
+
+| `グロービスMBAマネジメント・ブック【改訂3版】 <http://www.amazon.co.jp/exec/obidos/ASIN/447800496X/naoyadyndnsor-22/ref=nosim/>`__
+| posted with
+| `amazlet <http://www.amazlet.com/browse/ASIN/447800496X//ref=nosim/>`__
+| at 11.12.26
+| グロービス経営大学院
+| ダイヤモンド社
+| 売り上げランキング: 3489
+| `Amazon.co.jp で詳細を見る <http://www.amazon.co.jp/exec/obidos/ASIN/447800496X/naoyadyndnsor-22/ref=nosim/>`__
+| 情処対策みたいなところがあるけど、読むのが途中になっているので。
+
+|スティーブ・ジョブズ 驚異のプレゼン―人々を惹きつける18の法則|
+
+| `スティーブ・ジョブズ 驚異のプレゼン―人々を惹きつける18の法則 <http://www.amazon.co.jp/exec/obidos/ASIN/482224816X/naoyadyndnsor-22/ref=nosim/>`__
+| posted with
+| `amazlet <http://www.amazlet.com/browse/ASIN/482224816X//ref=nosim/>`__
+| at 11.12.26
+| カーマイン・ガロ
+| 日経BP社
+| 売り上げランキング: 129
+| `Amazon.co.jp で詳細を見る <http://www.amazon.co.jp/exec/obidos/ASIN/482224816X/naoyadyndnsor-22/ref=nosim/>`__
+| `先日の新宿Book-a-thon <http://kashewnuts-tech.blogspot.com/2011/12/book-thon-6.html>`__\ で読んだ、
+| 「エバンジェリスト養成講座 究極のプレゼンハック100」
+| でもジョブス型みたいな話がでてたので気になって。
+
+| この中から3冊も読み切れれば上出来でしょうか。
+
+.. |エキスパートPythonプログラミング| image:: http://ecx.images-amazon.com/images/I/51wSTTIQtgL._SL160_.jpg
+   :target: http://www.amazon.co.jp/exec/obidos/ASIN/4048686291/naoyadyndnsor-22/ref=nosim/
+.. |アジャイルサムライ−達人開発者への道−| image:: http://ecx.images-amazon.com/images/I/51b4P511wTL._SL160_.jpg
+   :target: http://www.amazon.co.jp/exec/obidos/ASIN/4274068560/naoyadyndnsor-22/ref=nosim/
+.. |Being Geek ―ギークであり続けるためのキャリア戦略| image:: http://ecx.images-amazon.com/images/I/416%2Bo3COOCL._SL160_.jpg
+   :target: http://www.amazon.co.jp/exec/obidos/ASIN/4873114993/naoyadyndnsor-22/ref=nosim/
+.. |グロービスMBAマネジメント・ブック【改訂3版】| image:: http://ecx.images-amazon.com/images/I/41qnDFWDFLL._SL160_.jpg
+   :target: http://www.amazon.co.jp/exec/obidos/ASIN/447800496X/naoyadyndnsor-22/ref=nosim/
+.. |スティーブ・ジョブズ 驚異のプレゼン―人々を惹きつける18の法則| image:: http://ecx.images-amazon.com/images/I/41aZDUxd8wL._SL160_.jpg
+   :target: http://www.amazon.co.jp/exec/obidos/ASIN/482224816X/naoyadyndnsor-22/ref=nosim/
+
+.. author:: default
+.. categories:: 本, 雑記
+.. tags:: 本, 雑記
+.. comments::

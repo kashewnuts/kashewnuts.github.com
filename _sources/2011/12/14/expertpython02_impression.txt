@@ -1,0 +1,100 @@
+(感想)「エキスパートPythonプログラミング読書会 第二期 02」参加してきました。
+========================================================================================
+
+| `エキスパートPythonプログラミング読書会 第二期 02 <https://connpass.com/event/118/>`__
+| 参加してきました。
+
+| 参加された皆さんお疲れ様でした。
+| 今回参加されなかった皆さん次回にお会いしましょー。
+| さて今回学んだ内容は後ほどまとめるとして、
+| ところどころ思ったところについて書き連ねてみます。
+
+| 今回は仕事が忙しくていけるかどうかわかりませんでした。
+| 20:00までかかりそうだったので
+| 今回はちょっと厳しいかなと思ったのですが、
+
+| しっかり報告をしてきて５分遅れで到着。
+| ほんとは10分くらい遅れると思ったけど、
+| 道がわかってたからまっすぐこれた。
+| （途中 `@usaturn <https://twitter.com/#!/usaturn>`__ さんと一緒になりました。）
+
+| 今回からは前期にのっとって、自己紹介からスタート。
+| とはいっても30人全員だとそれだけで時間が終わってしまうので、
+| 5分ほどの間各島(しま)、テーブルごとに自己紹介でアイスブレイク。
+
+| 自分は `@shomah4a <https://twitter.com/#!/shomah4a>`__ さん、 `@kanonji <https://twitter.com/#!/kanonji>`__ さん、 `@takanory <https://twitter.com/#!/takanory>`__ さん、
+| `@tfmagician <https://twitter.com/#!/tfmagician>`__ さん、 `@Akira_Kito <https://twitter.com/#!/Akira_Kito>`__ さんと自己紹介させて頂きました。
+
+| その後読書会。
+| 今回は清水川せんせも、
+| 「第2章と3章はこの本では言語として一番難しいところ」
+| とおっしゃっていたこともあり質問の数も少なかったように思う。
+
+| 今回やった範囲は
+| 「第2章 構文ベストプラクティス-クラス以外」の前半、
+| ●リスト内包表記
+| ●イテレータとジェネレータ
+
+| 自分も後追いで理解するのに必死すぎて他になかなか頭が回らない……
+| もっと具体的な使い所はPythonでプログラム書き続けていくと、
+| 「あ、ここ使える」
+| というポイントがでてくるのかなと思いました。
+| 今は頭ではわかっていても実際どうするというところまでいけてない。
+| ここについてまた改めてまとめます。
+
+| そして全体の所感ですが、
+| ●LTやっぱおもしろい。
+| 今回は@usaturnさんもLTした。
+| ただLTはLTで面白かったけど周りと話す時間がなくなり、
+| 若干物足りないところもあった。
+
+| 最初30分懇談時間で、
+| 最後30分に4, 5人でLTとすると丁度いいのかなと思った。
+| 参加の際に「LT希望されますか」の欄があったらいいかも。
+
+| ● `お館様 <https://twitter.com/#!/imagawa_yakata>`__ のご尊顔把握（ただし実は影武者らしい）
+| ●世界の小宮、LT枠（ピザ枠 or すし枠）で登場。流石。
+| ●帰りの電車で `@yosida <https://twitter.com/#!/yosida95>`__ 95と一緒に。イケメン。
+| 「イケメンですね」と聞いたら、
+| 「はい。よく言われます。」と言われた。
+| 切り返しもイケメン。
+| ●もしLTやりたくなった時にGoogle DocsのPresentationだと
+| 物足りないから、とりあえずKeynote買っとこう。
+
+| 最後に、
+| 清水川せんせと世界の小宮さんの写メり合い面白かったです(笑)
+| あれを写真に取れなかったのだけは悔やまれる！
+| 既に次回の予定も決まってます。参加予定です。
+| `エキスパートPythonプログラミング読書会 第二期 03 #expertpython  <https://connpass.com/event/190/>`__
+| 今回のまとめはこちら  `エキスパートPython読書会 第２期 第2回 <http://togetter.com/li/227251>`__
+| その他にも時間内にでてきた参考リンクです。
+| `Check out this SlideShare presentation : エキ Py 読書会02 2章前半  <http://slidesha.re/twOK4I>`__
+| `The Zen of Python 解題 - 前編 - atsuoishimotoの日記 <http://d.hatena.ne.jp/atsuoishimoto/20100920/1284986066>`__
+| `Python 2.6ja2 documentation <http://www.python.jp/doc/release/>`__
+| (nightly版ですが、2.7ja1もあります。 `こちら <http://www.python.jp/doc/nightly/>`__ ）
+
+| やはりこのエキPy読書会は鍛えられている感じがあっていいですね。
+| 皆勤賞達成して、その頃にはPythonistaになりたいです。
+
+|エキスパートPythonプログラミング|
+
+| `エキスパートPythonプログラミング <http://www.amazon.co.jp/exec/obidos/ASIN/4048686291/naoyadyndnsor-22/ref=nosim/>`__
+| posted with
+| `amazlet <http://www.amazlet.com/browse/ASIN/4048686291//ref=nosim/>`__
+| at 11.12.13
+| Tarek Ziade
+| アスキー・メディアワークス
+| 売り上げランキング: 18862
+| `Amazon.co.jp で詳細を見る <http://www.amazon.co.jp/exec/obidos/ASIN/4048686291/naoyadyndnsor-22/ref=nosim/>`__
+
+| 追記：
+| 内容の方もまとめてみました。
+| `(続き)「エキスパートPythonプログラミング読書会 第二期 02」参加してきました。 <http://kashewnuts-tech.blogspot.com/2011/12/python-02_15.html>`__
+
+.. |エキスパートPythonプログラミング| image:: http://ecx.images-amazon.com/images/I/51wSTTIQtgL._SL160_.jpg
+   :target: http://www.amazon.co.jp/exec/obidos/ASIN/4048686291/naoyadyndnsor-22/ref=nosim/
+
+.. author:: default
+.. categories:: 勉強会, 本, Python
+.. tags:: 勉強会, 本, Python
+.. comments::

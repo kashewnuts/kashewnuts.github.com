@@ -1,0 +1,45 @@
+Chromeエクステンションまとめ
+==================================
+
+| 職場でChromeを使うようになったので、
+| エクステンションについて少々まとめて見る。
+
+| ■ `AutoPatchWork <https://chrome.google.com/webstore/detail/aeolcjbaammbkgaiagooljfdepnjmkfd>`__
+| 　…言わずと知れたAutoPager系。これがないと仕事にならない。
+| AutoPagerizeと比較してこっちのほうがよさげなので移行した。
+| ■ `Click&Clean <https://chrome.google.com/webstore/detail/ghgabhipcejejjmhhchfonmamedcbeod>`__
+| 　…終了時に自動的に様々な履歴やキャッシュを削除。
+|     今は他にも多種多様な機能がついたのでそれも試している。
+| ■ `Docs PDF/PowerPoint Viewer(by Google) <https://chrome.google.com/webstore/detail/nnbmlagghjjcbdhgmkedmbmedengocbn>`__
+| 　….doc、.xls、PowerPoint、PDFをChromeで見れる。
+| 　　今は何故か動かないから無効。
+| ■ `Clip to Evernote <https://chrome.google.com/webstore/detail/pioclpoplcdbaefihamjohnefbikjilc>`__
+| 　…Web上で見つけたページをEvernoteにアカウントに保存する。
+| ■ `Fix HootSuite Ext <https://chrome.google.com/webstore/detail/libkeepfhbgiamhpajlgfcoljimloknk>`__
+| 　…HootSuiteを便利にする。
+| ■ `Google Dictionary(by Google) <https://chrome.google.com/webstore/detail/mgijmajocgfcbeboacabfgobmjgjcoja>`__
+| 　…選択した範囲を翻訳。
+| ■ `Google Quick Scroll <https://chrome.google.com/webstore/detail/okanipcmceoeemlbjnmnbdibhgpbllgc>`__
+| 　…検索したとき、検索キーボードに関する箇所に直接移動する。
+| ■ `LastPass <https://chrome.google.com/extensions/detail/hdokiejnpimakedhajhdlcegeplioahd?hl=ja>`__
+| 　…パスワード管理ツール。
+| 　　パスワードの生成、強度チェックなど多機能かつ利便性が高い。
+| ■ `RSS Subscription Extention(by Google) <https://chrome.google.com/webstore/detail/nlbjncdgjeocebhnmkbbbdekmmmcbfjd>`__
+| 　…ワンクリックでRSSに登録できるボタンを設置。
+| ■ `Speed dial <https://chrome.google.com/webstore/detail/dgpdioedihjhncjafcpgbbjdpbbkikmi>`__
+| 　…よく見るサイトを登録することで、素早くそのページを表示させる。
+| ■ `Symtica <https://chrome.google.com/webstore/detail/fafldeedegmfkdkolgpcopgfcdidgbjk>`__
+| 　…Googleのサービスをツールバー上から簡単に開けるようにする。
+| 　　Gmail、Google Doc、Google Calenderなどをひとまとめにして表示。
+| ■ `Tab Menu <https://chrome.google.com/webstore/detail/galfofdpepkcahkfobimileafiobdplb>`__
+| 　…タブをツールバーから縦開きで見る。
+| 　　タブの開きすぎた時のタブ管理に重宝。
+| ■ `WOT <https://chrome.google.com/webstore/detail/bhmmomiinigofkjcapegjjndpbikblnp>`__
+| 　…オンライン詐欺、なりすまし、セキュリティの脅威を回避。
+| 後はブックマーク周りが改善されれば私用でも常用できるのだけど、
+| ここは各種エクステンションをお試し中です。
+
+.. author:: default
+.. categories:: Chrome
+.. tags:: Chrome
+.. comments::

@@ -1,0 +1,105 @@
+Sphinx-Hack-a-thon2013.08に参加しました #sphinxjp
+=================================================
+
+当日のイベントページはこちら→ `Sphinx+翻訳 Hack-a-thon 2013.8 - connpass <http://connpass.com/event/3038/>`_
+
+「 `@kashew_nuts <https://twitter.com/kashew_nuts>`_ はちっともBlog書かない！」
+とのご指摘頂きましたので書きます。月1くらいじゃだめかー。
+
+当日やったこと
+--------------
+
+* LiveDiag が Mac OS 10.7 でも動作するか確認
+* Python Cookbook 3rd Edition で学習
+
+
+LiveDiag が Mac OS 10.7 でも動作するか確認
+------------------------------------------
+
+LiveDiag は `先日 MOONGIFT でも紹介されました <http://www.moongift.jp/2013/08/20130816-2/>`_ ブロック図表示機能のついたMarkdownエディタです。
+
+公式サイト: `LiveDiag by dataich <http://blog.dataich.com/LiveDiag/>`_
+
+詳細はリンクを参照して頂ければわかると思いますが、これを使えば **あの** blockdiag
+シリーズをプレビューで表示しながら編集することができます。
+
+しかし公式サイトには Mac OS 10.8+ と書いてあるため、
+10.7以下は使用できないのかと思っていましたが、
+
+.. tweet:: https://twitter.com/dataich/status/362583409190641664
+
+というやりとりがあり、「動くかなー」と思い試してみました。
+が、以下の様なエラーがありそれ以上進めない……
+
+.. figure:: 2013-08-17_15.52.03.jpg
+    :height: 125px
+    :width: 300px
+
+作者の人に連絡した所、「近日中に対応します」とのことなので、Mac OS 10.7
+の人も使えるようになればいいなと思う所存です。気長に待ちたいと思います。
+
+
+Python Cookbook 3rd Edition で学習
+----------------------------------
+
+Python3.3 に対応した Python Cookbook の最新版です。これのサンプルを写経しながら学習していました。
+`Python Cookbook, 3rd Edition - Free Download eBook - pdf <http://it-ebooks.info/book/2334/>`_
+
+今は `Amazon.co.jp： パーフェクトPython (PERFECT SERIES 5): Pythonサポーターズ: 本 <http://www.amazon.co.jp/%E3%83%91%E3%83%BC%E3%83%95%E3%82%A7%E3%82%AF%E3%83%88Python-PERFECT-SERIES-5-Python%E3%82%B5%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%BC%E3%82%BA/dp/477415539X>`_ という Python3.3 に対応した **素晴らしい** 書籍もあり、学ぶのに最適な環境が揃っています。
+
+たとえ英語でわからないところがあっても日本語の参考資料が揃っているので、
+これらを参考にしながら、今後も「実例を知ったり、こんなことができる」といった点を学んでいきます。
+
+
+成果発表
+--------
+
+貧弱な内容ながら取ったメモ。発表の最中質問にこたえていたり、お名前が聞き取れなかったりして、内容に不備があるかもしれません。その際は連絡頂ければ幸いです。
+
+* `@usaturn <https://twitter.com/usaturn>`_ : ハンズオン実施 `資料 <http://usaturn.net/osc/>`_ , Sphinx本書いてた。
+* `@yotchang4s <https://twitter.com/yotchang4s>`_: Tinkerer のテスト nose を調べていた。Python での IntelliJ の設定でつまった。
+* `@auchida <https://twitter.com/auchida>`_ (?): gettext を落としてひたすら翻訳
+* `@shkumagai <https://twitter.com/shkumagai>`_: ansible1.2.2のドキュメント翻訳をしていました。明日中に終わりそう。
+* `@es_kap <https://twitter.com/es_kap>`_: PC再セットアップに伴いSphinx & Tinkerer の環境構築していました。
+* `@kanecchi27 <https://twitter.com/kanecchi27>`_ : Sphinx を使い始めたのが昨日だったので、まず Sphinx の使い方から入った。Google Analytics のマニュアルを書こうとしていた。
+* `@bols_blue <https://twitter.com/bols_blue>`_: JUnit のテスト結果をドキュメントにするものをやりました。ちゃんと整形する箇所は後で直します。
+* `@nikuyoshi <https://twitter.com/nikuyoshi>`_: 業務メモをまとめていたが、検索できないと難しいので oktavia を試していた。
+* `@shimizukawa <https://twitter.com/shimizukawa>`_: Sphinx の本を書いていました。make html する時に用語ゆらぎや漢字ひらがなチェックができるようなものを使ってやっていました。
+* `@tk0miya <https://twitter.com/tk0miya>`_: Sphinx の本の打合せに近い議論をしてました。
+* `@igfc2020 <https://twitter.com/gcc2015>`_ (?): Sphinx で試験問題を21問写経完了しました。bootstrapのスタイルを使用しました。簡単なテーブルの作り方を #うさたーん 先生に教えて頂き助かりました。
+* `@naoiwata <https://twitter.com/naoiwata>`_: CoffeeScript のドキュメントを訳していた。 https://github.com/naoiwata/coffeescript-docs-ja/
+* `@mstshimo <https://twitter.com/mstshimo>`_ : パーフェクトPythonで勉強をしていた。
+* `@nuki_pon <https://twitter.com/nuki_pon>`_ : GAEのprojectのdocstringを #sphinxjp でドキュメント化する環境構築を実施。とりあえず動く環境は出来た。後は、docsiringを書くだけ。。
+
+
+終了後
+------
+
+自分含めて少数ですが有志で懇談会を行いました。Python のバージョン毎の管理の話(pythonbrew
+はオワコン)、 TDD や DDD の話、etc... いろいろ話ましたね。
+
+Python のために入れてるプラグインはあるかという話題もでました。
+vi(m), emacs, PyCharm, PyScripter, etc... 好きなエディタ、IDE を使えばいいという話ですが、
+私は普段使っている vim に入れているプラグインは以下です。
+
+* `davidhalter/jedi-vim <https://github.com/davidhalter/jedi-vim>`_
+* `jmcantrell/vim-virtualenv <https://github.com/jmcantrell/vim-virtualenv>`_
+* `kevinw/pyflakes-vim <https://github.com/kevinw/pyflakes-vim>`_
+* `mjbrownie/vim-htmldjango_omnicomplete <https://github.com/mjbrownie/vim-htmldjango_omnicomplete>`_
+* `lambdalisue/vim-django-support <https://github.com/lambdalisue/vim-django-support>`_
+
+`nvie/vim-flake8 <https://github.com/nvie/vim-flake8>`_ なら pep8 と pyflakes の両方を確認
+できるのでこちらもおすすめしたいところです。
+
+詳しい設定は github で公開していますのでそちらを参照下さい。 `kashewnuts/dotfiles <https://github.com/kashewnuts/dotfiles>`_
+
+参考リンク
+----------
+
+* `Vimを最強のPython開発環境にする2 - Λlisue's blog <http://lambdalisue.hatenablog.com/entry/2013/06/23/071344>`_
+
+
+.. author:: default
+.. categories:: Python, Sphinx, Vim
+.. tags:: Python, Sphinx, Vim
+.. comments::

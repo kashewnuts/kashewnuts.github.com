@@ -1,0 +1,37 @@
+「Vimテクニックバイブル」ポチった
+====================================
+
+| それなりに違和感なく使えるようになってきたのだけど、
+| もう一段階レベルアップしたいと思いポチってしまった。
+| 基本的な操作法を身につけるだけでなく、
+| プラグインを入れて〜とか試してみたいね！
+| Vimに変えてから環境に悩むことがなくなったので、
+| 本当に正解だったと思ってる。
+
+|Vimテクニックバイブル　～作業効率をカイゼンする150の技|
+
+| `Vimテクニックバイブル　～作業効率をカイゼンする150の技 <http://www.amazon.co.jp/exec/obidos/ASIN/4774147958/naoyadyndnsor-22/ref=nosim/>`__
+| posted with
+| `amazlet <http://www.amazlet.com/browse/ASIN/4774147958//ref=nosim/>`__
+| at 11.09.30
+| Vimサポーターズ
+| 技術評論社
+| 売り上げランキング: 304
+| `Amazon.co.jp で詳細を見る <http://www.amazon.co.jp/exec/obidos/ASIN/4774147958/naoyadyndnsor-22/ref=nosim/>`__
+
+| 話はかわり……
+| リンクはAmazonだけど実際は楽天ブックスで買ったから
+| 届くまでがゆっくりに感じる。
+| けれど今週はマスタリングTCP/IPを読まないといけなかったから
+| ちょうどいい待ち時間だったかな。
+| 最近楽天での買い物はほぼ本に限定されてる。
+| 以前は2000円以上本を買うと7倍のポイントとか余裕でついてたのに、
+| 最近は5倍がせいぜいな気がして少し考えものだ。。。
+
+.. |Vimテクニックバイブル　～作業効率をカイゼンする150の技| image:: http://ecx.images-amazon.com/images/I/51-u-wPOtlL._SL160_.jpg
+   :target: http://www.amazon.co.jp/exec/obidos/ASIN/4774147958/naoyadyndnsor-22/ref=nosim/
+
+.. author:: default
+.. categories:: Vim, 本, 雑記
+.. tags:: Vim, 本, 雑記
+.. comments::

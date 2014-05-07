@@ -1,0 +1,27 @@
+地味に覚えておきたいMacショーカット3選
+==========================================
+
+| `Macでの作業効率アップ！初心者が覚えておくべきMacショートカット42個 *男子ハック  <http://www.danshihack.com/2011/09/20/junp/mac_shortcut.html>`__
+
+| この3つは地味に便利だな。
+| 覚えよう。
+
+| 17. 新規Finderウィンドウを開く
+| command + N
+
+| 21. ホームフォルダを開く
+| command + shift + H
+
+| 30. ファイルをゴミ箱に移動
+| command + delete
+
+| あとはWindowsでの
+| 「Windowsキー＋D」
+| に相当するものがあればはかどるんだけどな〜。
+| まだトラックパットでせわしなく動かしているから、
+| 早くMacのショーカットキーに慣れたい。
+
+.. author:: default
+.. categories:: Mac
+.. tags:: Mac
+.. comments::

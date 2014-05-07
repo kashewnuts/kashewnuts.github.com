@@ -1,0 +1,50 @@
+===========================
+BPStudy66に参加して来ました
+===========================
+
+テーマ変更してみました。
+
+当日のイベントページはこちら→ `BPStudy#66 - connpass <http://connpass.com/event/1804/>`_
+
+
+パーフェクトPython貰った！
+--------------------------
+
+しょっぱなからアクシデントがあり、発表者の `akisutesama <https://twitter.com/akisutesama>`_ がいらしていないという状況。
+そんな中Pythonサポーターズの一人 `atsuoishimoto <https://twitter.com/atsuoishimoto>`_ によるじゃんけん大会が行われました。商品は現在予約受付中の `パーフェクトPython <http://www.amazon.co.jp/%E3%83%91%E3%83%BC%E3%83%95%E3%82%A7%E3%82%AF%E3%83%88Python-Python%E3%82%B5%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%BC%E3%82%BA/dp/477415539X>`_ ！
+
+そして……
+
+.. image:: 2013-02-28_19.06.59.jpg
+    :width: 270px
+    :height: 360px
+
+**貰ってしまいました！** (蛍光灯の光が反射してるのは気にしないでください……)
+
+ありがとうございます。勉強させて頂きます:D
+
+
+当日の様子
+-------------------------
+
+さてこのあと当日のまとめなどを書こうとしましたがスライド以上にまとめられる気がしないので、
+資料だけ載せさせて頂きます。
+
+
+**Goのススメ 21世紀のプログラミング言語**
+
+* 発表者: `ymotongpoo <https://twitter.com/ymotongpoo>`_
+* `Goノススメ（BPStudy #66） <http://www.slideshare.net/ymotongpoo/20130228-gobp-study-66-16830134>`_
+
+**Client & Server side of Dungeons and Golf**
+
+* 発表者: `akisutesama <https://twitter.com/akisutesama>`_
+* `リアルタイムチャットSDKのできるまで <http://www.slideshare.net/masashiono1/sdk-16733662>`_
+* `Server side of Dungeons & Golf <http://www.slideshare.net/masashiono1/server-side-of-dungeons-golf>`_
+
+
+.. author:: default
+.. categories:: Python, BPStudy
+.. tags:: Python, BPStudy
+.. comments::
+

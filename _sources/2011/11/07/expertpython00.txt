@@ -1,0 +1,38 @@
+エキスパートPython 読書会参加します！
+============================================
+
+| `エキスパートPythonプログラミング読書会 第二期 01 : ATND  <http://atnd.org/events/21166>`__
+| 今朝になって1人、2人とキャンセルがでて、
+| 「おおっ。これは本当に明日いけるかもしれない！」
+| と思って昼休みにiPhoneで確認したら、
+| `@tfmagician <https://twitter.com/#!/tfmagician>`__\ さんからリマインド入ってました。
+| 「いける！」
+| ってなことで早速明日に向けて1,2章の予習してます。
+
+| 基本的なことは知っていても
+| Vimとipythonの連携とか、
+| ジェネレータの詳しい使い方とか、
+| 知らないことたくさんだからな〜
+
+| Vimmerの場合、
+| `ipython <http://montpython.s13.xrea.com/ipython/>`__\ 使うのと\ `neocomplcache <http://kashewnuts-tech.blogspot.com/2011/10/vimvim-part2.html>`__\ 使うのどう違うんだろう。
+
+| 補完だけなら、
+| 別にipythonにこだわる必要がないのではないかと思ってしまう。
+| 自分がぱっと思いつくのはデバッカのあるなし程度なのだけど、
+| ここら辺どうなのだろうか。
+
+| virtualenv使うとipythonとの連携が面倒みたいな話もあるし。
+| ただ、回避方法もあるみたい→
+| `ipython と virtualenv を同時に使う方法 - Ian Lewis <http://www.ianlewis.org/jp/ipython-virtualenv>`__
+
+| 「ipython便利」という話はよく聞くので、
+| 是非とも知りたいところです。
+| 明日は絶対定時で上がる。
+| 朝の時点で上司に宣誓しておこう。
+| 初のスーツでの勉強会だ……
+
+.. author:: default
+.. categories:: 勉強会, Vim, Python
+.. tags:: 勉強会, Vim, Python
+.. comments::

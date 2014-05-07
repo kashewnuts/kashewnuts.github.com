@@ -1,0 +1,30 @@
+本読了＆購入
+============
+
+■読了本：
+
+* `JavaScript: The Good Parts ―「良いパーツ」によるベストプラクティス <http://www.amazon.co.jp/gp/product/4873113911/ref=s9_wishf_gw_g14_t?ie=UTF8&coliid=ICSI8FO9TH0BR&colid=1X6UJUFDTDKT4&pf_rd_m=AN1VRQENFRJN5&pf_rd_s=right-csm-2&pf_rd_r=0S5CMTEAWAWJDAVESX88&pf_rd_t=101&pf_rd_p=477470556&pf_rd_i=489986>`__
+
+| がっつりプログラミングするという機会がないから、
+| 自分で勉強する時間作っていかないとね。
+
+
+* `新人諸君、半年黙って仕事せよ <http://www.amazon.co.jp/%E6%96%B0%E4%BA%BA%E8%AB%B8%E5%90%9B%E3%80%81%E5%8D%8A%E5%B9%B4%E9%BB%99%E3%81%A3%E3%81%A6%E4%BB%95%E4%BA%8B%E3%81%9B%E3%82%88-%E5%B1%B1%E7%94%B0-%E3%82%BA%E3%83%BC%E3%83%8B%E3%83%BC/dp/4480878181/ref=sr_1_1?s=books&ie=UTF8&qid=1313265519&sr=1-1>`__
+
+| 最近思うことがあって手にとってみた。
+| 今自分が気になる所についてピンポイントで記述してあるので、
+| また読み返していこうと思う。
+
+
+■購入本：
+
+* `応用情報・高度午前1共通 午前問題集〈2011〉 <http://www.amazon.co.jp/%E5%BF%9C%E7%94%A8%E6%83%85%E5%A0%B1%E3%83%BB%E9%AB%98%E5%BA%A6%E5%8D%88%E5%89%8D1%E5%85%B1%E9%80%9A-%E5%8D%88%E5%89%8D%E5%95%8F%E9%A1%8C%E9%9B%86%E3%80%882011%E3%80%89-%E6%83%85%E5%A0%B1%E5%87%A6%E7%90%86%E6%8A%80%E8%A1%93%E8%80%85%E8%A9%A6%E9%A8%93%E5%AF%BE%E7%AD%96%E6%9B%B8-%E3%82%A2%E3%82%A4%E3%83%86%E3%83%83%E3%82%AF%E6%83%85%E5%A0%B1%E6%8A%80%E8%A1%93%E6%95%99%E8%82%B2%E7%A0%94%E7%A9%B6%E9%83%A8/dp/4872688384/ref=pd_sim_b_2>`__
+
+| そろそろ勉強はじめようかと思い購入。
+| 前回のような失敗は２度と繰り返したくない。
+| 詳しいことは、 `応用情報技術者振り返り <http://kashewnuts-tech.blogspot.com/2011/07/blog-post.html>`__ 参照のこと。
+
+.. author:: default
+.. categories:: 本, 雑記
+.. tags:: 本, 雑記
+.. comments::

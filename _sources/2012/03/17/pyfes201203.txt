@@ -1,0 +1,157 @@
+Python Developer Festa 2012.03行って来ました。
+============================================================================
+
+| `Python Developers Festa 2012.03 on Zusaar <http://www.zusaar.com/event/158001>`__ に行 って来ました！
+| `Python Developers Festa 2012.03 を開催します - Twisted Mind <http://d.hatena.ne.jp/Voluntas/20111015/1318682867>`__
+
+| 例の如く、当日の天気は雨模様。
+| 前回はぎりぎりだったので、今回は早めに行きました。
+| 当日の様子は `かえるの人(@blaue_fuchs) <https://twitter.com/#!/blaue_fuchs>`__ がまとめてくれています。
+| `Python Developers Festa 2012.03 #PyFes 〜ハンズオン開始まで - Togetter <http://togetter.com/li/274120>`__
+| `Python Developers Festa 2012.03 #PyFes 〜ハンズオン中 - Togetter <http://togetter.com/li/274138>`__
+| `Python Developers Festa 2012.03 #PyFes 〜LT1 - Togetter <http://togetter.com/li/274237>`__
+| `Python Developers Festa 2012.03 #PyFes 〜LT 2 - Togetter <http://togetter.com/li/274261>`__
+| `Python Developers Festa 2012.03 #PyFes 〜LT 3 - Togetter <http://togetter.com/li/274287>`__
+| `Python Developers Festa 2012.03 #PyFes 〜LT 4 - Togetter <http://togetter.com/li/274322>`__
+| `Python Developers Festa 2012.03 #PyFes 〜終了後 - Togetter <http://togetter.com/li/274575>`__
+
+| 当日は大きく分けて
+| ・ハンズオン
+| ・プレゼンテーション
+| が行われました。
+
+| **・ハンズオン**
+| `@voluntas <https://twitter.com/#!/voluntas>`__ さん、 `@yokatsuki <https://twitter.com/#!/yokatsuki>`__ さんより諸注意の後、
+| 10:00〜15：00まではハンズオンを実施しました。
+| 自分はPython でテスト(仮)に参加しました。
+
+| しかし落とし穴が……
+| 講師の `シャイデレ(@aodag) <https://twitter.com/#!/aodag>`__ さんが来ない!!!
+| そこでTLを探っていたところ、
+
+.. tweet:: https://twitter.com/aodag/status/180817474642644992
+
+.. tweet:: https://twitter.com/aodag/status/180818782015602688
+
+| ……ひとまず `ハンズオンのURL <http://readthedocs.org/docs/aodag_pyfes_testing/en/latest/>`__  は公開されていたので、
+| 必要なツールをvirtualenvを使ってインストール。
+| しかし資料を読み進めながらテストツールをためしていたところ、
+| 「もしかして、Python3が必要……？？？」
+| と気づきました。
+
+| 自分のMBAにはPython2系しか入っていないので、
+| 進めるには新しくPython3系を入れる必要があります。
+| どうしようかな思いましたがあまり環境を汚したくないので
+| pythonbrewを導入しました。
+
+| pythonbrewはpythonのバージョン管理ができるツールになります。
+| 前々から入れようと思っていたのですが今回ので決意。
+| しかしはまった！pythonbrew及び、
+| Python3.2のインストールで午前中を使ってしまいました。
+| 午後一でPython3.2のインストールまで終了したものの、
+| ハンズオンの内容は半分も進みませんでした。
+| いかんせん自分のレベルの低さと言うものを実感しましたね。
+| 他のテーブルでは前回同様初心者テーブルは好評だったみたいですね。
+| 隣でやっていたMercurialのテーブルも終始賑やかに見えました。
+
+| **・発表**
+| 今回はPythonの話が多かった気がする。いや気のせいか……
+| PyCon2012とBPさんからの出版されるPython本
+| の押しが強かった気がします。
+| 置いてけぼり感がすごいと有名なこの時間。
+| 以下のプレゼンテーブルで進みました。
+
+| ■ `しょーま(@shomah4a) <https://twitter.com/#!/shomah4a>`__ さん
+| `PyConJP2012 メンバ募集 -pyfes 2012.03- <http://www.slideshare.net/ShomaHosaka/pyconjp2012>`__
+| →PyConJP2012スタッフ募集中。やる気のある人希望。
+| PyConで年収が上がりました！(要出典)
+
+| ■ `bucho(@torufurukawa) <https://twitter.com/#!/torufurukawa>`__
+| `Python 3.3 チラ見 <http://www.slideshare.net/torufurukawa/python-33>`__
+| →今さらながらチェックインアプリ作りました。
+| mixiと連携してクーポンゲットできるよ！
+
+| ■ `ところてん (@tokoroten) <https://twitter.com/#!/tokoroten>`__ さん
+| `レベルを上げて物理で殴れ、Fuzzing入門 #pyfes <http://www.slideshare.net/TokorotenNakayama/fuzzing-pyfes>`__
+| →FirefoxやMicrosoftではやってます。
+| Vista時代からやり始めてて、XPに比べてバグが半分になりました。
+
+| ■ `Vの人(@voluntas) <https://twitter.com/#!/voluntas>`__
+| riak-ja meetup #1 (仮)
+| →ライアックじゃなくてリアックと読みます。
+| 全部英語だけどイベントやるよ。
+
+| ■ `トイプーの人(@atsuoishimoto) <https://twitter.com/#!/atsuoishimoto>`__
+| `Python3と向かい合ってみる <http://www.slideshare.net/atsuoishimoto/python3-12044061>`__
+| →あわてるな。Python2.4、2,5を使っている人は、
+| まずはPython2.7の移行を始めよう。
+
+| ■ `ナツ(@natsu_bm) <https://twitter.com/#!/natsu_bm>`__ さん
+| `塹壕戦から揚陸艇強襲上陸まで (2012/03/17 pyfes) <http://www.slideshare.net/natsu_bm/2012-03-17pyfes>`__
+| →テスト≠品質 システムの価値をあげる手段の一つ。
+
+| ■ `しぶや(@lanius) <https://twitter.com/#!/lanius>`__ さん
+| `KoshiNukeによる最高のGit体験 <http://slides.nirvake.org/pyfes2012.03/>`__
+| →会場の謎の一体感。次々と発せられる感嘆の声。
+| Hey!Koshinuke!
+
+| ■ `清水川先生(@shimizukawa) <https://twitter.com/#!/shimizukawa>`__
+| `PYTHON PACKAGING （PyFes 2012.03 発表資料） - Google Docs <https://docs.google.com/presentation/d/1Gx6UptFjAeTe1bjahs0iELhksDF3Wkt-XaXWAg0arDM/edit#slide=id.ga78539f_0_0>`__
+| →そんなうまい話はねぇ！
+
+| ■ `たきざわ(@turky) <https://twitter.com/#!/turky>`__ さん
+| 実録！電子出版サイト裏の裏！
+| →「電子書籍について話してください！」と
+| 色々なところでいわれますが、全部断っております。
+
+| ■ `くえにし(@kuenishi) <https://twitter.com/#!/kuenishi>`__ さん
+| `できる！ZooKeeper超入門 <http://dl.dropbox.com/u/673631/pyfes2012/_build/html/index.html>`__
+| →「ゲームじゃないよ！」「どうしてこうなった！」
+
+| ■ `takabow♨ (@takabow) <https://twitter.com/#!/takabow>`__ さん
+| `絵で見てわかる 某分散データストア <http://www.slideshare.net/takahikosato/ss-12045125>`__
+| →便利でカスタマイズしまくれる分散KVSです。(100%Java!)
+| Pythonボルダリングイベントきてね！
+
+| ■ `Yohei Sasaki(@yssk22) <https://twitter.com/#!/yssk22>`__ さん
+| `20120317 CloudFoundry #pyfes <http://www.slideshare.net/yssk22/20120317-cloudfoundry-pyfes>`__
+| →PaaSのカーネル部分を提供。
+| ぶっちゃけGettingStartedがあるくらいで
+| ドキュメントありません。CouchDBはオワコン。
+
+| ■ `TakuFukushima(@takufukushima) <https://twitter.com/#!/takufukushima>`__ さん
+| ネットワーク仮想化プラットフォームMidoNetについて
+| →ネットワーク機器はスケールアウトできる！？
+
+| ■ `moriyoshi(@moriyoshi) <https://twitter.com/#!/moriyoshi>`__ さん
+| 何か(仮)
+| →innokoDB。ストレージエンジン。
+| 「泣いてもいいですか？」「あ、insertとかできるんですね」
+
+| ■ `Web魚拓の人(@hiroki_niinuma) <https://twitter.com/#!/hiroki_niinuma>`__
+| ウェブ魚拓史
+| →1DのAndroidゲーム,トンネルRPG出しました。
+| 魚拓が起こした問題。◯電すごいな（◯い意味で）
+
+| 次回の日取りは決まっていないそうですが、
+| 引き続き参加したいと思います。
+| 9月ごろとおっしゃっていたので、
+| その頃はPython3.3がリリースされている頃ですかね。
+| Python2→3系に移行することになった時のために
+| もっとPython力を見につけておきたいですね。
+| 会場を提供してくださったOracleさん、
+| ハンズオンや発表されたみなさん、
+| 参加されたみなさん、お疲れ様でした＆ありがとうございました！
+
+| 参加者ブログ
+| `Python Developers Festa 2012.03 #pyfes でテストハンズオンに参加した - あさとの @drillbits <http://d.hatena.ne.jp/drillbits/20120318/python_developers_festa_201203>`__
+| `Even More Addicted to Indentation: Python Developer Festa 2012.03 に行きました。 <http://torufurukawa.blogspot.jp/2012/03/python-developer-festa-201203.html?spref=tw>`__
+| `Python Developers Festa 2012.03に参加してきましたよ！ #pyfes - プログラマ行進曲 <http://d.hatena.ne.jp/kutakutatriangle/20120317/1331998758>`__
+| `「Python Developers Festa 2012.03」に参加して来ました。 - 強火で進め <http://d.hatena.ne.jp/nakamura001/20120317/1331991039?utm_source=twitterfeed&utm_medium=twitter>`__
+| `Python Developers Festa 2012.03 に参加してきた - 彷徨えるフジワラ <http://d.hatena.ne.jp/flying-foozy/20120317/1331995759>`__
+| `pyfes 2012.3に参加してきました。 - そこはかとなく書くよ。 <http://d.hatena.ne.jp/rudi/20120318/1332049648>`__
+
+.. author:: default
+.. categories:: 勉強会, Python, pyfes
+.. tags:: 勉強会, Python, pyfes
+.. comments::

@@ -1,0 +1,27 @@
+「Google Chromeの中の人に聞く、ブラウザの未来とは」を読んで
+========================================================================
+
+| 記事は\ `こちら <http://www.lifehacker.jp/2011/10/111006chrome_interview.html>`__\ 。
+| 記事ではChromeのバージョンが14なのに、もう15になってる(笑)
+| 6週間だもんなぁ。
+| 最新版が出た直後でも記事にすると、
+| 編集の手間があるから少し前のバージョンになっちゃうのか。
+
+| 最近は9割方Chromeを使ってるな。
+| 残り1割ちょっとでFirefox。
+| IEなんで業務でも稀にしか使いません。
+
+| だいぶエクステンションも充実してきたし、
+| Webアプリもオフラインで使える
+| Gmail,Google Calender,Google Documentがでてきたからね。
+
+| ただオフラインでのGoogle Document編集ができたり、
+| Gmailも200MB分まで過去に遡れるみたいなことができれば
+| もっと利便性が上がるので、そこにもっと期待したい。
+| 早くGoogle Gearsを超えてほしいね……
+
+
+.. author:: default
+.. categories:: Chrome, Google, 雑記
+.. tags:: Chrome, Google, 雑記
+.. comments::

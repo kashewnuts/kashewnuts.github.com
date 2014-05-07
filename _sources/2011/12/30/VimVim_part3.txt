@@ -1,0 +1,96 @@
+Vimテクニックバイブルを読んでVimにプラグイン追加してみた part3
+==========================================================================
+
+| `part1 <http://kashewnuts-tech.blogspot.com/2011/10/vimvim.html>`__, `2 <http://kashewnuts-tech.blogspot.com/2011/10/vimvim-part2.html>`__\ に続いてpart3です。しばらく間が空きましたね。
+
+| まあ気にせず行きましょう。
+| 今まで\ `quickrun.vim <http://vim-users.jp/2009/05/hack7/>`__\ と\ `neocomplcache <http://vim-users.jp/tag/neocomplcache/>`__\ だけで過ごしてきたものの、
+| 気になるプラグインがでてきたので
+| まずは簡単そうなものから入れてみました。
+
+| 今回入れたのは以下の2つ
+| - `Vundle <http://vim-users.jp/2011/04/hack215/>`__
+| - `simplenote.vim <http://bugrammer.g.hatena.ne.jp/nisemono_san/20111107/1320677380>`__
+
+| 気になるプラグインを入れる際に、
+| 管理は簡単な方がいいだろうとまずはVundleを導入。
+
+| **Vundle**
+| Vundleはvimがどのディレクトリから設定ファイル、プラグインファイル
+| を読み込むのかを決定している「\ `runtimepath <http://nanasi.jp/articles/howto/config/runtimepath.html>`__\ 」オプションを操作する
+| だけなく、インストールや更新なども行うことができます。
+| 導入の際はgitが必須です。以下のようにインストールします。
+
+.. code-block:: bash
+
+    git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+
+| 次に\_vimrcに以下のような記述をしました。
+
+.. code-block:: bash
+
+    "Vundle設定
+    filetype off
+
+    set rtp+=~/.vim/bundle/vundle/
+    call vundle#rc()
+
+    "Bundle 'gmarik/vundle'     "必須
+    "githubにあるプラグイン
+    Bundle 'thinca/vim-quickrun'
+    Bundle 'Shougo/neocomplcache'
+    Bundle 'mrtazz/simplenote.vim'
+
+    filetype plugin indent on
+
+| 後はVimを立ち上げて、
+
+.. code-block:: bash
+
+    :BundleInstall
+
+| と叩けばインストール開始です。
+| インストールが完了すると以下のようになります。
+
+|image0|
+
+| **simplenote.vim**
+| SimplenoteはEvernoteのスキマを埋める簡単メモツールです。
+| (Vimテクニックバイブルには書いてありません)
+| simplenote.vimはvimからそのSimplenoteを扱おうという代物。
+| 普段から書き慣れているエディタでメモを取りたいと思っていた自分には最適でしたね。
+| 若干重いようですが許容範囲内かと思っています。
+| インストールは先程のVundleの設定に記しているので割愛します。
+| \_vimrcに以下の設定を書きこむことでログインの手間を減らせます。
+
+.. code-block:: bash
+
+    let g:SimplenoteUsername = "Enter your username"
+    let g:SimplenotePassword = "Enter your password"
+
+| 最低限以下の3つのコマンドを覚えておけばOK
+
+.. code-block:: bash
+
+    :Simplenote -l "Simplenoteにあるデータの一覧
+    :Simplenote -u "Simplenoteのデータを更新する
+    :Simplenote -n "新しいデータを作成する
+
+| その他・・・
+| 他にも\ `vimshell <https://github.com/Shougo/unite.vim>`__, `unite.vim <https://github.com/Shougo/vimshell>`__, `surround.vim <https://github.com/tpope/vim-surround>`__\ に興味があります。
+| 会社でWindowsでもシェル使いこなしたいな
+| →自分Vim使っている
+| →vimshell使ったほうがいいのかな
+| という安直な気持ちですが(笑)
+
+| unite.vimは何が何だか分からないから知りたい。
+| surround.vimはテキストオブジェクトの操作を身につけたいからです。
+| まあPythonだけ弄っていくならそれほど意識する必要がないのかもしれませんが……
+
+.. |image0| image:: http://2.bp.blogspot.com/-kvr-zwmk4Pk/Tv2S8_ymM5I/AAAAAAAAAfg/janoJTwMKOI/s320/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588+2011-12-30+19.21.51.jpg
+   :target: http://2.bp.blogspot.com/-kvr-zwmk4Pk/Tv2S8_ymM5I/AAAAAAAAAfg/janoJTwMKOI/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588+2011-12-30+19.21.51.jpg
+
+.. author:: default
+.. categories:: 開発環境, Vim, 本
+.. tags:: 開発環境, Vim, 本
+.. comments::

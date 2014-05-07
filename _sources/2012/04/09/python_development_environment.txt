@@ -1,0 +1,99 @@
+今更ながらpythonの開発環境を整えてみる。
+==============================================
+
+| Pyfesの時にも思ったのだけど、
+| 前から一度開発環境を整えてみたいと思っていたのでやってみました。
+| 導入したのは以下、
+
+| 1.MacPorts
+| 2.virtualenv, virtualenvwapper
+| 3.ipyton
+| 4.pythonbrew
+
+| 1.MacPorts
+| 巷ではHomebrewが人気らしいのですが、
+| `Shibu's Diary: MacPortsは生まれ変わった <http://blog.shibu.jp/article/54695561.html>`__
+| を見て導入を決意した次第です。
+| `The MacPorts Project -- Download; Installation <http://www.macports.org/install.php>`__
+| からdmgを選択してインストール。簡単ですね。
+
+| 2.virtualenv, virtualenvwapper
+| virtualenvは以前から使用していたのですが、
+| 便利だと言われるvirtualenvwapperも
+| `virtualenv, virtualenvwrapper, pip を使う方法 - Ian Lewis <http://www.ianlewis.org/jp/virtualenv-pip-fabric>`__
+| を参考に導入しました。
+
+.. code-block:: bash
+
+    $ pip install virtualenvwapper
+
+| と打つだけでvirtualenvも導入してくれました。
+| その後virtualenvwapperのコマンドを使えるようにするため、
+| .bashrcに以下のように記述しました。
+
+.. code-block:: bash
+
+    export WORKON_HOME=$HOME/.virtualenvssource `which virtualenvwrapper.sh`
+
+| その後.bashrcに記述した内容を有効化するために、
+| 以下のコマンドを打って完了です。
+
+.. code-block:: bash
+
+    $ source ~/.bashrc
+
+| 3.ipyton
+| `IPython — kenkov.jp <http://www.kenkov.org/python/ipython.html>`__\ を参考にして導入。
+
+.. code-block:: bash
+
+    $ sudo port install py27-ipython$ sudo port select --set ipython ipython27
+
+| その後、設定ファイルを作成しました。
+
+.. code-block:: bash
+
+    $ ipython profile create
+
+| でデフォルトの設定ファイルを作成し、
+| 出力されたファイルに以下の設定を記述しました。
+
+.. code-block:: bash
+
+    c = get_config()# 出力の後の改行をなくす
+    c.TerminalInteractiveShell.separate_in = ''# 入力のプロンプトの変更
+    c.PromptManager.in_template = '[\\#] >>> '# 出力のプロンプトの変更
+    c.PromptManager.out_template = '[\\#] ==> '# デフォルトのエディタの設定
+    c.TerminalInteractiveShell.editor = 'vim'
+
+| 4.pythonbrew
+| `pythonbrew <https://github.com/utahta/pythonbrew>`__\ はPyfesの時に導入済みだったのだけど、
+| 何故かsudo付けないと有効化されなかったので以下のようにして入れ直しました。
+
+.. code-block:: bash
+
+    $ export PYTHONBREW_ROOT=~/.pythonbrew
+    $ curl -kLO http://xrl.us/pythonbrewinstall
+    $ chmod +x pythonbrewinstall$ ./pythonbrewinstall
+
+| よしこれでOK！と思っていたら、
+| 何故か毎回
+
+.. code-block:: bash
+
+    source ~/.bashrc
+
+| しないとpythonbrewの設定が反映されない…
+| そこで、.bash\_profileを作成して以下の1行を追加しておきました。
+
+.. code-block:: bash
+
+    source ~/.bashrc
+
+| これで一通りPythonの開発環境を整えることができました。
+| さあ後は実践するだけ！
+
+.. author:: default
+.. categories:: 開発環境, Python
+.. tags:: 開発環境, Python
+.. comments::

@@ -1,0 +1,65 @@
+今日は内定式-1年前の自分はどうだったか-
+==========================================
+
+| どうだったんだろう…
+| 1年前の内定式は10月1日の金曜日、確か昼間に行われたんですよね。
+| 10時集合とかだったかな。
+|
+| 内定式以前にも同期とは数回合ってたので、
+| 「ああ、本当にこのメンツと同期としてやっていくんだな」
+| 「まあ何とかなるか」
+| ぐらいに思っていたと思います。
+| それ以外には雑談トークで
+| 「今度応用情報技術者試験受けるんですよ」
+| 「そうなんだ？じゃあ受かるよね！」
+| 「なんですって……」
+| とか半分冗談だと思っていたのにあんなことになろうとは。
+|
+| 事前課題とか与えられたのですが、
+| だいたいの人が基本情報技術者試験のテキストを配られる中
+| 一人だけ高度技術者試験のテキスト配られて、
+| 「あの〜なんか一人だけテキスト違うんですけど……」
+| 「えっ？だって（応用は）受かるでしょ？」
+| 「いやいやいや!!!何を仰っているんですか!!!」
+| というホント反応に困る対応をして頂いたり。
+| (その後の試験の結果はいうまでもありませんorz)
+
+| 他にはみんな
+
+|新版 明解C言語 入門編|
+
+| `新版 明解C言語 入門編 <http://www.amazon.co.jp/exec/obidos/ASIN/4797327928/naoyadyndnsor-22/ref=nosim/>`__
+| posted with
+| `amazlet <http://www.amazlet.com/browse/ASIN/4797327928//ref=nosim/>`__
+| at 11.10.03
+| 柴田望洋
+| ソフトバンククリエイティブ
+| 売り上げランキング: 1611
+| `Amazon.co.jp で詳細を見る <http://www.amazon.co.jp/exec/obidos/ASIN/4797327928/naoyadyndnsor-22/ref=nosim/>`__
+| とかなのにひとりだけ
+
+|C実践プログラミング 第3版|
+
+| `C実践プログラミング 第3版 <http://www.amazon.co.jp/exec/obidos/ASIN/4900900648/naoyadyndnsor-22/ref=nosim/>`__
+| posted with
+| `amazlet <http://www.amazlet.com/browse/ASIN/4900900648//ref=nosim/>`__
+| at 11.10.03
+| Steve Oualline
+| オライリー・ジャパン
+| 売り上げランキング: 38119
+| `Amazon.co.jp で詳細を見る <http://www.amazon.co.jp/exec/obidos/ASIN/4900900648/naoyadyndnsor-22/ref=nosim/>`__
+
+| だったりとね。いやはやなんとも。
+| 色々な意味で特別対応していただいて感謝しきりです！(泣)
+| まあある意味ここで覚悟決めたみたいなところがあるので
+| あながち嘘ではないです。はい。
+
+.. |新版 明解C言語 入門編| image:: http://ecx.images-amazon.com/images/I/51-Bto22vOL._SL160_.jpg
+   :target: http://www.amazon.co.jp/exec/obidos/ASIN/4797327928/naoyadyndnsor-22/ref=nosim/
+.. |C実践プログラミング 第3版| image:: http://ecx.images-amazon.com/images/I/51PWS7A72YL._SL160_.jpg
+   :target: http://www.amazon.co.jp/exec/obidos/ASIN/4900900648/naoyadyndnsor-22/ref=nosim/
+
+.. author:: default
+.. categories:: 応用情報技術者, 本, 情報処理技術者試験, C/C++, 雑記
+.. tags:: 応用情報技術者, 本, 情報処理技術者試験, C/C++, 雑記
+.. comments::

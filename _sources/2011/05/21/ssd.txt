@@ -1,0 +1,44 @@
+SSD使用感
+============
+
+| ちょうど1年間くらい日立のHDDを使っていたのですが、
+| SSD搭載機を触って以来HDDのモタつきが気になったので
+| 意を決して換装してみた。
+| 今ままで使用していたのは、
+| 日立の2.5インチHDD 7200回転の500GB。
+| `hitachi HTS725050A9A364 (500GB 9.5mm) <http://kakaku.com/item/K0000083542/>`__
+| 今回導入したのは
+| インテルの2.5インチ320シリーズのSSD 120GB。
+| `intel 320 Series SSDSA2CW120G3K5 <http://kakaku.com/item/K0000240763/>`__
+| ■導入結果
+| Windows エクスペリエンス
+| プライマリハードディスクのスコアは5.9から7.1と明らかに上昇。
+
+|image0|
+
+| CrystalDiskMarkにてベンチマークした結果は以下。
+
+|image1|
+
+| ■使用感
+| コールドスタートが高速化したことがなにより大きい。
+| つまり電源をONにしたあとの起動時間や、iTunes、ブラウザを
+| 1から起動したときの速さが段違い。
+| おかげでOSやアプリケーションの再起動が気にならない。
+| 更にボトルネックになっていたHDDからSSDに変更したせいか、
+| CPUやメモリの使用率も下がっている様子。
+| HDDの時にあれほど高速化に四苦八苦していたのに、
+| SSDにするだけで簡単に爆速化した。
+| このスピードからは離れられそうにない。
+| 会社のも取り替えてしまいたいね。
+
+.. |image0| image:: http://1.bp.blogspot.com/-EBGwX1dzP7o/Tdf2zZbSdZI/AAAAAAAAAVE/MT4cibzvyYY/s320/windows+experience.PNG
+    :target: http://1.bp.blogspot.com/-EBGwX1dzP7o/Tdf2zZbSdZI/AAAAAAAAAVE/MT4cibzvyYY/s320/windows+experience.PNG
+.. |image1| image:: http://4.bp.blogspot.com/-bGqHY83S2EY/Tdf537MxAqI/AAAAAAAAAVI/-2INWalb_TE/s320/ssd.PNG
+    :target: http://4.bp.blogspot.com/-bGqHY83S2EY/Tdf537MxAqI/AAAAAAAAAVI/-2INWalb_TE/s320/ssd.PNG
+
+
+.. author:: default
+.. categories:: SSD
+.. tags:: SSD
+.. comments::

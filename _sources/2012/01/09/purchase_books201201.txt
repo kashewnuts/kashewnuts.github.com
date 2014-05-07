@@ -1,0 +1,58 @@
+本ポチった。
+============
+
+| `2012年の抱負 <http://kashewnuts-tech.blogspot.com/2012/01/2012.html>`__\ で上げた項目の一つ
+| シェルスクリプトについての本届きました。
+
+|［改訂新版］ シェルスクリプト基本リファレンス　　－－#!/bin/shで、ここまでできる (WEB+DB PRESS plus)|
+
+| `［改訂新版］ シェルスクリプト基本リファレンス　　－－#!/bin/shで、ここまでできる (WEB+DB PRESS plus) <http://www.amazon.co.jp/exec/obidos/ASIN/4774146439/naoyadyndnsor-22/ref=nosim/>`__
+| posted with
+| `amazlet <http://www.amazlet.com/browse/ASIN/4774146439//ref=nosim/>`__
+| at 12.01.09
+| 山森 丈範
+| 技術評論社
+| 売り上げランキング: 55135
+| `Amazon.co.jp で詳細を見る <http://www.amazon.co.jp/exec/obidos/ASIN/4774146439/naoyadyndnsor-22/ref=nosim/>`__
+
+| まだ初めの40ページを読んだだけだけど、
+| 初心者〜中、上級者まで手元に置いておきたい本になるかもなと思った。
+| Vimについては
+
+|Vimテクニックバイブル　～作業効率をカイゼンする150の技|
+
+| `Vimテクニックバイブル　～作業効率をカイゼンする150の技 <http://www.amazon.co.jp/exec/obidos/ASIN/4774147958/naoyadyndnsor-22/ref=nosim/>`__
+| posted with
+| `amazlet <http://www.amazlet.com/browse/ASIN/4774147958//ref=nosim/>`__
+| at 12.01.09
+| Vimサポーターズ
+| 技術評論社
+| 売り上げランキング: 28358
+| `Amazon.co.jp で詳細を見る <http://www.amazon.co.jp/exec/obidos/ASIN/4774147958/naoyadyndnsor-22/ref=nosim/>`__
+
+| Pythonについては、
+
+|エキスパートPythonプログラミング|
+
+| `エキスパートPythonプログラミング <http://www.amazon.co.jp/exec/obidos/ASIN/4048686291/naoyadyndnsor-22/ref=nosim/>`__
+| posted with
+| `amazlet <http://www.amazlet.com/browse/ASIN/4048686291//ref=nosim/>`__
+| at 12.01.09
+| Tarek Ziade
+| アスキー・メディアワークス
+| 売り上げランキング: 26220
+| `Amazon.co.jp で詳細を見る <http://www.amazon.co.jp/exec/obidos/ASIN/4048686291/naoyadyndnsor-22/ref=nosim/>`__
+
+| があるので、これらをベースに自分の技術力を底上げしていきたいですね。
+
+.. |［改訂新版］ シェルスクリプト基本リファレンス　　－－#!/bin/shで、ここまでできる (WEB+DB PRESS plus)| image:: http://ecx.images-amazon.com/images/I/41GMyWgQ3cL._SL160_.jpg
+   :target: http://www.amazon.co.jp/exec/obidos/ASIN/4774146439/naoyadyndnsor-22/ref=nosim/
+.. |Vimテクニックバイブル　～作業効率をカイゼンする150の技| image:: http://ecx.images-amazon.com/images/I/516K5O-bN8L._SL160_.jpg
+   :target: http://www.amazon.co.jp/exec/obidos/ASIN/4774147958/naoyadyndnsor-22/ref=nosim/
+.. |エキスパートPythonプログラミング| image:: http://ecx.images-amazon.com/images/I/51wSTTIQtgL._SL160_.jpg
+   :target: http://www.amazon.co.jp/exec/obidos/ASIN/4048686291/naoyadyndnsor-22/ref=nosim/
+
+.. author:: default
+.. categories:: 本, 雑記
+.. tags:: 本, 雑記
+.. comments::

@@ -1,0 +1,36 @@
+エキPyぽちったー
+==================
+
+| `エキスパートPythonプログラミング読書会 第二期 01 <http://atnd.org/events/21166>`__
+| が開催されると聞いて思わず。
+
+|エキスパートPythonプログラミング|
+
+| `エキスパートPythonプログラミング <http://www.amazon.co.jp/exec/obidos/ASIN/4048686291/naoyadyndnsor-22/ref=nosim/>`__
+| posted with
+| `amazlet <http://www.amazlet.com/browse/ASIN/4048686291//ref=nosim/>`__
+| at 11.10.20
+| Tarek Ziade
+| アスキー・メディアワークス
+| 売り上げランキング: 39342
+| `Amazon.co.jp で詳細を見る <http://www.amazon.co.jp/exec/obidos/ASIN/4048686291/naoyadyndnsor-22/ref=nosim/>`__
+
+| しかし\ `この間のPyfes申し込み <http://kashewnuts-tech.blogspot.com/2011/10/1015python-developers-festa.html>`__\ に続き、またしても補欠。くそうorz
+| Pyfesの時に
+| 「エキPy読書会 第二期やります」
+| みたいな話があったので、
+| アンテナは常に立てていたのだけど。
+
+| 思ったより仕事が長引いてしまったのが敗因か。
+| エキPyは大学生の頃はお金なくて、
+| 大学の図書館に買ってもらってたから自分のがないのです。
+| 一からまた学んでいきたいので定期的に参加していきたい。
+| とりあえず待つしかないか……
+
+.. |エキスパートPythonプログラミング| image:: http://ecx.images-amazon.com/images/I/51wSTTIQtgL._SL160_.jpg
+   :target: http://www.amazon.co.jp/exec/obidos/ASIN/4048686291/naoyadyndnsor-22/ref=nosim/
+
+.. author:: default
+.. categories:: 勉強会, 本, Python
+.. tags:: 勉強会, 本, Python
+.. comments::

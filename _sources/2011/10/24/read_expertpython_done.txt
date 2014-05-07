@@ -1,0 +1,38 @@
+エキPy通し見done
+======================
+
+|エキスパートPythonプログラミング|
+
+| `エキスパートPythonプログラミング <http://www.amazon.co.jp/exec/obidos/ASIN/4048686291/naoyadyndnsor-22/ref=nosim/>`__
+| posted with
+| `amazlet <http://www.amazlet.com/browse/ASIN/4048686291//ref=nosim/>`__
+| at 11.10.24
+| Tarek Ziade
+| アスキー・メディアワークス
+| 売り上げランキング: 36822
+| `Amazon.co.jp で詳細を見る <http://www.amazon.co.jp/exec/obidos/ASIN/4048686291/naoyadyndnsor-22/ref=nosim/>`__
+
+| 来るべき時に備えてまずはざっと通し見。
+| さすがに読み応えたっぷりの本だ。
+
+| しかし１年前大学生だった時は
+| 「何のことかさっぱり…」
+| だったところが、
+| 「これはどうゆうことなんだろう」
+| 「ここはこうなっていたのか」
+| 「ここはもっとこうしたい」
+| みたいなことがちょくちょく湧いてきて、
+| 自分もちょっとは成長してるのかなと思うようになってきた。
+
+| そういえばエキPyはVim押しでしたね。
+| Vim使えるようになっててよかった自分！
+| 読んだと言ってもざっと見して深いところまでは全然読みきれてないので、
+| 今週いっぱいはこの本を精読して行きたい。
+
+.. |エキスパートPythonプログラミング| image:: http://ecx.images-amazon.com/images/I/51wSTTIQtgL._SL160_.jpg
+   :target: http://www.amazon.co.jp/exec/obidos/ASIN/4048686291/naoyadyndnsor-22/ref=nosim/
+
+.. author:: default
+.. categories:: Vim, 本, 雑記, Python
+.. tags:: Vim, 本, 雑記, Python
+.. comments::

@@ -1,0 +1,127 @@
+エキスパートPythonプログラミング読書会 第二期 01に参加してきました
+============================================================================
+
+| やっとBlogが書ける！
+| `エキスパートPythonプログラミング読書会 第二期 01 : ATND <http://atnd.org/events/21166>`__
+| に参加してきました。
+| （結構な大作になってしまったので読む方は注意お願いします）
+
+|エキスパートPythonプログラミング|
+
+| `エキスパートPythonプログラミング <http://www.amazon.co.jp/exec/obidos/ASIN/4048686291/naoyadyndnsor-22/ref=nosim/>`__
+| posted with
+| `amazlet <http://www.amazlet.com/browse/ASIN/4048686291//ref=nosim/>`__
+| at 11.11.10
+| Tarek Ziade
+| アスキー・メディアワークス
+| 売り上げランキング: 12563
+| `Amazon.co.jp で詳細を見る <http://www.amazon.co.jp/exec/obidos/ASIN/4048686291/naoyadyndnsor-22/ref=nosim/>`__
+
+| 進め方は清水川せんせにお任せで、
+| 分からないや聞きたいことがあったら随時突っ込むという形式でした。
+| `前回 <http://www.freia.jp/taka/docs/expertpython/reading/index.html>`__\ もこんな感じだったらしいですね。
+
+| ちらほらスーツの方もいらっしゃいました。
+| 仕事帰りですかね。
+| かく言う自分も仕事終えてから直行したのでスーツでした。
+| 勉強会にスーツで参加するのは初めてでしたね～。
+| なんか新鮮でした。
+
+| しかし、相変わらずMac率の高いこと！
+| 8割9割がMacでしたね。
+| Windows率とLinux率がほとんど差がないとか逆でしょう。
+
+| 自分が今回のテーマで気になっていたのが、
+| (1)Vim
+| (2)ipython
+| (3)Pythonの複数バージョン管理
+| だったので、そこいらへんを中心に書いていこうと思います。
+
+| ■(1)Vim
+| Vimを使っているひとが30人中26人、Emacs2人という…（TL調べ）
+| 「フフフフフッ、圧倒的じゃないか。我が軍は…(By なんとか）」
+| 秀丸使ってますって人もいなかったですね。
+| IDLE使っているという人もいませんでした。
+| 最近だとPyCharmとかいろいろ充実してきたみたいですが、
+| きっとVim率の高さに圧倒されて
+| 手を挙げられなかったのだと思います。
+| TLでちらほら別のエディタ、
+| IDEを使っているという人がいたみたいなので。
+
+| ■(2)ipython
+| 会場内で知らない人は3割くらいでした。
+| 自分の認識では
+| ・タブ補完ができる
+| ・デバッガが便利
+| ぐらいの認識で、あえて使う必要あるのかなと思ってました。
+
+| どのくらい便利なのかな？と思ってましたが、
+| 清水川せんせは
+| 「普段はipython使いませんけどね。」
+| とのこと。
+
+| 人が作ったモジュールを確かめる時にはよく使われているらしいです。
+| 「なんで普段からipython使わないんですか」と質問してみると、
+| 便利なんだろうなとは思うが、
+| `readline <https://gist.github.com/1347896>`__\ で補完はできるし、
+| 起動にちょっと時間がかかるし、
+| …いろいろ覚えるのが面倒だっただけ。便利だとは思うけど。
+| とのことでした。
+
+| ■(3)Pythonの複数バージョン管理
+| 「複数のバージョンのPython使うのにどうしてる」という話題で、
+| MacPort、pythonbrew、Homebrewなどの話もでてきました。
+| 今回印象に残っているのは今回は話しませんって言っているのに
+| ちょいちょい話すことになってしまったvirtualenvですね。
+
+| 結局
+| 「virtualenvでpythonのバージョン指定して入れている」
+| という結論しかでてこなかったのには苦笑いしてました。
+| virtualenv --no-site-package --python=python2.5 myenv
+| とか指定してあげればバージョン指定してインストールできるので、
+| 最初にそこで解決してあげるのが賢いということですね。
+| ただし自分のPCに入っていないバージョンを指定しても、
+| 「The executable python2.4(from --python=python2.4) does not exist」
+| とか怒られるので、
+| 予め自分の使いたいバージョンのPythonを入れておく必要はあります。
+
+| Lionだと最初から2.5,2.6,2.7が入っているみたいなので、
+| そんなに心配する必要はないと思いますが。
+| 「Python2.5,2.6,2.7だとvirtualenv使わなくても大丈夫では？」
+| という意見もありましたが、
+| 「無理ですね。なんのバージョンを使っているのとか意識したくない」（清水川）
+| だそうです。
+
+| 他にもeasy\_installとpipの違いにも興味を惹かれましたが、
+| これは
+| `distutils, setuptools, distribute, pip, virtualenv, buildout 再掲 — 清水川 Docs v1.0 documentation <http://www.freia.jp/taka/docs/pyhack4/environments.html>`__
+| に詳しいのであえて書きません。
+
+| 自分はまだ深いところまで入り込めていないので、
+| しばらくはpipで行こうと思いました。
+
+| ■感想
+| やっぱり行けてよかった。
+| 内容が濃いので次回もまた参加する予定です。
+| 今回お話できた方々、
+| 出来なかった方々、
+| 会場準備に携わっていただいた方々、
+| みなさんありがとうございました！
+
+| おそらくまたスーツで参加してますが、
+| 声をかけてもらえると喜びますのでよろしくお願いします。
+
+| ■関連リンク
+| * `エキスパートPython読書会 第2期 #1 <http://togetter.com/li/211713>`__
+| * `2011/11/08 エキスパートPythonプログラミング読書会2nd #1 - a set on Flickr <http://www.flickr.com/photos/shimizukawa/sets/72157627957858951/with/6326201982/>`__
+| * `エキスパートPythonプログラミング読書会( #expertpython)第二期の第一回目に参加してきました - プログラマ行進曲 (id:kutakutatriangle @takuan\_osho) <http://d.hatena.ne.jp/kutakutatriangle/20111109/1320839843>`__
+| * `Pythonの環境構築の自分なりのまとめ+エキスパートPythonプログラミング読書会 第二期 01に行ってきました。 - kanonjiの日記 (id:kanonji) <http://d.hatena.ne.jp/kanonji/20111110/1320916100>`__
+| * `エキPy読書会(第2期) 第1回に行ってきました - 今川館 <http://d.hatena.ne.jp/imagawa_yakata/20111108>`__
+
+.. |エキスパートPythonプログラミング| image:: http://ecx.images-amazon.com/images/I/51wSTTIQtgL._SL160_.jpg
+   :target: http://www.amazon.co.jp/exec/obidos/ASIN/4048686291/naoyadyndnsor-22/ref=nosim/
+
+.. author:: default
+.. categories:: 勉強会, Vim, Mac, 本, Python
+.. tags:: 勉強会, Vim, Mac, 本, Python
+.. comments::

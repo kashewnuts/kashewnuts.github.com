@@ -1,0 +1,109 @@
+エキスパートPythonプログラミング読書会 第二期 08に参加しました。
+==========================================================================
+
+| `エキスパートPythonプログラミング読書会 第二期 08 - connpass <http://connpass.com/event/622/>`__
+| に参加してきました。
+
+|エキスパートPythonプログラミング|
+
+| `エキスパートPythonプログラミング <http://www.amazon.co.jp/exec/obidos/ASIN/4048686291/naoyadyndnsor-22/ref=nosim/>`__
+| posted with
+| `amazlet <http://www.amazlet.com/browse/ASIN/4048686291//ref=nosim/>`__
+| at 11.10.24
+| Tarek Ziade
+| アスキー・メディアワークス
+| 売り上げランキング: 36822
+| `Amazon.co.jp で詳細を見る <http://www.amazon.co.jp/exec/obidos/ASIN/4048686291/naoyadyndnsor-22/ref=nosim/>`__
+
+| 今回は業務が終わってから時間があったので、電車を使わずに歩いて行きました。
+| 会社から20分ちょっとの距離ですのでいい運動ですね。
+
+| 当日の様子はこちら。
+| `エキスパートPythonプログラミング読書会 第二期 08 - Togetter <http://togetter.com/li/336139>`__
+
+| **1.アイスブレイク**
+| 恒例のアイスブレイク、各島ごと(4名程度)で簡単に自己紹介をしました。
+| 今日はあえて一つ後ろの島に。
+| 今回から参加された方も一緒になり、どこか新鮮でした。
+
+| **2.「第6章 アプリケーションを作る」**
+
+| -  皆virtualenvどうやって使っているの？
+|     【前提】複数プロジェクトが存在
+|
+|    -  他のプロジェクトに移動した時、切り替えはどうやっているのか。
+|        →プロジェクト1個につき、virtualenv1個以上。
+|    -  もしくはSphinxコマンドなど使いたいものだけ、そこにPath通してしまう(bin/)など、
+|        Sphinxとしてプロジェクト一つ作ってもいいと思う。
+|
+| -  環境変数PIP\_DOWNLOAD\_CACHEを設定していれば、
+|     環境を再構築する際にキャッシュ利用できるので時間節約になる。
+|     一応最新バージョンの確認をするから、ネットにはつなぐ。
+| -  pip
+|    bundleコマンドでインストールするパッケージを一つに固めることができる。
+|
+|    ただしソースしか入っていないので、gccが入っていなくてインストールで落ちるなんてことも。
+| -  easy\_install
+|    bundleみないなことはできない。→bundleしたファイルはpipでしか使えない。
+| -  テストコードはパッケージに含める。基本的に不可分。
+| -  virtualenvwrapperとか使うと疎結合になるけどどうすれば？
+|
+|    →PyCharmだとPythonのVersion、プロジェクトを作るディレクトリ、site-packageの指定
+|     とかできて、新しくプロジェクトを作ってやることができる。PyCharm便利。
+| -  あくまで使い方のサンプルとしてdoctestを作る。本格的なのはpy\_test~とか。
+|     doctestはdocumentとコードの乖離を防ぐために書く。
+|     →両方書くと親切。テスト書けないdocumentは追従するのが面倒なので、
+|     それはdoctest化した方がいい。
+|     参考:\ `25.2. doctest — 対話的な実行例をテストする — Python 2.7ja1 documentation <http://www.python.jp/doc/nightly/library/doctest.html?highlight=docstring>`__
+| -  sphinx.ext.autodoc とかで、Sphinxに-doctestでできると理想。
+|
+|    だけど多言語化してくると困る。（doctestは英語で、documentは日本語にしたい時など)
+| -  import datetime from \* とかの \* は基本×。
+|     Eclipseだとimport typeで\*を解決してくれる機能がある。
+|     PyCharmだと使っていない関数をグレーアウトしてくれるとかはある。
+| -  doctestの省略のオプション…\ `ELLIPSIS <http://www.python.jp/doc/nightly/library/doctest.html?highlight=docstring#doctest.ELLIPSIS>`__
+|     このフラグを指定すると、期待する出力中の省略記号マーカ (...)
+|    が実際の出力中の任意の部分文字列と一致するようになる。
+|     アドレスというか、IDなんかを省略できたりするから便利。
+
+|
+|  **3.ビアバッシュ＆LT**
+
+| -  @shimizukawa
+|
+|    -  @aodag先生のEuroPython体験記解説。
+|
+|       @aodag先生が話していた内容をメモっていたそうで、それをLTするという流れ。
+|        (↑書いててよくわからない)
+|        Euroでもピザ、帰ってきてもピザばかりでお疲れ様です。
+|    -  Python3.3で搭載されるvenvの紹介。
+|        virtualenvに相当する機能らしい。デフォルトで入るのはいいね。
+|
+| -  @aodag ヨーロッパでPyramidのLTしてきたよ。
+|     向こうでのLTはネタ(エンジニアと健康とか)に走っていて、
+|
+|    まじめにPythonネタやるんならしっかり枠取ってやれよという空気だったらしい。
+| -  @tfmagician vagrantとかchefとか。
+|
+|    vagrantはVirtualBoxを利用した仮想マシンをコマンドラインから作成してくれるらしい。
+|
+|    chefはサーバOSでのインストール・設定・各サービスの状態管理等、諸々のシステム構築や運用作業を自動化してくれるRuby製のシステム管理ツールらしい。
+|     すごく便利そうというのだけはわかった！
+
+|  **4.まとめ**
+
+|  参考リンク
+
+-  `エキスパートPythonプログラミング読書会 第二期 09 - connpass <http://connpass.com/event/762/>`__
+-  `ryu22eBlog : エキスパートPythonプログラミング読書会 第二期 08 に参加しました #expertpython <http://blog.livedoor.jp/ryu22e/archives/65693037.html>`__
+-  `Python Hack-a-thon 5 ハンズオン 中級コース - 清水川Web <http://www.freia.jp/taka/docs/pyhack5/index.html>`__
+-  `Vagrantで簡単仮想マシン構築 \| Ryuzee.com <http://www.ryuzee.com/contents/blog/4292>`__
+-  `サーバの構築作業やシステム管理を自動化する「Chef」｜サイバーエージェント 公式エンジニアブログ <http://ameblo.jp/principia-ca/entry-10775775095.html>`__
+
+.. |エキスパートPythonプログラミング| image:: http://ecx.images-amazon.com/images/I/51wSTTIQtgL._SL160_.jpg
+   :target: http://www.amazon.co.jp/exec/obidos/ASIN/4048686291/naoyadyndnsor-22/ref=nosim/
+
+.. author:: default
+.. categories:: 勉強会, 本, Python
+.. tags:: 勉強会, 本, Python
+.. comments::

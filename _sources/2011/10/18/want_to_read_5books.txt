@@ -1,0 +1,81 @@
+購入したので早く読みたい本5冊
+==============================
+
+| 積ん読になっている本が幾つかあるので、
+| その中から5冊取り上げてみる。
+
+|グロービスMBAマネジメント・ブック【改訂3版】|
+
+| `グロービスMBAマネジメント・ブック【改訂3版】 <http://www.amazon.co.jp/exec/obidos/ASIN/447800496X/naoyadyndnsor-22/ref=nosim/>`__
+| posted with
+| `amazlet <http://www.amazlet.com/browse/ASIN/447800496X//ref=nosim/>`__
+| at 11.10.18
+| グロービス経営大学院
+| ダイヤモンド社
+| 売り上げランキング: 2975
+| `Amazon.co.jp で詳細を見る <http://www.amazon.co.jp/exec/obidos/ASIN/447800496X/naoyadyndnsor-22/ref=nosim/>`__
+
+|プレゼンテーションzen|
+
+| `プレゼンテーションzen <http://www.amazon.co.jp/exec/obidos/ASIN/4894713284/naoyadyndnsor-22/ref=nosim/>`__
+| posted with
+| `amazlet <http://www.amazlet.com/browse/ASIN/4894713284//ref=nosim/>`__
+| at 11.10.18
+| Garr Reynolds ガー・レイノルズ
+| ピアソン桐原
+| 売り上げランキング: 958
+| `Amazon.co.jp で詳細を見る <http://www.amazon.co.jp/exec/obidos/ASIN/4894713284/naoyadyndnsor-22/ref=nosim/>`__
+
+|Vimテクニックバイブル　～作業効率をカイゼンする150の技|
+
+| `Vimテクニックバイブル　～作業効率をカイゼンする150の技 <http://www.amazon.co.jp/exec/obidos/ASIN/4774147958/naoyadyndnsor-22/ref=nosim/>`__
+| posted with
+| `amazlet <http://www.amazlet.com/browse/ASIN/4774147958//ref=nosim/>`__
+| at 11.10.18
+| Vimサポーターズ
+| 技術評論社
+| 売り上げランキング: 1406
+| `Amazon.co.jp で詳細を見る <http://www.amazon.co.jp/exec/obidos/ASIN/4774147958/naoyadyndnsor-22/ref=nosim/>`__
+
+|アジャイルサムライ−達人開発者への道−|
+
+| `アジャイルサムライ−達人開発者への道− <http://www.amazon.co.jp/exec/obidos/ASIN/4274068560/naoyadyndnsor-22/ref=nosim/>`__
+| posted with
+| `amazlet <http://www.amazlet.com/browse/ASIN/4274068560//ref=nosim/>`__
+| at 11.10.18
+| Jonathan Rasmusson
+| オーム社
+| 売り上げランキング: 1804
+| `Amazon.co.jp で詳細を見る <http://www.amazon.co.jp/exec/obidos/ASIN/4274068560/naoyadyndnsor-22/ref=nosim/>`__
+
+|Being Geek ―ギークであり続けるためのキャリア戦略|
+
+| `Being Geek ―ギークであり続けるためのキャリア戦略 <http://www.amazon.co.jp/exec/obidos/ASIN/4873114993/naoyadyndnsor-22/ref=nosim/>`__
+| posted with
+| `amazlet <http://www.amazlet.com/browse/ASIN/4873114993//ref=nosim/>`__
+| at 11.10.18
+| Michael Lopp
+| オライリージャパン
+| 売り上げランキング: 8758
+| `Amazon.co.jp で詳細を見る <http://www.amazon.co.jp/exec/obidos/ASIN/4873114993/naoyadyndnsor-22/ref=nosim/>`__
+
+| 前半2冊は買ったはいいもののまだ手をつけていない本。
+| 後半3冊はつまみ食いはしたけど、
+| 必要なところを見定めてしっかりと1冊仕上げてしまいたい本です。
+| 情処が終わって一区切りついたので、じっくり本を読んでみたいです。
+
+.. |グロービスMBAマネジメント・ブック【改訂3版】| image:: http://ecx.images-amazon.com/images/I/41d%2B0VC6eSL._SL160_.jpg
+   :target: http://www.amazon.co.jp/exec/obidos/ASIN/447800496X/naoyadyndnsor-22/ref=nosim/
+.. |プレゼンテーションzen| image:: http://ecx.images-amazon.com/images/I/413z-nHOErL._SL160_.jpg
+   :target: http://www.amazon.co.jp/exec/obidos/ASIN/4894713284/naoyadyndnsor-22/ref=nosim/
+.. |Vimテクニックバイブル　～作業効率をカイゼンする150の技| image:: http://ecx.images-amazon.com/images/I/51-u-wPOtlL._SL160_.jpg
+   :target: http://www.amazon.co.jp/exec/obidos/ASIN/4774147958/naoyadyndnsor-22/ref=nosim/
+.. |アジャイルサムライ−達人開発者への道−| image:: http://ecx.images-amazon.com/images/I/51b4P511wTL._SL160_.jpg
+   :target: http://www.amazon.co.jp/exec/obidos/ASIN/4274068560/naoyadyndnsor-22/ref=nosim/
+.. |Being Geek ―ギークであり続けるためのキャリア戦略| image:: http://ecx.images-amazon.com/images/I/416%2Bo3COOCL._SL160_.jpg
+   :target: http://www.amazon.co.jp/exec/obidos/ASIN/4873114993/naoyadyndnsor-22/ref=nosim/
+
+.. author:: default
+.. categories:: 本, 雑記
+.. tags:: 本, 雑記
+.. comments::

@@ -1,0 +1,34 @@
+MacBookAirにUbuntu10.04LTSを入れてみた[VirtualBox編]
+============================================================
+
+| `MacのVirtualBoxにLinuxのUbuntu 10.04をインストールする方法  <http://inforati.jp/apple/mac-tips-techniques/windows-hints/how-to-install-linux-ubuntu-to-mac-virtualbox.html>`__
+| を参考に。
+
+| 一度Windows7でやってるから基本ほっとくだけで何とかなった。
+| 一時期問題が発生してしまったのだが、
+| アップデートで解決したみたいなので一安心。
+| そのエラー内容というのが、
+
+|image0|
+
+| 上の画像で「仮想マシンの状態を保存」を選択しようとすると、
+| エラーが起きて、強制終了じゃないとVirtualBoxを落とせないという…
+| しばらくWindows弄らないといけなくて直すのは後回しにしてたけど、
+| さっさとアップデートすればよかったね。
+
+| しかし入れたはいいものの、
+| Mac：9割（メイン）
+| Windows：1割（ほぼExcel用）
+| でLinux使う機会ない…
+
+| SSDに余裕はあるのでしばらくほっときますが、
+| はたして使う機会はあるのか。
+| がっつり開発環境つくることにならないといじりそうにないな〜。
+
+.. |image0| image:: http://4.bp.blogspot.com/-hnETuC1eY8E/TqIzyicGncI/AAAAAAAAAYg/eQZjkF7zW6c/s400/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588+2011-10-22+12.08.41.png
+   :target: http://4.bp.blogspot.com/-hnETuC1eY8E/TqIzyicGncI/AAAAAAAAAYg/eQZjkF7zW6c/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588+2011-10-22+12.08.41.png
+
+.. author:: default
+.. categories:: Mac, VirtualBox, Ubuntu
+.. tags:: Mac, VirtualBox, Ubuntu
+.. comments::

@@ -1,0 +1,55 @@
+Herokuアカウント作ってみた
+================================
+
+Gitが使えるようになったので、勢いでアカウント作ってみました。
+後で詰まったところをまとめておかないと。
+さてHerokuとは…以下のリンクが詳しいですね。
+
+| ■\ `HerokuでWebアプリ開発を始めるなら知っておきたいこと <http://d.hatena.ne.jp/ruedap/20110429/ruby_heroku_web_app_development_tips_1>`__
+| ` (1)無料のスペック - アインシュタインの電話番号☎ <http://d.hatena.ne.jp/ruedap/20110429/ruby_heroku_web_app_development_tips_1>`__
+| ■\ `第3回 クラウドプラットフォーム「Heroku」の活用 \| Think IT <http://thinkit.co.jp/story/2011/03/23/2060>`__
+
+| 「へー、PythonでいうGAE(Google App Engine)みたいなものか」
+| という感覚だったのですが、
+| 以下のリンクを見て使ってみようと思いました。
+
+| ■ `InfoQ: Heroku上でPython と Django <http://www.infoq.com/jp/news/2011/10/python-django-heroku>`__
+| ■ `Heroku 上で Django を動かす - Twisted Mind <http://d.hatena.ne.jp/Voluntas/20110919/1316426034>`__
+
+| 標題のアカウント作成ですが、めっちゃ簡単でしたね…。
+| 赤いところを押して行って、
+
+|image0|
+
+| メールアドレス入れたらHerokuからメールが届きます。
+| そこでパスワードの設定をすればもう完了です。はやっ。
+
+|image1|
+
+| 完了したらこんな画面がでてきました。
+
+|image2|
+
+| これからインストールして試してみます。
+
+|image3|
+
+| 他の方のBlogとかは参考にしますけど、
+| それは詰まった時の最終手段としてやってみましょうかね。
+| 英語嫌いじゃないからいけるはず。
+| (`Gitの時 <http://kashewnuts-tech.blogspot.com/2011/10/github.html>`__\ は手こずったけど……)
+| Gitに続きいい英語のリハビリにもなりそうです。
+
+.. |image0| image:: http://2.bp.blogspot.com/-b7UgNE2wIj0/TrFpzbIOHXI/AAAAAAAAAdI/oK5mprxnTPs/s320/heroku01.jpg
+   :target: http://2.bp.blogspot.com/-b7UgNE2wIj0/TrFpzbIOHXI/AAAAAAAAAdI/oK5mprxnTPs/s1600/heroku01.jpg
+.. |image1| image:: http://1.bp.blogspot.com/-6XweF78Gs6Q/TrFp1qrqGOI/AAAAAAAAAdQ/PliH-Z6J95E/s320/heroku02.jpg
+   :target: http://1.bp.blogspot.com/-6XweF78Gs6Q/TrFp1qrqGOI/AAAAAAAAAdQ/PliH-Z6J95E/s1600/heroku02.jpg
+.. |image2| image:: http://1.bp.blogspot.com/-tqnpU6Uss9o/TrFp2HPGlhI/AAAAAAAAAdU/O-Zg-stj9Lc/s320/heroku03.jpg
+   :target: http://1.bp.blogspot.com/-tqnpU6Uss9o/TrFp2HPGlhI/AAAAAAAAAdU/O-Zg-stj9Lc/s1600/heroku03.jpg
+.. |image3| image:: http://3.bp.blogspot.com/-nI_5wLGGj1U/TrFp3DrxYhI/AAAAAAAAAdg/Ryz2eWz5OCE/s320/heroku04.jpg
+   :target: http://3.bp.blogspot.com/-nI_5wLGGj1U/TrFp3DrxYhI/AAAAAAAAAdg/Ryz2eWz5OCE/s1600/heroku04.jpg
+
+.. author:: default
+.. categories:: Git/Mercurial, Heroku, Python
+.. tags:: Git/Mercurial, Heroku, Python
+.. comments::

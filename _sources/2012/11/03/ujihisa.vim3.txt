@@ -1,0 +1,188 @@
+#ujihisa.vim #3に参加しました。
+================================================
+
+| **イベント詳細**
+|  `ujihisa.vim#3 <http://vim-jp.org/ujihisa.vim-3/>`__
+
+|image0|
+
+| **感想など**
+|  ふと思い立って、行って来ましたujihisa.vim。
+|  敢えて一言で感想を言わせてもらうなら、「Vimmer怖い……」
+|  発表がぶっとんでる…… これが上級Vimmerが集まりかと思いました。
+|  (特にマクロの話とかマクロの話とか)
+|  カーソル移動の話は非常に参考になったので、どのように操作したら
+|  効率がいいのか見直したいです。
+|  以下はBlogと言う名のメモ書きになります。
+
+| **オープニング**
+
+-  mixiの方から挨拶
+-  飲食はペットボトルのもののみOK
+
+| **発表(@kaoriya)**
+|
+| -  資料: `vim-jpの活動報告 <http://koron.github.com/ujihisa-201211/>`__
+| -  村岡太郎 @kaoriya
+| -  vim-jpってなんだっけ？
+|     バグの修正、新機能の提案、啓蒙活動
+| -  vimこわい
+| -  mvp二人が大体日本人が出すパッチの8割を書いてる。
+| -  vimdoc-ja, autofmt `Vim documentation: help <http://vim-jp.org/vimdoc-ja/>`__
+| -  cpp.vim →vim-jpによって管理されることになった。
+| -  vimrc読書会 http://vim-jp.org/reading-vimrc/
+| -  月刊vimマガジン http://vim-jp.org/vimmagazine/2012/10/31/vimmagazine.html
+| -  vim-jpの本質
+|
+|    -  スタンドプレーから生じるチームワーク
+|    -  やれることからやってみる
+|    -  途中で投げ出したって良いじゃない
+|        ちなみに飽きたのは
+|
+|       `vim標準の非同期インタフェースが欲しい <https://github.com/vim-jp/issues/issues/19>`__
+|
+| -  vimの未来
+|
+|    -  単一のメンテナの限界
+|    -  グループによる分割統治
+|        vim-jpがやっていることが先駆けになる
+
+| **発表(@basyura)**
+
+| -  資料: `ujihisa.vim #3 で発表した TweetVim 1.8 Release!! - basyura’s blog <http://d.hatena.ne.jp/basyura/20121103/p1>`__
+| -  The whirlwind evolution of TweetVim
+| -  ずっとjava1.4, C#, Silverlight, Ruby好きです。
+| -  TweetVimご存知のかた→ほぼ全員か。
+| -  TweetVim 24人ぐらい呟いてた→多いと思う。
+| -  Advent Calender 30日目で公開しました。
+| -  TweetVim1.8
+|
+|    -  now!今プッシュしたいと思います。リリースされました。
+|    -  末尾が...で省略される問題を解決 rhysd ++
+|    -  検索時の日付表示
+|
+| -  TweetVim1.9
+|
+|    -  非同期にタイムライン更新とか
+|    -  できならいいなと
+
+| **発表(@thinca)**
+
+| -  資料: `thinca gist: 4006236 — Gist <https://gist.github.com/4006236>`__
+| -  vital.vim
+| -  プラグイン開発者向け
+|     quickrun.vim, neocomplcache, uniteなど他のものでも使われている。
+| -  ライブラリ欲しい。
+| -  通常のライブラリの欠点
+|
+|    -  ユーザに別途入れて貰う必要がある。
+|    -  そこでvital.vimですよ。
+|
+| -  vital.vimとは
+|
+|    -  vim scriptのライブラリ郡
+|    -  モジュール単位で管理されている。
+|
+| -  モジュールを充実させたい。全然足りない。help。
+| -  テスト機能見直ししたい。一応あるが、結構適当。
+| -  外部モジュールも読めるうようにする！
+| -  vital 開発参加者待ってます！
+
+| **発表(@ujm)**
+|
+| -  HDMI出力のためプロジェクターに投影できない。→なんとか解決。
+| -  ujihisa
+| -  マイクラフトを知らない人は調べたり、やってみたりしないこと。
+|     ゲームで〜クラフトとかあるのはやったら駄目です。
+| -  ujihisa.vimのためにカナダから日本に来ました。
+| -  showtime.vimを使うつもりだったが、できない。
+| -  neosnippet.vimの紹介します。作ったのは@ShogoMatsuさんです。
+| -  neocomplcacheを使って、snippetの一覧を出してくれる。
+| -  unitesnippletだと更に簡単にsnippetの一覧を出してくれる。
+| -  C言語のHello, World!デモ
+| -  snippet Setup
+|
+|    -  install
+|    -  map expand key
+|    -  map jump key
+
+| **発表(toku)**
+
+| -  資料: `vim-jp/ujihisa.vim-3 · GitHub <https://github.com/vim-jp/ujihisa.vim-3/downloads>`__
+| -  匿名希望さん
+| -  マクロ漁船に乗ろう。
+| -  マクロを使ってお手軽プログラミング
+|     どれくらい使っている？→ほとんど使っていない。
+| -  "[a-z]
+| -  正規表現で小文字を大文字に変換することはできない→子、孫を使って実現！
+| -  マクロ漁船に乗る準備はいいか！→よくない！
+
+| **発表(@rbtnn)**
+|
+| -  資料: `About regex ujihisa.vim #3 <http://rbtnn.github.com/presentations/ujihisa.vim3/index.html>`__
+| -  vimrc800行
+| -  set numberをしてない。rulerに行数表示。
+| -  vimpluginは30個ほど。
+| -  自分のプラグイン Hexript について
+|     バイナリを書くプラグイン。quickrun対応。vinariseで見れる。
+| -  バイナリを書く上で、欲しい構文を募集中。
+| -  Twitterなどでリプライとかくれれば……
+| -  vital.vimに字句解析入れたいなと。
+
+| **発表(@deris0126)**
+|
+| -  資料: `ujihisa.vim#3で発表してきた - derisの日記 <http://d.hatena.ne.jp/deris/20121103/1351942725>`__
+| -  vim歴2年半。
+| -  カーソル移動について。
+| -  効率的に移動するには？横、縦移動。
+| -  横移動
+|
+|    -  ステップ1: ^S
+|        行末から近ければ。
+|    -  ステップ2: f(F) 行内で1つだけの文字を探す。
+|        記号＞数字＞大文字＞小文字
+|    -  ステップ3: w b h l
+|        数単語以内…w b, 同単語or数文字内…hlとf(F)
+|    -  ステップ1〜3のそれぞれを一瞬で判断できるように鍛錬が必要。
+|    -  あとは慣れと好み。
+|
+| -  縦移動
+|
+|    -  移動箇所が明確の時
+|
+|       -  gg G
+|       -  目的の単語を知っている。 ＊で検索（プラグイン）、その後/で検索
+|       -  どう画面内にある。{ } 5j 5k j kでアプローチ。後は横移動
+|
+|    -  眺めたいだけの時
+|
+|       -  ざっくり Ctrl+F, Ctrl+B
+|       -  細かく Ctrl+D, Ctrl+U
+|
+| -  おまけ: kjhl連打、おしっぱ
+| -  カーソル移動系Plugin
+|     vim-smartword, vim-visualstar, vim-easymotion, columnpjump, vim-submode, ……
+
+| **発表(@ShogoMatsu)**
+|
+| -  資料:
+|    `neobundle.vimについて+おまけ <http://www.slideshare.net/Shougo/neobundlevim>`__
+| -  Vim人 Tシャツ
+| -  neobundle.vim プログラマーたちよこれがテキストエディタだ。
+| -  VundleとneobudleはCとC++ぐらい違うよ。
+| -  NeoBundleLazyを使うとプラグインの遅延読み込みができる。
+
+| **参加者Blog・Toggeter・etc**
+|
+| -  `マクロ漁船について発表する人への反応 - Togetter <http://togetter.com/li/401111>`__
+| -  `How to become a practical Vim user <http://www.slideshare.net/whileimautomaton/how-to-become-a-practical-vim-user>`__
+| -  `ujihisa.vim#3 に行ってきた - 永遠に未完成 <http://d.hatena.ne.jp/thinca/20121104/1351976725>`__
+
+.. |image0| image:: http://2.bp.blogspot.com/-ByOUPnkWaF8/UJT0LT0GXOI/AAAAAAAAAk0/hVHXg19up08/s320/2012-11-03%2B12.44.38.jpg
+   :target: http://2.bp.blogspot.com/-ByOUPnkWaF8/UJT0LT0GXOI/AAAAAAAAAk0/hVHXg19up08/s1600/2012-11-03%2B12.44.38.jpg
+
+.. author:: default
+.. categories:: 勉強会, Vim
+.. tags:: 勉強会, Vim
+.. comments::
+

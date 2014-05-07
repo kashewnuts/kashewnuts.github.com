@@ -1,0 +1,16 @@
+本注文しました。
+================
+
+| * `フェイスブック 若き天才の野望 <http://rd.rakuten.co.jp/item_url/?sid=213310&iid=14197613>`__
+| * `スティーブ・ジョブズ驚異のプレゼン <http://rd.rakuten.co.jp/item_url/?sid=213310&iid=13709238>`__
+| * `マスタリングTCP／IP（入門編）第4版 <http://rd.rakuten.co.jp/item_url/?sid=213310&iid=12011470>`__
+| * `9割がバイトでも最高のスタッフに育つディズニーの教え方 <http://rd.rakuten.co.jp/cow/?R2=http%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F6873719%3Fs-id%3Dadm_browsehist_item&D2=50.392.2647.2989.356115>`__
+
+| 楽天ブックスはコンビニに届けるように設定すると、
+| 自動的に一括注文になるのだろうか…。
+| 早く本届かないかな。
+
+.. author:: default
+.. categories:: 本
+.. tags:: 本
+.. comments::

@@ -1,0 +1,32 @@
+次のJavaScript本はこれだな
+====================================
+
+| ■\ `パーフェクトJavaScriptはガチ本。 <http://d.hatena.ne.jp/sandai/20110930/p1>`__ `クソと言われる言語仕様をまとめあげた良書 - 三等兵  <http://d.hatena.ne.jp/sandai/20110930/p1>`__
+| ■\ `晴読雨読＠エンジニアライフ: 『パーフェクトJavaScript 』 <http://el.jibun.atmarkit.co.jp/bookshelf/2011/10/post-4166.html>`__
+| `――JavaScriptは「勉強しなくてもOK」な言語なのか？ <http://el.jibun.atmarkit.co.jp/bookshelf/2011/10/post-4166.html>`__
+
+|パーフェクトJavaScript (PERFECT SERIES 4)|
+
+| `パーフェクトJavaScript (PERFECT SERIES 4) <http://www.amazon.co.jp/exec/obidos/ASIN/477414813X/naoyadyndnsor-22/ref=nosim/>`__
+| posted with
+| `amazlet <http://www.amazlet.com/browse/ASIN/477414813X//ref=nosim/>`__
+| at 11.10.25
+| 井上 誠一郎 土江 拓郎 浜辺 将太
+| 技術評論社
+| 売り上げランキング: 5673
+| `Amazon.co.jp で詳細を見る <http://www.amazon.co.jp/exec/obidos/ASIN/477414813X/naoyadyndnsor-22/ref=nosim/>`__
+
+| JavaScript……
+| 今優先順位下がってるけど、勉強しないといけない言語の一つ。
+| 目下業務で触るのもこれくらいだもんね。
+| 効率良く業務で組めるようにするためにも鍛えていきたい言語。
+| 12月になるまでどのくらい取り組めるか分からないけど、
+| 楽天ブックスかAmazonでポチっておこう。
+
+.. |パーフェクトJavaScript (PERFECT SERIES 4)| image:: http://ecx.images-amazon.com/images/I/51yrjFsf-2L._SL160_.jpg
+   :target: http://www.amazon.co.jp/exec/obidos/ASIN/477414813X/naoyadyndnsor-22/ref=nosim/
+
+.. author:: default
+.. categories:: JavaScript, 本
+.. tags:: JavaScript, 本
+.. comments::

@@ -1,0 +1,14 @@
+Android実機欲しい。
+==========================
+
+| 今気になっているのがこれ↓
+| `http://www.act2.com/products/ideos.html <http://www.act2.com/products/ideos.html>`__
+| Wi-Fi運用だけなら初期費2万後半で、
+| 通信費かからないからいいかと思ったり。
+| でもFirefoxは使えないんだそうな。
+| 実験用に購入してしまうのもありだと思うけど…。
+
+.. author:: default
+.. categories:: Android
+.. tags:: Android
+.. comments::

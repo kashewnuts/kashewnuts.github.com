@@ -1,0 +1,39 @@
+HerokuでDjangoしてみました。
+========================================
+
+| `Heroku 上で Django を動かす - Twisted Mind <http://d.hatena.ne.jp/Voluntas/20110919/1316426034>`__ 試して見ました。
+| すると今まで悩んでたのが嘘みたいにあっさりできました。
+| タイポでこんなエラーもでましたが(焦りすぎ。'pattterns'て何よ）、
+
+|image0|
+
+| しっかり動くようになりましたよ〜。
+| Top
+| `http://warm-mountain-4083.herokuapp.com/ <http://warm-mountain-4083.herokuapp.com/>`__
+
+| 管理画面
+| `http://warm-mountain-4083.herokuapp.com/admin/ <http://warm-mountain-4083.herokuapp.com/admin/>`__
+
+| 最初は
+| `Getting Started with Python/Django on Heroku/Cedar <http://devcenter.heroku.com/articles/django#syncing_the_database>`__
+
+| を見ながら進めていたんですが、
+| DBが絡んできたあたりからチュートリアルの通りに進まなくなったため、
+| 「一連の流れを早く体験したい！」
+| の思いでやってしまいました。
+
+| Djangoのチュートリアルと一緒にやってしまったから、
+| 何故かPostgres入れたりして環境がごちゃごちゃにorz
+| まあ「失敗は成功のもと」と言いますので、
+| 気長にやっていきましょう……
+
+| ただ写経しただけだとこのままだと忘れてしまうので、
+| 何故そうしたのか考えながらもう一度試してみようと思います。
+
+.. |image0| image:: http://3.bp.blogspot.com/-PTMRWQroEtI/Ts5LS9x-6NI/AAAAAAAAAe4/attesWAZgg4/s400/Heroku-NameError.jpg
+   :target: http://3.bp.blogspot.com/-PTMRWQroEtI/Ts5LS9x-6NI/AAAAAAAAAe4/attesWAZgg4/s1600/Heroku-NameError.jpg
+
+.. author:: default
+.. categories:: Git/Mercurial, Heroku, Python
+.. tags:: Git/Mercurial, Heroku, Python
+.. comments::
