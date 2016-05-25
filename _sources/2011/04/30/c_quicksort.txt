@@ -6,7 +6,7 @@ C言語 配列を使わないクイックソート
 恐らくpivotやiptr,jptrなどポインタにしたとこが動きまくってると思うのだが、
 いったいどうしたことか…。
 
-.. code-block:: c
+.. code-block:: guess
 
     /* Qソートを行う */
     void qsort(int *left, int *right)
@@ -43,7 +43,7 @@ C言語 配列を使わないクイックソート
         *j = temp;
     }
 
-.. code-block:: c
+.. code-block:: guess
 
     void qsort(int x[], int left, int right)
     {

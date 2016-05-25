@@ -1,0 +1,353 @@
+<!DOCTYPE html><!--[if lt IE 7]>      <html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="https://www.facebook.com/2008/fbml" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="https://www.facebook.com/2008/fbml" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="https://www.facebook.com/2008/fbml" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="https://www.facebook.com/2008/fbml" class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="description" content="My blog">
+        <meta name="viewport" content="width=device-width">
+        <title>WindowsでGolang開発環境構築 &mdash; kashew_nuts-blog</title>
+            <link rel="stylesheet" href="../../../_static/normalize.css" type="text/css">
+            <link rel="stylesheet" href="../../../_static/sphinx.css" type="text/css">
+            <link rel="stylesheet" href="../../../_static/main.css" type="text/css">
+            <link rel="stylesheet" href="../../../_static/dark.css" type="text/css">
+            <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+            <link rel="stylesheet" href="../../../_static/font-awesome.min.css" type="text/css">
+        <link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="shortcut icon" href="../../../_static/tinkerer.ico" /><!-- Load modernizr and JQuery -->
+        <script src="../../../_static/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="../../../_static/vendor/jquery-1.8.2.min.js"><\/script>')</script>
+        <script src="../../../_static/plugins.js"></script>
+        <script src="../../../_static/main.js"></script>
+        <link rel="next" title="Python Developers Festa2013.11に参加しました #pyfes" href="../../../2013/11/30/pyfes201311.html" /><link rel="prev" title="私的マークアップ言語編集環境" href="../25/markupenv.html" /><link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/bitbucket/BVDY" /><script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script><script type="text/javascript" src="../../../_static/underscore.js"></script><script type="text/javascript" src="../../../_static/doctools.js"></script><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script><script type="text/javascript" src="../../../_static/disqus.js"></script><script type="text/javascript" src="../../../_static/google_analytics.js"></script>
+    <meta property="fb:admins" content="200170096719194"/>
+    
+
+    <script type="text/javascript">
+        $(document).ready(function(){var a=document.getElementsByTagName("article")[0],b=document.getElementsByTagName("aside")[0];b.offsetHeight>a.offsetHeight&&(a.style.minHeight=b.offsetHeight+"px");480>screen.width&&$(document).scrollTop(a.offsetTop-44)});
+    </script>
+</head>
+    <body role="document">
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+      <div id="container"><div class="header-container">
+    <header class="wrapper clearfix">
+        <div class="title">
+          <h1><a href="../../../index.html">kashew_nuts-blog</a></h1>
+          <h4>Load To Pythonista</h4>
+        </div>
+        <nav>
+          <ul>
+            <li class="main-nav">
+              <a href="../../../index.html">Home</a>
+            </li>
+            <li><a href='http://kashewnuts.bitbucket.org/archive.html'>Archive</a></li><li class="quicklink"><div class="rss">
+        <a href="http://feeds.feedburner.com/bitbucket/BVDY" title="Subscribe via RSS"><span class="fa fa-lg fa-rss"></span></a>
+    </div></li></ul>
+        </nav>
+    </header>
+</div>
+
+<div class="main-container" role="main"><div class="main wrapper body clearfix"><article role="article"><ul class="related clearfix">
+            <li class="left"> &laquo; <a href="../25/markupenv.html">私的マークアップ言語編集環境</a></li>
+            <li class="right"><a href="../../../2013/11/30/pyfes201311.html">Python Developers Festa2013.11に参加しました #pyfes</a> &raquo; </li>
+        </ul>
+    <div class="section" id="windowsgolang">
+<h1>WindowsでGolang開発環境構築</h1>
+<div class="section" id="golang">
+<h2>Golangインストール</h2>
+<p><a class="reference external" href="http://golang-jp.org/doc/install">インストーラー</a> をダウンロードしてインストール(C:Go)</p>
+<div class="section" id="id2">
+<h3>環境変数設定</h3>
+<p>以下の環境変数を追加</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">GOROOT:</th><td class="field-body">C:\Go</td>
+</tr>
+<tr class="field-even field"><th class="field-name">GOPATH:</th><td class="field-body">C:\Go\goprojects</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">PATH:</th><td class="field-body">%GOROOT%\bin;%GOPATH%\bin</td>
+</tr>
+</tbody>
+</table>
+<p>GOROOTはGolangをインストールした場所、GOPATHはユーザーのワーキングディレクトリ(好きな場所で良い)を指定。</p>
+<p>セットアップできたら動作確認をする。</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ go version
+go version go1.6 windows/amd64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="vim">
+<h2>Vim設定</h2>
+<p>GolangはAtom, Eclipse, Emacs, Gedit, IntelliJ IDEA, LiteIDE, Notepad++, SublimeText, VisualStudio(Code)と様々なエディタ、IDEでサポートされていますが、ここではVimを使います。</p>
+<div class="section" id="id3">
+<h3>インデントの設定</h3>
+<p>Golangはハードタブなのでvimrcに下記を設定
+~/.vim/after/ftplugin/&lt;filetype&gt;.vimに書くことでFileTypeごとの設定を記述できる．</p>
+<div class="highlight-vim"><div class="highlight"><pre><span></span><span class="c">&quot; .vim/after/ftplugin/go.vim</span>
+<span class="k">set</span> <span class="nb">noexpandtab</span>
+<span class="k">set</span> <span class="nb">tabstop</span><span class="p">=</span><span class="m">4</span>
+<span class="k">set</span> <span class="nb">shiftwidth</span><span class="p">=</span><span class="m">4</span>
+<span class="k">set</span> <span class="nb">softtabstop</span><span class="p">=</span><span class="m">4</span>
+</pre></div>
+</div>
+<p>わざわざファイルを新しく用意するのが面倒という人はvimrcに以下のように書くといい。記述している内容は一緒だ。</p>
+<div class="highlight-vim"><div class="highlight"><pre><span></span><span class="c">&quot; vimrc</span>
+autocmd <span class="nb">FileType</span> <span class="k">go</span>         <span class="k">setl</span> <span class="k">ts</span><span class="p">=</span><span class="m">4</span> <span class="k">sw</span><span class="p">=</span><span class="m">4</span> <span class="k">sts</span><span class="p">=</span><span class="m">4</span> <span class="nb">noet</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>プラグイン導入</h3>
+<p><a class="reference external" href="https://github.com/fatih/vim-go">fatih/vim-go</a> をお好みのPluginManagerでインストール(ここでは
+<a class="reference external" href="https://github.com/Shougo/dein.vim">Shougo/dein.vim</a> を使用)</p>
+<div class="highlight-vim"><div class="highlight"><pre><span></span><span class="c">&quot; vimrcに記述する場合</span>
+<span class="k">call</span> dein#add<span class="p">(</span><span class="s1">&#39;fatih/vim-go&#39;</span><span class="p">,</span> {<span class="s1">&#39;on_ft&#39;</span>: <span class="s1">&#39;go&#39;</span>}<span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-text"><div class="highlight"><pre><span></span># tomlに記述する場合
+[[plugins]]
+repo = &#39;fatih/vim-go&#39;
+on_ft = &#39;go&#39;
+</pre></div>
+</div>
+<p>コード補完やSyntaxHighlightを有効にするには下記をvimrcに記載するのをお忘れなく。</p>
+<div class="highlight-vim"><div class="highlight"><pre><span></span><span class="c">&quot; vimrc</span>
+<span class="k">filetype</span> plugin indent <span class="k">on</span>
+<span class="nb">syntax</span> <span class="k">on</span>
+</pre></div>
+</div>
+<p>設定ファイルに記述しプラグインをインストールしたら、vimのコマンドラインより下記のコマンドを叩く。</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>:GoInstallBinaries
+</pre></div>
+</div>
+<p>2016-05-16時点でfatih/vim-goを導入すると下記がインストールされる。</p>
+<ul class="simple">
+<li>asmfmt.exe</li>
+<li>errcheck.exe</li>
+<li>gocode.exe</li>
+<li>godef.exe</li>
+<li>gogetdoc.exe</li>
+<li>goimports.exe</li>
+<li>golint.exe</li>
+<li>gometalinter.exe</li>
+<li>gorename.exe</li>
+<li>gotags.exe</li>
+<li>guru.exe</li>
+<li>impl.exe</li>
+<li>motion.exe</li>
+<li>oracle.exe</li>
+</ul>
+<p>自分のvimrcをご覧になりたい方は <a class="reference external" href="https://github.com/kashewnuts/dotfiles/blob/master/files/.vim/vimrc">こちら</a></p>
+</div>
+</div>
+<div class="section" id="hello-golang-world">
+<h2>Hello, Golang World!</h2>
+<p>プログラムを書いてみる。
+コード補完(&lt;C-x&gt;&lt;C-o&gt;)やリントツール、フォーマッタなど豊富なサポートが得られることが確認できる。</p>
+<div class="highlight-go"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kn">import</span> <span class="s">&quot;fmt&quot;</span>
+
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;Hello, Golang world!\n&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ go run hello.go
+Hello, Golang world!
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>おまけ</h2>
+<p>よくag(the_silver_searcher)を使ってgrepを高速実行しようという記事が見受けられるが、ここではGolang製の
+<a class="reference external" href="https://github.com/mattn/jvgrep">mattn/jvgrep</a>
+を使ってみる。
+動作が高速でマルチエンコーディングに対応しており、Windowsでのインストールも簡単なので入れておいて損はない。</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ go get github.com/mattn/jvgrep
+</pre></div>
+</div>
+<div class="highlight-vim"><div class="highlight"><pre><span></span><span class="c">&quot; vimrcに記述</span>
+<span class="k">if</span> executable<span class="p">(</span><span class="s1">&#39;jvgrep&#39;</span><span class="p">)</span>
+  <span class="k">set</span> <span class="nb">grepprg</span><span class="p">=</span>jvgrep
+<span class="k">endif</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://github.com/Shougo/unite.vim">Shougo/unite.vim</a>
+のgrep処理でもjvgrepを使用できるよう設定できるので、興味がある人は設定してみるといいかもしれない。</p>
+<div class="highlight-vim"><div class="highlight"><pre><span></span><span class="c">&quot; vimrcに記述</span>
+<span class="k">if</span> executable<span class="p">(</span><span class="s1">&#39;jvgrep&#39;</span><span class="p">)</span>
+  <span class="k">let</span> <span class="k">g</span>:unite_source_grep_command <span class="p">=</span> <span class="s1">&#39;jvgrep&#39;</span>
+  <span class="k">let</span> <span class="k">g</span>:unite_source_grep_default_opts <span class="p">=</span> <span class="s1">&#39;-i --exclude &quot;&quot;\.(git|svn|hg|bzr)&quot;&quot;&#39;</span>
+  <span class="k">let</span> <span class="k">g</span>:unite_source_grep_recursive_opt <span class="p">=</span> <span class="s1">&#39;-R&#39;</span>
+<span class="k">endif</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>参考</h2>
+<ul class="simple">
+<li><a class="reference external" href="http://qiita.com/izumin5210/items/1f3c312edd7f0075b09c#%E6%AF%8E%E5%9B%9E%E5%85%A5%E3%82%8C%E3%82%8B%E3%83%97%E3%83%A9%E3%82%B0%E3%82%A4%E3%83%B3%E3%81%A8%E3%81%8B">【Go × Vim】 VimでGoを書く - 2015 Spring - Qiita</a></li>
+<li><a class="reference external" href="http://www.muo.jp/2015/06/vim-and-go.html">弱Vim使いが中途半端な予備知識でGoを書き始めたら - muo-notes</a></li>
+<li><a class="reference external" href="http://mattn.kaoriya.net/software/lang/go/20110819203649.htm">Big Sky :: 日本語grepが出来るjvgrepというのを作った。</a></li>
+</ul>
+</div>
+</div>
+
+    <br/>
+<div class="ninja_onebutton">
+<script type="text/javascript">
+//<![CDATA[
+(function(d){
+if(typeof(window.NINJA_CO_JP_ONETAG_BUTTON_19c65bbca74baa771bde1c23ed436979)=='undefined'){
+    document.write("<sc"+"ript type='text\/javascript' src='http:\/\/omt.shinobi.jp\/b\/19c65bbca74baa771bde1c23ed436979'><\/sc"+"ript>");
+}else{
+    window.NINJA_CO_JP_ONETAG_BUTTON_19c65bbca74baa771bde1c23ed436979.ONETAGButton_Load();}
+})(document);
+//]]>
+</script><span class="ninja_onebutton_hidden" style="display:none;"></span><span style="display:none;" class="ninja_onebutton_hidden"></span>
+</div>
+    <div class="postmeta">
+        <div class="author">
+            <span>Posted by <a href='https://twitter.com/kashew_nuts'>Kashun YOSHIDA</a></span>
+        </div>
+        <div class="categories">
+            <span>
+                Filed under:
+                <a href="../../../categories/windows.html">Windows</a>, <a href="../../../categories/golang.html">Golang</a>, <a href="../../../categories/vim.html">Vim</a></span>
+        </div>
+        <div class="tags">
+            <span>
+                Tags:
+                <a href="../../../tags/windows.html">Windows</a>, <a href="../../../tags/golang.html">Golang</a>, <a href="../../../tags/vim.html">Vim</a></span>
+        </div>
+        </div>
+    <div id="disqus_thread"></div><script type="text/javascript">    var disqus_shortname = "kashewnutsblog";    var disqus_identifier = "2016/05/17/windowsgolangenv";    disqus_thread();</script><noscript>Please enable JavaScript to view the    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<ul class="related clearfix">
+            <li class="left"> &laquo; <a href="../25/markupenv.html">私的マークアップ言語編集環境</a></li>
+            <li class="right"><a href="../../../2013/11/30/pyfes201311.html">Python Developers Festa2013.11に参加しました #pyfes</a> &raquo; </li>
+        </ul></article><aside class="sidebar"><section><div class="widget">
+    <h1>About Me</h1>
+    <div>
+        <a href="http://about.me/kashew_nuts">
+            <img src="https://pbs.twimg.com/profile_images/378800000438956976/3e61e7ae64d916ba0451a44c3b8ce347.jpeg"
+            width="128px"
+            height="128px" />
+        </a>
+        <h4><a href="https://twitter.com/kashew_nuts">kashew_nuts
+                (KashunYOSHIDA)</a></h4>
+        <p>人生という壁を登るSoftwareDeveloper</p>
+    </div>
+</div></section><section><div class="widget" id="searchbox" role="search">
+    <h1><a href="#searchbox">Search</a></h1>
+    <form action="../../../search.html" method="get">
+        <input type="text" name="q" />
+        <button type="submit"><span class="fa fa-search"></span></button>
+    </form>
+</div></section><section><div class="widget">
+    <h1>Recent Posts</h1>
+    <ul><li>
+            <a href="../25/markupenv.html">私的マークアップ言語編集環境</a>
+        </li><li>
+            <a href="#">WindowsでGolang開発環境構築</a>
+        </li><li>
+            <a href="../../../2013/11/30/pyfes201311.html">Python Developers Festa2013.11に参加しました #pyfes</a>
+        </li><li>
+            <a href="../../../2013/11/17/setupposhgit.html">WindowsでGitを使う時はposh-gitを入れよう</a>
+        </li><li>
+            <a href="../../../2013/11/16/vimconf2013.html">#VimConf2013 に参加しました</a>
+        </li><li>
+            <a href="../../../2013/10/12/tddbc_sendai_3rd.html">TDDBC 仙台 the 3rd に行ってきました #tddbc</a>
+        </li><li>
+            <a href="../../../2013/09/17/pyconapac2013.html">PyCon APAC 2013 に参加しました #pyconapac #pyconjp</a>
+        </li><li>
+            <a href="../../../2013/08/25/vagrantvbguest.html">Vagrant で共有フォルダが使用できなくなったので解決メモ</a>
+        </li><li>
+            <a href="../../../2013/08/17/sphinxhackathon201308.html">Sphinx-Hack-a-thon2013.08に参加しました #sphinxjp</a>
+        </li><li>
+            <a href="../../../2013/07/27/pyfes201307.html">Python Developers Festa2013.07に参加しました #pyfes</a>
+        </li></ul>
+</div>
+</section><section><div class="widget">
+    <h1>Categories</h1>
+    <ul><li><a href="../../../categories/64bit.html">64bit</a> (2)</li><li><a href="../../../categories/android.html">Android</a> (3)</li><li><a href="../../../categories/bouldering.html">bouldering</a> (2)</li><li><a href="../../../categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="../../../categories/c_c.html">C/C++</a> (5)</li><li><a href="../../../categories/chrome.html">Chrome</a> (2)</li><li><a href="../../../categories/db.html">DB</a> (1)</li><li><a href="../../../categories/django.html">Django</a> (5)</li><li><a href="../../../categories/facebook.html">Facebook</a> (1)</li><li><a href="../../../categories/firefox.html">Firefox</a> (1)</li><li><a href="../../../categories/git.html">Git</a> (1)</li><li><a href="../../../categories/git_mercurial.html">Git/Mercurial</a> (7)</li><li><a href="../../../categories/golang.html">Golang</a> (1)</li><li><a href="../../../categories/google.html">Google</a> (5)</li><li><a href="../../../categories/heroku.html">Heroku</a> (6)</li><li><a href="../../../categories/java.html">Java</a> (2)</li><li><a href="../../../categories/javascript.html">JavaScript</a> (4)</li><li><a href="../../../categories/kabepy.html">kabepy</a> (2)</li><li><a href="../../../categories/lt.html">LT</a> (5)</li><li><a href="../../../categories/mac.html">Mac</a> (6)</li><li><a href="../../../categories/pyfes.html">pyfes</a> (7)</li><li><a href="../../../categories/python.html">Python</a> (45)</li><li><a href="../../../categories/sphinx.html">Sphinx</a> (5)</li><li><a href="../../../categories/ssd.html">SSD</a> (1)</li><li><a href="../../../categories/tddbc.html">TDDBC</a> (1)</li><li><a href="../../../categories/tinkerer.html">Tinkerer</a> (5)</li><li><a href="../../../categories/ubuntu.html">Ubuntu</a> (1)</li><li><a href="../../../categories/vagrant.html">Vagrant</a> (1)</li><li><a href="../../../categories/vim.html">Vim</a> (14)</li><li><a href="../../../categories/vimconf.html">VimConf</a> (1)</li><li><a href="../../../categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="../../../categories/windows.html">Windows</a> (2)</li><li><a href="../../../categories/windows7.html">Windows7</a> (4)</li><li><a href="../../../categories/アルゴリズム.html">アルゴリズム</a> (1)</li><li><a href="../../../categories/セキュリティ.html">セキュリティ</a> (2)</li><li><a href="../../../categories/ネットワーク.html">ネットワーク</a> (1)</li><li><a href="../../../categories/プログラミング.html">プログラミング</a> (7)</li><li><a href="../../../categories/勉強会.html">勉強会</a> (30)</li><li><a href="../../../categories/応用情報技術者.html">応用情報技術者</a> (10)</li><li><a href="../../../categories/情報処理技術者試験.html">情報処理技術者試験</a> (10)</li><li><a href="../../../categories/本.html">本</a> (29)</li><li><a href="../../../categories/開発環境.html">開発環境</a> (11)</li><li><a href="../../../categories/雑記.html">雑記</a> (35)</li><li><a href="../../../categories/高速化.html">高速化</a> (1)</li></ul>
+</div></section><section><div class="widget">
+    <h1>Tags Cloud</h1>
+      <a href="../../../tags/64bit.html" style="font-size: 8pt">64bit</a>&nbsp;&nbsp;
+      <a href="../../../tags/android.html" style="font-size: 8pt">Android</a>&nbsp;&nbsp;
+      <a href="../../../tags/bouldering.html" style="font-size: 8pt">bouldering</a>&nbsp;&nbsp;
+      <a href="../../../tags/bpstudy.html" style="font-size: 8pt">BPStudy</a>&nbsp;&nbsp;
+      <a href="../../../tags/c_c.html" style="font-size: 9pt">C/C++</a>&nbsp;&nbsp;
+      <a href="../../../tags/chrome.html" style="font-size: 8pt">Chrome</a>&nbsp;&nbsp;
+      <a href="../../../tags/db.html" style="font-size: 8pt">DB</a>&nbsp;&nbsp;
+      <a href="../../../tags/django.html" style="font-size: 9pt">Django</a>&nbsp;&nbsp;
+      <a href="../../../tags/facebook.html" style="font-size: 8pt">Facebook</a>&nbsp;&nbsp;
+      <a href="../../../tags/firefox.html" style="font-size: 8pt">Firefox</a>&nbsp;&nbsp;
+      <a href="../../../tags/git.html" style="font-size: 8pt">Git</a>&nbsp;&nbsp;
+      <a href="../../../tags/git_mercurial.html" style="font-size: 9pt">Git/Mercurial</a>&nbsp;&nbsp;
+      <a href="../../../tags/golang.html" style="font-size: 8pt">Golang</a>&nbsp;&nbsp;
+      <a href="../../../tags/google.html" style="font-size: 9pt">Google</a>&nbsp;&nbsp;
+      <a href="../../../tags/heroku.html" style="font-size: 9pt">Heroku</a>&nbsp;&nbsp;
+      <a href="../../../tags/java.html" style="font-size: 8pt">Java</a>&nbsp;&nbsp;
+      <a href="../../../tags/javascript.html" style="font-size: 8pt">JavaScript</a>&nbsp;&nbsp;
+      <a href="../../../tags/kabepy.html" style="font-size: 8pt">kabepy</a>&nbsp;&nbsp;
+      <a href="../../../tags/lt.html" style="font-size: 9pt">LT</a>&nbsp;&nbsp;
+      <a href="../../../tags/mac.html" style="font-size: 9pt">Mac</a>&nbsp;&nbsp;
+      <a href="../../../tags/pyfes.html" style="font-size: 9pt">pyfes</a>&nbsp;&nbsp;
+      <a href="../../../tags/python.html" style="font-size: 20pt">Python</a>&nbsp;&nbsp;
+      <a href="../../../tags/sphinx.html" style="font-size: 9pt">Sphinx</a>&nbsp;&nbsp;
+      <a href="../../../tags/ssd.html" style="font-size: 8pt">SSD</a>&nbsp;&nbsp;
+      <a href="../../../tags/tddbc.html" style="font-size: 8pt">TDDBC</a>&nbsp;&nbsp;
+      <a href="../../../tags/tinkerer.html" style="font-size: 9pt">Tinkerer</a>&nbsp;&nbsp;
+      <a href="../../../tags/ubuntu.html" style="font-size: 8pt">Ubuntu</a>&nbsp;&nbsp;
+      <a href="../../../tags/vagrant.html" style="font-size: 8pt">Vagrant</a>&nbsp;&nbsp;
+      <a href="../../../tags/vim.html" style="font-size: 11pt">Vim</a>&nbsp;&nbsp;
+      <a href="../../../tags/vimconf.html" style="font-size: 8pt">VimConf</a>&nbsp;&nbsp;
+      <a href="../../../tags/virtualbox.html" style="font-size: 8pt">VirtualBox</a>&nbsp;&nbsp;
+      <a href="../../../tags/windows.html" style="font-size: 8pt">Windows</a>&nbsp;&nbsp;
+      <a href="../../../tags/windows7.html" style="font-size: 8pt">Windows7</a>&nbsp;&nbsp;
+      <a href="../../../tags/アルゴリズム.html" style="font-size: 8pt">アルゴリズム</a>&nbsp;&nbsp;
+      <a href="../../../tags/セキュリティ.html" style="font-size: 8pt">セキュリティ</a>&nbsp;&nbsp;
+      <a href="../../../tags/ネットワーク.html" style="font-size: 8pt">ネットワーク</a>&nbsp;&nbsp;
+      <a href="../../../tags/プログラミング.html" style="font-size: 9pt">プログラミング</a>&nbsp;&nbsp;
+      <a href="../../../tags/勉強会.html" style="font-size: 15pt">勉強会</a>&nbsp;&nbsp;
+      <a href="../../../tags/応用情報技術者.html" style="font-size: 10pt">応用情報技術者</a>&nbsp;&nbsp;
+      <a href="../../../tags/情報処理技術者試験.html" style="font-size: 10pt">情報処理技術者試験</a>&nbsp;&nbsp;
+      <a href="../../../tags/本.html" style="font-size: 15pt">本</a>&nbsp;&nbsp;
+      <a href="../../../tags/開発環境.html" style="font-size: 10pt">開発環境</a>&nbsp;&nbsp;
+      <a href="../../../tags/雑記.html" style="font-size: 17pt">雑記</a>&nbsp;&nbsp;
+      <a href="../../../tags/高速化.html" style="font-size: 8pt">高速化</a>
+</div></section><section><a class="twitter-timeline" href="https://twitter.com/kashew_nuts" data-widget-id="346143902467768320">@kashew_nuts からのツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></section></aside></div> <!-- #main --></div> <!-- #main-container -->
+
+        <div class="footer-container" role="contentinfo"><footer class="wrapper">&copy; Copyright 2011-2014, Kashun YOSHIDA. Powered by <a href="http://www.tinkerer.me/">Tinkerer</a> and <a href="http://sphinx.pocoo.org/">Sphinx</a>.</footer></div> <!-- footer-container -->
+
+      </div> <!--! end of #container --><!--[if lt IE 7 ]>
+          <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+          <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+        <![endif]-->
+    </body>
+</html>

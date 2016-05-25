@@ -5,14 +5,14 @@ Herokuインストールdone…
 | そういえばRubyはXcode入れた時に一緒に入っている！
 | Rubyはあえてインストールせず、
 
-.. code-block:: bash
+.. code-block:: guess
 
     sudo gem install heroku
 
 | したらあっさり入れられました。
 | バージョンは1.8系なんだね。へー。
 
-.. code-block:: bash
+.. code-block:: guess
 
     Successfully installed term-ansicolor-1.0.7
     Successfully installed mime-types-1.17.2
@@ -44,7 +44,7 @@ Herokuインストールdone…
 | p.s.
 | sudoつけないでインストールしようとしたら、
 
-.. code-block:: bash
+.. code-block:: guess
 
     ERROR:  While executing gem ... (Gem::FilePermissionError)
         You don't have write permissions into the /Library/Ruby/Gems/1.8 directory.
