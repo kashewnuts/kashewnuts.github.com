@@ -5,8 +5,154 @@
         <link>http://kashewnuts.bitbucket.org/</link>
         <description>Load To Pythonista</description>
         <language>en-us</language>
-        <pubDate>Tue, 27 Sep 2016 00:00:00 +0900</pubDate>
+        <pubDate>Tue, 08 Nov 2016 00:00:00 +0900</pubDate>
         
+        <item>
+            <link>http://kashewnuts.bitbucket.org/2016/11/08/vimconf2016.html</link>
+            <guid>http://kashewnuts.bitbucket.org/2016/11/08/vimconf2016.html</guid>
+            <title><![CDATA[#vimconf2016 に参加しました]]></title>
+            <description><![CDATA[<h1>#vimconf2016 に参加しました</h1>
+<a class="reference internal image-reference" href="http://kashewnuts.bitbucket.org/_images/vimconf2016.jpg"><img alt="../../../_images/vimconf2016.jpg" src="http://kashewnuts.bitbucket.org/_images/vimconf2016.jpg" style="width: 300px; height: 200px;"/></a>
+<p>ujihisa.vimを含めると3年ぶり3回目の参加となったvimconf2016。全部は書ききれないのでメモをとれたやつだけ書きます。</p>
+<p>例年の傾向を見てると参加者Blogとかは公式の方にまとめられ、動画もYouTubeの <a class="reference external" href="https://www.youtube.com/channel/UCSk7TnXVB0BMtY416dmFMuw">vim-jp</a> にまとめれるようなので後から振り返りたいかたはそちらをチェックされるとよろしいかと。</p>
+<ul class="simple">
+<li><a class="reference external" href="http://vimconf.vim-jp.org/2016/">VimConf 2016</a></li>
+<li><a class="reference external" href="http://vimconf.connpass.com/event/43483/">VimConf 2016 - connpass</a></li>
+<li><a class="reference external" href="http://togetter.com/li/1045761">VimConf 2016 のまとめ - Togetterまとめ</a></li>
+</ul>
+<div class="section" id="id1">
+<h2><a class="reference external" href="http://www.slideshare.net/k-takata/introduction-to-vim-80">Introduction to Vim 8.0 by Ken Takata</a></h2>
+<ul class="simple">
+<li>Vim 8.0の新機能の紹介および、開発の軌跡について。また、日本人の活躍についても紹介</li>
+<li>「vim-jpはあなたのコントリビューションをお待ちしております。」</li>
+<li>いちばん楽しかったのは？(@ujm)→DirectX、常にONにしてる。後はspellチェックで日本語の検出を除外する機能。</li>
+<li><a class="reference external" href="http://vim-jp.org/blog/2016/09/13/vim8.0-features.html">vim-jp » Vim 8.0 新機能解説</a></li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2><a class="reference external" href="https://speakerdeck.com/bird_nitryn/vim-as-the-main-text-editor-number-vimconf2016">Vim as the MAIN text editor by bird_nitryn</a></h2>
+<ul class="simple">
+<li>使い始めて1年ぐらい。VSCode→Vimに。Vimはすべてキーボードで操作が完結するのが魅力。</li>
+<li>とにかくVimの機能を使いまくる→vimrcを育てる</li>
+<li>慣れるために→Vimium導入, vimを触る時間を増やす。</li>
+<li>vimrc: 116行→188行 neobundle→dein。色んな言語を触るようになったのでタブやステータスラインをいじったり。</li>
+<li>突如始まったvimrc読書会が面白かった（笑）</li>
+<li>具体的になぜVSCode→Vimに？<ul>
+<li>ホストPCがWindowsでvagrantでCentOS。node.jsのパッケージマネージャの制限でフォルダ共有してるとコケる。</li>
+<li>それを叩くたびに味わっていた。共有やめたいCentOS上でいじりたい。</li>
+<li>EmacsかVimか？→じゃあVimだということでVimに。</li>
+</ul>
+</li>
+<li>これだけは避けた方がいいプラクティスは？<ul>
+<li>宗教戦争はこだわりなので。vimrcをすごく書き込んでる人と育ててる段階の様々な人がいるので、自分と同じぐらいのレベル、自分が読んでわかりやすいレベルのものからやるといい。</li>
+</ul>
+</li>
+<li>転向してきてテンションが上がった機能、プラグインは？<ul>
+<li>VimFiler。カーソル移動ができる。Vimをいじってる人とすればすごく直観的だった。</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2><a class="reference external" href="https://gist.github.com/Shougo/7c78b3a1725f70c1435d004ed14f2558">Denite.nvim ~The next generation of unite~ by Shougo</a></h2>
+<ul class="simple">
+<li>テキストエディタとは何か？「生きる理由。」</li>
+<li>deniteとは何か？unite.vimをフルスクラッチで書き直したもの。Python3で書かれていて、neovim/vim8.0+で動作。</li>
+<li>なぜdenie.nvimを作ろうとした？→”unite.vim slow”</li>
+<li>とくに遅いといわれていた、grepやfile_recが速くなる。候補のサジェストも。<ul>
+<li>unite grepでは数十秒→denite.nvimとcpsmで1,2秒に</li>
+</ul>
+</li>
+<li>unitne.vimがdenite.nvimのソースを持っているのでdenite.nvimはunite.vimを呼べる。</li>
+<li>次はdeoplete.nvimをVim8.0+に対応予定。<ul>
+<li>他にneosnippet, vinarise, vimshell, vimfilerも対応予定。一番優先度が高いのはvimshell</li>
+</ul>
+</li>
+<li>if_python3の拡張、WindowIDの機能、etcの機能を安定して使うのにVim8.0+を選んだ。非同期機能はVim8.0で導入された機能ではなくPython3を使っている。</li>
+<li><a class="reference external" href="https://github.com/Shougo/denite.nvim">Shougo/denite.nvim: Dark powered asynchronous unite all interfaces for Neovim/Vim8</a></li>
+<li><a class="reference external" href="http://mattn.kaoriya.net/software/vim/20150605164551.htm">Big Sky :: Vim の CtrlP matcher、cpsm がヤバイくらいに速すぎる</a></li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h2><a class="reference external" href="http://go-talks.appspot.com/github.com/zchee/talks/vimconf2016.slide#1">Go、C、Pythonのためのdeoplete.nvimのソースの紹介と、Neovim専用にpure Goでvim-goをスクラッチした話 by zchee</a></h2>
+<ul class="simple">
+<li>「deoplete.nvimのために初めてPythonを触ったのでみなさんもなんとかなります。」</li>
+<li>deoplete.nvimメッチャ補完速い
+- 脱ネオコンして&lt;C-n&gt;, &lt;C-p&gt;や&lt;C-x&gt;補完で充分と思ってたけどあの速さは心が揺らぐ……</li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h2><a class="reference external" href="http://www.slideshare.net/takuyaueda967/go-68228940">エディタの壁を越えるGoの開発ツールの文化と作成法 by tenntenn</a></h2>
+<ul class="simple">
+<li>「Golang使ってみたことある人どれぐらいいますか？」→結構いる。</li>
+<li>vim歴&gt;Golang歴。社内でvimmerは7人ぐらいであとはほとんどIntelliJ</li>
+<li>GolangのおかげでWindowsでVim使うのが「より」便利になっている印象。(mattn/jvgrep, mattn/files, koron/netupvim, etc...)</li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h2><a class="reference external" href="http://qiita.com/t9md/items/0bc7eaff726d099943eb">vim-mode-plus for Atom editor by t9md</a></h2>
+<ul class="simple">
+<li>エディタ遍歴: Vim(Normal)→Emacs(Advanced)→Vim(Advanced)→Atom(with vim-mode-plus)</li>
+<li>「Vimはすごく小指に易しい。(元Emacsユーザーの意見)」</li>
+<li>あの場にいた誰もが感嘆してたと思う。Vimへの理解はもちろん、それにとどまらず進化させていくのが本当にすごい。<ul>
+<li>いずれVimにも逆輸入されるのではないか。</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h2><a class="reference external" href="https://drive.google.com/file/d/0ByQIX4Ls1SHlZ3JtOWxHUUkwaDA/view">Vimの日本語ドキュメント by MURAOKA Taro</a></h2>
+<ul class="simple">
+<li>翻訳作業にぜひ参加を！比較的簡単なコントリビューションでも手が足りてないので人手がほしい。</li>
+<li>Vim8.0へのキャッチアップ 助力、お願いします。</li>
+<li><a class="reference external" href="https://github.com/vim-jp/vimdoc-ja-working">vim-jp/vimdoc-ja-working: vimdoc-ja working repository</a></li>
+<li><a class="reference external" href="https://github.com/vim-jp/lang-ja">vim-jp/lang-ja: Manage Japanese language files which distributed with vim.</a></li>
+</ul>
+</div>
+<div class="section" id="id8">
+<h2><a class="reference external" href="https://docs.google.com/presentation/d/1A6_A7XzPoHv_wG5N_R6zbgYKBX2ycii6BCzR-7b-nOw/pub?start=false&amp;loop=false&amp;slide=id.p">Vim script parser written in Go by haya14busa</a></h2>
+<ul class="simple">
+<li>Golangはいいぞ！</li>
+</ul>
+</div>
+<div class="section" id="id9">
+<h2><a class="reference external" href="https://aiya000.github.io/Maid/my-vim-friends/my-vim-friends#/">僕の友達を紹介するよ by aiya000</a></h2>
+<ul class="simple">
+<li>いつVimを使い始めたのか覚えてない。学生時代、知らないうちにVimを使い始めていた<ul>
+<li>具体的にいつだったかといわれると確かに……</li>
+<li>自分の場合はPythonのキラーIDEがなかったから触り始めたのがきっかけだった気がする。</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id10">
+<h2><a class="reference external" href="https://gist.github.com/thinca/785171e327e66c48d2d293690dc2f65a">Best practices for building Vim plugins by thinca</a></h2>
+<ul class="simple">
+<li>ドキュメントを書きましょう。</li>
+<li>READMEはプラグインの紹介、docにvim自体のhelpを書きましょう。</li>
+<li>vimのnamespaceをしっかりしましょう。 “r”一文字のコマンドにしてたりするプラグインがあったりますが、「そこはお前のものじゃない。」</li>
+<li>autoloadを使いましょう。プラグインいっぱい入れると、そのユーザーのVimの起動がめっちゃ遅くなったり…plugin/xxx.vimは起動時にすべて読み込まれるので、autoloadを使うと起動時間の鈍化が緩和される。</li>
+<li>省略形はスクリプト内ではやめよう。インタラクティブのためにあるので。</li>
+</ul>
+</div>
+<div class="section" id="id11">
+<h2>懇親会</h2>
+<ul class="simple">
+<li>香川の大学生に「udon.vimを定期開催して、来年のvimconfで発表したらいいですよ！」とそそのかしてきた。</li>
+<li>大学生3人を含む初参加の人や発表者、スタッフの人と絡んだりお話をきいてこれた。<ul>
+<li>@kaoriya, @supermomonga, @iyuuya, @ujm, @ShougoMatsu, etc...</li>
+</ul>
+</li>
+<li>Vimをもっと使いこなそうと決意した。ひとまずはuser-manualや実践Vimをもっと理解する。</li>
+<li>無限コーヒーおいしかった。</li>
+<li>寿司とピザは正義。</li>
+</ul>
+<blockquote class="twitter-tweet" data-conversation="none"><a href="https://twitter.com/kashew_nuts/status/794835544874192896">https://twitter.com/kashew_nuts/status/794835544874192896</a></blockquote></div>
+]]></description>
+            <category><![CDATA[ vim ]]></category>
+             <pubDate>Tue, 08 Nov 2016 00:00:00 +0900</pubDate>
+        </item>
+    
         <item>
             <link>http://kashewnuts.bitbucket.org/2016/09/27/pyconjp2016.html</link>
             <guid>http://kashewnuts.bitbucket.org/2016/09/27/pyconjp2016.html</guid>
