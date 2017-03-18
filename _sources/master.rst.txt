@@ -4,6 +4,7 @@ Sitemap
 .. toctree::
    :maxdepth: 1
 
+   2017/03/18/sphinxhackathon201703
    2016/11/08/vimconf2016
    2016/09/27/pyconjp2016
    2016/07/05/fivetencup2016

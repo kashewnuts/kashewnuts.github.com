@@ -5,8 +5,83 @@
         <link>http://kashewnuts.github.io/</link>
         <description>Load To Pythonista</description>
         <language>en-us</language>
-        <pubDate>Tue, 08 Nov 2016 00:00:00 +0900</pubDate>
+        <pubDate>Sat, 18 Mar 2017 00:00:00 +0900</pubDate>
         
+        <item>
+            <link>http://kashewnuts.github.io/2017/03/18/sphinxhackathon201703.html</link>
+            <guid>http://kashewnuts.github.io/2017/03/18/sphinxhackathon201703.html</guid>
+            <title><![CDATA[Sphinx+翻訳 Hack-a-thon 2017.3に参加しました #sphinxjp]]></title>
+            <description><![CDATA[<h1>Sphinx+翻訳 Hack-a-thon 2017.3に参加しました #sphinxjp</h1>
+<p>ここ数年で最多の人数だったようです。自分も3年4カ月ぶりくらいの参加らしいです。</p>
+<p>当日のイベントページ</p>
+<ul class="simple">
+<li><a class="reference external" href="https://sphinxjp.connpass.com/event/52079/">Sphinx+翻訳 Hack-a-thon 2017.3 - connpass</a></li>
+</ul>
+<div class="section" id="id1">
+<h2>やったこと</h2>
+<ul class="simple">
+<li>BitBucket.orgでホスティングしてたBlogをGitHub.ioに移行</li>
+<li>Blogの細々としたUpdate作業</li>
+</ul>
+</div>
+<div class="section" id="bitbucket-orggithub-io">
+<h2>BitBucket.org→GitHub.ioに移行</h2>
+<p>いつの間にか <strong>bitbucket.org</strong> ではなく、 <strong>bitbucket.io</strong> に移行してました。
+そのため既存のhogehoge.bitbucket.orgのリンクを踏むと、
+bitbucket.orgのトップページにリダイレクトされるようになってしまいました。(悲しい……)</p>
+<p>そこでBlogの全部のリンクを直すくらいならいっそのことGitHubに移行してしまおうと思い立ち、
+この機会に全て移行しました。</p>
+<p>具体的にした作業としては以下になります。</p>
+<ul class="simple">
+<li>.nojekyllファイルの作成(空ファイル)</li>
+<li>URLがbitbuketになっているものをgithubに変更する。</li>
+<li>RSS対応(feedburner)</li>
+<li>google analytics対応</li>
+</ul>
+<p>単純作業なので面倒でしたが、 <a class="reference external" href="http://tinkerer.me/pages/documentation.html">Documentation — Tinkerer</a> を見ながら行けば普通にいけますね。</p>
+<p>注意点としては.nojekyllファイルを作成し忘れないようにすることですね。
+.nojekyllファイルがないとGitHubはTinkererでなくJekillを実行してしまい、
+_staticのようにアンダースコアで始まるファイルやフォルダを無視してしまいます。</p>
+</div>
+<div class="section" id="blogupdate">
+<h2>Blogの細々としたUpdate作業</h2>
+<p>GitHubには移行できたので、前々から気にはなっていたのですが放置してしまっていた点を対応しました。</p>
+<ul class="simple">
+<li>リンク先変更(about.meなど)</li>
+<li>検索システムをJanomeに変更→日本語検索もいい感じに！</li>
+<li>レイアウト整える。(画像の比率や反転など)<ul>
+<li>CSSの調整</li>
+<li>“image”ディレクティブでscaleオプションの使い方に一部誤りがあったので修正</li>
+<li>元画像に不備があるものが混じっていたので修正</li>
+</ul>
+</li>
+</ul>
+<p>おかげでスマホでBlogを閲覧時に出ていた不備が改善できました。</p>
+</div>
+<div class="section" id="id2">
+<h2>成果発表</h2>
+<ul class="simple">
+<li><a class="reference external" href="https://twitter.com/usaturn">@usaturn</a> :
+Sphinxのissue対応。Sphinx本の改定作業(Sphinxのインストール方法について)</li>
+<li>nskgch : Sphinx 1.6の翻訳</li>
+<li><a class="reference external" href="https://twitter.com/jbking">@jbking</a> :
+Blogシステムをアップデートして日本語検索をJanomeに対応。ビルドシステム(gulp)の直し。</li>
+<li><a class="reference external" href="https://twitter.com/kashew_nuts">@kashew_nuts</a> : 上記参照</li>
+<li><a class="reference external" href="https://twitter.com/shimizukawa">@shimizukawa</a> : Sphinx本の改定。文法マニュアル作成。</li>
+<li><a class="reference external" href="https://twitter.com/tk0miya">@tk0miya</a> : Sphinxのバグを直してました。</li>
+<li><a class="reference external" href="https://www.facebook.com/yosuke.nakabayashi">@youske</a> :
+Sphinx-user.jpでmake.htmlでホームページのひな形を前回作ったので、
+ドキュメントを強化(リストや罫線、強調、写真、etc)するためのあれこれを試してみた。</li>
+<li><a class="reference external" href="https://twitter.com/pashango2">@pashango</a> : Qtを使ってSphinxのGUIツールを作ってた。</li>
+</ul>
+</div>
+]]></description>
+            <category><![CDATA[ Python ]]></category>
+            <category><![CDATA[ Sphinx ]]></category>
+            <category><![CDATA[ Tinkerer ]]></category>
+             <pubDate>Sat, 18 Mar 2017 00:00:00 +0900</pubDate>
+        </item>
+    
         <item>
             <link>http://kashewnuts.github.io/2016/11/08/vimconf2016.html</link>
             <guid>http://kashewnuts.github.io/2016/11/08/vimconf2016.html</guid>
