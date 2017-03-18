@@ -31,9 +31,10 @@
         <link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="#VimConf2013 に参加しました" href="../16/vimconf2013.html" /><link rel="prev" title="Python Developers Festa2013.11に参加しました #pyfes" href="../30/pyfes201311.html" /><link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/bitbucket/BVDY" /><script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.5',
+        VERSION:     '1.5.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
+        SOURCELINK_SUFFIX: '.txt',
         HAS_SOURCE:  true
       };
     </script><script type="text/javascript" src="../../../_static/underscore.js"></script><script type="text/javascript" src="../../../_static/doctools.js"></script><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script><script type="text/javascript" src="../../../_static/disqus.js"></script><script type="text/javascript" src="../../../_static/google_analytics.js"></script>
@@ -88,10 +89,10 @@
 <div class="section" id="id2">
 <h2>インストール</h2>
 <p>以下のコマンドを実行します。</p>
-<div class="highlight-guess"><div class="highlight"><pre><span></span><span class="x">Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Confirm</span>
-<span class="x">git clone https://github.com/dahlbyk/posh-git.git</span>
-<span class="x">.\posh-git\install.ps1</span>
-<span class="x">. </span><span class="p">$</span><span class="nv">PROFILE</span><span class="x"></span>
+<div class="highlight-guess"><div class="highlight"><pre><span></span>Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Confirm
+git clone https://github.com/dahlbyk/posh-git.git
+.\posh-git\install.ps1
+. $PROFILE
 </pre></div>
 </div>
 <p>しかし以下のように怒られてしました。</p>
@@ -101,7 +102,7 @@
 <p>SSH-AGENTをする必要があるので、
 Microsoft.PowerShell_profile.ps1 に以下のように設定を追記します。</p>
 <p>この時設定が # Load posh-git example profile の上に来るようにしてください。</p>
-<div class="highlight-guess"><div class="highlight"><pre><span></span><span class="o">$</span><span class="nt">env</span><span class="nd">:path</span> <span class="o">+=</span> <span class="s2">&quot;;&quot;</span> <span class="o">+</span> <span class="o">(</span><span class="nt">Get-Item</span> <span class="s2">&quot;Env:ProgramFiles(x86)&quot;</span><span class="o">)</span><span class="nc">.Value</span> <span class="o">+</span> <span class="s2">&quot;\Git\bin&quot;</span>
+<div class="highlight-guess"><div class="highlight"><pre><span></span><span class="o">$</span><span class="nt">env</span><span class="p">:</span><span class="nd">path</span> <span class="o">+=</span> <span class="s2">&quot;;&quot;</span> <span class="o">+</span> <span class="o">(</span><span class="nt">Get-Item</span> <span class="s2">&quot;Env:ProgramFiles(x86)&quot;</span><span class="o">)</span><span class="p">.</span><span class="nc">Value</span> <span class="o">+</span> <span class="s2">&quot;\Git\bin&quot;</span>
 
 <span class="err">#</span> <span class="nt">Load</span> <span class="nt">posh-git</span> <span class="nt">example</span> <span class="nt">profile</span>
 <span class="o">.</span> <span class="s1">&#39;C:\hogehoge\posh-git\profile.example.ps1&#39;</span>
@@ -114,7 +115,7 @@ Microsoft.PowerShell_profile.ps1 に以下のように設定を追記します�
 <p>さてこれで <strong>PowerShellで最高のGit用CUI環境ができた！</strong> と言いたいのですが、表示が遅い…… 高機能なのはいいですが、表示が遅くては話になりません。</p>
 <p>Google先生に聞いても、 <em>posh git slow</em> という単語が引っかかります。なんとか速くする方法はないものか。</p>
 <p>そこで Microsoft.PowerShell_profile.ps1 に以下のように設定を追記します。</p>
-<div class="highlight-guess"><div class="highlight"><pre><span></span><span class="p">$</span><span class="nv">GitPromptSettings</span><span class="p">.</span><span class="nv">EnableFileStatus</span><span class="x"> = </span><span class="p">$</span><span class="nv">false</span><span class="x">    </span><span class="err">#</span><span class="x"> 簡易ステータス非表示</span>
+<div class="highlight-guess"><div class="highlight"><pre><span></span>$GitPromptSettings.EnableFileStatus = $false    # 簡易ステータス非表示
 </pre></div>
 </div>
 <p>これでインストール前の速度を保ちつつ、
@@ -137,7 +138,7 @@ if(typeof(window.NINJA_CO_JP_ONETAG_BUTTON_19c65bbca74baa771bde1c23ed436979)=='u
 </div>
     <div class="postmeta">
         <div class="author">
-            <span>Posted by <a href='https://twitter.com/kashew_nuts'>Kashun YOSHIDA</a></span>
+            <span>Posted by Kashun YOSHIDA</span>
         </div>
         <div class="categories">
             <span>
@@ -198,13 +199,13 @@ if(typeof(window.NINJA_CO_JP_ONETAG_BUTTON_19c65bbca74baa771bde1c23ed436979)=='u
 </div>
 </section><section><div class="widget">
     <h1>Categories</h1>
-    <ul><li><a href="../../../categories/64bit.html">64bit</a> (2)</li><li><a href="../../../categories/android.html">Android</a> (3)</li><li><a href="../../../categories/bouldering.html">bouldering</a> (2)</li><li><a href="../../../categories/bouldering.html">Bouldering</a> (1)</li><li><a href="../../../categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="../../../categories/c_c.html">C/C++</a> (5)</li><li><a href="../../../categories/chrome.html">Chrome</a> (2)</li><li><a href="../../../categories/db.html">DB</a> (1)</li><li><a href="../../../categories/django.html">Django</a> (5)</li><li><a href="../../../categories/facebook.html">Facebook</a> (1)</li><li><a href="../../../categories/firefox.html">Firefox</a> (1)</li><li><a href="../../../categories/git.html">Git</a> (1)</li><li><a href="../../../categories/git_mercurial.html">Git/Mercurial</a> (7)</li><li><a href="../../../categories/golang.html">Golang</a> (1)</li><li><a href="../../../categories/google.html">Google</a> (5)</li><li><a href="../../../categories/heroku.html">Heroku</a> (6)</li><li><a href="../../../categories/java.html">Java</a> (2)</li><li><a href="../../../categories/javascript.html">JavaScript</a> (4)</li><li><a href="../../../categories/kabepy.html">kabepy</a> (2)</li><li><a href="../../../categories/lt.html">LT</a> (5)</li><li><a href="../../../categories/mac.html">Mac</a> (6)</li><li><a href="../../../categories/pyfes.html">pyfes</a> (7)</li><li><a href="../../../categories/python.html">Python</a> (45)</li><li><a href="../../../categories/python.html">python</a> (1)</li><li><a href="../../../categories/sphinx.html">Sphinx</a> (5)</li><li><a href="../../../categories/ssd.html">SSD</a> (1)</li><li><a href="../../../categories/tddbc.html">TDDBC</a> (1)</li><li><a href="../../../categories/tinkerer.html">Tinkerer</a> (5)</li><li><a href="../../../categories/ubuntu.html">Ubuntu</a> (1)</li><li><a href="../../../categories/vagrant.html">Vagrant</a> (1)</li><li><a href="../../../categories/vim.html">Vim</a> (15)</li><li><a href="../../../categories/vimconf.html">VimConf</a> (2)</li><li><a href="../../../categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="../../../categories/windows.html">Windows</a> (2)</li><li><a href="../../../categories/windows7.html">Windows7</a> (4)</li><li><a href="../../../categories/アルゴリズム.html">アルゴリズム</a> (1)</li><li><a href="../../../categories/セキュリティ.html">セキュリティ</a> (2)</li><li><a href="../../../categories/ネットワーク.html">ネットワーク</a> (1)</li><li><a href="../../../categories/プログラミング.html">プログラミング</a> (7)</li><li><a href="../../../categories/勉強会.html">勉強会</a> (30)</li><li><a href="../../../categories/応用情報技術者.html">応用情報技術者</a> (10)</li><li><a href="../../../categories/情報処理技術者試験.html">情報処理技術者試験</a> (10)</li><li><a href="../../../categories/本.html">本</a> (29)</li><li><a href="../../../categories/開発環境.html">開発環境</a> (11)</li><li><a href="../../../categories/雑記.html">雑記</a> (35)</li><li><a href="../../../categories/高速化.html">高速化</a> (1)</li></ul>
+    <ul><li><a href="../../../categories/64bit.html">64bit</a> (2)</li><li><a href="../../../categories/android.html">Android</a> (3)</li><li><a href="../../../categories/bouldering.html">Bouldering</a> (1)</li><li><a href="../../../categories/bouldering.html">bouldering</a> (2)</li><li><a href="../../../categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="../../../categories/c_c.html">C/C++</a> (5)</li><li><a href="../../../categories/chrome.html">Chrome</a> (2)</li><li><a href="../../../categories/db.html">DB</a> (1)</li><li><a href="../../../categories/django.html">Django</a> (5)</li><li><a href="../../../categories/facebook.html">Facebook</a> (1)</li><li><a href="../../../categories/firefox.html">Firefox</a> (1)</li><li><a href="../../../categories/git.html">Git</a> (1)</li><li><a href="../../../categories/git_mercurial.html">Git/Mercurial</a> (7)</li><li><a href="../../../categories/golang.html">Golang</a> (1)</li><li><a href="../../../categories/google.html">Google</a> (5)</li><li><a href="../../../categories/heroku.html">Heroku</a> (6)</li><li><a href="../../../categories/java.html">Java</a> (2)</li><li><a href="../../../categories/javascript.html">JavaScript</a> (4)</li><li><a href="../../../categories/kabepy.html">kabepy</a> (2)</li><li><a href="../../../categories/lt.html">LT</a> (5)</li><li><a href="../../../categories/mac.html">Mac</a> (6)</li><li><a href="../../../categories/pyfes.html">pyfes</a> (7)</li><li><a href="../../../categories/python.html">python</a> (1)</li><li><a href="../../../categories/python.html">Python</a> (45)</li><li><a href="../../../categories/sphinx.html">Sphinx</a> (5)</li><li><a href="../../../categories/ssd.html">SSD</a> (1)</li><li><a href="../../../categories/tddbc.html">TDDBC</a> (1)</li><li><a href="../../../categories/tinkerer.html">Tinkerer</a> (5)</li><li><a href="../../../categories/ubuntu.html">Ubuntu</a> (1)</li><li><a href="../../../categories/vagrant.html">Vagrant</a> (1)</li><li><a href="../../../categories/vim.html">Vim</a> (15)</li><li><a href="../../../categories/vimconf.html">VimConf</a> (2)</li><li><a href="../../../categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="../../../categories/windows.html">Windows</a> (2)</li><li><a href="../../../categories/windows7.html">Windows7</a> (4)</li><li><a href="../../../categories/アルゴリズム.html">アルゴリズム</a> (1)</li><li><a href="../../../categories/セキュリティ.html">セキュリティ</a> (2)</li><li><a href="../../../categories/ネットワーク.html">ネットワーク</a> (1)</li><li><a href="../../../categories/プログラミング.html">プログラミング</a> (7)</li><li><a href="../../../categories/勉強会.html">勉強会</a> (30)</li><li><a href="../../../categories/応用情報技術者.html">応用情報技術者</a> (10)</li><li><a href="../../../categories/情報処理技術者試験.html">情報処理技術者試験</a> (10)</li><li><a href="../../../categories/本.html">本</a> (29)</li><li><a href="../../../categories/開発環境.html">開発環境</a> (11)</li><li><a href="../../../categories/雑記.html">雑記</a> (35)</li><li><a href="../../../categories/高速化.html">高速化</a> (1)</li></ul>
 </div></section><section><div class="widget">
     <h1>Tags Cloud</h1>
       <a href="../../../tags/64bit.html" style="font-size: 8pt">64bit</a>&nbsp;&nbsp;
       <a href="../../../tags/android.html" style="font-size: 8pt">Android</a>&nbsp;&nbsp;
-      <a href="../../../tags/bouldering.html" style="font-size: 8pt">bouldering</a>&nbsp;&nbsp;
       <a href="../../../tags/bouldering.html" style="font-size: 8pt">Bouldering</a>&nbsp;&nbsp;
+      <a href="../../../tags/bouldering.html" style="font-size: 8pt">bouldering</a>&nbsp;&nbsp;
       <a href="../../../tags/bpstudy.html" style="font-size: 8pt">BPStudy</a>&nbsp;&nbsp;
       <a href="../../../tags/c_c.html" style="font-size: 9pt">C/C++</a>&nbsp;&nbsp;
       <a href="../../../tags/chrome.html" style="font-size: 8pt">Chrome</a>&nbsp;&nbsp;
@@ -223,8 +224,8 @@ if(typeof(window.NINJA_CO_JP_ONETAG_BUTTON_19c65bbca74baa771bde1c23ed436979)=='u
       <a href="../../../tags/lt.html" style="font-size: 9pt">LT</a>&nbsp;&nbsp;
       <a href="../../../tags/mac.html" style="font-size: 9pt">Mac</a>&nbsp;&nbsp;
       <a href="../../../tags/pyfes.html" style="font-size: 9pt">pyfes</a>&nbsp;&nbsp;
-      <a href="../../../tags/python.html" style="font-size: 20pt">Python</a>&nbsp;&nbsp;
       <a href="../../../tags/python.html" style="font-size: 8pt">python</a>&nbsp;&nbsp;
+      <a href="../../../tags/python.html" style="font-size: 20pt">Python</a>&nbsp;&nbsp;
       <a href="../../../tags/sphinx.html" style="font-size: 9pt">Sphinx</a>&nbsp;&nbsp;
       <a href="../../../tags/ssd.html" style="font-size: 8pt">SSD</a>&nbsp;&nbsp;
       <a href="../../../tags/tddbc.html" style="font-size: 8pt">TDDBC</a>&nbsp;&nbsp;
@@ -250,7 +251,7 @@ if(typeof(window.NINJA_CO_JP_ONETAG_BUTTON_19c65bbca74baa771bde1c23ed436979)=='u
 </div></section><section><a class="twitter-timeline" href="https://twitter.com/kashew_nuts" data-widget-id="346143902467768320">@kashew_nuts からのツイート</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></section></aside></div> <!-- #main --></div> <!-- #main-container -->
 
-        <div class="footer-container" role="contentinfo"><footer class="wrapper">&copy; Copyright 2011-2016, Kashun YOSHIDA. Powered by <a href="http://www.tinkerer.me/">Tinkerer</a> and <a href="http://sphinx.pocoo.org/">Sphinx</a>.</footer></div> <!-- footer-container -->
+        <div class="footer-container" role="contentinfo"><footer class="wrapper">&copy; Copyright 2011-2017, Kashun YOSHIDA. Powered by <a href="http://www.tinkerer.me/">Tinkerer</a> and <a href="http://sphinx.pocoo.org/">Sphinx</a>.</footer></div> <!-- footer-container -->
 
       </div> <!--! end of #container --><!--[if lt IE 7 ]>
           <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
