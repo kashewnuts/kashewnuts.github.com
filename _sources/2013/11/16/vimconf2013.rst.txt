@@ -4,7 +4,6 @@
 
 .. image:: vimconf2013.jpg
   :align: center
-  :scale: 100%
 
 会場はCookpad株式会社さんの提供でした。ありがとうございます。
 
@@ -25,7 +24,6 @@
   :align: center
   :width: 300
   :height: 240
-  :scale: 50
 
 * マクロ漁船の人がEvil modeで実際にBrainf*ck試して「動かないんだけど。」っていったのがおもしろかった。
 * 参加費等でお金が貯まったらVimの作者であるBramさんを呼ぼうと考えているそう。楽しみ。
@@ -116,7 +114,6 @@ vital.ProcessManager @ujm
 
 .. image:: vimconf2013last.jpg
   :align: center
-  :scale: 100%
 
 
 おまけ

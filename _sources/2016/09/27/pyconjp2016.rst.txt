@@ -3,7 +3,6 @@ PyConJP2016に参加しました。 #pyconjp
 
 .. image:: pyconjp2016.JPG
     :align: center
-    :scale: 100%
 
 - `PyCon JP 2016 - connpass <http://pyconjp.connpass.com/event/30692/>`_
 - `PyCon JP 2016 in Tokyo | Sep 20th – Sep 24th <https://pycon.jp/2016/ja/>`_

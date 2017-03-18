@@ -3,7 +3,6 @@ Python Developers Festa2013.11に参加しました #pyfes
 
 .. image:: pyfes201311.jpg
     :align: center
-    :scale: 100%
 
 あろうことかこの画像を貼り忘れていました。いやーうっかりしてた。
 

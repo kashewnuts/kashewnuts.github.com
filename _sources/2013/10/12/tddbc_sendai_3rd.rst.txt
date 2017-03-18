@@ -4,7 +4,6 @@ TDDBC 仙台 the 3rd に行ってきました #tddbc
 
 .. image:: tddbc_greenband.jpg
   :align: center
-  :scale: 100%
 
 * `TDDBC 仙台 the 3rd - TDDBC | Doorkeeper <http://tddbc.doorkeeper.jp/events/6148>`_
 * `TDDBC 仙台 the 3rd #tddbc のまとめ - Togetter <http://togetter.com/li/576125>`_
