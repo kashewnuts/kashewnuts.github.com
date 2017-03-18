@@ -9,7 +9,7 @@ Python開発環境-virtualenvと-pip-
 | pipはPythonにおけるバージョン管理システム。
 | 他にもeasy\_installとかdistributeなどがあるらしいのだけど、
 | 将来統合される予定なので好きなモノを使えばいいらしいです。
-| (ソースは `こちら <http://shimizukawa.bitbucket.org/python-distribute-ja/introduction.html#state-of-packaging-info>`__ )
+| (ソースは `こちら <http://shimizukawa.bitbucket.io/python-distribute-ja/introduction.html#state-of-packaging-info>`__ )
 
 | 今回はHerokuの公式ドキュメントに従ってpipをインストール。
 | virtualenvとpipをインストールするために、

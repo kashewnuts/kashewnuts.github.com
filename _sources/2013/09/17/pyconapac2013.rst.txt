@@ -2,13 +2,13 @@
 PyCon APAC 2013 に参加しました #pyconapac #pyconjp
 ======================================================
 
-昨年はスタッフでもないのに `スライドやリンクをまとめたり <http://kashewnuts.bitbucket.org/2012/09/15/pyconjp2012.html>`_ してましたが、
+昨年はスタッフでもないのに `スライドやリンクをまとめたり <http://kashewnuts.github.io/2012/09/15/pyconjp2012.html>`_ してましたが、
 今年は `PyCon APAC 2013 in Japan - connpass <http://connpass.com/event/2703/>`_ で当日スタッフとして9/14(土)と15(日)の2日間当日スタッフとして受付を担当していました。
 
 発端
 ----
 
-`2013年の抱負 — kashew_nuts-blog <http://kashewnuts.bitbucket.org/2013/01/01/2013newyearsresolutions.html>`_
+`2013年の抱負 — kashew_nuts-blog <http://kashewnuts.github.io/2013/01/01/2013newyearsresolutions.html>`_
 でも述べたのを覚えていて下さったのか、先日参加した
 `Python mini hack-a-thon 夏山合宿 2013 - connpass <http://connpass.com/event/2651/>`_
 にて `@takanory <https://twitter.com/takanory>`_

@@ -10,7 +10,7 @@ Python Developers Festa2013.11に参加しました #pyfes
 前回の様子
 ----------
 
-`Python Developers Festa2013.07に参加しました #pyfes — kashew_nuts-blog <http://kashewnuts.bitbucket.org/2013/07/27/pyfes201307.html>`_
+`Python Developers Festa2013.07に参加しました #pyfes — kashew_nuts-blog <http://kashewnuts.github.io/2013/07/27/pyfes201307.html>`_
 
 イベント詳細
 ------------

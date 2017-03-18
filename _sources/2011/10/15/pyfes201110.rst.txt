@@ -17,7 +17,7 @@ Python Developers Festa 2011.10に行って来ました
 | 今回は初心者向けのものに参加。
 | Pythonへのとっかかりとして良かったと思う。
 | 詳しいところまではできなかったから、そこのところは要学習。
-| 使用した資料は\ `こちら <http://__aita__.bitbucket.org/python_hack-a-thon-201110/index.html>`__\ 。
+| 使用した資料は\ `こちら <http://__aita__.bitbucket.io/python_hack-a-thon-201110/index.html>`__\ 。
 | 基本的なPythonの文法なんかはわかったので、
 | 次回は中級者向け以上のものに参加しようと思う。
 

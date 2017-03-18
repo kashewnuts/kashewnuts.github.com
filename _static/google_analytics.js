@@ -1,6 +1,6 @@
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-36546068-1']);
-_gaq.push(['_setDomainName', 'bitbucket.org']);
+_gaq.push(['_setDomainName', 'github.io']);
 _gaq.push(['_setAllowLinker', true]);
 _gaq.push(['_trackPageview']);
 

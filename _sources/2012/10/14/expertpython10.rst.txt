@@ -104,7 +104,7 @@
 | **参考リンク**
 
 -  `PyCon JP 2012 で分散バージョン管理の組織化という話をしてきました - 放牧日記 <http://troter.hatenablog.jp/entry/20120921/1348224166>`__
--  `bpmercurial-workflow v1.0 documentation <http://beproud.bitbucket.org/bpmercurial-workflow/ja/>`__
+-  `bpmercurial-workflow v1.0 documentation <http://beproud.bitbucket.io/bpmercurial-workflow/ja/>`__
 
 .. |エキスパートPythonプログラミング| image:: http://ecx.images-amazon.com/images/I/51wSTTIQtgL._SL160_.jpg
    :target: http://www.amazon.co.jp/exec/obidos/ASIN/4048686291/naoyadyndnsor-22/ref=nosim/

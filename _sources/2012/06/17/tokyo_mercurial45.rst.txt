@@ -58,7 +58,7 @@ TokyoMercurial4.5に参加しました。
 
 | **3.Tips**
 
-| -  `TortoiseHg <http://tortoisehg.bitbucket.org/ja/>`__\ 2.4.1でたよ！
+| -  `TortoiseHg <http://tortoisehg.bitbucket.io/ja/>`__\ 2.4.1でたよ！
 | -  GUIでMQ使うならTortoiseHg。
 |     SourceTreeだとリビジョンもパッチも全部丸で表示されるから分かりづらい。
 | -  Gitの機能がMercurialにないとかいってる人はMQ使ってから。

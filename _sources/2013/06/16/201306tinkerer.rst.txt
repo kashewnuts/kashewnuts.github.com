@@ -2,7 +2,7 @@
 TinkererでBlogを書こう(Ver1.2)
 ===================================
 
-昨年末 `Sphinx Advent Calendar 2012 - connpass <http://connpass.com/event/1441/>`_ で `Tinkererでブログを書こう — kashew_nuts-blog <http://kashewnuts.bitbucket.org/2012/12/17/sphinxadventcalender017.html>`_ という記事を書きましたが、
+昨年末 `Sphinx Advent Calendar 2012 - connpass <http://connpass.com/event/1441/>`_ で `Tinkererでブログを書こう — kashew_nuts-blog <http://kashewnuts.github.io/2012/12/17/sphinxadventcalender017.html>`_ という記事を書きましたが、
 `Tinkerer`_ も Version が1.2になり、運用方法も記事を書いた時と変わってきたので、改めて書き直してみます。
 
 
@@ -76,7 +76,7 @@ bitbucketの準備
   copyright = '2011-2013, ' + author
 
   # Change this to your blog root URL (required for RSS feed)
-  website = 'http://kashewnuts.bitbucket.org/'
+  website = 'http://kashewnuts.github.io/'
 
 
 これで、Tinkererで Blog を書く初期設定は終了です。
@@ -114,8 +114,8 @@ Blog を公開しよう
 いくつかあるようですが、ここは私が実際に使用している方法を紹介したいと思います。
 初めに準備した bitbucket リポジトリに以下の内容を上げてしまいましょう。
 
-`前回書いた記事 <http://kashewnuts.bitbucket.org/2012/12/17/sphinxadventcalender017.html>`_ では index.html と blog/ 以下全てと書きましたが、
-これだと Blog を開いた時に、`http://hogehoge.bitbucket.org/blog/html/index.html` と長ったらしいURLになってしまいます。
+`前回書いた記事 <http://kashewnuts.github.io/2012/12/17/sphinxadventcalender017.html>`_ では index.html と blog/ 以下全てと書きましたが、
+これだと Blog を開いた時に、`http://hogehoge.bitbucket.io/blog/html/index.html` と長ったらしいURLになってしまいます。
 
 そこで今回は "blog/html/ 以下全て" の生成物を上げます。
 
@@ -142,14 +142,14 @@ Mercurial を使用した方法を記述します。
   $ vim .hg/hgrc
 
   [paths]
-  default=ssh://hg@bitbucket.org/<username>/<username>.bitbucket.org
+  default=ssh://hg@bitbucket.io/<username>/<username>.bitbucket.org
 
   #  Blog にpush
   $ hg add .
   $ hg commit -m "first post"
   $ hg push
 
-公開されるまでに数分程度待つかもしれません。数分後 `https://<username>.bitbucket.org` にアクセスすると、 Blog ページが表示できるようになります。
+公開されるまでに数分程度待つかもしれません。数分後 `https://<username>.bitbucket.io` にアクセスすると、 Blog ページが表示できるようになります。
 
 NEXT STEP
 -------------------------
@@ -179,7 +179,7 @@ NEXT STEP
 
 * `Tinkerer`_
 * `Tinkererを使ってbitbucketでblogはじめました - そこはかとなく書くよ。 <http://d.hatena.ne.jp/rudi/20120106/1325861293>`_
-* `BitBucketで無料ブログをつくる方法 -TinkererとMercurialでバージョン管理可能なブログをつくる- — うさぎ組 <http://kyon-mm.bitbucket.org/blog/html/2013/05/20/start_tinkerer_on_bitbucket.html>`_
+* `BitBucketで無料ブログをつくる方法 -TinkererとMercurialでバージョン管理可能なブログをつくる- — うさぎ組 <http://kyon-mm.bitbucket.io/blog/html/2013/05/20/start_tinkerer_on_bitbucket.html>`_
 * `Sphinx に色々埋め込んでみる #pyhack — プログラマのネタ帳 二冊目 <http://www.shomah4a.net/2013/03/23/shinx_embed_series.html>`_
 
 .. _Tinkerer: http://tinkerer.me

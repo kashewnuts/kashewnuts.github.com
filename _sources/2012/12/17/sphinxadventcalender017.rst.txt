@@ -7,7 +7,7 @@ Tinkererでブログを書こう
 .. note::
 
     2013/06/16 この記事に書いてある内容が古くなってきましたので、改めて記事を作成しました。
-    `TinkererでBlogを書こう(Ver1.2) — kashew_nuts-blog <http://kashewnuts.bitbucket.org/2013/06/16/201306tinkerer.html>`_
+    `TinkererでBlogを書こう(Ver1.2) — kashew_nuts-blog <http://kashewnuts.github.io/2013/06/16/201306tinkerer.html>`_
 
 Tinkererとは
 -------------------------
@@ -77,7 +77,7 @@ bitbucketの準備
   copyright = '2012, ' + author
 
   # Change this to your blog root URL (required for RSS feed)
-  website = 'http://kashewnuts.bitbucket.org/blog/html/'
+  website = 'http://kashewnuts.github.io/blog/html/'
 
 
 **日本語環境用にパッチを当てる**
@@ -131,14 +131,14 @@ Mercurial を使用した方法を記述します。
   $ vim .hg/hgrc
 
   [paths]
-  default=ssh://hg@bitbucket.org/<username>/<username>.bitbucket.org
+  default=ssh://hg@bitbucket.io/<username>/<username>.bitbucket.org
 
   $ hg add index.html
   $ hg add blog/.
   $ hg commit -m "first post"
   $ hg push
 
-公開されるまでに数分程度待つかもしれません。数分後 `https://<username>.bitbucket.org` にアクセスすると、ブログページが表示できるようになります。
+公開されるまでに数分程度待つかもしれません。数分後 `https://<username>.bitbucket.io` にアクセスすると、ブログページが表示できるようになります。
 
 
 早くVersionからβが外れたTinkererを使用してみたいですね。

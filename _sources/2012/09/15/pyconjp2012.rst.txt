@@ -46,10 +46,10 @@ PyConJP2012 スライド・資料まとめ
 -  `SQLALchemyと僕 <http://tell-k.github.com/pyconjp2012/>`__
 -  `NDB - Google App Engine Datastore API - Google Docs <https://docs.google.com/presentation/d/1itvvB_sVJSH30cR479PSeaHjnVDMvy3KNr9R_G5-MEs/edit#slide=id.p>`__
 -  `Beginning Python <http://www.slideshare.net/satokencat/bp2012>`__
--  `Refactoring A Python Beginner’s Code <http://shimizukawa.bitbucket.org/refactoring-python-beginners-code/index.html>`__
+-  `Refactoring A Python Beginner’s Code <http://shimizukawa.bitbucket.io/refactoring-python-beginners-code/index.html>`__
 -  `Pyramid Security <http://www.slideshare.net/jbking/pyramid-security>`__
 -  `Build system written in Python #pyconjp - Google Docs <https://docs.google.com/presentation/d/1-oO3qw9cS5aKApI2wjJwGAj0g0udnbuBp-tkW-90-Uw/edit#slide=id.p>`__
--  `Django-Celeryで非同期処理 — Django-Celeryで非同期処理 1 documentation <http://hdknr.bitbucket.org/celery/>`__
+-  `Django-Celeryで非同期処理 — Django-Celeryで非同期処理 1 documentation <http://hdknr.bitbucket.io/celery/>`__
 -  `#kabepy <http://www.slideshare.net/takanory/kabepy>`__
 -  `Pythonistaの働き方 <http://www.slideshare.net/yutakitagami/pycon-jp2012>`__
 -  `国産 PaaS 、NIFTY Cloud C4SA の中身 <http://www.slideshare.net/oohatatakahiro/paas-nifty-cloud-c4sa>`__
