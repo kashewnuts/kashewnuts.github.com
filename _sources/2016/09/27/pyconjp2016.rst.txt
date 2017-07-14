@@ -49,6 +49,6 @@ WiFiがうまく繋がらなかった点だけ残念でした。
 - `資料も反響もすべてチェック！ 秋雨に濡れた早稲田大学西早稲田キャンパス #PyConJP 2016 まとめまとめ - Togetterまとめ <http://togetter.com/li/1027765>`_
 
 .. author:: default
-.. categories:: python
-.. tags:: python
+.. categories:: Python
+.. tags:: Python
 .. comments::
