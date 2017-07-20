@@ -3,6 +3,9 @@
 
 TwitterのTLでは観測していたけど、本当に実在してるのかわからなかった人たちが参加するらしいと聞いていってきました。
 
+.. image:: fablicvim2.JPG
+    :align: center
+
 - `Fablic.vim #2 - connpass <https://fablicvim.connpass.com/event/60339/>`_
 - `Fablic.vim #2 - Togetterまとめ <https://togetter.com/li/1131859>`_
 
