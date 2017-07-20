@@ -4,6 +4,7 @@ Sitemap
 .. toctree::
    :maxdepth: 1
 
+   2017/07/20/fablicvim2
    2017/07/14/returning_macos
    2017/03/18/sphinxhackathon201703
    2016/11/08/vimconf2016
