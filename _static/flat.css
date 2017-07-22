@@ -131,4 +131,5 @@ div.year h2 { margin-bottom: 20px; margin-top: 0; }
     div.year div.postmeta { margin: 0 0 40px 40%; }
     div.year div.timestamp { float: left; margin-left: 20%; }
     div.year h2 { margin-left: 40%; }
+    nav li { display: block; text-align: center; width: 100%; }
 }
