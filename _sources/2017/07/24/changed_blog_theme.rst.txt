@@ -40,6 +40,11 @@ flatテーマにした理由
   - contentsディレクティブ
   - Tableディレクティブ？ (コロン":"で単語をくくるやつ)
 
+- 常時SSL接続対応 (後日対応)
+
+  - リポジトリのSettings -> GitHub Pages -> Enforce HTTPS のチェックボックスをON
+  - `混合コンテンツ <https://developers.google.com/web/fundamentals/security/prevent-mixed-content/what-is-mixed-content?hl=ja>`_ の解消 (HTTPとHTTPSが混在しているのをHTTPSのみにした)
+  - JavaScriptのタグエラー解消
 
 プロジェクトのリポジトリをアップデート
 --------------------------------------
