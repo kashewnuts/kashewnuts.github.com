@@ -1,6 +1,11 @@
 Blogのテーマを変更しました
 ==========================
 
+こんな感じになりました。(画像は拡大してご覧ください)
+
+.. image:: BeforeAfter.png
+  :align: center
+
 .. contents::
   :local:
 
