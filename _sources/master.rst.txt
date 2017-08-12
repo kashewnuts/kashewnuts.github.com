@@ -4,6 +4,7 @@ Sitemap
 .. toctree::
    :maxdepth: 1
 
+   2017/08/13/stapy27
    2017/07/30/mokupy19
    2017/07/24/changed_blog_theme
    2017/07/22/rettypy

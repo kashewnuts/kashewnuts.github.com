@@ -40,7 +40,7 @@ Pythonもくもく会に参加した #mokupy
 使い方
 ------
 
-Slackのライブラリは `os/slacker <https://github.com/os/slacker>`_ を使用。作成したソースはプライベートリポジトリにしてます。
+Slackのライブラリは `os/slacker <https://github.com/os/slacker>`_ を使用。(作成したソースはプライベートリポジトリにしてます。)
 
 `Legacy tokens | Slack <https://api.slack.com/custom-integrations/legacy-tokens>`_ で自分が操作したいTeamのTokenを作成し、それを環境変数に渡してCLIで叩く感じです。
 

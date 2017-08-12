@@ -1,0 +1,370 @@
+<!DOCTYPE html><!--[if lt IE 7]>      <html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="https://www.facebook.com/2008/fbml" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="https://www.facebook.com/2008/fbml" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="https://www.facebook.com/2008/fbml" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="https://www.facebook.com/2008/fbml" class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="description" content="My blog">
+        <meta name="viewport" content="width=device-width">
+        <title>みんなのPython勉強会#27 #stapy &mdash; kashew_nuts-blog</title>
+            <link rel="stylesheet" href="../../../_static/normalize.css" type="text/css">
+            <link rel="stylesheet" href="../../../_static/sphinx.css" type="text/css">
+            <link rel="stylesheet" href="../../../_static/main.css" type="text/css">
+            <link rel="stylesheet" href="../../../_static/flat.css" type="text/css">
+            <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+            <link rel="stylesheet" href="../../../_static/font-awesome.min.css" type="text/css">
+        <link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="stylesheet" href="../../../_static/roles.css" type="text/css" /><link rel="shortcut icon" href="../../../_static/tinkerer.ico" /><!-- Load modernizr and JQuery -->
+        <script src="../../../_static/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="../../../_static/vendor/jquery-1.8.2.min.js"><\/script>')</script>
+        <script src="../../../_static/plugins.js"></script>
+        <script src="../../../_static/main.js"></script>
+        <link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Pythonもくもく会に参加した #mokupy" href="../../07/30/mokupy19.html" /><link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/kashew_nuts-blog" /><script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.6.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        SOURCELINK_SUFFIX: '.txt',
+        HAS_SOURCE:  true
+      };
+    </script><script type="text/javascript" src="../../../_static/underscore.js"></script><script type="text/javascript" src="../../../_static/doctools.js"></script><script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script><script type="text/javascript" src="../../../_static/disqus.js"></script><script type="text/javascript" src="../../../_static/google_analytics.js"></script>
+    <meta property="fb:admins" content="200170096719194"/>
+    
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Scroll to content if on small screen
+            if (screen.width < 480)
+            {
+                $(document).scrollTop(document.getElementsByTagName("article")[0].offsetTop - 44);
+            }
+        });
+    </script>
+</head>
+    <body role="document">
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+      <div id="container"><header role="banner">
+            <hgroup>
+              <h1><a href="../../../index.html">kashew_nuts-blog</a></h1><h2>Load To Pythonista</h2></hgroup>
+          </header>
+      <nav role="navigation">
+            <ul><li class="main-nav"><a href='./archive.html'>Archive</a></li><li class="main-nav"><div class="rss">
+        <a href="http://feeds.feedburner.com/kashew_nuts-blog" title="Subscribe via RSS"><span class="fa fa-lg fa-rss"></span></a>
+    </div></li><li class="main-nav">
+                  <a href="../../../index.html">Home</a>
+                </li>
+              </ul>
+          </nav><div class="main-container" role="main"><div class="main wrapper body clearfix"><article>
+    <div class="section" id="python-27-stapy">
+<h1>みんなのPython勉強会#27 #stapy</h1>
+<p>テーマは「Pythonistaとしての進化」でした。 stapyは初参加でした。</p>
+<p><a class="reference external" href="https://startpython.connpass.com/event/58757/">みんなのPython勉強会#27 - connpass</a></p>
+<div class="contents local topic" id="id1">
+<p class="topic-title first">目次</p>
+<ul class="simple">
+<li><a class="reference internal" href="#id2" id="id6">コミュニティの紹介</a></li>
+<li><a class="reference internal" href="#talk" id="id7">Talk</a><ul>
+<li><a class="reference internal" href="#talk-1-soogie" id="id8">Talk 1:「 脱写経のススメ〜書籍のレールから踏み出そう〜 」 杉山　剛（&#64;soogie）</a></li>
+<li><a class="reference internal" href="#talk-2-seleniumweb-shift" id="id9">Talk 2:「SeleniumでWebと戯れよう」 玉川紘子（株式会社SHIFT）</a></li>
+<li><a class="reference internal" href="#talk-3-python9pythonistapython-haru860" id="id10">Talk 3:「 Pythonの会社を9年間経営してきて分かったこと〜Pythonistaの仕事、Pythonとの良いかかわりかた 」 佐藤治夫（株式会社ビープラウド代表取締役社長, &#64;haru860）</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id4" id="id11">懇親会</a></li>
+<li><a class="reference internal" href="#id5" id="id12">雑感</a></li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id6">コミュニティの紹介</a></h2>
+<ul class="simple">
+<li>Pythonでスタートする人たちとの集い。</li>
+<li>初心者からマスターまで。</li>
+<li>言語もPython以外にGo, JavaScriptとかやってる。</li>
+<li>草の根コミュニティ活動。毎月開催して30回達成予定(11月には)。メンバー2500名を。</li>
+<li>デブサミでもstapyを紹介した。</li>
+<li>懇親会でビールサーバーがある！？</li>
+</ul>
+</div>
+<div class="section" id="talk">
+<h2><a class="toc-backref" href="#id7">Talk</a></h2>
+<div class="section" id="talk-1-soogie">
+<h3>Talk 1:「 <a class="reference external" href="https://slideship.com/users/&#64;soogie/presentations/2017/07/9hFLuhi13n79DXwm6rr9xT/">脱写経のススメ〜書籍のレールから踏み出そう〜</a> 」 杉山　剛（&#64;soogie）</h3>
+<p>リポジトリ: <a class="reference external" href="https://github.com/soogie/moves">https://github.com/soogie/moves</a></p>
+<p>すぎやまなんで soogie です。2回目ぐらいからきはじめて、通算20回以上。
+PyConJP2017で話そうと思ってたものを話します。</p>
+<ul class="simple">
+<li>写経大事。書いてみてやってみて動かす。</li>
+<li>だけど写経ばかりやってると諸症状が起きる。Iris(アヤメ)とかもういい。分析して面白くない。最近はPython3が主流だからPython2でサンプルが書いてあるとつむ。</li>
+<li><strong>TIPs: Text, Internet, People + なんとかしてやるという強い意志</strong></li>
+<li>ワークフローはあるけど何をやってるかわからない→手でやってみる。簡易なHTMLを書く。 (GET, POST)→その上でPythonで書く。</li>
+<li>使ったことないもの→ネットを見る→いろんな意見がある→deprecated</li>
+<li>戻ってきたデータの構造→複数の入れ子の辞書のリストになっている→pandasのread_json()だと1階層しか取れないのでドキュメント確認しながら試す。</li>
+<li>「こうゆうところでやるデモは失敗するのでプログラムの実行はしません」←わかる</li>
+<li>ネット見る時どこみるか: StackOverFlow,</li>
+<li>綺麗に書きたくなるが、「まず動く」ようにする。欲しいものが取れるようにする。</li>
+<li>時間忘れてもがくの大事。</li>
+<li>ネットの情報を見るときは <strong>まず公式を見る</strong> 公式だけだとわからないところもあるので、QiitaとかBlogも見る。ただ1年以上前の古いものや、バージョン違いには気をつける。</li>
+</ul>
+<p>感想: すごい試行錯誤したあとが見れる。こうゆうのJupyter Notebookでやってると振り返れるからいいですね。</p>
+</div>
+<div class="section" id="talk-2-seleniumweb-shift">
+<h3><a class="toc-backref" href="#id9">Talk 2:「SeleniumでWebと戯れよう」 玉川紘子（株式会社SHIFT）</a></h3>
+<ul class="simple">
+<li>ソフトウェアテストエンジニア。お客様が開発したものをテストする。主に自動化・CIを担当。</li>
+<li>Seleniumに関する本も書いてます。</li>
+<li>Webブラウザの操作を自動化できるOSS</li>
+<li>今日は何の日？→8/9は「ソフトウェアバグの日」です。ちゃんと認定されています!</li>
+<li>Seleniumのバージョン<ul>
+<li>2004年〜 1 or RCはJSベースで、実運用は厳しかった。</li>
+<li>2011年〜 Googleで開発されていたWebDriverと融合。APIを一新して名前が残った。</li>
+<li>2016年〜 古いものが削除されスリム化。(←特に大きな機能追加はなし)</li>
+</ul>
+</li>
+<li>調べるときはWebDriverで調べてもらったほうがいいかもしれません。</li>
+<li>pyqueryとBeautifulSoupとの違い。<ul>
+<li>メリット: 対象のサイトをそんな深く理解しなくてもスクレイピングし易い。Ajax通信であとから表示される要素も習得可能。</li>
+<li>デメリット: 遅い。画面を開き終わってからもタグ情報を集めることも遅い。</li>
+<li>画面を開くまではSeleniumで、画面を開いたらjsoupで食わせて解析してる。(普段はJavaなので)</li>
+</ul>
+</li>
+<li>みんな大好きJupyter Notebook!</li>
+<li>Javaでもないかなー。Pythonの人うらやましい。とのこと。←別途カーネルを導入すればJavaもいけそう？</li>
+<li>バッチ実行するために <a class="reference external" href="https://pypi.python.org/pypi/runipy">runipy 0.1.5 : Python Package Index</a> を使用。</li>
+<li>普段Seleniumを使うのは自動テストツールとして。ただSeleniumにはテストの機能はないので、テスティングフレームワークと組み合わせる必要がある。</li>
+<li>「自動テストを手動で実行する」ほど悲しいことはない。→Jenkins, TravisCI, CircleCIを使おう。</li>
+<li>Seleniumで苦労する点<ul>
+<li>実行時間が長い</li>
+<li>テストがタイミング依存で不安定になることがある。</li>
+<li>注意しないとすぐに保守コストが爆発→ケースが増えてデザインが変わって即崩壊→共通化して保守しやすくする。</li>
+</ul>
+</li>
+<li>バランスに気をつけることが大事。理想は「テストのピラミッド」。少しずつ変えていこう。</li>
+<li>画面キャプチャは制限があって、今見えている範囲しか取れない。</li>
+</ul>
+<p>感想: Pythonの勉強会でJavaのテストを実行したばかりにデモが失敗するだと….</p>
+</div>
+<div class="section" id="talk-3-python9pythonistapython-haru860">
+<h3>Talk 3:「 <a class="reference external" href="https://www.slideshare.net/ssuserafaef6/python9">Pythonの会社を9年間経営してきて分かったこと〜Pythonistaの仕事、Pythonとの良いかかわりかた</a> 」 佐藤治夫（株式会社ビープラウド代表取締役社長, &#64;haru860）</h3>
+<p>ハイライト</p>
+<ul>
+<li><p class="first">司会「Python界の巨人！」haruoさん「！？」司会「失礼しました。中日でした。」 #stapy</p>
+</li>
+<li><p class="first">Pythonの人たちってこんな感じだったというのを紹介します。</p>
+</li>
+<li><p class="first">Pythonを採用した当時(2008年): Webの受託開発がメイン。技術者いるの？保守は？仕事あるの？</p>
+</li>
+<li><p class="first">Pythonのパラドックス: ←採用をはじめたとき実は知らなかったそう。</p>
+</li>
+<li><p class="first">この人どうよ。このアメリカ人どうよ。このJavaScriptできる人どうよ→どやどやと入ってきた。2011年で30人超。</p>
+</li>
+<li><p class="first">今までのPythonの集大成。</p>
+</li>
+<li><p class="first">会社がPythonコミュニティ化した。</p>
+<ul class="simple">
+<li>同じことに共感</li>
+<li>最新の情報の交換、ノウハウ・技術交換</li>
+<li>お互いに切磋琢磨</li>
+</ul>
+</li>
+<li><p class="first"><strong>採用費: 5万円がMAX(それでも4人取れた)</strong></p>
+</li>
+<li><p class="first">仕事も良いお客さんばかりになった。</p>
+</li>
+<li><p class="first">Pythonistaのしごとでの文化</p>
+<ul class="simple">
+<li>どの言語を選択するか？→宗教戦争に近い。何が好きかという話になる。</li>
+</ul>
+</li>
+<li><p class="first">Pythonistaの特徴</p>
+<ul class="simple">
+<li>まずルールを決めよう→Zen of Pythonに書いてある。そのほうが動きやすい。</li>
+<li>ドキュメントを書くのが好き→Zen of Python 暗示するより明治するより</li>
+<li>曖昧な発言は諭される→これとかあれというと「なにが？」と突っ込まれる。←わかる。</li>
+</ul>
+</li>
+<li><p class="first">Pythonの効果的な学び方</p>
+<ul>
+<li><p class="first">写経: 書き写す過程でこれはどうゆう意味か考える。そのまま移したつもりでの差。理解。</p>
+</li>
+<li><p class="first">PyQ: 書籍連動のコラボとかいいですね。次へのステップがあるのはありがたい。</p>
+<blockquote class="twitter-tweet" data-conversation="none"><a href="https://twitter.com/haru860/status/895458444047663104">https://twitter.com/haru860/status/895458444047663104</a></blockquote></li>
+<li><p class="first">アウトプットする:</p>
+<ul class="simple">
+<li>1行でも10分でもいいから書く。<ul>
+<li>Pythonやりたいと言って伸びた人は実経験はなくても、自分で何かつくったりする人。「インストールしました」だけだと微妙かなと。</li>
+</ul>
+</li>
+<li>Blog書く。プロとアマの違いは形式知にしているか。</li>
+</ul>
+</li>
+<li><p class="first">コミュニティに参加すること。←書かれている情報は古い。実際のところどうなのかを聞けるチャンス。</p>
+</li>
+</ul>
+</li>
+<li><p class="first">個人ブランディング</p>
+<ul class="simple">
+<li>QiitaよりはBlog。技術的なことはかけるが、個人ブランディングは難しい。</li>
+<li>GitHub</li>
+<li>発表: 何か話せることはないかなというのを日々考えながらいるといい。</li>
+<li>ブラグ書くなら、ライティングも勉強することも楽。→エンパシーライティング</li>
+</ul>
+</li>
+</ul>
+<p>感想: 反応のスピードがさすがでした。</p>
+<blockquote class="twitter-tweet" data-conversation="none"><a href="https://twitter.com/kashew_nuts/status/895246194640736256">https://twitter.com/kashew_nuts/status/895246194640736256</a></blockquote></div>
+</div>
+<div class="section" id="id4">
+<h2><a class="toc-backref" href="#id11">懇親会</a></h2>
+<p>GitHub, SSH, 発表内容について, 社内でのPython活用事例についてとか話してました。</p>
+<blockquote class="twitter-tweet" data-conversation="none"><a href="https://twitter.com/takanory/status/895226497211875330">https://twitter.com/takanory/status/895226497211875330</a></blockquote><p>て感じでアドバイス貰っていたのでビールは3杯飲めましたが、話に夢中になってたらピザとか何も食べてなかった…</p>
+</div>
+<div class="section" id="id5">
+<h2><a class="toc-backref" href="#id12">雑感</a></h2>
+<p>聴講型の勉強会は導入にはいいけどその後自分の手を動かさないと、「何かやった感だけあって何もしてない」ということになりかねないので、そこで何を得たいのか明確にするのが大事だよなーと思った。少なくとも前に出てる人は手を動かして行動してる人たちだ。</p>
+</div>
+</div>
+
+    <br/>
+
+<!-- ninja_omatome -->
+<div class="ninja_onebutton">
+<script type="text/javascript">
+//<![CDATA[
+(function(d){
+if(typeof(window.NINJA_CO_JP_ONETAG_BUTTON_b501659ead14e1c249d768c9f4426337)=='undefined'){
+    document.write("<sc"+"ript type='text\/javascript' src='//omt.shinobi.jp\/b\/b501659ead14e1c249d768c9f4426337'><\/sc"+"ript>");
+}else{
+    window.NINJA_CO_JP_ONETAG_BUTTON_b501659ead14e1c249d768c9f4426337.ONETAGButton_Load();}
+})(document);
+//]]>
+</script><span class="ninja_onebutton_hidden" style="display:none;"></span><span style="display:none;" class="ninja_onebutton_hidden"></span>
+</div>
+<!-- ninja_omatome -->
+
+</div>
+    <div class="postmeta">
+        
+        
+        
+        </div>
+    
+<ul class="related clearfix">
+            <li class="left"></li>
+            <li class="right"><a href="../../07/30/mokupy19.html">Pythonもくもく会に参加した #mokupy</a> &raquo; </li>
+        </ul></article><aside class="sidebar"><section><div class="widget">
+    <h1>About Me</h1>
+    <div>
+        <a href="https://about.me/kashew_nuts">
+            <img src="https://pbs.twimg.com/profile_images/378800000438956976/3e61e7ae64d916ba0451a44c3b8ce347.jpeg"
+            width="128px"
+            height="128px" />
+        </a>
+        <h4><a href="https://twitter.com/kashew_nuts">kashew_nuts
+                (KashunYOSHIDA)</a></h4>
+        <p>人生という壁を登るSoftwareDeveloper</p>
+    </div>
+</div></section><section><div class="widget" id="searchbox" role="search">
+    <h1><a href="#searchbox">Search</a></h1>
+    <form action="../../../search.html" method="get">
+        <input type="text" name="q" />
+        <button type="submit"><span class="fa fa-search"></span></button>
+    </form>
+</div></section><section><div class="widget">
+    <h1>Recent Posts</h1>
+    <ul><li>
+            <a href="#">みんなのPython勉強会#27 #stapy</a>
+        </li><li>
+            <a href="../../07/30/mokupy19.html">Pythonもくもく会に参加した #mokupy</a>
+        </li><li>
+            <a href="../../07/24/changed_blog_theme.html">Blogのテーマを変更しました</a>
+        </li><li>
+            <a href="../../07/22/rettypy.html">Pythonもくもく自習室 #1 に参加した #rettypy</a>
+        </li><li>
+            <a href="../../07/20/fablicvim2.html">#fablicvim 2に参加した</a>
+        </li><li>
+            <a href="../../07/14/returning_macos.html">macOSからArchLinuxにしたが結局macOSに戻ってきた話</a>
+        </li><li>
+            <a href="../../03/18/sphinxhackathon201703.html">Sphinx+翻訳 Hack-a-thon 2017.3に参加しました #sphinxjp</a>
+        </li><li>
+            <a href="../../../2016/11/08/vimconf2016.html">VimConf2016 に参加しました</a>
+        </li><li>
+            <a href="../../../2016/09/27/pyconjp2016.html">PyConJP2016に参加しました。 #pyconjp</a>
+        </li><li>
+            <a href="../../../2016/07/05/fivetencup2016.html">5.10CUP2016@荻窪 振り返り</a>
+        </li></ul>
+</div>
+</section><section><div class="widget">
+    <h1>Categories</h1>
+    <ul><li><a href="../../../categories/64bit.html">64bit</a> (2)</li><li><a href="../../../categories/android.html">Android</a> (3)</li><li><a href="../../../categories/bouldering.html">bouldering</a> (2)</li><li><a href="../../../categories/bouldering.html">Bouldering</a> (1)</li><li><a href="../../../categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="../../../categories/c_c.html">C/C++</a> (5)</li><li><a href="../../../categories/chrome.html">Chrome</a> (2)</li><li><a href="../../../categories/db.html">DB</a> (1)</li><li><a href="../../../categories/django.html">Django</a> (5)</li><li><a href="../../../categories/facebook.html">Facebook</a> (1)</li><li><a href="../../../categories/firefox.html">Firefox</a> (1)</li><li><a href="../../../categories/git.html">Git</a> (1)</li><li><a href="../../../categories/git_mercurial.html">Git/Mercurial</a> (7)</li><li><a href="../../../categories/golang.html">Golang</a> (1)</li><li><a href="../../../categories/google.html">Google</a> (5)</li><li><a href="../../../categories/heroku.html">Heroku</a> (6)</li><li><a href="../../../categories/java.html">Java</a> (2)</li><li><a href="../../../categories/javascript.html">JavaScript</a> (4)</li><li><a href="../../../categories/kabepy.html">kabepy</a> (2)</li><li><a href="../../../categories/linux.html">Linux</a> (1)</li><li><a href="../../../categories/lt.html">LT</a> (5)</li><li><a href="../../../categories/mac.html">Mac</a> (8)</li><li><a href="../../../categories/pycharm.html">PyCharm</a> (1)</li><li><a href="../../../categories/pyfes.html">pyfes</a> (7)</li><li><a href="../../../categories/python.html">Python</a> (50)</li><li><a href="../../../categories/slack.html">Slack</a> (1)</li><li><a href="../../../categories/sphinx.html">Sphinx</a> (7)</li><li><a href="../../../categories/ssd.html">SSD</a> (1)</li><li><a href="../../../categories/tddbc.html">TDDBC</a> (1)</li><li><a href="../../../categories/tinkerer.html">Tinkerer</a> (7)</li><li><a href="../../../categories/ubuntu.html">Ubuntu</a> (1)</li><li><a href="../../../categories/vagrant.html">Vagrant</a> (1)</li><li><a href="../../../categories/vim.html">Vim</a> (17)</li><li><a href="../../../categories/vimconf.html">VimConf</a> (2)</li><li><a href="../../../categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="../../../categories/windows.html">Windows</a> (2)</li><li><a href="../../../categories/windows7.html">Windows7</a> (4)</li><li><a href="../../../categories/アルゴリズム.html">アルゴリズム</a> (1)</li><li><a href="../../../categories/セキュリティ.html">セキュリティ</a> (2)</li><li><a href="../../../categories/ネットワーク.html">ネットワーク</a> (1)</li><li><a href="../../../categories/プログラミング.html">プログラミング</a> (7)</li><li><a href="../../../categories/勉強会.html">勉強会</a> (30)</li><li><a href="../../../categories/応用情報技術者.html">応用情報技術者</a> (10)</li><li><a href="../../../categories/情報処理技術者試験.html">情報処理技術者試験</a> (10)</li><li><a href="../../../categories/本.html">本</a> (29)</li><li><a href="../../../categories/開発環境.html">開発環境</a> (11)</li><li><a href="../../../categories/雑記.html">雑記</a> (35)</li><li><a href="../../../categories/高速化.html">高速化</a> (1)</li></ul>
+</div></section><section><div class="widget">
+    <h1>Tags Cloud</h1>
+      <a href="../../../tags/64bit.html" style="font-size: 8pt">64bit</a>&nbsp;&nbsp;
+      <a href="../../../tags/android.html" style="font-size: 8pt">Android</a>&nbsp;&nbsp;
+      <a href="../../../tags/bouldering.html" style="font-size: 8pt">bouldering</a>&nbsp;&nbsp;
+      <a href="../../../tags/bouldering.html" style="font-size: 8pt">Bouldering</a>&nbsp;&nbsp;
+      <a href="../../../tags/bpstudy.html" style="font-size: 8pt">BPStudy</a>&nbsp;&nbsp;
+      <a href="../../../tags/c_c.html" style="font-size: 8pt">C/C++</a>&nbsp;&nbsp;
+      <a href="../../../tags/chrome.html" style="font-size: 8pt">Chrome</a>&nbsp;&nbsp;
+      <a href="../../../tags/db.html" style="font-size: 8pt">DB</a>&nbsp;&nbsp;
+      <a href="../../../tags/django.html" style="font-size: 8pt">Django</a>&nbsp;&nbsp;
+      <a href="../../../tags/facebook.html" style="font-size: 8pt">Facebook</a>&nbsp;&nbsp;
+      <a href="../../../tags/firefox.html" style="font-size: 8pt">Firefox</a>&nbsp;&nbsp;
+      <a href="../../../tags/git.html" style="font-size: 8pt">Git</a>&nbsp;&nbsp;
+      <a href="../../../tags/git_mercurial.html" style="font-size: 9pt">Git/Mercurial</a>&nbsp;&nbsp;
+      <a href="../../../tags/golang.html" style="font-size: 8pt">Golang</a>&nbsp;&nbsp;
+      <a href="../../../tags/google.html" style="font-size: 8pt">Google</a>&nbsp;&nbsp;
+      <a href="../../../tags/heroku.html" style="font-size: 9pt">Heroku</a>&nbsp;&nbsp;
+      <a href="../../../tags/java.html" style="font-size: 8pt">Java</a>&nbsp;&nbsp;
+      <a href="../../../tags/javascript.html" style="font-size: 8pt">JavaScript</a>&nbsp;&nbsp;
+      <a href="../../../tags/kabepy.html" style="font-size: 8pt">kabepy</a>&nbsp;&nbsp;
+      <a href="../../../tags/linux.html" style="font-size: 8pt">Linux</a>&nbsp;&nbsp;
+      <a href="../../../tags/lt.html" style="font-size: 8pt">LT</a>&nbsp;&nbsp;
+      <a href="../../../tags/mac.html" style="font-size: 9pt">Mac</a>&nbsp;&nbsp;
+      <a href="../../../tags/pycharm.html" style="font-size: 8pt">PyCharm</a>&nbsp;&nbsp;
+      <a href="../../../tags/pyfes.html" style="font-size: 9pt">pyfes</a>&nbsp;&nbsp;
+      <a href="../../../tags/python.html" style="font-size: 20pt">Python</a>&nbsp;&nbsp;
+      <a href="../../../tags/slack.html" style="font-size: 8pt">Slack</a>&nbsp;&nbsp;
+      <a href="../../../tags/sphinx.html" style="font-size: 9pt">Sphinx</a>&nbsp;&nbsp;
+      <a href="../../../tags/ssd.html" style="font-size: 8pt">SSD</a>&nbsp;&nbsp;
+      <a href="../../../tags/tddbc.html" style="font-size: 8pt">TDDBC</a>&nbsp;&nbsp;
+      <a href="../../../tags/tinkerer.html" style="font-size: 9pt">Tinkerer</a>&nbsp;&nbsp;
+      <a href="../../../tags/ubuntu.html" style="font-size: 8pt">Ubuntu</a>&nbsp;&nbsp;
+      <a href="../../../tags/vagrant.html" style="font-size: 8pt">Vagrant</a>&nbsp;&nbsp;
+      <a href="../../../tags/vim.html" style="font-size: 11pt">Vim</a>&nbsp;&nbsp;
+      <a href="../../../tags/vimconf.html" style="font-size: 8pt">VimConf</a>&nbsp;&nbsp;
+      <a href="../../../tags/virtualbox.html" style="font-size: 8pt">VirtualBox</a>&nbsp;&nbsp;
+      <a href="../../../tags/windows.html" style="font-size: 8pt">Windows</a>&nbsp;&nbsp;
+      <a href="../../../tags/windows7.html" style="font-size: 8pt">Windows7</a>&nbsp;&nbsp;
+      <a href="../../../tags/アルゴリズム.html" style="font-size: 8pt">アルゴリズム</a>&nbsp;&nbsp;
+      <a href="../../../tags/セキュリティ.html" style="font-size: 8pt">セキュリティ</a>&nbsp;&nbsp;
+      <a href="../../../tags/ネットワーク.html" style="font-size: 8pt">ネットワーク</a>&nbsp;&nbsp;
+      <a href="../../../tags/プログラミング.html" style="font-size: 9pt">プログラミング</a>&nbsp;&nbsp;
+      <a href="../../../tags/勉強会.html" style="font-size: 15pt">勉強会</a>&nbsp;&nbsp;
+      <a href="../../../tags/応用情報技術者.html" style="font-size: 10pt">応用情報技術者</a>&nbsp;&nbsp;
+      <a href="../../../tags/情報処理技術者試験.html" style="font-size: 10pt">情報処理技術者試験</a>&nbsp;&nbsp;
+      <a href="../../../tags/本.html" style="font-size: 14pt">本</a>&nbsp;&nbsp;
+      <a href="../../../tags/開発環境.html" style="font-size: 10pt">開発環境</a>&nbsp;&nbsp;
+      <a href="../../../tags/雑記.html" style="font-size: 16pt">雑記</a>&nbsp;&nbsp;
+      <a href="../../../tags/高速化.html" style="font-size: 8pt">高速化</a>
+</div></section><section><a class="twitter-timeline" data-lang="en" data-height="1000" data-theme="dark" href="https://twitter.com/kashew_nuts">Tweets by kashew_nuts</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></section></aside></div> <!-- #main --></div> <!-- #main-container -->
+
+        <div class="footer-container" role="contentinfo"><footer class="wrapper">&copy; Copyright 2011-2017, Kashun YOSHIDA. Powered by <a href="http://www.tinkerer.me/">Tinkerer</a> and <a href="http://sphinx.pocoo.org/">Sphinx</a>.</footer></div> <!-- footer-container -->
+
+      </div> <!--! end of #container --><script type="text/javascript">    var disqus_shortname = "kashewnutsblog";    disqus_count();</script><!--[if lt IE 7 ]>
+          <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+          <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+        <![endif]-->
+    </body>
+</html>
