@@ -4,6 +4,7 @@ Sitemap
 .. toctree::
    :maxdepth: 1
 
+   2017/08/19/rettypy2
    2017/08/14/ichiyasa_python
    2017/08/13/surapy
    2017/08/13/stapy27
