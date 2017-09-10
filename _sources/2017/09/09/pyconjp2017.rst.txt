@@ -1,4 +1,4 @@
-PyConJP2017に参加しました。 #pyconjp
+PyConJP2017に参加しました #pyconjp
 ====================================
 
 .. image:: pyconjp2017.jpg
@@ -6,7 +6,7 @@ PyConJP2017に参加しました。 #pyconjp
 
 - `PyCon JP 2017 - connpass <https://pyconjp.connpass.com/event/59412/>`_
 - `PyCon JP 2017 in Tokyo | Sep 7th – Sep 10th <https://pycon.jp/2017/ja/>`_
-- `「pyconjp2017」の検索結果 - Togetterまとめ <https://togetter.com/search?q=pyconjp2017&t=q>`_
+- `PyCon JP 2017 - Togetter <https://togetter.com/li/1148836>`_
 - `PyConJP - YouTube <https://www.youtube.com/user/PyConJP/videos>`_
 
 4回目のPyCon参加になりました。今回はいくつか目標を立ててました。
@@ -137,8 +137,8 @@ Day2: 有志の二次会
 - `PyCon JP 2017に参加しました - 前半 #pyconjp - Stimulator <http://vaaaaaanquish.hatenablog.com/entry/2017/09/08/210000>`_
 - `PyCon JP 2017に参加しました - 後半 #pyconjp - Stimulator <http://vaaaaaanquish.hatenablog.com/entry/2017/09/09/192024>`_
 - `PyCon JP 2017 Day 1 - 蛇ノ目の記 <http://nao-y.hatenablog.com/entry/2017/09/09/022011>`_
+- `PyCon JP 2017 Day 2 - 蛇ノ目の記 <http://nao-y.hatenablog.com/entry/2017/09/10/093339>`_
 - `PyCon JP 2017に参加してきました (1日目) #pyconjp - プログラマ行進曲第二章 <http://takuan-osho.hatenablog.com/entry/2017/09/08/my-thought-about-pyconjp-2017-at-the-1st-day>`_
-- 
 
 
 .. author:: default
