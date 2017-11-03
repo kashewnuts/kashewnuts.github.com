@@ -4,6 +4,7 @@ Sitemap
 .. toctree::
    :maxdepth: 1
 
+   2017/11/03/pynyumon
    2017/10/03/jobchange
    2017/09/09/pyconjp2017
    2017/08/19/rettypy2
