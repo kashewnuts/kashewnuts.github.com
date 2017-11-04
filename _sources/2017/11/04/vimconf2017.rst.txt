@@ -1,0 +1,282 @@
+#VimConf2017 に参加しました
+===========================
+
+.. image:: vimconf2017.JPG
+    :align: center
+
+`VimConf 2017 <http://vimconf.vim-jp.org/2017/>`_ という、トレンド1位のイベントに行ってきました。さすがですね。
+
+.. tweet:: https://twitter.com/kashew_nuts/status/926643946431815680
+
+まとめとかできないので、どんな感じだったのかはTwitterで実況してたやつを見てもらったほうがいいかなと思います。
+
+`from:kashew_nuts #VimConf2017 - Twitter Search <https://twitter.com/search?f=tweets&q=from%3Akashew_nuts%20%23VimConf2017&src=typd>`_
+
+これ以上ないぐらいVimの濃い話、WiFiあり、各席に有線LAN・コンセントあり、同時翻訳あり、昼食・懇親会あり、無限コーヒーあり、などなどなどなど考えると個人スポンサーになっても全然ペイできるなという感じでした。
+
+コーヒーもVimConf来たって感じにさせてくれました。atwareさんありがとうございます！
+
+.. tweet:: https://twitter.com/kashew_nuts/status/926611151500197888
+
+お昼もおいしかった。
+
+.. tweet:: https://twitter.com/kashew_nuts/status/926651708557598720
+
+特に印象に残ったこととかやることとか
+------------------------------------
+
+- `@mattn_jp <https://twitter.com/mattn_jp>`_ さん、 `@kaoriya <https://twitter.com/kaoriya>`_ さん、 `@k-takata <https://twitter.com/k_takata>`_  さんの3人のLegendからVim(とWindows)の話を聞けたのは最高だった。
+
+  - vim-jpとかドキュメントから貢献するのいいよーという話の最中に、突然自分の名前がでてきて超ビビった。心拍数跳ね上がったと思う。その節は@mattn_jpさんや@k-takataさん含め、大変お世話になりました！
+
+  .. tweet:: https://twitter.com/kashew_nuts/status/926671776431554560
+
+- **offset しらなかった。べんり。** ``<is_foo>/s+3``
+- `hnakamur/vim-go-tutorial-ja: Tutorial for vim-go <https://github.com/hnakamur/vim-go-tutorial-ja>`_ やろう
+- ``set fileencodings=ucs-bom,iso-2022-jp,utf-8,euc-jp,cp932`` をvimrcに追加した。
+- @t9mdさんのvim-mode-plusの話は、実践Vimを生きている感じがして相変わらず凄みがあった。
+
+
+まとめっぽいもの
+----------------
+
+去年VimConfに出て `vim-jp/vimdoc-jaにコントリビューションした話 - Qiita <https://qiita.com/kashew_nuts/items/72a36ad057f0dcf83472>`_ みたいなことやったからか、ありがたいことに話題にも上げてくれた人がしたし、今後も何かしらアウトプットしていけたらいいかなーと思います。来年もでれるようにしていこう。
+
+みなさんお疲れ様でしたー。
+
+
+発表スライドとか
+----------------
+
+- `Vim, Me and Community <https://docs.google.com/presentation/d/14pViuMI_X_PiNwQD8nuGRG72GUqSeKDqoJqjAZWS39U/edit#slide=id.p>`_ `@haya14busa <https://twitter.com/haya14busa>`_
+- `The Past and Future of Vim-go <https://speakerdeck.com/farslan/the-past-and-future-of-vim-go>`_ `@faith <https://twitter.com/fatih>`_
+- `Creating Your Lovely Color Scheme <https://speakerdeck.com/cocopon/creating-your-lovely-color-scheme>`_ `@cocopon <https://twitter.com/cocopon>`_
+- `vmp: the most ambitious vim emulator <https://qiita.com/t9md/items/236d09fea9bcdfabdcea>`_ `@t9md <https://twitter.com/t9md>`_
+- `Vim and Compatibility <http://lamsh.github.io/slide/2017/20171104_VimConf2017/index.html>`_ `@senopen <https://twitter.com/senopen>`_
+- `Neosnippet.vim + Deoppet.nvim in Vim conf 2017 <https://www.slideshare.net/Shougo/neosnippetvim-deoppetnvim-in-vim-conf-2017>`_ `@ShougoMatsu <https://twitter.com/ShougoMatsu>`_
+- `How ordinary Vim user contributed to Vim  <https://speakerdeck.com/daisuzu/how-ordinary-vim-user-contributed-to-vim>`_ `@dice_zu <https://twitter.com/dice_zu>`_
+- `The new syntax highlighter for Vim  <https://speakerdeck.com/pocke/the-new-syntax-highlighter-for-vim>`_ `@p_ck_ <https://twitter.com/p_ck_>`_
+- `You've been Super Viman. After this talk, you could say you are Super Viman 2 -- Life with gina.vim <https://lambdalisue.github.io/vimconf2017/assets/player/KeynoteDHTMLPlayer.html#0>`_ `@lambdalisue <https://twitter.com/lambdalisue>`_
+
+.. .. contents::
+..   :local:
+.. 
+.. - `Vim, Me and Community <https://docs.google.com/presentation/d/14pViuMI_X_PiNwQD8nuGRG72GUqSeKDqoJqjAZWS39U/edit#slide=id.p>`_ @haya14busa
+.. 
+.. - 2/3ぐらい、Vimと私について (5年間のVimの旅)
+.. - 単にVimでかっこいい。「効率的な編集ができる！」←かっこいい。
+.. - EasyMotion、後方互換性を意識して開発。ユーザーもUpdateすれば基本的に使えるらしい。すごい。
+.. - **offset しらなかった。べんり。** ``<is_foo>/s+3``
+.. - プラグイン開発をしてるとVimのコーナーケースのバグを踏むらしい。大変そう。。。
+.. - 「Vim26歳でぼくより年上ですごい」すごい。
+.. 
+.. 感想
+.. 
+.. .. tweet:: https://twitter.com/kashew_nuts/status/926636223862411265
+.. 
+.. `The Past and Future of Vim-go <https://speakerdeck.com/farslan/the-past-and-future-of-vim-go>`_ @faith
+.. -------------------------------------------------------------------------------------------------------
+.. 
+.. - vim-goの開発者ってだけでなく、Go本体のコントリビューターでもあったのか。
+.. - Windowsサポートすばらしい。
+.. - vim-go v.1.0までに1347コミット。Windowsサポート含め様々な機能が入った。
+.. - `hnakamur/vim-go-tutorial-ja: Tutorial for vim-go <https://github.com/hnakamur/vim-go-tutorial-ja>`_ やろう
+.. - "Path differencess" あー。
+.. - 「みんなが大好きなmattnさん」
+.. - Vim7.4, 8.0とNeoVim0.2の互換性大変という話。
+.. - 英語聞きやすくてぼくのショボいリスニングスキルでも何を言ってるかわかりやすい。
+.. 
+.. 感想: VimユーザーかつGolangユーザーが多いのもそうだけど、VimConfに来るとVim自体のデベロッパーかつGolang自体のデベロッパーが何人もいてすごい。
+.. 
+.. 
+.. お昼
+.. ----
+.. 
+.. おいしかったです
+.. 
+.. .. tweet:: https://twitter.com/kashew_nuts/status/926651708557598720
+.. 
+.. Talk show @mattn_jp @k-tanaka @kaoriya
+.. --------------------------------------
+.. 
+.. - "3 Vim Legends"
+.. - 3人とも「neovim知らないです」「Vim-jpの人ほぼneovim使ってないです。」
+.. - Dark Poweredな人はneovim詳しそう。ぼくはneovim使う理由がわからない。
+..   Windows、macOS、Linuxでそれぞれ安定して使えないなら
+.. 
+.. 最近追加された機能について
+.. ~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. 
+.. - lambda: sort が関数名しか取れなくて。mapやfilterも。
+.. - :terminal ターミナルとして動くようになったのはWindowsの方が先。使い方はまだmattnさんもわかってないそうだ。
+.. - 壇上にいるお三方はみなさん普段WindowsでVimを使ってる方々ですね。
+.. - Windowsコンソールつらい。VimでTerminal機能が入ったのは大きいはず。Vim単体でいうなら一番安定して使えるのWindowsなんですけどねー。
+.. - 「Vim上でVimを動かすのすごいべんり」「UIのチェックになる」ほー
+.. - WindowsのコンソールはやくUTF-8に変えてほしい。
+.. - 環境変数周りはよくなったらしい？
+.. - お三方はVimはutf-8にしてるらしい。SJISにしてないと。
+.. - VimとWindowsの話が多くて俺得だ。
+.. - たしかに iminsert/imsearch のデフォルト値が 0ってのがもっとはやくからあったらなーとは思いますね。知らない頃は混乱した。
+.. - k-takataさんのminpac気になる。(現在はvim-plug使用)
+.. - kaoriyaさんのvimrcは56行ぐらいでしったけ？ (使ってないの含む)
+.. - k-takataさんはプラグイン10個ぐらいらしい
+.. - mattnさんはvim-lspが気になるらしい。(lspはtypescriptが最初。ideを作るためのプロトコル。)
+.. 
+.. vim-jpについて
+.. ~~~~~~~~~~~~~~
+.. 
+.. - 「k-takataさんはvim-jpがなかったら、Vimにpatchを送ってなかった？」「そうですねー。vim-devの窓口探そうとは思わなかったかも。日本語でレビューしてもらえるのありがたい。」なるほどー。
+.. - 突然mattnさんからのフリがあってビビった。(Legendから話振られる)
+.. 
+.. Go言語ってどうよ(唐突)
+.. ~~~~~~~~~~~~~~~~~~~~~~
+.. 
+.. - 明日ね。
+.. - 「vim-goを使ってみたいからGolang使ってみよう」という人が結構いるらしい。
+.. - Goのコントリビューター、はやぶさ、(ずー)ちー、いぬさん、etc...
+.. - bram「共通言語のC言語あるやん」←かっこいい
+.. - vimのコミュニティーだいぶゆるい→ラーメンとかパクチーとか画像が貼られたり。貼りすぎて重いときがあるけどw
+.. 
+.. 初心者でも真似できるお気に入りの技
+.. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. 
+.. kaoriya: %のカッコ対応
+.. mattn: 連番を作る→Vim使ってない人のまえでやると「おー！」ってなる。 `g C-a`
+.. k-takata: vimのspellcheck `set spelllang=en,cjk`
+.. 
+.. 書いたけどダメだったパッチ
+.. ~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. 
+.. k-tanaka: ダメでも何度もねじ込んでる。
+.. mattn: if_rubyのかわりにmrubyとか、ソケットとか
+.. 
+.. Vim活して嬉しかった人
+.. ~~~~~~~~~~~~~~~~~~~~~
+.. 
+.. mattn: いろいろな人といわれることとかあるけど、Vimの人。VSCodeはエディタに何かをとりこむのが速くて活発なので、パクりたい。「死ぬまでVimにパッチを書いてると思う」かっこいい。
+.. k-tanaka: 考古学が成功した時。埋もれていたものを掘り起こして
+.. kaoriya: この場を設定できてこと。
+.. 
+.. 妄想している将来的な機能
+.. ~~~~~~~~~~~~~~~~~~~~~~~~
+.. 
+.. kaoriya: シンタックスハイライトひどい。書きたくない。勝手に作ってくれるようなやつがあるといいなぁ。
+.. mattn: 新幹線の中でGVIMで動画再生できるようにする。
+.. k-takata「またWindowsなんですけど。」←定番になりつつある。
+.. k-takata「Drirect2D対応したい。」あー！！！
+.. 
+.. 
+.. 他のエディタの機能でVimに欲しいもの
+.. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. 
+.. kaoriya: わからない
+.. mattn: VSCodeぐらい。Atomは重いから使ってない。LSTか、。設定のリアルタイム反映(VSCodeは保存したタイミングでできる)
+.. 
+.. 感想: VimとWindowsの話をここまでじっくり聞ける機会はそうそうないのですごくためになった。そして突然自分の名前がでてきて超ビビった。
+.. 
+.. 
+.. `Creating Your Lovely Color Scheme <https://speakerdeck.com/cocopon/creating-your-lovely-color-scheme>`_ @cocopon
+.. -----------------------------------------------------------------------------------------------------------------
+.. 
+.. - ColorSchemeネタだ。新鮮。
+.. - 「テキストと色だけの宇宙」
+.. - あなたの人生の33%はカラースキーム
+.. - 人生の33%はColorSchemeを見ており、同時にフォントやテキストエディタを見ていると。つまりVimは良いものだということか。
+.. - はやくWindowsコンソールでも256Color対応しないと...
+.. - まず256Colorをサポート
+.. - リコメンド機能もあるの。すごい...
+.. 
+.. ColorSchemeを作るには
+.. ~~~~~~~~~~~~~~~~~~~~~
+.. 
+.. - コンセプトを決める
+.. - 迷ったらコンセプトを思い出す
+.. - 偉大な先人たちから学ぶ
+.. 
+.. 感想: ColorSchemeマニアの情熱ははてしない....
+.. 
+.. 
+.. `vmp: the most ambitious vim emulator <https://qiita.com/t9md/items/236d09fea9bcdfabdcea>`_ @t9md
+.. -------------------------------------------------------------------------------------------------
+.. 
+.. - vim-mode-plusだ！
+.. - vmpの前にVimの動きを理解しよう。
+.. - Edge Motionべんり
+.. - Occurrenceきた。
+.. - Vimをすごさをはじめて知ったときと同じように、vim-mode-plusのすごさを味わっている感ある。
+.. - Vim力を高めるアドバイス
+.. - オペレーション+ターゲット
+.. - Editing = Operator + Target (Motion or TextObject)
+.. - 考えずできるようになるまで繰り返す。
+.. 
+.. 感想: 去年よりパワーアップしてた。実践Vimをほんとに実践して、カタチにして進化させてる。
+.. 
+.. 
+.. `Vim and Compatibility <http://lamsh.github.io/slide/2017/20171104_VimConf2017/index.html>`_ @senopen
+.. -----------------------------------------------------------------------------------------------------
+.. 
+.. - POSIXismきちゃった
+.. - 「Goo bye. jq」
+.. - CentOS5.0はVim7.0なのか...
+.. - Vim7.0サポートしてるプラグインとかあるのかな...
+.. - 多分自分のvimrcはWindows, macOS, LinuxでVim7.3以降だったら使えると思ったけど、うん、まあ、ね？
+.. - 文字コード大事よね。cp932...
+.. - BOMとか考えたくね―。
+.. 翻訳「わっ、水こぼした」
+.. 「もうやめて！VimmerのCompatibility」
+.. 
+.. 感想: 原理主義ヤバい
+.. 
+.. `Neosnippet.vim + Deoppet.nvim in Vim conf 2017 <https://www.slideshare.net/Shougo/neosnippetvim-deoppetnvim-in-vim-conf-2017>`_ @ShougoMatsu
+.. ---------------------------------------------------------------------------------------------------------------------------------------------
+.. 
+.. - テキストエディタやカードゲームのことについてつぶやいています。
+.. - "deoppet.vim"...？ 完成していたのか.....???→してなかった。
+.. - 「POSIXのだいぶヤバい人」「ぼくもちがう意味でだいぶヤバい人。」
+.. - 竜騎士の設定です。シマウマではありません。
+.. - snippetプラグインなー。
+.. - 「snippet、よくわからないから、つくってみよー！」
+.. 
+.. 感想: snippetのいい話だった。
+.. 
+.. 
+.. `How ordinary Vim user contributed to Vim  <https://speakerdeck.com/daisuzu/how-ordinary-vim-user-contributed-to-vim>`_ @dice_zu
+.. --------------------------------------------------------------------------------------------------------------------------------
+.. 
+.. - 「ここにいるひとはVimのコントリビューターになりたいという人ばかりだと思います。」
+.. - 「壁を感じる」はい。
+.. - 強いパッションが大事
+.. - Vim歴10年ぐらい。Cは学生レベルだった。英語はujmさんSpecial Thanks!
+.. - Vim Contributerのいう運用でカバーって、自分でpatch書いてバグ直しちゃうあれでしょ？
+.. - 「最近Vimの辞書補完遅くない？」って言ってくれる同僚すごいな。
+.. - 安定の @h_east さん
+.. - デバッグはgdbを使う
+.. 
+.. 感想: 静かだけどVimにContributeしたいという熱いパッションを感じた
+.. 
+.. 
+.. `The new syntax highlighter for Vim  <https://speakerdeck.com/pocke/the-new-syntax-highlighter-for-vim>`_ @p_ck_
+.. ----------------------------------------------------------------------------------------------------------------
+.. 
+.. - 「ぽけ」といいます。SideCIをつくってます。
+.. - https://github.com/pocke/sushibar.vim
+.. - JSONに {"foo": "bar"} とたくさんでてて、「そこは{"sushi": "bar"}でしょ！」と思ってしまった
+.. 
+.. 感想: iro.vim べんりっぽい。ただYAMLとPythonは対応してるらしい。Pythonはexperimentalだけど。
+.. 
+.. 
+.. You've been Super Viman. After this talk, you could say you are Super Viman 2 -- Life with gina.vim @lambdalisue
+.. ----------------------------------------------------------------------------------------------------------------
+.. 
+.. - https://github.com/lambdalisue/gina.vim じーなと読むらしい。
+.. - diffから変更箇所に飛べるのはべんりそう
+.. - tigじゃpushやpullができないらしい
+.. - (もうさすがに話聞くの疲れてきてた)
+.. 
+.. 感想: VimのGit系プラグイン、試してはすぐgitコマンドに戻ってしまうけどおもしろそうだと思った。
+
+
+.. author:: default
+.. categories:: Vim, VimConf
+.. tags:: Vim, VimConf
+.. comments::
