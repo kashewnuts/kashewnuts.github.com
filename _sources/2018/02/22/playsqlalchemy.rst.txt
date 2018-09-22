@@ -1,0 +1,109 @@
+SQLAlchemyとJupyterNotebookで遊んでみた話
+=========================================
+
+.. figure:: sqlalchemy.png
+
+SQLAlchemy触ったことはあるのですが、ふわっとした知識しかなかったので入門してみました。
+(とはいっても2017年の12月ぐらいの話なのですが、供養のため公開しておきます)
+
+資料は次のURLから閲覧できます。今回はその写経をJupyter Notebookでやった話です。
+
+- `PlaySQLAlchemy: SQLAlchemy入門 <https://www.slideshare.net/YasushiMasuda/playsqlalchemy-sqlalchemy>`_
+- `PlaySQLAlchemyORM2017.key <https://www.slideshare.net/YasushiMasuda/playsqlalchemyorm2017key-80999299>`_
+
+.. contents::
+  :local:
+
+
+動作環境
+--------
+
+- Python 3.6.3
+- SQLAlchemy==1.1.15
+- jupyter==1.0.0
+
+
+SQLAlchemyについて
+------------------
+
+先に上げた2つの資料を見るまでは、SQLAlchemyに対して次のような疑問やイメージを持ってました。
+
+- 「ORMとして紹介されることがあるけど、単純にそれだけじゃない気がする。」
+- 「DjangoのORMと比べるとなんでもできそうに見えるけど、どう学んだらいいかわからん。」
+- 「ドキュメントどこ見たらいいかよくわからん」
+
+資料をやり終えて少なくとも1つ目と2つ目の疑問はなんとなく解消し、3つ目もなんとか見れるようになったと思う。
+個人的には「よくある誤解」のくだりが納得感がありました。
+
+資料では事前準備としてSQLite版のDB(データ入り)の準備から説明されており、SQLAlchemyの構成する要素の説明、それを実際に手を動かして試していくハンズオンも含まれているのでスムーズに入門できました。困ったときは資料や公式ドキュメントに立ち返ろう。あとは実践だ。
+
+0.6.5と古いものになるけど日本語訳のドキュメントもある。公式のURLと併せてメモしておきます。
+
+- `SQLAlchemy 0.6.5 ドキュメント (和訳) <http://omake.accense.com/static/doc-ja/sqlalchemy/>`_
+- `SQLAlchemy 1.2 Documentation <http://docs.sqlalchemy.org/en/latest/>`_
+
+
+写経した環境について
+--------------------
+
+最初はREPLで写経していたんですが、「Jupyter Notebookを使用して写経すればよいのでは？」と後から気づきました。
+コードとMarkdownによるメモと実行結果を同居できるのやっぱりいいですね。
+
+ショートカット
+^^^^^^^^^^^^^^
+.. tweet:: https://twitter.com/kashew_nuts/status/942111252142219264
+
+当方Vimは使えるので、 ``j, k, dd, <Esc>, <Tab>, <Ctrl+Enter>`` などは雰囲気で使えていました。
+しかし以下のコマンドモード(<Esc>を押したときのモード)のショートカットを使えるとかなり捗ったのでメモしておきます。
+
+- `1`: 「見出し１（大見出し）」で書き出す
+- `2`: 「見出し２（中見出し）」で書き出す
+- `y`: セルをコードモードに変更
+- `m`: セルをMarkdownモードに変更
+- `Space`: 下にスクロール
+- `Shift+Space`: 上にスクロール
+- `a`: セルを上に挿入
+- `b`: セルを下に挿入
+
+コマンドモードで `h` を押すと、ショートカット一覧がでるので他のショートカットも気になる方はそちらもご覧ください。
+
+参考リンク: `Jupyterのショートカットキー一覧を調べてみた - Qiita <https://qiita.com/masafumi_miya/items/6524dbd227705351a00c>`_
+
+Jupyter Notebookをどこで動かすか問題
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+写経するたびにJupyter Notebookの環境用意するのが面倒だなと感じてしまいました。
+
+- 1つJupyter Notebook用の仮想環境を用意して、そこにライブラリを全部突っ込むようにすると動かないときが面倒そう。
+- Jupyterをグローバルな環境に突っ込むのは依存ライブラリが多すぎて問題になりそうだから避けたい。
+- 新しくJupyter Notebookの環境を作るたびにnbextentsionを都度設定するのダルい
+
+といろいろ考えたのですが、NotebookはNotebookでも **Azure Notebook** が良さそうだという結論になりました。
+
+- 無料で使える(少なくとも現時点は)
+- Python3系に対応してる(現状は3.5と3.6をサポート)
+- ほしいライブラリは `!pip install hogehoge` できる
+
+という点だけで十分使えそうだと判断しました。
+
+対抗馬としてGoogleの `Colaboratory <http://blog.aidemy.net/entry/2017/11/11/084105>`_ があったのですが、参考リンクにあるように、次の理由から
+
+- :strike:`現状ではPython2.7にしか対応していない (Python3使いたい)` →Python3対応してた
+- 最新すぎて公開されている情報が少なすぎるため、困った際に検索しても解決策が出てきにくい。
+- :strike:`現段階では申し込みをする必要があり、即時使用はできない。`
+- キーボードショートカットが違いすぎる
+
+気になる方は `Colaboratory/FAQ <https://research.google.com/colaboratory/faq.html>`_ も参照するとよいでしょう。
+
+まとめ
+------
+
+- 手を動かす環境をつくるの大事
+- SQLAlchemyべんり。DB操作フレームワークという表現に納得した
+- JupyterNotebookも活用しよう
+
+
+.. author:: default
+.. categories:: Python, SQLAlchemy, Jupyter
+.. tags:: Python, SQLAlchemy, Jupyter
+.. comments::

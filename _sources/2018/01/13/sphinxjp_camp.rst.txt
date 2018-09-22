@@ -1,0 +1,89 @@
+Sphinx + 翻訳 Hack-a-thon 開発合宿に参加しました #sphinxjp
+==========================================================
+
+一泊二日で行ってきました。イベントのURLは次のとおり。
+
+`Sphinx + 翻訳 Hack-a-thon 開発合宿 - connpass <https://sphinxjp.connpass.com/event/72062/>`_
+
+会場は `国立女性教育会館 <https://www.nwec-bs.jp/>`_ という埼玉県比企郡嵐山町にある宿泊研修施設で行いました。新宿から1.5hでいけて値段も手頃だったので作業に集中できてよかったです。
+
+
+1日目やったこと
+---------------
+
+13:00ぐらいに集合して、合宿スタートしました。やったことは次のとおりです。
+
+Djangoの公式ドキュメント https://docs.djangoproject.com/ja/ を翻訳
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+8月に翻訳プロジェクトにJOINして、ちょっと間が空いていたのでこれを期に取り組みました。実施したのは次のとおりです。
+
+- `Django-2.0のチュートリアル <https://docs.djangoproject.com/ja/2.0/intro/>`_ の未訳部分翻訳完了
+- Djangoフォームの翻訳を進めました。ボリュームが大きくて翻訳率は1%進んだかなといった感じ。進められたのは次の通り
+
+  - `フォームを使う <https://docs.djangoproject.com/ja/1.11/topics/forms/>`_
+  - `モデルからフォームを作成する <https://docs.djangoproject.com/ja/1.11/topics/forms/modelforms/>`_
+
+Djangoフォームの進捗率を出すのに、Django documentationの `Django を使う <https://docs.djangoproject.com/ja/1.11/topics/>`_  全体、つまりモデルやURL、テンプレート、Class-based views、マイグレーションなど **topics** 全体を対象にTransifexが計算してるので、進んでる感じがあまりしない...
+
+翻訳したのはいずれかのタイミングで反映されると思います。
+
+
+Vim談義をした
+^^^^^^^^^^^^^
+
+.. tweet:: https://twitter.com/kashew_nuts/status/949984961754406912
+
+夕飯→お風呂を堪能したあと軽くVim話をしたりしました。
+
+- ``clipboard`` オプションを題材にVimのバージョン情報の見方、ヘルプの引き方、設定してあるオプションの見方を話した。
+- 「デフォルトの動作を覚えるとプラグイン使わなくてもできますよ。」という話をした。
+- 「必要だったらVimはビルドすることもありますよ」と話したら、「Gentoo以外でビルドしたくない！」と言われそうゆうものかーと思った。
+
+「Vimモヒカンがいる」とかいわれたけどそんなことないよ。ヘルプの引き方知ってるだけだよ。
+
+
+PCどうしよう話をした
+^^^^^^^^^^^^^^^^^^^^
+
+某社(っていっても2社だけど...)のPCを使うツラみを共有した後、DellやThinkPad使えばいいんじゃねという話をした。注文したDellのPCはやくこないかなー。
+
+この日は日付変わる頃に部屋に戻って、1時前には寝てたと思います。はやい。
+
+
+2日目やったこと
+---------------
+
+珍しく7時前に起きてゆるゆると朝食に。
+
+.. tweet:: https://twitter.com/kashew_nuts/status/950175081644269568
+
+朝ごはん食べてる時にちょっとアクシデントがあったけどごめんなさい。
+
+ご飯を食べて作業場所に移動中、凍結していた池に突撃したりしました。
+
+.. tweet:: https://twitter.com/shimizukawa/status/950224587710545920
+
+1日目につづき、Djangoフォームの翻訳を進めました。1日目に精根尽き果てたのか、この日はあまり捗らなかった...
+やること微妙に変えたりしてリフレッシュするのも大事ですね。
+
+
+雑感
+----
+
+開発合宿は夏と冬に #pyhack でいったことしかなかったが、今回は場所も集中しやすい環境ができていたので作業が捗ったのはよかったです。
+今後も無理にならないペースで翻訳とか携わっていけたらいいなと思います。
+
+
+参加ブログ
+----------
+
+- `Sphinx + 翻訳 hack-a-thon 開発合宿 2018 #sphinxjp — 清水川Web <http://www.freia.jp/taka/blog/sphinxjp-camp-20180108/index.html>`_
+- `Sphinx + 翻訳 Hack-a-thon 開発合宿に参加してきました #sphinxjp - プログラマ行進曲第二章 <http://takuan-osho.hatenablog.com/entry/2018/01/08/i-joined-sphinx-plus-translation-hackathon-bootcamp>`_
+- `Sphinx 開発合宿をしました。 - Hack like a rolling stone <http://tk0miya.hatenablog.com/entry/2018/01/12/152034>`_
+
+
+.. author:: default
+.. categories:: Sphinx, Django
+.. tags:: Sphinx, Django
+.. comments::

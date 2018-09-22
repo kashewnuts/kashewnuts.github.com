@@ -1,0 +1,59 @@
+Python mini hack-a-thon 雪山合宿 2018に参加した #pyhack
+=======================================================
+
+合宿としては4回目 `Python mini hack-a-thon 雪山合宿 2018 - connpass <https://pyhack.connpass.com/event/68951/>`_ にいってきました。過去の記録を辿ると夏、冬それぞれ2回ずつの参加だそうです。
+
+
+今回やったこと
+--------------
+
+.. tweet:: https://twitter.com/kashew_nuts/status/954237124735254528
+.. tweet:: https://twitter.com/kashew_nuts/status/954263435331584000
+.. tweet:: https://twitter.com/kashew_nuts/status/955027956551725057
+
+だいたいこんな感じです。それ以外にはtmuxとより仲良くなろうとしたり、UbuntuにKindle入らないなーと思ってうんうん唸ってたりしました。
+
+1日目
+-----
+
+.. tweet:: https://twitter.com/kashew_nuts/status/954152696256212995
+
+会社のバターコーヒーエバンジェリストの影響で飲み始めた、バターコーヒーをお供に新幹線で出発。
+
+
+恒例の刀屋
+^^^^^^^^^^
+
+.. tweet:: https://twitter.com/kashew_nuts/status/954226561598636032
+
+普通そうに見えますが、実はどんぶりにぎっちりとそばが敷き詰められており大変ボリュームがありました。満足。
+
+2日目
+-----
+
+2日目は昼間はほぼスノボして、一眠りしたら夜はボードゲームしてました。
+
+雪山の様子
+^^^^^^^^^^
+
+.. tweet:: https://twitter.com/kashew_nuts/status/954528371848835072
+
+約1年ぶりのスノボしてきました。あんまり雪が積もってなかったこともあり、雪がカチコチですっ転ぶとヒッププロテクターをつけていても痛みで悶絶しましたが強い心で滑ってきました。
+
+3日目
+-----
+
+前日スノボですっ転んだときのダメージか、首筋が痛む3日目。朝昼と堪能し、それ以外は疲れて寝てた...
+
+帰りの新幹線では何故か急にdotfilesのsetupスクリプトをPython化しようと思い立ってコーディングしてました。
+結果はこんな感じ→ `dotfiles/setup.py <https://github.com/kashewnuts/dotfiles/blob/master/setup.py>`_
+
+.. tweet:: https://twitter.com/kashew_nuts/status/954996736803487744
+
+またいくぞー。
+
+
+.. author:: default
+.. categories:: Python
+.. tags:: Python
+.. comments::

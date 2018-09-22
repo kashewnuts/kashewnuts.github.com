@@ -1,0 +1,140 @@
+#djangocongress JP 2018に参加しました 
+======================================
+
+Twitterのトレンド入りしてました。人気さがうかがえますね。
+
+.. tweet:: https://twitter.com/kashew_nuts/status/997651529040478209
+
+.. contents::
+  :local:
+
+URL
+---
+
+- `connpass <https://django.connpass.com/event/82148/>`_
+- `DjangoCongress JP 2018 <https://djangocongress.jp/>`_
+- `DjangoCongress JP 2018 ツィートのまとめ - Togetter <https://togetter.com/li/1229165>`_
+
+オープニング
+------------
+
+.. tweet:: https://twitter.com/kashew_nuts/status/997643310805147649
+
+オーガナイザーの @hirokiky のあいさつから始まりました。
+
+.. tweet:: https://twitter.com/kashew_nuts/status/997644167441301504
+
+
+聴講したセッション
+------------------
+
+通常セッション
+^^^^^^^^^^^^^^
+
+@tell-k「できる！Djangoでテスト!」
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- どこからテストをはじめるか。フィクスチャー、モック、カバレッジとか、普段良く聞かれることをまとめたそう。
+- Pylons 単体テストガイドライン http://docs.pylonsproject.jp/en/latest/community/testing.html 良さそう。
+- 安定の `くろのて <http://note.crohaco.net/>`_ 
+- 「Kent Beck のお言葉: 不安が退屈に変わるまでテストしよう」いい言葉だ
+
+@uranusjr「Django After Web 2.0」
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 台北でDjangoGirlsの講師、macdownの作者、pipenvのメンテナなど広く活躍されている@uranusjr氏
+- DRF使ってるとDjangoの役割って...となるのわかる
+
+.. tweet:: https://twitter.com/kashew_nuts/status/997664139202850816
+
+この発言の温度感はセッションを聴いていた人だからこそわかる。
+
+@thinkAmi「Django/WSGIミドルウェア入門」
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+WSGIやDjangoのMiddlewareを触る機会は多くないので参加。順序立てて1つずつ説明していただいたのでわかりやすかった。
+
+
+@jamesvandyne「Building your MVP with Django: Lessons Learned Building and Launching a SaaS」
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Django歴10年の経験から、MVP（実用最小限の製品: Minimum Viable Product）なサービスをつくってきて「こうしたほうがいいこと」「避けたほうがいいこと」を共有してもらった。そうゆうふうにも書けるのかーという発見があっていい時間でした。
+
+
+写真撮影・休憩
+~~~~~~~~~~~~~~
+
+@mamix1116 の提案で急遽行われたTweetの振り返りタイム。
+
+.. tweet:: https://twitter.com/kashew_nuts/status/997727347489980417
+
+
+@c_bata_「Djangoの認証処理実装パターン」
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 安定のカレーメシ先輩でした。ぁっぉさん
+- GitHubにサンプル置く例は見ますが、変更を見せるためにPRにしてるのはすごいなーと思った
+- うっかりやってしまいそうなことや、使っていても意外と知らないことをわかりやすく話してくれていました。さすがだった。
+
+@massa142「Django REST framework 実践入門」
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. tweet:: https://twitter.com/kashew_nuts/status/997747587791794176
+.. tweet:: https://twitter.com/kashew_nuts/status/997746661622300672
+
+- Serializerの基本や、DRFあるある、DRFのサードパーティツールの紹介と気になっていたことを聞けました。
+- 質疑応答で「みんなDRF使っているんだな」というのと「みんな悩みどころあるんだなー」というのが感ありました。
+
+LT
+^^
+
+@aodag 「Python Web History」
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+LT基調講演(個人的に)。5分という短い時間の中であれだけの内容をしこむのはさすが。
+
+「 `Python Out Loud <http://pythonoutloud.com/>`_ 」
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+(名前確認わすれた...)
+PythonのPodcastのお話。そういえば日本語のPythonがテーマのものは見当たらないなーと言う感じなので、聴いてみたいかもしれない。
+
+
+@akiyoko「 `Django の同人誌書いた話 <https://speakerdeck.com/akiyoko/kiso-django-at-techbookfes4>`_ 」
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+先日の技術書典で販売された `現場で使える 基礎 Django <https://akiyoko.booth.pm/items/823251>`_ のお話。
+本の感想は `「現場で使える 基礎 Django」を読みました #技術書典 — kashew_nuts-blog <https://kashewnuts.github.io/2018/05/08/genba_django.html>`_ で書きましたが、増版では一部書き直された箇所もあるとかでそちらも気になりますね。
+
+@mamix1116 「 `django girlsとゆかいな仲間たち <https://djangogirls.org/>`_ 」
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+django girlsのチュートリアルは活用させてもらってましたが、東京だけでなく横浜, 会津と展開を予定してるらしいです。楽しみ。
+
+サイボウズコネクト支援部からLT
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 会場提供していただいたサイボウズさんのコネクト支援部からLT
+- 東京、大阪、松山と会場を提供していただいたりしてるらしい。すごい。
+
+終わりに
+--------
+
+Day1の後、有志で懇親会に参加したりしていました。次回開催も発表者、運営、参加者とそれぞれが楽しんでいけたらいいなぁ。
+Day2のスプリントはいけなかったですが、DjangoCongressにあの場であの雰囲気をあのタイミングで参加できたのはすごく良かった。
+
+「あればいいな」を増やしていくとやることが増えて運営が大変になってしまう印象があるので、
+あれぐらいやることをシンプルにしているといわゆる「燃え尽き症候群」にもなりにくくなりそうだなと思いました。
+運営に携わっている人がいるのも「あって当たり前」じゃないですしねー。
+
+おまけ
+------
+
+「日本語」「少ない」「よう」とあるのが目につきました。ですが日本語の書籍もでるという話なので、今後解消されていくかもしれませんね。
+
+.. tweet:: https://twitter.com/kashew_nuts/status/997633371927822336
+
+.. author:: default
+.. categories:: Python, Django
+.. tags:: Python, Django
+.. comments::

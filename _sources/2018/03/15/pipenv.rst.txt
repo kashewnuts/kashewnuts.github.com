@@ -1,0 +1,242 @@
+Pipenvに移行した話
+==================
+
+``Pipenv`` がPyPAに移ってからしばらく経ちました。
+以前個人のPC環境は ``virtualenvwrapper`` を使用していましたが、折を見て自分も ``pipenv`` に移行しました。
+
+理由は次の3つです。
+
+- ``virtualenvwrapper`` スクリプトが ``bash`` 起動を遅くする原因になっていた
+- Windows/macOS/Linux問わず同じように使いたかった
+- ``peco&ghq`` でのディレクトリの移動や管理に慣れてきた
+  (``peco&ghq`` に関する記事は探すと色々あったのでこの記事では割愛します。)
+
+現在主に使う環境はこんな感じでやってます。
+
+:OS: macOS Sierra/Ubuntu 17.10
+:Python: 3.6.x
+:pipenv: 11.8.0
+
+
+Pipenvとはなんぞや
+------------------
+
+稲田さんのツイートによるとこうです。
+
+.. tweet:: https://twitter.com/methane/status/823442564556537857
+
+要は ``pip`` と ``virtualenv`` (と ``requirements.txt``) をいい感じにラップしてくれるツールです。
+インストール方法やどんなことができるか詳しくは `Pipenv: 人間のためのPython開発ワークフロー <http://pipenv-ja.readthedocs.io/ja/translate-ja/>`_ を参照してください。
+
+冒頭にある動画を見るとどんなことができるかイメージがつくと思います。
+
+個人的Pipenvとの付き合い方
+--------------------------
+
+前述の通り、Pipenvは ``pip`` と ``virtualenv`` をいい感じにラップしてくれるツールなのですが、以下のルールで使用しています。
+
+- ``PIPENV_VENV_IN_PROJECT=true`` にしてプロジェクトのディレクトリに ``.venv`` を作成する
+- ``$HOME`` のようなプロジェクトのディレクトリ以外の場所に ``requirements.txt`` や ``Pipfile`` を残置しない
+- 困ったときは ``pip`` と ``virtualenv`` の使い方にならう
+
+
+PIPENV_VENV_IN_PROJECT=true を設定
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+これを ``bashrc`` などに設定しておくと、プロジェクトディレクトリ(``~/projects/hoge`` など)で ``pipenv install/shell`` した時に ``~/projects/hoge/.venv`` となるように仮想環境を作成してくれます。
+
+デフォルトの挙動だと ``/Users/<username>/.local/share/virtualenvs/プロジェクトのディレクトリ名+ハッシュ値`` のように仮想環境名が決まるため、どこを指定すればいいのかわかりにくいです。これが ``PyCharm`` や ``VSCode`` で仮想環境を設定するときに面倒でした。
+
+プロジェクトディレクトリに仮想環境が作成されることで、その欠点が解消できます。
+
+.. note::
+
+  WORKON_HOMEを指定すると、指定した箇所にまとめて仮想環境を作成してくれます。
+  仮想環境を作成する場所をまとめたい時は ``export WORKON_HOME=~/.virtualenvs`` などとするとよいです。
+
+
+requirements.txt や Pipfile を放置しない
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+ホームディレクトリ ( ``$HOME`` )に ``requirements.txt`` や ``Pipfile`` を放置していた結果、
+個別のプロジェクトディレクトリ以下で ``pipenv install`` するときに意図しないライブラリがインストールされました。
+
+原因は ``$HOME`` に放置していた ``pipenv`` や ``Pipfile`` を読み込んでいたからでした。
+しかし ``$HOME`` に置いていたファイルが影響するとは想定していませんでしたので、
+プロジェクトのディレクトリ以外に ``requirements.txt`` や ``Pipfile`` を放置しないようにしました。
+
+
+困ったときは pip と virtualenv に戻る
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+``pipenv`` に移行しましたが、「 ``pipenv`` は ``pip`` と ``virtualenv`` をいい感じにしたい」から使っています。
+なので個人的には、次のようにコマンドを置き換えて使ってる感じです。
+
++--------------------------+----------------------+
+| virtualenvの場合         | pipenvの場合         |
++==========================+======================+
+| virtualenv .venv         | pipenv install/shell |
++--------------------------+----------------------+
+| souce .venv/bin/activate | pipenv shell         |
++--------------------------+----------------------+
+| deactivate               | exit                 |
++--------------------------+----------------------+
+
+``pip install`` とかは普通に使ってますし、 ``requirements.txt`` も現役です。
+
+注意すべきところとして、 ``pipenv`` はそれ自体で単体のツールではなく複数のライブラリを組み合わせて使用するものだということです。
+何かトラブルが起きた時は最低限 ``pip`` と ``virtualenv`` の使い方が理解できていないとツラいかもしれません。
+
+2018/03/15時点での依存関係は次のとおりです。
+
+.. code-block:: console
+
+  (test)kashewnuts@ubuntu:test$ pipenv graph
+
+  pipenv==11.8.0
+    - certifi [required: Any, installed: 2018.1.18]
+    - pip [required: >=9.0.1, installed: 9.0.1]
+    - setuptools [required: >=36.2.1, installed: 38.5.2]
+    - virtualenv [required: Any, installed: 15.1.0]
+    - virtualenv-clone [required: >=0.2.5, installed: 0.3.0]
+
+触り始めの ``pipenv==8.2.x`` と比べて依存するライブラリが必要なものに絞られてきて、いい感じになってきました。
+しかし、 ``virtualenv+pip`` をラップして使うため予期せぬ不具合を踏むこともあります。
+そんなときは ``pipenv`` の問題なのか、それとも ``virtualenv`` や ``pip`` の問題なのかを切り分けて考えるとよいと思います。
+
+
+実際どうなのよ
+--------------
+
+:strike:`「普通にvirtualenv/venv+pip使えばいいじゃん」という方には不要なものだと思います。`
+
+個人的には結構便利です。ただ慣れるまでハマりどころはあるかもしれません。
+
+``virtualenvwrapper`` が担っていていたプロジェクトへの移動を ``peco&ghq`` でできるようにしたので、
+``pipenv`` にそれ以外のところを任せられてる感じです。
+
+Pythonに限った話だと ``virtualenvwrapper`` の方が「仮想環境の管理」＋「自動activate」とセットで機能が提供されているので楽でした。
+``workon projectname`` で「自動activate」+「プロジェクトディレクトリへの移動」なんかもできましたし安定していました。
+
+しかし「 ``.env`` ファイルを自動で読み込んでくれると嬉しいな」とか、Windows/macOS/Linuxと共通の手順で導入できるし、 ``peco&ghq`` を活用すればディレクトリの移動もお楽にいけそうだと思ったので、「個人でよしなにやるプロジェクトなら ``pipenv`` の組み合わせでいいかー」と思い移行することにしました。
+
+今のところ個人の環境でしか試してないので、本番環境で運用したりしてる人はどうしているのかなとは気になりますね。
+
+
+.. ディレクトリに移動するのはどうするの
+.. ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..
+.. ここで pecoとghqが出てきます。それぞれ以下のようなものになります。
+..
+.. :peco: ターミナル上で標準入力をインクリメンタルにフィルタするUIを提供するツール
+.. :ghq: ソースコードリポジトリを取得、管理するためのツール
+..
+.. 毎回コマンド指定するのもミスする可能性があるので、
+..
+.. `peco & ghq でいい感じにした bashrc (関連部分だけ抜粋) <https://gist.github.com/kashewnuts/e4b3cd282a5a8ff853a22a904ee68783>`_
+..
+.. のように設定ファイルを書いて、ショートカットでソースコードリポジトリ=プロジェクトディレクトリに移動できるようにしました。
+
+.. .. code-block:: bash
+..
+..   $ cd projects/requests/ # 実際にはpeco & ghqで絞り込んで移動
+..   $ pipenv shell          # ここで source .venv/bin/activate の動作をする
+..   (requests) $ ...        # もろもろ作業
+..   (requests) $ exit       # deactivate でなく exit で仮想環境を抜ける
+..
+..
+.. インストール
+.. ------------
+..
+.. というわけで実際に使っていきましょう。早速 ``$ pip3 install pipenv`` します。
+..
+.. .. note:: もしpipが入っていない場合は `get-pip.py <https://bootstrap.pypa.io/get-pip.py>`_ をダウンロードし、以下のコマンドを実行してください。
+..
+..   $ python3 get-pip.py
+..
+.. pipenvをインストールすると以下のライブラリがインストールされます。
+..
+.. ::
+..
+..   $ pip3 freeze
+..   certifi==2017.11.5
+..   chardet==3.0.4
+..   flake8==3.5.0
+..   idna==2.6
+..   mccabe==0.6.1
+..   pew==1.1.0
+..   pipenv==8.3.2
+..   pycodestyle==2.3.1
+..   pyflakes==1.6.0
+..   requests==2.18.4
+..   urllib3==1.22
+..   virtualenv==15.1.0
+..   virtualenv-clone==0.2.6
+..
+.. それぞれ依存関係を見ていくと以下のようになっています。
+.. どうやら ``pip`` や ``virtualenv`` の他に ``flake8`` や ``requests`` が入っており、 `pew(Python Env Wrapper) <https://pypi.python.org/pypi/pew/>`_ というライブラリを使ってPythonのバージョンを切り分けたりしてるようです。何かトラブルがあったときはこの辺をみていけば良さそうなことがわかりました。(この時点でホームディレクトリに ``requirements.txt`` を作成しており、 ``~/projects/requests`` で ``$ pipenv install`` した時に、ホームディレクトリで作成していた ``requirements.txt`` を読み込みにいって焦りました)
+..
+.. ::
+..
+..   pipenv==8.2.6
+..     - flake8 [required: Any, installed: 3.4.1]
+..       - mccabe [required: <0.7.0,>=0.6.0, installed: 0.6.1]
+..       - pycodestyle [required: >=2.0.0,<2.4.0, installed: 2.3.1]
+..       - pyflakes [required: >=1.5.0,<1.6.0, installed: 1.5.0]
+..     - pew [required: >=0.1.26, installed: 1.0.0]
+..       - setuptools [required: >=17.1, installed: 36.8.0]
+..       - virtualenv [required: >=1.11, installed: 15.1.0]
+..       - virtualenv-clone [required: >=0.2.5, installed: 0.2.6]
+..     - pip [required: >=9.0.1, installed: 9.0.1]
+..     - requests [required: >2.18.0, installed: 2.18.4]
+..       - certifi [required: >=2017.4.17, installed: 2017.7.27.1]
+..       - chardet [required: <3.1.0,>=3.0.2, installed: 3.0.4]
+..       - idna [required: >=2.5,<2.7, installed: 2.6]
+..       - urllib3 [required: >=1.21.1,<1.23, installed: 1.22]
+..     - urllib3 [required: >=1.21.1, installed: 1.22]
+..     - virtualenv [required: Any, installed: 15.1.0]
+..
+..     - requests [required: >2.18.0, installed: 2.18.4]
+..       - certifi [required: >=2017.4.17, installed: 2017.7.27.1]
+..       - chardet [required: <3.1.0,>=3.0.2, installed: 3.0.4]
+..       - idna [required: >=2.5,<2.7, installed: 2.6]
+..       - urllib3 [required: >=1.21.1,<1.23, installed: 1.22]
+..
+..
+.. 環境を作ってみる
+.. ----------------
+..
+.. ``$ pipenv install`` で環境をつくってみます。この時点でハマリポイントその2、一度requestsディレクトリを削除して ``pipenv install`` し直したのに、グローバルなpip3でインストールしたライブラリが全て参照されていた。
+..
+.. ::
+..
+..   kashewnuts@MBA:~$
+..   cd projects/requests/
+..   kashewnuts@MBA:~/projects/requests$
+..   ls
+..   kashewnuts@MBA:~/projects/requests$
+..   pipenv install
+..   Creating a Pipfile for this project…
+..   Pipfile.lock not found, creating…
+..   Locking [dev-packages] dependencies…
+..   Locking [packages] dependencies…
+..   Updated Pipfile.lock (c23e27)!
+..   Installing dependencies from Pipfile.lock (c23e27)…
+..     🐍   ▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉ 0/0 — 00:00:00
+..   To activate this project's virtualenv, run the following:
+..    $ pipenv shell
+..   kashewnuts@MBA:~/projects/requests$
+..   pipenv shell
+..   Spawning environment shell (/bin/bash). Use 'exit' to leave.
+..   kashewnuts@MBA:~/projects/requests$
+..   source /Users/kashewnuts/.local/share/virtualenvs/requests-PoQkKfte/bin/activate
+..   (requests-PoQkKfte) kashewnuts@MBA:~/projects/requests$
+..   (requests-PoQkKfte) kashewnuts@MBA:~/projects/requests$
+..   pip freeze
+..   (requests-PoQkKfte) kashewnuts@MBA:~/projects/requests$
+
+
+.. author:: default
+.. categories:: Python
+.. tags:: Python
+.. comments::

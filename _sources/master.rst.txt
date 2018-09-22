@@ -4,6 +4,21 @@ Sitemap
 .. toctree::
    :maxdepth: 1
 
+   2018/09/22/pyconjp2018
+   2018/08/22/jedivim_memo
+   2018/07/15/pycon9shu
+   2018/06/24/pypro3
+   2018/05/21/djangocongress2018
+   2018/05/08/genba_django
+   2018/05/02/climbing_camp_in_mizugaki
+   2018/03/15/pipenv
+   2018/03/04/tmux_memo
+   2018/02/22/playsqlalchemy
+   2018/01/22/pyhack2018winter
+   2018/01/17/ubuntu_install_memo
+   2018/01/13/sphinxjp_camp
+   2017/12/27/2017lookingback
+   2017/11/11/open_vim_from_pycharm
    2017/11/04/vimconf2017
    2017/11/03/pynyumon
    2017/10/03/jobchange

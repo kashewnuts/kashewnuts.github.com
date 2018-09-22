@@ -1,0 +1,59 @@
+PyCharmからVimを開きたい
+========================
+
+タイトルままです。
+`Twitterでもつぶやいた通り、IdeaVimってたまにバグりますよね！ <https://twitter.com/kashew_nuts/status/928979708301021184>`_
+そうゆう時、「PyCharmから、今開いているファイルをVimで開きたくなります。」
+
+こんなこといってると、「Vimのキーバインドを使いたいなら最初からVim使えよ」と心の声がいってくるのですが、IdeaVimはIdeaVimで便利に使ってます。ということで、PyCharm(IntelliJ)からVimを開く方法を調べたのでメモ。
+
+前提
+----
+
+- OS: macOS Sierra/High Sierra
+- PyCharm: 2017.2.3
+- IdeaVim: 0.48
+
+
+やること
+--------
+
+``Preferences > Tools > External Tools`` から ``+`` を押して以下のように入力する
+
+- Name: vim
+- Program: ``/Applications/MacVim.app/Contents/MacOS/Vim`` (Vimのインストールしてる場所)
+- Option: ``Open console`` のチェックを ``OFF``
+- Prameters: ``"-g" $FilePath$ "+$LineNumber$"``
+- Working directory: ``$ProjectFileDir$``
+
+設定が完了すると以下のようになります。
+
+.. image:: confg_for_open_vim.png
+  :align: center
+
+そして ``Find Action`` から ``vim`` と探してみると、今PyCharmで開いているファイルが、カーソルが当たってる行を指定して開けます。
+
+.. image:: find_action_vim.png
+  :align: center
+
+やった！これでPyCharmからVimが開ける！
+
+
+ハマったこと
+------------
+
+**GVimがアクティブになっていないとウィンドウが起動しない** ことですね。
+
+アクティブじゃない(GVimのプロセスが起動していない) と ``External tool 'vim' completed with exit code 0`` と画面左下にメッセージが表示されるだけで終了してしまいました。
+
+この時点で「GVimを常に起動しておけばいいや」という結論になったので深追いはしてませんが、GVimがアクティブじゃなくても起動してくれるようになると便利とは思いました。
+
+まとめ
+------
+
+またひとつPyCharmからVimが使えるようになって便利
+
+.. author:: default
+.. categories:: Python, Vim
+.. tags:: Python, Vim
+.. comments::

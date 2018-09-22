@@ -1,0 +1,89 @@
+「現場で使える 基礎 Django」を読みました #技術書典
+==================================================
+
+.. tweet:: https://twitter.com/kashew_nuts/status/992646507701522433
+
+ということで紙版の「現場で使える基礎Django」を手に入れたので読んでみました。
+
+.. contents::
+  :local:
+
+.. PyQの好きところ
+.. 
+.. - 絶妙なタイミングで演習が待ち構えているので、インプットしたあとにアプとプットできる
+.. - ホームポジションから動かなくていい。ショートカットがある。(C-hやC-f)
+.. - 補完がある。
+
+対象者
+------
+
+著者の `akiyoko <https://twitter.com/aki_yok>`_ さんの `ブログ <http://akiyoko.hatenablog.jp/entry/2018/04/14/171752>`_ によると次のとおりです。
+
+- Python の文法はある程度分かるけど Django は初めてという初心者の方
+- Django を始めてみたけど今いちコツが掴めないという初級者の方
+- ベストプラクティスを学びたいと考えている中級者の方
+
+ちなみに自分は仕事でPython、Djangoを使いはじめて1年ちょっとです。
+空いた時間を使ってDjangoの公式ドキュメントを翻訳したりしているのですが、すべてを把握するには膨大です。
+ちょうどよく仕事で使えそうなボリュームでまとまった書籍がほしいなーと思っていました。
+
+
+感想
+----
+
+全体を通して大変わかりやすかったです。
+図を使っているので説明のイメージがつかみやすく、
+「こうゆうのないかな」と思うようなことが「現場で使うために必要な分量」でまとまっていていると思いました。
+
+よいところ
+^^^^^^^^^^
+
+- Djangoの全体像や、バリデーションのフローが図で書いてあるので関連がわかりやすい
+- 今自分がどのファイルを編集すればいいのか、現在地がわかりやすくなるよう工夫がされている
+- 要素技術を「現場で使うために必要な分量」で説明しているため、説明が頭の中にはいってきやすい
+- 「こうゆうのないかな」と思うけど、調べるのにちょっと時間がかかりそうな箇所もまとまっている
+- 著者の経験からくる知見と「Two Scoops of Django」のTipsが1冊の本にまとまっている(ように感じた)
+
+
+気になったところ
+^^^^^^^^^^^^^^^^
+
+macOSの環境構築にpyenvとAnacondaを使っているのが謎でした。
+
+書籍の中で特別pyenvやAnacondaを活用しているケースもないですし、書籍ではDockerでの環境構築にも触れています。
+Dockerを使うならDockerで、もしくはWindowsやmacOSなら www.python.org からDLしたものを使えば不足がないはずなのに、
+説明されている理由がわかりませんでした。
+
+とはいえここはDjangoとは直接関係があるところというわけでもないので、好みの問題かもしれません。
+
+
+終わりに
+--------
+
+残念ですが紙の書籍は `技術書典 <https://techbookfest.org/event/tbf04/circle/11860001>`_ 、 `BOOTH <https://booth.pm/ja/items/823251>`_ ともに既に完売しています。
+
+著者のakiyokoさんのTwitterによるとPDF版は検討中とのことなので、販売され次第購入したいですね。akiyokoさん、良い本をありがとうございました！
+
+.. tweet:: https://twitter.com/aki_yok/status/992611100175679488
+
+
+蛇足
+----
+
+最後の方にあるサンプルにプルリクエストを送ったので採用されるといいなぁ。
+
+`Add django-tables2 to requirements.txt akiyoko/django-book-mysite-sample <https://github.com/akiyoko/django-book-mysite-sample/pull/1>`_
+
+
+参考リンク
+----------
+
+- `4/22 の「技術書典4」で「現場で使える 基礎 Django」を頒布します - akiyoko blog <http://akiyoko.hatenablog.jp/entry/2018/04/14/171752>`_
+- `現場で使える 基礎 Django【紙の本】※部数限定 - あきよこブログ（akiyoko blog） - BOOTH <https://booth.pm/ja/items/823251>`_ 
+- `「現場で使える 基礎Django」を読みました #技術書典 - メモ的な思考的な <http://thinkami.hatenablog.com/entry/2018/04/25/081142>`_
+
+
+.. author:: default
+.. categories:: Python, Django
+.. tags:: Python, Django
+.. comments::
