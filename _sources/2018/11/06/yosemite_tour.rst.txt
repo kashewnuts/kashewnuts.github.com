@@ -305,6 +305,6 @@ Cathedral Boulders [P42-48]
 
 
 .. author:: default
-.. categories:: bouldering
-.. tags:: bouldering
+.. categories:: Bouldering
+.. tags:: Bouldering
 .. comments::
