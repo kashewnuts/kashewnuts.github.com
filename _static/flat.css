@@ -131,3 +131,6 @@ div.year h2 { margin-bottom: 20px; margin-top: 0; }
     div.year div.timestamp { float: left; margin-left: 20%; }
     div.year h2 { margin-left: 40%; }
 }
+
+span.strike { text-decoration: line-through; }
+span.red { color: red; }
