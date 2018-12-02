@@ -69,6 +69,72 @@
             <a href="http://feeds.feedburner.com/kashew_nuts-blog" title="Subscribe via RSS"><span class="fa fa-lg fa-rss"></span></a>
           </li></ul>
     </nav><div class="main-container" role="main"><div class="main wrapper body clearfix"><article><div class="timestamp postmeta">
+            <span>October 27, 2011</span>
+        </div>
+        <div class="section">
+            <h1><a href="2011/10/27/VimVim.html">Vimテクニックバイブルを読んでVimにプラグイン追加してみた</a></h1>
+<div class="line-block">
+<div class="line">まだ試行錯誤中なので一部のみ抜粋。</div>
+<div class="line">_vimrcと_gvimrcは逐一変わってるのでまた今度にしようと思う。</div>
+<div class="line">今回はVimのプラグインをインストールしてみた。</div>
+<div class="line">インストールしたのは以下の2つ</div>
+<div class="line">■<a class="reference external" href="https://github.com/thinca/vim-quickrun">quickrun.vim</a>(Vim上でプログラム実行)</div>
+<div class="line">■<a class="reference external" href="https://github.com/Shougo/neocomplcache">neocomplcache</a>(補完)</div>
+<div class="line">今回はその中でもquickrun.vimについて書きます。</div>
+<div class="line">Vimテクニックバイブル持ってない方は、<a class="reference external" href="http://vim-users.jp/2009/05/hack7/">こちら</a>とかを参考にどうぞ。</div>
+<div class="line"><a class="reference external" href="http://kashewnuts-tech.blogspot.com/2011/10/python-developers-festa-201110.html">以前のPython Developers festa2011.10</a>では</div>
+<div class="line">下記の設定を_vimrcに追加して実行結果を確かめてた。</div>
+<div class="line">点線で囲っているところを追加すれば、</div>
+<div class="line">&lt;Ctrl+P&gt;でPythonの実行結果をすぐに検証できた。</div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span/><span class="s2">" python実行function! s:Exec()    exe "</span>!<span class="s2">" . &amp;ft . "</span> %<span class="s2">":endfunctioncommand! Exec call &lt;SID&gt;Exec()map &lt;silent&gt; &lt;C-P&gt; :call &lt;SID&gt;Exec()&lt;CR&gt;</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br/></div>
+<div class="line">しかしPython以外のプログラム書く時に</div>
+<div class="line">逐一_vimrcを変更したり、外部プログラムを呼び出すのは大変。</div>
+<div class="line">ということでquickrun.vimに目をつけた。</div>
+<div class="line">これは&lt;\+r&gt;で実行結果を確かめることができる。</div>
+<div class="line">実行結果を確かめる時</div>
+<div class="line">Vimを縦分割か、横分割するのを変更できるらしいと聞いて、</div>
+<div class="line">以下の設定を、_vimrcに追加した。</div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span/><span class="s2">" 横分割をするようにするlet g:quickrun_config={'*': {'split': ''}}</span>
+<span class="s2">"</span> 横分割時は下へ新しいウィンドウが開くようにするset splitbelow
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br/></div>
+<div class="line">実行した結果はこんな感じ。</div>
+</div>
+<p><a class="reference external" href="http://1.bp.blogspot.com/-Nd9wi_RWq5Q/TqlcIJcT0yI/AAAAAAAAAY4/1ycRGFQjkJ0/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588+2011-10-27+22.26.35.png"><img alt="image0" src="http://1.bp.blogspot.com/-Nd9wi_RWq5Q/TqlcIJcT0yI/AAAAAAAAAY4/1ycRGFQjkJ0/s400/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588+2011-10-27+22.26.35.png"/></a></p>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+<div class="line-block">
+<div class="line">まだPython以外では試してないけど、</div>
+<div class="line">他の言語も何種類も対応しているから捗ることは間違いなさそう。</div>
+</div>
+
+        </div>
+        <div class="postmeta">
+        <div class="author">
+            <span>Posted by Kashun YOSHIDA</span>
+        </div>
+        <div class="categories">
+            <span>
+                Filed under:
+                <a href="categories/プログラミング.html">プログラミング</a>, <a href="categories/開発環境.html">開発環境</a>, <a href="categories/vim.html">Vim</a>, <a href="categories/本.html">本</a>, <a href="categories/python.html">Python</a></span>
+        </div>
+        <div class="tags">
+            <span>
+                Tags:
+                <a href="tags/プログラミング.html">プログラミング</a>, <a href="tags/開発環境.html">開発環境</a>, <a href="tags/vim.html">Vim</a>, <a href="tags/本.html">本</a>, <a href="tags/python.html">Python</a></span>
+        </div>
+        <div class="comments">
+            <a href="http://kashewnuts.github.io/2011/10/27/VimVim.html#disqus_thread" data-disqus-identifier="2011/10/27/VimVim">Leave a comment</a>
+        </div></div><div class="separator post_separator"></div><div class="timestamp postmeta">
             <span>October 26, 2011</span>
         </div>
         <div class="section">
@@ -170,60 +236,6 @@
         </div>
         <div class="comments">
             <a href="http://kashewnuts.github.io/2011/10/25/java_publickey.html#disqus_thread" data-disqus-identifier="2011/10/25/java_publickey">Leave a comment</a>
-        </div></div><div class="separator post_separator"></div><div class="timestamp postmeta">
-            <span>October 24, 2011</span>
-        </div>
-        <div class="section">
-            <h1><a href="2011/10/24/read_expertpython_done.html">エキPy通し見done</a></h1>
-<p><a class="reference external" href="http://www.amazon.co.jp/exec/obidos/ASIN/4048686291/naoyadyndnsor-22/ref=nosim/"><img alt="エキスパートPythonプログラミング" src="http://ecx.images-amazon.com/images/I/51wSTTIQtgL._SL160_.jpg"/></a></p>
-<div class="line-block">
-<div class="line"><a class="reference external" href="http://www.amazon.co.jp/exec/obidos/ASIN/4048686291/naoyadyndnsor-22/ref=nosim/">エキスパートPythonプログラミング</a></div>
-<div class="line">posted with</div>
-<div class="line"><a class="reference external" href="http://www.amazlet.com/browse/ASIN/4048686291//ref=nosim/">amazlet</a></div>
-<div class="line">at 11.10.24</div>
-<div class="line">Tarek Ziade</div>
-<div class="line">アスキー・メディアワークス</div>
-<div class="line">売り上げランキング: 36822</div>
-<div class="line"><a class="reference external" href="http://www.amazon.co.jp/exec/obidos/ASIN/4048686291/naoyadyndnsor-22/ref=nosim/">Amazon.co.jp で詳細を見る</a></div>
-</div>
-<div class="line-block">
-<div class="line">来るべき時に備えてまずはざっと通し見。</div>
-<div class="line">さすがに読み応えたっぷりの本だ。</div>
-</div>
-<div class="line-block">
-<div class="line">しかし１年前大学生だった時は</div>
-<div class="line">「何のことかさっぱり…」</div>
-<div class="line">だったところが、</div>
-<div class="line">「これはどうゆうことなんだろう」</div>
-<div class="line">「ここはこうなっていたのか」</div>
-<div class="line">「ここはもっとこうしたい」</div>
-<div class="line">みたいなことがちょくちょく湧いてきて、</div>
-<div class="line">自分もちょっとは成長してるのかなと思うようになってきた。</div>
-</div>
-<div class="line-block">
-<div class="line">そういえばエキPyはVim押しでしたね。</div>
-<div class="line">Vim使えるようになっててよかった自分！</div>
-<div class="line">読んだと言ってもざっと見して深いところまでは全然読みきれてないので、</div>
-<div class="line">今週いっぱいはこの本を精読して行きたい。</div>
-</div>
-
-        </div>
-        <div class="postmeta">
-        <div class="author">
-            <span>Posted by Kashun YOSHIDA</span>
-        </div>
-        <div class="categories">
-            <span>
-                Filed under:
-                <a href="categories/vim.html">Vim</a>, <a href="categories/本.html">本</a>, <a href="categories/雑記.html">雑記</a>, <a href="categories/python.html">Python</a></span>
-        </div>
-        <div class="tags">
-            <span>
-                Tags:
-                <a href="tags/vim.html">Vim</a>, <a href="tags/本.html">本</a>, <a href="tags/雑記.html">雑記</a>, <a href="tags/python.html">Python</a></span>
-        </div>
-        <div class="comments">
-            <a href="http://kashewnuts.github.io/2011/10/24/read_expertpython_done.html#disqus_thread" data-disqus-identifier="2011/10/24/read_expertpython_done">Leave a comment</a>
         </div></div><div class="archive_link">
         <a href="archive.html"> &mdash; Blog Archive &mdash; </a>
     </div><ul class="related clearfix">
@@ -242,6 +254,8 @@
 </div></section><section><div class="widget">
     <h1>Recent Posts</h1>
     <ul><li>
+            <a href="2018/12/02/bp_advent_calender.html">2018年版Life ChangingだったVimプラグインTOP3</a>
+        </li><li>
             <a href="2018/11/06/yosemite_tour.html">ヨセミテツアー日記</a>
         </li><li>
             <a href="2018/09/22/pyconjp2018.html">PyConJP2018でPyCharmの話をしてきました #pyconjp</a>
@@ -259,13 +273,11 @@
             <a href="2018/05/02/climbing_camp_in_mizugaki.html">瑞牆でボルダリング&キャンプしてきた話</a>
         </li><li>
             <a href="2018/03/15/pipenv.html">Pipenvに移行した話</a>
-        </li><li>
-            <a href="2018/03/04/tmux_memo.html">tmux導入メモ</a>
         </li></ul>
 </div>
 </section><section><div class="widget">
     <h1>Categories</h1>
-    <ul><li><a href="categories/64bit.html">64bit</a> (2)</li><li><a href="categories/android.html">Android</a> (3)</li><li><a href="categories/bouldering.html">bouldering</a> (2)</li><li><a href="categories/bouldering.html">Bouldering</a> (3)</li><li><a href="categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="categories/c_c.html">C/C++</a> (5)</li><li><a href="categories/chrome.html">Chrome</a> (2)</li><li><a href="categories/db.html">DB</a> (1)</li><li><a href="categories/django.html">Django</a> (10)</li><li><a href="categories/facebook.html">Facebook</a> (1)</li><li><a href="categories/firefox.html">Firefox</a> (1)</li><li><a href="categories/git_mercurial.html">Git/Mercurial</a> (8)</li><li><a href="categories/golang.html">Golang</a> (1)</li><li><a href="categories/google.html">Google</a> (5)</li><li><a href="categories/heroku.html">Heroku</a> (6)</li><li><a href="categories/java.html">Java</a> (2)</li><li><a href="categories/javascript.html">JavaScript</a> (4)</li><li><a href="categories/jupyter.html">Jupyter</a> (1)</li><li><a href="categories/kabepy.html">kabepy</a> (2)</li><li><a href="categories/linux.html">Linux</a> (3)</li><li><a href="categories/lt.html">LT</a> (5)</li><li><a href="categories/mac.html">Mac</a> (8)</li><li><a href="categories/pycharm.html">PyCharm</a> (2)</li><li><a href="categories/pyconjp.html">PyConJP</a> (1)</li><li><a href="categories/pyfes.html">pyfes</a> (7)</li><li><a href="categories/python.html">Python</a> (68)</li><li><a href="categories/slack.html">Slack</a> (1)</li><li><a href="categories/sphinx.html">Sphinx</a> (8)</li><li><a href="categories/sqlalchemy.html">SQLAlchemy</a> (1)</li><li><a href="categories/ssd.html">SSD</a> (1)</li><li><a href="categories/tddbc.html">TDDBC</a> (1)</li><li><a href="categories/tinkerer.html">Tinkerer</a> (7)</li><li><a href="categories/tmux.html">tmux</a> (1)</li><li><a href="categories/ubuntu.html">Ubuntu</a> (2)</li><li><a href="categories/vagrant.html">Vagrant</a> (1)</li><li><a href="categories/vim.html">Vim</a> (21)</li><li><a href="categories/vimconf.html">VimConf</a> (3)</li><li><a href="categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="categories/windows.html">Windows</a> (2)</li><li><a href="categories/windows7.html">Windows7</a> (4)</li><li><a href="categories/アルゴリズム.html">アルゴリズム</a> (1)</li><li><a href="categories/セキュリティ.html">セキュリティ</a> (2)</li><li><a href="categories/ネットワーク.html">ネットワーク</a> (1)</li><li><a href="categories/プログラミング.html">プログラミング</a> (7)</li><li><a href="categories/勉強会.html">勉強会</a> (30)</li><li><a href="categories/応用情報技術者.html">応用情報技術者</a> (10)</li><li><a href="categories/情報処理技術者試験.html">情報処理技術者試験</a> (10)</li><li><a href="categories/本.html">本</a> (29)</li><li><a href="categories/開発環境.html">開発環境</a> (11)</li><li><a href="categories/雑記.html">雑記</a> (37)</li><li><a href="categories/高速化.html">高速化</a> (1)</li></ul>
+    <ul><li><a href="categories/64bit.html">64bit</a> (2)</li><li><a href="categories/android.html">Android</a> (3)</li><li><a href="categories/bouldering.html">bouldering</a> (2)</li><li><a href="categories/bouldering.html">Bouldering</a> (3)</li><li><a href="categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="categories/c_c.html">C/C++</a> (5)</li><li><a href="categories/chrome.html">Chrome</a> (2)</li><li><a href="categories/db.html">DB</a> (1)</li><li><a href="categories/django.html">Django</a> (10)</li><li><a href="categories/facebook.html">Facebook</a> (1)</li><li><a href="categories/firefox.html">Firefox</a> (1)</li><li><a href="categories/git_mercurial.html">Git/Mercurial</a> (8)</li><li><a href="categories/golang.html">Golang</a> (1)</li><li><a href="categories/google.html">Google</a> (5)</li><li><a href="categories/heroku.html">Heroku</a> (6)</li><li><a href="categories/java.html">Java</a> (2)</li><li><a href="categories/javascript.html">JavaScript</a> (4)</li><li><a href="categories/jupyter.html">Jupyter</a> (1)</li><li><a href="categories/kabepy.html">kabepy</a> (2)</li><li><a href="categories/linux.html">Linux</a> (3)</li><li><a href="categories/lt.html">LT</a> (5)</li><li><a href="categories/mac.html">Mac</a> (8)</li><li><a href="categories/pycharm.html">PyCharm</a> (2)</li><li><a href="categories/pyconjp.html">PyConJP</a> (1)</li><li><a href="categories/pyfes.html">pyfes</a> (7)</li><li><a href="categories/python.html">Python</a> (69)</li><li><a href="categories/slack.html">Slack</a> (1)</li><li><a href="categories/sphinx.html">Sphinx</a> (8)</li><li><a href="categories/sqlalchemy.html">SQLAlchemy</a> (1)</li><li><a href="categories/ssd.html">SSD</a> (1)</li><li><a href="categories/tddbc.html">TDDBC</a> (1)</li><li><a href="categories/tinkerer.html">Tinkerer</a> (7)</li><li><a href="categories/tmux.html">tmux</a> (1)</li><li><a href="categories/ubuntu.html">Ubuntu</a> (2)</li><li><a href="categories/vagrant.html">Vagrant</a> (1)</li><li><a href="categories/vim.html">Vim</a> (22)</li><li><a href="categories/vimconf.html">VimConf</a> (3)</li><li><a href="categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="categories/windows.html">Windows</a> (2)</li><li><a href="categories/windows7.html">Windows7</a> (4)</li><li><a href="categories/アルゴリズム.html">アルゴリズム</a> (1)</li><li><a href="categories/セキュリティ.html">セキュリティ</a> (2)</li><li><a href="categories/ネットワーク.html">ネットワーク</a> (1)</li><li><a href="categories/プログラミング.html">プログラミング</a> (7)</li><li><a href="categories/勉強会.html">勉強会</a> (30)</li><li><a href="categories/応用情報技術者.html">応用情報技術者</a> (10)</li><li><a href="categories/情報処理技術者試験.html">情報処理技術者試験</a> (10)</li><li><a href="categories/本.html">本</a> (29)</li><li><a href="categories/開発環境.html">開発環境</a> (11)</li><li><a href="categories/雑記.html">雑記</a> (37)</li><li><a href="categories/高速化.html">高速化</a> (1)</li></ul>
 </div></section><section><div class="widget">
     <h1>About Me</h1>
     <div>

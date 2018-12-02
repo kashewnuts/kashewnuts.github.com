@@ -69,6 +69,137 @@
             <a href="http://feeds.feedburner.com/kashew_nuts-blog" title="Subscribe via RSS"><span class="fa fa-lg fa-rss"></span></a>
           </li></ul>
     </nav><div class="main-container" role="main"><div class="main wrapper body clearfix"><article><div class="timestamp postmeta">
+            <span>December 15, 2011</span>
+        </div>
+        <div class="section">
+            <h1><a href="2011/12/15/expertpython02_rest.html">(続き)「エキスパートPythonプログラミング読書会 第二期 02」参加してきました。</a></h1>
+<div class="line-block">
+<div class="line">感想は<a class="reference external" href="http://kashewnuts-tech.blogspot.com/2011/12/python-02.html">前回</a>述べたので、今回は本編についてのまとめ</div>
+</div>
+<div class="line-block">
+<div class="line">●リスト内包表記</div>
+<div class="line">    -mapより速い</div>
+<div class="line">        前はmapを使っていたが、mapはあくまで関数</div>
+<div class="line">        リスト内包表記は内部処理としてあるので、リストの方が早い</div>
+<div class="line">    -enumerate関数</div>
+<div class="line">        ループ処理でインデックスやカウンタを使いたい時に便利</div>
+<div class="line">    -リスト内包表記は慣れると書きやすて便利</div>
+<div class="line">        だけど可読性が低くなるときはfor文などの読みやすい方にする</div>
+<div class="line">        そのほうがPythonic</div>
+</div>
+<div class="line-block">
+<div class="line">●Pythonic</div>
+<div class="line">    -Pythonのインタラクティブシェルで、</div>
+<div class="line">    import this</div>
+<div class="line">    と打つとそのThe Zen of Python、その世界観に触れることができる</div>
+<div class="line">（<a class="reference external" href="http://kashewnuts-tech.blogspot.com/2011/11/import-this.html">以前ブログも書きました</a>）</div>
+</div>
+<div class="line-block">
+<div class="line">●イテレータ</div>
+<div class="line">    -nextメソッド、__iter__メソッド</div>
+<div class="line">        プロトコルに問い合わせる関数</div>
+<div class="line">    -「プロトコル ＝ アダプター」</div>
+<div class="line">        lenもアダプター</div>
+<div class="line">        シンタックスの分かりやすさを、</div>
+<div class="line">        ”アダプターをかましている”という考えだとしっくりくるかなと</div>
+<div class="line">    -イテレータプロトコルはどこで誰が定義したの？</div>
+<div class="line">        →リファレンスマニュアルに規約が乗っている</div>
+<div class="line">        →いまだとabc(抽象基底クラス）や仮想クラスのような形で、</div>
+<div class="line"><a class="reference external" href="http://www.python.jp/doc/nightly/library/collections.html">http://www.python.jp/doc/nightly/library/collections.html</a></div>
+<div class="line">        に乗っている</div>
+<div class="line">        ここを満たしていると、よりモダンな感じになる</div>
+<div class="line">    -たとえると、</div>
+<div class="line">        単にラップされていて、</div>
+<div class="line">        必要なものに必要な処理をするための橋渡しをしている</div>
+<div class="line">        コンセントのアダプタを意識すると分かりやい</div>
+<div class="line">        （海外にいくと必要）</div>
+<div class="line">        プロトコルに対応されていると、</div>
+<div class="line">        それはイテレータであることを保証している</div>
+<div class="line">        （ダックタイピングの話）</div>
+<div class="line">        ただそれだとゆるすぎるから、</div>
+<div class="line">        isインスタンスで証明できるようにしている</div>
+<div class="line">        改行コードを受けった時に改行単位で、行読み出しなど</div>
+<div class="line">        好きな単位でnextで読み込みできる組み込みでもある</div>
+<div class="line">        関数など使わなくても、for文回せばいいのねという認識になる</div>
+</div>
+<div class="line-block">
+<div class="line">●ジェネレータ</div>
+<div class="line">    -yield</div>
+<div class="line">        yieldがあるとジェネレータになる関数ではない</div>
+<div class="line">        returnだと関数になるが、</div>
+<div class="line">        yieldだとジェネレータの中にreturn書くなと怒られる</div>
+<div class="line">    -StopIterationはお約束で、ループを抜けるために必要</div>
+<div class="line"><br/></div>
+<div class="line">   -ジェネレータはイテレータプロトコルを実装しているので、</div>
+<div class="line">     多段にyieldとかやるとメモリをほとんど食わずに、</div>
+<div class="line">     ほぼ無限長のものを扱える</div>
+<div class="line">     ２０GBのログなども落ちずにできると思う</div>
+<div class="line">    -フィルタ条件とか色々かましたくなってくると便利になってくる</div>
+<div class="line">    -sendメソッド</div>
+<div class="line">        ジェネレータを外からコントロールすることは不可能だったけど</div>
+<div class="line">        Python2.5でsendメソッドを搭載したので、</div>
+<div class="line">        コントロールできるようになった</div>
+<div class="line">        初期化の時はsendは使えない</div>
+<div class="line">        最初にnext使ってやらないといけない</div>
+<div class="line">        ジェネレータのそれ以降の動きを方向転換することができるのが、</div>
+<div class="line">        sendのいいところ</div>
+<div class="line">    -closeメソッド</div>
+<div class="line">        close()を渡すとexceptionを発生させる→finallyで拾う</div>
+</div>
+<div class="line-block">
+<div class="line">●PEP</div>
+<div class="line">    -Python Enhancement Proposal(Python拡張提案）</div>
+<div class="line">    -PEPはPythonのモダンな仕組みを取り入れるためのもの</div>
+<div class="line">    -PEP8はPythonのコーディング規約を書いたもの</div>
+</div>
+<div class="line-block">
+<div class="line">●<a class="reference external" href="http://ja.wikipedia.org/wiki/%E3%82%B3%E3%83%AB%E3%83%BC%E3%83%81%E3%83%B3">コルーチン</a></div>
+<div class="line">    -組み込みだとタスク</div>
+<div class="line">    -スレッドだとデッドロックを考慮する必要がある</div>
+</div>
+<div class="line-block">
+<div class="line">●ジェネレータ式</div>
+<div class="line">    -リスト内包表記だと最初にメモリを食ってしまうため、</div>
+<div class="line">     順次処理ならジェネレーターで</div>
+<div class="line">    -順次処理系だとDBで１行（カーソル）を取り出していって、</div>
+<div class="line">     ジェネレーターでやると１０万行一気に読みこまないで済むので便利</div>
+</div>
+<div class="line-block">
+<div class="line">●range()とxrange()の違い</div>
+<div class="line">    -xrange()はオブジェクトを返している</div>
+<div class="line">    -xrange()はPython3でrange()になるためいらないと思われ</div>
+<div class="line">    -清水川せんせはほとんど使っていない</div>
+<div class="line">    -10万のrange() を作る時は有効ではある</div>
+</div>
+<div class="line-block">
+<div class="line">取っていたメモを元に書いてみました。</div>
+<div class="line">過不足ありそうですが、ひとまずこれにて振り返り終了。</div>
+<div class="line"><a class="reference external" href="https://twitter.com/#!/tfmagician">@tfmagician</a>さんのツイートにもあったけど、</div>
+<div class="line">清水川せんせのライブコーディングのログがあったらなあと。</div>
+</div>
+<div class="line-block">
+<div class="line">ブログ書いてて思い出せない所があったりして、</div>
+<div class="line">もどかしい思いもしたので次回からは是非残して欲しいと思う。</div>
+</div>
+
+        </div>
+        <div class="postmeta">
+        <div class="author">
+            <span>Posted by Kashun YOSHIDA</span>
+        </div>
+        <div class="categories">
+            <span>
+                Filed under:
+                <a href="categories/勉強会.html">勉強会</a>, <a href="categories/python.html">Python</a></span>
+        </div>
+        <div class="tags">
+            <span>
+                Tags:
+                <a href="tags/勉強会.html">勉強会</a>, <a href="tags/python.html">Python</a></span>
+        </div>
+        <div class="comments">
+            <a href="http://kashewnuts.github.io/2011/12/15/expertpython02_rest.html#disqus_thread" data-disqus-identifier="2011/12/15/expertpython02_rest">Leave a comment</a>
+        </div></div><div class="separator post_separator"></div><div class="timestamp postmeta">
             <span>December 14, 2011</span>
         </div>
         <div class="section">
@@ -288,76 +419,6 @@
         </div>
         <div class="comments">
             <a href="http://kashewnuts.github.io/2011/12/11/python_virtualenv17.html#disqus_thread" data-disqus-identifier="2011/12/11/python_virtualenv17">Leave a comment</a>
-        </div></div><div class="separator post_separator"></div><div class="timestamp postmeta">
-            <span>December 07, 2011</span>
-        </div>
-        <div class="section">
-            <h1><a href="2011/12/07/glt40.html">GLT vol.40参加してきました。</a></h1>
-<div class="line-block">
-<div class="line">野良LTで突撃話したことはありますが、</div>
-<div class="line">今回ははじめからLTをするという目的で行きました。</div>
-<div class="line">前回の反省として、</div>
-</div>
-<div class="line-block">
-<div class="line">■3分のLTなのに、1分余してしまった。</div>
-<div class="line">→スライド30枚くらいに増やしたい</div>
-<div class="line">→5分間で足りないくらい話したい</div>
-</div>
-<div class="line-block">
-<div class="line">■ネタを増やしたい</div>
-<div class="line">→技術ネタでやりたい</div>
-<div class="line">というのがあったので、</div>
-<div class="line">今回は無理矢理にでもそこを意識してやりました。</div>
-<div class="line">結果、上記2点は達成できました。</div>
-<div class="line">それ故に今回はかえってやらかしてしまいましたが…</div>
-<div class="line">というのも、</div>
-</div>
-<div class="line-block">
-<div class="line">■スライドを充実させようとしすぎて文字が多くなり、</div>
-<div class="line">“読ませる”スライドになってしまった。</div>
-<div class="line">（これは最悪だったと思います）</div>
-</div>
-<div class="line-block">
-<div class="line">■何を言いたいのかわからないスライド</div>
-<div class="line">（結論を結局言えないまま終わってしまった）</div>
-</div>
-<div class="line-block">
-<div class="line">■笑いがない</div>
-<div class="line">（自分は読むのにいっぱいいっぱい。周りを見る余裕がない）</div>
-<div class="line">いや～むしろ前回のほうが良かったんじゃないかと思えるような出来。</div>
-<div class="line">やらかしてしまったなぁ(笑)</div>
-</div>
-<div class="line-block">
-<div class="line">次回からは話す順番も頭に入れていきたいですね。</div>
-<div class="line">今回は珍しく少人数でしたが、</div>
-<div class="line">お陰で懇談会でじっくり話せたので良かったですね。</div>
-</div>
-<div class="line-block">
-<div class="line">お話させていただいた</div>
-<div class="line"><a class="reference external" href="https://twitter.com/#!/yshigeru">そーりさん</a>、<a class="reference external" href="https://twitter.com/#!/color_box">まーじさん</a>、<a class="reference external" href="https://twitter.com/#!/ichirowo/">イチロヲさん</a>ありがとうございました！</div>
-</div>
-<div class="line-block">
-<div class="line">追記：SlideShareに載せてみました。</div>
-</div>
-<p><a class="reference external" href="http://www.slideshare.net/kashew_nuts/20111206-gl-tvol40">20111206 gl tvol.40</a></p>
-
-        </div>
-        <div class="postmeta">
-        <div class="author">
-            <span>Posted by Kashun YOSHIDA</span>
-        </div>
-        <div class="categories">
-            <span>
-                Filed under:
-                <a href="categories/勉強会.html">勉強会</a>, <a href="categories/lt.html">LT</a></span>
-        </div>
-        <div class="tags">
-            <span>
-                Tags:
-                <a href="tags/勉強会.html">勉強会</a>, <a href="tags/lt.html">LT</a></span>
-        </div>
-        <div class="comments">
-            <a href="http://kashewnuts.github.io/2011/12/07/glt40.html#disqus_thread" data-disqus-identifier="2011/12/07/glt40">Leave a comment</a>
         </div></div><div class="archive_link">
         <a href="archive.html"> &mdash; Blog Archive &mdash; </a>
     </div><ul class="related clearfix">
@@ -376,6 +437,8 @@
 </div></section><section><div class="widget">
     <h1>Recent Posts</h1>
     <ul><li>
+            <a href="2018/12/02/bp_advent_calender.html">2018年版Life ChangingだったVimプラグインTOP3</a>
+        </li><li>
             <a href="2018/11/06/yosemite_tour.html">ヨセミテツアー日記</a>
         </li><li>
             <a href="2018/09/22/pyconjp2018.html">PyConJP2018でPyCharmの話をしてきました #pyconjp</a>
@@ -393,13 +456,11 @@
             <a href="2018/05/02/climbing_camp_in_mizugaki.html">瑞牆でボルダリング&キャンプしてきた話</a>
         </li><li>
             <a href="2018/03/15/pipenv.html">Pipenvに移行した話</a>
-        </li><li>
-            <a href="2018/03/04/tmux_memo.html">tmux導入メモ</a>
         </li></ul>
 </div>
 </section><section><div class="widget">
     <h1>Categories</h1>
-    <ul><li><a href="categories/64bit.html">64bit</a> (2)</li><li><a href="categories/android.html">Android</a> (3)</li><li><a href="categories/bouldering.html">bouldering</a> (2)</li><li><a href="categories/bouldering.html">Bouldering</a> (3)</li><li><a href="categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="categories/c_c.html">C/C++</a> (5)</li><li><a href="categories/chrome.html">Chrome</a> (2)</li><li><a href="categories/db.html">DB</a> (1)</li><li><a href="categories/django.html">Django</a> (10)</li><li><a href="categories/facebook.html">Facebook</a> (1)</li><li><a href="categories/firefox.html">Firefox</a> (1)</li><li><a href="categories/git_mercurial.html">Git/Mercurial</a> (8)</li><li><a href="categories/golang.html">Golang</a> (1)</li><li><a href="categories/google.html">Google</a> (5)</li><li><a href="categories/heroku.html">Heroku</a> (6)</li><li><a href="categories/java.html">Java</a> (2)</li><li><a href="categories/javascript.html">JavaScript</a> (4)</li><li><a href="categories/jupyter.html">Jupyter</a> (1)</li><li><a href="categories/kabepy.html">kabepy</a> (2)</li><li><a href="categories/linux.html">Linux</a> (3)</li><li><a href="categories/lt.html">LT</a> (5)</li><li><a href="categories/mac.html">Mac</a> (8)</li><li><a href="categories/pycharm.html">PyCharm</a> (2)</li><li><a href="categories/pyconjp.html">PyConJP</a> (1)</li><li><a href="categories/pyfes.html">pyfes</a> (7)</li><li><a href="categories/python.html">Python</a> (68)</li><li><a href="categories/slack.html">Slack</a> (1)</li><li><a href="categories/sphinx.html">Sphinx</a> (8)</li><li><a href="categories/sqlalchemy.html">SQLAlchemy</a> (1)</li><li><a href="categories/ssd.html">SSD</a> (1)</li><li><a href="categories/tddbc.html">TDDBC</a> (1)</li><li><a href="categories/tinkerer.html">Tinkerer</a> (7)</li><li><a href="categories/tmux.html">tmux</a> (1)</li><li><a href="categories/ubuntu.html">Ubuntu</a> (2)</li><li><a href="categories/vagrant.html">Vagrant</a> (1)</li><li><a href="categories/vim.html">Vim</a> (21)</li><li><a href="categories/vimconf.html">VimConf</a> (3)</li><li><a href="categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="categories/windows.html">Windows</a> (2)</li><li><a href="categories/windows7.html">Windows7</a> (4)</li><li><a href="categories/アルゴリズム.html">アルゴリズム</a> (1)</li><li><a href="categories/セキュリティ.html">セキュリティ</a> (2)</li><li><a href="categories/ネットワーク.html">ネットワーク</a> (1)</li><li><a href="categories/プログラミング.html">プログラミング</a> (7)</li><li><a href="categories/勉強会.html">勉強会</a> (30)</li><li><a href="categories/応用情報技術者.html">応用情報技術者</a> (10)</li><li><a href="categories/情報処理技術者試験.html">情報処理技術者試験</a> (10)</li><li><a href="categories/本.html">本</a> (29)</li><li><a href="categories/開発環境.html">開発環境</a> (11)</li><li><a href="categories/雑記.html">雑記</a> (37)</li><li><a href="categories/高速化.html">高速化</a> (1)</li></ul>
+    <ul><li><a href="categories/64bit.html">64bit</a> (2)</li><li><a href="categories/android.html">Android</a> (3)</li><li><a href="categories/bouldering.html">bouldering</a> (2)</li><li><a href="categories/bouldering.html">Bouldering</a> (3)</li><li><a href="categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="categories/c_c.html">C/C++</a> (5)</li><li><a href="categories/chrome.html">Chrome</a> (2)</li><li><a href="categories/db.html">DB</a> (1)</li><li><a href="categories/django.html">Django</a> (10)</li><li><a href="categories/facebook.html">Facebook</a> (1)</li><li><a href="categories/firefox.html">Firefox</a> (1)</li><li><a href="categories/git_mercurial.html">Git/Mercurial</a> (8)</li><li><a href="categories/golang.html">Golang</a> (1)</li><li><a href="categories/google.html">Google</a> (5)</li><li><a href="categories/heroku.html">Heroku</a> (6)</li><li><a href="categories/java.html">Java</a> (2)</li><li><a href="categories/javascript.html">JavaScript</a> (4)</li><li><a href="categories/jupyter.html">Jupyter</a> (1)</li><li><a href="categories/kabepy.html">kabepy</a> (2)</li><li><a href="categories/linux.html">Linux</a> (3)</li><li><a href="categories/lt.html">LT</a> (5)</li><li><a href="categories/mac.html">Mac</a> (8)</li><li><a href="categories/pycharm.html">PyCharm</a> (2)</li><li><a href="categories/pyconjp.html">PyConJP</a> (1)</li><li><a href="categories/pyfes.html">pyfes</a> (7)</li><li><a href="categories/python.html">Python</a> (69)</li><li><a href="categories/slack.html">Slack</a> (1)</li><li><a href="categories/sphinx.html">Sphinx</a> (8)</li><li><a href="categories/sqlalchemy.html">SQLAlchemy</a> (1)</li><li><a href="categories/ssd.html">SSD</a> (1)</li><li><a href="categories/tddbc.html">TDDBC</a> (1)</li><li><a href="categories/tinkerer.html">Tinkerer</a> (7)</li><li><a href="categories/tmux.html">tmux</a> (1)</li><li><a href="categories/ubuntu.html">Ubuntu</a> (2)</li><li><a href="categories/vagrant.html">Vagrant</a> (1)</li><li><a href="categories/vim.html">Vim</a> (22)</li><li><a href="categories/vimconf.html">VimConf</a> (3)</li><li><a href="categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="categories/windows.html">Windows</a> (2)</li><li><a href="categories/windows7.html">Windows7</a> (4)</li><li><a href="categories/アルゴリズム.html">アルゴリズム</a> (1)</li><li><a href="categories/セキュリティ.html">セキュリティ</a> (2)</li><li><a href="categories/ネットワーク.html">ネットワーク</a> (1)</li><li><a href="categories/プログラミング.html">プログラミング</a> (7)</li><li><a href="categories/勉強会.html">勉強会</a> (30)</li><li><a href="categories/応用情報技術者.html">応用情報技術者</a> (10)</li><li><a href="categories/情報処理技術者試験.html">情報処理技術者試験</a> (10)</li><li><a href="categories/本.html">本</a> (29)</li><li><a href="categories/開発環境.html">開発環境</a> (11)</li><li><a href="categories/雑記.html">雑記</a> (37)</li><li><a href="categories/高速化.html">高速化</a> (1)</li></ul>
 </div></section><section><div class="widget">
     <h1>About Me</h1>
     <div>

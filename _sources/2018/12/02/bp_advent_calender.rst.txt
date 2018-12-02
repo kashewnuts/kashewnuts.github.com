@@ -1,0 +1,254 @@
+2018年版Life ChangingだったVimプラグインTOP3
+============================================
+
+これは `BeProud Advent Calendar <https://adventar.org/calendars/3338>`_ 2日目の記事です。
+
+こんにちは。がっつりPythonで開発するにはPyCharmがほしいけど、テキストの編集時にはやはりVimを使うkashew_nutsです。
+
+今回は2018年に使い始めてLife ChangingだったVimプラグインを3つに絞って紹介します。
+
+.. figure:: vimlogo-564x564.png
+   :align: center
+
+.. contents::
+   :local:
+
+
+前提とする環境
+--------------
+
+自分が普段使っている以下の環境が前提としています。
+
+- OS: macOS (Sierra)、Ubuntu18.04LTS
+- Vimのバージョン: 8.0以上
+- Pythonのバージョン: 3.6.x
+- Vimプラグインマネージャー: `junegunn/vim-plug: Minimalist Vim Plugin Manager <https://github.com/junegunn/vim-plug>`_
+
+
+`junegunn/fzf.vim <https://github.com/junegunn/fzf.vim>`_: Fuzzy Finder
+-----------------------------------------------------------------------
+
+インタラクティブ(対話的)にファイル・タグ・文字列を一覧に出力して、あいまい検索してくれるツールです。
+他によく聞くツールだと `ctrlpvim/ctrlp.vim <https://github.com/ctrlpvim/ctrlp.vim>`_ やより汎用なツールを謳う `Shougo/denite.nvim <https://github.com/Shougo/denite.nvim>`_ があります。
+
+.. figure:: fzf_files.png
+   :align: center
+
+``fzf.vim`` を使う理由
+^^^^^^^^^^^^^^^^^^^^^^
+
+個人的に ``fzf.vim`` を使う理由は以下の3つです。
+
+* Vim scriptとGolangで動くため、Vimの外部インターフェイスの依存がない
+* 検索処理をGolang製のコマンドラインツール(`junegunn/fzf <https://github.com/junegunn/fzf>`_ )を使うので速い
+* grepやctagsのようなVimがよく使う外部コマンドを拡張した使い方ができる
+
+``fzf.vim`` は同作者が作る ``fzf`` を使う上でのラッパーなので、 fzfのみを使うことも可能です。しかしデフォルトの設定があると便利なので使用しています。
+
+実行に必要な環境
+^^^^^^^^^^^^^^^^
+
+サポートしてるバージョンはVim7.4以上です。
+
+インストール方法
+^^^^^^^^^^^^^^^^
+
+vim-plugを使用していれば以下のように追加します。
+
+.. code-block:: vim
+
+  " Windowsの場合は別途手動インストール
+  Plug 'junegunn/fzf', has('win32') ? {} : {'dir': '~/.fzf', 'do': './install --all' }
+  Plug 'junegunn/fzf.vim'
+
+よく使うコマンド
+^^^^^^^^^^^^^^^^
+
+最初は `Files` を使うだけでも快適さの一片を味わえるかと思いますが、現在よく使うのは次の5つです。
+
+* Files: カレントディレクトリ以下のファイル一覧を表示。一覧から選択したファイルを表示できる。
+
+.. figure:: fzf_files.png
+   :align: center
+
+そのままでも便利ですがプレビュー画面を有効にするため、vimrcに以下の設定を記述しています。
+
+.. code-block:: vim
+
+   " ファイル一覧を出すときにプレビュー表示
+   command! -bang -nargs=? -complete=dir Files
+   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+
+
+* Grep: 自分で定義したgrepコマンドの拡張。プレビューしながらインタラクティブにgrep検索できる。
+
+.. figure:: fzf_grep.png
+   :align: center
+
+``ag`` は や ``Ag`` コマンド、 ``ripgrep`` は ``Rg`` コマンドをデフォルトで持っているのですが、
+自分が普段使う ``pt`` はコマンドを持っていないので以下のように定義して使っています。
+
+.. code-block:: vim
+
+   " https://blog.fakiyer.com/entry/2017/08/06/222936
+   function! s:find_git_root()
+     return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
+   endfunction
+   " 外部コマンドptを使用してプレビューしながらgrep検索する
+   command! -bang -nargs=* Grep
+   \ call fzf#vim#grep(
+   \   'pt --column --ignore=.git --global-gitignore '.shellescape(<q-args>), 1,
+   \   <bang>0 ? fzf#vim#with_preview('up:60%')
+   \           : fzf#vim#with_preview({ 'dir': s:find_git_root() }),
+   \   <bang>0)
+
+* History: 最近開いたファイルと現在開いているバッファを表示できる。
+
+.. figure:: fzf_history.png
+   :align: center
+
+* Buffers: 現在開いているバッファを表示できる。
+
+.. figure:: fzf_buffer.png
+   :align: center
+
+* Tags: プロジェクト内でタグ生成から検索までできる。
+
+.. figure:: fzf_tags.png
+   :align: center
+
+
+`w0rp/ale <https://github.com/w0rp/ale>`_: 非同期Linter/Fixerエンジン
+---------------------------------------------------------------------
+
+``ALE`` は ``Asynchronous Lint Engine`` の略です。Vimの快適な編集を邪魔することなく、コードチェックができます。
+ALEは2018/12/01時点で110もの言語に対応しているので、Pythonに限らずBashやMarkdown、JSONなどにも使えます。
+
+実際に使用しているイメージは以下の図のようになります。
+
+.. figure:: ale.png
+   :align: center
+
+CI実行時にFlake8やmypyのようなツールを使うよう環境は整えたりはよくすると思いますが、
+CIの実行を待たずにVimで編集中に実行できるようにしたかったのでALEを導入しました。
+
+
+実行に必要な環境
+^^^^^^^^^^^^^^^^
+
+サポートしてるバージョンはVim8以上です。
+またVimコンパイルオプションで ``job``, ``channel``, ``timers`` が有効になっている必要があります。
+
+自分のVimが対応してるかどうかはVimを立ち上げて ``:version`` コマンドを実行し、
+各オプションが ``+(有効)`` になっていることを確認してください。
+
+
+インストール方法・使い方
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+vim-plugを使用していれば以下のように追加します。
+
+.. code-block:: vim
+
+  Plug 'w0rp/ale'
+
+しかしALEはこれだけでは真価を発揮できません。自分が使いたいコードチェックやフォーマット用のツールを用意します。
+普段自分はPythonを書くときに ``Flake8`` や ``mypy`` でチェックするのでこちらをPythonの仮想環境上にインストールします。
+
+.. code-block:: sh
+
+   $ python3.6 -m venv venv
+   $ source venv/bin/activate
+   (venv) $ pip install flake8 mypy
+   Collecting flake8
+
+   .... #  Flake8やmypyの関連パッケージがインストールされる
+
+   Installing collected packages: mccabe, pyflakes, pycodestyle, flake8, typed-ast, mypy-extensions, mypy
+   Successfully installed flake8-3.6.0 mccabe-0.6.1 mypy-0.641 mypy-extensions-0.4.1 pycodestyle-2.4.0 pyflakes-2.0.0 typed-ast-1.1.0
+
+次にALEにPythonのLinterにFlake8とmypyを使うよう指定します。次のようにvimrcに記述します。
+
+.. code-block:: vim
+
+   let g:ale_linters = {
+   \   'python': ['flake8', 'mypy'],
+   \}
+
+Linterが実行できる環境を用意し、vimrcにLinterの指定をすると以下のようにチェックしてくれます。
+設定により更に強調することもできますが、自分は編集中は編集に集中してLinterはそのアシストをしてほしいので控えめな表示にしています。
+
+ここではLinterで実行するツールの設定だけ行いましたが、実行するタイミングを選べたりVimのQuickFixと連携できたりなどカスタマイズができるので自分好みに設定してみてください。以下に自分が設定している内容の一部を抜粋します。
+
+.. code-block:: vim
+
+   " ファイル保存時にLinterを実行する
+   let g:ale_lint_on_save = 1
+   " テキスト変更時にはLinterを実行しない
+   let g:ale_lint_on_text_changed = 'never'
+   " Linter(コードチェックツール)の設定
+   let g:ale_linters = {
+   \   'python': ['flake8', 'mypy'],
+   \}
+   " ファイル保存時にはFixerを時刻しない
+   let g:ale_fix_on_save = 0  
+   " テキスト変更時にはFixerを実行しない
+   let g:ale_fix_on_text_changed = 'never'
+   " Fixer(コード整形ツール)の設定
+   let b:ale_fixers = {
+   \   'python': ['autopep8', 'isort'],
+   \}
+   " 余分な空白があるときは警告表示
+   let b:ale_warn_about_trailing_whitespace = 0
+   " ALE実行時にでる目印行を常に表示
+   let g:ale_sign_column_always = 1
+
+
+`airblade/vim-gitgutter <https://github.com/airblade/vim-gitgutter>`_: 追加・変更・削除された箇所のマーカー表示
+---------------------------------------------------------------------------------------------------------------
+
+ALEでコードチェックができるようにしたら、Gitでバージョン管理してるコードに変更があったのかもできるようにしたくなりました。
+
+以下はvim-gitgutter作者が公開している使用イメージ画面です。
+
+.. figure:: https://camo.githubusercontent.com/f88161827e0cbb3144455b9e5c7582fdd5b5fc83/68747470733a2f2f7261772e6769746875622e636f6d2f616972626c6164652f76696d2d6769746775747465722f6d61737465722f73637265656e73686f742e706e67
+   :align: center
+
+15行目が変更され、21-24行目が新規に追加、25-26行目の間の行が削除されています。
+vim-gitgutterを導入して自分がどこを変更をしたのか、意図していない変更はないかがすぐわかるようになりました。
+
+
+実行に必要な環境
+^^^^^^^^^^^^^^^^
+
+Vimのコンパイルオプションで ``signs`` が有効になっている必要があります。
+
+設定方法
+^^^^^^^^
+
+vim-gitgutterはインストールしただけで使えるのですが、変更のあるなしで目印行が表示されたり、非表示になったりするのが煩わしかったので、常に表示するようにだけ設定しています。
+
+.. code-block:: vim
+
+   Plug 'airblade/vim-gitgutter'
+   " 目印行を常に表示する
+   if exists('&signcolumn')  " Vim 7.4.2201
+     set signcolumn=yes
+   else
+     let g:gitgutter_sign_column_always = 1
+   endif
+
+マーカーが表示されるタイミングを変えるためにvimrcで ``updatetime`` の値を変更するのは有効なので、お好みで設定してみてください。
+
+
+終わりに
+--------
+
+fzf.vim, ALE, vim-gitgutterと3つのプラグインを紹介してきました。
+今回は紹介しきれなかったプラグインも `dotfiles/vimrc <https://github.com/kashewnuts/dotfiles/blob/b1d20f2543613dcc78222ee3e9b20cf51dc5f243/files/.vim/vimrc>`_ にあるので興味があれば見てみてください。
+
+
+.. author:: default
+.. categories:: Vim, Python
+.. tags::  Vim, Python
+.. comments::
