@@ -69,6 +69,138 @@
             <a href="http://feeds.feedburner.com/kashew_nuts-blog" title="Subscribe via RSS"><span class="fa fa-lg fa-rss"></span></a>
           </li></ul>
     </nav><div class="main-container" role="main"><div class="main wrapper body clearfix"><article><div class="timestamp postmeta">
+            <span>November 16, 2013</span>
+        </div>
+        <div class="section">
+            <h1><a href="2013/11/16/vimconf2013.html">#VimConf2013 に参加しました</a></h1>
+<img alt="../../../_images/vimconf2013.jpg" class="align-center" src="_images/vimconf2013.jpg"/>
+<p>会場はCookpad株式会社さんの提供でした。ありがとうございます。</p>
+<div class="section" id="id1">
+<h2>当日のイベントページ</h2>
+<ul class="simple">
+<li><a class="reference external" href="http://connpass.com/event/3978/">VimConf 2013 - connpass</a></li>
+<li><a class="reference external" href="http://vimconf.vim-jp.org/2013/">VimConf2013</a></li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>当日の感想・まとめなど</h2>
+<ul class="simple">
+<li>#VimConf2013 がTwitterでトレンド入りすごい。</li>
+</ul>
+<a class="reference internal image-reference" href="_images/vimconf2013trend.jpg"><img alt="../../../_images/vimconf2013trend.jpg" class="align-center" src="_images/vimconf2013trend.jpg" style="width: 300px; height: 240px;"/></a>
+<ul class="simple">
+<li>マクロ漁船の人がEvil modeで実際にBrainf*ck試して「動かないんだけど。」っていったのがおもしろかった。</li>
+<li>参加費等でお金が貯まったらVimの作者であるBramさんを呼ぼうと考えているそう。楽しみ。</li>
+<li>会場のWindowsPCとMacが半々くらいだった。→と思ったけどGentooとかのLinuxの人も多そう。</li>
+<li>Vaioのハードが変○すぎてGentoo入らない(@thinca) 先駆者求む。</li>
+<li/>
+</ul>
+</div>
+<div class="section" id="id4">
+<h2>発表まとめ</h2>
+<p>発表を聞いててメモしたことや思ったこと。</p>
+<div class="section" id="how-to-suggest-new-features-for-vim-kaoriya">
+<h3><a class="reference external" href="http://koron.github.io/vimconf2013/">How to suggest new features for Vim</a> @kaoriya</h3>
+<ul class="simple">
+<li>実際にVimどうやって機能を取りこんでもらうかについて。</li>
+<li>Vim is the TEXT EDITOR. not an IDE, not an Programming Language, not an Runtime</li>
+<li>VisualStudio に嫉妬→嫉妬しているのは補完なんだ→そのパッチをなるべくシンプルに構築</li>
+<li>vim-devに送ってないPatchが20くらいはある。</li>
+<li>大晦日にまたコミケに出店します。Spartan Vim 3rd出ます。Vimタオル作ります。多分100枚くらいしかつくりません。</li>
+</ul>
+</div>
+<div class="section" id="evil-is-justice-esehara">
+<h3><a class="reference external" href="http://www.slideshare.net/esehara/evil-is-justice-1">Evil is justice.</a> @esehara</h3>
+<ul class="simple">
+<li>Emacsの重大な脆弱性→小指です。</li>
+<li>geditやIntelliJを使うのにVimのキーバインドが使えるPlugin探しますよね。そこでEvil。</li>
+<li>EmacsでEvil Modeを使う。そう。あなたのEmacsはVimなのかもしれません。</li>
+<li>Emacs から Vim へ移ってきた人→結構いる。以下その理由。<ul>
+<li>WindowsでEmacs使おうとしたときにあれだった。</li>
+<li>Emacs のバイナリエディタがあれ。</li>
+<li>Macへ移った時にEmacのビルドができなくて一時的にVim使ったらそのまま。</li>
+<li>EmacsのEdit機能が貧弱。</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="how-to-use-git-from-vim-c0hama">
+<h3><a class="reference external" href="http://www.slideshare.net/cohama/how-to-use-git-from-vim-vim-conf2013">How to use git from vim</a>  @c0hama</h3>
+<ul class="simple">
+<li>VimからGitを使う。まず素のVimから。githubに繋げない人もいるので、僕ですね。</li>
+<li>基本編: コマンドラインモードから”:!git ～” とやればVimからGit使えます。</li>
+<li>Plugin導入編: vim-fugitive と gitv について。</li>
+<li>gitvとは→gitkのVimクローン。vim-fugitiveに依存している。</li>
+<li>ハッシュを使って操作することができるとgitvがすごく便利。</li>
+</ul>
+</div>
+<div class="section" id="vital-processmanager-ujm">
+<h3>vital.ProcessManager @ujm</h3>
+<ul class="simple">
+<li>Gentooのせいなのか、microHDMIのせいなのか、このASUSのZenbookでは3回ともプロジェクタとの接続に失敗。そのかわりにこの素晴らしいMBAで発表します。</li>
+<li>ProcessManagerとは何か。使っているのは10人くらいだと思います。→(1, 2人が手を挙げる)→10人どころではなかったorz</li>
+<li>vimproc = vimプロシー</li>
+<li>スタンディングデスクは本来すべきことには集中でき、Webブラウジングなど本来すべきでないことについてはやらなくなる。</li>
+</ul>
+</div>
+<div class="section" id="do-you-know-about-vim-runtime-files-linda-pp">
+<h3><a class="reference external" href="https://speakerdeck.com/rhysd/do-you-know-about-vim-runtime-files#">Do You Know about Vim Runtime Files?</a> @Linda_pp</h3>
+<ul class="simple">
+<li>社会人1年目。Vim歴2年目。clever-f.vim や vim-operator-surround 作ってます。</li>
+<li><a class="reference external" href="http://togetter.com/li/572461">vim -y にくるしむみなさん。 - Togetter</a></li>
+<li>ftplugin/gitrebase.vim 便利。 $git rebase 時のファイル編集用設定。</li>
+<li>ftplugin/ruby.vim は gf や &lt;C-w&gt;fで require 先を開くことができる。</li>
+<li>「それVimで出来るよ!」が「それ標準のVimでできるよ!」と言えるといいですね。</li>
+</ul>
+</div>
+<div class="section" id="how-to-write-patches-for-vim-k-takata">
+<h3><a class="reference external" href="http://www.slideshare.net/k-takata/how-to-write-patches-for-vim-28307604">How to write patches for Vim</a> @k_takata</h3>
+<ul class="simple">
+<li>ついカーソルキーを使ってしまう初心者です。(1年間にVimに送ったPatch約70個)</li>
+<li>Vimのソースコードを読む時はctagsを使いましょう。</li>
+<li>「私が送ったお気に入りのPatch」←いってみたい。</li>
+<li>自分のオリジナルのVimをビルドしてみましょう。どんなPatchでもOKです。Vimこわくないよ。</li>
+</ul>
+</div>
+<div class="section" id="an-introduction-to-neocomplete-shougomatsu">
+<h3><a class="reference external" href="http://www.slideshare.net/Shougo/neocompletevim">An introduction to neocomplete</a> @ShougoMatsu</h3>
+<ul class="simple">
+<li>暗黒美夢王(ダークビムマスター)</li>
+<li>neo-complete と neocomplete は別物である。 (バトルエディターズ参照)</li>
+<li>YouCompleteMeはif_pythonに依存。圧倒的速度。しかしC++モジュールがあるので、拡張が難しい。更にビルド必須なのでインストールが難しい(特にWindow環境)</li>
+<li>neocompleteはif_lua依存。neocomplecacheより速く、neocomplecacheの機能をほぼ取り込んでいる。</li>
+<li>neocompleteの機能の実装はほぼ終わり。現在はたまにでてくる問題の解決がメイン。良いアイディアがあれば採用されるかもしれない。</li>
+<li>neocompleteとjediの連携等はFAQに乗っているのでそちらを参考にしてください。</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>最後に</h2>
+<p>会場を提供してくださったCookpadさん、スタッフや発表者のみなさん、そして参加者のみなさんお疲れ様でした＆とても楽しい時間をありがとうございました。</p>
+<img alt="../../../_images/vimconf2013last.jpg" class="align-center" src="_images/vimconf2013last.jpg"/>
+</div>
+<div class="section" id="id6">
+<h2>おまけ</h2>
+<blockquote class="twitter-tweet" data-conversation="none"><a href="https://twitter.com/kashew_nuts/status/401656310770331648">https://twitter.com/kashew_nuts/status/401656310770331648</a></blockquote></div>
+
+        </div>
+        <div class="postmeta">
+        <div class="author">
+            <span>Posted by Kashun YOSHIDA</span>
+        </div>
+        <div class="categories">
+            <span>
+                Filed under:
+                <a href="categories/vim.html">Vim</a>, <a href="categories/vimconf.html">VimConf</a></span>
+        </div>
+        <div class="tags">
+            <span>
+                Tags:
+                <a href="tags/vim.html">Vim</a>, <a href="tags/vimconf.html">VimConf</a></span>
+        </div>
+        <div class="comments">
+            <a href="http://kashewnuts.github.io/2013/11/16/vimconf2013.html#disqus_thread" data-disqus-identifier="2013/11/16/vimconf2013">Leave a comment</a>
+        </div></div><div class="separator post_separator"></div><div class="timestamp postmeta">
             <span>October 12, 2013</span>
         </div>
         <div class="section">
@@ -285,145 +417,6 @@ Python を使っていると <strong>PyCharm 便利</strong> という話はよ�
         </div>
         <div class="comments">
             <a href="http://kashewnuts.github.io/2013/09/17/pyconapac2013.html#disqus_thread" data-disqus-identifier="2013/09/17/pyconapac2013">Leave a comment</a>
-        </div></div><div class="separator post_separator"></div><div class="timestamp postmeta">
-            <span>August 25, 2013</span>
-        </div>
-        <div class="section">
-            <h1><a href="2013/08/25/vagrantvbguest.html">Vagrant で共有フォルダが使用できなくなったので解決メモ</a></h1>
-<p>以前 Vagrant を1.0.6から1.2.7にUpdateした時に以下のようなエラーがでるようになり、共有フォルダ(/vagrant) が動作しなくなっていました。</p>
-<div class="section" id="id1">
-<h2>メッセージ内容</h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span/>$ vagrant up
-Bringing machine <span class="s1">'default'</span> up with <span class="s1">'virtualbox'</span> provider...
-<span class="o">[</span>default<span class="o">]</span> Setting the name of the VM...
-<span class="o">[</span>default<span class="o">]</span> Clearing any previously <span class="nb">set</span> forwarded ports...
-<span class="o">[</span>default<span class="o">]</span> Creating shared folders metadata...
-<span class="o">[</span>default<span class="o">]</span> Clearing any previously <span class="nb">set</span> network interfaces...
-<span class="o">[</span>default<span class="o">]</span> Preparing network interfaces based on configuration...
-<span class="o">[</span>default<span class="o">]</span> Forwarding ports...
-<span class="o">[</span>default<span class="o">]</span> -- <span class="nv">22</span> <span class="o">=</span>&gt; <span class="m">2222</span> <span class="o">(</span>adapter <span class="m">1</span><span class="o">)</span>
-<span class="o">[</span>default<span class="o">]</span> Booting VM...
-<span class="o">[</span>default<span class="o">]</span> Waiting <span class="k">for</span> VM to boot. This can take a few minutes.
-<span class="o">[</span>default<span class="o">]</span> VM booted and ready <span class="k">for</span> use!
-<span class="o">[</span>default<span class="o">]</span> Configuring and enabling network interfaces...
-<span class="o">[</span>default<span class="o">]</span> Mounting shared folders...
-<span class="o">[</span>default<span class="o">]</span> -- /vagrant
-The following SSH <span class="nb">command</span> responded with a non-zero <span class="nb">exit</span> status.
-Vagrant assumes that this means the <span class="nb">command</span> failed!
-
-mount -t vboxsf -o <span class="nv">uid</span><span class="o">=</span><span class="sb">`</span>id -u vagrant<span class="sb">`</span>,gid<span class="o">=</span><span class="sb">`</span>id -g vagrant<span class="sb">`</span> /vagrant /vagrant
-
-Stdout from the command:
-
-
-
-Stderr from the command:
-
-stdin: is not a tty
-/sbin/mount.vboxsf: mounting failed with the error: No such device
-</pre></div>
-</div>
-</div>
-<div class="section" id="vagrant-vbguest">
-<h2>vagrant-vbguest</h2>
-<p>原因を調べたら、以下のリンクを発見。</p>
-<p><a class="reference external" href="http://slashdot.jp/journal/509239/VirtualBox%E5%85%B1%E6%9C%89%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E8%A6%9A%E6%9B%B8">VirtualBox共有フォルダ覚書 | dark_greenの日記 | スラッシュドット・ジャパン</a></p>
-<p>どうやら Guest Additions の Version が古いのが原因らしい。
-なので、自動的にGuest Additionsを更新してくれるプラグインを導入。</p>
-<p><a class="reference external" href="https://github.com/dotless-de/vagrant-vbguest">dotless-de/vagrant-vbguest</a></p>
-<p>以下のようにインストール。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span/>$ vagrant plugin install vagrant-vbguest
-</pre></div>
-</div>
-<p>ここで Vagrantfile に設定を記述しようとしましたが、エラーがでて怒られました。
-~/.vagrant.d/ 以下に Vagrantfile もなかったので、何も設定しないでやってみます。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span/>$ vagrant up
-Bringing machine <span class="s1">'default'</span> up with <span class="s1">'virtualbox'</span> provider...
-<span class="o">[</span>default<span class="o">]</span> Setting the name of the VM...
-<span class="o">[</span>default<span class="o">]</span> Clearing any previously <span class="nb">set</span> forwarded ports...
-<span class="o">[</span>default<span class="o">]</span> Creating shared folders metadata...
-<span class="o">[</span>default<span class="o">]</span> Clearing any previously <span class="nb">set</span> network interfaces...
-<span class="o">[</span>default<span class="o">]</span> Preparing network interfaces based on configuration...
-<span class="o">[</span>default<span class="o">]</span> Forwarding ports...
-<span class="o">[</span>default<span class="o">]</span> -- <span class="nv">22</span> <span class="o">=</span>&gt; <span class="m">2222</span> <span class="o">(</span>adapter <span class="m">1</span><span class="o">)</span>
-<span class="o">[</span>default<span class="o">]</span> Booting VM...
-<span class="o">[</span>default<span class="o">]</span> Waiting <span class="k">for</span> VM to boot. This can take a few minutes.
-<span class="o">[</span>default<span class="o">]</span> VM booted and ready <span class="k">for</span> use!
-GuestAdditions versions on your host <span class="o">(</span><span class="m">4</span>.2.16<span class="o">)</span> and guest <span class="o">(</span><span class="m">4</span>.2.12<span class="o">)</span> <span class="k">do</span> not match.
-Loaded plugins: fastestmirror
-Loading mirror speeds from cached hostfile
- * base: ftp.iij.ad.jp
- * extras: ftp.iij.ad.jp
- * updates: ftp.iij.ad.jp
-Setting up Install Process
-Package kernel-devel-2.6.32-358.14.1.el6.x86_64 already installed and latest version
-Package gcc-4.4.7-3.el6.x86_64 already installed and latest version
-Package <span class="m">1</span>:make-3.81-20.el6.x86_64 already installed and latest version
-Package <span class="m">4</span>:perl-5.10.1-131.el6_4.x86_64 already installed and latest version
-Nothing to <span class="k">do</span>
-Copy iso file /Applications/VirtualBox.app/Contents/MacOS/VBoxGuestAdditions.iso into the box /tmp/VBoxGuestAdditions.iso
-Installing Virtualbox Guest Additions <span class="m">4</span>.2.16 - guest version is <span class="m">4</span>.2.12
-Verifying archive integrity... All good.
-Uncompressing VirtualBox <span class="m">4</span>.2.16 Guest Additions <span class="k">for</span> Linux............
-VirtualBox Guest Additions installer
-Removing installed version <span class="m">4</span>.2.12 of VirtualBox Guest Additions...
-Copying additional installer modules ...
-Installing additional modules ...
-Removing existing VirtualBox DKMS kernel modules<span class="o">[</span>  OK  <span class="o">]</span>
-Removing existing VirtualBox non-DKMS kernel modules<span class="o">[</span>  OK  <span class="o">]</span>
-Building the VirtualBox Guest Additions kernel modules<span class="o">[</span>  OK  <span class="o">]</span>
-Doing non-kernel setup of the Guest Additions<span class="o">[</span>  OK  <span class="o">]</span>
-You should restart your guest to make sure the new modules are actually used
-
-Installing the Window System drivers<span class="o">[</span>FAILED<span class="o">]</span>
-<span class="o">(</span>Could not find the X.Org or XFree86 Window System.<span class="o">)</span>
-An error occurred during installation of VirtualBox Guest Additions <span class="m">4</span>.2.16. Some functionality may not work as intended.
-<span class="o">[</span>default<span class="o">]</span> Configuring and enabling network interfaces...
-<span class="o">[</span>default<span class="o">]</span> Mounting shared folders...
-<span class="o">[</span>default<span class="o">]</span> -- /vagrant
-</pre></div>
-</div>
-<p>念のため vagrant ssh でログインして確認します。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span/>$ ls /opt/
-VBoxGuestAdditions-4.2.16
-</pre></div>
-</div>
-<p>新しい Version の Guest Additions をインストールできました。</p>
-<p>さて本題の共有フォルダが使えるようになっているか確認します。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span/>$ touch /vagrant/test
-</pre></div>
-</div>
-<p>ログアウトして、プロジェクトにファイルが作成されているか確認します。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span/>$ ls
-Vagrantfile test.py
-</pre></div>
-</div>
-<p>無事共有フォルダが使用できるようになりました。</p>
-</div>
-<div class="section" id="id2">
-<h2>参考</h2>
-<ul class="simple">
-<li><a class="reference external" href="http://blog.code-life.net/blog/2013/06/10/the-guest-additions-on-this-vm-do-not-match-the-installed-version-of-virtualbox-on-vagrant/">[Vagrant] VirtualBoxのバージョンとGuest additionsのバージョンが合わない場合の対処法 - Code Life</a></li>
-</ul>
-</div>
-
-        </div>
-        <div class="postmeta">
-        <div class="author">
-            <span>Posted by Kashun YOSHIDA</span>
-        </div>
-        <div class="categories">
-            <span>
-                Filed under:
-                <a href="categories/vagrant.html">Vagrant</a></span>
-        </div>
-        <div class="tags">
-            <span>
-                Tags:
-                <a href="tags/vagrant.html">Vagrant</a></span>
-        </div>
-        <div class="comments">
-            <a href="http://kashewnuts.github.io/2013/08/25/vagrantvbguest.html#disqus_thread" data-disqus-identifier="2013/08/25/vagrantvbguest">Leave a comment</a>
         </div></div><div class="archive_link">
         <a href="archive.html"> &mdash; Blog Archive &mdash; </a>
     </div><ul class="related clearfix">
@@ -442,6 +435,8 @@ Vagrantfile test.py
 </div></section><section><div class="widget">
     <h1>Recent Posts</h1>
     <ul><li>
+            <a href="2019/01/05/2018and2019.html">2018年の振り返りと2019年抱負</a>
+        </li><li>
             <a href="2018/12/02/bp_advent_calender.html">2018年版Life ChangingだったVimプラグインTOP3</a>
         </li><li>
             <a href="2018/11/06/yosemite_tour.html">ヨセミテツアー日記</a>
@@ -459,13 +454,11 @@ Vagrantfile test.py
             <a href="2018/05/08/genba_django.html">「現場で使える 基礎 Django」を読みました #技術書典</a>
         </li><li>
             <a href="2018/05/02/climbing_camp_in_mizugaki.html">瑞牆でボルダリング&キャンプしてきた話</a>
-        </li><li>
-            <a href="2018/03/15/pipenv.html">Pipenvに移行した話</a>
         </li></ul>
 </div>
 </section><section><div class="widget">
     <h1>Categories</h1>
-    <ul><li><a href="categories/64bit.html">64bit</a> (2)</li><li><a href="categories/android.html">Android</a> (3)</li><li><a href="categories/bouldering.html">bouldering</a> (2)</li><li><a href="categories/bouldering.html">Bouldering</a> (3)</li><li><a href="categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="categories/c_c.html">C/C++</a> (5)</li><li><a href="categories/chrome.html">Chrome</a> (2)</li><li><a href="categories/db.html">DB</a> (1)</li><li><a href="categories/django.html">Django</a> (10)</li><li><a href="categories/facebook.html">Facebook</a> (1)</li><li><a href="categories/firefox.html">Firefox</a> (1)</li><li><a href="categories/git_mercurial.html">Git/Mercurial</a> (8)</li><li><a href="categories/golang.html">Golang</a> (1)</li><li><a href="categories/google.html">Google</a> (5)</li><li><a href="categories/heroku.html">Heroku</a> (6)</li><li><a href="categories/java.html">Java</a> (2)</li><li><a href="categories/javascript.html">JavaScript</a> (4)</li><li><a href="categories/jupyter.html">Jupyter</a> (1)</li><li><a href="categories/kabepy.html">kabepy</a> (2)</li><li><a href="categories/linux.html">Linux</a> (3)</li><li><a href="categories/lt.html">LT</a> (5)</li><li><a href="categories/mac.html">Mac</a> (8)</li><li><a href="categories/pycharm.html">PyCharm</a> (2)</li><li><a href="categories/pyconjp.html">PyConJP</a> (1)</li><li><a href="categories/pyfes.html">pyfes</a> (7)</li><li><a href="categories/python.html">Python</a> (69)</li><li><a href="categories/slack.html">Slack</a> (1)</li><li><a href="categories/sphinx.html">Sphinx</a> (8)</li><li><a href="categories/sqlalchemy.html">SQLAlchemy</a> (1)</li><li><a href="categories/ssd.html">SSD</a> (1)</li><li><a href="categories/tddbc.html">TDDBC</a> (1)</li><li><a href="categories/tinkerer.html">Tinkerer</a> (7)</li><li><a href="categories/tmux.html">tmux</a> (1)</li><li><a href="categories/ubuntu.html">Ubuntu</a> (2)</li><li><a href="categories/vagrant.html">Vagrant</a> (1)</li><li><a href="categories/vim.html">Vim</a> (22)</li><li><a href="categories/vimconf.html">VimConf</a> (3)</li><li><a href="categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="categories/windows.html">Windows</a> (2)</li><li><a href="categories/windows7.html">Windows7</a> (4)</li><li><a href="categories/アルゴリズム.html">アルゴリズム</a> (1)</li><li><a href="categories/セキュリティ.html">セキュリティ</a> (2)</li><li><a href="categories/ネットワーク.html">ネットワーク</a> (1)</li><li><a href="categories/プログラミング.html">プログラミング</a> (7)</li><li><a href="categories/勉強会.html">勉強会</a> (30)</li><li><a href="categories/応用情報技術者.html">応用情報技術者</a> (10)</li><li><a href="categories/情報処理技術者試験.html">情報処理技術者試験</a> (10)</li><li><a href="categories/本.html">本</a> (29)</li><li><a href="categories/開発環境.html">開発環境</a> (11)</li><li><a href="categories/雑記.html">雑記</a> (37)</li><li><a href="categories/高速化.html">高速化</a> (1)</li></ul>
+    <ul><li><a href="categories/64bit.html">64bit</a> (2)</li><li><a href="categories/android.html">Android</a> (3)</li><li><a href="categories/bouldering.html">bouldering</a> (2)</li><li><a href="categories/bouldering.html">Bouldering</a> (3)</li><li><a href="categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="categories/c_c.html">C/C++</a> (5)</li><li><a href="categories/chrome.html">Chrome</a> (2)</li><li><a href="categories/db.html">DB</a> (1)</li><li><a href="categories/django.html">Django</a> (10)</li><li><a href="categories/facebook.html">Facebook</a> (1)</li><li><a href="categories/firefox.html">Firefox</a> (1)</li><li><a href="categories/git_mercurial.html">Git/Mercurial</a> (8)</li><li><a href="categories/golang.html">Golang</a> (1)</li><li><a href="categories/google.html">Google</a> (5)</li><li><a href="categories/heroku.html">Heroku</a> (6)</li><li><a href="categories/java.html">Java</a> (2)</li><li><a href="categories/javascript.html">JavaScript</a> (4)</li><li><a href="categories/jupyter.html">Jupyter</a> (1)</li><li><a href="categories/kabepy.html">kabepy</a> (2)</li><li><a href="categories/linux.html">Linux</a> (3)</li><li><a href="categories/lt.html">LT</a> (5)</li><li><a href="categories/mac.html">Mac</a> (8)</li><li><a href="categories/pycharm.html">PyCharm</a> (2)</li><li><a href="categories/pyconjp.html">PyConJP</a> (1)</li><li><a href="categories/pyfes.html">pyfes</a> (7)</li><li><a href="categories/python.html">Python</a> (69)</li><li><a href="categories/slack.html">Slack</a> (1)</li><li><a href="categories/sphinx.html">Sphinx</a> (8)</li><li><a href="categories/sqlalchemy.html">SQLAlchemy</a> (1)</li><li><a href="categories/ssd.html">SSD</a> (1)</li><li><a href="categories/tddbc.html">TDDBC</a> (1)</li><li><a href="categories/tinkerer.html">Tinkerer</a> (7)</li><li><a href="categories/tmux.html">tmux</a> (1)</li><li><a href="categories/ubuntu.html">Ubuntu</a> (2)</li><li><a href="categories/vagrant.html">Vagrant</a> (1)</li><li><a href="categories/vim.html">Vim</a> (22)</li><li><a href="categories/vimconf.html">VimConf</a> (3)</li><li><a href="categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="categories/windows.html">Windows</a> (2)</li><li><a href="categories/windows7.html">Windows7</a> (4)</li><li><a href="categories/アルゴリズム.html">アルゴリズム</a> (1)</li><li><a href="categories/セキュリティ.html">セキュリティ</a> (2)</li><li><a href="categories/ネットワーク.html">ネットワーク</a> (1)</li><li><a href="categories/プログラミング.html">プログラミング</a> (7)</li><li><a href="categories/勉強会.html">勉強会</a> (30)</li><li><a href="categories/応用情報技術者.html">応用情報技術者</a> (10)</li><li><a href="categories/情報処理技術者試験.html">情報処理技術者試験</a> (10)</li><li><a href="categories/本.html">本</a> (29)</li><li><a href="categories/開発環境.html">開発環境</a> (11)</li><li><a href="categories/雑記.html">雑記</a> (38)</li><li><a href="categories/高速化.html">高速化</a> (1)</li></ul>
 </div></section><section><div class="widget">
     <h1>About Me</h1>
     <div>

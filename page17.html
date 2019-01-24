@@ -69,6 +69,107 @@
             <a href="http://feeds.feedburner.com/kashew_nuts-blog" title="Subscribe via RSS"><span class="fa fa-lg fa-rss"></span></a>
           </li></ul>
     </nav><div class="main-container" role="main"><div class="main wrapper body clearfix"><article><div class="timestamp postmeta">
+            <span>March 15, 2013</span>
+        </div>
+        <div class="section">
+            <h1><a href="2013/03/15/perfectpython_setup.html">Python3の開発環境を整えてみた</a></h1>
+<p>パーフフェクトPythonではWindows7, MacOSX, Ubuntu12.04LTSでの例が挙げられています。
+今回はUbuntu12.04LTSを選択してみました。手順は以下。</p>
+<ul class="simple">
+<li>VagrantでUbuntuをセットアップ</li>
+<li>Python3および各ツール類をインストール</li>
+<li>+α、開発をサポートするツール類をインストール</li>
+</ul>
+<div class="section" id="vagrantubuntu">
+<h2>VagrantでUbuntuをセットアップ</h2>
+<p>普通にやるのはおもしろくないので、 <a class="reference external" href="http://www.freia.jp/taka/blog/create-ubuntu-12.04-by-using-vagrant/index.html">2013/02/10 Vagrantで作るUbuntu-12.04環境 - 清水川Web</a> を参考に
+Ubuntu12.04LTSをセットアップ。楽すぎてびびる。
+ここから先はターミナルからsshで接続して操作する形になります。</p>
+</div>
+<div class="section" id="id1">
+<h2>Python3および各ツール類をインストール</h2>
+<p>パーフェクトPythonにある通りに必要なものをインストールしていく。まずはPython3のインストー
+ル。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span/>$ sudo apt-get install python3.3 python3.3-dev
+$ sudo apt-get install zlib1g-dev libssl-dev libreadline-dev libsqlite3-dev tk-dev
+libbz2-dev libgdbm-dev tcl-dev
+$ wget http://www.python.org/ftp/python3.3.0/Python3.3.0.tar.bz2
+$ tar xjf Python-3.3.0.tar.bz2
+$ <span class="nb">cd</span> Python-3.3.0
+$./configure --prefix<span class="o">=</span><span class="nv">$HOME</span>/python3.3
+$ sudo apt-get install make
+$ make <span class="o">&amp;&amp;</span> make install
+</pre></div>
+</div>
+<p>仮想環境の準備とpipのインストール</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span/>$ pyvenv default33
+$ <span class="nb">source</span> default/bin/active
+
+$ python -c <span class="s2">"import urllib.request;urllib.request.urlretrieve('http://python-distribute.org/distribute.py', 'distribute_setup.py')"</span>
+$ python distribute_setup.py
+$ easy_install pip
+</pre></div>
+</div>
+<p>IPython</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span/>$ pip install ipython
+</pre></div>
+</div>
+<p>後は本書で挙げられていたライブラリ類をインストールしていきました。本の中では触れられていなかったけど、途中インストールが必要になったのが以下。</p>
+<ul class="simple">
+<li>make(Python3インストール時)</li>
+<li>g++</li>
+<li>libxml2-dev, libxslt-dev(lxmlインストール時)  <a class="reference external" href="http://www.isnull.com.ar/2011/10/ubuntu-11-fatal-error-libxmlxmlversionh.html">参考URL</a></li>
+</ul>
+<p>4つとも</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span/>$ sudo apt-get install ...
+</pre></div>
+</div>
+<p>でインストールできた。</p>
+<p>さて、ここまでで本に書いてあるものはインストールできたわけだけど、このまま開発するには少し物足りない。というわけで少し+αで加えてみた。</p>
+</div>
+<div class="section" id="id2">
+<h2>+α、開発をサポートするツール類をインストール</h2>
+<p>ipythonで試すのも良いのだけど、普段使っているテキストエディタで編集したい。更に設定も同じにするためにgitも導入してみました。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span/>$ sudo apt-get install vim
+
+$ sudo apt-get install git-core
+$ git config --global user.name <span class="s2">"ユーザー名"</span>
+$ git config --global user.name <span class="s2">"メールアドレス"</span>
+
+$ git clone <span class="s2">"githubに上がっている自分のdotfiles"</span>
+</pre></div>
+</div>
+<p>後はシンボリックリンクを貼って .vimrc, colorschemeを設定します。ちなみに自分が使っているcolorschemeは <a class="reference external" href="http://vim.sourceforge.net/scripts/script.php?script_id=276">これ</a> です。
+更に <a class="reference external" href="http://tekkoc.tumblr.com/post/42845501741/vim-python">VimでPython環境をいい感じに整える | tekkoc’blog</a> を参考にVimのプラグインも導入します。</p>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/davidhalter/jedi-vim">jedi-vim</a> (補完プラグイン)</li>
+<li><a class="reference external" href="https://github.com/kevinw/pyflakes-vim">pyflakes-vim</a> (構文エラーの検出)</li>
+</ul>
+<p>Vim使いの方はこの2つは入れておいた方がいいかと思います。pathogen.vimやNeobunle.vimを使っている方はすぐにお試しできるかと思いますので是非。</p>
+</div>
+<div class="section" id="id4">
+<h2>終わりに</h2>
+<p>これでPython3で開発する環境は整いました。さあ、あとは実践あるのみです！</p>
+</div>
+
+        </div>
+        <div class="postmeta">
+        <div class="author">
+            <span>Posted by Kashun YOSHIDA</span>
+        </div>
+        <div class="categories">
+            <span>
+                Filed under:
+                <a href="categories/python.html">Python</a></span>
+        </div>
+        <div class="tags">
+            <span>
+                Tags:
+                <a href="tags/python.html">Python</a></span>
+        </div>
+        <div class="comments">
+            <a href="http://kashewnuts.github.io/2013/03/15/perfectpython_setup.html#disqus_thread" data-disqus-identifier="2013/03/15/perfectpython_setup">Leave a comment</a>
+        </div></div><div class="separator post_separator"></div><div class="timestamp postmeta">
             <span>March 05, 2013</span>
         </div>
         <div class="section">
@@ -178,60 +279,6 @@
         </div>
         <div class="comments">
             <a href="http://kashewnuts.github.io/2013/03/02/bpstudy66.html#disqus_thread" data-disqus-identifier="2013/03/02/bpstudy66">Leave a comment</a>
-        </div></div><div class="separator post_separator"></div><div class="timestamp postmeta">
-            <span>February 16, 2013</span>
-        </div>
-        <div class="section">
-            <h1><a href="2013/02/16/pyhack28.html">(第28回)Python mini Hack-a-thon に参加してきた。</a></h1>
-<p>当日のイベントページはこちら→
-<a class="reference external" href="http://connpass.com/event/1729/">(第28回)Python mini Hack-a-thon - connpass</a></p>
-<p>本当は午前中から参加したかったんですが、午後からの参加でした。
-荷物の受取が午前中に届く予定さえなければ……</p>
-<div class="section" id="id1">
-<h2>当日やったこと</h2>
-<ul class="simple">
-<li>Django1.4 Tutorial</li>
-<li>TinkererのRSS設定修正</li>
-</ul>
-</div>
-<div class="section" id="django1-4-tutorial">
-<h2>Django1.4 Tutorial</h2>
-<p><a class="reference external" href="http://docs.djangoproject.jp/en/latest/contents.html">Django 1.4 documentation</a></p>
-<p>前日にDjango1.4は家でインストール済みの状態からスタート。</p>
-<p><strong>さあ始めましょう</strong> の「Djangoの概要」から始め、「はじめての Django アプリ作成、その3〜実際に動くビューを作成する」に手をつけた始めた所で時間切れでした。</p>
-<p>以前Django1.2の頃、Django1.0の日本語ドキュメントを元にTutorialやった際はDBの設定をいじるあたりでうまくいかなくて投げ出した思い出があります。当時はバージョンの差異を意識してやらないとなと教訓にはなりましたが、やはり固まった情報をネイティブの言語で学べるのは重要ですね……</p>
-<p>一番新しい情報を知ろうと思うと英語は必須ですが、その分野に詳しくなかったり初めて学ぶことはネイティブの言語で一度しっかり学ぶと違うと思いました。(そもそも英語で不自由がなければ問題ないのですがね)</p>
-</div>
-<div class="section" id="tinkererrss">
-<h2>TinkererのRSSの設定修正</h2>
-<p>Django1.4 Tutorialをしている最中に急に思い立ってやりました。</p>
-<p>以前BlogのURLを変更した際、RSS( <a class="reference external" href="http://feedburner.google.com/">Google FeedBurner</a> )の設定を修正するのを忘れていまして、連携しているFacebookアプリ <a class="reference external" href="https://apps.facebook.com/rssgraffiti/">“RSS Graffiti”</a> から 「Action Required: Your RSS Graffiti Facebook Permissions have expired!」と怒られました。</p>
-<p>そこでconf.pyとFeedBurnerの設定を変更して、ちゃんとRSSでBlogの更新を取得出来るようにしまし
-た。(この記事の更新がちゃんと取得できてれば問題ないはず。)</p>
-</div>
-<div class="section" id="pyhack">
-<h2>pyhack終了後</h2>
-<p>懇談会に参加しました。久しぶりにお会いする人、話す人、思わぬローカルネタで盛り上がった人、仕事あるあるネタ、壁の話、某B社ネタ、etc……ただの酔っ払いの集まりになっていた気がしなくもないですが、なんだがあっという間に過ぎ去った3時間でした。</p>
-<p>平日に勉強会やコミュニティに参加しにくくなってしばらく立ちまして、その間も色々あったり思ったりとしましたが、やはりこうゆう場にでるのは楽しいですね。また参加できればと思います。</p>
-</div>
-
-        </div>
-        <div class="postmeta">
-        <div class="author">
-            <span>Posted by Kashun YOSHIDA</span>
-        </div>
-        <div class="categories">
-            <span>
-                Filed under:
-                <a href="categories/python.html">Python</a>, <a href="categories/django.html">Django</a>, <a href="categories/tinkerer.html">Tinkerer</a></span>
-        </div>
-        <div class="tags">
-            <span>
-                Tags:
-                <a href="tags/python.html">Python</a>, <a href="tags/django.html">Django</a>, <a href="tags/tinkerer.html">Tinkerer</a></span>
-        </div>
-        <div class="comments">
-            <a href="http://kashewnuts.github.io/2013/02/16/pyhack28.html#disqus_thread" data-disqus-identifier="2013/02/16/pyhack28">Leave a comment</a>
         </div></div><div class="archive_link">
         <a href="archive.html"> &mdash; Blog Archive &mdash; </a>
     </div><ul class="related clearfix">
@@ -250,6 +297,8 @@
 </div></section><section><div class="widget">
     <h1>Recent Posts</h1>
     <ul><li>
+            <a href="2019/01/05/2018and2019.html">2018年の振り返りと2019年抱負</a>
+        </li><li>
             <a href="2018/12/02/bp_advent_calender.html">2018年版Life ChangingだったVimプラグインTOP3</a>
         </li><li>
             <a href="2018/11/06/yosemite_tour.html">ヨセミテツアー日記</a>
@@ -267,13 +316,11 @@
             <a href="2018/05/08/genba_django.html">「現場で使える 基礎 Django」を読みました #技術書典</a>
         </li><li>
             <a href="2018/05/02/climbing_camp_in_mizugaki.html">瑞牆でボルダリング&キャンプしてきた話</a>
-        </li><li>
-            <a href="2018/03/15/pipenv.html">Pipenvに移行した話</a>
         </li></ul>
 </div>
 </section><section><div class="widget">
     <h1>Categories</h1>
-    <ul><li><a href="categories/64bit.html">64bit</a> (2)</li><li><a href="categories/android.html">Android</a> (3)</li><li><a href="categories/bouldering.html">bouldering</a> (2)</li><li><a href="categories/bouldering.html">Bouldering</a> (3)</li><li><a href="categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="categories/c_c.html">C/C++</a> (5)</li><li><a href="categories/chrome.html">Chrome</a> (2)</li><li><a href="categories/db.html">DB</a> (1)</li><li><a href="categories/django.html">Django</a> (10)</li><li><a href="categories/facebook.html">Facebook</a> (1)</li><li><a href="categories/firefox.html">Firefox</a> (1)</li><li><a href="categories/git_mercurial.html">Git/Mercurial</a> (8)</li><li><a href="categories/golang.html">Golang</a> (1)</li><li><a href="categories/google.html">Google</a> (5)</li><li><a href="categories/heroku.html">Heroku</a> (6)</li><li><a href="categories/java.html">Java</a> (2)</li><li><a href="categories/javascript.html">JavaScript</a> (4)</li><li><a href="categories/jupyter.html">Jupyter</a> (1)</li><li><a href="categories/kabepy.html">kabepy</a> (2)</li><li><a href="categories/linux.html">Linux</a> (3)</li><li><a href="categories/lt.html">LT</a> (5)</li><li><a href="categories/mac.html">Mac</a> (8)</li><li><a href="categories/pycharm.html">PyCharm</a> (2)</li><li><a href="categories/pyconjp.html">PyConJP</a> (1)</li><li><a href="categories/pyfes.html">pyfes</a> (7)</li><li><a href="categories/python.html">Python</a> (69)</li><li><a href="categories/slack.html">Slack</a> (1)</li><li><a href="categories/sphinx.html">Sphinx</a> (8)</li><li><a href="categories/sqlalchemy.html">SQLAlchemy</a> (1)</li><li><a href="categories/ssd.html">SSD</a> (1)</li><li><a href="categories/tddbc.html">TDDBC</a> (1)</li><li><a href="categories/tinkerer.html">Tinkerer</a> (7)</li><li><a href="categories/tmux.html">tmux</a> (1)</li><li><a href="categories/ubuntu.html">Ubuntu</a> (2)</li><li><a href="categories/vagrant.html">Vagrant</a> (1)</li><li><a href="categories/vim.html">Vim</a> (22)</li><li><a href="categories/vimconf.html">VimConf</a> (3)</li><li><a href="categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="categories/windows.html">Windows</a> (2)</li><li><a href="categories/windows7.html">Windows7</a> (4)</li><li><a href="categories/アルゴリズム.html">アルゴリズム</a> (1)</li><li><a href="categories/セキュリティ.html">セキュリティ</a> (2)</li><li><a href="categories/ネットワーク.html">ネットワーク</a> (1)</li><li><a href="categories/プログラミング.html">プログラミング</a> (7)</li><li><a href="categories/勉強会.html">勉強会</a> (30)</li><li><a href="categories/応用情報技術者.html">応用情報技術者</a> (10)</li><li><a href="categories/情報処理技術者試験.html">情報処理技術者試験</a> (10)</li><li><a href="categories/本.html">本</a> (29)</li><li><a href="categories/開発環境.html">開発環境</a> (11)</li><li><a href="categories/雑記.html">雑記</a> (37)</li><li><a href="categories/高速化.html">高速化</a> (1)</li></ul>
+    <ul><li><a href="categories/64bit.html">64bit</a> (2)</li><li><a href="categories/android.html">Android</a> (3)</li><li><a href="categories/bouldering.html">bouldering</a> (2)</li><li><a href="categories/bouldering.html">Bouldering</a> (3)</li><li><a href="categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="categories/c_c.html">C/C++</a> (5)</li><li><a href="categories/chrome.html">Chrome</a> (2)</li><li><a href="categories/db.html">DB</a> (1)</li><li><a href="categories/django.html">Django</a> (10)</li><li><a href="categories/facebook.html">Facebook</a> (1)</li><li><a href="categories/firefox.html">Firefox</a> (1)</li><li><a href="categories/git_mercurial.html">Git/Mercurial</a> (8)</li><li><a href="categories/golang.html">Golang</a> (1)</li><li><a href="categories/google.html">Google</a> (5)</li><li><a href="categories/heroku.html">Heroku</a> (6)</li><li><a href="categories/java.html">Java</a> (2)</li><li><a href="categories/javascript.html">JavaScript</a> (4)</li><li><a href="categories/jupyter.html">Jupyter</a> (1)</li><li><a href="categories/kabepy.html">kabepy</a> (2)</li><li><a href="categories/linux.html">Linux</a> (3)</li><li><a href="categories/lt.html">LT</a> (5)</li><li><a href="categories/mac.html">Mac</a> (8)</li><li><a href="categories/pycharm.html">PyCharm</a> (2)</li><li><a href="categories/pyconjp.html">PyConJP</a> (1)</li><li><a href="categories/pyfes.html">pyfes</a> (7)</li><li><a href="categories/python.html">Python</a> (69)</li><li><a href="categories/slack.html">Slack</a> (1)</li><li><a href="categories/sphinx.html">Sphinx</a> (8)</li><li><a href="categories/sqlalchemy.html">SQLAlchemy</a> (1)</li><li><a href="categories/ssd.html">SSD</a> (1)</li><li><a href="categories/tddbc.html">TDDBC</a> (1)</li><li><a href="categories/tinkerer.html">Tinkerer</a> (7)</li><li><a href="categories/tmux.html">tmux</a> (1)</li><li><a href="categories/ubuntu.html">Ubuntu</a> (2)</li><li><a href="categories/vagrant.html">Vagrant</a> (1)</li><li><a href="categories/vim.html">Vim</a> (22)</li><li><a href="categories/vimconf.html">VimConf</a> (3)</li><li><a href="categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="categories/windows.html">Windows</a> (2)</li><li><a href="categories/windows7.html">Windows7</a> (4)</li><li><a href="categories/アルゴリズム.html">アルゴリズム</a> (1)</li><li><a href="categories/セキュリティ.html">セキュリティ</a> (2)</li><li><a href="categories/ネットワーク.html">ネットワーク</a> (1)</li><li><a href="categories/プログラミング.html">プログラミング</a> (7)</li><li><a href="categories/勉強会.html">勉強会</a> (30)</li><li><a href="categories/応用情報技術者.html">応用情報技術者</a> (10)</li><li><a href="categories/情報処理技術者試験.html">情報処理技術者試験</a> (10)</li><li><a href="categories/本.html">本</a> (29)</li><li><a href="categories/開発環境.html">開発環境</a> (11)</li><li><a href="categories/雑記.html">雑記</a> (38)</li><li><a href="categories/高速化.html">高速化</a> (1)</li></ul>
 </div></section><section><div class="widget">
     <h1>About Me</h1>
     <div>

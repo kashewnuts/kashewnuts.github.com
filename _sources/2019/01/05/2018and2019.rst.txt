@@ -1,0 +1,191 @@
+2018年の振り返りと2019年抱負
+============================
+
+.. contents::
+   :local:
+
+
+2018年の総括
+------------------
+
+.. tweet:: https://twitter.com/kashew_nuts/status/1079732019314081792
+
+だいたいこんな感じでしたが、せっかくなのでちょっと細かく見ていきたいと思います。
+
+
+健康面
+^^^^^^
+
+* 怪我はなかった。クライミングが数週間や数ヶ月できなくなるレベルでは。
+* しかし歯医者は1年で34回いったので月に3回近く通っていました。
+
+
+開発面
+^^^^^^
+
+引き続きPython x Djangoの組み合わせで開発をしています。去年はDjango REST frameworkを使い始めました。
+一昨年に比べて去年は以下のようなことを考えることが多かったように思います。
+
+* どの技術やアーキテクチャを採用するのか
+* なぜその技術・やり方を選択するのか
+* 一度選択したものをどのように良くしていくのか
+* チームメンバーにどのように仕事をしてもらうと全体がよくなるのか
+* 上記をどうやって伝えていくか・継続していくか
+
+そもそもの理解が足りていないためきっちり応えられなかったり、
+全体を見る機会をもっと早めに作れたのにそれを選択しなかったがために後でしっぺ返しを食らったりしていた気がします。
+
+普通に開発してると足を止める暇がなくなるので、「足を止めて振り返ったり、現状がどうで今後どうしていくことを考える機会をつくる」のがいいのだろうなと思いつつ、それをはじめて継続するにはどうしたらいいのかなと思う今日この頃です。
+
+
+書籍執筆・レビュー
+^^^^^^^^^^^^^^^^^^
+
+初の執筆を経験した年でした。
+
+* 6月に、共著で執筆していたPythonプロフェッショナルプログラミング第3版が出版されました。
+
+  * Blogはこちら `Pythonプロフェッショナルプログラミング第3版 #pypro3 が出版されました — kashew_nuts-blog <https://kashewnuts.github.io/2018/06/24/pypro3.html>`_
+
+* プライベートでは後半にレビューに1件かかわらせてもらってるが、スケジュールが変更されたそうなので2019年にリブート会をするらしいです。
+
+
+クライミング
+^^^^^^^^^^^^
+
+さらなるレベルアップには日々の行動を変えないとなーという感じですね。
+
+* アメリカのヨセミテ国立公園でクライミング漬けの1週間を過ごしました。なんという幸せ。次は2週間くらい行きたい。
+
+  * Blogはこちら `ヨセミテツアー日記 — kashew_nuts-blog <https://kashewnuts.github.io/2018/11/06/yosemite_tour.html>`_
+
+* 国内でも瑞牆でキャンプデビューしたり、小川山、御岳にいったりしました。
+* 成果は初段 1本、1級3本、2級 2本, V5 2本, V4 1本
+* ジムでのクライミングも週1〜2回ぐらいのペースで通っていた気がします。
+* 3年連続初段は1本らしいので、もうちょっと落とせるようになりたいですね。
+
+
+発表とか
+^^^^^^^^
+
+* PyCon KyushuやPyConJPというカンファレンスの場での発表実績も解除できました。Blogは以下。
+
+  * `PyCon Kyushuで登壇してきました #PyCon9shu — kashew_nuts-blog <https://kashewnuts.github.io/2018/07/15/pycon9shu.html>`_
+  * `PyConJP2018でPyCharmの話をしてきました #pyconjp — kashew_nuts-blog <https://kashewnuts.github.io/2018/09/22/pyconjp2018.html>`_
+
+* 何度かメンターをしている `Python入門者の集い <https://python-nyumon.connpass.com/event/95967/>`_  でも発表しましたね。
+
+
+Blog
+^^^^
+
+毎月1本....というわけではないですが、計15本の記事を書きました。
+
+個人活動的な
+^^^^^^^^^^^^
+
+計29回。多いのか少ないのかはわからないですが、2019年は外岩シーズンのイベントは参加は控えるかもしれない。
+
+けれどもなんかしらの行動につながる会への参加はしていきたいですね。
+
+* `Sphinx + 翻訳 Hack-a-thon 開発合宿 <https://sphinxjp.connpass.com/event/72062/>`_
+* Python mini Hack-a-thon
+
+  * `雪山合宿 <https://pyhack.connpass.com/event/68951/>`_
+  * `第85回 <https://pyhack.connpass.com/event/76637/>`_
+  * `第86回 <https://pyhack.connpass.com/event/80103/>`_
+  * `第87回 <https://pyhack.connpass.com/event/82060/>`_
+  * `第88回 <https://pyhack.connpass.com/event/84791/>`_
+  * `第89回 <https://pyhack.connpass.com/event/87316/>`_
+  * `夏山合宿 <https://pyhack.connpass.com/event/87317/>`_
+  * `第91回 <https://pyhack.connpass.com/event/94985/>`_
+  * `第92回 <https://pyhack.connpass.com/event/99182/>`_
+
+* BPStudy
+
+  * `#125 〜テスト駆動開発（TDD）の真髄 <https://bpstudy.connpass.com/event/73183/>`_
+  * `#133 〜Pythonによる機械学習・データ分析 <https://bpstudy.connpass.com/event/97037/>`_
+
+* Pythonもくもく会 `第24回 <https://mokupy.connpass.com/event/75886/>`_, `第29回 <https://mokupy.connpass.com/event/91334/>`_
+* `Pythonもくもく自習室(書き初め) #6 @ Rettyオフィス <https://retty.connpass.com/event/74299/>`_
+* `DjangoCongress JP 2018 <https://django.connpass.com/event/82148/>`_
+* `くろのて勉強会 #7 Miyadaiku でブログを作ろう！ <https://cronote.connpass.com/event/83379/>`_
+* `PyCon Kyushu 2018 Fukuoka <https://pycon-kyushu.connpass.com/event/84062/>`_
+* `Python入門者の集い #7 <https://python-nyumon.connpass.com/event/95967/>`_
+* Pythonプロフェッショナルプログラミング 第3版 読書会 #pypro3 `#2 <https://bpstudy.connpass.com/event/99679/>`_, `#3 <https://bpstudy.connpass.com/event/101137/>`_, `#4 <https://bpstudy.connpass.com/event/103710/>`_, `#5 <https://bpstudy.connpass.com/event/103712/>`_
+* `【Stapy x MUFG共催】Python Global Meetup （同時通訳あり） <https://startpython.connpass.com/event/94751/>`_
+* `PyCon JP 2018 <https://pyconjp.connpass.com/event/89163/>`_
+* `#pycamp 講師練習会 <https://pyconjp-staff.connpass.com/event/102896/>`_
+* `Python Boot Camp in 仙台 <https://pyconjp.connpass.com/event/104080/>`_
+* `Python入門者向けハンズオン #8 <https://python-nyumon.connpass.com/event/100817/>`_
+* `SphinxCon JP 2018 <https://sphinxjp.connpass.com/event/103294/>`_
+
+購入したものとか
+^^^^^^^^^^^^^^^^
+
+買ってよかったなーと思うのを厳選するなら以下の5つ。
+
+* Inspiron 13インチ 7000シリーズのフルスペック版: 現在はUbuntuデスクトップで運用
+
+.. image:: https://i.dell.com/das/dih.ashx/527x340/sites/imagecontent/products/publishingimages/inspiron-7000-series/laptops/15/inspiron-laptop-13-7000-polaris_hero.jpg
+  :align: center
+
+* Apple iPhone XR 128GB: 色はコーラルを選択。6sからの乗り換え。バッテリー持ちの良さは安心
+
+.. image:: https://www.apple.com/v/iphone/home/y/images/overview/hero-iphone-xr_large.jpg
+  :width: 456px
+  :height: 201px
+
+* Amazon Kindle Paperwhite: 読書が捗るけど、PDFはA4が多いから向かないですね....
+
+.. raw:: html
+
+   <a target="_blank"  href="https://www.amazon.co.jp/gp/product/B017DOV1CQ/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B017DOV1CQ&linkCode=as2&tag=kashewnuts-22&linkId=b06b48b6c9e8e85e4d4ddddf4ef83b00"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=B017DOV1CQ&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL160_&tag=kashewnuts-22" ></a><img src="//ir-jp.amazon-adsystem.com/e/ir?t=kashewnuts-22&l=am2&o=9&a=B017DOV1CQ" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+
+* Anker PowerCore Fusion 5000: プラグ搭載型なので移動時の持ち物が減って便利
+
+.. raw:: html
+
+   <a target="_blank"  href="https://www.amazon.co.jp/gp/product/B01LATWL5G/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B01LATWL5G&linkCode=as2&tag=kashewnuts-22&linkId=1c8e69c0e71f245e917e1977dda2239a"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=B01LATWL5G&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL160_&tag=kashewnuts-22" ></a><img src="//ir-jp.amazon-adsystem.com/e/ir?t=kashewnuts-22&l=am2&o=9&a=B01LATWL5G" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+
+*  Cable Matters USB C to DisplayPort 変換アダプター: Ubuntuデスクトップでも4K対応
+
+.. raw:: html
+
+   <a target="_blank"  href="https://www.amazon.co.jp/gp/product/B01LX27OE9/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B01LX27OE9&linkCode=as2&tag=kashewnuts-22&linkId=8549672fbdf288afea670317226cd161"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=B01LX27OE9&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=kashewnuts-22" ></a><img src="//ir-jp.amazon-adsystem.com/e/ir?t=kashewnuts-22&l=am2&o=9&a=B01LX27OE9" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+
+
+2019年の抱負
+------------
+
+優先度が高いのは絞らないと10、20と並んでいくので3つ書きます。
+
+
+開発面
+^^^^^^
+
+変わらずサーバーサイドの開発をしていくと思いますが、どうやったらチーム全体が(結果自分が)「楽に」目的に集中していけるかを追求できたらいいかなと思ったりしています。ふわっとしてますが。
+
+
+クライミング
+^^^^^^^^^^^^
+
+外岩で初段5本完登ですかね。12月にネタを仕込めたのでそのための「練習」をしていきます。
+具体的には良いフォームで登ることと、それを高いグレードでも可能にするための身体づくりですね。
+
+
+健康面
+^^^^^^
+
+大きな病気や怪我がないように。歯医者も虫歯での通院をなくす。結果他に回せる時間が増えると思うので。
+
+終わりに
+--------
+
+まずはじめて、それを習慣化していくしかないかなーと思うので2019年はそれを増やしていきたいですね。
+
+
+.. author:: default
+.. categories:: 雑記
+.. tags:: 雑記
+.. comments::

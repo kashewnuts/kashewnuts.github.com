@@ -69,6 +69,143 @@
             <a href="http://feeds.feedburner.com/kashew_nuts-blog" title="Subscribe via RSS"><span class="fa fa-lg fa-rss"></span></a>
           </li></ul>
     </nav><div class="main-container" role="main"><div class="main wrapper body clearfix"><article><div class="timestamp postmeta">
+            <span>July 13, 2013</span>
+        </div>
+        <div class="section">
+            <h1><a href="2013/07/13/pyhack33.html">(第33回)Python mini Hack-a-thon に参加してきた #pyhack</a></h1>
+<p>当日のイベントページはこちら→
+<a class="reference external" href="http://connpass.com/event/2755/">(第33回)Python mini Hack-a-thon - connpass</a></p>
+<img alt="../../../_images/4b51cd58c5480a652524e464cfa709d1.png" src="_images/4b51cd58c5480a652524e464cfa709d1.png"/>
+<p>同日に <a class="reference external" href="http://atnd.org/events/40589">python django 基礎 : ATND</a> もあり、
+どちらに参加するか悩みましたが、こちらに参加することにしました。</p>
+<div class="section" id="id1">
+<h2>当日やったこと</h2>
+<ul class="simple">
+<li>+lua 対応した MacVim-KaoriYa 試す</li>
+<li>Django 環境構築</li>
+</ul>
+</div>
+<div class="section" id="lua-macvim-kaoriya">
+<h2>+lua 対応した MacVim-KaoriYa 試す</h2>
+<p>前々から <a class="reference external" href="https://twitter.com/ShougoMatsu">暗黒美夢王</a> さん作の <a class="reference external" href="https://github.com/Shougo/neocomplete.vim">neocomplete.vim</a> を使いたいと思っていました。</p>
+<p>neocomplete.vim とは <a class="reference external" href="https://github.com/Shougo/neocomplcache.vim">neocomplcache.vim</a> の後継で、大きく以下のような特徴があります。</p>
+<ul class="simple">
+<li>Vim が +lua かつ、パッチが885以降あてられていることが必要</li>
+<li>neocomplcache.vim よりも高速に補完できる</li>
+</ul>
+<p>これを導入するためには Macports を使用している自分には敷居が高かったのですが、
+(Homebrew ユーザは比較的容易に導入可能) 20130711版でようやくこの条件がそろったので、
+導入してみました。</p>
+<ul class="simple">
+<li>.pkg ファイルから lua をインストール</li>
+<li>NeoBundle.vim で neocomplete.vim を入れる……が、エラーをはきまくってしかたない。</li>
+</ul>
+<p>しかしpyhackの日に以下のようなアドバイスを頂きました。</p>
+<blockquote class="twitter-tweet" data-conversation="none"><a href="https://twitter.com/splhack/status/355800024719953922">https://twitter.com/splhack/status/355800024719953922</a></blockquote><blockquote class="twitter-tweet" data-conversation="none"><a href="https://twitter.com/splhack/status/355864980580610048">https://twitter.com/splhack/status/355864980580610048</a></blockquote><p>そこで一度やり直して見ることに。</p>
+<ul class="simple">
+<li><a class="reference external" href="http://builder.japan.zdnet.com/os-admin/sp_snow-leopard-09/20412914/">pkgutil</a> を使用して lua をアンインストール</li>
+<li>Macports で lua インストールし直すも liblua.dyld が入っていない</li>
+<li><a class="reference external" href="http://kurano.jp/sadayuki/text/id/8949153752.html">Mac OS X で Lua を使う : Sadayuki は こんな人</a> を参考にようやく liblua.dyld が入る。</li>
+<li><strong>これで neocomplete.vim がエラーなく使えるようになる！</strong></li>
+</ul>
+<p>しかしお昼を食べてきた後……</p>
+<blockquote class="twitter-tweet" data-conversation="none"><a href="https://twitter.com/splhack/status/355920403270610944">https://twitter.com/splhack/status/355920403270610944</a></blockquote><p>午前中の苦労は何だったろう…… いや、あれは必要な犠牲だったんだ(遠い目)</p>
+<p>現在は <a class="reference external" href="https://code.google.com/p/macvim-kaoriya/downloads/detail?name=macvim-kaoriya-20130713.dmg">MacVim-KaoriYa 20130713テスト版</a> を使用して安定稼働しております。</p>
+</div>
+<div class="section" id="django">
+<h2>Django 環境構築</h2>
+<p>最初は <a class="reference external" href="http://peterhudec.github.io/authomatic/examples/django-simple.html">Simple Django Example | Authomatic</a> を見ていたのですが、途中で飽きてしまったので、別のことをしました。</p>
+<p>これまで Django を試す時は DB は SQLite を使用して、結果は</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span/>python manage.py runserver
+</pre></div>
+</div>
+<p>とコマンドを打って結果がどうなっているのか確認してきましたが、
+「一度本番環境に近い環境を作ってみたい」と思い試してみました。</p>
+<p>Apache2, MySQL を導入し、Hello, Wold! を表示するのを目標にしてスタート。</p>
+<p>まずは Macports で以下をイントール。</p>
+<ul class="simple">
+<li>apache2</li>
+<li>mod_wsgi</li>
+<li>mysql5</li>
+<li>mysql5-server</li>
+<li>py27-mysql</li>
+</ul>
+<p>途中はまったところは以下。</p>
+<div class="section" id="id3">
+<h3>「ソケットにアクセスできない」と怒られる。(以下エラーメッセージ)</h3>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span/>ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/opt/local/var/run/mysql5/mysqld.sock'
+</pre></div>
+</div>
+<div class="section" id="id4">
+<h4>解決策</h4>
+<p><a class="reference external" href="http://webmemo.uzuralife.com/article/2863">うずら技術メモ</a> を参照</p>
+</div>
+</div>
+<div class="section" id="mysqldb-no-module-named-mysqldb">
+<h3>MySQLdb がないと怒られる。No module named MySQLdb</h3>
+<div class="section" id="id6">
+<h4>解決策</h4>
+<p>Macports で入れた py27-mysql をアンインストールし、<a class="reference external" href="http://stackoverflow.com/questions/1448429/how-to-install-mysqldb-python-data-access-library-to-mysql-on-mac-os-x">How to install MySQLdb (Python data access library to MySQL) on Mac OS X? - Stack Overflow</a> を参考に、 <a class="reference external" href="http://sourceforge.net/projects/mysql-python/files/">MySQL for Python</a> を入れなおす。</p>
+</div>
+</div>
+<div class="section" id="mysql-config">
+<h3>mysql_config がないと怒られる</h3>
+<div class="section" id="id7">
+<h4>解決策</h4>
+<p><a class="reference external" href="http://hima-j.in/python/mac-os-x-mysql-python-django/">Mac OS X 10.6.4 における mysql-python のインストールと Django のデータベース設定 | 暇人じゃない</a> を参照</p>
+<p>それでも同じエラーがでたので、シンボリックリンクを貼る。</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span/>sudo ln -s /opt/local/bin/mysql_config5 /opt/local/bin/mysql_config
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id8">
+<h3>文字化けしたメッセージがブラウザに表示される</h3>
+<div class="section" id="id9">
+<h4>解決策</h4>
+<p>未解決。</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span/>python manage.py runserver
+</pre></div>
+</div>
+<p>とコマンドを打つとブラウザに Hello, World! が表示されることは確認しているので、
+Apache2 の設定がうまくいっていないものと思われる。 virtualenv
+を使っていたりするのも関係しているのかな。 Mac と Linux での違いもあるかもしれないがよくわかっていない。</p>
+<p>以下を参考にして Apache2 の設定をしたが、結果変わらず……</p>
+<ul class="simple">
+<li><a class="reference external" href="http://docs.djangoproject.jp/ja/latest/howto/deployment/wsgi/modwsgi.html">Apache と mod_wsgi 環境で Django を使う方法 — Django 1.4 documentation</a></li>
+<li><a class="reference external" href="http://i2bskn.hateblo.jp/entry/20120410/1334065183">Django1.4環境構築 - i2bsの日記</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="pyhack">
+<h2>pyhack終了後</h2>
+<p>お酒を飲めるような体調ではなかったのと、続きをやりたかったので今回は懇談会には不参加。
+結局目標としていたところまでは行かなかったけど、
+他にも以下のようなリンクを見つけたので、また時間を取って試してみようと思う。</p>
+<ul class="simple">
+<li><a class="reference external" href="http://blog.livedoor.jp/ichsod/archives/1672675.html">すりぷくのミング備忘録 : Djangoとmod_wsgiとapache2とvirtualenvとUbuntuでやってみる　その1</a></li>
+</ul>
+</div>
+
+        </div>
+        <div class="postmeta">
+        <div class="author">
+            <span>Posted by Kashun YOSHIDA</span>
+        </div>
+        <div class="categories">
+            <span>
+                Filed under:
+                <a href="categories/python.html">Python</a>, <a href="categories/django.html">Django</a>, <a href="categories/vim.html">Vim</a></span>
+        </div>
+        <div class="tags">
+            <span>
+                Tags:
+                <a href="tags/python.html">Python</a>, <a href="tags/django.html">Django</a>, <a href="tags/vim.html">Vim</a></span>
+        </div>
+        <div class="comments">
+            <a href="http://kashewnuts.github.io/2013/07/13/pyhack33.html#disqus_thread" data-disqus-identifier="2013/07/13/pyhack33">Leave a comment</a>
+        </div></div><div class="separator post_separator"></div><div class="timestamp postmeta">
             <span>June 16, 2013</span>
         </div>
         <div class="section">
@@ -561,107 +698,6 @@ $ hg push
         </div>
         <div class="comments">
             <a href="http://kashewnuts.github.io/2013/03/16/pyfes201303.html#disqus_thread" data-disqus-identifier="2013/03/16/pyfes201303">Leave a comment</a>
-        </div></div><div class="separator post_separator"></div><div class="timestamp postmeta">
-            <span>March 15, 2013</span>
-        </div>
-        <div class="section">
-            <h1><a href="2013/03/15/perfectpython_setup.html">Python3の開発環境を整えてみた</a></h1>
-<p>パーフフェクトPythonではWindows7, MacOSX, Ubuntu12.04LTSでの例が挙げられています。
-今回はUbuntu12.04LTSを選択してみました。手順は以下。</p>
-<ul class="simple">
-<li>VagrantでUbuntuをセットアップ</li>
-<li>Python3および各ツール類をインストール</li>
-<li>+α、開発をサポートするツール類をインストール</li>
-</ul>
-<div class="section" id="vagrantubuntu">
-<h2>VagrantでUbuntuをセットアップ</h2>
-<p>普通にやるのはおもしろくないので、 <a class="reference external" href="http://www.freia.jp/taka/blog/create-ubuntu-12.04-by-using-vagrant/index.html">2013/02/10 Vagrantで作るUbuntu-12.04環境 - 清水川Web</a> を参考に
-Ubuntu12.04LTSをセットアップ。楽すぎてびびる。
-ここから先はターミナルからsshで接続して操作する形になります。</p>
-</div>
-<div class="section" id="id1">
-<h2>Python3および各ツール類をインストール</h2>
-<p>パーフェクトPythonにある通りに必要なものをインストールしていく。まずはPython3のインストー
-ル。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span/>$ sudo apt-get install python3.3 python3.3-dev
-$ sudo apt-get install zlib1g-dev libssl-dev libreadline-dev libsqlite3-dev tk-dev
-libbz2-dev libgdbm-dev tcl-dev
-$ wget http://www.python.org/ftp/python3.3.0/Python3.3.0.tar.bz2
-$ tar xjf Python-3.3.0.tar.bz2
-$ <span class="nb">cd</span> Python-3.3.0
-$./configure --prefix<span class="o">=</span><span class="nv">$HOME</span>/python3.3
-$ sudo apt-get install make
-$ make <span class="o">&amp;&amp;</span> make install
-</pre></div>
-</div>
-<p>仮想環境の準備とpipのインストール</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span/>$ pyvenv default33
-$ <span class="nb">source</span> default/bin/active
-
-$ python -c <span class="s2">"import urllib.request;urllib.request.urlretrieve('http://python-distribute.org/distribute.py', 'distribute_setup.py')"</span>
-$ python distribute_setup.py
-$ easy_install pip
-</pre></div>
-</div>
-<p>IPython</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span/>$ pip install ipython
-</pre></div>
-</div>
-<p>後は本書で挙げられていたライブラリ類をインストールしていきました。本の中では触れられていなかったけど、途中インストールが必要になったのが以下。</p>
-<ul class="simple">
-<li>make(Python3インストール時)</li>
-<li>g++</li>
-<li>libxml2-dev, libxslt-dev(lxmlインストール時)  <a class="reference external" href="http://www.isnull.com.ar/2011/10/ubuntu-11-fatal-error-libxmlxmlversionh.html">参考URL</a></li>
-</ul>
-<p>4つとも</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span/>$ sudo apt-get install ...
-</pre></div>
-</div>
-<p>でインストールできた。</p>
-<p>さて、ここまでで本に書いてあるものはインストールできたわけだけど、このまま開発するには少し物足りない。というわけで少し+αで加えてみた。</p>
-</div>
-<div class="section" id="id2">
-<h2>+α、開発をサポートするツール類をインストール</h2>
-<p>ipythonで試すのも良いのだけど、普段使っているテキストエディタで編集したい。更に設定も同じにするためにgitも導入してみました。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span/>$ sudo apt-get install vim
-
-$ sudo apt-get install git-core
-$ git config --global user.name <span class="s2">"ユーザー名"</span>
-$ git config --global user.name <span class="s2">"メールアドレス"</span>
-
-$ git clone <span class="s2">"githubに上がっている自分のdotfiles"</span>
-</pre></div>
-</div>
-<p>後はシンボリックリンクを貼って .vimrc, colorschemeを設定します。ちなみに自分が使っているcolorschemeは <a class="reference external" href="http://vim.sourceforge.net/scripts/script.php?script_id=276">これ</a> です。
-更に <a class="reference external" href="http://tekkoc.tumblr.com/post/42845501741/vim-python">VimでPython環境をいい感じに整える | tekkoc’blog</a> を参考にVimのプラグインも導入します。</p>
-<ul class="simple">
-<li><a class="reference external" href="https://github.com/davidhalter/jedi-vim">jedi-vim</a> (補完プラグイン)</li>
-<li><a class="reference external" href="https://github.com/kevinw/pyflakes-vim">pyflakes-vim</a> (構文エラーの検出)</li>
-</ul>
-<p>Vim使いの方はこの2つは入れておいた方がいいかと思います。pathogen.vimやNeobunle.vimを使っている方はすぐにお試しできるかと思いますので是非。</p>
-</div>
-<div class="section" id="id4">
-<h2>終わりに</h2>
-<p>これでPython3で開発する環境は整いました。さあ、あとは実践あるのみです！</p>
-</div>
-
-        </div>
-        <div class="postmeta">
-        <div class="author">
-            <span>Posted by Kashun YOSHIDA</span>
-        </div>
-        <div class="categories">
-            <span>
-                Filed under:
-                <a href="categories/python.html">Python</a></span>
-        </div>
-        <div class="tags">
-            <span>
-                Tags:
-                <a href="tags/python.html">Python</a></span>
-        </div>
-        <div class="comments">
-            <a href="http://kashewnuts.github.io/2013/03/15/perfectpython_setup.html#disqus_thread" data-disqus-identifier="2013/03/15/perfectpython_setup">Leave a comment</a>
         </div></div><div class="archive_link">
         <a href="archive.html"> &mdash; Blog Archive &mdash; </a>
     </div><ul class="related clearfix">
@@ -680,6 +716,8 @@ $ git clone <span class="s2">"githubに上がっている自分のdotfiles"</spa
 </div></section><section><div class="widget">
     <h1>Recent Posts</h1>
     <ul><li>
+            <a href="2019/01/05/2018and2019.html">2018年の振り返りと2019年抱負</a>
+        </li><li>
             <a href="2018/12/02/bp_advent_calender.html">2018年版Life ChangingだったVimプラグインTOP3</a>
         </li><li>
             <a href="2018/11/06/yosemite_tour.html">ヨセミテツアー日記</a>
@@ -697,13 +735,11 @@ $ git clone <span class="s2">"githubに上がっている自分のdotfiles"</spa
             <a href="2018/05/08/genba_django.html">「現場で使える 基礎 Django」を読みました #技術書典</a>
         </li><li>
             <a href="2018/05/02/climbing_camp_in_mizugaki.html">瑞牆でボルダリング&キャンプしてきた話</a>
-        </li><li>
-            <a href="2018/03/15/pipenv.html">Pipenvに移行した話</a>
         </li></ul>
 </div>
 </section><section><div class="widget">
     <h1>Categories</h1>
-    <ul><li><a href="categories/64bit.html">64bit</a> (2)</li><li><a href="categories/android.html">Android</a> (3)</li><li><a href="categories/bouldering.html">bouldering</a> (2)</li><li><a href="categories/bouldering.html">Bouldering</a> (3)</li><li><a href="categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="categories/c_c.html">C/C++</a> (5)</li><li><a href="categories/chrome.html">Chrome</a> (2)</li><li><a href="categories/db.html">DB</a> (1)</li><li><a href="categories/django.html">Django</a> (10)</li><li><a href="categories/facebook.html">Facebook</a> (1)</li><li><a href="categories/firefox.html">Firefox</a> (1)</li><li><a href="categories/git_mercurial.html">Git/Mercurial</a> (8)</li><li><a href="categories/golang.html">Golang</a> (1)</li><li><a href="categories/google.html">Google</a> (5)</li><li><a href="categories/heroku.html">Heroku</a> (6)</li><li><a href="categories/java.html">Java</a> (2)</li><li><a href="categories/javascript.html">JavaScript</a> (4)</li><li><a href="categories/jupyter.html">Jupyter</a> (1)</li><li><a href="categories/kabepy.html">kabepy</a> (2)</li><li><a href="categories/linux.html">Linux</a> (3)</li><li><a href="categories/lt.html">LT</a> (5)</li><li><a href="categories/mac.html">Mac</a> (8)</li><li><a href="categories/pycharm.html">PyCharm</a> (2)</li><li><a href="categories/pyconjp.html">PyConJP</a> (1)</li><li><a href="categories/pyfes.html">pyfes</a> (7)</li><li><a href="categories/python.html">Python</a> (69)</li><li><a href="categories/slack.html">Slack</a> (1)</li><li><a href="categories/sphinx.html">Sphinx</a> (8)</li><li><a href="categories/sqlalchemy.html">SQLAlchemy</a> (1)</li><li><a href="categories/ssd.html">SSD</a> (1)</li><li><a href="categories/tddbc.html">TDDBC</a> (1)</li><li><a href="categories/tinkerer.html">Tinkerer</a> (7)</li><li><a href="categories/tmux.html">tmux</a> (1)</li><li><a href="categories/ubuntu.html">Ubuntu</a> (2)</li><li><a href="categories/vagrant.html">Vagrant</a> (1)</li><li><a href="categories/vim.html">Vim</a> (22)</li><li><a href="categories/vimconf.html">VimConf</a> (3)</li><li><a href="categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="categories/windows.html">Windows</a> (2)</li><li><a href="categories/windows7.html">Windows7</a> (4)</li><li><a href="categories/アルゴリズム.html">アルゴリズム</a> (1)</li><li><a href="categories/セキュリティ.html">セキュリティ</a> (2)</li><li><a href="categories/ネットワーク.html">ネットワーク</a> (1)</li><li><a href="categories/プログラミング.html">プログラミング</a> (7)</li><li><a href="categories/勉強会.html">勉強会</a> (30)</li><li><a href="categories/応用情報技術者.html">応用情報技術者</a> (10)</li><li><a href="categories/情報処理技術者試験.html">情報処理技術者試験</a> (10)</li><li><a href="categories/本.html">本</a> (29)</li><li><a href="categories/開発環境.html">開発環境</a> (11)</li><li><a href="categories/雑記.html">雑記</a> (37)</li><li><a href="categories/高速化.html">高速化</a> (1)</li></ul>
+    <ul><li><a href="categories/64bit.html">64bit</a> (2)</li><li><a href="categories/android.html">Android</a> (3)</li><li><a href="categories/bouldering.html">bouldering</a> (2)</li><li><a href="categories/bouldering.html">Bouldering</a> (3)</li><li><a href="categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="categories/c_c.html">C/C++</a> (5)</li><li><a href="categories/chrome.html">Chrome</a> (2)</li><li><a href="categories/db.html">DB</a> (1)</li><li><a href="categories/django.html">Django</a> (10)</li><li><a href="categories/facebook.html">Facebook</a> (1)</li><li><a href="categories/firefox.html">Firefox</a> (1)</li><li><a href="categories/git_mercurial.html">Git/Mercurial</a> (8)</li><li><a href="categories/golang.html">Golang</a> (1)</li><li><a href="categories/google.html">Google</a> (5)</li><li><a href="categories/heroku.html">Heroku</a> (6)</li><li><a href="categories/java.html">Java</a> (2)</li><li><a href="categories/javascript.html">JavaScript</a> (4)</li><li><a href="categories/jupyter.html">Jupyter</a> (1)</li><li><a href="categories/kabepy.html">kabepy</a> (2)</li><li><a href="categories/linux.html">Linux</a> (3)</li><li><a href="categories/lt.html">LT</a> (5)</li><li><a href="categories/mac.html">Mac</a> (8)</li><li><a href="categories/pycharm.html">PyCharm</a> (2)</li><li><a href="categories/pyconjp.html">PyConJP</a> (1)</li><li><a href="categories/pyfes.html">pyfes</a> (7)</li><li><a href="categories/python.html">Python</a> (69)</li><li><a href="categories/slack.html">Slack</a> (1)</li><li><a href="categories/sphinx.html">Sphinx</a> (8)</li><li><a href="categories/sqlalchemy.html">SQLAlchemy</a> (1)</li><li><a href="categories/ssd.html">SSD</a> (1)</li><li><a href="categories/tddbc.html">TDDBC</a> (1)</li><li><a href="categories/tinkerer.html">Tinkerer</a> (7)</li><li><a href="categories/tmux.html">tmux</a> (1)</li><li><a href="categories/ubuntu.html">Ubuntu</a> (2)</li><li><a href="categories/vagrant.html">Vagrant</a> (1)</li><li><a href="categories/vim.html">Vim</a> (22)</li><li><a href="categories/vimconf.html">VimConf</a> (3)</li><li><a href="categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="categories/windows.html">Windows</a> (2)</li><li><a href="categories/windows7.html">Windows7</a> (4)</li><li><a href="categories/アルゴリズム.html">アルゴリズム</a> (1)</li><li><a href="categories/セキュリティ.html">セキュリティ</a> (2)</li><li><a href="categories/ネットワーク.html">ネットワーク</a> (1)</li><li><a href="categories/プログラミング.html">プログラミング</a> (7)</li><li><a href="categories/勉強会.html">勉強会</a> (30)</li><li><a href="categories/応用情報技術者.html">応用情報技術者</a> (10)</li><li><a href="categories/情報処理技術者試験.html">情報処理技術者試験</a> (10)</li><li><a href="categories/本.html">本</a> (29)</li><li><a href="categories/開発環境.html">開発環境</a> (11)</li><li><a href="categories/雑記.html">雑記</a> (38)</li><li><a href="categories/高速化.html">高速化</a> (1)</li></ul>
 </div></section><section><div class="widget">
     <h1>About Me</h1>
     <div>

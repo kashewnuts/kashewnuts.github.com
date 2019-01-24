@@ -69,6 +69,86 @@
             <a href="http://feeds.feedburner.com/kashew_nuts-blog" title="Subscribe via RSS"><span class="fa fa-lg fa-rss"></span></a>
           </li></ul>
     </nav><div class="main-container" role="main"><div class="main wrapper body clearfix"><article><div class="timestamp postmeta">
+            <span>January 13, 2018</span>
+        </div>
+        <div class="section">
+            <h1><a href="2018/01/13/sphinxjp_camp.html">Sphinx + 翻訳 Hack-a-thon 開発合宿に参加しました #sphinxjp</a></h1>
+<p>一泊二日で行ってきました。イベントのURLは次のとおり。</p>
+<p><a class="reference external" href="https://sphinxjp.connpass.com/event/72062/">Sphinx + 翻訳 Hack-a-thon 開発合宿 - connpass</a></p>
+<p>会場は <a class="reference external" href="https://www.nwec-bs.jp/">国立女性教育会館</a> という埼玉県比企郡嵐山町にある宿泊研修施設で行いました。新宿から1.5hでいけて値段も手頃だったので作業に集中できてよかったです。</p>
+<div class="section" id="id2">
+<h2>1日目やったこと</h2>
+<p>13:00ぐらいに集合して、合宿スタートしました。やったことは次のとおりです。</p>
+<div class="section" id="django-https-docs-djangoproject-com-ja">
+<h3>Djangoの公式ドキュメント <a class="reference external" href="https://docs.djangoproject.com/ja/">https://docs.djangoproject.com/ja/</a> を翻訳</h3>
+<p>8月に翻訳プロジェクトにJOINして、ちょっと間が空いていたのでこれを期に取り組みました。実施したのは次のとおりです。</p>
+<ul class="simple">
+<li><a class="reference external" href="https://docs.djangoproject.com/ja/2.0/intro/">Django-2.0のチュートリアル</a> の未訳部分翻訳完了</li>
+<li>Djangoフォームの翻訳を進めました。ボリュームが大きくて翻訳率は1%進んだかなといった感じ。進められたのは次の通り<ul>
+<li><a class="reference external" href="https://docs.djangoproject.com/ja/1.11/topics/forms/">フォームを使う</a></li>
+<li><a class="reference external" href="https://docs.djangoproject.com/ja/1.11/topics/forms/modelforms/">モデルからフォームを作成する</a></li>
+</ul>
+</li>
+</ul>
+<p>Djangoフォームの進捗率を出すのに、Django documentationの <a class="reference external" href="https://docs.djangoproject.com/ja/1.11/topics/">Django を使う</a>  全体、つまりモデルやURL、テンプレート、Class-based views、マイグレーションなど <strong>topics</strong> 全体を対象にTransifexが計算してるので、進んでる感じがあまりしない…</p>
+<p>翻訳したのはいずれかのタイミングで反映されると思います。</p>
+</div>
+<div class="section" id="vim">
+<h3>Vim談義をした</h3>
+<blockquote class="twitter-tweet" data-conversation="none"><a href="https://twitter.com/kashew_nuts/status/949984961754406912">https://twitter.com/kashew_nuts/status/949984961754406912</a></blockquote><p>夕飯→お風呂を堪能したあと軽くVim話をしたりしました。</p>
+<ul class="simple">
+<li><span class="docutils literal"><span class="pre">clipboard</span></span> オプションを題材にVimのバージョン情報の見方、ヘルプの引き方、設定してあるオプションの見方を話した。</li>
+<li>「デフォルトの動作を覚えるとプラグイン使わなくてもできますよ。」という話をした。</li>
+<li>「必要だったらVimはビルドすることもありますよ」と話したら、「Gentoo以外でビルドしたくない！」と言われそうゆうものかーと思った。</li>
+</ul>
+<p>「Vimモヒカンがいる」とかいわれたけどそんなことないよ。ヘルプの引き方知ってるだけだよ。</p>
+</div>
+<div class="section" id="pc">
+<h3>PCどうしよう話をした</h3>
+<p>某社(っていっても2社だけど…)のPCを使うツラみを共有した後、DellやThinkPad使えばいいんじゃねという話をした。注文したDellのPCはやくこないかなー。</p>
+<p>この日は日付変わる頃に部屋に戻って、1時前には寝てたと思います。はやい。</p>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>2日目やったこと</h2>
+<p>珍しく7時前に起きてゆるゆると朝食に。</p>
+<blockquote class="twitter-tweet" data-conversation="none"><a href="https://twitter.com/kashew_nuts/status/950175081644269568">https://twitter.com/kashew_nuts/status/950175081644269568</a></blockquote><p>朝ごはん食べてる時にちょっとアクシデントがあったけどごめんなさい。</p>
+<p>ご飯を食べて作業場所に移動中、凍結していた池に突撃したりしました。</p>
+<blockquote class="twitter-tweet" data-conversation="none"><a href="https://twitter.com/shimizukawa/status/950224587710545920">https://twitter.com/shimizukawa/status/950224587710545920</a></blockquote><p>1日目につづき、Djangoフォームの翻訳を進めました。1日目に精根尽き果てたのか、この日はあまり捗らなかった…
+やること微妙に変えたりしてリフレッシュするのも大事ですね。</p>
+</div>
+<div class="section" id="id6">
+<h2>雑感</h2>
+<p>開発合宿は夏と冬に #pyhack でいったことしかなかったが、今回は場所も集中しやすい環境ができていたので作業が捗ったのはよかったです。
+今後も無理にならないペースで翻訳とか携わっていけたらいいなと思います。</p>
+</div>
+<div class="section" id="id7">
+<h2>参加ブログ</h2>
+<ul class="simple">
+<li><a class="reference external" href="http://www.freia.jp/taka/blog/sphinxjp-camp-20180108/index.html">Sphinx + 翻訳 hack-a-thon 開発合宿 2018 #sphinxjp — 清水川Web</a></li>
+<li><a class="reference external" href="http://takuan-osho.hatenablog.com/entry/2018/01/08/i-joined-sphinx-plus-translation-hackathon-bootcamp">Sphinx + 翻訳 Hack-a-thon 開発合宿に参加してきました #sphinxjp - プログラマ行進曲第二章</a></li>
+<li><a class="reference external" href="http://tk0miya.hatenablog.com/entry/2018/01/12/152034">Sphinx 開発合宿をしました。 - Hack like a rolling stone</a></li>
+</ul>
+</div>
+
+        </div>
+        <div class="postmeta">
+        <div class="author">
+            <span>Posted by Kashun YOSHIDA</span>
+        </div>
+        <div class="categories">
+            <span>
+                Filed under:
+                <a href="categories/sphinx.html">Sphinx</a>, <a href="categories/django.html">Django</a></span>
+        </div>
+        <div class="tags">
+            <span>
+                Tags:
+                <a href="tags/sphinx.html">Sphinx</a>, <a href="tags/django.html">Django</a></span>
+        </div>
+        <div class="comments">
+            <a href="http://kashewnuts.github.io/2018/01/13/sphinxjp_camp.html#disqus_thread" data-disqus-identifier="2018/01/13/sphinxjp_camp">Leave a comment</a>
+        </div></div><div class="separator post_separator"></div><div class="timestamp postmeta">
             <span>December 27, 2017</span>
         </div>
         <div class="section">
@@ -211,73 +291,6 @@
         </div>
         <div class="comments">
             <a href="http://kashewnuts.github.io/2017/11/11/open_vim_from_pycharm.html#disqus_thread" data-disqus-identifier="2017/11/11/open_vim_from_pycharm">Leave a comment</a>
-        </div></div><div class="separator post_separator"></div><div class="timestamp postmeta">
-            <span>November 04, 2017</span>
-        </div>
-        <div class="section">
-            <h1><a href="2017/11/04/vimconf2017.html">#VimConf2017 に参加しました</a></h1>
-<img alt="../../../_images/vimconf2017.JPG" class="align-center" src="_images/vimconf2017.JPG"/>
-<p><a class="reference external" href="http://vimconf.vim-jp.org/2017/">VimConf 2017</a> という、トレンド1位のイベントに行ってきました。さすがですね。</p>
-<blockquote class="twitter-tweet" data-conversation="none"><a href="https://twitter.com/kashew_nuts/status/926643946431815680">https://twitter.com/kashew_nuts/status/926643946431815680</a></blockquote><p>まとめとかできないので、どんな感じだったのかはTwitterで実況してたやつを見てもらったほうがいいかなと思います。</p>
-<p><a class="reference external" href="https://twitter.com/search?f=tweets&amp;q=from%3Akashew_nuts%20%23VimConf2017&amp;src=typd">from:kashew_nuts #VimConf2017 - Twitter Search</a></p>
-<p>これ以上ないぐらいVimの濃い話、WiFiあり、各席に有線LAN・コンセントあり、同時翻訳あり、昼食・懇親会あり、無限コーヒーあり、などなどなどなど考えると個人スポンサーになっても全然ペイできるなという感じでした。</p>
-<p>コーヒーもVimConf来たって感じにさせてくれました。atwareさんありがとうございます！</p>
-<blockquote class="twitter-tweet" data-conversation="none"><a href="https://twitter.com/kashew_nuts/status/926611151500197888">https://twitter.com/kashew_nuts/status/926611151500197888</a></blockquote><p>お昼もおいしかった。</p>
-<blockquote class="twitter-tweet" data-conversation="none"><a href="https://twitter.com/kashew_nuts/status/926651708557598720">https://twitter.com/kashew_nuts/status/926651708557598720</a></blockquote><div class="section" id="id1">
-<h2>特に印象に残ったこととかやることとか</h2>
-<ul>
-<li><p class="first"><a class="reference external" href="https://twitter.com/mattn_jp">@mattn_jp</a> さん、 <a class="reference external" href="https://twitter.com/kaoriya">@kaoriya</a> さん、 <a class="reference external" href="https://twitter.com/k_takata">@k-takata</a>  さんの3人のLegendからVim(とWindows)の話を聞けたのは最高だった。</p>
-<ul class="simple">
-<li>vim-jpとかドキュメントから貢献するのいいよーという話の最中に、突然自分の名前がでてきて超ビビった。心拍数跳ね上がったと思う。その節は@mattn_jpさんや@k-takataさん含め、大変お世話になりました！</li>
-</ul>
-<blockquote class="twitter-tweet" data-conversation="none"><a href="https://twitter.com/kashew_nuts/status/926671776431554560">https://twitter.com/kashew_nuts/status/926671776431554560</a></blockquote></li>
-<li><p class="first"><strong>offset しらなかった。べんり。</strong> <span class="docutils literal"><span class="pre">&lt;is_foo&gt;/s+3</span></span></p>
-</li>
-<li><p class="first"><a class="reference external" href="https://github.com/hnakamur/vim-go-tutorial-ja">hnakamur/vim-go-tutorial-ja: Tutorial for vim-go</a> やろう</p>
-</li>
-<li><p class="first"><span class="docutils literal"><span class="pre">set</span> <span class="pre">fileencodings=ucs-bom,iso-2022-jp,utf-8,euc-jp,cp932</span></span> をvimrcに追加した。</p>
-</li>
-<li><p class="first">@t9mdさんのvim-mode-plusの話は、実践Vimを生きている感じがして相変わらず凄みがあった。</p>
-</li>
-</ul>
-</div>
-<div class="section" id="id2">
-<h2>まとめっぽいもの</h2>
-<p>去年VimConfに出て <a class="reference external" href="https://qiita.com/kashew_nuts/items/72a36ad057f0dcf83472">vim-jp/vimdoc-jaにコントリビューションした話 - Qiita</a> みたいなことやったからか、ありがたいことに話題にも上げてくれた人がしたし、今後も何かしらアウトプットしていけたらいいかなーと思います。来年もでれるようにしていこう。</p>
-<p>みなさんお疲れ様でしたー。</p>
-</div>
-<div class="section" id="id3">
-<h2>発表スライドとか</h2>
-<ul class="simple">
-<li><a class="reference external" href="https://docs.google.com/presentation/d/14pViuMI_X_PiNwQD8nuGRG72GUqSeKDqoJqjAZWS39U/edit#slide=id.p">Vim, Me and Community</a> <a class="reference external" href="https://twitter.com/haya14busa">@haya14busa</a></li>
-<li><a class="reference external" href="https://speakerdeck.com/farslan/the-past-and-future-of-vim-go">The Past and Future of Vim-go</a> <a class="reference external" href="https://twitter.com/fatih">@faith</a></li>
-<li><a class="reference external" href="https://speakerdeck.com/cocopon/creating-your-lovely-color-scheme">Creating Your Lovely Color Scheme</a> <a class="reference external" href="https://twitter.com/cocopon">@cocopon</a></li>
-<li><a class="reference external" href="https://qiita.com/t9md/items/236d09fea9bcdfabdcea">vmp: the most ambitious vim emulator</a> <a class="reference external" href="https://twitter.com/t9md">@t9md</a></li>
-<li><a class="reference external" href="http://lamsh.github.io/slide/2017/20171104_VimConf2017/index.html">Vim and Compatibility</a> <a class="reference external" href="https://twitter.com/senopen">@senopen</a></li>
-<li><a class="reference external" href="https://www.slideshare.net/Shougo/neosnippetvim-deoppetnvim-in-vim-conf-2017">Neosnippet.vim + Deoppet.nvim in Vim conf 2017</a> <a class="reference external" href="https://twitter.com/ShougoMatsu">@ShougoMatsu</a></li>
-<li><a class="reference external" href="https://speakerdeck.com/daisuzu/how-ordinary-vim-user-contributed-to-vim">How ordinary Vim user contributed to Vim</a> <a class="reference external" href="https://twitter.com/dice_zu">@dice_zu</a></li>
-<li><a class="reference external" href="https://speakerdeck.com/pocke/the-new-syntax-highlighter-for-vim">The new syntax highlighter for Vim</a> <a class="reference external" href="https://twitter.com/p_ck_">@p_ck_</a></li>
-<li><a class="reference external" href="https://lambdalisue.github.io/vimconf2017/assets/player/KeynoteDHTMLPlayer.html#0">You’ve been Super Viman. After this talk, you could say you are Super Viman 2 – Life with gina.vim</a> <a class="reference external" href="https://twitter.com/lambdalisue">@lambdalisue</a></li>
-</ul>
-</div>
-
-        </div>
-        <div class="postmeta">
-        <div class="author">
-            <span>Posted by Kashun YOSHIDA</span>
-        </div>
-        <div class="categories">
-            <span>
-                Filed under:
-                <a href="categories/vim.html">Vim</a>, <a href="categories/vimconf.html">VimConf</a></span>
-        </div>
-        <div class="tags">
-            <span>
-                Tags:
-                <a href="tags/vim.html">Vim</a>, <a href="tags/vimconf.html">VimConf</a></span>
-        </div>
-        <div class="comments">
-            <a href="http://kashewnuts.github.io/2017/11/04/vimconf2017.html#disqus_thread" data-disqus-identifier="2017/11/04/vimconf2017">Leave a comment</a>
         </div></div><div class="archive_link">
         <a href="archive.html"> &mdash; Blog Archive &mdash; </a>
     </div><ul class="related clearfix">
@@ -296,6 +309,8 @@
 </div></section><section><div class="widget">
     <h1>Recent Posts</h1>
     <ul><li>
+            <a href="2019/01/05/2018and2019.html">2018年の振り返りと2019年抱負</a>
+        </li><li>
             <a href="2018/12/02/bp_advent_calender.html">2018年版Life ChangingだったVimプラグインTOP3</a>
         </li><li>
             <a href="2018/11/06/yosemite_tour.html">ヨセミテツアー日記</a>
@@ -313,13 +328,11 @@
             <a href="2018/05/08/genba_django.html">「現場で使える 基礎 Django」を読みました #技術書典</a>
         </li><li>
             <a href="2018/05/02/climbing_camp_in_mizugaki.html">瑞牆でボルダリング&キャンプしてきた話</a>
-        </li><li>
-            <a href="2018/03/15/pipenv.html">Pipenvに移行した話</a>
         </li></ul>
 </div>
 </section><section><div class="widget">
     <h1>Categories</h1>
-    <ul><li><a href="categories/64bit.html">64bit</a> (2)</li><li><a href="categories/android.html">Android</a> (3)</li><li><a href="categories/bouldering.html">bouldering</a> (2)</li><li><a href="categories/bouldering.html">Bouldering</a> (3)</li><li><a href="categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="categories/c_c.html">C/C++</a> (5)</li><li><a href="categories/chrome.html">Chrome</a> (2)</li><li><a href="categories/db.html">DB</a> (1)</li><li><a href="categories/django.html">Django</a> (10)</li><li><a href="categories/facebook.html">Facebook</a> (1)</li><li><a href="categories/firefox.html">Firefox</a> (1)</li><li><a href="categories/git_mercurial.html">Git/Mercurial</a> (8)</li><li><a href="categories/golang.html">Golang</a> (1)</li><li><a href="categories/google.html">Google</a> (5)</li><li><a href="categories/heroku.html">Heroku</a> (6)</li><li><a href="categories/java.html">Java</a> (2)</li><li><a href="categories/javascript.html">JavaScript</a> (4)</li><li><a href="categories/jupyter.html">Jupyter</a> (1)</li><li><a href="categories/kabepy.html">kabepy</a> (2)</li><li><a href="categories/linux.html">Linux</a> (3)</li><li><a href="categories/lt.html">LT</a> (5)</li><li><a href="categories/mac.html">Mac</a> (8)</li><li><a href="categories/pycharm.html">PyCharm</a> (2)</li><li><a href="categories/pyconjp.html">PyConJP</a> (1)</li><li><a href="categories/pyfes.html">pyfes</a> (7)</li><li><a href="categories/python.html">Python</a> (69)</li><li><a href="categories/slack.html">Slack</a> (1)</li><li><a href="categories/sphinx.html">Sphinx</a> (8)</li><li><a href="categories/sqlalchemy.html">SQLAlchemy</a> (1)</li><li><a href="categories/ssd.html">SSD</a> (1)</li><li><a href="categories/tddbc.html">TDDBC</a> (1)</li><li><a href="categories/tinkerer.html">Tinkerer</a> (7)</li><li><a href="categories/tmux.html">tmux</a> (1)</li><li><a href="categories/ubuntu.html">Ubuntu</a> (2)</li><li><a href="categories/vagrant.html">Vagrant</a> (1)</li><li><a href="categories/vim.html">Vim</a> (22)</li><li><a href="categories/vimconf.html">VimConf</a> (3)</li><li><a href="categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="categories/windows.html">Windows</a> (2)</li><li><a href="categories/windows7.html">Windows7</a> (4)</li><li><a href="categories/アルゴリズム.html">アルゴリズム</a> (1)</li><li><a href="categories/セキュリティ.html">セキュリティ</a> (2)</li><li><a href="categories/ネットワーク.html">ネットワーク</a> (1)</li><li><a href="categories/プログラミング.html">プログラミング</a> (7)</li><li><a href="categories/勉強会.html">勉強会</a> (30)</li><li><a href="categories/応用情報技術者.html">応用情報技術者</a> (10)</li><li><a href="categories/情報処理技術者試験.html">情報処理技術者試験</a> (10)</li><li><a href="categories/本.html">本</a> (29)</li><li><a href="categories/開発環境.html">開発環境</a> (11)</li><li><a href="categories/雑記.html">雑記</a> (37)</li><li><a href="categories/高速化.html">高速化</a> (1)</li></ul>
+    <ul><li><a href="categories/64bit.html">64bit</a> (2)</li><li><a href="categories/android.html">Android</a> (3)</li><li><a href="categories/bouldering.html">bouldering</a> (2)</li><li><a href="categories/bouldering.html">Bouldering</a> (3)</li><li><a href="categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="categories/c_c.html">C/C++</a> (5)</li><li><a href="categories/chrome.html">Chrome</a> (2)</li><li><a href="categories/db.html">DB</a> (1)</li><li><a href="categories/django.html">Django</a> (10)</li><li><a href="categories/facebook.html">Facebook</a> (1)</li><li><a href="categories/firefox.html">Firefox</a> (1)</li><li><a href="categories/git_mercurial.html">Git/Mercurial</a> (8)</li><li><a href="categories/golang.html">Golang</a> (1)</li><li><a href="categories/google.html">Google</a> (5)</li><li><a href="categories/heroku.html">Heroku</a> (6)</li><li><a href="categories/java.html">Java</a> (2)</li><li><a href="categories/javascript.html">JavaScript</a> (4)</li><li><a href="categories/jupyter.html">Jupyter</a> (1)</li><li><a href="categories/kabepy.html">kabepy</a> (2)</li><li><a href="categories/linux.html">Linux</a> (3)</li><li><a href="categories/lt.html">LT</a> (5)</li><li><a href="categories/mac.html">Mac</a> (8)</li><li><a href="categories/pycharm.html">PyCharm</a> (2)</li><li><a href="categories/pyconjp.html">PyConJP</a> (1)</li><li><a href="categories/pyfes.html">pyfes</a> (7)</li><li><a href="categories/python.html">Python</a> (69)</li><li><a href="categories/slack.html">Slack</a> (1)</li><li><a href="categories/sphinx.html">Sphinx</a> (8)</li><li><a href="categories/sqlalchemy.html">SQLAlchemy</a> (1)</li><li><a href="categories/ssd.html">SSD</a> (1)</li><li><a href="categories/tddbc.html">TDDBC</a> (1)</li><li><a href="categories/tinkerer.html">Tinkerer</a> (7)</li><li><a href="categories/tmux.html">tmux</a> (1)</li><li><a href="categories/ubuntu.html">Ubuntu</a> (2)</li><li><a href="categories/vagrant.html">Vagrant</a> (1)</li><li><a href="categories/vim.html">Vim</a> (22)</li><li><a href="categories/vimconf.html">VimConf</a> (3)</li><li><a href="categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="categories/windows.html">Windows</a> (2)</li><li><a href="categories/windows7.html">Windows7</a> (4)</li><li><a href="categories/アルゴリズム.html">アルゴリズム</a> (1)</li><li><a href="categories/セキュリティ.html">セキュリティ</a> (2)</li><li><a href="categories/ネットワーク.html">ネットワーク</a> (1)</li><li><a href="categories/プログラミング.html">プログラミング</a> (7)</li><li><a href="categories/勉強会.html">勉強会</a> (30)</li><li><a href="categories/応用情報技術者.html">応用情報技術者</a> (10)</li><li><a href="categories/情報処理技術者試験.html">情報処理技術者試験</a> (10)</li><li><a href="categories/本.html">本</a> (29)</li><li><a href="categories/開発環境.html">開発環境</a> (11)</li><li><a href="categories/雑記.html">雑記</a> (38)</li><li><a href="categories/高速化.html">高速化</a> (1)</li></ul>
 </div></section><section><div class="widget">
     <h1>About Me</h1>
     <div>
