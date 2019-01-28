@@ -69,6 +69,165 @@
             <a href="http://feeds.feedburner.com/kashew_nuts-blog" title="Subscribe via RSS"><span class="fa fa-lg fa-rss"></span></a>
           </li></ul>
     </nav><div class="main-container" role="main"><div class="main wrapper body clearfix"><article><div class="timestamp postmeta">
+            <span>November 08, 2016</span>
+        </div>
+        <div class="section">
+            <h1><a href="2016/11/08/vimconf2016.html">VimConf2016 に参加しました</a></h1>
+<img alt="../../../_images/vimconf2016.jpg" class="align-center" src="_images/vimconf2016.jpg"/>
+<p>ujihisa.vimを含めると3年ぶり3回目の参加となったVimConf2016。全部は書ききれないのでメモをとれたやつだけ書きます。</p>
+<p>例年の傾向を見てると参加者Blogとかは公式の方にまとめられ、動画もYouTubeの <a class="reference external" href="https://www.youtube.com/channel/UCSk7TnXVB0BMtY416dmFMuw">vim-jp</a> にまとめれるようなので後から振り返りたいかたはそちらをチェックされるとよろしいかと。</p>
+<ul class="simple">
+<li><a class="reference external" href="http://VimConf.vim-jp.org/2016/">VimConf 2016</a></li>
+<li><a class="reference external" href="http://VimConf.connpass.com/event/43483/">VimConf 2016 - connpass</a></li>
+<li><a class="reference external" href="http://togetter.com/li/1045761">VimConf 2016 のまとめ - Togetterまとめ</a></li>
+</ul>
+<div class="section" id="id1">
+<h2><a class="reference external" href="http://www.slideshare.net/k-takata/introduction-to-vim-80">Introduction to Vim 8.0 by Ken Takata</a></h2>
+<ul class="simple">
+<li>Vim 8.0の新機能の紹介および、開発の軌跡について。また、日本人の活躍についても紹介</li>
+<li>「vim-jpはあなたのコントリビューションをお待ちしております。」</li>
+<li>いちばん楽しかったのは？(@ujm)→DirectX、常にONにしてる。後はspellチェックで日本語の検出を除外する機能。</li>
+<li><a class="reference external" href="http://vim-jp.org/blog/2016/09/13/vim8.0-features.html">vim-jp » Vim 8.0 新機能解説</a></li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2><a class="reference external" href="https://speakerdeck.com/bird_nitryn/vim-as-the-main-text-editor-number-VimConf2016">Vim as the MAIN text editor by bird_nitryn</a></h2>
+<ul class="simple">
+<li>使い始めて1年ぐらい。VSCode→Vimに。Vimはすべてキーボードで操作が完結するのが魅力。</li>
+<li>とにかくVimの機能を使いまくる→vimrcを育てる</li>
+<li>慣れるために→Vimium導入, vimを触る時間を増やす。</li>
+<li>vimrc: 116行→188行 neobundle→dein。色んな言語を触るようになったのでタブやステータスラインをいじったり。</li>
+<li>突如始まったvimrc読書会が面白かった（笑）</li>
+<li>具体的になぜVSCode→Vimに？<ul>
+<li>ホストPCがWindowsでvagrantでCentOS。node.jsのパッケージマネージャの制限でフォルダ共有してるとコケる。</li>
+<li>それを叩くたびに味わっていた。共有やめたいCentOS上でいじりたい。</li>
+<li>EmacsかVimか？→じゃあVimだということでVimに。</li>
+</ul>
+</li>
+<li>これだけは避けた方がいいプラクティスは？<ul>
+<li>宗教戦争はこだわりなので。vimrcをすごく書き込んでる人と育ててる段階の様々な人がいるので、自分と同じぐらいのレベル、自分が読んでわかりやすいレベルのものからやるといい。</li>
+</ul>
+</li>
+<li>転向してきてテンションが上がった機能、プラグインは？<ul>
+<li>VimFiler。カーソル移動ができる。Vimをいじってる人とすればすごく直観的だった。</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2><a class="reference external" href="https://gist.github.com/Shougo/7c78b3a1725f70c1435d004ed14f2558">Denite.nvim ~The next generation of unite~ by Shougo</a></h2>
+<ul class="simple">
+<li>テキストエディタとは何か？「生きる理由。」</li>
+<li>deniteとは何か？unite.vimをフルスクラッチで書き直したもの。Python3で書かれていて、neovim/vim8.0+で動作。</li>
+<li>なぜdenie.nvimを作ろうとした？→”unite.vim slow”</li>
+<li>とくに遅いといわれていた、grepやfile_recが速くなる。候補のサジェストも。<ul>
+<li>unite grepでは数十秒→denite.nvimとcpsmで1,2秒に</li>
+</ul>
+</li>
+<li>unitne.vimがdenite.nvimのソースを持っているのでdenite.nvimはunite.vimを呼べる。</li>
+<li>次はdeoplete.nvimをVim8.0+に対応予定。<ul>
+<li>他にneosnippet, vinarise, vimshell, vimfilerも対応予定。一番優先度が高いのはvimshell</li>
+</ul>
+</li>
+<li>if_python3の拡張、WindowIDの機能、etcの機能を安定して使うのにVim8.0+を選んだ。非同期機能はVim8.0で導入された機能ではなくPython3を使っている。</li>
+<li><a class="reference external" href="https://github.com/Shougo/denite.nvim">Shougo/denite.nvim: Dark powered asynchronous unite all interfaces for Neovim/Vim8</a></li>
+<li><a class="reference external" href="http://mattn.kaoriya.net/software/vim/20150605164551.htm">Big Sky :: Vim の CtrlP matcher、cpsm がヤバイくらいに速すぎる</a></li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h2><a class="reference external" href="http://go-talks.appspot.com/github.com/zchee/talks/VimConf2016.slide#1">Go、C、Pythonのためのdeoplete.nvimのソースの紹介と、Neovim専用にpure Goでvim-goをスクラッチした話 by zchee</a></h2>
+<ul class="simple">
+<li>「deoplete.nvimのために初めてPythonを触ったのでみなさんもなんとかなります。」</li>
+<li>deoplete.nvimメッチャ補完速い
+- 脱ネオコンして&lt;C-n&gt;, &lt;C-p&gt;や&lt;C-x&gt;補完で充分と思ってたけどあの速さは心が揺らぐ……</li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h2><a class="reference external" href="http://www.slideshare.net/takuyaueda967/go-68228940">エディタの壁を越えるGoの開発ツールの文化と作成法 by tenntenn</a></h2>
+<ul class="simple">
+<li>「Golang使ってみたことある人どれぐらいいますか？」→結構いる。</li>
+<li>vim歴&gt;Golang歴。社内でvimmerは7人ぐらいであとはほとんどIntelliJ</li>
+<li>GolangのおかげでWindowsでVim使うのが「より」便利になっている印象。(mattn/jvgrep, mattn/files, koron/netupvim, etc…)</li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h2><a class="reference external" href="http://qiita.com/t9md/items/0bc7eaff726d099943eb">vim-mode-plus for Atom editor by t9md</a></h2>
+<ul class="simple">
+<li>エディタ遍歴: Vim(Normal) → Emacs(Advanced) → Vim(Advanced) → Atom(with vim-mode-plus)</li>
+<li>「Vimはすごく小指に易しい。(元Emacsユーザーの意見)」</li>
+<li>あの場にいた誰もが感嘆してたと思う。Vimへの理解はもちろん、それにとどまらず進化させていくのが本当にすごい。<ul>
+<li>いずれVimにも逆輸入されるのではないか。</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h2><a class="reference external" href="https://drive.google.com/file/d/0ByQIX4Ls1SHlZ3JtOWxHUUkwaDA/view">Vimの日本語ドキュメント by MURAOKA Taro</a></h2>
+<ul class="simple">
+<li>翻訳作業にぜひ参加を！比較的簡単なコントリビューションでも手が足りてないので人手がほしい。</li>
+<li>Vim8.0へのキャッチアップ 助力、お願いします。</li>
+<li><a class="reference external" href="https://github.com/vim-jp/vimdoc-ja-working">vim-jp/vimdoc-ja-working: vimdoc-ja working repository</a></li>
+<li><a class="reference external" href="https://github.com/vim-jp/lang-ja">vim-jp/lang-ja: Manage Japanese language files which distributed with vim.</a></li>
+</ul>
+</div>
+<div class="section" id="id8">
+<h2><a class="reference external" href="https://docs.google.com/presentation/d/1A6_A7XzPoHv_wG5N_R6zbgYKBX2ycii6BCzR-7b-nOw/pub?start=false&amp;loop=false&amp;slide=id.p">Vim script parser written in Go by haya14busa</a></h2>
+<ul class="simple">
+<li>Golangはいいぞ！</li>
+</ul>
+</div>
+<div class="section" id="id9">
+<h2><a class="reference external" href="https://aiya000.github.io/Maid/my-vim-friends/my-vim-friends#/">僕の友達を紹介するよ by aiya000</a></h2>
+<ul class="simple">
+<li>いつVimを使い始めたのか覚えてない。学生時代、知らないうちにVimを使い始めていた<ul>
+<li>具体的にいつだったかといわれると確かに……</li>
+<li>自分の場合はPythonのキラーIDEがなかったから触り始めたのがきっかけだった気がする。</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id10">
+<h2><a class="reference external" href="https://gist.github.com/thinca/785171e327e66c48d2d293690dc2f65a">Best practices for building Vim plugins by thinca</a></h2>
+<ul class="simple">
+<li>ドキュメントを書きましょう。</li>
+<li>READMEはプラグインの紹介、docにvim自体のhelpを書きましょう。</li>
+<li>vimのnamespaceをしっかりしましょう。 “r”一文字のコマンドにしてたりするプラグインがあったりますが、「そこはお前のものじゃない。」</li>
+<li>autoloadを使いましょう。プラグインいっぱい入れると、そのユーザーのVimの起動がめっちゃ遅くなったり…plugin/xxx.vimは起動時にすべて読み込まれるので、autoloadを使うと起動時間の鈍化が緩和される。</li>
+<li>省略形はスクリプト内ではやめよう。インタラクティブのためにあるので。</li>
+</ul>
+</div>
+<div class="section" id="id11">
+<h2>懇親会</h2>
+<ul class="simple">
+<li>香川の大学生に「udon.vimを定期開催して、来年のVimConfで発表したらいいですよ！」とそそのかしてきた。</li>
+<li>大学生3人を含む初参加の人や発表者、スタッフの人と絡んだりお話をきいてこれた。<ul>
+<li>@kaoriya, @supermomonga, @iyuuya, @ujm, @ShougoMatsu, etc…</li>
+</ul>
+</li>
+<li>Vimをもっと使いこなそうと決意した。ひとまずはuser-manualや実践Vimをもっと理解する。</li>
+<li>無限コーヒーおいしかった。</li>
+<li>寿司とピザは正義。</li>
+</ul>
+<blockquote class="twitter-tweet" data-conversation="none"><a href="https://twitter.com/kashew_nuts/status/794835544874192896">https://twitter.com/kashew_nuts/status/794835544874192896</a></blockquote></div>
+
+        </div>
+        <div class="postmeta">
+        <div class="author">
+            <span>Posted by Kashun YOSHIDA</span>
+        </div>
+        <div class="categories">
+            <span>
+                Filed under:
+                <a href="categories/vim.html">Vim</a>, <a href="categories/vimconf.html">VimConf</a></span>
+        </div>
+        <div class="tags">
+            <span>
+                Tags:
+                <a href="tags/vim.html">Vim</a>, <a href="tags/vimconf.html">VimConf</a></span>
+        </div>
+        <div class="comments">
+            <a href="http://kashewnuts.github.io/2016/11/08/vimconf2016.html#disqus_thread" data-disqus-identifier="2016/11/08/vimconf2016">Leave a comment</a>
+        </div></div><div class="separator post_separator"></div><div class="timestamp postmeta">
             <span>September 27, 2016</span>
         </div>
         <div class="section">
@@ -239,113 +398,7 @@
         </div>
         <div class="comments">
             <a href="http://kashewnuts.github.io/2016/07/05/fivetencup2016.html#disqus_thread" data-disqus-identifier="2016/07/05/fivetencup2016">Leave a comment</a>
-        </div></div><div class="separator post_separator"></div><div class="timestamp postmeta">
-            <span>May 25, 2016</span>
-        </div>
-        <div class="section">
-            <h1><a href="2016/05/25/markupenv.html">私的マークアップ言語編集環境</a></h1>
-<p>基本的には標準のVimセットで事足りるのだけど、バリバリ書こうとすると「コレ欲しいな」ということがあったので整理してみる。 <a class="reference external" href="https://github.com/kashewnuts/dotfiles">dotfilesはこちら</a> 。</p>
-<p>一応 <a class="reference external" href="https://github.com/Rykka/riv.vim">riv.vim</a> というオールインワンなプラグインがあるのだけど、いかんせん重いし、勝手に折りたたみが入ったりとデフォルトの設定がなじまないので個別に上げてます。</p>
-<div class="section" id="id2">
-<h2>前提</h2>
-<ul class="simple">
-<li>エディタはVim</li>
-<li>restructuredtextメインだがmarkdownもちょっと書く</li>
-</ul>
-</div>
-<div class="section" id="id3">
-<h2>共通</h2>
-<div class="section" id="id4">
-<h3>補完、スニペット</h3>
-<ul class="simple">
-<li><a class="reference external" href="https://github.com/Shougo/neocomplete.vim">neocomplete.vim</a></li>
-<li><a class="reference external" href="https://github.com/Shougo/neosnippet.vim">neosnippet.vim</a></li>
-<li><a class="reference external" href="https://github.com/Shougo/neosnippet-snippets">neosnippet-snippets</a></li>
-</ul>
-<p>説明不要。設定は基本ドキュメントに書いてあるものをそのまま使わせてもらっている。</p>
-</div>
-<div class="section" id="id5">
-<h3>コメントアウト</h3>
-<ul class="simple">
-<li><a class="reference external" href="https://github.com/tyru/caw.vim">caw.vim</a></li>
-</ul>
-<p>気軽にコメントアウトと解除をするため以下の設定をvimrcに記述。</p>
-<div class="highlight-vim notranslate"><div class="highlight"><pre><span/><span class="c">" \cで行の先頭にコメントをつけたり外したりできる</span>
-nmap <span class="p">&lt;</span>Leader<span class="p">&gt;</span><span class="k">c</span> <span class="p">&lt;</span>Plug<span class="p">&gt;(</span>caw:<span class="k">i</span>:toggle<span class="p">)</span>
-vmap <span class="p">&lt;</span>Leader<span class="p">&gt;</span><span class="k">c</span> <span class="p">&lt;</span>Plug<span class="p">&gt;(</span>caw:<span class="k">i</span>:toggle<span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="id6">
-<h2>マークアップ言語専用</h2>
-</div>
-<div class="section" id="id7">
-<h2>プレビュー</h2>
-<ul class="simple">
-<li><a class="reference external" href="https://github.com/kannokanno/previm">previm</a></li>
-<li>(<a class="reference external" href="https://github.com/tyru/open-browser.vim">open-browser.vim</a>)</li>
-</ul>
-<p>reStructuredTextだけでなく、Markdownでも使える。自分は以下をvimrcに設定している。 <cite>:PreVimOpen</cite> で普段使っているブラウザでリアルタイムプレビューできる。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span/><span class="c1"># reStructuredTextをプレビューするにはdocutilsは必須。</span>
-<span class="c1"># pygmentsはreStructuredTextでSyntaxHighlightを有効にするのに使用。</span>
-
-$ pip install docutils  pygments
-$ rst2html.py --version
-rst2html.py <span class="o">(</span>Docutils <span class="m">0</span>.12 <span class="o">[</span>release<span class="o">]</span>, Python <span class="m">2</span>.7.5, on darwin<span class="o">)</span>
-</pre></div>
-</div>
-<div class="highlight-vim notranslate"><div class="highlight"><pre><span/><span class="c">" ヘッダー情報を表示させない。</span>
-<span class="k">let</span> <span class="k">g</span>:previm_show_header <span class="p">=</span> <span class="m">0</span>
-<span class="c">" vimproc使用時にでるエラー抑制する。</span>
-<span class="k">let</span> <span class="k">g</span>:previm_disable_vimproc <span class="p">=</span> <span class="m">1</span>
-<span class="c">" 拡張子をmarkdownとして認識させる。</span>
-augroup PrevimSettings
-  autocmd<span class="p">!</span>
-  autocmd <span class="nb">BufNewFile</span><span class="p">,</span><span class="nb">BufRead</span> *.{md<span class="p">,</span>mdwn<span class="p">,</span>mkd<span class="p">,</span>mkdn<span class="p">,</span>mark*} <span class="k">set</span> <span class="k">filetype</span><span class="p">=</span>markdown
-augroup END
-</pre></div>
-</div>
-<div class="section" id="id8">
-<h3>自動見出しレベル設定</h3>
-<ul class="simple">
-<li><a class="reference external" href="https://github.com/thinca/vim-ft-rst_header">vim-ft-rst_header</a></li>
-</ul>
-<p>お好みで見出しに使用する文字をvimrcに設定。詳しくは <a class="reference external" href="http://thinca.hatenablog.com/entry/20100312/1268329134">Re: reStructuredText のヘッダを書く - 永遠に未完成</a> を参照のこと。</p>
-<div class="highlight-vim notranslate"><div class="highlight"><pre><span/><span class="c">" \h+数字で見出しを設定できる。</span>
-<span class="k">let</span> <span class="k">g</span>:rst_header_chars <span class="p">=</span> <span class="s1">'#*=-^~"'</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="id9">
-<h3>テーブル記述</h3>
-<ul class="simple">
-<li><a class="reference external" href="https://github.com/vim-scripts/Unicode-RST-Tables">Unicode-RST-Tables</a></li>
-</ul>
-<p>あまり使っていないのだけど新しくテーブルを作ったり、テーブルのカラムを直したりするのに便利。
-<a class="reference external" href="https://github.com/vim-scripts/RST-Tables">RST-Tables</a> がオリジナルだけど、こちらは <cite>Python3</cite> 対応してないのと、
-<a class="reference external" href="https://github.com/vim-scripts/RST-Tables-CJK">RST-Tables-CJK</a> もいくつの言語で動かないとかでこっちを使うのが良さそうだ。</p>
-</div>
-</div>
-<div class="section" id="id10">
-<h2>あとがき</h2>
-<p>基本みんな普段自分が使っているエディタを使っていることが多いと思うのでそのまま使えばいいと思ってる。良さそうだなと思ったら参考にしてもらえたら幸いだ。</p>
-<p>Emacsなら <a class="reference external" href="http://ymotongpoo.hatenablog.com/entry/20101106/1289007403">rst-mode</a> があるし、SublimeText、Atom、VSCode、サクラエディタ(!?)でもプラグインを入れるとSyntaxHighlightなり、補完・スニペットなりが効くらしい。</p>
-</div>
-<div class="section" id="id11">
-<h2>参考</h2>
-<ul class="simple">
-<li><a class="reference external" href="http://docs.sphinx-users.jp/rest.html">reStructuredText入門 — Sphinx 1.4.1 ドキュメント</a></li>
-<li><a class="reference external" href="http://www.python.jp/pipermail/sphinx-users/2012-March/000229.html">[Sphinx-Users 230] reST の編集にどんなエディタを使っていますか？</a></li>
-</ul>
-</div>
-
-        </div>
-        <div class="postmeta">
-        
-        
-        
-        </div><div class="archive_link">
+        </div></div><div class="archive_link">
         <a href="archive.html"> &mdash; Blog Archive &mdash; </a>
     </div><ul class="related clearfix">
             <li class="left"> &laquo; <a href="page11.html">Newer</a></li>
@@ -363,6 +416,8 @@ augroup END
 </div></section><section><div class="widget">
     <h1>Recent Posts</h1>
     <ul><li>
+            <a href="2019/01/28/move_from_jedivim_to_vimlsp.html">Pythonの補完環境をjedi-vimからvim-lspに移行した話</a>
+        </li><li>
             <a href="2019/01/05/2018and2019.html">2018年の振り返りと2019年抱負</a>
         </li><li>
             <a href="2018/12/02/bp_advent_calender.html">2018年版Life ChangingだったVimプラグインTOP3</a>
@@ -380,13 +435,11 @@ augroup END
             <a href="2018/05/21/djangocongress2018.html">#djangocongress JP 2018に参加しました</a>
         </li><li>
             <a href="2018/05/08/genba_django.html">「現場で使える 基礎 Django」を読みました #技術書典</a>
-        </li><li>
-            <a href="2018/05/02/climbing_camp_in_mizugaki.html">瑞牆でボルダリング&キャンプしてきた話</a>
         </li></ul>
 </div>
 </section><section><div class="widget">
     <h1>Categories</h1>
-    <ul><li><a href="categories/64bit.html">64bit</a> (2)</li><li><a href="categories/android.html">Android</a> (3)</li><li><a href="categories/bouldering.html">bouldering</a> (2)</li><li><a href="categories/bouldering.html">Bouldering</a> (3)</li><li><a href="categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="categories/c_c.html">C/C++</a> (5)</li><li><a href="categories/chrome.html">Chrome</a> (2)</li><li><a href="categories/db.html">DB</a> (1)</li><li><a href="categories/django.html">Django</a> (10)</li><li><a href="categories/facebook.html">Facebook</a> (1)</li><li><a href="categories/firefox.html">Firefox</a> (1)</li><li><a href="categories/git_mercurial.html">Git/Mercurial</a> (8)</li><li><a href="categories/golang.html">Golang</a> (1)</li><li><a href="categories/google.html">Google</a> (5)</li><li><a href="categories/heroku.html">Heroku</a> (6)</li><li><a href="categories/java.html">Java</a> (2)</li><li><a href="categories/javascript.html">JavaScript</a> (4)</li><li><a href="categories/jupyter.html">Jupyter</a> (1)</li><li><a href="categories/kabepy.html">kabepy</a> (2)</li><li><a href="categories/linux.html">Linux</a> (3)</li><li><a href="categories/lt.html">LT</a> (5)</li><li><a href="categories/mac.html">Mac</a> (8)</li><li><a href="categories/pycharm.html">PyCharm</a> (2)</li><li><a href="categories/pyconjp.html">PyConJP</a> (1)</li><li><a href="categories/pyfes.html">pyfes</a> (7)</li><li><a href="categories/python.html">Python</a> (69)</li><li><a href="categories/slack.html">Slack</a> (1)</li><li><a href="categories/sphinx.html">Sphinx</a> (8)</li><li><a href="categories/sqlalchemy.html">SQLAlchemy</a> (1)</li><li><a href="categories/ssd.html">SSD</a> (1)</li><li><a href="categories/tddbc.html">TDDBC</a> (1)</li><li><a href="categories/tinkerer.html">Tinkerer</a> (7)</li><li><a href="categories/tmux.html">tmux</a> (1)</li><li><a href="categories/ubuntu.html">Ubuntu</a> (2)</li><li><a href="categories/vagrant.html">Vagrant</a> (1)</li><li><a href="categories/vim.html">Vim</a> (22)</li><li><a href="categories/vimconf.html">VimConf</a> (3)</li><li><a href="categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="categories/windows.html">Windows</a> (2)</li><li><a href="categories/windows7.html">Windows7</a> (4)</li><li><a href="categories/アルゴリズム.html">アルゴリズム</a> (1)</li><li><a href="categories/セキュリティ.html">セキュリティ</a> (2)</li><li><a href="categories/ネットワーク.html">ネットワーク</a> (1)</li><li><a href="categories/プログラミング.html">プログラミング</a> (7)</li><li><a href="categories/勉強会.html">勉強会</a> (30)</li><li><a href="categories/応用情報技術者.html">応用情報技術者</a> (10)</li><li><a href="categories/情報処理技術者試験.html">情報処理技術者試験</a> (10)</li><li><a href="categories/本.html">本</a> (29)</li><li><a href="categories/開発環境.html">開発環境</a> (11)</li><li><a href="categories/雑記.html">雑記</a> (38)</li><li><a href="categories/高速化.html">高速化</a> (1)</li></ul>
+    <ul><li><a href="categories/64bit.html">64bit</a> (2)</li><li><a href="categories/android.html">Android</a> (3)</li><li><a href="categories/bouldering.html">bouldering</a> (2)</li><li><a href="categories/bouldering.html">Bouldering</a> (3)</li><li><a href="categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="categories/c_c.html">C/C++</a> (5)</li><li><a href="categories/chrome.html">Chrome</a> (2)</li><li><a href="categories/db.html">DB</a> (1)</li><li><a href="categories/django.html">Django</a> (10)</li><li><a href="categories/facebook.html">Facebook</a> (1)</li><li><a href="categories/firefox.html">Firefox</a> (1)</li><li><a href="categories/git_mercurial.html">Git/Mercurial</a> (8)</li><li><a href="categories/golang.html">Golang</a> (1)</li><li><a href="categories/google.html">Google</a> (5)</li><li><a href="categories/heroku.html">Heroku</a> (6)</li><li><a href="categories/java.html">Java</a> (2)</li><li><a href="categories/javascript.html">JavaScript</a> (4)</li><li><a href="categories/jupyter.html">Jupyter</a> (1)</li><li><a href="categories/kabepy.html">kabepy</a> (2)</li><li><a href="categories/linux.html">Linux</a> (3)</li><li><a href="categories/lt.html">LT</a> (5)</li><li><a href="categories/mac.html">Mac</a> (8)</li><li><a href="categories/pycharm.html">PyCharm</a> (2)</li><li><a href="categories/pyconjp.html">PyConJP</a> (1)</li><li><a href="categories/pyfes.html">pyfes</a> (7)</li><li><a href="categories/python.html">Python</a> (70)</li><li><a href="categories/slack.html">Slack</a> (1)</li><li><a href="categories/sphinx.html">Sphinx</a> (8)</li><li><a href="categories/sqlalchemy.html">SQLAlchemy</a> (1)</li><li><a href="categories/ssd.html">SSD</a> (1)</li><li><a href="categories/tddbc.html">TDDBC</a> (1)</li><li><a href="categories/tinkerer.html">Tinkerer</a> (7)</li><li><a href="categories/tmux.html">tmux</a> (1)</li><li><a href="categories/ubuntu.html">Ubuntu</a> (2)</li><li><a href="categories/vagrant.html">Vagrant</a> (1)</li><li><a href="categories/vim.html">Vim</a> (23)</li><li><a href="categories/vimconf.html">VimConf</a> (3)</li><li><a href="categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="categories/windows.html">Windows</a> (2)</li><li><a href="categories/windows7.html">Windows7</a> (4)</li><li><a href="categories/アルゴリズム.html">アルゴリズム</a> (1)</li><li><a href="categories/セキュリティ.html">セキュリティ</a> (2)</li><li><a href="categories/ネットワーク.html">ネットワーク</a> (1)</li><li><a href="categories/プログラミング.html">プログラミング</a> (7)</li><li><a href="categories/勉強会.html">勉強会</a> (30)</li><li><a href="categories/応用情報技術者.html">応用情報技術者</a> (10)</li><li><a href="categories/情報処理技術者試験.html">情報処理技術者試験</a> (10)</li><li><a href="categories/本.html">本</a> (29)</li><li><a href="categories/開発環境.html">開発環境</a> (11)</li><li><a href="categories/雑記.html">雑記</a> (38)</li><li><a href="categories/高速化.html">高速化</a> (1)</li></ul>
 </div></section><section><div class="widget">
     <h1>About Me</h1>
     <div>

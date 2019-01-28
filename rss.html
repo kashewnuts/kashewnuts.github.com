@@ -5,8 +5,191 @@
         <link>http://kashewnuts.github.io/</link>
         <description>Road To Pythonista</description>
         <language>en-us</language>
-        <pubDate>Sat, 05 Jan 2019 00:00:00 +0900</pubDate>
+        <pubDate>Mon, 28 Jan 2019 00:00:00 +0900</pubDate>
         
+        <item>
+            <link>http://kashewnuts.github.io/2019/01/28/move_from_jedivim_to_vimlsp.html</link>
+            <guid>http://kashewnuts.github.io/2019/01/28/move_from_jedivim_to_vimlsp.html</guid>
+            <title><![CDATA[Pythonの補完環境をjedi-vimからvim-lspに移行した話]]></title>
+            <description><![CDATA[<h1>Pythonの補完環境をjedi-vimからvim-lspに移行した話</h1>
+<p>VimでPython書いてますか？</p>
+<p>長らくPythonの補完用プラグインとして <a class="reference external" href="https://github.com/davidhalter/jedi-vim">davidhalter/jedi-vim</a> を使用してきましたが、
+あの <a class="reference external" href="https://twitter.com/mattn_jp">mattn (@mattn_jp)</a> さんがCollaboratorになった <a class="reference external" href="https://github.com/prabirshrestha/vim-lsp">prabirshrestha/vim-lsp</a> や <a class="reference external" href="https://github.com/palantir/python-language-server">palantir/python-language-server</a> がいよいよ実用的になってきたので移行してみました。</p>
+<p>とはいえ実際に使うにはまだ設定するところもちょこちょこあるので、一度まとめておこうと思います。</p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="http://kashewnuts.github.io/2019/01/28/move_from_jedivim_to_vimlsp.html#id1" id="id8">前提とする環境</a></li>
+<li><a class="reference internal" href="http://kashewnuts.github.io/2019/01/28/move_from_jedivim_to_vimlsp.html#lsp-language-server-protocol" id="id9">LSP(Language Server Protocol)とは</a></li>
+<li><a class="reference internal" href="http://kashewnuts.github.io/2019/01/28/move_from_jedivim_to_vimlsp.html#lsp" id="id10">LSP導入</a><ul>
+<li><a class="reference internal" href="http://kashewnuts.github.io/2019/01/28/move_from_jedivim_to_vimlsp.html#language-server" id="id11">Language Serverの導入</a></li>
+<li><a class="reference internal" href="http://kashewnuts.github.io/2019/01/28/move_from_jedivim_to_vimlsp.html#client" id="id12">Clientの導入</a></li>
+<li><a class="reference internal" href="http://kashewnuts.github.io/2019/01/28/move_from_jedivim_to_vimlsp.html#vim" id="id13">Vimプラグインの設定</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="http://kashewnuts.github.io/2019/01/28/move_from_jedivim_to_vimlsp.html#id4" id="id14">使用感について</a><ul>
+<li><a class="reference internal" href="http://kashewnuts.github.io/2019/01/28/move_from_jedivim_to_vimlsp.html#id5" id="id15">メリット</a></li>
+<li><a class="reference internal" href="http://kashewnuts.github.io/2019/01/28/move_from_jedivim_to_vimlsp.html#id6" id="id16">デメリット</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="http://kashewnuts.github.io/2019/01/28/move_from_jedivim_to_vimlsp.html#id7" id="id17">終わりに</a></li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h2><a class="toc-backref" href="#id8">前提とする環境</a></h2>
+<ul class="simple">
+<li>Vim: 8.0以上、かつコンパイルオプションで <cite>jobs</cite>, <cite>timer</cite>, <cite>channel</cite>, <cite>lambda</cite> が有効になっている</li>
+<li>Python: 2.7もしくは3.4以降 (pyenvやAnacondaでインストールしたPythonは考慮しない)</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">VimでPython/Python3インターフェースを有効にする必要があるかもしれませんが、少なくともドキュメントには記載されていませんでした。
+もし必要な場合は以前書いた <a class="reference external" href="https://kashewnuts.github.io/2018/08/22/jedivim_memo.html">VimとPythonの補完についてのメモ</a> を参照してください。</p>
+</div>
+</div>
+<div class="section" id="lsp-language-server-protocol">
+<h2><a class="toc-backref" href="#id9">LSP(Language Server Protocol)とは</a></h2>
+<p>ざっくりいうと自動補完や定義ジャンプ、ドキュメントのホバー表示などエディタごとに実装していた機能を、言語Serverを用意して複数の開発ツールで使えるようにしましょうというものです。LSPを活用することでエディタのプラグインなどは最小限の労力で言語をサポートできるようになります。</p>
+<p>各エディタ用にLSPを使うプラグインや機能を用意する必要がありますが、補完機能をサポートするサーバーが共通化できるのでそのServerが便利になると1つのエディタだけでなく複数のエディタで活用できるメリットがあります。</p>
+<p>どのようなプロトコルでどのように通信しているのかは、 <a class="reference external" href="https://microsoft.github.io/language-server-protocol/overview">Microsoftが公開しているドキュメント</a> が詳しいのでそちらを参照してください。
+<a class="reference external" href="http://gihyo.jp/magazine/SD/archive/2018/201803">Software Design 2018年3月号</a> にも詳しく書いています。(残念ながら紙の書籍は2019/01/26現在在庫がないようです)</p>
+</div>
+<div class="section" id="lsp">
+<h2><a class="toc-backref" href="#id10">LSP導入</a></h2>
+<p>Python用のLanguage ServerとClientとなるVimプラグインを導入します。ServerとClientは以下になります。</p>
+<ul class="simple">
+<li>Language Server: <a class="reference external" href="https://github.com/palantir/python-language-server">palantir/python-language-server</a></li>
+<li>Client: <a class="reference external" href="https://github.com/prabirshrestha/vim-lsp">prabirshrestha/vim-lsp</a></li>
+</ul>
+<div class="section" id="language-server">
+<h3><a class="toc-backref" href="#id11">Language Serverの導入</a></h3>
+<p><span class="docutils literal"><span class="pre">python-language-server</span></span> をpipコマンドを使ってインストールします。
+どこからでも使えるようにグローバルな環境に入れますが、macOSやLinuxを使っている人は注意する必要があります。
+OSが使うPythonに様々なライブラリが入っており、無理やりインストールしようとすると後で困る可能性があるからです。</p>
+<p>ここではユーザーディレクトリにインストールすることでその問題を回避します。
+以下のPATHにインストールされるので、予め <span class="docutils literal"><span class="pre">~/.bash_profile</span></span> などに <span class="docutils literal"><span class="pre">PATH</span></span> の設定を追加しておいてください。
+インストールされる箇所は <a class="reference external" href="https://docs.python.org/ja/3/library/site.html#site.USER_BASE">site.USER_BASE</a> によって決まります。</p>
+<ul class="simple">
+<li>Windows: <span class="docutils literal"><span class="pre">%APPDATA%\Python</span></span></li>
+<li>macOSで www.python.org からPythonをインストールした場合: <span class="docutils literal"><span class="pre">~/Library/Python/X.Y/bin</span></span> (X.YはPythonのバージョン)</li>
+<li>macOSでHomebrewを使いPythonをインストールした場合: <span class="docutils literal"><span class="pre">~/.local/bin</span></span></li>
+<li>Ubuntuの場合: <span class="docutils literal"><span class="pre">~/.local/bin</span></span></li>
+</ul>
+<p>ターミナルを開き以下のコマンドを使いインストールします。</p>
+<p><span class="docutils literal"><span class="pre">$</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--user</span> <span class="pre">python-language-server</span></span></p>
+<p>インストールが完了したら  <span class="docutils literal"><span class="pre">$</span> <span class="pre">which</span> <span class="pre">pyls</span></span> などでLanguage ServerにPATHが通っていることを確認してください。
+インストールに失敗したり、whichコマンドで何も出力されない場合、 <span class="docutils literal"><span class="pre">PATH</span></span> の設定がうまく言っていない可能性があるので確認してみてください。</p>
+<p>pipコマンドを実行した結果でもわかりますが、 <span class="docutils literal"><span class="pre">python-language-server</span></span> はこれまでもPythonの自動補完や静的解析で使われていた <a class="reference external" href="https://github.com/davidhalter/jedi">davidhalter/jedi</a> をLSPで使えるようにしたものです。フォースの魂は脈々と受け継がれるようですね。</p>
+</div>
+<div class="section" id="client">
+<h3><a class="toc-backref" href="#id12">Clientの導入</a></h3>
+<p>vim-lspは依存で <a class="reference external" href="https://github.com/prabirshrestha/async.vim">prabirshrestha/async.vim</a> が必要なので合わせてインストールします。
+私は <a class="reference external" href="https://github.com/junegunn/vim-plug">junegunn/vim-plug</a> を使用しているので、以下のようにvimrcに記述します。</p>
+<div class="highlight-vim notranslate"><div class="highlight"><pre><span/><span class="c">" vimrc</span>
+Plug <span class="s1">'prabirshrestha/vim-lsp'</span>
+Plug <span class="s1">'prabirshrestha/async.vim'</span>
+</pre></div>
+</div>
+<p>Vimを開いたまま <cite>:so $MYVIMRC</cite> のようにして設定の変更を読み込み、 <cite>:PlugIntall</cite> するとプラグインをインストールできます。</p>
+</div>
+<div class="section" id="vim">
+<h3><a class="toc-backref" href="#id13">Vimプラグインの設定</a></h3>
+<p>ServerとClientとなるVimプラグインは導入しましたが、実際に連携するには設定が必要です。以下のようにvimrcに追記します。</p>
+<div class="highlight-vim notranslate"><div class="highlight"><pre><span/><span class="c">" vimrc</span>
+<span class="c">" デバッグ用設定</span>
+<span class="k">let</span> <span class="k">g</span>:lsp_log_verbose <span class="p">=</span> <span class="m">1</span>  <span class="c">" デバッグ用ログを出力</span>
+<span class="k">let</span> <span class="k">g</span>:lsp_log_file <span class="p">=</span> expand<span class="p">(</span><span class="s1">'~/.cache/tmp/vim-lsp.log'</span><span class="p">)</span>  <span class="c">" ログ出力のPATHを設定</span>
+
+<span class="c">" 言語用Serverの設定</span>
+augroup MyLsp
+  autocmd<span class="p">!</span>
+<span class="c">  " pip install python-language-server</span>
+  <span class="k">if</span> executable<span class="p">(</span><span class="s1">'pyls'</span><span class="p">)</span>
+<span class="c">    " Python用の設定を記載</span>
+<span class="c">    " workspace_configで以下の設定を記載</span>
+<span class="c">    " - pycodestyleの設定はALEと重複するので無効にする</span>
+<span class="c">    " - jediの定義ジャンプで一部無効になっている設定を有効化</span>
+    autocmd <span class="nb">User</span> lsp_setup <span class="k">call</span> <span class="nb">lsp</span>#register_server<span class="p">(</span>{
+        \ <span class="s1">'name'</span>: <span class="s1">'pyls'</span><span class="p">,</span>
+        \ <span class="s1">'cmd'</span>: { server_info <span class="p">-&gt;</span> [<span class="s1">'pyls'</span>] }<span class="p">,</span>
+        \ <span class="s1">'whitelist'</span>: [<span class="s1">'python'</span>]<span class="p">,</span>
+        \ <span class="s1">'workspace_config'</span>: {<span class="s1">'pyls'</span>: {<span class="s1">'plugins'</span>: {
+        \   <span class="s1">'pycodestyle'</span>: {<span class="s1">'enabled'</span>: <span class="k">v</span>:false}<span class="p">,</span>
+        \   <span class="s1">'jedi_definition'</span>: {<span class="s1">'follow_imports'</span>: <span class="k">v</span>:true<span class="p">,</span> <span class="s1">'follow_builtin_imports'</span>: <span class="k">v</span>:true}<span class="p">,</span>}}}
+        \}<span class="p">)</span>
+    autocmd <span class="nb">FileType</span> python <span class="k">call</span> s:configure_lsp<span class="p">()</span>
+  <span class="k">endif</span>
+augroup END
+<span class="c">" 言語ごとにServerが実行されたらする設定を関数化</span>
+<span class="k">function</span><span class="p">!</span> s:configure_lsp<span class="p">()</span> abort
+  <span class="k">setlocal</span> <span class="nb">omnifunc</span><span class="p">=</span><span class="nb">lsp</span>#<span class="nb">complete</span>   <span class="c">" オムニ補完を有効化</span>
+<span class="c">  " LSP用にマッピング</span>
+  <span class="nb">nnoremap</span> <span class="p">&lt;</span>buffer<span class="p">&gt;</span> <span class="p">&lt;</span>C<span class="p">-</span>]<span class="p">&gt;</span> :<span class="p">&lt;</span>C<span class="p">-</span><span class="k">u</span><span class="p">&gt;</span>LspDefinition<span class="p">&lt;</span>CR<span class="p">&gt;</span>
+  <span class="nb">nnoremap</span> <span class="p">&lt;</span>buffer<span class="p">&gt;</span> <span class="nb">gd</span> :<span class="p">&lt;</span>C<span class="p">-</span><span class="k">u</span><span class="p">&gt;</span>LspDefinition<span class="p">&lt;</span>CR<span class="p">&gt;</span>
+  <span class="nb">nnoremap</span> <span class="p">&lt;</span>buffer<span class="p">&gt;</span> gD :<span class="p">&lt;</span>C<span class="p">-</span><span class="k">u</span><span class="p">&gt;</span>LspReferences<span class="p">&lt;</span>CR<span class="p">&gt;</span>
+  <span class="nb">nnoremap</span> <span class="p">&lt;</span>buffer<span class="p">&gt;</span> gs :<span class="p">&lt;</span>C<span class="p">-</span><span class="k">u</span><span class="p">&gt;</span>LspDocumentSymbol<span class="p">&lt;</span>CR<span class="p">&gt;</span>
+  <span class="nb">nnoremap</span> <span class="p">&lt;</span>buffer<span class="p">&gt;</span> gS :<span class="p">&lt;</span>C<span class="p">-</span><span class="k">u</span><span class="p">&gt;</span>LspWorkspaceSymbol<span class="p">&lt;</span>CR<span class="p">&gt;</span>
+  <span class="nb">nnoremap</span> <span class="p">&lt;</span>buffer<span class="p">&gt;</span> gQ :<span class="p">&lt;</span>C<span class="p">-</span><span class="k">u</span><span class="p">&gt;</span>LspDocumentFormat<span class="p">&lt;</span>CR<span class="p">&gt;</span>
+  <span class="nb">vnoremap</span> <span class="p">&lt;</span>buffer<span class="p">&gt;</span> gQ :LspDocumentRangeFormat<span class="p">&lt;</span>CR<span class="p">&gt;</span>
+  <span class="nb">nnoremap</span> <span class="p">&lt;</span>buffer<span class="p">&gt;</span> K :<span class="p">&lt;</span>C<span class="p">-</span><span class="k">u</span><span class="p">&gt;</span>LspHover<span class="p">&lt;</span>CR<span class="p">&gt;</span>
+  <span class="nb">nnoremap</span> <span class="p">&lt;</span>buffer<span class="p">&gt;</span> <span class="p">&lt;</span>F1<span class="p">&gt;</span> :<span class="p">&lt;</span>C<span class="p">-</span><span class="k">u</span><span class="p">&gt;</span>LspImplementation<span class="p">&lt;</span>CR<span class="p">&gt;</span>
+  <span class="nb">nnoremap</span> <span class="p">&lt;</span>buffer<span class="p">&gt;</span> <span class="p">&lt;</span>F2<span class="p">&gt;</span> :<span class="p">&lt;</span>C<span class="p">-</span><span class="k">u</span><span class="p">&gt;</span>LspRename<span class="p">&lt;</span>CR<span class="p">&gt;</span>
+<span class="k">endfunction</span>
+<span class="k">let</span> <span class="k">g</span>:lsp_diagnostics_enabled <span class="p">=</span> <span class="m">0</span>  <span class="c">" 警告やエラーの表示はALEに任せるのでOFFにする</span>
+</pre></div>
+</div>
+<p>vim-lspは警告やエラーの表示などもできますが、そちらは <a class="reference external" href="https://github.com/w0rp/ale">w0rp/ale</a> に寄せているため機能を無効化しています。
+ALEについては
+<a class="reference external" href="https://kashewnuts.github.io/2018/12/02/bp_advent_calender.html#w0rp-ale-linter-fixer">2018年版Life ChangingだったVimプラグインTOP3</a>
+に書きましたのでそちらを参照してください。</p>
+<p>vimrcに記載したら保存、終了します。</p>
+</div>
+</div>
+<div class="section" id="id4">
+<h2><a class="toc-backref" href="#id14">使用感について</a></h2>
+<p>jedi-vimと比べたときのメリット/デメリットを書いていきます。</p>
+<div class="section" id="id5">
+<h3><a class="toc-backref" href="#id15">メリット</a></h3>
+<p>高速化されたのが一番大きいですね。</p>
+<ul class="simple">
+<li>Vimの起動が高速化できた(Ubuntu環境で100〜150ms、macOS環境でも200〜300ms短縮)</li>
+<li>補完候補がでる時間が高速化できた</li>
+<li>発展途上の技術なので進化を体験していける</li>
+<li>他の言語と使用できるプラグインを共通化できるため、vimrcからプラグインを減らせた</li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h3><a class="toc-backref" href="#id16">デメリット</a></h3>
+<p>まだ発展途上というところからきてると思うのですが、少しだけ今までできていたことができない感じがあります。</p>
+<ul class="simple">
+<li>言語用のServerが別途インストールが必要なので環境を壊さわないようにするのに気を使う。<ul>
+<li>jedi-vimはjediを <span class="docutils literal"><span class="pre">git</span> <span class="pre">submodule</span></span> で独立して入れていたので楽だった。</li>
+</ul>
+</li>
+<li>Vimを起動後に <span class="docutils literal"><span class="pre">:setf</span> <span class="pre">python</span></span> しても補完や定義ジャンプが動かない。<ul>
+<li>既存のPythonファイルを開いたり、 <span class="docutils literal"><span class="pre">$</span> <span class="pre">vim</span> <span class="pre">hoge.py</span></span> などすると動くが、少し気になる。</li>
+</ul>
+</li>
+<li>リネームが不安定(動かない？)<ul>
+<li><a class="reference external" href="https://github.com/palantir/python-language-server/issues/218">Cannot LspRename / Issue #218</a></li>
+<li>動かすには <a class="reference external" href="https://github.com/python-rope/rope">python-rope/rope</a> が必要という情報もあるがそれでも動かない</li>
+<li>jedi-vimはじゃじゃ馬だったり、マルチバイト文字が対象行に混じっていると動かなかったりしたが….</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id7">
+<h2><a class="toc-backref" href="#id17">終わりに</a></h2>
+<p>自動補完(オムニ補完)や定義ジャンプの使い方は変わらないですし、仮想環境(venv/virtualenv)にも対応しています。
+リネームに関してはropeよりjediに統一したほうがよいのでは？と思ったりしますが、現状リネームに関してはさほど気にしていない感じです。
+今後LSPが進化していって、安定して高速な開発環境ができていくといいなぁと期待しています。</p>
+</div>
+]]></description>
+            <category><![CDATA[ Vim ]]></category>
+            <category><![CDATA[ Python ]]></category>
+             <pubDate>Mon, 28 Jan 2019 00:00:00 +0900</pubDate>
+        </item>
+    
         <item>
             <link>http://kashewnuts.github.io/2019/01/05/2018and2019.html</link>
             <guid>http://kashewnuts.github.io/2019/01/05/2018and2019.html</guid>

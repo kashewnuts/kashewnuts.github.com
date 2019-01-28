@@ -69,6 +69,67 @@
             <a href="http://feeds.feedburner.com/kashew_nuts-blog" title="Subscribe via RSS"><span class="fa fa-lg fa-rss"></span></a>
           </li></ul>
     </nav><div class="main-container" role="main"><div class="main wrapper body clearfix"><article><div class="timestamp postmeta">
+            <span>November 11, 2017</span>
+        </div>
+        <div class="section">
+            <h1><a href="2017/11/11/open_vim_from_pycharm.html">PyCharmからVimを開きたい</a></h1>
+<p>タイトルままです。
+<a class="reference external" href="https://twitter.com/kashew_nuts/status/928979708301021184">Twitterでもつぶやいた通り、IdeaVimってたまにバグりますよね！</a>
+そうゆう時、「PyCharmから、今開いているファイルをVimで開きたくなります。」</p>
+<p>こんなこといってると、「Vimのキーバインドを使いたいなら最初からVim使えよ」と心の声がいってくるのですが、IdeaVimはIdeaVimで便利に使ってます。ということで、PyCharm(IntelliJ)からVimを開く方法を調べたのでメモ。</p>
+<div class="section" id="id1">
+<h2>前提</h2>
+<ul class="simple">
+<li>OS: macOS Sierra/High Sierra</li>
+<li>PyCharm: 2017.2.3</li>
+<li>IdeaVim: 0.48</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>やること</h2>
+<p><span class="docutils literal"><span class="pre">Preferences</span> <span class="pre">&gt;</span> <span class="pre">Tools</span> <span class="pre">&gt;</span> <span class="pre">External</span> <span class="pre">Tools</span></span> から <span class="docutils literal"><span class="pre">+</span></span> を押して以下のように入力する</p>
+<ul class="simple">
+<li>Name: vim</li>
+<li>Program: <span class="docutils literal"><span class="pre">/Applications/MacVim.app/Contents/MacOS/Vim</span></span> (Vimのインストールしてる場所)</li>
+<li>Option: <span class="docutils literal"><span class="pre">Open</span> <span class="pre">console</span></span> のチェックを <span class="docutils literal"><span class="pre">OFF</span></span></li>
+<li>Prameters: <span class="docutils literal"><span class="pre">"-g"</span> <span class="pre">$FilePath$</span> <span class="pre">"+$LineNumber$"</span></span></li>
+<li>Working directory: <span class="docutils literal"><span class="pre">$ProjectFileDir$</span></span></li>
+</ul>
+<p>設定が完了すると以下のようになります。</p>
+<img alt="../../../_images/confg_for_open_vim.png" class="align-center" src="_images/confg_for_open_vim.png"/>
+<p>そして <span class="docutils literal"><span class="pre">Find</span> <span class="pre">Action</span></span> から <span class="docutils literal"><span class="pre">vim</span></span> と探してみると、今PyCharmで開いているファイルが、カーソルが当たってる行を指定して開けます。</p>
+<img alt="../../../_images/find_action_vim.png" class="align-center" src="_images/find_action_vim.png"/>
+<p>やった！これでPyCharmからVimが開ける！</p>
+</div>
+<div class="section" id="id3">
+<h2>ハマったこと</h2>
+<p><strong>GVimがアクティブになっていないとウィンドウが起動しない</strong> ことですね。</p>
+<p>アクティブじゃない(GVimのプロセスが起動していない) と <span class="docutils literal"><span class="pre">External</span> <span class="pre">tool</span> <span class="pre">'vim'</span> <span class="pre">completed</span> <span class="pre">with</span> <span class="pre">exit</span> <span class="pre">code</span> <span class="pre">0</span></span> と画面左下にメッセージが表示されるだけで終了してしまいました。</p>
+<p>この時点で「GVimを常に起動しておけばいいや」という結論になったので深追いはしてませんが、GVimがアクティブじゃなくても起動してくれるようになると便利とは思いました。</p>
+</div>
+<div class="section" id="id4">
+<h2>まとめ</h2>
+<p>またひとつPyCharmからVimが使えるようになって便利</p>
+</div>
+
+        </div>
+        <div class="postmeta">
+        <div class="author">
+            <span>Posted by Kashun YOSHIDA</span>
+        </div>
+        <div class="categories">
+            <span>
+                Filed under:
+                <a href="categories/python.html">Python</a>, <a href="categories/vim.html">Vim</a></span>
+        </div>
+        <div class="tags">
+            <span>
+                Tags:
+                <a href="tags/python.html">Python</a>, <a href="tags/vim.html">Vim</a></span>
+        </div>
+        <div class="comments">
+            <a href="http://kashewnuts.github.io/2017/11/11/open_vim_from_pycharm.html#disqus_thread" data-disqus-identifier="2017/11/11/open_vim_from_pycharm">Leave a comment</a>
+        </div></div><div class="separator post_separator"></div><div class="timestamp postmeta">
             <span>November 04, 2017</span>
         </div>
         <div class="section">
@@ -225,120 +286,6 @@
         </div>
         <div class="comments">
             <a href="http://kashewnuts.github.io/2017/11/03/pynyumon.html#disqus_thread" data-disqus-identifier="2017/11/03/pynyumon">Leave a comment</a>
-        </div></div><div class="separator post_separator"></div><div class="timestamp postmeta">
-            <span>October 03, 2017</span>
-        </div>
-        <div class="section">
-            <h1><a href="2017/10/03/jobchange.html">JobChangeして半年が過ぎました</a></h1>
-<p>無事、3ヶ月の試用期間が終わり本採用になってました。</p>
-<p>今年の4月から <a class="reference external" href="https://connpass.com/">某イベントサイト</a> を運営しているPython企業でPythonとかDjangoを書いてます。Twitterでぼちぼち呟いてたり、お会いしてる方には伝えたりしてましたので今更感がすごいですね。
-最初は猛者ばかりの環境に来て、3日で屍になるかと思ってましたがなんとか生きています。</p>
-<div class="contents local topic" id="contents">
-<ul class="simple">
-<li><a class="reference internal" href="2017/10/03/jobchange.html#id2" id="id10">入社に至る経緯</a></li>
-<li><a class="reference internal" href="2017/10/03/jobchange.html#id3" id="id11">転職してどうか</a></li>
-<li><a class="reference internal" href="2017/10/03/jobchange.html#id4" id="id12">リモートワークについて</a><ul>
-<li><a class="reference internal" href="2017/10/03/jobchange.html#id5" id="id13">リモートワークで感じたメリット</a></li>
-<li><a class="reference internal" href="2017/10/03/jobchange.html#id6" id="id14">リモートワークで感じたデメリット</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="2017/10/03/jobchange.html#id7" id="id15">目標とか</a></li>
-<li><a class="reference internal" href="2017/10/03/jobchange.html#id8" id="id16">まとめ</a></li>
-<li><a class="reference internal" href="2017/10/03/jobchange.html#id9" id="id17">おまけ</a></li>
-</ul>
-</div>
-<div class="section" id="id2">
-<h2><a class="toc-backref" href="#id10">入社に至る経緯</a></h2>
-<blockquote class="twitter-tweet" data-conversation="none"><a href="https://twitter.com/kashew_nuts/status/826297725670940672">https://twitter.com/kashew_nuts/status/826297725670940672</a></blockquote><ol class="arabic simple">
-<li>↑こんなつぶやきをしてみる。</li>
-<li>Twitter経由で声をかけられる</li>
-<li>会社訪問して面接する</li>
-<li>入社試験受ける</li>
-<li>内定GET!</li>
-</ol>
-<p>その節は皆さんありがとうございました。</p>
-</div>
-<div class="section" id="id3">
-<h2><a class="toc-backref" href="#id11">転職してどうか</a></h2>
-<p>とにかく”働きやすい”会社だなと感じています。個人的に「ないと困る」「あって当たり前」というものから、「あったらいいのにな」と思うようなことまでが普通にあるので、とにかくストレスを感じにくいです。例を挙げると、</p>
-<ul class="simple">
-<li>Pythonで仕事ができる</li>
-<li>選択できる勤務時間</li>
-<li>時間休の概念</li>
-<li>週5リモートワーク可</li>
-<li>OSSに貢献するのが普通な文化</li>
-<li>好きな開発環境・エディタが使える (PyCharm, Vim, Emacs, etc…)</li>
-<li>ソフトウェアのライセンス費がでる</li>
-<li>デュアルディスプレイ</li>
-<li>GitHubが使える</li>
-<li>CI環境がある</li>
-<li>Slackでオンラインコミュニケーション</li>
-<li>仕事で困ったことがあっても相談できる相手がいる</li>
-<li>スタンディングデスク/フリーアドレス席が使える</li>
-<li>無料Redbull/ウォーターサーバー/各種ドリンク</li>
-<li>ストレスコントロールができる同僚たち</li>
-<li>電話に出る必要がない</li>
-<li>常に学んで良くしていこうという姿勢だけでなく実行していく文化がある</li>
-<li>服装自由</li>
-<li>無駄な会議や稟議が必要ない</li>
-<li>etc…</li>
-</ul>
-<p>実感できていないところがあるだけでまだある気がしています。</p>
-</div>
-<div class="section" id="id4">
-<h2><a class="toc-backref" href="#id12">リモートワークについて</a></h2>
-<p>転職するにあたり気になってたのがこれです。会社にいるメリット・デメリットと、リモートで仕事できるメリット・デメリットがそれぞれありますが、リモートを選択できる自由があるというがすごく良いです。</p>
-<div class="section" id="id5">
-<h3><a class="toc-backref" href="#id13">リモートワークで感じたメリット</a></h3>
-<ul class="simple">
-<li>台風や雨の日に出社しなくて良い。</li>
-<li>スキマ時間に病院行ける。</li>
-<li>宅配の荷物を受け取れる。</li>
-<li>家の雑事を片付けられる。</li>
-<li>起きたらすぐ仕事できるし、仕事終わったらすぐ寝れる。</li>
-<li>満員電車に乗らなくて良い (徒歩通勤なのであれですが)</li>
-</ul>
-</div>
-<div class="section" id="id6">
-<h3><a class="toc-backref" href="#id14">リモートワークで感じたデメリット</a></h3>
-<ul class="simple">
-<li>会社にいれば1日1本飲めるRedbullが飲めない…</li>
-<li>家にはウォーターサーバーがない…</li>
-<li>出社や退社するついでにいけたはずの買い物や運動しに移動するのが面倒 (←アカン)</li>
-</ul>
-</div>
-</div>
-<div class="section" id="id7">
-<h2><a class="toc-backref" href="#id15">目標とか</a></h2>
-<p>せっかくPythonの会社に入ったのでPythonたくさん書いてPyConで発表できるくらいになりたいですね。会社はPythonやらDjangoやら強い人ばかりなので、まずはその辺をしっかり身につけたい。</p>
-</div>
-<div class="section" id="id8">
-<h2><a class="toc-backref" href="#id16">まとめ</a></h2>
-<p>Python楽しいよPython。</p>
-</div>
-<div class="section" id="id9">
-<h2><a class="toc-backref" href="#id17">おまけ</a></h2>
-<p>内定の提示を受けたときのTweetがこちら。</p>
-<blockquote class="twitter-tweet" data-conversation="none"><a href="https://twitter.com/kashew_nuts/status/834302571401531394">https://twitter.com/kashew_nuts/status/834302571401531394</a></blockquote><p>いつでも転職祝いは受けつけています！ <a class="reference external" href="http://amzn.to/2lwqVSJ">http://amzn.to/2lwqVSJ</a></p>
-</div>
-
-        </div>
-        <div class="postmeta">
-        <div class="author">
-            <span>Posted by Kashun YOSHIDA</span>
-        </div>
-        <div class="categories">
-            <span>
-                Filed under:
-                <a href="categories/python.html">Python</a>, <a href="categories/django.html">Django</a>, <a href="categories/雑記.html">雑記</a></span>
-        </div>
-        <div class="tags">
-            <span>
-                Tags:
-                <a href="tags/python.html">Python</a>, <a href="tags/django.html">Django</a>, <a href="tags/雑記.html">雑記</a></span>
-        </div>
-        <div class="comments">
-            <a href="http://kashewnuts.github.io/2017/10/03/jobchange.html#disqus_thread" data-disqus-identifier="2017/10/03/jobchange">Leave a comment</a>
         </div></div><div class="archive_link">
         <a href="archive.html"> &mdash; Blog Archive &mdash; </a>
     </div><ul class="related clearfix">
@@ -357,6 +304,8 @@
 </div></section><section><div class="widget">
     <h1>Recent Posts</h1>
     <ul><li>
+            <a href="2019/01/28/move_from_jedivim_to_vimlsp.html">Pythonの補完環境をjedi-vimからvim-lspに移行した話</a>
+        </li><li>
             <a href="2019/01/05/2018and2019.html">2018年の振り返りと2019年抱負</a>
         </li><li>
             <a href="2018/12/02/bp_advent_calender.html">2018年版Life ChangingだったVimプラグインTOP3</a>
@@ -374,13 +323,11 @@
             <a href="2018/05/21/djangocongress2018.html">#djangocongress JP 2018に参加しました</a>
         </li><li>
             <a href="2018/05/08/genba_django.html">「現場で使える 基礎 Django」を読みました #技術書典</a>
-        </li><li>
-            <a href="2018/05/02/climbing_camp_in_mizugaki.html">瑞牆でボルダリング&キャンプしてきた話</a>
         </li></ul>
 </div>
 </section><section><div class="widget">
     <h1>Categories</h1>
-    <ul><li><a href="categories/64bit.html">64bit</a> (2)</li><li><a href="categories/android.html">Android</a> (3)</li><li><a href="categories/bouldering.html">bouldering</a> (2)</li><li><a href="categories/bouldering.html">Bouldering</a> (3)</li><li><a href="categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="categories/c_c.html">C/C++</a> (5)</li><li><a href="categories/chrome.html">Chrome</a> (2)</li><li><a href="categories/db.html">DB</a> (1)</li><li><a href="categories/django.html">Django</a> (10)</li><li><a href="categories/facebook.html">Facebook</a> (1)</li><li><a href="categories/firefox.html">Firefox</a> (1)</li><li><a href="categories/git_mercurial.html">Git/Mercurial</a> (8)</li><li><a href="categories/golang.html">Golang</a> (1)</li><li><a href="categories/google.html">Google</a> (5)</li><li><a href="categories/heroku.html">Heroku</a> (6)</li><li><a href="categories/java.html">Java</a> (2)</li><li><a href="categories/javascript.html">JavaScript</a> (4)</li><li><a href="categories/jupyter.html">Jupyter</a> (1)</li><li><a href="categories/kabepy.html">kabepy</a> (2)</li><li><a href="categories/linux.html">Linux</a> (3)</li><li><a href="categories/lt.html">LT</a> (5)</li><li><a href="categories/mac.html">Mac</a> (8)</li><li><a href="categories/pycharm.html">PyCharm</a> (2)</li><li><a href="categories/pyconjp.html">PyConJP</a> (1)</li><li><a href="categories/pyfes.html">pyfes</a> (7)</li><li><a href="categories/python.html">Python</a> (69)</li><li><a href="categories/slack.html">Slack</a> (1)</li><li><a href="categories/sphinx.html">Sphinx</a> (8)</li><li><a href="categories/sqlalchemy.html">SQLAlchemy</a> (1)</li><li><a href="categories/ssd.html">SSD</a> (1)</li><li><a href="categories/tddbc.html">TDDBC</a> (1)</li><li><a href="categories/tinkerer.html">Tinkerer</a> (7)</li><li><a href="categories/tmux.html">tmux</a> (1)</li><li><a href="categories/ubuntu.html">Ubuntu</a> (2)</li><li><a href="categories/vagrant.html">Vagrant</a> (1)</li><li><a href="categories/vim.html">Vim</a> (22)</li><li><a href="categories/vimconf.html">VimConf</a> (3)</li><li><a href="categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="categories/windows.html">Windows</a> (2)</li><li><a href="categories/windows7.html">Windows7</a> (4)</li><li><a href="categories/アルゴリズム.html">アルゴリズム</a> (1)</li><li><a href="categories/セキュリティ.html">セキュリティ</a> (2)</li><li><a href="categories/ネットワーク.html">ネットワーク</a> (1)</li><li><a href="categories/プログラミング.html">プログラミング</a> (7)</li><li><a href="categories/勉強会.html">勉強会</a> (30)</li><li><a href="categories/応用情報技術者.html">応用情報技術者</a> (10)</li><li><a href="categories/情報処理技術者試験.html">情報処理技術者試験</a> (10)</li><li><a href="categories/本.html">本</a> (29)</li><li><a href="categories/開発環境.html">開発環境</a> (11)</li><li><a href="categories/雑記.html">雑記</a> (38)</li><li><a href="categories/高速化.html">高速化</a> (1)</li></ul>
+    <ul><li><a href="categories/64bit.html">64bit</a> (2)</li><li><a href="categories/android.html">Android</a> (3)</li><li><a href="categories/bouldering.html">bouldering</a> (2)</li><li><a href="categories/bouldering.html">Bouldering</a> (3)</li><li><a href="categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="categories/c_c.html">C/C++</a> (5)</li><li><a href="categories/chrome.html">Chrome</a> (2)</li><li><a href="categories/db.html">DB</a> (1)</li><li><a href="categories/django.html">Django</a> (10)</li><li><a href="categories/facebook.html">Facebook</a> (1)</li><li><a href="categories/firefox.html">Firefox</a> (1)</li><li><a href="categories/git_mercurial.html">Git/Mercurial</a> (8)</li><li><a href="categories/golang.html">Golang</a> (1)</li><li><a href="categories/google.html">Google</a> (5)</li><li><a href="categories/heroku.html">Heroku</a> (6)</li><li><a href="categories/java.html">Java</a> (2)</li><li><a href="categories/javascript.html">JavaScript</a> (4)</li><li><a href="categories/jupyter.html">Jupyter</a> (1)</li><li><a href="categories/kabepy.html">kabepy</a> (2)</li><li><a href="categories/linux.html">Linux</a> (3)</li><li><a href="categories/lt.html">LT</a> (5)</li><li><a href="categories/mac.html">Mac</a> (8)</li><li><a href="categories/pycharm.html">PyCharm</a> (2)</li><li><a href="categories/pyconjp.html">PyConJP</a> (1)</li><li><a href="categories/pyfes.html">pyfes</a> (7)</li><li><a href="categories/python.html">Python</a> (70)</li><li><a href="categories/slack.html">Slack</a> (1)</li><li><a href="categories/sphinx.html">Sphinx</a> (8)</li><li><a href="categories/sqlalchemy.html">SQLAlchemy</a> (1)</li><li><a href="categories/ssd.html">SSD</a> (1)</li><li><a href="categories/tddbc.html">TDDBC</a> (1)</li><li><a href="categories/tinkerer.html">Tinkerer</a> (7)</li><li><a href="categories/tmux.html">tmux</a> (1)</li><li><a href="categories/ubuntu.html">Ubuntu</a> (2)</li><li><a href="categories/vagrant.html">Vagrant</a> (1)</li><li><a href="categories/vim.html">Vim</a> (23)</li><li><a href="categories/vimconf.html">VimConf</a> (3)</li><li><a href="categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="categories/windows.html">Windows</a> (2)</li><li><a href="categories/windows7.html">Windows7</a> (4)</li><li><a href="categories/アルゴリズム.html">アルゴリズム</a> (1)</li><li><a href="categories/セキュリティ.html">セキュリティ</a> (2)</li><li><a href="categories/ネットワーク.html">ネットワーク</a> (1)</li><li><a href="categories/プログラミング.html">プログラミング</a> (7)</li><li><a href="categories/勉強会.html">勉強会</a> (30)</li><li><a href="categories/応用情報技術者.html">応用情報技術者</a> (10)</li><li><a href="categories/情報処理技術者試験.html">情報処理技術者試験</a> (10)</li><li><a href="categories/本.html">本</a> (29)</li><li><a href="categories/開発環境.html">開発環境</a> (11)</li><li><a href="categories/雑記.html">雑記</a> (38)</li><li><a href="categories/高速化.html">高速化</a> (1)</li></ul>
 </div></section><section><div class="widget">
     <h1>About Me</h1>
     <div>
