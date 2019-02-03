@@ -21,8 +21,9 @@ VimでPython書いてますか？
 
 .. note::
 
-   VimでPython/Python3インターフェースを有効にする必要があるかもしれませんが、少なくともドキュメントには記載されていませんでした。
-   もし必要な場合は以前書いた `VimとPythonの補完についてのメモ <https://kashewnuts.github.io/2018/08/22/jedivim_memo.html>`_ を参照してください。
+   :strike:`VimでPython/Python3インターフェースを有効にする必要があるかもしれませんが、少なくともドキュメントには記載されていませんでした。もし必要な場合は以前書いたVimとPythonの補完についてのメモを参照してください。`
+
+   その後Python/Python3インターフェースを無効にした状態で試したところ、問題なく動作しました。外部インターフェイスに依存せず補完や定義ジャンプができるのはいいですね。
 
 
 LSP(Language Server Protocol)とは
