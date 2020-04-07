@@ -121,40 +121,40 @@ void<span class="w"> </span>swap<span class="o">(</span>int<span class="w"> </sp
 <span class="err">}</span><span class="w"></span>
 </pre></div>
 </div>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>void qsort(int x[], int left, int right)
-{
-    int i, j;
-    int pivot;
-    i = left;                      /*
-ソートする配列の一番小さい要素の添字 */
-    j = right;                     /*
-ソートする配列の一番大きい要素の添字 */
-    pivot = x[(left + right) / 2]; /* 基準値を配列の中央付近にとる */
-    while(1)
-    {
-        while (x[i] &lt; pivot)       /* pivot より大きい値が */
-            i++;                   /* 出るまで i を増加させる */
-        while (pivot &lt; x[j])       /* pivot より小さい値が */
-            j--;                   /*  出るまで j を減少させる */
-        if (i &gt;= j)                /* i &gt;= j なら */
-            break;                 /* 無限ループから抜ける */
-        swap(x, i, j);             /* x[i] と x[j]を交換 */
-        i++;                       /* 次のデータ */
-        j--;
-    }
-    if (left &lt; i - 1)              /* 基準値の左に 2 以上要素があれば */
-        qsort(x, left, i - 1);     /* 左の配列を Q ソートする */
-    if (j + 1 &lt;  right)            /* 基準値の右に 2 以上要素があれば */
-        qsort(x, j + 1, right);    /* 右の配列を Q ソートする */
-}
-/* 配列の要素を交換する */
-void swap(int x[], int i, int j)
-{
-    int temp;
-    temp = x[i];
-    x[i] = x[j];
-    x[j] = temp;
-}
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="n">void</span><span class="w"> </span><span class="n">qsort</span><span class="p">(</span><span class="nc">int</span><span class="w"> </span><span class="n">x</span><span class="err">[]</span><span class="p">,</span><span class="w"> </span><span class="nc">int</span><span class="w"> </span><span class="nf">left</span><span class="p">,</span><span class="w"> </span><span class="nc">int</span><span class="w"> </span><span class="nf">right</span><span class="p">)</span><span class="w"></span>
+<span class="err">{</span><span class="w"></span>
+<span class="w">    </span><span class="nc">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nc">int</span><span class="w"> </span><span class="k">pivot</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">left</span><span class="p">;</span><span class="w">                      </span><span class="cm">/*</span>
+<span class="cm">ソートする配列の一番小さい要素の添字 */</span><span class="w"></span>
+<span class="w">    </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">right</span><span class="p">;</span><span class="w">                     </span><span class="cm">/*</span>
+<span class="cm">ソートする配列の一番大きい要素の添字 */</span><span class="w"></span>
+<span class="w">    </span><span class="k">pivot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="o">[</span><span class="n">(left + right) / 2</span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="cm">/* 基準値を配列の中央付近にとる */</span><span class="w"></span>
+<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="err">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="k">pivot</span><span class="p">)</span><span class="w">       </span><span class="cm">/* pivot より大きい値が */</span><span class="w"></span>
+<span class="w">            </span><span class="n">i</span><span class="o">++</span><span class="p">;</span><span class="w">                   </span><span class="cm">/* 出るまで i を増加させる */</span><span class="w"></span>
+<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="k">pivot</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">x</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">)</span><span class="w">       </span><span class="cm">/* pivot より小さい値が */</span><span class="w"></span>
+<span class="w">            </span><span class="n">j</span><span class="c1">--;                   /*  出るまで j を減少させる */</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">j</span><span class="p">)</span><span class="w">                </span><span class="cm">/* i &gt;= j なら */</span><span class="w"></span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w">                 </span><span class="cm">/* 無限ループから抜ける */</span><span class="w"></span>
+<span class="w">        </span><span class="n">swap</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">);</span><span class="w">             </span><span class="cm">/* x[i] と x[j]を交換 */</span><span class="w"></span>
+<span class="w">        </span><span class="n">i</span><span class="o">++</span><span class="p">;</span><span class="w">                       </span><span class="cm">/* 次のデータ */</span><span class="w"></span>
+<span class="w">        </span><span class="n">j</span><span class="c1">--;</span>
+<span class="w">    </span><span class="err">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nf">left</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w">              </span><span class="cm">/* 基準値の左に 2 以上要素があれば */</span><span class="w"></span>
+<span class="w">        </span><span class="n">qsort</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="nf">left</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w">     </span><span class="cm">/* 左の配列を Q ソートする */</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;</span><span class="w">  </span><span class="nf">right</span><span class="p">)</span><span class="w">            </span><span class="cm">/* 基準値の右に 2 以上要素があれば */</span><span class="w"></span>
+<span class="w">        </span><span class="n">qsort</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nf">right</span><span class="p">);</span><span class="w">    </span><span class="cm">/* 右の配列を Q ソートする */</span><span class="w"></span>
+<span class="err">}</span><span class="w"></span>
+<span class="cm">/* 配列の要素を交換する */</span><span class="w"></span>
+<span class="n">void</span><span class="w"> </span><span class="n">swap</span><span class="p">(</span><span class="nc">int</span><span class="w"> </span><span class="n">x</span><span class="err">[]</span><span class="p">,</span><span class="w"> </span><span class="nc">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="nc">int</span><span class="w"> </span><span class="n">j</span><span class="p">)</span><span class="w"></span>
+<span class="err">{</span><span class="w"></span>
+<span class="w">    </span><span class="nc">int</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">x</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">x</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span><span class="w"></span>
+<span class="err">}</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -209,6 +209,8 @@ if(typeof(window.NINJA_CO_JP_ONETAG_BUTTON_00eb4412f1c80db8bbc1af50c58e8ee6)=='u
 </div></section><section><div class="widget">
     <h1>Recent Posts</h1>
     <ul><li>
+            <a href="../../../2020/04/08/migrated_lsp_client_to_coc_nvim.html">LSPクライアントをcoc.nvimにした話</a>
+        </li><li>
             <a href="../../../2019/01/28/move_from_jedivim_to_vimlsp.html">Pythonの補完環境をjedi-vimからvim-lspに移行した話</a>
         </li><li>
             <a href="../../../2019/01/05/2018and2019.html">2018年の振り返りと2019年抱負</a>
@@ -226,13 +228,11 @@ if(typeof(window.NINJA_CO_JP_ONETAG_BUTTON_00eb4412f1c80db8bbc1af50c58e8ee6)=='u
             <a href="../../../2018/06/24/pypro3.html">Pythonプロフェッショナルプログラミング第3版 #pypro3 が出版されました</a>
         </li><li>
             <a href="../../../2018/05/21/djangocongress2018.html">#djangocongress JP 2018に参加しました</a>
-        </li><li>
-            <a href="../../../2018/05/08/genba_django.html">「現場で使える 基礎 Django」を読みました #技術書典</a>
         </li></ul>
 </div>
 </section><section><div class="widget">
     <h1>Categories</h1>
-    <ul><li><a href="../../../categories/64bit.html">64bit</a> (2)</li><li><a href="../../../categories/android.html">Android</a> (3)</li><li><a href="../../../categories/bouldering.html">bouldering</a> (2)</li><li><a href="../../../categories/bouldering.html">Bouldering</a> (3)</li><li><a href="../../../categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="../../../categories/c_c.html">C/C++</a> (5)</li><li><a href="../../../categories/chrome.html">Chrome</a> (2)</li><li><a href="../../../categories/db.html">DB</a> (1)</li><li><a href="../../../categories/django.html">Django</a> (10)</li><li><a href="../../../categories/facebook.html">Facebook</a> (1)</li><li><a href="../../../categories/firefox.html">Firefox</a> (1)</li><li><a href="../../../categories/git_mercurial.html">Git/Mercurial</a> (8)</li><li><a href="../../../categories/golang.html">Golang</a> (1)</li><li><a href="../../../categories/google.html">Google</a> (5)</li><li><a href="../../../categories/heroku.html">Heroku</a> (6)</li><li><a href="../../../categories/java.html">Java</a> (2)</li><li><a href="../../../categories/javascript.html">JavaScript</a> (4)</li><li><a href="../../../categories/jupyter.html">Jupyter</a> (1)</li><li><a href="../../../categories/kabepy.html">kabepy</a> (2)</li><li><a href="../../../categories/linux.html">Linux</a> (3)</li><li><a href="../../../categories/lt.html">LT</a> (5)</li><li><a href="../../../categories/mac.html">Mac</a> (8)</li><li><a href="../../../categories/pycharm.html">PyCharm</a> (2)</li><li><a href="../../../categories/pyconjp.html">PyConJP</a> (1)</li><li><a href="../../../categories/pyfes.html">pyfes</a> (7)</li><li><a href="../../../categories/python.html">Python</a> (70)</li><li><a href="../../../categories/slack.html">Slack</a> (1)</li><li><a href="../../../categories/sphinx.html">Sphinx</a> (8)</li><li><a href="../../../categories/sqlalchemy.html">SQLAlchemy</a> (1)</li><li><a href="../../../categories/ssd.html">SSD</a> (1)</li><li><a href="../../../categories/tddbc.html">TDDBC</a> (1)</li><li><a href="../../../categories/tinkerer.html">Tinkerer</a> (7)</li><li><a href="../../../categories/tmux.html">tmux</a> (1)</li><li><a href="../../../categories/ubuntu.html">Ubuntu</a> (2)</li><li><a href="../../../categories/vagrant.html">Vagrant</a> (1)</li><li><a href="../../../categories/vim.html">Vim</a> (23)</li><li><a href="../../../categories/vimconf.html">VimConf</a> (3)</li><li><a href="../../../categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="../../../categories/windows.html">Windows</a> (2)</li><li><a href="../../../categories/windows7.html">Windows7</a> (4)</li><li><a href="../../../categories/アルゴリズム.html">アルゴリズム</a> (1)</li><li><a href="../../../categories/セキュリティ.html">セキュリティ</a> (2)</li><li><a href="../../../categories/ネットワーク.html">ネットワーク</a> (1)</li><li><a href="../../../categories/プログラミング.html">プログラミング</a> (7)</li><li><a href="../../../categories/勉強会.html">勉強会</a> (30)</li><li><a href="../../../categories/応用情報技術者.html">応用情報技術者</a> (10)</li><li><a href="../../../categories/情報処理技術者試験.html">情報処理技術者試験</a> (10)</li><li><a href="../../../categories/本.html">本</a> (29)</li><li><a href="../../../categories/開発環境.html">開発環境</a> (11)</li><li><a href="../../../categories/雑記.html">雑記</a> (38)</li><li><a href="../../../categories/高速化.html">高速化</a> (1)</li></ul>
+    <ul><li><a href="../../../categories/64bit.html">64bit</a> (2)</li><li><a href="../../../categories/android.html">Android</a> (3)</li><li><a href="../../../categories/bouldering.html">bouldering</a> (2)</li><li><a href="../../../categories/bouldering.html">Bouldering</a> (3)</li><li><a href="../../../categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="../../../categories/c_c.html">C/C++</a> (5)</li><li><a href="../../../categories/chrome.html">Chrome</a> (2)</li><li><a href="../../../categories/db.html">DB</a> (1)</li><li><a href="../../../categories/django.html">Django</a> (10)</li><li><a href="../../../categories/facebook.html">Facebook</a> (1)</li><li><a href="../../../categories/firefox.html">Firefox</a> (1)</li><li><a href="../../../categories/git_mercurial.html">Git/Mercurial</a> (8)</li><li><a href="../../../categories/golang.html">Golang</a> (1)</li><li><a href="../../../categories/google.html">Google</a> (5)</li><li><a href="../../../categories/heroku.html">Heroku</a> (6)</li><li><a href="../../../categories/java.html">Java</a> (2)</li><li><a href="../../../categories/javascript.html">JavaScript</a> (4)</li><li><a href="../../../categories/jupyter.html">Jupyter</a> (1)</li><li><a href="../../../categories/kabepy.html">kabepy</a> (2)</li><li><a href="../../../categories/linux.html">Linux</a> (3)</li><li><a href="../../../categories/lt.html">LT</a> (5)</li><li><a href="../../../categories/mac.html">Mac</a> (8)</li><li><a href="../../../categories/pycharm.html">PyCharm</a> (2)</li><li><a href="../../../categories/pyconjp.html">PyConJP</a> (1)</li><li><a href="../../../categories/pyfes.html">pyfes</a> (7)</li><li><a href="../../../categories/python.html">Python</a> (70)</li><li><a href="../../../categories/slack.html">Slack</a> (1)</li><li><a href="../../../categories/sphinx.html">Sphinx</a> (8)</li><li><a href="../../../categories/sqlalchemy.html">SQLAlchemy</a> (1)</li><li><a href="../../../categories/ssd.html">SSD</a> (1)</li><li><a href="../../../categories/tddbc.html">TDDBC</a> (1)</li><li><a href="../../../categories/tinkerer.html">Tinkerer</a> (7)</li><li><a href="../../../categories/tmux.html">tmux</a> (1)</li><li><a href="../../../categories/ubuntu.html">Ubuntu</a> (2)</li><li><a href="../../../categories/vagrant.html">Vagrant</a> (1)</li><li><a href="../../../categories/vim.html">Vim</a> (24)</li><li><a href="../../../categories/vimconf.html">VimConf</a> (3)</li><li><a href="../../../categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="../../../categories/windows.html">Windows</a> (2)</li><li><a href="../../../categories/windows7.html">Windows7</a> (4)</li><li><a href="../../../categories/アルゴリズム.html">アルゴリズム</a> (1)</li><li><a href="../../../categories/セキュリティ.html">セキュリティ</a> (2)</li><li><a href="../../../categories/ネットワーク.html">ネットワーク</a> (1)</li><li><a href="../../../categories/プログラミング.html">プログラミング</a> (7)</li><li><a href="../../../categories/勉強会.html">勉強会</a> (30)</li><li><a href="../../../categories/応用情報技術者.html">応用情報技術者</a> (10)</li><li><a href="../../../categories/情報処理技術者試験.html">情報処理技術者試験</a> (10)</li><li><a href="../../../categories/本.html">本</a> (29)</li><li><a href="../../../categories/開発環境.html">開発環境</a> (11)</li><li><a href="../../../categories/雑記.html">雑記</a> (38)</li><li><a href="../../../categories/高速化.html">高速化</a> (1)</li></ul>
 </div></section><section><div class="widget">
     <h1>About Me</h1>
     <div>
