@@ -69,6 +69,97 @@
             <a href="http://feeds.feedburner.com/kashew_nuts-blog" title="Subscribe via RSS"><span class="fa fa-lg fa-rss"></span></a>
           </li></ul>
     </nav><div class="main-container" role="main"><div class="main wrapper body clearfix"><article><div class="timestamp postmeta">
+            <span>June 24, 2018</span>
+        </div>
+        <div class="section">
+            <h1><a href="2018/06/24/pypro3.html">Pythonプロフェッショナルプログラミング第3版 #pypro3 が出版されました</a></h1>
+<blockquote class="twitter-tweet" data-conversation="none"><a href="https://twitter.com/kashew_nuts/status/1004177465353179138">https://twitter.com/kashew_nuts/status/1004177465353179138</a></blockquote><p>自分も執筆に携わった
+<a class="reference external" href="https://amzn.to/2HH32mv">Pythonプロフェッショナルプログラミング 第3版</a>
+(略称PyPro3)が6/12に発売されました！</p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="2018/06/24/pypro3.html#id1" id="id7">本の内容について</a></li>
+<li><a class="reference internal" href="2018/06/24/pypro3.html#id2" id="id8">何を担当したのか？</a></li>
+<li><a class="reference internal" href="2018/06/24/pypro3.html#id3" id="id9">本章の対象者</a></li>
+<li><a class="reference internal" href="2018/06/24/pypro3.html#id4" id="id10">執筆を通じて</a></li>
+<li><a class="reference internal" href="2018/06/24/pypro3.html#id5" id="id11">ぜひ読んでいただきたいところ</a></li>
+<li><a class="reference internal" href="2018/06/24/pypro3.html#id6" id="id12">最後に</a></li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h2><a class="toc-backref" href="#id7">本の内容について</a></h2>
+<p>この本を一言でいうと「Pythonで仕事を進めていく上でのBeProudのノウハウを集めた本」です。
+どんな内容か？何が改定されたのか？本のタイトルの意味などは、次の記事で詳しく説明されているのでそちらに譲ります。</p>
+<ul class="simple">
+<li><a class="reference external" href="https://shacho.beproud.jp/">「Pythonプロフェッショナルプログラミング 第3版」は、10年の取り組みの集大成 - ビープラウド社長のブログ</a></li>
+<li><a class="reference external" href="http://www.freia.jp/taka/blog/python-professional-programming-3rd/index.html">『Pythonプロフェッショナルプログラミング 第3版』6/12発売 #pypro3 - 清水川Web</a></li>
+</ul>
+<p>一時はAmazonの開発技法ランキングで1位を獲得したようですね。</p>
+<blockquote class="twitter-tweet" data-conversation="none"><a href="https://twitter.com/beproud_jp/status/1006447836773474304">https://twitter.com/beproud_jp/status/1006447836773474304</a></blockquote></div>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id8">何を担当したのか？</a></h2>
+<p><strong>第6章「Git/Githubによるソースコード管理」の書き下ろし</strong> を担当しました。</p>
+<p>書籍のレビューは何冊かかかわらせていただいたことがあるのですが、今回は初の執筆者として携わらせてもらいました。</p>
+</div>
+<div class="section" id="id3">
+<h2><a class="toc-backref" href="#id9">本章の対象者</a></h2>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/Octicons-mark-github.png"><img alt="../../../_images/Octicons-mark-github.png" src="_images/Octicons-mark-github.png" style="width: 50%;"/></a>
+</div>
+<p>本章は次のことがわかり、なにかあったときも自分で解決への道筋がわかるようにと意識して書きました。</p>
+<ul class="simple">
+<li>混同しがちなGitとGitHubの違いをおさえる</li>
+<li>聞いたことはあっても実際には使ったことのないこともある、GitのコマンドやGitHub機能がわかるようになる</li>
+<li>単にコマンドや機能の紹介で終わるのではなく、どうゆうときに使えばいいのかがわかるようになる</li>
+</ul>
+<p>GitやGitHubに関する書籍や情報は巷にたくさんありますが、最後の「どうゆうときに使えばいいのかわかるようになる」よう焦点を当てて書きました。
+これは自分自身が入社当時GitやGitHubの各コマンドや機能を調べるときに「これ」といえる情報を見つけるのが大変だったためです。</p>
+<p>たとえばGitやGitHubを使ってはいても、例えば個人でしか使ったことのないような状態だと、次のような状態になることがあります。というか自分が以前なっていました。</p>
+<ul class="simple">
+<li>「ほぼgit init, clone, add, commit, push, pullしか使っていない。ブランチもmaster一本で開発。」</li>
+<li>「(なんとなく)GitやGitHubは使っているけど、実はコマンドや機能の意味がわからなくて使ってない」</li>
+<li>「トラブって対応が面倒なときは、GitやGitHubのリポジトリを作り直す」</li>
+<li>「なぜかgit pushできないときは、とりあえず git push -f」</li>
+<li>「GUIのツールでGitを使ったりはするけど、実際何をやっているのか想像がつかない」</li>
+</ul>
+<p>実際に仕事でかつチームでGitやGitHubを使うようになってからはそうゆうことするわけにもいかず、BPに入ってからは改めて学び直したのを覚えています。</p>
+<p>本章では実際に仕事で必要になるコマンドや機能、そして実際にどの場面で使えばいいのかを自身で判断できるようにポイントを詰め込んでいます。
+(説明のために図やコマンドの実行例も載せた結果、PyPro3が全488ページある中で6章だけで46ページとすべての章の中で一番ページ数が多くなってしまいましたが…)</p>
+</div>
+<div class="section" id="id4">
+<h2><a class="toc-backref" href="#id10">執筆を通じて</a></h2>
+<p>はじめの頃違いがないようにと思って書いたところがうまく伝わらない文章になっていました。今回全体のマネージメントをしてくださった@takanoryさんから、「@kashew_nutsが書いたことっぽくない。レビューアー(としての)@kashew_nutsはどうした？」とフィードバックをもらうことがありました。心にくるものがありましたが、おかげで迷いながら書いていたところも吹っ切れてかけたと思います。(その後自分で何度か書き直してしまいましたが…)</p>
+<p>他にも執筆中プロジェクトの仕事を助けてくださったプロジェクトメンバーの方々や、レビューアーとして厳しい意見やこうしたらもっと良くなると幾度となくアドバイスしてくださって本当にありがたかったです。</p>
+</div>
+<div class="section" id="id5">
+<h2><a class="toc-backref" href="#id11">ぜひ読んでいただきたいところ</a></h2>
+<p>全部…なのですが、特にその中でも「Part2 チーム開発のサイクル」はぜひ読んでみてほしいですね。
+PyPro3は15章の項目が全4Partにまとまっていますが、Part2はチーム開発で使うツール、課題管理システム、ドキュメンテーションなど普段なんとなく使っているものでも発見があったり、考え方の基準が書いてあったりして面白いです。</p>
+</div>
+<div class="section" id="id6">
+<h2><a class="toc-backref" href="#id12">最後に</a></h2>
+<p>Pythonに限らずシステム開発を進める上で役立つものが詰め込まれた本ですのでぜひ読んでみてください。</p>
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=qf_sp_asin_til&amp;t=kashewnuts-22&amp;m=amazon&amp;o=9&amp;p=8&amp;l=as1&amp;IS2=1&amp;offerlisting=1&amp;asins=4798053821&amp;linkId=a08d173b77297a46c69b58ce78dc81b4&amp;bc1=000000&amp;lt1=_top&amp;fc1=333333&amp;lc1=0066c0&amp;bg1=ffffff&amp;f=ifr">
+</iframe></div>
+
+        </div>
+        <div class="postmeta">
+        <div class="author">
+            <span>Posted by Kashun YOSHIDA</span>
+        </div>
+        <div class="categories">
+            <span>
+                Filed under:
+                <a href="categories/python.html">Python</a></span>
+        </div>
+        <div class="tags">
+            <span>
+                Tags:
+                <a href="tags/python.html">Python</a></span>
+        </div>
+        <div class="comments">
+            <a href="http://kashewnuts.github.io/2018/06/24/pypro3.html#disqus_thread" data-disqus-identifier="2018/06/24/pypro3">Leave a comment</a>
+        </div></div><div class="separator post_separator"></div><div class="timestamp postmeta">
             <span>May 21, 2018</span>
         </div>
         <div class="section">
@@ -314,157 +405,6 @@ Dockerを使うならDockerで、もしくはWindowsやmacOSなら www.python.or
         </div>
         <div class="comments">
             <a href="http://kashewnuts.github.io/2018/05/08/genba_django.html#disqus_thread" data-disqus-identifier="2018/05/08/genba_django">Leave a comment</a>
-        </div></div><div class="separator post_separator"></div><div class="timestamp postmeta">
-            <span>May 02, 2018</span>
-        </div>
-        <div class="section">
-            <h1><a href="2018/05/02/climbing_camp_in_mizugaki.html">瑞牆でボルダリング&amp;キャンプしてきた話</a></h1>
-<p>忘備録としてボルダリング&amp;キャンプに何を持っていったのかや実際どうだったのかを書いておく。
-岩場でボルダリングは何度かしているのですが、キャンプを兼ねるのははじめてだったのでメモ。</p>
-<div class="section" id="id2">
-<h2>基本装備</h2>
-<p>言われてなくても普段からもっていくもの。これと服さえ着てればなんとかなるやつ。</p>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="2018/05/02/https://store.storeimages.cdn-apple.com/8561/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone6s/gallery4/iphone6s-gallery4-2015?wid=2000&amp;hei=1536&amp;fmt=jpeg&amp;qlt=95&amp;op_usm=0.5,0.5&amp;.v=1475087917795"><img alt="https://store.storeimages.cdn-apple.com/8561/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone6s/gallery4/iphone6s-gallery4-2015?wid=2000&amp;hei=1536&amp;fmt=jpeg&amp;qlt=95&amp;op_usm=0.5,0.5&amp;.v=1475087917795" src="https://store.storeimages.cdn-apple.com/8561/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone6s/gallery4/iphone6s-gallery4-2015?wid=2000&amp;hei=1536&amp;fmt=jpeg&amp;qlt=95&amp;op_usm=0.5,0.5&amp;.v=1475087917795" style="width: 50%;"/></a>
-</div>
-<ul class="simple">
-<li>携帯</li>
-<li>財布</li>
-<li>家の鍵</li>
-</ul>
-</div>
-<div class="section" id="id3">
-<h2>クライミング用</h2>
-<p>クライミングジムや岩場に行くときは大体もっていったり装備していくもの。</p>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="2018/05/02/https://tenaya.net/img/productos/climbing/oasi/tenaya--escalada--galeria--oasi.jpg"><img alt="https://tenaya.net/img/productos/climbing/oasi/tenaya--escalada--galeria--oasi.jpg" src="https://tenaya.net/img/productos/climbing/oasi/tenaya--escalada--galeria--oasi.jpg" style="width: 50%;"/></a>
-</div>
-<ul class="simple">
-<li>水: クリスタルカイザー700mlを持っていくことが多い</li>
-<li>ポカリスエット: ジムだと900mlだけど、岩場だとあまり水を飲まないで500ml</li>
-<li>ウィンドブレーカー: 風よけ＋登っていると腕を擦る課題があるので</li>
-<li>モバイルバッテリー: 10000mAhのものを1つ持っているが、携帯とWiFiルーターの2台体制の場合サブがほしい</li>
-<li>折り畳み傘: できれば使いたくないけど当日雨が降ることもあるので…</li>
-<li>ハンドクリーム: 手の保湿用に</li>
-<li>汗拭きシート: 運動後は汗のケアをしたい</li>
-<li>クロックス: クライミングシューズをはいた上で履けるぐらいのサイズだと岩場での移動に便利</li>
-<li>クライミングシューズx1: ジムでも岩場でも「テナヤ オアシ」を使ってる</li>
-<li>ハンドブラシ: 背が届くなら力の入れやすいものを使いたい</li>
-<li>チョーク(粉、ベース用): 今は粉チョークに東京粉末のブラック、ベース用にPD9を使用してる</li>
-<li>アプローチシューズ: 課題にアプローチするのに軽いクライミングが必要な場所もあるのであると快適</li>
-<li>クラッシュパッド: ボルダリングには必須</li>
-<li>pamostick long: これがあると高い岩場のリップも届く</li>
-<li>キッチンペーパー: 岩場が染み出しで濡れていることもあるので持っていく。持っていくと何かと便利。</li>
-</ul>
-</div>
-<div class="section" id="id4">
-<h2>泊まり用</h2>
-<p>泊まりでクライミングをするときは大体もっていくもの。</p>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="2018/05/02/https://outdoorgearzine.com/wp-content/uploads/DSC06592_Nashville.png"><img alt="https://outdoorgearzine.com/wp-content/uploads/DSC06592_Nashville.png" src="https://outdoorgearzine.com/wp-content/uploads/DSC06592_Nashville.png" style="width: 50%;"/></a>
-</div>
-<ul class="simple">
-<li>ソックス(クライミング用)x2: 裸足でやってましたが、汗をかくので最近はあったほうがいいなと思うようになりました</li>
-<li>ソックス(歩き用)x2: クライミング用だけでは汗で気持ち悪いので</li>
-<li>下着類(パンツ、シャツ) x2~3: インナーは着替えたい</li>
-<li>ヒートテックタイツx1: 持っていって正解でした。日が落ちてからは極寒だった。</li>
-<li>七分丈パンツx2: 寒かった。くるぶしまであるクライミングパンツ1枚で二日間過ごしたい…</li>
-<li>Ｔシャツx3: 1枚は予備で</li>
-<li>腰当てクッション: 長時間移動のお供</li>
-<li>ネックピロー: 車中で寝るときは必要</li>
-<li>耳栓: 今回は使用せず</li>
-</ul>
-</div>
-<div class="section" id="id5">
-<h2>キャンプ用に揃えたもの</h2>
-<p>今回キャンプもするので揃えたもの。日帰りの岩場でも使えるものがいいなと思い揃えたものも。</p>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="2018/05/02/https://images-na.ssl-images-amazon.com/images/I/81Y3VaBWmvL._SL1500_.jpg"><img alt="https://images-na.ssl-images-amazon.com/images/I/81Y3VaBWmvL._SL1500_.jpg" src="https://images-na.ssl-images-amazon.com/images/I/81Y3VaBWmvL._SL1500_.jpg" style="width: 50%;"/></a>
-</div>
-<ul class="simple">
-<li>アース製薬 虫よけスプレー サラテクト フレッシュミスト携帯用 60mL: あってよかった。次回も持っていく。</li>
-<li>汗止めバンド 3本セット ヘッドバンド 髪留め 通気性がよい 清潔しやすい 抗菌防臭: 今回は不要だった</li>
-<li>ヘリノックス チェアワンもどき 870g: 背もたれによりかかれるのがよかった。岩場に毎回となると大きいので考えもの。</li>
-<li>スプーン&amp;フォークセット: 活躍した。なくしやすいので、大きいものとセットで保管しておきたい。</li>
-<li>防風板: 安定して火を起こせてよかった</li>
-<li>SOTO アミカスポットコンボ: 水沸かすだけだったら半分(500ml)のサイズがいい</li>
-<li>SOTO パワーガス105: 念を入れるなら2缶もっていくべきだが特にいらないかな…</li>
-<li>ロールテーブル: あってよかった。次回のキャンプも持っていく。</li>
-<li>ユタカ グリーンシート: よかった。クライミングのマット用に一つ買い足していいかも。</li>
-<li>いろはす2Lペットボトルをつぶしたもの: よかった。1Lのものとどちらを選ぶか悩みどころ。</li>
-<li>ヘッドライト&amp;ランタンセット: なかったら詰んでた。必須。</li>
-<li>ビニール袋: 何かと便利</li>
-</ul>
-</div>
-<div class="section" id="id6">
-<h2>レンタルしたもの</h2>
-<p>テント泊用の装備とWi-Fiルーターをレンタルしました。
-諸事情により購入や契約するのに躊躇していたので、レンタルできたのは大変ありがたかったです。</p>
-<div class="section" id="id7">
-<h3>テント泊用</h3>
-<p>一通り揃えるとなると軽く10万は飛ぶのでどうしようか考えた結果、レンタルで済ますことに。</p>
-<div class="figure align-center">
-<img alt="http://www.soranoshita.net/item/images/mainimages/0082.jpg" src="http://www.soranoshita.net/item/images/mainimages/0082.jpg"/>
-</div>
-<p>利用したのはアウトドアギアレンタルの <a class="reference external" href="http://www.soranoshita.net/">そらのした</a> の
-<a class="reference external" href="http://www.soranoshita.net/item/item_0082.html">はじめてのテント泊登山セット</a> 。
-トータルで￥18,618。￥5000分の保証金を含んでおり、いずれ返ってくるはず。</p>
-<p>送られてきたものの値段を調べてみたら10万以上したので、
-この金額でどんなものか体験できたのはよかったと思う。</p>
-</div>
-<div class="section" id="id10">
-<h3>通信回線</h3>
-<p>以前瑞牆に行ったときはauが使えず、docomoしか繋がらないという話を後に聞いたので、今回はWi-Fiルーターをレンタルしました。</p>
-<div class="figure align-center">
-<img alt="https://www.wifi-rental.com/img/item_28" src="https://www.wifi-rental.com/img/item_28"/>
-</div>
-<p>利用したのは <a class="reference external" href="https://www.wifi-rental.com/">WiFiレンタルどっとこむ</a> の
-<a class="reference external" href="https://www.wifi-rental.com/item/item28.html">docomo E5383 5GB</a>  。
-値段はトータルで￥2,272。ルーターがXiエリアのみの対応だったのでFOMAエリアが使えなくて大丈夫か不安だったけど、無事使えました。
-1泊2日で928MBだったので、容量は余裕を持って使えました。動画再生を何度もやっていたらあっという間に1GBは超えるので…</p>
-<p>月に何度も行ったりするようなら素直にdocomo回線を契約したほうがいいとは思います。</p>
-</div>
-</div>
-<div class="section" id="id11">
-<h2>あればよかったもの</h2>
-<p>今回ソロキャンプを想定した装備でいったので、グループで行くときとかにあればよかったものをメモ</p>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="2018/05/02/https://images-na.ssl-images-amazon.com/images/I/61f6Cz1M98L._SL1500_.jpg"><img alt="https://images-na.ssl-images-amazon.com/images/I/61f6Cz1M98L._SL1500_.jpg" src="https://images-na.ssl-images-amazon.com/images/I/61f6Cz1M98L._SL1500_.jpg" style="width: 50%;"/></a>
-</div>
-<ul class="simple">
-<li>サブの小さいコッヘル: 焼きものをしたり、ものをよそう用に</li>
-<li>マグカップ: 飲み物つくったり・受け取ったりする用に</li>
-<li>オーバーパンツ: パンツの上から着れるものがあるらしい</li>
-<li>冬用靴下: シュラフも足元から冷えたので、対策に</li>
-<li>焚き火台: 瑞牆自然公園は直火NGなので夜にあるといいなと</li>
-<li>吊り下げ式ランタン: 上からの灯りがあると安心すると思った</li>
-<li>レインウェア: 今回は雨が降らない予報だったのでスルーしたが、設営や片付けの最中に降ってきた場合はどうしようもないので</li>
-</ul>
-</div>
-<div class="section" id="id12">
-<h2>総評</h2>
-<p>キャンプ泊してのクライミングはありですね。ただ指皮がもたないので1泊2日が限界かな…
-それと日が出ているうちはいいけど、出ていないときはあっという間に寒くなるので防寒対策は必須ですね。(現地に到着したときは2℃とかだった)
-今回は瑞牆だったけど、小川山でもキャンプ泊できるのでそっちでも機会があったらやってみたい。</p>
-</div>
-
-        </div>
-        <div class="postmeta">
-        <div class="author">
-            <span>Posted by Kashun YOSHIDA</span>
-        </div>
-        <div class="categories">
-            <span>
-                Filed under:
-                <a href="categories/bouldering.html">Bouldering</a></span>
-        </div>
-        <div class="tags">
-            <span>
-                Tags:
-                <a href="tags/bouldering.html">Bouldering</a></span>
-        </div>
-        <div class="comments">
-            <a href="http://kashewnuts.github.io/2018/05/02/climbing_camp_in_mizugaki.html#disqus_thread" data-disqus-identifier="2018/05/02/climbing_camp_in_mizugaki">Leave a comment</a>
         </div></div><div class="archive_link">
         <a href="archive.html"> &mdash; Blog Archive &mdash; </a>
     </div><ul class="related clearfix">
@@ -483,6 +423,8 @@ Dockerを使うならDockerで、もしくはWindowsやmacOSなら www.python.or
 </div></section><section><div class="widget">
     <h1>Recent Posts</h1>
     <ul><li>
+            <a href="2020/05/05/upgrade_ubuntu_20_04_lts.html">Ubuntu18.04LTSから20.04LTSにアップグレードした</a>
+        </li><li>
             <a href="2020/04/08/migrated_lsp_client_to_coc_nvim.html">LSPクライアントをcoc.nvimにした話</a>
         </li><li>
             <a href="2019/01/28/move_from_jedivim_to_vimlsp.html">Pythonの補完環境をjedi-vimからvim-lspに移行した話</a>
@@ -500,13 +442,11 @@ Dockerを使うならDockerで、もしくはWindowsやmacOSなら www.python.or
             <a href="2018/07/15/pycon9shu.html">PyCon Kyushuで登壇してきました #PyCon9shu</a>
         </li><li>
             <a href="2018/06/24/pypro3.html">Pythonプロフェッショナルプログラミング第3版 #pypro3 が出版されました</a>
-        </li><li>
-            <a href="2018/05/21/djangocongress2018.html">#djangocongress JP 2018に参加しました</a>
         </li></ul>
 </div>
 </section><section><div class="widget">
     <h1>Categories</h1>
-    <ul><li><a href="categories/64bit.html">64bit</a> (2)</li><li><a href="categories/android.html">Android</a> (3)</li><li><a href="categories/bouldering.html">bouldering</a> (2)</li><li><a href="categories/bouldering.html">Bouldering</a> (3)</li><li><a href="categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="categories/c_c.html">C/C++</a> (5)</li><li><a href="categories/chrome.html">Chrome</a> (2)</li><li><a href="categories/db.html">DB</a> (1)</li><li><a href="categories/django.html">Django</a> (10)</li><li><a href="categories/facebook.html">Facebook</a> (1)</li><li><a href="categories/firefox.html">Firefox</a> (1)</li><li><a href="categories/git_mercurial.html">Git/Mercurial</a> (8)</li><li><a href="categories/golang.html">Golang</a> (1)</li><li><a href="categories/google.html">Google</a> (5)</li><li><a href="categories/heroku.html">Heroku</a> (6)</li><li><a href="categories/java.html">Java</a> (2)</li><li><a href="categories/javascript.html">JavaScript</a> (4)</li><li><a href="categories/jupyter.html">Jupyter</a> (1)</li><li><a href="categories/kabepy.html">kabepy</a> (2)</li><li><a href="categories/linux.html">Linux</a> (3)</li><li><a href="categories/lt.html">LT</a> (5)</li><li><a href="categories/mac.html">Mac</a> (8)</li><li><a href="categories/pycharm.html">PyCharm</a> (2)</li><li><a href="categories/pyconjp.html">PyConJP</a> (1)</li><li><a href="categories/pyfes.html">pyfes</a> (7)</li><li><a href="categories/python.html">Python</a> (70)</li><li><a href="categories/slack.html">Slack</a> (1)</li><li><a href="categories/sphinx.html">Sphinx</a> (8)</li><li><a href="categories/sqlalchemy.html">SQLAlchemy</a> (1)</li><li><a href="categories/ssd.html">SSD</a> (1)</li><li><a href="categories/tddbc.html">TDDBC</a> (1)</li><li><a href="categories/tinkerer.html">Tinkerer</a> (7)</li><li><a href="categories/tmux.html">tmux</a> (1)</li><li><a href="categories/ubuntu.html">Ubuntu</a> (2)</li><li><a href="categories/vagrant.html">Vagrant</a> (1)</li><li><a href="categories/vim.html">Vim</a> (24)</li><li><a href="categories/vimconf.html">VimConf</a> (3)</li><li><a href="categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="categories/windows.html">Windows</a> (2)</li><li><a href="categories/windows7.html">Windows7</a> (4)</li><li><a href="categories/アルゴリズム.html">アルゴリズム</a> (1)</li><li><a href="categories/セキュリティ.html">セキュリティ</a> (2)</li><li><a href="categories/ネットワーク.html">ネットワーク</a> (1)</li><li><a href="categories/プログラミング.html">プログラミング</a> (7)</li><li><a href="categories/勉強会.html">勉強会</a> (30)</li><li><a href="categories/応用情報技術者.html">応用情報技術者</a> (10)</li><li><a href="categories/情報処理技術者試験.html">情報処理技術者試験</a> (10)</li><li><a href="categories/本.html">本</a> (29)</li><li><a href="categories/開発環境.html">開発環境</a> (11)</li><li><a href="categories/雑記.html">雑記</a> (38)</li><li><a href="categories/高速化.html">高速化</a> (1)</li></ul>
+    <ul><li><a href="categories/64bit.html">64bit</a> (2)</li><li><a href="categories/android.html">Android</a> (3)</li><li><a href="categories/bouldering.html">bouldering</a> (2)</li><li><a href="categories/bouldering.html">Bouldering</a> (3)</li><li><a href="categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="categories/c_c.html">C/C++</a> (5)</li><li><a href="categories/chrome.html">Chrome</a> (2)</li><li><a href="categories/db.html">DB</a> (1)</li><li><a href="categories/django.html">Django</a> (10)</li><li><a href="categories/facebook.html">Facebook</a> (1)</li><li><a href="categories/firefox.html">Firefox</a> (1)</li><li><a href="categories/git_mercurial.html">Git/Mercurial</a> (8)</li><li><a href="categories/golang.html">Golang</a> (1)</li><li><a href="categories/google.html">Google</a> (5)</li><li><a href="categories/heroku.html">Heroku</a> (6)</li><li><a href="categories/java.html">Java</a> (2)</li><li><a href="categories/javascript.html">JavaScript</a> (4)</li><li><a href="categories/jupyter.html">Jupyter</a> (1)</li><li><a href="categories/kabepy.html">kabepy</a> (2)</li><li><a href="categories/linux.html">Linux</a> (4)</li><li><a href="categories/lt.html">LT</a> (5)</li><li><a href="categories/mac.html">Mac</a> (8)</li><li><a href="categories/pycharm.html">PyCharm</a> (2)</li><li><a href="categories/pyconjp.html">PyConJP</a> (1)</li><li><a href="categories/pyfes.html">pyfes</a> (7)</li><li><a href="categories/python.html">Python</a> (70)</li><li><a href="categories/slack.html">Slack</a> (1)</li><li><a href="categories/sphinx.html">Sphinx</a> (8)</li><li><a href="categories/sqlalchemy.html">SQLAlchemy</a> (1)</li><li><a href="categories/ssd.html">SSD</a> (1)</li><li><a href="categories/tddbc.html">TDDBC</a> (1)</li><li><a href="categories/tinkerer.html">Tinkerer</a> (7)</li><li><a href="categories/tmux.html">tmux</a> (1)</li><li><a href="categories/ubuntu.html">Ubuntu</a> (3)</li><li><a href="categories/vagrant.html">Vagrant</a> (1)</li><li><a href="categories/vim.html">Vim</a> (24)</li><li><a href="categories/vimconf.html">VimConf</a> (3)</li><li><a href="categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="categories/windows.html">Windows</a> (2)</li><li><a href="categories/windows7.html">Windows7</a> (4)</li><li><a href="categories/アルゴリズム.html">アルゴリズム</a> (1)</li><li><a href="categories/セキュリティ.html">セキュリティ</a> (2)</li><li><a href="categories/ネットワーク.html">ネットワーク</a> (1)</li><li><a href="categories/プログラミング.html">プログラミング</a> (7)</li><li><a href="categories/勉強会.html">勉強会</a> (30)</li><li><a href="categories/応用情報技術者.html">応用情報技術者</a> (10)</li><li><a href="categories/情報処理技術者試験.html">情報処理技術者試験</a> (10)</li><li><a href="categories/本.html">本</a> (29)</li><li><a href="categories/開発環境.html">開発環境</a> (11)</li><li><a href="categories/雑記.html">雑記</a> (38)</li><li><a href="categories/高速化.html">高速化</a> (1)</li></ul>
 </div></section><section><div class="widget">
     <h1>About Me</h1>
     <div>

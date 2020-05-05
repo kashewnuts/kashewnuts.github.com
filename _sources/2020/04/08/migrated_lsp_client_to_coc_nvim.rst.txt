@@ -3,7 +3,7 @@ LSPクライアントをcoc.nvimにした話
 
 以前 `Pythonの補完環境をjedi-vimからvim-lspに移行した話 — kashew_nuts-blog <https://kashewnuts.github.io/2019/01/28/move_from_jedivim_to_vimlsp.html>`_ という記事を書きましたが、現在は `neoclide/coc.nvim <https://github.com/neoclide/coc.nvim>`_ に完全移行しています。
 
-.. contents:: contents
+.. contents::
   :local:
 
 coc.nvimとは

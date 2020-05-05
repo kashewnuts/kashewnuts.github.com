@@ -5,8 +5,104 @@
         <link>http://kashewnuts.github.io/</link>
         <description>Road To Pythonista</description>
         <language>en-us</language>
-        <pubDate>Wed, 08 Apr 2020 00:00:00 +0900</pubDate>
+        <pubDate>Tue, 05 May 2020 00:00:00 +0900</pubDate>
         
+        <item>
+            <link>http://kashewnuts.github.io/2020/05/05/upgrade_ubuntu_20_04_lts.html</link>
+            <guid>http://kashewnuts.github.io/2020/05/05/upgrade_ubuntu_20_04_lts.html</guid>
+            <title><![CDATA[Ubuntu18.04LTSから20.04LTSにアップグレードした]]></title>
+            <description><![CDATA[<h1>Ubuntu18.04LTSから20.04LTSにアップグレードした</h1>
+<p>Ubuntu Desktopがアップデートの影響か音が鳴らなくなり、Windowsに切り替えていましたが、GWでUbuntu 20.04LTSにアップグレードしたのでメモ。</p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="http://kashewnuts.github.io/2020/05/05/upgrade_ubuntu_20_04_lts.html#ubuntu20-04lts" id="id6">Ubuntu20.04LTSとは</a></li>
+<li><a class="reference internal" href="http://kashewnuts.github.io/2020/05/05/upgrade_ubuntu_20_04_lts.html#id1" id="id7">アップグレードの手順について</a></li>
+<li><a class="reference internal" href="http://kashewnuts.github.io/2020/05/05/upgrade_ubuntu_20_04_lts.html#id2" id="id8">イントール時間</a></li>
+<li><a class="reference internal" href="http://kashewnuts.github.io/2020/05/05/upgrade_ubuntu_20_04_lts.html#id3" id="id9">アップグレード後実施したこと</a><ul>
+<li><a class="reference internal" href="http://kashewnuts.github.io/2020/05/05/upgrade_ubuntu_20_04_lts.html#ibus-mozc" id="id10">ibus-mozcのキーボードが英字配列で認識されていたので、設定ファイルを編集</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="http://kashewnuts.github.io/2020/05/05/upgrade_ubuntu_20_04_lts.html#id4" id="id11">必要なパッケージのインストール</a></li>
+<li><a class="reference internal" href="http://kashewnuts.github.io/2020/05/05/upgrade_ubuntu_20_04_lts.html#vim" id="id12">vimの再インストール</a></li>
+<li><a class="reference internal" href="http://kashewnuts.github.io/2020/05/05/upgrade_ubuntu_20_04_lts.html#xsel" id="id13">xselの再インストール</a></li>
+<li><a class="reference internal" href="http://kashewnuts.github.io/2020/05/05/upgrade_ubuntu_20_04_lts.html#id5" id="id14">最後に</a></li>
+</ul>
+</div>
+<div class="section" id="ubuntu20-04lts">
+<h2><a class="toc-backref" href="#id6">Ubuntu20.04LTSとは</a></h2>
+<p>2年に一度リリースされる長期サポート版です。サポート期間が5年間提供されます。
+それまで使っていたUbuntu18.04LTSのあと、18.10, 19.04, 19.10を一気に飛ばしてのアップグレードでした。
+ちょっとドキドキしながらでしたが無事アップグレードできました。</p>
+</div>
+<div class="section" id="id1">
+<h2><a class="toc-backref" href="#id7">アップグレードの手順について</a></h2>
+<p><a class="reference external" href="https://ubuntu.com/tutorials/tutorial-upgrading-ubuntu-desktop#1-before-you-start">Upgrade Ubuntu desktop</a> を参照して実施しました。</p>
+</div>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id8">イントール時間</a></h2>
+<p>インターネットの回線速度が200Mbpsとかでている朝に実施したので、1時間足らずで完了しました。</p>
+</div>
+<div class="section" id="id3">
+<h2><a class="toc-backref" href="#id9">アップグレード後実施したこと</a></h2>
+<div class="section" id="ibus-mozc">
+<h3><a class="toc-backref" href="#id10">ibus-mozcのキーボードが英字配列で認識されていたので、設定ファイルを編集</a></h3>
+<p>毎回調べてる <a class="reference external" href="http://note.kurodigi.com/ibus-mozc-kbdlayout/">参考URL</a> を見ているので改めてメモ。</p>
+<ul class="simple">
+<li><span class="docutils literal"><span class="pre">sudo</span> <span class="pre">vim</span> <span class="pre">/usr/share/ibus/component/mozc.xml</span></span></li>
+<li><span class="docutils literal"><span class="pre">&lt;layout&gt;default&lt;/layout&gt;</span></span> を <span class="docutils literal"><span class="pre">&lt;layout&gt;jp&lt;/layout&gt;</span></span> に置換</li>
+<li>変更を保存したらログアウトして再ログイン</li>
+<li>キーボードレイアウトを確認して日本語配列になっていればOK</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id4">
+<h2><a class="toc-backref" href="#id11">必要なパッケージのインストール</a></h2>
+<p>デフォルトのPythonのバージョンが上がっていたり、nodejsまわりが消えていたので再インストールしました。</p>
+<ul class="simple">
+<li><span class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">python3-venv</span> <span class="pre">python3-pip</span> <span class="pre">nodejs</span> <span class="pre">npm</span></span></li>
+<li><a class="reference external" href="https://launchpad.net/~deadsnakes/+archive/ubuntu/ppa?field.series_filter=focal">deadsnakes</a> から <span class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">python3.7</span> <span class="pre">python3.7-venv</span></span></li>
+</ul>
+<p>Ubuntuでどうやってシステム側にpipをいれるかは毎回悩ましいのですが、今回はaptで入れました。</p>
+</div>
+<div class="section" id="vim">
+<h2><a class="toc-backref" href="#id12">vimの再インストール</a></h2>
+<p>自前でビルドしているため、依存関係が変わったあとは再インストールが必要でした。今回はPython3の場所を指定するだけでOKでした。
+vimのリポジトリーはgit clone済みなので、 <span class="docutils literal"><span class="pre">vim/src</span></span> ディレクトリーに移動して以下のコマンドを実行します。</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span/>$ make distclean
+$ ./configure <span class="se">\</span>
+    --with-features<span class="o">=</span>huge <span class="se">\</span>
+    --enable-gui<span class="o">=</span>auto <span class="se">\</span>
+    --enable-python3interp <span class="se">\</span>
+    --with-python3-config-dir<span class="o">=</span>/usr/lib/python3.8/config-3.8-x86_64-linux-gnu/ <span class="se">\</span>
+    --enable-fail-if-missing
+$ make
+$ sudo make install
+</pre></div>
+</div>
+<p>ビルド方法については <a class="reference external" href="https://vim-jp.org/docs/build_linux.html">vim-jp » Linuxでのビルド方法</a> も参考にしてください。</p>
+</div>
+<div class="section" id="xsel">
+<h2><a class="toc-backref" href="#id13">xselの再インストール</a></h2>
+<p>ここまでで一応必要なパッケージは揃っていたのですが、以下の現象が再発しました。</p>
+<blockquote class="twitter-tweet" data-conversation="none"><a href="https://twitter.com/kashew_nuts/status/1028169590965121024">https://twitter.com/kashew_nuts/status/1028169590965121024</a></blockquote><p>Ubuntu18.04LTSのときにインストール済みだったのですが、下記手順でインストールし直したところ改善されました。</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span/>$ sudo apt remove xsel
+$ sudo apt install xsel
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2><a class="toc-backref" href="#id14">最後に</a></h2>
+<p>アップデート自体はすんなり行えました。ひとまずまたUbuntuの民に戻ろうと思います。</p>
+<p>ただUbuntu18.04LTS時代はオーディオ関連に悩まされていたので、使っていってどうなるかは気になっています。
+有線でイヤホンを使っているときは問題なかったですが、AirPods Proとは接続がなかなかできなくてペアリングし直したりしてました。
+さすがにmacOSほど親和性はないと思うので、うまく付き合っていけたらいいなー。</p>
+</div>
+]]></description>
+            <category><![CDATA[ Ubuntu ]]></category>
+            <category><![CDATA[ Linux ]]></category>
+             <pubDate>Tue, 05 May 2020 00:00:00 +0900</pubDate>
+        </item>
+    
         <item>
             <link>http://kashewnuts.github.io/2020/04/08/migrated_lsp_client_to_coc_nvim.html</link>
             <guid>http://kashewnuts.github.io/2020/04/08/migrated_lsp_client_to_coc_nvim.html</guid>
@@ -14,7 +110,6 @@
             <description><![CDATA[<h1>LSPクライアントをcoc.nvimにした話</h1>
 <p>以前 <a class="reference external" href="https://kashewnuts.github.io/2019/01/28/move_from_jedivim_to_vimlsp.html">Pythonの補完環境をjedi-vimからvim-lspに移行した話 — kashew_nuts-blog</a> という記事を書きましたが、現在は <a class="reference external" href="https://github.com/neoclide/coc.nvim">neoclide/coc.nvim</a> に完全移行しています。</p>
 <div class="contents local topic" id="contents">
-<p class="topic-title">contents</p>
 <ul class="simple">
 <li><a class="reference internal" href="http://kashewnuts.github.io/2020/04/08/migrated_lsp_client_to_coc_nvim.html#coc-nvim" id="id10">coc.nvimとは</a></li>
 <li><a class="reference internal" href="http://kashewnuts.github.io/2020/04/08/migrated_lsp_client_to_coc_nvim.html#id1" id="id11">移行理由</a><ul>
@@ -1068,7 +1163,7 @@ Airbnbで宿を取った。通信網は事前情報から諦めていたので�
 <li><a class="reference external" href="https://www.youtube.com/user/PyConJP/videos?flow=grid&amp;view=0&amp;sort=dd">PyConJP - YouTube</a></li>
 </ul>
 <div class="contents local topic" id="contents">
-<p class="topic-title">contents</p>
+<p class="topic-title first">contents</p>
 <ul class="simple">
 <li><a class="reference internal" href="http://kashewnuts.github.io/2018/09/22/pyconjp2018.html#id1" id="id5">自分の発表について</a></li>
 <li><a class="reference internal" href="http://kashewnuts.github.io/2018/09/22/pyconjp2018.html#id2" id="id6">チュートリアルについて</a></li>
@@ -1894,7 +1989,7 @@ Dockerを使うならDockerで、もしくはWindowsやmacOSなら www.python.or
 <p>注意すべきところとして、 <span class="docutils literal"><span class="pre">pipenv</span></span> はそれ自体で単体のツールではなく複数のライブラリを組み合わせて使用するものだということです。
 何かトラブルが起きた時は最低限 <span class="docutils literal"><span class="pre">pip</span></span> と <span class="docutils literal"><span class="pre">virtualenv</span></span> の使い方が理解できていないとツラいかもしれません。</p>
 <p>2018/03/15時点での依存関係は次のとおりです。</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span/><span class="gp gp-VirtualEnv">(test)</span><span class="gp">kashewnuts@ubuntu:test$</span> pipenv graph
+<div class="highlight-console notranslate"><div class="highlight"><pre><span/><span class="gp">(test)kashewnuts@ubuntu:test$</span> pipenv graph
 
 <span class="go">pipenv==11.8.0</span>
 <span class="go">  - certifi [required: Any, installed: 2018.1.18]</span>
@@ -2990,7 +3085,7 @@ BitLockerを中断したらいけるかなと思って試しましたがダメ�
 </ul>
 <p>結論としては全部達成できましたかね(o・ω・o)</p>
 <div class="contents local topic" id="contents">
-<p class="topic-title">contents</p>
+<p class="topic-title first">contents</p>
 <ul class="simple">
 <li><a class="reference internal" href="http://kashewnuts.github.io/2017/09/09/pyconjp2017.html#rejectcon" id="id11">RejectConについて</a></li>
 <li><a class="reference internal" href="http://kashewnuts.github.io/2017/09/09/pyconjp2017.html#pycon" id="id12">PyConで拝聴したセッション</a><ul>
@@ -3128,7 +3223,7 @@ BitLockerを中断したらいけるかなと思って試しましたがダメ�
 </ul>
 <img alt="../../../_images/rettypy2.JPG" class="align-center" src="http://kashewnuts.github.io/_images/rettypy2.JPG"/>
 <div class="contents local topic" id="id1">
-<p class="topic-title">目次</p>
+<p class="topic-title first">目次</p>
 <ul class="simple">
 <li><a class="reference internal" href="http://kashewnuts.github.io/2017/08/19/rettypy2.html#id2" id="id8">自己紹介タイム</a></li>
 <li><a class="reference internal" href="http://kashewnuts.github.io/2017/08/19/rettypy2.html#id3" id="id9">やったこと</a><ul>
@@ -3370,7 +3465,7 @@ Python2と3をどちらを使うべきかも述べられているのでその辺
 <p>テーマは「Pythonistaとしての進化」でした。 stapyは初参加でした。</p>
 <p><a class="reference external" href="https://startpython.connpass.com/event/58757/">みんなのPython勉強会#27 - connpass</a></p>
 <div class="contents local topic" id="id1">
-<p class="topic-title">目次</p>
+<p class="topic-title first">目次</p>
 <ul class="simple">
 <li><a class="reference internal" href="http://kashewnuts.github.io/2017/08/13/stapy27.html#id2" id="id6">コミュニティの紹介</a></li>
 <li><a class="reference internal" href="http://kashewnuts.github.io/2017/08/13/stapy27.html#talk" id="id7">Talk</a><ul>
@@ -3548,7 +3643,7 @@ PyConJP2017で話そうと思ってたものを話します。</p>
 <p>当日やったことはこんな感じ。執筆多いな―。</p>
 <img alt="../../../_images/mokupy19.JPG" class="align-center" src="http://kashewnuts.github.io/_images/mokupy19.JPG"/>
 <div class="contents local topic" id="id1">
-<p class="topic-title">目次</p>
+<p class="topic-title first">目次</p>
 <ul class="simple">
 <li><a class="reference internal" href="http://kashewnuts.github.io/2017/07/30/mokupy19.html#id2" id="id9">経緯</a></li>
 <li><a class="reference internal" href="http://kashewnuts.github.io/2017/07/30/mokupy19.html#id3" id="id10">使い方</a></li>
@@ -4940,10 +5035,10 @@ PHPの会社だが、Rubyのツールなども使っている。</li>
 <div class="section" id="id2">
 <h2>インストール</h2>
 <p>以下のコマンドを実行します。</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span/><span class="err">Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Confirm</span>
-<span class="err">git clone https://github.com/dahlbyk/posh-git.git</span>
-<span class="err">.\posh-git\install.ps1</span>
-<span class="err">. $PROFILE</span>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span/><span class="k">Set</span><span class="o">-</span><span class="n">ExecutionPolicy</span> <span class="n">RemoteSigned</span> <span class="o">-</span><span class="k">Scope</span> <span class="n">CurrentUser</span> <span class="o">-</span><span class="n">Confirm</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">dahlbyk</span><span class="o">/</span><span class="n">posh</span><span class="o">-</span><span class="n">git</span><span class="p">.</span><span class="n">git</span>
+<span class="p">.</span><span class="err">\</span><span class="n">posh</span><span class="o">-</span><span class="n">git</span><span class="err">\</span><span class="n">install</span><span class="p">.</span><span class="n">ps1</span>
+<span class="p">.</span> <span class="err">$</span><span class="n">PROFILE</span>
 </pre></div>
 </div>
 <p>しかし以下のように怒られてしました。</p>
@@ -4966,7 +5061,7 @@ Microsoft.PowerShell_profile.ps1 に以下のように設定を追記します�
 <p>さてこれで <strong>PowerShellで最高のGit用CUI環境ができた！</strong> と言いたいのですが、表示が遅い…… 高機能なのはいいですが、表示が遅くては話になりません。</p>
 <p>Google先生に聞いても、 <em>posh git slow</em> という単語が引っかかります。なんとか速くする方法はないものか。</p>
 <p>そこで Microsoft.PowerShell_profile.ps1 に以下のように設定を追記します。</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span/><span class="err">$GitPromptSettings.EnableFileStatus = $false    # 簡易ステータス非表示</span>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span/><span class="err">$</span><span class="n">GitPromptSettings</span><span class="p">.</span><span class="n">EnableFileStatus</span> <span class="o">=</span> <span class="err">$</span><span class="k">false</span>    <span class="o">#</span> <span class="err">簡易ステータス非表示</span>
 </pre></div>
 </div>
 <p>これでインストール前の速度を保ちつつ、
@@ -5765,7 +5860,7 @@ Packerはそもそものマシンイメージを作成する。veeweeとやっ�
 <h2>Django 環境構築</h2>
 <p>最初は <a class="reference external" href="http://peterhudec.github.io/authomatic/examples/django-simple.html">Simple Django Example | Authomatic</a> を見ていたのですが、途中で飽きてしまったので、別のことをしました。</p>
 <p>これまで Django を試す時は DB は SQLite を使用して、結果は</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span/><span class="err">python manage.py runserver</span>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span/><span class="n">python</span> <span class="n">manage</span><span class="p">.</span><span class="n">py</span> <span class="n">runserver</span>
 </pre></div>
 </div>
 <p>とコマンドを打って結果がどうなっているのか確認してきましたが、
@@ -5782,7 +5877,7 @@ Packerはそもそものマシンイメージを作成する。veeweeとやっ�
 <p>途中はまったところは以下。</p>
 <div class="section" id="id3">
 <h3>「ソケットにアクセスできない」と怒られる。(以下エラーメッセージ)</h3>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span/><span class="err">ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/opt/local/var/run/mysql5/mysqld.sock'</span>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span/><span class="nv">ERROR</span> <span class="mi">2002</span> <span class="ss">(</span><span class="nv">HY000</span><span class="ss">)</span>: <span class="nv">Can</span><span class="s1">'</span><span class="s">t connect to local MySQL server through socket </span><span class="s1">'</span><span class="o">/</span><span class="nv">opt</span><span class="o">/</span><span class="nv">local</span><span class="o">/</span><span class="nv">var</span><span class="o">/</span><span class="nv">run</span><span class="o">/</span><span class="nv">mysql5</span><span class="o">/</span><span class="nv">mysqld</span>.<span class="nv">sock</span><span class="s1">'</span>
 </pre></div>
 </div>
 <div class="section" id="id4">
@@ -5803,7 +5898,7 @@ Packerはそもそものマシンイメージを作成する。veeweeとやっ�
 <h4>解決策</h4>
 <p><a class="reference external" href="http://hima-j.in/python/mac-os-x-mysql-python-django/">Mac OS X 10.6.4 における mysql-python のインストールと Django のデータベース設定 | 暇人じゃない</a> を参照</p>
 <p>それでも同じエラーがでたので、シンボリックリンクを貼る。</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span/><span class="err">sudo ln -s /opt/local/bin/mysql_config5 /opt/local/bin/mysql_config</span>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span/><span class="n">sudo</span> <span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="k">local</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">mysql_config5</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="k">local</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">mysql_config</span>
 </pre></div>
 </div>
 </div>
@@ -5813,7 +5908,7 @@ Packerはそもそものマシンイメージを作成する。veeweeとやっ�
 <div class="section" id="id9">
 <h4>解決策</h4>
 <p>未解決。</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span/><span class="err">python manage.py runserver</span>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span/><span class="n">python</span> <span class="n">manage</span><span class="p">.</span><span class="n">py</span> <span class="n">runserver</span>
 </pre></div>
 </div>
 <p>とコマンドを打つとブラウザに Hello, World! が表示されることは確認しているので、
@@ -10683,7 +10778,7 @@ filetype plugin indent on
     <span class="k">return</span> <span class="n">ansdef</span> <span class="n">main</span><span class="p">():</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">):</span>
-    <span class="nb">print</span> <span class="n">fizzbuzz</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="k">print</span> <span class="n">fizzbuzz</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
@@ -11142,35 +11237,35 @@ Installing pip.....................done.
 <div class="line">そういえばRubyはXcode入れた時に一緒に入っている！</div>
 <div class="line">Rubyはあえてインストールせず、</div>
 </div>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span/><span class="err">sudo gem install heroku</span>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span/><span class="n">sudo</span> <span class="n">gem</span> <span class="n">install</span> <span class="n">heroku</span>
 </pre></div>
 </div>
 <div class="line-block">
 <div class="line">したらあっさり入れられました。</div>
 <div class="line">バージョンは1.8系なんだね。へー。</div>
 </div>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span/><span class="err">Successfully installed term-ansicolor-1.0.7</span>
-<span class="err">Successfully installed mime-types-1.17.2</span>
-<span class="err">Successfully installed rest-client-1.6.7</span>
-<span class="err">Successfully installed addressable-2.2.6</span>
-<span class="err">Successfully installed launchy-2.0.5</span>
-<span class="err">Successfully installed rubyzip-0.9.4</span>
-<span class="err">Successfully installed heroku-2.11.0</span>
-<span class="err">7 gems installed</span>
-<span class="err">Installing ri documentation for term-ansicolor-1.0.7...</span>
-<span class="err">Installing ri documentation for mime-types-1.17.2...</span>
-<span class="err">Installing ri documentation for rest-client-1.6.7...</span>
-<span class="err">Installing ri documentation for addressable-2.2.6...</span>
-<span class="err">Installing ri documentation for launchy-2.0.5...</span>
-<span class="err">Installing ri documentation for rubyzip-0.9.4...</span>
-<span class="err">Installing ri documentation for heroku-2.11.0...</span>
-<span class="err">Installing RDoc documentation for term-ansicolor-1.0.7...</span>
-<span class="err">Installing RDoc documentation for mime-types-1.17.2...</span>
-<span class="err">Installing RDoc documentation for rest-client-1.6.7...</span>
-<span class="err">Installing RDoc documentation for addressable-2.2.6...</span>
-<span class="err">Installing RDoc documentation for launchy-2.0.5...</span>
-<span class="err">Installing RDoc documentation for rubyzip-0.9.4...</span>
-<span class="err">Installing RDoc documentation for heroku-2.11.0...</span>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span/><span class="nv">Successfully</span> <span class="nv">installed</span> <span class="nv">term</span><span class="o">-</span><span class="nv">ansicolor</span><span class="o">-</span><span class="mi">1</span>.<span class="mi">0</span>.<span class="mi">7</span>
+<span class="nv">Successfully</span> <span class="nv">installed</span> <span class="nv">mime</span><span class="o">-</span><span class="nv">types</span><span class="o">-</span><span class="mi">1</span>.<span class="mi">17</span>.<span class="mi">2</span>
+<span class="nv">Successfully</span> <span class="nv">installed</span> <span class="nv">rest</span><span class="o">-</span><span class="nv">client</span><span class="o">-</span><span class="mi">1</span>.<span class="mi">6</span>.<span class="mi">7</span>
+<span class="nv">Successfully</span> <span class="nv">installed</span> <span class="nv">addressable</span><span class="o">-</span><span class="mi">2</span>.<span class="mi">2</span>.<span class="mi">6</span>
+<span class="nv">Successfully</span> <span class="nv">installed</span> <span class="nv">launchy</span><span class="o">-</span><span class="mi">2</span>.<span class="mi">0</span>.<span class="mi">5</span>
+<span class="nv">Successfully</span> <span class="nv">installed</span> <span class="nv">rubyzip</span><span class="o">-</span><span class="mi">0</span>.<span class="mi">9</span>.<span class="mi">4</span>
+<span class="nv">Successfully</span> <span class="nv">installed</span> <span class="nv">heroku</span><span class="o">-</span><span class="mi">2</span>.<span class="mi">11</span>.<span class="mi">0</span>
+<span class="mi">7</span> <span class="nv">gems</span> <span class="nv">installed</span>
+<span class="nv">Installing</span> <span class="nv">ri</span> <span class="nv">documentation</span> <span class="k">for</span> <span class="nv">term</span><span class="o">-</span><span class="nv">ansicolor</span><span class="o">-</span><span class="mi">1</span>.<span class="mi">0</span>.<span class="mi">7</span>...
+<span class="nv">Installing</span> <span class="nv">ri</span> <span class="nv">documentation</span> <span class="k">for</span> <span class="nv">mime</span><span class="o">-</span><span class="nv">types</span><span class="o">-</span><span class="mi">1</span>.<span class="mi">17</span>.<span class="mi">2</span>...
+<span class="nv">Installing</span> <span class="nv">ri</span> <span class="nv">documentation</span> <span class="k">for</span> <span class="nv">rest</span><span class="o">-</span><span class="nv">client</span><span class="o">-</span><span class="mi">1</span>.<span class="mi">6</span>.<span class="mi">7</span>...
+<span class="nv">Installing</span> <span class="nv">ri</span> <span class="nv">documentation</span> <span class="k">for</span> <span class="nv">addressable</span><span class="o">-</span><span class="mi">2</span>.<span class="mi">2</span>.<span class="mi">6</span>...
+<span class="nv">Installing</span> <span class="nv">ri</span> <span class="nv">documentation</span> <span class="k">for</span> <span class="nv">launchy</span><span class="o">-</span><span class="mi">2</span>.<span class="mi">0</span>.<span class="mi">5</span>...
+<span class="nv">Installing</span> <span class="nv">ri</span> <span class="nv">documentation</span> <span class="k">for</span> <span class="nv">rubyzip</span><span class="o">-</span><span class="mi">0</span>.<span class="mi">9</span>.<span class="mi">4</span>...
+<span class="nv">Installing</span> <span class="nv">ri</span> <span class="nv">documentation</span> <span class="k">for</span> <span class="nv">heroku</span><span class="o">-</span><span class="mi">2</span>.<span class="mi">11</span>.<span class="mi">0</span>...
+<span class="nv">Installing</span> <span class="nv">RDoc</span> <span class="nv">documentation</span> <span class="k">for</span> <span class="nv">term</span><span class="o">-</span><span class="nv">ansicolor</span><span class="o">-</span><span class="mi">1</span>.<span class="mi">0</span>.<span class="mi">7</span>...
+<span class="nv">Installing</span> <span class="nv">RDoc</span> <span class="nv">documentation</span> <span class="k">for</span> <span class="nv">mime</span><span class="o">-</span><span class="nv">types</span><span class="o">-</span><span class="mi">1</span>.<span class="mi">17</span>.<span class="mi">2</span>...
+<span class="nv">Installing</span> <span class="nv">RDoc</span> <span class="nv">documentation</span> <span class="k">for</span> <span class="nv">rest</span><span class="o">-</span><span class="nv">client</span><span class="o">-</span><span class="mi">1</span>.<span class="mi">6</span>.<span class="mi">7</span>...
+<span class="nv">Installing</span> <span class="nv">RDoc</span> <span class="nv">documentation</span> <span class="k">for</span> <span class="nv">addressable</span><span class="o">-</span><span class="mi">2</span>.<span class="mi">2</span>.<span class="mi">6</span>...
+<span class="nv">Installing</span> <span class="nv">RDoc</span> <span class="nv">documentation</span> <span class="k">for</span> <span class="nv">launchy</span><span class="o">-</span><span class="mi">2</span>.<span class="mi">0</span>.<span class="mi">5</span>...
+<span class="nv">Installing</span> <span class="nv">RDoc</span> <span class="nv">documentation</span> <span class="k">for</span> <span class="nv">rubyzip</span><span class="o">-</span><span class="mi">0</span>.<span class="mi">9</span>.<span class="mi">4</span>...
+<span class="nv">Installing</span> <span class="nv">RDoc</span> <span class="nv">documentation</span> <span class="k">for</span> <span class="nv">heroku</span><span class="o">-</span><span class="mi">2</span>.<span class="mi">11</span>.<span class="mi">0</span>...
 </pre></div>
 </div>
 <div class="line-block">
@@ -11182,8 +11277,8 @@ Installing pip.....................done.
 <div class="line">p.s.</div>
 <div class="line">sudoつけないでインストールしようとしたら、</div>
 </div>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span/><span class="n">ERROR</span><span class="o">:</span>  <span class="n">While</span> <span class="n">executing</span> <span class="n">gem</span> <span class="o">...</span> <span class="o">(</span><span class="n">Gem</span><span class="o">::</span><span class="n">FilePermissionError</span><span class="o">)</span>
-    <span class="n">You</span> <span class="n">don</span><span class="err">'</span><span class="n">t</span> <span class="n">have</span> <span class="n">write</span> <span class="n">permissions</span> <span class="n">into</span> <span class="n">the</span> <span class="sr">/Library/Ruby/Gems/</span><span class="mf">1.8</span> <span class="n">directory</span><span class="o">.</span>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span/><span class="nv">ERROR</span>:  <span class="k">While</span> <span class="nv">executing</span> <span class="nv">gem</span> ... <span class="ss">(</span><span class="nv">Gem</span>::<span class="nv">FilePermissionError</span><span class="ss">)</span>
+    <span class="nv">You</span> <span class="nv">don</span><span class="s1">'</span><span class="s">t have write permissions into the /Library/Ruby/Gems/1.8 directory.</span>
 </pre></div>
 </div>
 ]]></description>
@@ -13318,76 +13413,76 @@ Installing pip.....................done.
 配列を使わずポインタを用いたクイックソートにしたいのだがまったくソートされない。
 恐らくpivotやiptr,jptrなどポインタにしたとこが動きまくってると思うのだが、
 いったいどうしたことか…。</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span/><span class="cm">/* Qソートを行う */</span><span class="w"/>
-void<span class="w"> </span>qsort<span class="o">(</span>int<span class="w"> </span><span class="o">*</span>left<span class="o">,</span><span class="w"> </span>int<span class="w"> </span><span class="o">*</span>right<span class="o">)</span><span class="w"/>
-<span class="err">{</span><span class="w"/>
-<span class="w">    </span>int<span class="w"> </span>i<span class="o">,</span><span class="w"> </span>j<span class="o">,</span><span class="w"> </span>pivot<span class="err">;</span><span class="w"/>
-<span class="w">    </span>int<span class="w"> </span><span class="o">*</span>iptr<span class="o">,</span><span class="w"> </span><span class="o">*</span>jptr<span class="err">;</span><span class="w">              </span><span class="cm">/* i, jのポインタ */</span><span class="w"/>
-<span class="w">    </span>iptr<span class="w"> </span><span class="o">=</span><span class="w"> </span>left<span class="err">;</span><span class="w"/>
-<span class="w">    </span>jptr<span class="w"> </span><span class="o">=</span><span class="w"> </span>right<span class="err">;</span><span class="w"/>
-<span class="w">    </span>pivot<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*(</span>right<span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">(</span>__w64<span class="w"> </span>int<span class="o">)(</span>right<span class="w"> </span><span class="o">-</span><span class="w"> </span>left<span class="o">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">2</span><span class="o">)</span><span class="err">;</span><span class="w"> </span><span class="o">//</span><span class="err">中央値の設定</span><span class="w"/>
-<span class="w">    </span><span class="kr">while</span><span class="o">(</span><span class="m">1</span><span class="o">)</span><span class="w"/>
-<span class="w">    </span><span class="err">{</span><span class="w"/>
-<span class="w">        </span><span class="kr">while</span><span class="w"> </span><span class="o">(*</span>iptr<span class="w"> </span><span class="o">&lt;</span><span class="w"> </span>pivot<span class="o">)</span><span class="w">          </span><span class="cm">/* pivot より大きい値が */</span><span class="w"/>
-<span class="w">            </span>iptr<span class="o">++</span><span class="err">;</span><span class="w">                   </span><span class="cm">/* 出るまで i を増加させる */</span><span class="w"/>
-<span class="w">        </span><span class="kr">while</span><span class="w"> </span><span class="o">(</span>pivot<span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="o">*</span>jptr<span class="o">)</span><span class="w">          </span><span class="cm">/* pivot より小さい値が */</span><span class="w"/>
-<span class="w">            </span>jptr<span class="o">--</span><span class="err">;</span><span class="w">                   </span><span class="cm">/*  出るまで j を減少させる */</span><span class="w"/>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span/><span class="cm">/* Qソートを行う */</span>
+<span class="nv">void</span> <span class="nv">qsort</span><span class="ss">(</span><span class="nv">int</span> <span class="o">*</span><span class="nv">left</span>, <span class="nv">int</span> <span class="o">*</span><span class="nv">right</span><span class="ss">)</span>
+{
+    <span class="nv">int</span> <span class="nv">i</span>, <span class="nv">j</span>, <span class="nv">pivot</span><span class="c1">;</span>
+    <span class="nv">int</span> <span class="o">*</span><span class="nv">iptr</span>, <span class="o">*</span><span class="nv">jptr</span><span class="c1">;              /* i, jのポインタ */</span>
+    <span class="nv">iptr</span> <span class="o">=</span> <span class="nv">left</span><span class="c1">;</span>
+    <span class="nv">jptr</span> <span class="o">=</span> <span class="nv">right</span><span class="c1">;</span>
+    <span class="nv">pivot</span> <span class="o">=</span> <span class="o">*</span><span class="ss">(</span><span class="nv">right</span> <span class="o">-</span> <span class="ss">(</span><span class="nv">__w64</span> <span class="nv">int</span><span class="ss">)(</span><span class="nv">right</span> <span class="o">-</span> <span class="nv">left</span><span class="ss">)</span> <span class="o">/</span> <span class="mi">2</span><span class="ss">)</span><span class="c1">; //中央値の設定</span>
+    <span class="k">while</span><span class="ss">(</span><span class="mi">1</span><span class="ss">)</span>
+    {
+        <span class="k">while</span> <span class="ss">(</span><span class="o">*</span><span class="nv">iptr</span> <span class="o">&lt;</span> <span class="nv">pivot</span><span class="ss">)</span>          <span class="cm">/* pivot より大きい値が */</span>
+            <span class="nv">iptr</span><span class="o">++</span><span class="c1">;                   /* 出るまで i を増加させる */</span>
+        <span class="k">while</span> <span class="ss">(</span><span class="nv">pivot</span> <span class="o">&lt;</span> <span class="o">*</span><span class="nv">jptr</span><span class="ss">)</span>          <span class="cm">/* pivot より小さい値が */</span>
+            <span class="nv">jptr</span><span class="o">--</span><span class="c1">;                   /*  出るまで j を減少させる */</span>
 
-<span class="w">        </span><span class="kr">if</span><span class="w"> </span><span class="o">(*</span>iptr<span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="o">*</span>jptr<span class="o">)</span><span class="w">           </span><span class="cm">/* i &gt;= j なら */</span><span class="w"/>
-<span class="w">            </span>break<span class="err">;</span><span class="w">                    </span><span class="cm">/* 無限ループから抜ける */</span><span class="w"/>
-<span class="w">        </span>swap<span class="o">(</span>iptr<span class="o">,</span><span class="w"> </span>jptr<span class="o">)</span><span class="err">;</span><span class="w">             </span><span class="cm">/* iとjを交換 */</span><span class="w"/>
-<span class="w">            </span>iptr<span class="o">++</span><span class="err">;</span><span class="w">                   </span><span class="cm">/* 次のデータ */</span><span class="w"/>
-<span class="w">            </span>jptr<span class="o">--</span><span class="err">;</span><span class="w"/>
-<span class="w">    </span><span class="err">}</span><span class="w"/>
-<span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="o">(</span>left<span class="w"> </span><span class="o">&lt;</span><span class="w"> </span>iptr<span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">1</span><span class="o">)</span><span class="w">              </span><span class="cm">/* 基準値の左に 2 以上要素があれば */</span><span class="w"/>
-<span class="w">        </span>qsort<span class="o">(</span>left<span class="o">,</span><span class="w"> </span>iptr<span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">1</span><span class="o">)</span><span class="err">;</span><span class="w">     </span><span class="cm">/* 左の配列を Q ソートする */</span><span class="w"/>
-<span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="o">(</span>jptr<span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">&lt;</span><span class="w">  </span>right<span class="o">)</span><span class="w">            </span><span class="cm">/* 基準値の右に 2 以上要素があれば */</span><span class="w"/>
-<span class="w">        </span>qsort<span class="o">(</span>jptr<span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="o">,</span><span class="w"> </span>right<span class="o">)</span><span class="err">;</span><span class="w">    </span><span class="cm">/* 右の配列を Q ソートする */</span><span class="w"/>
-<span class="err">}</span><span class="w"/>
-<span class="cm">/* 要素を交換する */</span><span class="w"/>
-void<span class="w"> </span>swap<span class="o">(</span>int<span class="w"> </span><span class="o">*</span>i<span class="o">,</span><span class="w"> </span>int<span class="w"> </span><span class="o">*</span>j<span class="o">)</span><span class="w"/>
-<span class="err">{</span><span class="w"/>
-<span class="w">    </span>int<span class="w"> </span>temp<span class="err">;</span><span class="w"/>
-<span class="w">    </span>temp<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span>i<span class="err">;</span><span class="w"/>
-<span class="w">    </span><span class="o">*</span>i<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span>j<span class="err">;</span><span class="w"/>
-<span class="w">    </span><span class="o">*</span>j<span class="w"> </span><span class="o">=</span><span class="w"> </span>temp<span class="err">;</span><span class="w"/>
-<span class="err">}</span><span class="w"/>
+        <span class="k">if</span> <span class="ss">(</span><span class="o">*</span><span class="nv">iptr</span> <span class="o">&gt;=</span> <span class="o">*</span><span class="nv">jptr</span><span class="ss">)</span>           <span class="cm">/* i &gt;= j なら */</span>
+            <span class="k">break</span><span class="c1">;                    /* 無限ループから抜ける */</span>
+        <span class="nv">swap</span><span class="ss">(</span><span class="nv">iptr</span>, <span class="nv">jptr</span><span class="ss">)</span><span class="c1">;             /* iとjを交換 */</span>
+            <span class="nv">iptr</span><span class="o">++</span><span class="c1">;                   /* 次のデータ */</span>
+            <span class="nv">jptr</span><span class="o">--</span><span class="c1">;</span>
+    }
+    <span class="k">if</span> <span class="ss">(</span><span class="nv">left</span> <span class="o">&lt;</span> <span class="nv">iptr</span> <span class="o">-</span> <span class="mi">1</span><span class="ss">)</span>              <span class="cm">/* 基準値の左に 2 以上要素があれば */</span>
+        <span class="nv">qsort</span><span class="ss">(</span><span class="nv">left</span>, <span class="nv">iptr</span> <span class="o">-</span> <span class="mi">1</span><span class="ss">)</span><span class="c1">;     /* 左の配列を Q ソートする */</span>
+    <span class="k">if</span> <span class="ss">(</span><span class="nv">jptr</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span>  <span class="nv">right</span><span class="ss">)</span>            <span class="cm">/* 基準値の右に 2 以上要素があれば */</span>
+        <span class="nv">qsort</span><span class="ss">(</span><span class="nv">jptr</span> <span class="o">+</span> <span class="mi">1</span>, <span class="nv">right</span><span class="ss">)</span><span class="c1">;    /* 右の配列を Q ソートする */</span>
+}
+<span class="cm">/* 要素を交換する */</span>
+<span class="nv">void</span> <span class="nv">swap</span><span class="ss">(</span><span class="nv">int</span> <span class="o">*</span><span class="nv">i</span>, <span class="nv">int</span> <span class="o">*</span><span class="nv">j</span><span class="ss">)</span>
+{
+    <span class="nv">int</span> <span class="nv">temp</span><span class="c1">;</span>
+    <span class="nv">temp</span> <span class="o">=</span> <span class="o">*</span><span class="nv">i</span><span class="c1">;</span>
+    <span class="o">*</span><span class="nv">i</span> <span class="o">=</span> <span class="o">*</span><span class="nv">j</span><span class="c1">;</span>
+    <span class="o">*</span><span class="nv">j</span> <span class="o">=</span> <span class="nv">temp</span><span class="c1">;</span>
+}
 </pre></div>
 </div>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span/><span class="n">void</span><span class="w"> </span><span class="n">qsort</span><span class="p">(</span><span class="nc">int</span><span class="w"> </span><span class="n">x</span><span class="err">[]</span><span class="p">,</span><span class="w"> </span><span class="nc">int</span><span class="w"> </span><span class="nf">left</span><span class="p">,</span><span class="w"> </span><span class="nc">int</span><span class="w"> </span><span class="nf">right</span><span class="p">)</span><span class="w"/>
-<span class="err">{</span><span class="w"/>
-<span class="w">    </span><span class="nc">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">;</span><span class="w"/>
-<span class="w">    </span><span class="nc">int</span><span class="w"> </span><span class="k">pivot</span><span class="p">;</span><span class="w"/>
-<span class="w">    </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">left</span><span class="p">;</span><span class="w">                      </span><span class="cm">/*</span>
-<span class="cm">ソートする配列の一番小さい要素の添字 */</span><span class="w"/>
-<span class="w">    </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">right</span><span class="p">;</span><span class="w">                     </span><span class="cm">/*</span>
-<span class="cm">ソートする配列の一番大きい要素の添字 */</span><span class="w"/>
-<span class="w">    </span><span class="k">pivot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="o">[</span><span class="n">(left + right) / 2</span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="cm">/* 基準値を配列の中央付近にとる */</span><span class="w"/>
-<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"/>
-<span class="w">    </span><span class="err">{</span><span class="w"/>
-<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="k">pivot</span><span class="p">)</span><span class="w">       </span><span class="cm">/* pivot より大きい値が */</span><span class="w"/>
-<span class="w">            </span><span class="n">i</span><span class="o">++</span><span class="p">;</span><span class="w">                   </span><span class="cm">/* 出るまで i を増加させる */</span><span class="w"/>
-<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="k">pivot</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">x</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">)</span><span class="w">       </span><span class="cm">/* pivot より小さい値が */</span><span class="w"/>
-<span class="w">            </span><span class="n">j</span><span class="c1">--;                   /*  出るまで j を減少させる */</span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">j</span><span class="p">)</span><span class="w">                </span><span class="cm">/* i &gt;= j なら */</span><span class="w"/>
-<span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w">                 </span><span class="cm">/* 無限ループから抜ける */</span><span class="w"/>
-<span class="w">        </span><span class="n">swap</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">);</span><span class="w">             </span><span class="cm">/* x[i] と x[j]を交換 */</span><span class="w"/>
-<span class="w">        </span><span class="n">i</span><span class="o">++</span><span class="p">;</span><span class="w">                       </span><span class="cm">/* 次のデータ */</span><span class="w"/>
-<span class="w">        </span><span class="n">j</span><span class="c1">--;</span>
-<span class="w">    </span><span class="err">}</span><span class="w"/>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nf">left</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w">              </span><span class="cm">/* 基準値の左に 2 以上要素があれば */</span><span class="w"/>
-<span class="w">        </span><span class="n">qsort</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="nf">left</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w">     </span><span class="cm">/* 左の配列を Q ソートする */</span><span class="w"/>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;</span><span class="w">  </span><span class="nf">right</span><span class="p">)</span><span class="w">            </span><span class="cm">/* 基準値の右に 2 以上要素があれば */</span><span class="w"/>
-<span class="w">        </span><span class="n">qsort</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nf">right</span><span class="p">);</span><span class="w">    </span><span class="cm">/* 右の配列を Q ソートする */</span><span class="w"/>
-<span class="err">}</span><span class="w"/>
-<span class="cm">/* 配列の要素を交換する */</span><span class="w"/>
-<span class="n">void</span><span class="w"> </span><span class="n">swap</span><span class="p">(</span><span class="nc">int</span><span class="w"> </span><span class="n">x</span><span class="err">[]</span><span class="p">,</span><span class="w"> </span><span class="nc">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="nc">int</span><span class="w"> </span><span class="n">j</span><span class="p">)</span><span class="w"/>
-<span class="err">{</span><span class="w"/>
-<span class="w">    </span><span class="nc">int</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span><span class="w"/>
-<span class="w">    </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span><span class="w"/>
-<span class="w">    </span><span class="n">x</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">;</span><span class="w"/>
-<span class="w">    </span><span class="n">x</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span><span class="w"/>
-<span class="err">}</span><span class="w"/>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span/><span class="nv">void</span> <span class="nv">qsort</span><span class="ss">(</span><span class="nv">int</span> <span class="nv">x</span>[], <span class="nv">int</span> <span class="nv">left</span>, <span class="nv">int</span> <span class="nv">right</span><span class="ss">)</span>
+{
+    <span class="nv">int</span> <span class="nv">i</span>, <span class="nv">j</span><span class="c1">;</span>
+    <span class="nv">int</span> <span class="nv">pivot</span><span class="c1">;</span>
+    <span class="nv">i</span> <span class="o">=</span> <span class="nv">left</span><span class="c1">;                      /*</span>
+ソートする配列の一番小さい要素の添字 <span class="o">*/</span>
+    <span class="nv">j</span> <span class="o">=</span> <span class="nv">right</span><span class="c1">;                     /*</span>
+ソートする配列の一番大きい要素の添字 <span class="o">*/</span>
+    <span class="nv">pivot</span> <span class="o">=</span> <span class="nv">x</span>[<span class="ss">(</span><span class="nv">left</span> <span class="o">+</span> <span class="nv">right</span><span class="ss">)</span> <span class="o">/</span> <span class="mi">2</span>]<span class="c1">; /* 基準値を配列の中央付近にとる */</span>
+    <span class="k">while</span><span class="ss">(</span><span class="mi">1</span><span class="ss">)</span>
+    {
+        <span class="k">while</span> <span class="ss">(</span><span class="nv">x</span>[<span class="nv">i</span>] <span class="o">&lt;</span> <span class="nv">pivot</span><span class="ss">)</span>       <span class="cm">/* pivot より大きい値が */</span>
+            <span class="nv">i</span><span class="o">++</span><span class="c1">;                   /* 出るまで i を増加させる */</span>
+        <span class="k">while</span> <span class="ss">(</span><span class="nv">pivot</span> <span class="o">&lt;</span> <span class="nv">x</span>[<span class="nv">j</span>]<span class="ss">)</span>       <span class="cm">/* pivot より小さい値が */</span>
+            <span class="nv">j</span><span class="o">--</span><span class="c1">;                   /*  出るまで j を減少させる */</span>
+        <span class="k">if</span> <span class="ss">(</span><span class="nv">i</span> <span class="o">&gt;=</span> <span class="nv">j</span><span class="ss">)</span>                <span class="cm">/* i &gt;= j なら */</span>
+            <span class="k">break</span><span class="c1">;                 /* 無限ループから抜ける */</span>
+        <span class="nv">swap</span><span class="ss">(</span><span class="nv">x</span>, <span class="nv">i</span>, <span class="nv">j</span><span class="ss">)</span><span class="c1">;             /* x[i] と x[j]を交換 */</span>
+        <span class="nv">i</span><span class="o">++</span><span class="c1">;                       /* 次のデータ */</span>
+        <span class="nv">j</span><span class="o">--</span><span class="c1">;</span>
+    }
+    <span class="k">if</span> <span class="ss">(</span><span class="nv">left</span> <span class="o">&lt;</span> <span class="nv">i</span> <span class="o">-</span> <span class="mi">1</span><span class="ss">)</span>              <span class="cm">/* 基準値の左に 2 以上要素があれば */</span>
+        <span class="nv">qsort</span><span class="ss">(</span><span class="nv">x</span>, <span class="nv">left</span>, <span class="nv">i</span> <span class="o">-</span> <span class="mi">1</span><span class="ss">)</span><span class="c1">;     /* 左の配列を Q ソートする */</span>
+    <span class="k">if</span> <span class="ss">(</span><span class="nv">j</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span>  <span class="nv">right</span><span class="ss">)</span>            <span class="cm">/* 基準値の右に 2 以上要素があれば */</span>
+        <span class="nv">qsort</span><span class="ss">(</span><span class="nv">x</span>, <span class="nv">j</span> <span class="o">+</span> <span class="mi">1</span>, <span class="nv">right</span><span class="ss">)</span><span class="c1">;    /* 右の配列を Q ソートする */</span>
+}
+<span class="cm">/* 配列の要素を交換する */</span>
+<span class="nv">void</span> <span class="nv">swap</span><span class="ss">(</span><span class="nv">int</span> <span class="nv">x</span>[], <span class="nv">int</span> <span class="nv">i</span>, <span class="nv">int</span> <span class="nv">j</span><span class="ss">)</span>
+{
+    <span class="nv">int</span> <span class="nv">temp</span><span class="c1">;</span>
+    <span class="nv">temp</span> <span class="o">=</span> <span class="nv">x</span>[<span class="nv">i</span>]<span class="c1">;</span>
+    <span class="nv">x</span>[<span class="nv">i</span>] <span class="o">=</span> <span class="nv">x</span>[<span class="nv">j</span>]<span class="c1">;</span>
+    <span class="nv">x</span>[<span class="nv">j</span>] <span class="o">=</span> <span class="nv">temp</span><span class="c1">;</span>
+}
 </pre></div>
 </div>
 ]]></description>

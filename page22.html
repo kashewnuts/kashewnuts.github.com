@@ -69,6 +69,165 @@
             <a href="http://feeds.feedburner.com/kashew_nuts-blog" title="Subscribe via RSS"><span class="fa fa-lg fa-rss"></span></a>
           </li></ul>
     </nav><div class="main-container" role="main"><div class="main wrapper body clearfix"><article><div class="timestamp postmeta">
+            <span>October 14, 2012</span>
+        </div>
+        <div class="section">
+            <h1><a href="2012/10/14/expertpython10.html">エキスパートPythonプログラミング読書会 第二期 10に参加しました。 #expertpython</a></h1>
+<div class="line-block">
+<div class="line"><a class="reference external" href="http://connpass.com/event/911/">エキスパートPythonプログラミング読書会 第二期 10 - connpass</a></div>
+<div class="line">に参加してきました。</div>
+</div>
+<p><a class="reference external" href="http://www.amazon.co.jp/exec/obidos/ASIN/4048686291/naoyadyndnsor-22/ref=nosim/"><img alt="エキスパートPythonプログラミング" src="http://ecx.images-amazon.com/images/I/51wSTTIQtgL._SL160_.jpg"/></a></p>
+<div class="line-block">
+<div class="line"><a class="reference external" href="http://www.amazon.co.jp/exec/obidos/ASIN/4048686291/naoyadyndnsor-22/ref=nosim/">エキスパートPythonプログラミング</a></div>
+<div class="line">posted with</div>
+<div class="line"><a class="reference external" href="http://www.amazlet.com/browse/ASIN/4048686291//ref=nosim/">amazlet</a></div>
+<div class="line">at 11.10.24</div>
+<div class="line">Tarek Ziade</div>
+<div class="line">アスキー・メディアワークス</div>
+<div class="line">売り上げランキング: 36822</div>
+<div class="line"><a class="reference external" href="http://www.amazon.co.jp/exec/obidos/ASIN/4048686291/naoyadyndnsor-22/ref=nosim/">Amazon.co.jp で詳細を見る</a></div>
+</div>
+<div class="line-block">
+<div class="line">当日の様子はこちら。</div>
+<div class="line"><a class="reference external" href="http://togetter.com/li/387248">エキスパートPythonプログラミング読書会 第二期 10 - Togetter</a></div>
+</div>
+<div class="line-block">
+<div class="line"><strong>1.アイスブレイク</strong></div>
+<div class="line">恒例のアイスブレイク、各島ごと(3名程度)で簡単に自己紹介をしました。</div>
+<div class="line">しかしお互いに見知った顔過ぎて、</div>
+<div class="line">自己紹介が茶番臭いというまさかの事態に(笑)。</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>2.「第8章 コードの管理」</strong></div>
+</div>
+<div class="line-block">
+<div class="line">-  2人以上だといろいろと難しい。</div>
+<div class="line">-  SCM(software configuration management) = VCS</div>
+<div class="line">-  中央集権型: サーバーがないとコミットできない</div>
+<div class="line">-  分散型: 複数の独立したローカルにコミットして同期をとる。</div>
+<div class="line">-  中央集中か、分散か。 →プロジェクト状況による。</div>
+<div class="line">-  PythonのVCSはHGに移行済み→<a class="reference external" href="http://hg.python.org/">hg.python.org</a></div>
+<div class="line">-  DVCSの種類→Git, Mercurial, Bazzar</div>
+<div class="line">-  ドキュメントとリソースファイルを一緒にするのは無理？</div>
+<div class="line-block">
+<div class="line">→この辺りに経緯がまとまってたりすので一度目を通すといいかも。</div>
+<div class="line"><a class="reference external" href="http://togetter.com/li/91517">svnからの切り替え先にbzrを検討するなど（最終的にはhgになった‥） - Togetter</a></div>
+<div class="line">→SVNは内部をUnicodeオブジェクトから外部に落とす時にエンコーディング返還してくれる。</div>
+<div class="line">→bzrはできる。hgは今頑張ってパッチ書いてる。Gitはまだ。</div>
+<div class="line">→設定はあるが、Gitはもう一段Windowsの問題がある。UIの件。</div>
+<div class="line">→コマンドラインをデザイナーさんに打ってもらうのはハードルが高い。</div>
+<div class="line">→日本語使えねーとMLとかにDDOSして下さい。</div>
+</div>
+<div class="line">-  unicodeのメソッドを使うと、大文字小文字の判定、濁点の問題チェック、</div>
+<div class="line-block">
+<div class="line">east_asian_widthで文字の幅のチェックとか色々できる。</div>
+</div>
+<div class="line">-  GitとHgは用語は対応してない。HgとSVNは似ている。</div>
+<div class="line-block">
+<div class="line">→簡略化しているように感じるかもしれないが、人に説明するにはこっちの方が楽(らしい)。</div>
+<div class="line">→Branchが一番違う。あとはHEADとか。addとか。</div>
+<div class="line">→ステージの概念はないので、MQとか使った方がいい。</div>
+<div class="line">→標準と拡張。</div>
+<div class="line">→Gitだと初めから色々出来るが、Hgだと拡張でやったりする。</div>
+<div class="line">→MQを入れると履歴を入れ替えたり、コミットの内容そのものを書き換えたりできる。</div>
+<div class="line">→Pythonでやると拡張も楽に書ける。内部のUnicodeとかもいじれる。</div>
+<div class="line">→Hookをいじると色々できるよ。</div>
+</div>
+<div class="line">-  hg serveと渡すと自分をサーバーにすることができる</div>
+<div class="line-block">
+<div class="line">→PUSHはできない。もう少し設定が必要。PUSHとかCLONEはできる。</div>
+</div>
+<div class="line">-  hgのコマンドは日本語マニュアル化されている。言語設定を日本語に設定すればOK。</div>
+<div class="line">-  hg help add -v とかすると、コマンドの実行例が見れる！</div>
+<div class="line-block">
+<div class="line">→オンラインで見るとほとんどわかるよ。でもPythonistaの人ならソース見たほうがはやいかも</div>
+</div>
+<div class="line">-  Mercurialでプロジェクト管理→Server立てる人が読めばいいと思うよ！</div>
+<div class="line">-  なんでHG？</div>
+<div class="line-block">
+<div class="line">→@shimizukawa hg。やりたいことに対してGitは複雑。</div>
+<div class="line">→@hirokiky hg。いざとなったらソース読めるし。安心感。</div>
+<div class="line">→@shomah4a</div>
+<div class="line">[STRIKEOUT:git。前SVNで。いやで、Hgでやってたのが、なんかのタイミングで壊れたのでGit触ったらいいじゃんと。]</div>
+<div class="line">誤解を招く表現になっていたので訂正。</div>
+<div class="line">なぜgitを選ばれたのかがご説明されています。</div>
+<div class="line"><a class="reference external" href="http://d.hatena.ne.jp/shomah4a/20121015/1350298801#c">Expert Python 読書会 第二期 10 #expertpython - プログラマのネタ帳</a></div>
+<div class="line">→???</div>
+<div class="line">SVNを触っていたが、gitやって、それで壊すのはどうなの？あとはTortoiseHGがいい。わかりやすい。</div>
+<div class="line">→@tfmagician</div>
+<div class="line">4年ぐらい前からGit。WebDBの初めてのGitの特集を読んで。管理は大変だが、</div>
+<div class="line">今更戻れない。あとGitHubが素晴らしい。PG管理のツールとしているので。</div>
+<div class="line">→@usaturn</div>
+<div class="line">Windowsを使っていたから。Cygwinで使えばそこそこだが、アンインストールできなかったことが…</div>
+<div class="line">Yokohama.pyの日にTokyoMercurialに参加することがったのでそれで。</div>
+</div>
+<div class="line">-  GitはSCM</div>
+<div class="line-block">
+<div class="line">bootcampのチューターの人でも「Windowsの人はVMにLinuxにいれた方がいいんじゃね？」</div>
+<div class="line">というレベル。</div>
+<div class="line">→ポータビリティーや使いやすさを重視するとHg。</div>
+</div>
+<div class="line">-  Buildbotは使わない方がいい。普通に使う分はJenkins。</div>
+<div class="line-block">
+<div class="line">→セットアップが面倒くさい。</div>
+<div class="line">→Jenkinsが有名でユーザーが多いし、皆がCIに求めるのはJenkins。</div>
+<div class="line">→Buildbotのいいところは、ユーザ参加型であること。(自分の環境でテストしてくれる)</div>
+</div>
+<div class="line">-  CIやっている人？→2人</div>
+<div class="line-block">
+<div class="line">→@shomah4a 会社はJenkins。JavaやPython。趣味はTravis CI</div>
+</div>
+<div class="line">-  この本はBuildbotは0.7で書いてあるが、0.8からソースコードが大きく分かられている。</div>
+<div class="line-block">
+<div class="line">→最新版0.8だとドキュメントを自力で読んだほうがはやい。</div>
+</div>
+<div class="line">-  DVCSの戦略 git-flowとか使ってるのか？</div>
+<div class="line-block">
+<div class="line">→カスタマイズしていたり、組織の文化による。</div>
+<div class="line">ex)枝は一本vs枝分かれ上等。Branch戦略について。</div>
+<div class="line">hg-flow, bpmercurial-workflowドキュメントなど</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>3.ビアバッシュ＆LT</strong></div>
+<div class="line">今回は仕事の都合で参加できなかったのが残念……</div>
+<div class="line">久しぶりのお寿司LTだったのでぜひとも参加したかったところですが、</div>
+<div class="line">また次回に期待ですね。</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>4.まとめ</strong></div>
+<div class="line">今回は@lincolinnyanさんの代役でTogetterまとめたりしましたが、</div>
+<div class="line">実際にその場で参加してないとわからないところがあるなーと思いました。</div>
+<div class="line">本は読みなおせばいいけど、LTはその場で聞かないとわからないので、</div>
+<div class="line">本編は聞けなくてもLTを聞ける時は迷わず参加したいですね。</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>参考リンク</strong></div>
+</div>
+<ul class="simple">
+<li><a class="reference external" href="http://troter.hatenablog.jp/entry/20120921/1348224166">PyCon JP 2012 で分散バージョン管理の組織化という話をしてきました - 放牧日記</a></li>
+<li><a class="reference external" href="http://beproud.bitbucket.io/bpmercurial-workflow/ja/">bpmercurial-workflow v1.0 documentation</a></li>
+</ul>
+
+        </div>
+        <div class="postmeta">
+        <div class="author">
+            <span>Posted by Kashun YOSHIDA</span>
+        </div>
+        <div class="categories">
+            <span>
+                Filed under:
+                <a href="categories/勉強会.html">勉強会</a>, <a href="categories/本.html">本</a>, <a href="categories/python.html">Python</a></span>
+        </div>
+        <div class="tags">
+            <span>
+                Tags:
+                <a href="tags/勉強会.html">勉強会</a>, <a href="tags/本.html">本</a>, <a href="tags/python.html">Python</a></span>
+        </div>
+        <div class="comments">
+            <a href="http://kashewnuts.github.io/2012/10/14/expertpython10.html#disqus_thread" data-disqus-identifier="2012/10/14/expertpython10">Leave a comment</a>
+        </div></div><div class="separator post_separator"></div><div class="timestamp postmeta">
             <span>October 07, 2012</span>
         </div>
         <div class="section">
@@ -208,145 +367,6 @@ Togetter</a></li>
         </div>
         <div class="comments">
             <a href="http://kashewnuts.github.io/2012/10/02/itmatsuri_before.html#disqus_thread" data-disqus-identifier="2012/10/02/itmatsuri_before">Leave a comment</a>
-        </div></div><div class="separator post_separator"></div><div class="timestamp postmeta">
-            <span>September 15, 2012</span>
-        </div>
-        <div class="section">
-            <h1><a href="2012/09/15/pyconjp2012.html">PyConJP2012 スライド・資料まとめ</a></h1>
-<div class="line-block">
-<div class="line">公式サイト： <a class="reference external" href="http://2012.pycon.jp/index.html">PyCon JP 2012 開催します！ - PyCon JP 2012</a></div>
-<div class="line">発表風景： <a class="reference external" href="http://www.youtube.com/user/PyConJP/videos?view=0">PyConJP - YouTube</a></div>
-<div class="line">[STRIKEOUT:一日目参加してきました。]</div>
-<div class="line">[STRIKEOUT:二日目参加中です。]</div>
-<div class="line">参加者・発表者のみなさんお疲れ様でした。</div>
-<div class="line">見つけられた発表者スライド・資料をまとめてみます。</div>
-<div class="line">「これが足りないよ！」というのがあれば、</div>
-<div class="line">URL付きでTwitterにメンションなり、</div>
-<div class="line">連絡いただければ追加します。 というか是非連絡お願いします。</div>
-</div>
-<div class="line-block">
-<div class="line"><strong>Togetter・Twitterまとめ</strong></div>
-</div>
-<ul class="simple">
-<li><a class="reference external" href="http://togetter.com/li/373919">PyConJP 2012 1 日目 オープニング 〜 基調講演 - Togetter</a></li>
-<li><a class="reference external" href="http://togetter.com/li/373922">PyConJP 2012 1 日目 昼まで。 #PyConJP - Togetter</a></li>
-<li><a class="reference external" href="http://togetter.com/li/373973">PyConJP 2012 1 日目 昼から１コマ目 #PyConJP - Togetter</a></li>
-<li><a class="reference external" href="http://togetter.com/li/373974">PyConJP 2012 1 日目 14:30 - 15:15 台 #PyConJP - Togetter</a></li>
-<li><a class="reference external" href="http://togetter.com/li/373978">PyConJP 2012 1 日目 15:30 - LT 前まで #PyConJP - Togetter</a></li>
-<li><a class="reference external" href="http://togetter.com/li/373981">PyConJP 2012 1 日目 LT - Party #PyConJP - Togetter</a></li>
-<li><a class="reference external" href="http://togetter.com/li/373986">PyConJP 2012 ２日目 開始 - 午前１コマ目 #PyConJP - Togetter</a></li>
-<li><a class="reference external" href="http://togetter.com/li/373990">PyConJP 2012 ２日目 11:00-11:45 ぐらい #PyConJP - Togetter</a></li>
-<li><a class="reference external" href="http://togetter.com/li/374000">PyConJP 2012 ２日目 昼＆オープンスペース #PyConJP - Togetter</a></li>
-<li><a class="reference external" href="http://togetter.com/li/374005">PyConJP 2012 ２日目 基調講演 #PyConJP - Togetter</a></li>
-<li><a class="reference external" href="http://togetter.com/li/374048">PyConJP 2012 ２日目 午後２コマ目 15:15 - 16:00 #PyConJP - Togetter</a></li>
-<li><a class="reference external" href="http://togetter.com/li/374055">PyConJP 2012 ２日目 TeaBreak #PyConJP - Togetter</a></li>
-<li><a class="reference external" href="http://togetter.com/li/374083">PyConJP 2012 ２日目 午後２コマ目 16:45 - 17:30 #PyConJP - Togetter</a></li>
-<li><a class="reference external" href="http://togetter.com/li/374105">PyConJP 2012 ２日目 午後３コマ目 17:45-18:30 #PyConJP - Togetter</a></li>
-<li><a class="reference external" href="http://togetter.com/li/374769">PyConJP 2012 ２日目 Closing から日付変わるまで #PyConJP - Togetter</a></li>
-<li><a class="reference external" href="http://togetter.com/li/374777">PyConJP 2012 ３日目 Sprint #PyConJP - Togetter</a></li>
-<li><a class="reference external" href="https://yukar.in/note/ckFktP">世界初のSphinxカンファレンス『SphinxConJP』 - Yukarin Note</a></li>
-</ul>
-<p><strong>1日目</strong></p>
-<ul class="simple">
-<li><a class="reference external" href="http://www.slideshare.net/takanory/pycon-jp-2012-opening">PyCon JP 2012 Opening</a></li>
-<li><a class="reference external" href="https://speakerdeck.com/u/mitsuhiko/p/happiness-through-ignorance">Happiness Through Ignorance // Speaker Deck</a>
-<a class="reference external" href="http://dev.pocoo.org/~mitsuhiko/happiness.pdf">(PDF版はこちら)</a></li>
-<li><a class="reference external" href="http://pyconjp2012-python-for-beginners.readthedocs.org/en/latest/index.html">PyCon JP 2012 Pythonプログラミングハンズオン(初級者向け) — documentation</a></li>
-<li><a class="reference external" href="http://www.slideshare.net/hirokiky/django14">使えるDjango1.4</a> -  <a class="reference external" href="https://docs.google.com/presentation/d/1yb7DIzKA8agVBNpwWCpttzRwDWgJWI-HFTduTMxcQIE/edit#slide=id.p">App Engine Updates 2012 - Google Docs</a></li>
-<li><a class="reference external" href="https://speakerdeck.com/u/yosida95/p/2012-dot-09-dot-15-pycon-jp-2012-%5Bnaudeyanguna17sui-falsevps-gou-zhu-ji-%5D">2012.09.15 PyCon JP 2012 「ナウでヤングな17歳のVPS 構築機」 // Speaker Deck</a></li>
-<li><a class="reference external" href="http://www.slideshare.net/hychen/python-type-and-object">Python Type and Object</a></li>
-<li><a class="reference external" href="http://www.slideshare.net/hychen/python-typebased-class-vs-javascript-prototype-coscup-2012">Python Type-based class v.s JavaScript prototype @COSCUP 2012</a></li>
-<li><a class="reference external" href="http://www.slideshare.net/lab1092/20120915-pythonblender">20120915 Pythonは本当にBlenderの役に立っているか?</a></li>
-<li><a class="reference external" href="http://www.slideshare.net/RansuiIso/python-14315727">ソフトシンセを作りながら学ぶPythonプログラミング</a> -  <a class="reference external" href="http://troter.jp/pyconjp-2012-dvcs/#slide1">(分散)バージョン管理システムの組織化</a></li>
-<li><a class="reference external" href="http://tell-k.github.com/pyconjp2012/">SQLALchemyと僕</a></li>
-<li><a class="reference external" href="https://docs.google.com/presentation/d/1itvvB_sVJSH30cR479PSeaHjnVDMvy3KNr9R_G5-MEs/edit#slide=id.p">NDB - Google App Engine Datastore API - Google Docs</a></li>
-<li><a class="reference external" href="http://www.slideshare.net/satokencat/bp2012">Beginning Python</a></li>
-<li><a class="reference external" href="http://shimizukawa.bitbucket.io/refactoring-python-beginners-code/index.html">Refactoring A Python Beginner’s Code</a></li>
-<li><a class="reference external" href="http://www.slideshare.net/jbking/pyramid-security">Pyramid Security</a></li>
-<li><a class="reference external" href="https://docs.google.com/presentation/d/1-oO3qw9cS5aKApI2wjJwGAj0g0udnbuBp-tkW-90-Uw/edit#slide=id.p">Build system written in Python #pyconjp - Google Docs</a></li>
-<li><a class="reference external" href="http://hdknr.bitbucket.io/celery/">Django-Celeryで非同期処理 — Django-Celeryで非同期処理 1 documentation</a></li>
-<li><a class="reference external" href="http://www.slideshare.net/takanory/kabepy">#kabepy</a></li>
-<li><a class="reference external" href="http://www.slideshare.net/yutakitagami/pycon-jp2012">Pythonistaの働き方</a></li>
-<li><a class="reference external" href="http://www.slideshare.net/oohatatakahiro/paas-nifty-cloud-c4sa">国産 PaaS 、NIFTY Cloud C4SA の中身</a></li>
-<li><a class="reference external" href="http://www.slideshare.net/TakeshiKomiya/excel-201209-pyconjp">Excel 方眼紙撲滅委員会 活動報告 2012.09 #pyconjp</a></li>
-<li><a class="reference external" href="http://www.slideshare.net/hychen/what-can-meta-class-do-for-you-pycon-taiwan-2012">What can meta class do for you? @PyCon Taiwan 2012</a></li>
-<li><a class="reference external" href="http://www.slideshare.net/takanory/himopy-sprint-report-in-pycon-jp-sprints">#himopy Sprint report in Pycon JP Sprints</a></li>
-<li><a class="reference external" href="http://www.slideshare.net/likr/pyopenclgpgpu">PyOpenCLによるGPGPU入門</a></li>
-<li><a class="reference external" href="http://pykyoto201109-pyopencl.s3-website-ap-northeast-1.amazonaws.com/pyopencl.html">PyOpenCLハンズオン in kyoto.py（2011年9月24日） — pykyoto201109 v1 documentation</a></li>
-<li><a class="reference external" href="http://nakagami.github.com/PyConJP2012LT/#encouragement-of-porting-python-3">Encouragement of porting Python 3</a></li>
-</ul>
-<p><strong>2日目</strong></p>
-<ul class="simple">
-<li><a class="reference external" href="https://github.com/atsuoishimoto/pyconjp_2012/blob/master/PyConJP_2012.pdf">atsuoishimoto/pyconjp_2012 GitHub</a></li>
-<li><a class="reference external" href="https://github.com/ryotaro/pyconjp2012slide/blob/master/master/Fundamental%20Technologies%20Used%20in%20PyPy%20JIT%20Compiler.pptx">pyconjp2012slide/master/Fundamental Technologies Used in PyPy JIT Compiler.pptx at master · ryotaro/pyconjp2012slide · GitHub</a></li>
-<li><a class="reference external" href="https://docs.google.com/presentation/d/1OtpW317WOwc3G2NXjAmFzs5iD66dCDHhpG08lVd9PxU/edit#slide=id.p">続・Python on Windows Azure - Google Docs</a></li>
-<li><a class="reference external" href="http://ymotongpoo.hatenablog.com/entry/2012/09/16/090842">Pythonを取り巻く開発環境（PyCon JP 2012資料 #pyconjp） - YAMAGUCHI::weblog</a></li>
-<li><a class="reference external" href="https://github.com/knzm/pyconjp2012/wiki">knzm/pyconjp2012 Wiki GitHub</a></li>
-<li><a class="reference external" href="http://www.dan.co.jp/~dankogai/pyconjp2012/python.html">dankogai @ 2012.pycon.jp</a></li>
-<li><a class="reference external" href="https://github.com/methane/pyconjp2012-gevent-slide">methane/pyconjp2012-gevent-slide GitHub</a></li>
-<li><a class="reference external" href="http://www.slideshare.net/TakeshiKomiya/sphinx-2012-pyconjp-sphinxconjp">Sphinx ではじめるドキュメント生活 2012 #pyconjp #sphinxconjp</a></li>
-<li><a class="reference external" href="http://tdoc.info/sphinxcon2012/">Sphinx拡張 探訪 — SphinxCon 2012 documentation</a></li>
-<li><a class="reference external" href="http://www.slideshare.net/torufurukawa/trying-continuous-delivery-pyconjp-2012">Trying Continuous Delivery - pyconjp 2012</a></li>
-<li><a class="reference external" href="https://speakerdeck.com/u/kawanoshinobu/p/pyconjp-2012-try-sublime-text">Try! Sublime Text // Speaker Deck</a></li>
-<li><a class="reference external" href="http://www.slideshare.net/shimizukawa/sphinx-pyconjp-2012">Sphinxを使って本を書こう #pyconjp 2012</a></li>
-<li><a class="reference external" href="http://shkumagai.github.com/slides/sphinxcon.jp.201209/#/title">Sphinx HTML Theme Primer</a></li>
-<li><a class="reference external" href="https://gist.github.com/3730720">hekyou Docutilsについて — Gist</a></li>
-<li><a class="reference external" href="http://www.slideshare.net/tfmagician/python-on-windows-azure">ミニ四駆でPython on Windows Azure</a></li>
-<li><a class="reference external" href="http://www.slideshare.net/TomomiK/python-14305984">Pythonコミュニティが私に与えてくれたもの</a></li>
-<li><a class="reference external" href="http://www.slideshare.net/everes/web-at-pyconjp-2012">Webフレームワークパネル（Django） at PyConJP 2012</a></li>
-<li><a class="reference external" href="http://www.slideshare.net/takanory/pycon-jp-2012-closing">PyCon JP 2012 Closing</a></li>
-<li><a class="reference external" href="http://www.slideshare.net/takanory/pycon-jp-2012-sprints">PyCon JP 2012 Sprints</a></li>
-<li><a class="reference external" href="http://www.slideshare.net/takanory/himopy-sprint-report-in-pycon-jp-sprints">#himopy Sprint report in Pycon JP Sprints</a></li>
-</ul>
-<p><strong>Pictures</strong></p>
-<ul class="simple">
-<li><a class="reference external" href="https://plus.google.com/photos/111021918302550652188/albums/5788406469050669409?banner=pwa">PyCon JP 2012 準備 - Google+</a></li>
-<li><a class="reference external" href="https://plus.google.com/photos/111021918302550652188/albums/5788406469050669409?banner=pwa">PyCon JP 2012 Day1 - Google+</a></li>
-<li><a class="reference external" href="https://plus.google.com/photos/111021918302550652188/albums/5788426421910287617?banner=pwa">PyCon JP 2012 Party - Google+</a></li>
-<li><a class="reference external" href="https://plus.google.com/photos/111021918302550652188/albums/5788777355713696849">PyCon JP 2012 Day2 - Google+</a></li>
-<li><a class="reference external" href="https://plus.google.com/photos/111021918302550652188/albums/5789162104962575921?banner=pwa">PyCon JP 2012 Sprint - Google+</a></li>
-</ul>
-<p><strong>併設イベントまとめ</strong></p>
-<ul class="simple">
-<li><a class="reference external" href="http://djangoproject.jp/weblog/2012/09/17/django-pyramid-con-jp-2012-finished/">Django Pyramid Con JP 2012 開催しました | Djangoと日本の仲間たち</a></li>
-<li><a class="reference external" href="http://sphinx-users.jp/event/20120916_sphinxconjp/index.html">SphinxCon JP 2012 開催 (2012/9/16) :: ドキュメンテーションツール スフィンクス Sphinx-users.jp</a></li>
-</ul>
-<p><strong>参加者Blog</strong></p>
-<ul class="simple">
-<li><a class="reference external" href="http://blog.kzfmix.com/entry/1347711071">PyConJP2012一日目</a></li>
-<li><a class="reference external" href="http://zafiel.wingall.com/archives/5365">PyCon JP 2012に参加して刺激を受けてきた #pyconjp | Azrael</a></li>
-<li><a class="reference external" href="http://d.hatena.ne.jp/atasatamatara/20120916/1347812985">pyconjp2012 行ってきたよ各セッション感想 #pyconjp - AtAsAtAmAtArA</a></li>
-<li><a class="reference external" href="http://d.hatena.ne.jp/atasatamatara/20120916/1347813137">小飼弾氏の基調講演を聞いて各言語の join と正規表現の実装についてなんかまあ考えた話 #pyconjp - AtAsAtAmAtArA</a></li>
-<li><a class="reference external" href="http://d.hatena.ne.jp/fuyumi3/20120917/1347850563">PyCon Jp 2012 の「Top of Pythonista」で2位になりました！ - ふゆみけ</a></li>
-<li><a class="reference external" href="http://tdoc.info/blog/2012/09/17/sphinxcon2012.html">SphinxCon 2012で発表してきました。 — そこはかとなく書くよん。</a></li>
-<li><a class="reference external" href="http://kshigeru.blogspot.jp/2012/09/pyconjp2012-presentation.html?spref=tw">Ars longa, vita brevis: pyconjp で発表してきた #pyconjp</a></li>
-<li><a class="reference external" href="http://d.hatena.ne.jp/naka-06_18/20120918/1347975258?fb_action_ids=4529894766328%2C4529840164963&amp;fb_action_types=og.likes&amp;fb_source=other_multiline&amp;action_object_map=%7B%224529894766328%22%3A104027663087775%2C%224529840164963%22%3A227757840683644%7D&amp;action_type_map=%7B%224529894766328%22%3A%22og.likes%22%2C%224529840164963%22%3A%22og.likes%22%7D&amp;action_ref_map=%5B%5D">PyCon JP 2012 で発表を聞いたり、当日スタッフをしたりしてきました - 断章10100</a></li>
-<li><a class="reference external" href="http://d.hatena.ne.jp/shomah4a/20120918/1347987799">PyCon JP 2012 で広報してきた #pyconjp - プログラマのネタ帳</a></li>
-<li><a class="reference external" href="http://blog.livedoor.jp/ryu22e/archives/65709074.html">ryu22eBlog : PyCon JP 2012に参加しました #pyconjp</a></li>
-<li><a class="reference external" href="http://pr.zero-start.jp/archives/65708811.html">【レポート】PyCon JP 2012 にスタッフとして参加しました！ #pyconjp : ゼロスタートの広報ブログ</a></li>
-<li><a class="reference external" href="http://d.hatena.ne.jp/hekyou/20120917/p1">SphinxCon JP 2012で発表させて頂きました - へきょのーと</a></li>
-<li><a class="reference external" href="http://ymotongpoo.hatenablog.com/entry/2012/09/18/222602">PyCon JP 2012に参加した #pyconjp - YAMAGUCHI::weblog</a></li>
-<li><a class="reference external" href="http://d.nishimotz.com/archives/1346">nishimotzの日記 · NVDAワークショップ・意見交換会が終了</a></li>
-<li><a class="reference external" href="http://fumit.blogspot.jp/2012/09/pycon-jp-2012-pyconjp.html">Fumi’s Travelblog: PyCon JP 2012 #pyconjp</a></li>
-</ul>
-
-        </div>
-        <div class="postmeta">
-        <div class="author">
-            <span>Posted by Kashun YOSHIDA</span>
-        </div>
-        <div class="categories">
-            <span>
-                Filed under:
-                <a href="categories/プログラミング.html">プログラミング</a>, <a href="categories/勉強会.html">勉強会</a>, <a href="categories/git_mercurial.html">Git/Mercurial</a>, <a href="categories/django.html">Django</a>, <a href="categories/google.html">Google</a>, <a href="categories/python.html">Python</a></span>
-        </div>
-        <div class="tags">
-            <span>
-                Tags:
-                <a href="tags/プログラミング.html">プログラミング</a>, <a href="tags/勉強会.html">勉強会</a>, <a href="tags/git_mercurial.html">Git/Mercurial</a>, <a href="tags/django.html">Django</a>, <a href="tags/google.html">Google</a>, <a href="tags/python.html">Python</a></span>
-        </div>
-        <div class="comments">
-            <a href="http://kashewnuts.github.io/2012/09/15/pyconjp2012.html#disqus_thread" data-disqus-identifier="2012/09/15/pyconjp2012">Leave a comment</a>
         </div></div><div class="archive_link">
         <a href="archive.html"> &mdash; Blog Archive &mdash; </a>
     </div><ul class="related clearfix">
@@ -365,6 +385,8 @@ Togetter</a></li>
 </div></section><section><div class="widget">
     <h1>Recent Posts</h1>
     <ul><li>
+            <a href="2020/05/05/upgrade_ubuntu_20_04_lts.html">Ubuntu18.04LTSから20.04LTSにアップグレードした</a>
+        </li><li>
             <a href="2020/04/08/migrated_lsp_client_to_coc_nvim.html">LSPクライアントをcoc.nvimにした話</a>
         </li><li>
             <a href="2019/01/28/move_from_jedivim_to_vimlsp.html">Pythonの補完環境をjedi-vimからvim-lspに移行した話</a>
@@ -382,13 +404,11 @@ Togetter</a></li>
             <a href="2018/07/15/pycon9shu.html">PyCon Kyushuで登壇してきました #PyCon9shu</a>
         </li><li>
             <a href="2018/06/24/pypro3.html">Pythonプロフェッショナルプログラミング第3版 #pypro3 が出版されました</a>
-        </li><li>
-            <a href="2018/05/21/djangocongress2018.html">#djangocongress JP 2018に参加しました</a>
         </li></ul>
 </div>
 </section><section><div class="widget">
     <h1>Categories</h1>
-    <ul><li><a href="categories/64bit.html">64bit</a> (2)</li><li><a href="categories/android.html">Android</a> (3)</li><li><a href="categories/bouldering.html">bouldering</a> (2)</li><li><a href="categories/bouldering.html">Bouldering</a> (3)</li><li><a href="categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="categories/c_c.html">C/C++</a> (5)</li><li><a href="categories/chrome.html">Chrome</a> (2)</li><li><a href="categories/db.html">DB</a> (1)</li><li><a href="categories/django.html">Django</a> (10)</li><li><a href="categories/facebook.html">Facebook</a> (1)</li><li><a href="categories/firefox.html">Firefox</a> (1)</li><li><a href="categories/git_mercurial.html">Git/Mercurial</a> (8)</li><li><a href="categories/golang.html">Golang</a> (1)</li><li><a href="categories/google.html">Google</a> (5)</li><li><a href="categories/heroku.html">Heroku</a> (6)</li><li><a href="categories/java.html">Java</a> (2)</li><li><a href="categories/javascript.html">JavaScript</a> (4)</li><li><a href="categories/jupyter.html">Jupyter</a> (1)</li><li><a href="categories/kabepy.html">kabepy</a> (2)</li><li><a href="categories/linux.html">Linux</a> (3)</li><li><a href="categories/lt.html">LT</a> (5)</li><li><a href="categories/mac.html">Mac</a> (8)</li><li><a href="categories/pycharm.html">PyCharm</a> (2)</li><li><a href="categories/pyconjp.html">PyConJP</a> (1)</li><li><a href="categories/pyfes.html">pyfes</a> (7)</li><li><a href="categories/python.html">Python</a> (70)</li><li><a href="categories/slack.html">Slack</a> (1)</li><li><a href="categories/sphinx.html">Sphinx</a> (8)</li><li><a href="categories/sqlalchemy.html">SQLAlchemy</a> (1)</li><li><a href="categories/ssd.html">SSD</a> (1)</li><li><a href="categories/tddbc.html">TDDBC</a> (1)</li><li><a href="categories/tinkerer.html">Tinkerer</a> (7)</li><li><a href="categories/tmux.html">tmux</a> (1)</li><li><a href="categories/ubuntu.html">Ubuntu</a> (2)</li><li><a href="categories/vagrant.html">Vagrant</a> (1)</li><li><a href="categories/vim.html">Vim</a> (24)</li><li><a href="categories/vimconf.html">VimConf</a> (3)</li><li><a href="categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="categories/windows.html">Windows</a> (2)</li><li><a href="categories/windows7.html">Windows7</a> (4)</li><li><a href="categories/アルゴリズム.html">アルゴリズム</a> (1)</li><li><a href="categories/セキュリティ.html">セキュリティ</a> (2)</li><li><a href="categories/ネットワーク.html">ネットワーク</a> (1)</li><li><a href="categories/プログラミング.html">プログラミング</a> (7)</li><li><a href="categories/勉強会.html">勉強会</a> (30)</li><li><a href="categories/応用情報技術者.html">応用情報技術者</a> (10)</li><li><a href="categories/情報処理技術者試験.html">情報処理技術者試験</a> (10)</li><li><a href="categories/本.html">本</a> (29)</li><li><a href="categories/開発環境.html">開発環境</a> (11)</li><li><a href="categories/雑記.html">雑記</a> (38)</li><li><a href="categories/高速化.html">高速化</a> (1)</li></ul>
+    <ul><li><a href="categories/64bit.html">64bit</a> (2)</li><li><a href="categories/android.html">Android</a> (3)</li><li><a href="categories/bouldering.html">bouldering</a> (2)</li><li><a href="categories/bouldering.html">Bouldering</a> (3)</li><li><a href="categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="categories/c_c.html">C/C++</a> (5)</li><li><a href="categories/chrome.html">Chrome</a> (2)</li><li><a href="categories/db.html">DB</a> (1)</li><li><a href="categories/django.html">Django</a> (10)</li><li><a href="categories/facebook.html">Facebook</a> (1)</li><li><a href="categories/firefox.html">Firefox</a> (1)</li><li><a href="categories/git_mercurial.html">Git/Mercurial</a> (8)</li><li><a href="categories/golang.html">Golang</a> (1)</li><li><a href="categories/google.html">Google</a> (5)</li><li><a href="categories/heroku.html">Heroku</a> (6)</li><li><a href="categories/java.html">Java</a> (2)</li><li><a href="categories/javascript.html">JavaScript</a> (4)</li><li><a href="categories/jupyter.html">Jupyter</a> (1)</li><li><a href="categories/kabepy.html">kabepy</a> (2)</li><li><a href="categories/linux.html">Linux</a> (4)</li><li><a href="categories/lt.html">LT</a> (5)</li><li><a href="categories/mac.html">Mac</a> (8)</li><li><a href="categories/pycharm.html">PyCharm</a> (2)</li><li><a href="categories/pyconjp.html">PyConJP</a> (1)</li><li><a href="categories/pyfes.html">pyfes</a> (7)</li><li><a href="categories/python.html">Python</a> (70)</li><li><a href="categories/slack.html">Slack</a> (1)</li><li><a href="categories/sphinx.html">Sphinx</a> (8)</li><li><a href="categories/sqlalchemy.html">SQLAlchemy</a> (1)</li><li><a href="categories/ssd.html">SSD</a> (1)</li><li><a href="categories/tddbc.html">TDDBC</a> (1)</li><li><a href="categories/tinkerer.html">Tinkerer</a> (7)</li><li><a href="categories/tmux.html">tmux</a> (1)</li><li><a href="categories/ubuntu.html">Ubuntu</a> (3)</li><li><a href="categories/vagrant.html">Vagrant</a> (1)</li><li><a href="categories/vim.html">Vim</a> (24)</li><li><a href="categories/vimconf.html">VimConf</a> (3)</li><li><a href="categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="categories/windows.html">Windows</a> (2)</li><li><a href="categories/windows7.html">Windows7</a> (4)</li><li><a href="categories/アルゴリズム.html">アルゴリズム</a> (1)</li><li><a href="categories/セキュリティ.html">セキュリティ</a> (2)</li><li><a href="categories/ネットワーク.html">ネットワーク</a> (1)</li><li><a href="categories/プログラミング.html">プログラミング</a> (7)</li><li><a href="categories/勉強会.html">勉強会</a> (30)</li><li><a href="categories/応用情報技術者.html">応用情報技術者</a> (10)</li><li><a href="categories/情報処理技術者試験.html">情報処理技術者試験</a> (10)</li><li><a href="categories/本.html">本</a> (29)</li><li><a href="categories/開発環境.html">開発環境</a> (11)</li><li><a href="categories/雑記.html">雑記</a> (38)</li><li><a href="categories/高速化.html">高速化</a> (1)</li></ul>
 </div></section><section><div class="widget">
     <h1>About Me</h1>
     <div>

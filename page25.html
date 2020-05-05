@@ -69,6 +69,115 @@
             <a href="http://feeds.feedburner.com/kashew_nuts-blog" title="Subscribe via RSS"><span class="fa fa-lg fa-rss"></span></a>
           </li></ul>
     </nav><div class="main-container" role="main"><div class="main wrapper body clearfix"><article><div class="timestamp postmeta">
+            <span>May 16, 2012</span>
+        </div>
+        <div class="section">
+            <h1><a href="2012/05/16/expertpython06.html">「エキスパートPythonプログラミング読書会 第二期 06」に参加してきました。</a></h1>
+<div class="line-block">
+<div class="line"><a class="reference external" href="http://connpass.com/event/422/">エキスパートPythonプログラミング読書会 第二期 06 - connpass</a></div>
+<div class="line">参加してきました。</div>
+<div class="line">1回来ないと随分久しぶりな気がしますね。</div>
+<div class="line">あいにくの雨でしたが楽しんでこれました。</div>
+</div>
+<div class="line-block">
+<div class="line">当日の様子は@lincolinnyanさんがまとめてくれています。</div>
+<div class="line"><a class="reference external" href="http://togetter.com/li/304053">エキスパートPythonプログラミング読書会 第二期 06 - Togetter</a></div>
+</div>
+<div class="line-block">
+<div class="line">全体としてはサクサクテンポよく進んでいました。</div>
+<div class="line">テーマが「良い名前を選ぶ」で、</div>
+<div class="line">コードがあまりでてこなかったからかもしれませんね。</div>
+<div class="line">流れとしては以下のとおり。</div>
+</div>
+<div class="line-block">
+<div class="line">1.アイスブレイク</div>
+<div class="line">2.読書会</div>
+<div class="line">3.ビアバッシュ＆LT</div>
+</div>
+<div class="line-block">
+<div class="line">1.アイスブレイク</div>
+<div class="line">毎度おなじみアイスブレイク。</div>
+<div class="line">今回も各島ごとに行いました。</div>
+<div class="line">自分以外の方は皆さんアプリや自社サービスを行なっている方々ばかり。</div>
+<div class="line">@tfmagicianさんがPyramidについて熱弁されてました。</div>
+</div>
+<div class="line-block">
+<div class="line">2.読書会</div>
+<div class="line">特に気になった点をいくつか。</div>
+<div class="line">- PEP8…命名規則。コーディングルールについてまとめたもの。</div>
+<div class="line">日本語訳はこちら</div>
+<div class="line"><a class="reference external" href="http://oldriver.org/python/pep-%200008j.html">PEP 8 - - Style Guide for Python Code</a></div>
+<div class="line">ex)</div>
+<div class="line">デリミタで揃える</div>
+<div class="line">トップレベルの関数のクラス定義の間は、２行あける</div>
+<div class="line">演算子の前後にスペースを１つ入れる</div>
+<div class="line">チェックツール:PEP8, pyflakes</div>
+<div class="line">小話:Googleは昔インデントスペース２だったのが、４に変わったらしい。</div>
+<div class="line">- パブリック変数とプライベート変数</div>
+<div class="line">Rubyだとよく使うメソッドは名前を短く,</div>
+<div class="line">あまり使わないものは名前を長くする慣習があるらしい。</div>
+<div class="line">Pythonの場合は短くするよりも意図をわかりやすく表現するほうが大切。</div>
+<div class="line">- プライベート変数を保護する仕組みはPythonにはない。</div>
+<div class="line">それっぽいものはあるがプライベートメソッド,フィールドは存在しない。</div>
+<div class="line">複雑になるから。Pythonは元々クラスの概念がなかった。</div>
+<div class="line">クラスの概念を導入する段階で付けなかった。</div>
+<div class="line">継承してプライベートと扱うのはメリットがなかったと考えられる。</div>
+<div class="line">- 特殊メソッドは継承、マンダリングされません。</div>
+<div class="line">- importする時にallや*はなるべく書かないようにしましょう。</div>
+<div class="line">- 引数のベストプラクティス</div>
+<div class="line">引数は少しずつ作ろう。必要なものだけ追加していこう。</div>
+<div class="line">引数とテストを信頼しよう。つまり「テスト書こう。」</div>
+<div class="line">*argsと**kwには注意。本当に着ているか確認するのに、</div>
+<div class="line">if文をたくさん書かないといけなくなる。</div>
+<div class="line">→フレームワークを作る時や、デコレータを実装する時、</div>
+<div class="line">メタプログラミングなどはどうしても必要になってくのだけど、</div>
+<div class="line">気をつけて使おう。</div>
+<div class="line">- パッケージ名をつけるのは難しい。</div>
+<div class="line">グランドルールはPEP8として、ローカルルールでわかりやすくするなど、</div>
+<div class="line">読みにくくなる場合はPEP8を破ってもいいのではないか。</div>
+<div class="line">- pylintやPEP8とかは今だとCIと組み合わせて</div>
+<div class="line">自動レポートとかうまくできるようになる。</div>
+<div class="line">- docstring, testcode, 使い方を書くと実装の構成の方にフィードバックを</div>
+<div class="line">かける時にテストとしてはやりやすくなる。それを反復し、実装に</div>
+<div class="line">反映させていく。</div>
+<div class="line">- Pythonのインタプリタから</div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span/>import antigravity
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">って打つと、デフォルトのブラウザから</div>
+<div class="line"><a class="reference external" href="http://xkcd.com/353/">xkcd: Python</a>が見れる。</div>
+</div>
+<div class="line-block">
+<div class="line">3.ビアバッシュ＆LT</div>
+<div class="line">@takanoryさんの「PyCon台湾行くよ！壁Py宣伝してくるよ！」</div>
+<div class="line">@shiumachiさんの「Hadoop documentの更新日時検索作りました</div>
+<div class="line">(←名前が思い出せない)」</div>
+<div class="line">@aodagさんの「フレームワークなしでWSGIプログラミング」からのbuchoパッケージ紹介</div>
+<div class="line">でした。</div>
+<div class="line">来月とか参加できるかな……</div>
+<div class="line">参加できなくても学習は続けていきたいですね。</div>
+</div>
+
+        </div>
+        <div class="postmeta">
+        <div class="author">
+            <span>Posted by Kashun YOSHIDA</span>
+        </div>
+        <div class="categories">
+            <span>
+                Filed under:
+                <a href="categories/勉強会.html">勉強会</a>, <a href="categories/本.html">本</a>, <a href="categories/python.html">Python</a></span>
+        </div>
+        <div class="tags">
+            <span>
+                Tags:
+                <a href="tags/勉強会.html">勉強会</a>, <a href="tags/本.html">本</a>, <a href="tags/python.html">Python</a></span>
+        </div>
+        <div class="comments">
+            <a href="http://kashewnuts.github.io/2012/05/16/expertpython06.html#disqus_thread" data-disqus-identifier="2012/05/16/expertpython06">Leave a comment</a>
+        </div></div><div class="separator post_separator"></div><div class="timestamp postmeta">
             <span>April 22, 2012</span>
         </div>
         <div class="section">
@@ -333,91 +442,6 @@ $ chmod +x pythonbrewinstall$ ./pythonbrewinstall
         </div>
         <div class="comments">
             <a href="http://kashewnuts.github.io/2012/04/09/python_development_environment.html#disqus_thread" data-disqus-identifier="2012/04/09/python_development_environment">Leave a comment</a>
-        </div></div><div class="separator post_separator"></div><div class="timestamp postmeta">
-            <span>March 26, 2012</span>
-        </div>
-        <div class="section">
-            <h1><a href="2012/03/26/expertpython04.html">「エキスパートPythonプログラミング読書会 第二期 04」参加してきました。</a></h1>
-<div class="line-block">
-<div class="line"><a class="reference external" href="http://connpass.com/event/289/">connpass-エキスパートPythonプログラミング読書会 第二期 04</a></div>
-<div class="line">に参加しました。</div>
-</div>
-<div class="line-block">
-<div class="line">今のところ一度も逃さず参加できている。</div>
-<div class="line">我ながら素晴らしい。</div>
-<div class="line">当日の様子はお館様がまとめて下さっています。</div>
-<div class="line"><a class="reference external" href="http://togetter.com/li/272363">エキスパートPythonプログラミング読書会 第二期 04 - Togetter</a></div>
-</div>
-<div class="line-block">
-<div class="line">清水川先生のスクリーンログはこちら</div>
-<div class="line"><a class="reference external" href="https://gist.github.com/2028865">エキPy読書会2nd #4 スクリーン — Gist</a></div>
-</div>
-<div class="line-block">
-<div class="line">実をいうと今回は予習なしで参加してしまったので、</div>
-<div class="line">オブジェクト指向に理解が乏しい自分にはハードル高めでした。</div>
-<div class="line">予習復習大事ですね。本当に。</div>
-</div>
-<div class="line-block">
-<div class="line">かろうじて理解したこと</div>
-<div class="line">組み込み型の拡張はできるが、大抵の場合組み込み型そのままで十分</div>
-<div class="line">super=公式ドキュメントには組み込み関数と書いているが、実態は組み込み型。</div>
-<div class="line">継承関係を調整してくれているものがsuperのクラスの役割。</div>
-<div class="line">superのdictとただのdictはどう違うのか。</div>
-<div class="line">特殊な継承を使う時はsuperのdictを使うと便利なことがある。</div>
-<div class="line">オーバーライドしてしまったメソッドの元の方を呼び出したいと言った時に、superが役立つ。</div>
-<div class="line">ネームマンダリング=頭に__をつける。</div>
-<div class="line">継承の時に名前がぶつからないようにするため。</div>
-<div class="line">MROがあるからといって、superがあるとは限らない。</div>
-<div class="line">(MRO = Method Resolution Order, メソッド解決順)</div>
-<div class="line">Pythonの本体ですらそういううところがある。一意ではない。</div>
-<div class="line">だから正しく判断する時はソースコードを見てする。</div>
-<div class="line">Python3のパッケージ対応リストー<a class="reference external" href="http://python3wos.appspot.com/">Python 3 Wall of Shame</a></div>
-</div>
-<div class="line-block">
-<div class="line">そんな頭の回っていない自分にはありがたいことに、</div>
-<div class="line">今回はなんと「エキPyチロルチョコ」が用意されていました！</div>
-<div class="line">| #expertpython チロルチョコ食べて落ち着く。 on Twitpic|</div>
-</div>
-<div class="line-block">
-<div class="line">本来は2/14に配られる予定が諸々の都合によって中止になったので、</div>
-<div class="line">この日に配られたそうです。</div>
-<div class="line">作成された<a class="reference external" href="https://twitter.com/#!/tk0miya">@tk0miya</a>さんが参加されないとのことでしたので、</div>
-<div class="line"><a class="reference external" href="https://twitter.com/#!/usaturn">@usaturn</a>さんが持ってきてくださいました。</div>
-</div>
-<div class="line-block">
-<div class="line">実は<a class="reference external" href="http://connpass.com/event/306/">connpass-新宿 Book-a-thon #11</a>の時にそのやりとりがあったり。</div>
-<div class="line">「エキPyに参加される方はその時に貰って下さい」と、</div>
-<div class="line">その時には頂けなかったので何とか貰えて一安心です。</div>
-</div>
-<div class="line-block">
-<div class="line">次回はちゃんと予習したから行きたいですね。</div>
-<div class="line">せっかくの機会を無駄にしないようにしたいです。</div>
-</div>
-<div class="line-block">
-<div class="line">参加者ブログ</div>
-<div class="line"><a class="reference external" href="http://necopy.heroku.com/79">エキPy読書会　第二期04参加しました - 絵事後素</a></div>
-<div class="line"><a class="reference external" href="http://blog.livedoor.jp/ryu22e/archives/65655647.html">ryu22eBlog : エキスパートPythonプログラミング読書会 第二期 04 に参加しました #expertpython</a></div>
-</div>
-<blockquote>
-<div/></blockquote>
-
-        </div>
-        <div class="postmeta">
-        <div class="author">
-            <span>Posted by Kashun YOSHIDA</span>
-        </div>
-        <div class="categories">
-            <span>
-                Filed under:
-                <a href="categories/勉強会.html">勉強会</a>, <a href="categories/python.html">Python</a></span>
-        </div>
-        <div class="tags">
-            <span>
-                Tags:
-                <a href="tags/勉強会.html">勉強会</a>, <a href="tags/python.html">Python</a></span>
-        </div>
-        <div class="comments">
-            <a href="http://kashewnuts.github.io/2012/03/26/expertpython04.html#disqus_thread" data-disqus-identifier="2012/03/26/expertpython04">Leave a comment</a>
         </div></div><div class="archive_link">
         <a href="archive.html"> &mdash; Blog Archive &mdash; </a>
     </div><ul class="related clearfix">
@@ -436,6 +460,8 @@ $ chmod +x pythonbrewinstall$ ./pythonbrewinstall
 </div></section><section><div class="widget">
     <h1>Recent Posts</h1>
     <ul><li>
+            <a href="2020/05/05/upgrade_ubuntu_20_04_lts.html">Ubuntu18.04LTSから20.04LTSにアップグレードした</a>
+        </li><li>
             <a href="2020/04/08/migrated_lsp_client_to_coc_nvim.html">LSPクライアントをcoc.nvimにした話</a>
         </li><li>
             <a href="2019/01/28/move_from_jedivim_to_vimlsp.html">Pythonの補完環境をjedi-vimからvim-lspに移行した話</a>
@@ -453,13 +479,11 @@ $ chmod +x pythonbrewinstall$ ./pythonbrewinstall
             <a href="2018/07/15/pycon9shu.html">PyCon Kyushuで登壇してきました #PyCon9shu</a>
         </li><li>
             <a href="2018/06/24/pypro3.html">Pythonプロフェッショナルプログラミング第3版 #pypro3 が出版されました</a>
-        </li><li>
-            <a href="2018/05/21/djangocongress2018.html">#djangocongress JP 2018に参加しました</a>
         </li></ul>
 </div>
 </section><section><div class="widget">
     <h1>Categories</h1>
-    <ul><li><a href="categories/64bit.html">64bit</a> (2)</li><li><a href="categories/android.html">Android</a> (3)</li><li><a href="categories/bouldering.html">bouldering</a> (2)</li><li><a href="categories/bouldering.html">Bouldering</a> (3)</li><li><a href="categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="categories/c_c.html">C/C++</a> (5)</li><li><a href="categories/chrome.html">Chrome</a> (2)</li><li><a href="categories/db.html">DB</a> (1)</li><li><a href="categories/django.html">Django</a> (10)</li><li><a href="categories/facebook.html">Facebook</a> (1)</li><li><a href="categories/firefox.html">Firefox</a> (1)</li><li><a href="categories/git_mercurial.html">Git/Mercurial</a> (8)</li><li><a href="categories/golang.html">Golang</a> (1)</li><li><a href="categories/google.html">Google</a> (5)</li><li><a href="categories/heroku.html">Heroku</a> (6)</li><li><a href="categories/java.html">Java</a> (2)</li><li><a href="categories/javascript.html">JavaScript</a> (4)</li><li><a href="categories/jupyter.html">Jupyter</a> (1)</li><li><a href="categories/kabepy.html">kabepy</a> (2)</li><li><a href="categories/linux.html">Linux</a> (3)</li><li><a href="categories/lt.html">LT</a> (5)</li><li><a href="categories/mac.html">Mac</a> (8)</li><li><a href="categories/pycharm.html">PyCharm</a> (2)</li><li><a href="categories/pyconjp.html">PyConJP</a> (1)</li><li><a href="categories/pyfes.html">pyfes</a> (7)</li><li><a href="categories/python.html">Python</a> (70)</li><li><a href="categories/slack.html">Slack</a> (1)</li><li><a href="categories/sphinx.html">Sphinx</a> (8)</li><li><a href="categories/sqlalchemy.html">SQLAlchemy</a> (1)</li><li><a href="categories/ssd.html">SSD</a> (1)</li><li><a href="categories/tddbc.html">TDDBC</a> (1)</li><li><a href="categories/tinkerer.html">Tinkerer</a> (7)</li><li><a href="categories/tmux.html">tmux</a> (1)</li><li><a href="categories/ubuntu.html">Ubuntu</a> (2)</li><li><a href="categories/vagrant.html">Vagrant</a> (1)</li><li><a href="categories/vim.html">Vim</a> (24)</li><li><a href="categories/vimconf.html">VimConf</a> (3)</li><li><a href="categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="categories/windows.html">Windows</a> (2)</li><li><a href="categories/windows7.html">Windows7</a> (4)</li><li><a href="categories/アルゴリズム.html">アルゴリズム</a> (1)</li><li><a href="categories/セキュリティ.html">セキュリティ</a> (2)</li><li><a href="categories/ネットワーク.html">ネットワーク</a> (1)</li><li><a href="categories/プログラミング.html">プログラミング</a> (7)</li><li><a href="categories/勉強会.html">勉強会</a> (30)</li><li><a href="categories/応用情報技術者.html">応用情報技術者</a> (10)</li><li><a href="categories/情報処理技術者試験.html">情報処理技術者試験</a> (10)</li><li><a href="categories/本.html">本</a> (29)</li><li><a href="categories/開発環境.html">開発環境</a> (11)</li><li><a href="categories/雑記.html">雑記</a> (38)</li><li><a href="categories/高速化.html">高速化</a> (1)</li></ul>
+    <ul><li><a href="categories/64bit.html">64bit</a> (2)</li><li><a href="categories/android.html">Android</a> (3)</li><li><a href="categories/bouldering.html">bouldering</a> (2)</li><li><a href="categories/bouldering.html">Bouldering</a> (3)</li><li><a href="categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="categories/c_c.html">C/C++</a> (5)</li><li><a href="categories/chrome.html">Chrome</a> (2)</li><li><a href="categories/db.html">DB</a> (1)</li><li><a href="categories/django.html">Django</a> (10)</li><li><a href="categories/facebook.html">Facebook</a> (1)</li><li><a href="categories/firefox.html">Firefox</a> (1)</li><li><a href="categories/git_mercurial.html">Git/Mercurial</a> (8)</li><li><a href="categories/golang.html">Golang</a> (1)</li><li><a href="categories/google.html">Google</a> (5)</li><li><a href="categories/heroku.html">Heroku</a> (6)</li><li><a href="categories/java.html">Java</a> (2)</li><li><a href="categories/javascript.html">JavaScript</a> (4)</li><li><a href="categories/jupyter.html">Jupyter</a> (1)</li><li><a href="categories/kabepy.html">kabepy</a> (2)</li><li><a href="categories/linux.html">Linux</a> (4)</li><li><a href="categories/lt.html">LT</a> (5)</li><li><a href="categories/mac.html">Mac</a> (8)</li><li><a href="categories/pycharm.html">PyCharm</a> (2)</li><li><a href="categories/pyconjp.html">PyConJP</a> (1)</li><li><a href="categories/pyfes.html">pyfes</a> (7)</li><li><a href="categories/python.html">Python</a> (70)</li><li><a href="categories/slack.html">Slack</a> (1)</li><li><a href="categories/sphinx.html">Sphinx</a> (8)</li><li><a href="categories/sqlalchemy.html">SQLAlchemy</a> (1)</li><li><a href="categories/ssd.html">SSD</a> (1)</li><li><a href="categories/tddbc.html">TDDBC</a> (1)</li><li><a href="categories/tinkerer.html">Tinkerer</a> (7)</li><li><a href="categories/tmux.html">tmux</a> (1)</li><li><a href="categories/ubuntu.html">Ubuntu</a> (3)</li><li><a href="categories/vagrant.html">Vagrant</a> (1)</li><li><a href="categories/vim.html">Vim</a> (24)</li><li><a href="categories/vimconf.html">VimConf</a> (3)</li><li><a href="categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="categories/windows.html">Windows</a> (2)</li><li><a href="categories/windows7.html">Windows7</a> (4)</li><li><a href="categories/アルゴリズム.html">アルゴリズム</a> (1)</li><li><a href="categories/セキュリティ.html">セキュリティ</a> (2)</li><li><a href="categories/ネットワーク.html">ネットワーク</a> (1)</li><li><a href="categories/プログラミング.html">プログラミング</a> (7)</li><li><a href="categories/勉強会.html">勉強会</a> (30)</li><li><a href="categories/応用情報技術者.html">応用情報技術者</a> (10)</li><li><a href="categories/情報処理技術者試験.html">情報処理技術者試験</a> (10)</li><li><a href="categories/本.html">本</a> (29)</li><li><a href="categories/開発環境.html">開発環境</a> (11)</li><li><a href="categories/雑記.html">雑記</a> (38)</li><li><a href="categories/高速化.html">高速化</a> (1)</li></ul>
 </div></section><section><div class="widget">
     <h1>About Me</h1>
     <div>
