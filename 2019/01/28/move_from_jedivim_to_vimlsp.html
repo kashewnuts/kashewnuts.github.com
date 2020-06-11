@@ -39,13 +39,13 @@
         <link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="2018年の振り返りと2019年抱負" href="../05/2018and2019.html" /><link rel="prev" title="LSPクライアントをcoc.nvimにした話" href="../../../2020/04/08/migrated_lsp_client_to_coc_nvim.html" /><link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/kashew_nuts-blog" /><script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.7.1',
+        VERSION:     '1.7.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         SOURCELINK_SUFFIX: '.txt',
         HAS_SOURCE:  true
       };
-    </script><script type="text/javascript" src="../../../_static/underscore.js"></script><script type="text/javascript" src="../../../_static/doctools.js"></script><script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script><script type="text/javascript" src="../../../_static/disqus.js"></script><script type="text/javascript" src="../../../_static/google_analytics.js"></script>
+    </script><script type="text/javascript" src="../../../_static/underscore.js"></script><script type="text/javascript" src="../../../_static/doctools.js"></script><script type="text/javascript" src="../../../_static/language_data.js"></script><script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script><script type="text/javascript" src="../../../_static/disqus.js"></script><script type="text/javascript" src="../../../_static/google_analytics.js"></script>
     <meta property="fb:admins" content="200170096719194"/>
     
 
@@ -85,32 +85,34 @@
 <p>とはいえ実際に使うにはまだ設定するところもちょこちょこあるので、一度まとめておこうと思います。</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#id1" id="id8">前提とする環境</a></li>
-<li><a class="reference internal" href="#lsp-language-server-protocol" id="id9">LSP(Language Server Protocol)とは</a></li>
-<li><a class="reference internal" href="#lsp" id="id10">LSP導入</a><ul>
-<li><a class="reference internal" href="#language-server" id="id11">Language Serverの導入</a></li>
-<li><a class="reference internal" href="#client" id="id12">Clientの導入</a></li>
-<li><a class="reference internal" href="#vim" id="id13">Vimプラグインの設定</a></li>
+<li><p><a class="reference internal" href="#id1" id="id8">前提とする環境</a></p></li>
+<li><p><a class="reference internal" href="#lsp-language-server-protocol" id="id9">LSP(Language Server Protocol)とは</a></p></li>
+<li><p><a class="reference internal" href="#lsp" id="id10">LSP導入</a></p>
+<ul>
+<li><p><a class="reference internal" href="#language-server" id="id11">Language Serverの導入</a></p></li>
+<li><p><a class="reference internal" href="#client" id="id12">Clientの導入</a></p></li>
+<li><p><a class="reference internal" href="#vim" id="id13">Vimプラグインの設定</a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id4" id="id14">使用感について</a><ul>
-<li><a class="reference internal" href="#id5" id="id15">メリット</a></li>
-<li><a class="reference internal" href="#id6" id="id16">デメリット</a></li>
+<li><p><a class="reference internal" href="#id4" id="id14">使用感について</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id5" id="id15">メリット</a></p></li>
+<li><p><a class="reference internal" href="#id6" id="id16">デメリット</a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id7" id="id17">終わりに</a></li>
+<li><p><a class="reference internal" href="#id7" id="id17">終わりに</a></p></li>
 </ul>
 </div>
 <div class="section" id="id1">
 <h2><a class="toc-backref" href="#id8">前提とする環境</a></h2>
 <ul class="simple">
-<li>Vim: 8.0以上、かつコンパイルオプションで <cite>jobs</cite>, <cite>timer</cite>, <cite>channel</cite>, <cite>lambda</cite> が有効になっている</li>
-<li>Python: 2.7もしくは3.4以降 (pyenvやAnacondaでインストールしたPythonは考慮しない)</li>
+<li><p>Vim: 8.0以上、かつコンパイルオプションで <cite>jobs</cite>, <cite>timer</cite>, <cite>channel</cite>, <cite>lambda</cite> が有効になっている</p></li>
+<li><p>Python: 2.7もしくは3.4以降 (pyenvやAnacondaでインストールしたPythonは考慮しない)</p></li>
 </ul>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="admonition-title">Note</p>
 <p><span class="strike">VimでPython/Python3インターフェースを有効にする必要があるかもしれませんが、少なくともドキュメントには記載されていませんでした。もし必要な場合は以前書いたVimとPythonの補完についてのメモを参照してください。</span></p>
-<p class="last">その後Python/Python3インターフェースを無効にした状態で試したところ、問題なく動作しました。外部インターフェイスに依存せず補完や定義ジャンプができるのはいいですね。</p>
+<p>その後Python/Python3インターフェースを無効にした状態で試したところ、問題なく動作しました。外部インターフェイスに依存せず補完や定義ジャンプができるのはいいですね。</p>
 </div>
 </div>
 <div class="section" id="lsp-language-server-protocol">
@@ -124,28 +126,28 @@
 <h2><a class="toc-backref" href="#id10">LSP導入</a></h2>
 <p>Python用のLanguage ServerとClientとなるVimプラグインを導入します。ServerとClientは以下になります。</p>
 <ul class="simple">
-<li>Language Server: <a class="reference external" href="https://github.com/palantir/python-language-server">palantir/python-language-server</a></li>
-<li>Client: <a class="reference external" href="https://github.com/prabirshrestha/vim-lsp">prabirshrestha/vim-lsp</a></li>
+<li><p>Language Server: <a class="reference external" href="https://github.com/palantir/python-language-server">palantir/python-language-server</a></p></li>
+<li><p>Client: <a class="reference external" href="https://github.com/prabirshrestha/vim-lsp">prabirshrestha/vim-lsp</a></p></li>
 </ul>
 <div class="section" id="language-server">
 <h3><a class="toc-backref" href="#id11">Language Serverの導入</a></h3>
-<p><span class="docutils literal"><span class="pre">python-language-server</span></span> をpipコマンドを使ってインストールします。
+<p><code class="docutils literal notranslate"><span class="pre">python-language-server</span></code> をpipコマンドを使ってインストールします。
 どこからでも使えるようにグローバルな環境に入れますが、macOSやLinuxを使っている人は注意する必要があります。
 OSが使うPythonに様々なライブラリが入っており、無理やりインストールしようとすると後で困る可能性があるからです。</p>
 <p>ここではユーザーディレクトリにインストールすることでその問題を回避します。
-以下のPATHにインストールされるので、予め <span class="docutils literal"><span class="pre">~/.bash_profile</span></span> などに <span class="docutils literal"><span class="pre">PATH</span></span> の設定を追加しておいてください。
+以下のPATHにインストールされるので、予め <code class="docutils literal notranslate"><span class="pre">~/.bash_profile</span></code> などに <code class="docutils literal notranslate"><span class="pre">PATH</span></code> の設定を追加しておいてください。
 インストールされる箇所は <a class="reference external" href="https://docs.python.org/ja/3/library/site.html#site.USER_BASE">site.USER_BASE</a> によって決まります。</p>
 <ul class="simple">
-<li>Windows: <span class="docutils literal"><span class="pre">%APPDATA%\Python</span></span></li>
-<li>macOSで www.python.org からPythonをインストールした場合: <span class="docutils literal"><span class="pre">~/Library/Python/X.Y/bin</span></span> (X.YはPythonのバージョン)</li>
-<li>macOSでHomebrewを使いPythonをインストールした場合: <span class="docutils literal"><span class="pre">~/.local/bin</span></span></li>
-<li>Ubuntuの場合: <span class="docutils literal"><span class="pre">~/.local/bin</span></span></li>
+<li><p>Windows: <code class="docutils literal notranslate"><span class="pre">%APPDATA%\Python</span></code></p></li>
+<li><p>macOSで www.python.org からPythonをインストールした場合: <code class="docutils literal notranslate"><span class="pre">~/Library/Python/X.Y/bin</span></code> (X.YはPythonのバージョン)</p></li>
+<li><p>macOSでHomebrewを使いPythonをインストールした場合: <code class="docutils literal notranslate"><span class="pre">~/.local/bin</span></code></p></li>
+<li><p>Ubuntuの場合: <code class="docutils literal notranslate"><span class="pre">~/.local/bin</span></code></p></li>
 </ul>
 <p>ターミナルを開き以下のコマンドを使いインストールします。</p>
-<p><span class="docutils literal"><span class="pre">$</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--user</span> <span class="pre">python-language-server</span></span></p>
-<p>インストールが完了したら  <span class="docutils literal"><span class="pre">$</span> <span class="pre">which</span> <span class="pre">pyls</span></span> などでLanguage ServerにPATHが通っていることを確認してください。
-インストールに失敗したり、whichコマンドで何も出力されない場合、 <span class="docutils literal"><span class="pre">PATH</span></span> の設定がうまく言っていない可能性があるので確認してみてください。</p>
-<p>pipコマンドを実行した結果でもわかりますが、 <span class="docutils literal"><span class="pre">python-language-server</span></span> はこれまでもPythonの自動補完や静的解析で使われていた <a class="reference external" href="https://github.com/davidhalter/jedi">davidhalter/jedi</a> をLSPで使えるようにしたものです。フォースの魂は脈々と受け継がれるようですね。</p>
+<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--user</span> <span class="pre">python-language-server</span></code></p>
+<p>インストールが完了したら  <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">which</span> <span class="pre">pyls</span></code> などでLanguage ServerにPATHが通っていることを確認してください。
+インストールに失敗したり、whichコマンドで何も出力されない場合、 <code class="docutils literal notranslate"><span class="pre">PATH</span></code> の設定がうまく言っていない可能性があるので確認してみてください。</p>
+<p>pipコマンドを実行した結果でもわかりますが、 <code class="docutils literal notranslate"><span class="pre">python-language-server</span></code> はこれまでもPythonの自動補完や静的解析で使われていた <a class="reference external" href="https://github.com/davidhalter/jedi">davidhalter/jedi</a> をLSPで使えるようにしたものです。フォースの魂は脈々と受け継がれるようですね。</p>
 </div>
 <div class="section" id="client">
 <h3><a class="toc-backref" href="#id12">Clientの導入</a></h3>
@@ -218,28 +220,31 @@ ALEについては
 <h3><a class="toc-backref" href="#id15">メリット</a></h3>
 <p>高速化されたのが一番大きいですね。</p>
 <ul class="simple">
-<li>Vimの起動が高速化できた(Ubuntu環境で100〜150ms、macOS環境でも200〜300ms短縮)</li>
-<li>補完候補がでる時間が高速化できた</li>
-<li>発展途上の技術なので進化を体験していける</li>
-<li>他の言語と使用できるプラグインを共通化できるため、vimrcからプラグインを減らせた</li>
+<li><p>Vimの起動が高速化できた(Ubuntu環境で100〜150ms、macOS環境でも200〜300ms短縮)</p></li>
+<li><p>補完候補がでる時間が高速化できた</p></li>
+<li><p>発展途上の技術なので進化を体験していける</p></li>
+<li><p>他の言語と使用できるプラグインを共通化できるため、vimrcからプラグインを減らせた</p></li>
 </ul>
 </div>
 <div class="section" id="id6">
 <h3><a class="toc-backref" href="#id16">デメリット</a></h3>
 <p>まだ発展途上というところからきてると思うのですが、少しだけ今までできていたことができない感じがあります。</p>
 <ul class="simple">
-<li>言語用のServerが別途インストールが必要なので環境を壊さわないようにするのに気を使う。<ul>
-<li>jedi-vimはjediを <span class="docutils literal"><span class="pre">git</span> <span class="pre">submodule</span></span> で独立して入れていたので楽だった。</li>
+<li><p>言語用のServerが別途インストールが必要なので環境を壊さわないようにするのに気を使う。</p>
+<ul>
+<li><p>jedi-vimはjediを <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">submodule</span></code> で独立して入れていたので楽だった。</p></li>
 </ul>
 </li>
-<li>Vimを起動後に <span class="docutils literal"><span class="pre">:setf</span> <span class="pre">python</span></span> しても補完や定義ジャンプが動かない。<ul>
-<li>既存のPythonファイルを開いたり、 <span class="docutils literal"><span class="pre">$</span> <span class="pre">vim</span> <span class="pre">hoge.py</span></span> などすると動くが、少し気になる。</li>
+<li><p>Vimを起動後に <code class="docutils literal notranslate"><span class="pre">:setf</span> <span class="pre">python</span></code> しても補完や定義ジャンプが動かない。</p>
+<ul>
+<li><p>既存のPythonファイルを開いたり、 <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">vim</span> <span class="pre">hoge.py</span></code> などすると動くが、少し気になる。</p></li>
 </ul>
 </li>
-<li>リネームが不安定(動かない？)<ul>
-<li><a class="reference external" href="https://github.com/palantir/python-language-server/issues/218">Cannot LspRename / Issue #218</a></li>
-<li>動かすには <a class="reference external" href="https://github.com/python-rope/rope">python-rope/rope</a> が必要という情報もあるがそれでも動かない</li>
-<li>jedi-vimはじゃじゃ馬だったり、マルチバイト文字が対象行に混じっていると動かなかったりしたが….</li>
+<li><p>リネームが不安定(動かない？)</p>
+<ul>
+<li><p><a class="reference external" href="https://github.com/palantir/python-language-server/issues/218">Cannot LspRename / Issue #218</a></p></li>
+<li><p>動かすには <a class="reference external" href="https://github.com/python-rope/rope">python-rope/rope</a> が必要という情報もあるがそれでも動かない</p></li>
+<li><p>jedi-vimはじゃじゃ馬だったり、マルチバイト文字が対象行に混じっていると動かなかったりしたが….</p></li>
 </ul>
 </li>
 </ul>
@@ -303,6 +308,8 @@ if(typeof(window.NINJA_CO_JP_ONETAG_BUTTON_00eb4412f1c80db8bbc1af50c58e8ee6)=='u
 </div></section><section><div class="widget">
     <h1>Recent Posts</h1>
     <ul><li>
+            <a href="../../../2020/06/11/wsl2.html">WSL2を使ってみている</a>
+        </li><li>
             <a href="../../../2020/05/05/upgrade_ubuntu_20_04_lts.html">Ubuntu18.04LTSから20.04LTSにアップグレードした</a>
         </li><li>
             <a href="../../../2020/04/08/migrated_lsp_client_to_coc_nvim.html">LSPクライアントをcoc.nvimにした話</a>
@@ -320,13 +327,11 @@ if(typeof(window.NINJA_CO_JP_ONETAG_BUTTON_00eb4412f1c80db8bbc1af50c58e8ee6)=='u
             <a href="../../../2018/08/22/jedivim_memo.html">VimとPythonの補完についてのメモ</a>
         </li><li>
             <a href="../../../2018/07/15/pycon9shu.html">PyCon Kyushuで登壇してきました #PyCon9shu</a>
-        </li><li>
-            <a href="../../../2018/06/24/pypro3.html">Pythonプロフェッショナルプログラミング第3版 #pypro3 が出版されました</a>
         </li></ul>
 </div>
 </section><section><div class="widget">
     <h1>Categories</h1>
-    <ul><li><a href="../../../categories/64bit.html">64bit</a> (2)</li><li><a href="../../../categories/android.html">Android</a> (3)</li><li><a href="../../../categories/bouldering.html">bouldering</a> (2)</li><li><a href="../../../categories/bouldering.html">Bouldering</a> (3)</li><li><a href="../../../categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="../../../categories/c_c.html">C/C++</a> (5)</li><li><a href="../../../categories/chrome.html">Chrome</a> (2)</li><li><a href="../../../categories/db.html">DB</a> (1)</li><li><a href="../../../categories/django.html">Django</a> (10)</li><li><a href="../../../categories/facebook.html">Facebook</a> (1)</li><li><a href="../../../categories/firefox.html">Firefox</a> (1)</li><li><a href="../../../categories/git_mercurial.html">Git/Mercurial</a> (8)</li><li><a href="../../../categories/golang.html">Golang</a> (1)</li><li><a href="../../../categories/google.html">Google</a> (5)</li><li><a href="../../../categories/heroku.html">Heroku</a> (6)</li><li><a href="../../../categories/java.html">Java</a> (2)</li><li><a href="../../../categories/javascript.html">JavaScript</a> (4)</li><li><a href="../../../categories/jupyter.html">Jupyter</a> (1)</li><li><a href="../../../categories/kabepy.html">kabepy</a> (2)</li><li><a href="../../../categories/linux.html">Linux</a> (4)</li><li><a href="../../../categories/lt.html">LT</a> (5)</li><li><a href="../../../categories/mac.html">Mac</a> (8)</li><li><a href="../../../categories/pycharm.html">PyCharm</a> (2)</li><li><a href="../../../categories/pyconjp.html">PyConJP</a> (1)</li><li><a href="../../../categories/pyfes.html">pyfes</a> (7)</li><li><a href="../../../categories/python.html">Python</a> (70)</li><li><a href="../../../categories/slack.html">Slack</a> (1)</li><li><a href="../../../categories/sphinx.html">Sphinx</a> (8)</li><li><a href="../../../categories/sqlalchemy.html">SQLAlchemy</a> (1)</li><li><a href="../../../categories/ssd.html">SSD</a> (1)</li><li><a href="../../../categories/tddbc.html">TDDBC</a> (1)</li><li><a href="../../../categories/tinkerer.html">Tinkerer</a> (7)</li><li><a href="../../../categories/tmux.html">tmux</a> (1)</li><li><a href="../../../categories/ubuntu.html">Ubuntu</a> (3)</li><li><a href="../../../categories/vagrant.html">Vagrant</a> (1)</li><li><a href="../../../categories/vim.html">Vim</a> (24)</li><li><a href="../../../categories/vimconf.html">VimConf</a> (3)</li><li><a href="../../../categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="../../../categories/windows.html">Windows</a> (2)</li><li><a href="../../../categories/windows7.html">Windows7</a> (4)</li><li><a href="../../../categories/アルゴリズム.html">アルゴリズム</a> (1)</li><li><a href="../../../categories/セキュリティ.html">セキュリティ</a> (2)</li><li><a href="../../../categories/ネットワーク.html">ネットワーク</a> (1)</li><li><a href="../../../categories/プログラミング.html">プログラミング</a> (7)</li><li><a href="../../../categories/勉強会.html">勉強会</a> (30)</li><li><a href="../../../categories/応用情報技術者.html">応用情報技術者</a> (10)</li><li><a href="../../../categories/情報処理技術者試験.html">情報処理技術者試験</a> (10)</li><li><a href="../../../categories/本.html">本</a> (29)</li><li><a href="../../../categories/開発環境.html">開発環境</a> (11)</li><li><a href="../../../categories/雑記.html">雑記</a> (38)</li><li><a href="../../../categories/高速化.html">高速化</a> (1)</li></ul>
+    <ul><li><a href="../../../categories/64bit.html">64bit</a> (2)</li><li><a href="../../../categories/android.html">Android</a> (3)</li><li><a href="../../../categories/bouldering.html">bouldering</a> (2)</li><li><a href="../../../categories/bouldering.html">Bouldering</a> (3)</li><li><a href="../../../categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="../../../categories/c_c.html">C/C++</a> (5)</li><li><a href="../../../categories/chrome.html">Chrome</a> (2)</li><li><a href="../../../categories/db.html">DB</a> (1)</li><li><a href="../../../categories/django.html">Django</a> (10)</li><li><a href="../../../categories/facebook.html">Facebook</a> (1)</li><li><a href="../../../categories/firefox.html">Firefox</a> (1)</li><li><a href="../../../categories/git_mercurial.html">Git/Mercurial</a> (8)</li><li><a href="../../../categories/golang.html">Golang</a> (1)</li><li><a href="../../../categories/google.html">Google</a> (5)</li><li><a href="../../../categories/heroku.html">Heroku</a> (6)</li><li><a href="../../../categories/java.html">Java</a> (2)</li><li><a href="../../../categories/javascript.html">JavaScript</a> (4)</li><li><a href="../../../categories/jupyter.html">Jupyter</a> (1)</li><li><a href="../../../categories/kabepy.html">kabepy</a> (2)</li><li><a href="../../../categories/linux.html">Linux</a> (5)</li><li><a href="../../../categories/lt.html">LT</a> (5)</li><li><a href="../../../categories/mac.html">Mac</a> (8)</li><li><a href="../../../categories/pycharm.html">PyCharm</a> (2)</li><li><a href="../../../categories/pyconjp.html">PyConJP</a> (1)</li><li><a href="../../../categories/pyfes.html">pyfes</a> (7)</li><li><a href="../../../categories/python.html">Python</a> (70)</li><li><a href="../../../categories/slack.html">Slack</a> (1)</li><li><a href="../../../categories/sphinx.html">Sphinx</a> (8)</li><li><a href="../../../categories/sqlalchemy.html">SQLAlchemy</a> (1)</li><li><a href="../../../categories/ssd.html">SSD</a> (1)</li><li><a href="../../../categories/tddbc.html">TDDBC</a> (1)</li><li><a href="../../../categories/tinkerer.html">Tinkerer</a> (7)</li><li><a href="../../../categories/tmux.html">tmux</a> (1)</li><li><a href="../../../categories/ubuntu.html">Ubuntu</a> (3)</li><li><a href="../../../categories/vagrant.html">Vagrant</a> (1)</li><li><a href="../../../categories/vim.html">Vim</a> (24)</li><li><a href="../../../categories/vimconf.html">VimConf</a> (3)</li><li><a href="../../../categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="../../../categories/windows.html">Windows</a> (3)</li><li><a href="../../../categories/windows7.html">Windows7</a> (4)</li><li><a href="../../../categories/wsl.html">WSL</a> (1)</li><li><a href="../../../categories/アルゴリズム.html">アルゴリズム</a> (1)</li><li><a href="../../../categories/セキュリティ.html">セキュリティ</a> (2)</li><li><a href="../../../categories/ネットワーク.html">ネットワーク</a> (1)</li><li><a href="../../../categories/プログラミング.html">プログラミング</a> (7)</li><li><a href="../../../categories/勉強会.html">勉強会</a> (30)</li><li><a href="../../../categories/応用情報技術者.html">応用情報技術者</a> (10)</li><li><a href="../../../categories/情報処理技術者試験.html">情報処理技術者試験</a> (10)</li><li><a href="../../../categories/本.html">本</a> (29)</li><li><a href="../../../categories/開発環境.html">開発環境</a> (11)</li><li><a href="../../../categories/雑記.html">雑記</a> (38)</li><li><a href="../../../categories/高速化.html">高速化</a> (1)</li></ul>
 </div></section><section><div class="widget">
     <h1>About Me</h1>
     <div>
@@ -342,7 +347,7 @@ if(typeof(window.NINJA_CO_JP_ONETAG_BUTTON_00eb4412f1c80db8bbc1af50c58e8ee6)=='u
     </div>
 </div></section></aside></div> <!-- #main --></div> <!-- #main-container -->
 
-        <div class="footer-container" role="contentinfo"><footer class="wrapper">&copy; Copyright 2011-2018, Kashun YOSHIDA. Powered by <a href="http://www.tinkerer.me/">Tinkerer</a> and <a href="http://sphinx.pocoo.org/">Sphinx</a>.</footer></div> <!-- footer-container -->
+        <div class="footer-container" role="contentinfo"><footer class="wrapper">&copy; Copyright 2011-2020, Kashun YOSHIDA. Powered by <a href="http://www.tinkerer.me/">Tinkerer</a> and <a href="http://sphinx.pocoo.org/">Sphinx</a>.</footer></div> <!-- footer-container -->
 
       </div> <!--! end of #container --><!--[if lt IE 7 ]>
           <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>

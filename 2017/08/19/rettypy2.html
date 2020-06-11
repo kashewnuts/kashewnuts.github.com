@@ -38,13 +38,13 @@
         <link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="「いちばんやさしいPythonの教本 人気講師が教える基礎からサーバサイド開発まで」を読んだ" href="../14/ichiyasa_python.html" /><link rel="prev" title="PyConJP2017に参加しました #pyconjp" href="../../09/09/pyconjp2017.html" /><link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/kashew_nuts-blog" /><script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.7.1',
+        VERSION:     '1.7.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         SOURCELINK_SUFFIX: '.txt',
         HAS_SOURCE:  true
       };
-    </script><script type="text/javascript" src="../../../_static/underscore.js"></script><script type="text/javascript" src="../../../_static/doctools.js"></script><script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script><script type="text/javascript" src="../../../_static/disqus.js"></script><script type="text/javascript" src="../../../_static/google_analytics.js"></script>
+    </script><script type="text/javascript" src="../../../_static/underscore.js"></script><script type="text/javascript" src="../../../_static/doctools.js"></script><script type="text/javascript" src="../../../_static/language_data.js"></script><script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script><script type="text/javascript" src="../../../_static/disqus.js"></script><script type="text/javascript" src="../../../_static/google_analytics.js"></script>
     <meta property="fb:admins" content="200170096719194"/>
     
 
@@ -79,25 +79,27 @@
     <div class="section" id="python-2-rettypy">
 <h1>Pythonもくもく自習室 #2に参加しました #rettypy</h1>
 <ul class="simple">
-<li><a class="reference external" href="https://retty.connpass.com/event/62837/">Pythonもくもく自習室 #2 &#64;Rettyオフィス - connpass</a></li>
+<li><p><a class="reference external" href="https://retty.connpass.com/event/62837/">Pythonもくもく自習室 #2 &#64;Rettyオフィス - connpass</a></p></li>
 </ul>
 <img alt="../../../_images/rettypy2.JPG" class="align-center" src="../../../_images/rettypy2.JPG" />
 <div class="contents local topic" id="id1">
-<p class="topic-title first">目次</p>
+<p class="topic-title">目次</p>
 <ul class="simple">
-<li><a class="reference internal" href="#id2" id="id8">自己紹介タイム</a></li>
-<li><a class="reference internal" href="#id3" id="id9">やったこと</a><ul>
-<li><a class="reference internal" href="#pycharmjupyter" id="id10">PyCharmからJupyterを触ってみる</a></li>
-<li><a class="reference internal" href="#bottle" id="id11">bottle</a></li>
-<li><a class="reference internal" href="#effectivepython-3" id="id12">EffectivePython 第3章 クラスと継承</a><ul>
-<li><a class="reference internal" href="#id4" id="id13">項目22: 辞書やタプルで記録管理するよりもヘルパークラスを使う</a></li>
-<li><a class="reference internal" href="#id5" id="id14">項目23: 単純なインターフェースにはクラスの代わりに関数を使う</a></li>
+<li><p><a class="reference internal" href="#id2" id="id8">自己紹介タイム</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id9">やったこと</a></p>
+<ul>
+<li><p><a class="reference internal" href="#pycharmjupyter" id="id10">PyCharmからJupyterを触ってみる</a></p></li>
+<li><p><a class="reference internal" href="#bottle" id="id11">bottle</a></p></li>
+<li><p><a class="reference internal" href="#effectivepython-3" id="id12">EffectivePython 第3章 クラスと継承</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id4" id="id13">項目22: 辞書やタプルで記録管理するよりもヘルパークラスを使う</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id14">項目23: 単純なインターフェースにはクラスの代わりに関数を使う</a></p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id6" id="id15">成果発表</a></li>
-<li><a class="reference internal" href="#id7" id="id16">その他</a></li>
+<li><p><a class="reference internal" href="#id6" id="id15">成果発表</a></p></li>
+<li><p><a class="reference internal" href="#id7" id="id16">その他</a></p></li>
 </ul>
 </div>
 <div class="section" id="id2">
@@ -122,28 +124,29 @@
 <h4><a class="toc-backref" href="#id13">項目22: 辞書やタプルで記録管理するよりもヘルパークラスを使う</a></h4>
 <p>collectionモジュールのnamedtupple型</p>
 <ul class="simple">
-<li>namedtuppleの限界 (namedtuppleは多くの場合に有用だが、害の方が多くなることもある)<ul>
-<li>namedtuppleクラスでは、デフォルト引数値を指定できない。データに多くのオプションプロパティがあるときにやっかい。
-少数とは言えない個数の属性を扱うなら、それ専用のクラスを作るほうがよい選択。</li>
-<li>namedtuppleインスタンスの属性値は、数字の添字とイテレーションを使ってアクセスできる。外部化されたAPIの場合は特に、このような意図しない使い方をされていたために、後に本物のクラスに移行するのが難しくなることがある。namedtuppleインスタンスのすべての用途を制御できていないなら、自分のクラスを定義したほうがよいでしょう。</li>
+<li><p>namedtuppleの限界 (namedtuppleは多くの場合に有用だが、害の方が多くなることもある)</p>
+<ul>
+<li><p>namedtuppleクラスでは、デフォルト引数値を指定できない。データに多くのオプションプロパティがあるときにやっかい。
+少数とは言えない個数の属性を扱うなら、それ専用のクラスを作るほうがよい選択。</p></li>
+<li><p>namedtuppleインスタンスの属性値は、数字の添字とイテレーションを使ってアクセスできる。外部化されたAPIの場合は特に、このような意図しない使い方をされていたために、後に本物のクラスに移行するのが難しくなることがある。namedtuppleインスタンスのすべての用途を制御できていないなら、自分のクラスを定義したほうがよいでしょう。</p></li>
 </ul>
 </li>
 </ul>
 <p><strong>覚えておくこと</strong></p>
 <ul class="simple">
-<li>値が他の辞書や長いタプルであるような辞書を作るのは止める。</li>
-<li>完全なクラスの柔軟性が必要となる前は、軽量で変更不能データのコンテナであるnamedtuppleを使う。</li>
-<li>内部状態辞書が複雑になったら、記録管理コードを複数のヘルパークラスを使うように変更する。</li>
+<li><p>値が他の辞書や長いタプルであるような辞書を作るのは止める。</p></li>
+<li><p>完全なクラスの柔軟性が必要となる前は、軽量で変更不能データのコンテナであるnamedtuppleを使う。</p></li>
+<li><p>内部状態辞書が複雑になったら、記録管理コードを複数のヘルパークラスを使うように変更する。</p></li>
 </ul>
 </div>
 <div class="section" id="id5">
 <h4><a class="toc-backref" href="#id14">項目23: 単純なインターフェースにはクラスの代わりに関数を使う</a></h4>
 <p><strong>覚えておくこと</strong></p>
 <ul class="simple">
-<li>Pythonのコンポーネント間の単純なインターフェースは、たいてい、クラスを定義してインスタンス化しないでも、関数で済ませられる。</li>
-<li>Pythonでは関数とメソッドの参照はファーストクラスなので、他の型同様、式中で使うことができる。</li>
-<li>特殊メソッド <cite>__call__</cite> は、クラスのインスタンスが、Pythonの普通の関数として呼び出されることを可能にする。</li>
-<li>状態を保守するために関数が必要な場合、状態を持つクロージャを定義するかわりに、 <cite>__call__</cite> メソッドを提供するクラスを定義することを考える。</li>
+<li><p>Pythonのコンポーネント間の単純なインターフェースは、たいてい、クラスを定義してインスタンス化しないでも、関数で済ませられる。</p></li>
+<li><p>Pythonでは関数とメソッドの参照はファーストクラスなので、他の型同様、式中で使うことができる。</p></li>
+<li><p>特殊メソッド <cite>__call__</cite> は、クラスのインスタンスが、Pythonの普通の関数として呼び出されることを可能にする。</p></li>
+<li><p>状態を保守するために関数が必要な場合、状態を持つクロージャを定義するかわりに、 <cite>__call__</cite> メソッドを提供するクラスを定義することを考える。</p></li>
 </ul>
 </div>
 </div>
@@ -153,51 +156,59 @@
 <img alt="../../../_images/IMG_5934.JPG" class="align-center" src="../../../_images/IMG_5934.JPG" />
 <p>(発表してる最中の写真取ればよかった。ちょっと写真取るタイミングミスった感がある。)</p>
 <ul class="simple">
-<li>タケオカ もくもく会初参加。<ul>
-<li>Pythonチュートリアル(オライリー)を読んでいたが、内職してたらそっちに集中してしまいました。</li>
-<li>次回はものを作りたい。</li>
+<li><p>タケオカ もくもく会初参加。</p>
+<ul>
+<li><p>Pythonチュートリアル(オライリー)を読んでいたが、内職してたらそっちに集中してしまいました。</p></li>
+<li><p>次回はものを作りたい。</p></li>
 </ul>
 </li>
-<li><a class="reference external" href="https://twitter.com/ryoo17">&#64;ryoo17</a> Djangoでアプリを作ってました。書籍管理アプリ。漫画を管理するもの。</li>
-<li><a class="reference external" href="https://twitter.com/patraqushe">&#64;driller</a><ul>
-<li>本がでます→ <a class="reference external" href="http://amzn.to/2vRG5ZN">PythonユーザのためのJupyter[実践]入門</a></li>
-<li>finpyというものを運営してます。次回未定。PyConでRejectされたものをやるかも？</li>
-<li>ホロビューズ</li>
+<li><p><a class="reference external" href="https://twitter.com/ryoo17">&#64;ryoo17</a> Djangoでアプリを作ってました。書籍管理アプリ。漫画を管理するもの。</p></li>
+<li><p><a class="reference external" href="https://twitter.com/patraqushe">&#64;driller</a></p>
+<ul>
+<li><p>本がでます→ <a class="reference external" href="http://amzn.to/2vRG5ZN">PythonユーザのためのJupyter[実践]入門</a></p></li>
+<li><p>finpyというものを運営してます。次回未定。PyConでRejectされたものをやるかも？</p></li>
+<li><p>ホロビューズ</p></li>
 </ul>
 </li>
-<li>ツツミ 朝はシステムトレードをPythonでやろうとして、データを取ってくるところまで実施。</li>
-<li><a class="reference external" href="https://twitter.com/_skwbc">カワグチ(&#64;_skwbc)</a><ul>
-<li>ニューラルネットとその実装をTensorFlowでやろうとした。チュートリアルやってました。</li>
-<li><a class="reference external" href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/">Understanding LSTM Networks – colah’s blog</a> がわかりやすかった。</li>
+<li><p>ツツミ 朝はシステムトレードをPythonでやろうとして、データを取ってくるところまで実施。</p></li>
+<li><p><a class="reference external" href="https://twitter.com/_skwbc">カワグチ(&#64;_skwbc)</a></p>
+<ul>
+<li><p>ニューラルネットとその実装をTensorFlowでやろうとした。チュートリアルやってました。</p></li>
+<li><p><a class="reference external" href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/">Understanding LSTM Networks – colah’s blog</a> がわかりやすかった。</p></li>
 </ul>
 </li>
-<li><a class="reference external" href="https://twitter.com/marugari2">&#64;marugari</a> 購買分析のLibraryの改造をしてた。計算のズレのあたりがついたので、後で見直す。</li>
-<li>タケノ 画像処理コトハジメ。<ul>
-<li>どのFWを触ろうかという比較をしたり、データセットを準備したところまで実施した。</li>
-<li><a class="reference external" href="https://github.com/chainer/chainer/blob/master/docs/source/comparison.rst">chainer/comparison.rst</a> に各FWごとの比較があるのでそちらが参考になった。</li>
+<li><p><a class="reference external" href="https://twitter.com/marugari2">&#64;marugari</a> 購買分析のLibraryの改造をしてた。計算のズレのあたりがついたので、後で見直す。</p></li>
+<li><p>タケノ 画像処理コトハジメ。</p>
+<ul>
+<li><p>どのFWを触ろうかという比較をしたり、データセットを準備したところまで実施した。</p></li>
+<li><p><a class="reference external" href="https://github.com/chainer/chainer/blob/master/docs/source/comparison.rst">chainer/comparison.rst</a> に各FWごとの比較があるのでそちらが参考になった。</p></li>
 </ul>
 </li>
-<li>オオヒラ 前処理の手続きを楽にしようとしてた。統計よりの作業。</li>
-<li><a class="reference external" href="https://twitter.com/pir0w">イトウ&#64;pir0w</a> PyQやってました。中級をスタートしてた。<ul>
-<li>正規表現は慣れが必要かなと思った。もう少しでDjangoにいけそう。</li>
-<li>苦労したところ。for文でenumrateが慣れが必要かなと。←イテレータ系が独特かなと思うけど、覚えると楽。</li>
+<li><p>オオヒラ 前処理の手続きを楽にしようとしてた。統計よりの作業。</p></li>
+<li><p><a class="reference external" href="https://twitter.com/pir0w">イトウ&#64;pir0w</a> PyQやってました。中級をスタートしてた。</p>
+<ul>
+<li><p>正規表現は慣れが必要かなと思った。もう少しでDjangoにいけそう。</p></li>
+<li><p>苦労したところ。for文でenumrateが慣れが必要かなと。←イテレータ系が独特かなと思うけど、覚えると楽。</p></li>
 </ul>
 </li>
-<li>ITO Shogo<ul>
-<li>自社サービスの遅いところ、検索部分のカイゼン。キャッシュに入れるデータが多すぎて取り出す時に時間かかってた。キャッシュに入れたほうが遅いという…</li>
-<li>ISCONが好きで、それを模した社内コンテストをするための準備をしてた。</li>
+<li><p>ITO Shogo</p>
+<ul>
+<li><p>自社サービスの遅いところ、検索部分のカイゼン。キャッシュに入れるデータが多すぎて取り出す時に時間かかってた。キャッシュに入れたほうが遅いという…</p></li>
+<li><p>ISCONが好きで、それを模した社内コンテストをするための準備をしてた。</p></li>
 </ul>
 </li>
-<li><a class="reference external" href="https://twitter.com/mocamocaland">&#64;mocamocaland</a><ul>
-<li><a class="reference external" href="http://amzn.to/2wtIAUp">いちばんやさしいPythonの教本</a> を読んだり、Blogを書いてました。</li>
-<li>自分がPython始めるころにあったら良かったなと思った。</li>
+<li><p><a class="reference external" href="https://twitter.com/mocamocaland">&#64;mocamocaland</a></p>
+<ul>
+<li><p><a class="reference external" href="http://amzn.to/2wtIAUp">いちばんやさしいPythonの教本</a> を読んだり、Blogを書いてました。</p></li>
+<li><p>自分がPython始めるころにあったら良かったなと思った。</p></li>
 </ul>
 </li>
-<li><a class="reference external" href="https://twitter.com/kashew_nuts">&#64;kashew_nuts</a> 上記参照</li>
-<li>mdrms 電気をつけたまま寝落ちすることが多いので、値落ちの状況を可視化したい→fitbitの新把握データからとった。</li>
-<li><a class="reference external" href="https://twitter.com/shinyorke">&#64;shinyorke</a> PyConの準備してました。<ul>
-<li>Airflow: Batch処理、前処理などを毎日動かすために使用。</li>
-<li>クローラーが走った後に次の処理に行かない。適当なpython実行ファイルで試したら動いたが、クローリングにScrapyを使用しており、そちらで試すとダメらしい。</li>
+<li><p><a class="reference external" href="https://twitter.com/kashew_nuts">&#64;kashew_nuts</a> 上記参照</p></li>
+<li><p>mdrms 電気をつけたまま寝落ちすることが多いので、値落ちの状況を可視化したい→fitbitの新把握データからとった。</p></li>
+<li><p><a class="reference external" href="https://twitter.com/shinyorke">&#64;shinyorke</a> PyConの準備してました。</p>
+<ul>
+<li><p>Airflow: Batch処理、前処理などを毎日動かすために使用。</p></li>
+<li><p>クローラーが走った後に次の処理に行かない。適当なpython実行ファイルで試したら動いたが、クローリングにScrapyを使用しており、そちらで試すとダメらしい。</p></li>
 </ul>
 </li>
 </ul>
@@ -261,6 +272,8 @@ if(typeof(window.NINJA_CO_JP_ONETAG_BUTTON_00eb4412f1c80db8bbc1af50c58e8ee6)=='u
 </div></section><section><div class="widget">
     <h1>Recent Posts</h1>
     <ul><li>
+            <a href="../../../2020/06/11/wsl2.html">WSL2を使ってみている</a>
+        </li><li>
             <a href="../../../2020/05/05/upgrade_ubuntu_20_04_lts.html">Ubuntu18.04LTSから20.04LTSにアップグレードした</a>
         </li><li>
             <a href="../../../2020/04/08/migrated_lsp_client_to_coc_nvim.html">LSPクライアントをcoc.nvimにした話</a>
@@ -278,13 +291,11 @@ if(typeof(window.NINJA_CO_JP_ONETAG_BUTTON_00eb4412f1c80db8bbc1af50c58e8ee6)=='u
             <a href="../../../2018/08/22/jedivim_memo.html">VimとPythonの補完についてのメモ</a>
         </li><li>
             <a href="../../../2018/07/15/pycon9shu.html">PyCon Kyushuで登壇してきました #PyCon9shu</a>
-        </li><li>
-            <a href="../../../2018/06/24/pypro3.html">Pythonプロフェッショナルプログラミング第3版 #pypro3 が出版されました</a>
         </li></ul>
 </div>
 </section><section><div class="widget">
     <h1>Categories</h1>
-    <ul><li><a href="../../../categories/64bit.html">64bit</a> (2)</li><li><a href="../../../categories/android.html">Android</a> (3)</li><li><a href="../../../categories/bouldering.html">bouldering</a> (2)</li><li><a href="../../../categories/bouldering.html">Bouldering</a> (3)</li><li><a href="../../../categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="../../../categories/c_c.html">C/C++</a> (5)</li><li><a href="../../../categories/chrome.html">Chrome</a> (2)</li><li><a href="../../../categories/db.html">DB</a> (1)</li><li><a href="../../../categories/django.html">Django</a> (10)</li><li><a href="../../../categories/facebook.html">Facebook</a> (1)</li><li><a href="../../../categories/firefox.html">Firefox</a> (1)</li><li><a href="../../../categories/git_mercurial.html">Git/Mercurial</a> (8)</li><li><a href="../../../categories/golang.html">Golang</a> (1)</li><li><a href="../../../categories/google.html">Google</a> (5)</li><li><a href="../../../categories/heroku.html">Heroku</a> (6)</li><li><a href="../../../categories/java.html">Java</a> (2)</li><li><a href="../../../categories/javascript.html">JavaScript</a> (4)</li><li><a href="../../../categories/jupyter.html">Jupyter</a> (1)</li><li><a href="../../../categories/kabepy.html">kabepy</a> (2)</li><li><a href="../../../categories/linux.html">Linux</a> (4)</li><li><a href="../../../categories/lt.html">LT</a> (5)</li><li><a href="../../../categories/mac.html">Mac</a> (8)</li><li><a href="../../../categories/pycharm.html">PyCharm</a> (2)</li><li><a href="../../../categories/pyconjp.html">PyConJP</a> (1)</li><li><a href="../../../categories/pyfes.html">pyfes</a> (7)</li><li><a href="../../../categories/python.html">Python</a> (70)</li><li><a href="../../../categories/slack.html">Slack</a> (1)</li><li><a href="../../../categories/sphinx.html">Sphinx</a> (8)</li><li><a href="../../../categories/sqlalchemy.html">SQLAlchemy</a> (1)</li><li><a href="../../../categories/ssd.html">SSD</a> (1)</li><li><a href="../../../categories/tddbc.html">TDDBC</a> (1)</li><li><a href="../../../categories/tinkerer.html">Tinkerer</a> (7)</li><li><a href="../../../categories/tmux.html">tmux</a> (1)</li><li><a href="../../../categories/ubuntu.html">Ubuntu</a> (3)</li><li><a href="../../../categories/vagrant.html">Vagrant</a> (1)</li><li><a href="../../../categories/vim.html">Vim</a> (24)</li><li><a href="../../../categories/vimconf.html">VimConf</a> (3)</li><li><a href="../../../categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="../../../categories/windows.html">Windows</a> (2)</li><li><a href="../../../categories/windows7.html">Windows7</a> (4)</li><li><a href="../../../categories/アルゴリズム.html">アルゴリズム</a> (1)</li><li><a href="../../../categories/セキュリティ.html">セキュリティ</a> (2)</li><li><a href="../../../categories/ネットワーク.html">ネットワーク</a> (1)</li><li><a href="../../../categories/プログラミング.html">プログラミング</a> (7)</li><li><a href="../../../categories/勉強会.html">勉強会</a> (30)</li><li><a href="../../../categories/応用情報技術者.html">応用情報技術者</a> (10)</li><li><a href="../../../categories/情報処理技術者試験.html">情報処理技術者試験</a> (10)</li><li><a href="../../../categories/本.html">本</a> (29)</li><li><a href="../../../categories/開発環境.html">開発環境</a> (11)</li><li><a href="../../../categories/雑記.html">雑記</a> (38)</li><li><a href="../../../categories/高速化.html">高速化</a> (1)</li></ul>
+    <ul><li><a href="../../../categories/64bit.html">64bit</a> (2)</li><li><a href="../../../categories/android.html">Android</a> (3)</li><li><a href="../../../categories/bouldering.html">bouldering</a> (2)</li><li><a href="../../../categories/bouldering.html">Bouldering</a> (3)</li><li><a href="../../../categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="../../../categories/c_c.html">C/C++</a> (5)</li><li><a href="../../../categories/chrome.html">Chrome</a> (2)</li><li><a href="../../../categories/db.html">DB</a> (1)</li><li><a href="../../../categories/django.html">Django</a> (10)</li><li><a href="../../../categories/facebook.html">Facebook</a> (1)</li><li><a href="../../../categories/firefox.html">Firefox</a> (1)</li><li><a href="../../../categories/git_mercurial.html">Git/Mercurial</a> (8)</li><li><a href="../../../categories/golang.html">Golang</a> (1)</li><li><a href="../../../categories/google.html">Google</a> (5)</li><li><a href="../../../categories/heroku.html">Heroku</a> (6)</li><li><a href="../../../categories/java.html">Java</a> (2)</li><li><a href="../../../categories/javascript.html">JavaScript</a> (4)</li><li><a href="../../../categories/jupyter.html">Jupyter</a> (1)</li><li><a href="../../../categories/kabepy.html">kabepy</a> (2)</li><li><a href="../../../categories/linux.html">Linux</a> (5)</li><li><a href="../../../categories/lt.html">LT</a> (5)</li><li><a href="../../../categories/mac.html">Mac</a> (8)</li><li><a href="../../../categories/pycharm.html">PyCharm</a> (2)</li><li><a href="../../../categories/pyconjp.html">PyConJP</a> (1)</li><li><a href="../../../categories/pyfes.html">pyfes</a> (7)</li><li><a href="../../../categories/python.html">Python</a> (70)</li><li><a href="../../../categories/slack.html">Slack</a> (1)</li><li><a href="../../../categories/sphinx.html">Sphinx</a> (8)</li><li><a href="../../../categories/sqlalchemy.html">SQLAlchemy</a> (1)</li><li><a href="../../../categories/ssd.html">SSD</a> (1)</li><li><a href="../../../categories/tddbc.html">TDDBC</a> (1)</li><li><a href="../../../categories/tinkerer.html">Tinkerer</a> (7)</li><li><a href="../../../categories/tmux.html">tmux</a> (1)</li><li><a href="../../../categories/ubuntu.html">Ubuntu</a> (3)</li><li><a href="../../../categories/vagrant.html">Vagrant</a> (1)</li><li><a href="../../../categories/vim.html">Vim</a> (24)</li><li><a href="../../../categories/vimconf.html">VimConf</a> (3)</li><li><a href="../../../categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="../../../categories/windows.html">Windows</a> (3)</li><li><a href="../../../categories/windows7.html">Windows7</a> (4)</li><li><a href="../../../categories/wsl.html">WSL</a> (1)</li><li><a href="../../../categories/アルゴリズム.html">アルゴリズム</a> (1)</li><li><a href="../../../categories/セキュリティ.html">セキュリティ</a> (2)</li><li><a href="../../../categories/ネットワーク.html">ネットワーク</a> (1)</li><li><a href="../../../categories/プログラミング.html">プログラミング</a> (7)</li><li><a href="../../../categories/勉強会.html">勉強会</a> (30)</li><li><a href="../../../categories/応用情報技術者.html">応用情報技術者</a> (10)</li><li><a href="../../../categories/情報処理技術者試験.html">情報処理技術者試験</a> (10)</li><li><a href="../../../categories/本.html">本</a> (29)</li><li><a href="../../../categories/開発環境.html">開発環境</a> (11)</li><li><a href="../../../categories/雑記.html">雑記</a> (38)</li><li><a href="../../../categories/高速化.html">高速化</a> (1)</li></ul>
 </div></section><section><div class="widget">
     <h1>About Me</h1>
     <div>
@@ -300,7 +311,7 @@ if(typeof(window.NINJA_CO_JP_ONETAG_BUTTON_00eb4412f1c80db8bbc1af50c58e8ee6)=='u
     </div>
 </div></section></aside></div> <!-- #main --></div> <!-- #main-container -->
 
-        <div class="footer-container" role="contentinfo"><footer class="wrapper">&copy; Copyright 2011-2018, Kashun YOSHIDA. Powered by <a href="http://www.tinkerer.me/">Tinkerer</a> and <a href="http://sphinx.pocoo.org/">Sphinx</a>.</footer></div> <!-- footer-container -->
+        <div class="footer-container" role="contentinfo"><footer class="wrapper">&copy; Copyright 2011-2020, Kashun YOSHIDA. Powered by <a href="http://www.tinkerer.me/">Tinkerer</a> and <a href="http://sphinx.pocoo.org/">Sphinx</a>.</footer></div> <!-- footer-container -->
 
       </div> <!--! end of #container --><!--[if lt IE 7 ]>
           <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>

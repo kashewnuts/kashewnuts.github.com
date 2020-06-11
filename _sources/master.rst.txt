@@ -4,6 +4,7 @@ Sitemap
 .. toctree::
    :maxdepth: 1
 
+   2020/06/11/wsl2
    2020/05/05/upgrade_ubuntu_20_04_lts
    2020/04/08/migrated_lsp_client_to_coc_nvim
    2019/01/28/move_from_jedivim_to_vimlsp

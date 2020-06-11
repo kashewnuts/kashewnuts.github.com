@@ -35,16 +35,16 @@
         <script>window.jQuery || document.write('<script src="../../../_static/vendor/jquery-1.8.2.min.js"><\/script>')</script>
         <script src="../../../_static/plugins.js"></script>
         <script src="../../../_static/main.js"></script>
-        <link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="LSPクライアントをcoc.nvimにした話" href="../../04/08/migrated_lsp_client_to_coc_nvim.html" /><link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/kashew_nuts-blog" /><script type="text/javascript">
+        <link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="LSPクライアントをcoc.nvimにした話" href="../../04/08/migrated_lsp_client_to_coc_nvim.html" /><link rel="prev" title="WSL2を使ってみている" href="../../06/11/wsl2.html" /><link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/kashew_nuts-blog" /><script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.7.1',
+        VERSION:     '1.7.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         SOURCELINK_SUFFIX: '.txt',
         HAS_SOURCE:  true
       };
-    </script><script type="text/javascript" src="../../../_static/underscore.js"></script><script type="text/javascript" src="../../../_static/doctools.js"></script><script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script><script type="text/javascript" src="../../../_static/disqus.js"></script><script type="text/javascript" src="../../../_static/google_analytics.js"></script>
+    </script><script type="text/javascript" src="../../../_static/underscore.js"></script><script type="text/javascript" src="../../../_static/doctools.js"></script><script type="text/javascript" src="../../../_static/language_data.js"></script><script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script><script type="text/javascript" src="../../../_static/disqus.js"></script><script type="text/javascript" src="../../../_static/google_analytics.js"></script>
     <meta property="fb:admins" content="200170096719194"/>
     
 
@@ -81,17 +81,18 @@
 <p>Ubuntu Desktopがアップデートの影響か音が鳴らなくなり、Windowsに切り替えていましたが、GWでUbuntu 20.04LTSにアップグレードしたのでメモ。</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#ubuntu20-04lts" id="id6">Ubuntu20.04LTSとは</a></li>
-<li><a class="reference internal" href="#id1" id="id7">アップグレードの手順について</a></li>
-<li><a class="reference internal" href="#id2" id="id8">イントール時間</a></li>
-<li><a class="reference internal" href="#id3" id="id9">アップグレード後実施したこと</a><ul>
-<li><a class="reference internal" href="#ibus-mozc" id="id10">ibus-mozcのキーボードが英字配列で認識されていたので、設定ファイルを編集</a></li>
+<li><p><a class="reference internal" href="#ubuntu20-04lts" id="id6">Ubuntu20.04LTSとは</a></p></li>
+<li><p><a class="reference internal" href="#id1" id="id7">アップグレードの手順について</a></p></li>
+<li><p><a class="reference internal" href="#id2" id="id8">イントール時間</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id9">アップグレード後実施したこと</a></p>
+<ul>
+<li><p><a class="reference internal" href="#ibus-mozc" id="id10">ibus-mozcのキーボードが英字配列で認識されていたので、設定ファイルを編集</a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id4" id="id11">必要なパッケージのインストール</a></li>
-<li><a class="reference internal" href="#vim" id="id12">vimの再インストール</a></li>
-<li><a class="reference internal" href="#xsel" id="id13">xselの再インストール</a></li>
-<li><a class="reference internal" href="#id5" id="id14">最後に</a></li>
+<li><p><a class="reference internal" href="#id4" id="id11">必要なパッケージのインストール</a></p></li>
+<li><p><a class="reference internal" href="#vim" id="id12">vimの再インストール</a></p></li>
+<li><p><a class="reference internal" href="#xsel" id="id13">xselの再インストール</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id14">最後に</a></p></li>
 </ul>
 </div>
 <div class="section" id="ubuntu20-04lts">
@@ -114,10 +115,10 @@
 <h3><a class="toc-backref" href="#id10">ibus-mozcのキーボードが英字配列で認識されていたので、設定ファイルを編集</a></h3>
 <p>毎回調べてる <a class="reference external" href="http://note.kurodigi.com/ibus-mozc-kbdlayout/">参考URL</a> を見ているので改めてメモ。</p>
 <ul class="simple">
-<li><span class="docutils literal"><span class="pre">sudo</span> <span class="pre">vim</span> <span class="pre">/usr/share/ibus/component/mozc.xml</span></span></li>
-<li><span class="docutils literal"><span class="pre">&lt;layout&gt;default&lt;/layout&gt;</span></span> を <span class="docutils literal"><span class="pre">&lt;layout&gt;jp&lt;/layout&gt;</span></span> に置換</li>
-<li>変更を保存したらログアウトして再ログイン</li>
-<li>キーボードレイアウトを確認して日本語配列になっていればOK</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">vim</span> <span class="pre">/usr/share/ibus/component/mozc.xml</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;layout&gt;default&lt;/layout&gt;</span></code> を <code class="docutils literal notranslate"><span class="pre">&lt;layout&gt;jp&lt;/layout&gt;</span></code> に置換</p></li>
+<li><p>変更を保存したらログアウトして再ログイン</p></li>
+<li><p>キーボードレイアウトを確認して日本語配列になっていればOK</p></li>
 </ul>
 </div>
 </div>
@@ -125,15 +126,15 @@
 <h2><a class="toc-backref" href="#id11">必要なパッケージのインストール</a></h2>
 <p>デフォルトのPythonのバージョンが上がっていたり、nodejsまわりが消えていたので再インストールしました。</p>
 <ul class="simple">
-<li><span class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">python3-venv</span> <span class="pre">python3-pip</span> <span class="pre">nodejs</span> <span class="pre">npm</span></span></li>
-<li><a class="reference external" href="https://launchpad.net/~deadsnakes/+archive/ubuntu/ppa?field.series_filter=focal">deadsnakes</a> から <span class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">python3.7</span> <span class="pre">python3.7-venv</span></span></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">python3-venv</span> <span class="pre">python3-pip</span> <span class="pre">nodejs</span> <span class="pre">npm</span></code></p></li>
+<li><p><a class="reference external" href="https://launchpad.net/~deadsnakes/+archive/ubuntu/ppa?field.series_filter=focal">deadsnakes</a> から <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">python3.7</span> <span class="pre">python3.7-venv</span></code></p></li>
 </ul>
 <p>Ubuntuでどうやってシステム側にpipをいれるかは毎回悩ましいのですが、今回はaptで入れました。</p>
 </div>
 <div class="section" id="vim">
 <h2><a class="toc-backref" href="#id12">vimの再インストール</a></h2>
 <p>自前でビルドしているため、依存関係が変わったあとは再インストールが必要でした。今回はPython3の場所を指定するだけでOKでした。
-vimのリポジトリーはgit clone済みなので、 <span class="docutils literal"><span class="pre">vim/src</span></span> ディレクトリーに移動して以下のコマンドを実行します。</p>
+vimのリポジトリーはgit clone済みなので、 <code class="docutils literal notranslate"><span class="pre">vim/src</span></code> ディレクトリーに移動して以下のコマンドを実行します。</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ make distclean
 $ ./configure <span class="se">\</span>
     --with-features<span class="o">=</span>huge <span class="se">\</span>
@@ -200,7 +201,7 @@ if(typeof(window.NINJA_CO_JP_ONETAG_BUTTON_00eb4412f1c80db8bbc1af50c58e8ee6)=='u
         </div>
     <div id="disqus_thread"></div><script type="text/javascript">    var disqus_shortname = "kashewnutsblog";    var disqus_identifier = "2020/05/05/upgrade_ubuntu_20_04_lts";    disqus_thread();</script><noscript>Please enable JavaScript to view the    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <ul class="related clearfix">
-            <li class="left"></li>
+            <li class="left"> &laquo; <a href="../../06/11/wsl2.html">WSL2を使ってみている</a></li>
             <li class="right"><a href="../../04/08/migrated_lsp_client_to_coc_nvim.html">LSPクライアントをcoc.nvimにした話</a> &raquo; </li>
         </ul></article><aside class="sidebar"><section><div class="widget">
   <div>
@@ -215,6 +216,8 @@ if(typeof(window.NINJA_CO_JP_ONETAG_BUTTON_00eb4412f1c80db8bbc1af50c58e8ee6)=='u
 </div></section><section><div class="widget">
     <h1>Recent Posts</h1>
     <ul><li>
+            <a href="../../06/11/wsl2.html">WSL2を使ってみている</a>
+        </li><li>
             <a href="#">Ubuntu18.04LTSから20.04LTSにアップグレードした</a>
         </li><li>
             <a href="../../04/08/migrated_lsp_client_to_coc_nvim.html">LSPクライアントをcoc.nvimにした話</a>
@@ -232,13 +235,11 @@ if(typeof(window.NINJA_CO_JP_ONETAG_BUTTON_00eb4412f1c80db8bbc1af50c58e8ee6)=='u
             <a href="../../../2018/08/22/jedivim_memo.html">VimとPythonの補完についてのメモ</a>
         </li><li>
             <a href="../../../2018/07/15/pycon9shu.html">PyCon Kyushuで登壇してきました #PyCon9shu</a>
-        </li><li>
-            <a href="../../../2018/06/24/pypro3.html">Pythonプロフェッショナルプログラミング第3版 #pypro3 が出版されました</a>
         </li></ul>
 </div>
 </section><section><div class="widget">
     <h1>Categories</h1>
-    <ul><li><a href="../../../categories/64bit.html">64bit</a> (2)</li><li><a href="../../../categories/android.html">Android</a> (3)</li><li><a href="../../../categories/bouldering.html">bouldering</a> (2)</li><li><a href="../../../categories/bouldering.html">Bouldering</a> (3)</li><li><a href="../../../categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="../../../categories/c_c.html">C/C++</a> (5)</li><li><a href="../../../categories/chrome.html">Chrome</a> (2)</li><li><a href="../../../categories/db.html">DB</a> (1)</li><li><a href="../../../categories/django.html">Django</a> (10)</li><li><a href="../../../categories/facebook.html">Facebook</a> (1)</li><li><a href="../../../categories/firefox.html">Firefox</a> (1)</li><li><a href="../../../categories/git_mercurial.html">Git/Mercurial</a> (8)</li><li><a href="../../../categories/golang.html">Golang</a> (1)</li><li><a href="../../../categories/google.html">Google</a> (5)</li><li><a href="../../../categories/heroku.html">Heroku</a> (6)</li><li><a href="../../../categories/java.html">Java</a> (2)</li><li><a href="../../../categories/javascript.html">JavaScript</a> (4)</li><li><a href="../../../categories/jupyter.html">Jupyter</a> (1)</li><li><a href="../../../categories/kabepy.html">kabepy</a> (2)</li><li><a href="../../../categories/linux.html">Linux</a> (4)</li><li><a href="../../../categories/lt.html">LT</a> (5)</li><li><a href="../../../categories/mac.html">Mac</a> (8)</li><li><a href="../../../categories/pycharm.html">PyCharm</a> (2)</li><li><a href="../../../categories/pyconjp.html">PyConJP</a> (1)</li><li><a href="../../../categories/pyfes.html">pyfes</a> (7)</li><li><a href="../../../categories/python.html">Python</a> (70)</li><li><a href="../../../categories/slack.html">Slack</a> (1)</li><li><a href="../../../categories/sphinx.html">Sphinx</a> (8)</li><li><a href="../../../categories/sqlalchemy.html">SQLAlchemy</a> (1)</li><li><a href="../../../categories/ssd.html">SSD</a> (1)</li><li><a href="../../../categories/tddbc.html">TDDBC</a> (1)</li><li><a href="../../../categories/tinkerer.html">Tinkerer</a> (7)</li><li><a href="../../../categories/tmux.html">tmux</a> (1)</li><li><a href="../../../categories/ubuntu.html">Ubuntu</a> (3)</li><li><a href="../../../categories/vagrant.html">Vagrant</a> (1)</li><li><a href="../../../categories/vim.html">Vim</a> (24)</li><li><a href="../../../categories/vimconf.html">VimConf</a> (3)</li><li><a href="../../../categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="../../../categories/windows.html">Windows</a> (2)</li><li><a href="../../../categories/windows7.html">Windows7</a> (4)</li><li><a href="../../../categories/アルゴリズム.html">アルゴリズム</a> (1)</li><li><a href="../../../categories/セキュリティ.html">セキュリティ</a> (2)</li><li><a href="../../../categories/ネットワーク.html">ネットワーク</a> (1)</li><li><a href="../../../categories/プログラミング.html">プログラミング</a> (7)</li><li><a href="../../../categories/勉強会.html">勉強会</a> (30)</li><li><a href="../../../categories/応用情報技術者.html">応用情報技術者</a> (10)</li><li><a href="../../../categories/情報処理技術者試験.html">情報処理技術者試験</a> (10)</li><li><a href="../../../categories/本.html">本</a> (29)</li><li><a href="../../../categories/開発環境.html">開発環境</a> (11)</li><li><a href="../../../categories/雑記.html">雑記</a> (38)</li><li><a href="../../../categories/高速化.html">高速化</a> (1)</li></ul>
+    <ul><li><a href="../../../categories/64bit.html">64bit</a> (2)</li><li><a href="../../../categories/android.html">Android</a> (3)</li><li><a href="../../../categories/bouldering.html">bouldering</a> (2)</li><li><a href="../../../categories/bouldering.html">Bouldering</a> (3)</li><li><a href="../../../categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="../../../categories/c_c.html">C/C++</a> (5)</li><li><a href="../../../categories/chrome.html">Chrome</a> (2)</li><li><a href="../../../categories/db.html">DB</a> (1)</li><li><a href="../../../categories/django.html">Django</a> (10)</li><li><a href="../../../categories/facebook.html">Facebook</a> (1)</li><li><a href="../../../categories/firefox.html">Firefox</a> (1)</li><li><a href="../../../categories/git_mercurial.html">Git/Mercurial</a> (8)</li><li><a href="../../../categories/golang.html">Golang</a> (1)</li><li><a href="../../../categories/google.html">Google</a> (5)</li><li><a href="../../../categories/heroku.html">Heroku</a> (6)</li><li><a href="../../../categories/java.html">Java</a> (2)</li><li><a href="../../../categories/javascript.html">JavaScript</a> (4)</li><li><a href="../../../categories/jupyter.html">Jupyter</a> (1)</li><li><a href="../../../categories/kabepy.html">kabepy</a> (2)</li><li><a href="../../../categories/linux.html">Linux</a> (5)</li><li><a href="../../../categories/lt.html">LT</a> (5)</li><li><a href="../../../categories/mac.html">Mac</a> (8)</li><li><a href="../../../categories/pycharm.html">PyCharm</a> (2)</li><li><a href="../../../categories/pyconjp.html">PyConJP</a> (1)</li><li><a href="../../../categories/pyfes.html">pyfes</a> (7)</li><li><a href="../../../categories/python.html">Python</a> (70)</li><li><a href="../../../categories/slack.html">Slack</a> (1)</li><li><a href="../../../categories/sphinx.html">Sphinx</a> (8)</li><li><a href="../../../categories/sqlalchemy.html">SQLAlchemy</a> (1)</li><li><a href="../../../categories/ssd.html">SSD</a> (1)</li><li><a href="../../../categories/tddbc.html">TDDBC</a> (1)</li><li><a href="../../../categories/tinkerer.html">Tinkerer</a> (7)</li><li><a href="../../../categories/tmux.html">tmux</a> (1)</li><li><a href="../../../categories/ubuntu.html">Ubuntu</a> (3)</li><li><a href="../../../categories/vagrant.html">Vagrant</a> (1)</li><li><a href="../../../categories/vim.html">Vim</a> (24)</li><li><a href="../../../categories/vimconf.html">VimConf</a> (3)</li><li><a href="../../../categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="../../../categories/windows.html">Windows</a> (3)</li><li><a href="../../../categories/windows7.html">Windows7</a> (4)</li><li><a href="../../../categories/wsl.html">WSL</a> (1)</li><li><a href="../../../categories/アルゴリズム.html">アルゴリズム</a> (1)</li><li><a href="../../../categories/セキュリティ.html">セキュリティ</a> (2)</li><li><a href="../../../categories/ネットワーク.html">ネットワーク</a> (1)</li><li><a href="../../../categories/プログラミング.html">プログラミング</a> (7)</li><li><a href="../../../categories/勉強会.html">勉強会</a> (30)</li><li><a href="../../../categories/応用情報技術者.html">応用情報技術者</a> (10)</li><li><a href="../../../categories/情報処理技術者試験.html">情報処理技術者試験</a> (10)</li><li><a href="../../../categories/本.html">本</a> (29)</li><li><a href="../../../categories/開発環境.html">開発環境</a> (11)</li><li><a href="../../../categories/雑記.html">雑記</a> (38)</li><li><a href="../../../categories/高速化.html">高速化</a> (1)</li></ul>
 </div></section><section><div class="widget">
     <h1>About Me</h1>
     <div>
@@ -254,7 +255,7 @@ if(typeof(window.NINJA_CO_JP_ONETAG_BUTTON_00eb4412f1c80db8bbc1af50c58e8ee6)=='u
     </div>
 </div></section></aside></div> <!-- #main --></div> <!-- #main-container -->
 
-        <div class="footer-container" role="contentinfo"><footer class="wrapper">&copy; Copyright 2011-2018, Kashun YOSHIDA. Powered by <a href="http://www.tinkerer.me/">Tinkerer</a> and <a href="http://sphinx.pocoo.org/">Sphinx</a>.</footer></div> <!-- footer-container -->
+        <div class="footer-container" role="contentinfo"><footer class="wrapper">&copy; Copyright 2011-2020, Kashun YOSHIDA. Powered by <a href="http://www.tinkerer.me/">Tinkerer</a> and <a href="http://sphinx.pocoo.org/">Sphinx</a>.</footer></div> <!-- footer-container -->
 
       </div> <!--! end of #container --><!--[if lt IE 7 ]>
           <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>

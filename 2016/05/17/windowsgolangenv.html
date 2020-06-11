@@ -38,13 +38,13 @@
         <link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Python Developers Festa2013.11に参加しました #pyfes" href="../../../2013/11/30/pyfes201311.html" /><link rel="prev" title="私的マークアップ言語編集環境" href="../25/markupenv.html" /><link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/kashew_nuts-blog" /><script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.7.1',
+        VERSION:     '1.7.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         SOURCELINK_SUFFIX: '.txt',
         HAS_SOURCE:  true
       };
-    </script><script type="text/javascript" src="../../../_static/underscore.js"></script><script type="text/javascript" src="../../../_static/doctools.js"></script><script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script><script type="text/javascript" src="../../../_static/disqus.js"></script><script type="text/javascript" src="../../../_static/google_analytics.js"></script>
+    </script><script type="text/javascript" src="../../../_static/underscore.js"></script><script type="text/javascript" src="../../../_static/doctools.js"></script><script type="text/javascript" src="../../../_static/language_data.js"></script><script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script><script type="text/javascript" src="../../../_static/disqus.js"></script><script type="text/javascript" src="../../../_static/google_analytics.js"></script>
     <meta property="fb:admins" content="200170096719194"/>
     
 
@@ -84,18 +84,17 @@
 <div class="section" id="id2">
 <h3>環境変数設定</h3>
 <p>以下の環境変数を追加</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">GOROOT:</th><td class="field-body">C:\Go</td>
-</tr>
-<tr class="field-even field"><th class="field-name">GOPATH:</th><td class="field-body">C:\Go\goprojects</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">PATH:</th><td class="field-body">%GOROOT%\bin;%GOPATH%\bin</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">GOROOT</dt>
+<dd class="field-odd"><p>C:\Go</p>
+</dd>
+<dt class="field-even">GOPATH</dt>
+<dd class="field-even"><p>C:\Go\goprojects</p>
+</dd>
+<dt class="field-odd">PATH</dt>
+<dd class="field-odd"><p>%GOROOT%\bin;%GOPATH%\bin</p>
+</dd>
+</dl>
 <p>GOROOTはGolangをインストールした場所、GOPATHはユーザーのワーキングディレクトリ(好きな場所で良い)を指定。</p>
 <p>セットアップできたら動作確認をする。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ go version
@@ -150,20 +149,20 @@ on_ft = &#39;go&#39;
 </div>
 <p>2016-05-16時点でfatih/vim-goを導入すると下記がインストールされる。</p>
 <ul class="simple">
-<li>asmfmt.exe</li>
-<li>errcheck.exe</li>
-<li>gocode.exe</li>
-<li>godef.exe</li>
-<li>gogetdoc.exe</li>
-<li>goimports.exe</li>
-<li>golint.exe</li>
-<li>gometalinter.exe</li>
-<li>gorename.exe</li>
-<li>gotags.exe</li>
-<li>guru.exe</li>
-<li>impl.exe</li>
-<li>motion.exe</li>
-<li>oracle.exe</li>
+<li><p>asmfmt.exe</p></li>
+<li><p>errcheck.exe</p></li>
+<li><p>gocode.exe</p></li>
+<li><p>godef.exe</p></li>
+<li><p>gogetdoc.exe</p></li>
+<li><p>goimports.exe</p></li>
+<li><p>golint.exe</p></li>
+<li><p>gometalinter.exe</p></li>
+<li><p>gorename.exe</p></li>
+<li><p>gotags.exe</p></li>
+<li><p>guru.exe</p></li>
+<li><p>impl.exe</p></li>
+<li><p>motion.exe</p></li>
+<li><p>oracle.exe</p></li>
 </ul>
 <p>自分のvimrcをご覧になりたい方は <a class="reference external" href="https://github.com/kashewnuts/dotfiles/blob/master/files/.vim/vimrc">こちら</a></p>
 </div>
@@ -215,9 +214,9 @@ Hello, Golang world!
 <div class="section" id="id7">
 <h2>参考</h2>
 <ul class="simple">
-<li><a class="reference external" href="http://qiita.com/izumin5210/items/1f3c312edd7f0075b09c#%E6%AF%8E%E5%9B%9E%E5%85%A5%E3%82%8C%E3%82%8B%E3%83%97%E3%83%A9%E3%82%B0%E3%82%A4%E3%83%B3%E3%81%A8%E3%81%8B">【Go × Vim】 VimでGoを書く - 2015 Spring - Qiita</a></li>
-<li><a class="reference external" href="http://www.muo.jp/2015/06/vim-and-go.html">弱Vim使いが中途半端な予備知識でGoを書き始めたら - muo-notes</a></li>
-<li><a class="reference external" href="http://mattn.kaoriya.net/software/lang/go/20110819203649.htm">Big Sky :: 日本語grepが出来るjvgrepというのを作った。</a></li>
+<li><p><a class="reference external" href="http://qiita.com/izumin5210/items/1f3c312edd7f0075b09c#%E6%AF%8E%E5%9B%9E%E5%85%A5%E3%82%8C%E3%82%8B%E3%83%97%E3%83%A9%E3%82%B0%E3%82%A4%E3%83%B3%E3%81%A8%E3%81%8B">【Go × Vim】 VimでGoを書く - 2015 Spring - Qiita</a></p></li>
+<li><p><a class="reference external" href="http://www.muo.jp/2015/06/vim-and-go.html">弱Vim使いが中途半端な予備知識でGoを書き始めたら - muo-notes</a></p></li>
+<li><p><a class="reference external" href="http://mattn.kaoriya.net/software/lang/go/20110819203649.htm">Big Sky :: 日本語grepが出来るjvgrepというのを作った。</a></p></li>
 </ul>
 </div>
 </div>
@@ -272,6 +271,8 @@ if(typeof(window.NINJA_CO_JP_ONETAG_BUTTON_00eb4412f1c80db8bbc1af50c58e8ee6)=='u
 </div></section><section><div class="widget">
     <h1>Recent Posts</h1>
     <ul><li>
+            <a href="../../../2020/06/11/wsl2.html">WSL2を使ってみている</a>
+        </li><li>
             <a href="../../../2020/05/05/upgrade_ubuntu_20_04_lts.html">Ubuntu18.04LTSから20.04LTSにアップグレードした</a>
         </li><li>
             <a href="../../../2020/04/08/migrated_lsp_client_to_coc_nvim.html">LSPクライアントをcoc.nvimにした話</a>
@@ -289,13 +290,11 @@ if(typeof(window.NINJA_CO_JP_ONETAG_BUTTON_00eb4412f1c80db8bbc1af50c58e8ee6)=='u
             <a href="../../../2018/08/22/jedivim_memo.html">VimとPythonの補完についてのメモ</a>
         </li><li>
             <a href="../../../2018/07/15/pycon9shu.html">PyCon Kyushuで登壇してきました #PyCon9shu</a>
-        </li><li>
-            <a href="../../../2018/06/24/pypro3.html">Pythonプロフェッショナルプログラミング第3版 #pypro3 が出版されました</a>
         </li></ul>
 </div>
 </section><section><div class="widget">
     <h1>Categories</h1>
-    <ul><li><a href="../../../categories/64bit.html">64bit</a> (2)</li><li><a href="../../../categories/android.html">Android</a> (3)</li><li><a href="../../../categories/bouldering.html">bouldering</a> (2)</li><li><a href="../../../categories/bouldering.html">Bouldering</a> (3)</li><li><a href="../../../categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="../../../categories/c_c.html">C/C++</a> (5)</li><li><a href="../../../categories/chrome.html">Chrome</a> (2)</li><li><a href="../../../categories/db.html">DB</a> (1)</li><li><a href="../../../categories/django.html">Django</a> (10)</li><li><a href="../../../categories/facebook.html">Facebook</a> (1)</li><li><a href="../../../categories/firefox.html">Firefox</a> (1)</li><li><a href="../../../categories/git_mercurial.html">Git/Mercurial</a> (8)</li><li><a href="../../../categories/golang.html">Golang</a> (1)</li><li><a href="../../../categories/google.html">Google</a> (5)</li><li><a href="../../../categories/heroku.html">Heroku</a> (6)</li><li><a href="../../../categories/java.html">Java</a> (2)</li><li><a href="../../../categories/javascript.html">JavaScript</a> (4)</li><li><a href="../../../categories/jupyter.html">Jupyter</a> (1)</li><li><a href="../../../categories/kabepy.html">kabepy</a> (2)</li><li><a href="../../../categories/linux.html">Linux</a> (4)</li><li><a href="../../../categories/lt.html">LT</a> (5)</li><li><a href="../../../categories/mac.html">Mac</a> (8)</li><li><a href="../../../categories/pycharm.html">PyCharm</a> (2)</li><li><a href="../../../categories/pyconjp.html">PyConJP</a> (1)</li><li><a href="../../../categories/pyfes.html">pyfes</a> (7)</li><li><a href="../../../categories/python.html">Python</a> (70)</li><li><a href="../../../categories/slack.html">Slack</a> (1)</li><li><a href="../../../categories/sphinx.html">Sphinx</a> (8)</li><li><a href="../../../categories/sqlalchemy.html">SQLAlchemy</a> (1)</li><li><a href="../../../categories/ssd.html">SSD</a> (1)</li><li><a href="../../../categories/tddbc.html">TDDBC</a> (1)</li><li><a href="../../../categories/tinkerer.html">Tinkerer</a> (7)</li><li><a href="../../../categories/tmux.html">tmux</a> (1)</li><li><a href="../../../categories/ubuntu.html">Ubuntu</a> (3)</li><li><a href="../../../categories/vagrant.html">Vagrant</a> (1)</li><li><a href="../../../categories/vim.html">Vim</a> (24)</li><li><a href="../../../categories/vimconf.html">VimConf</a> (3)</li><li><a href="../../../categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="../../../categories/windows.html">Windows</a> (2)</li><li><a href="../../../categories/windows7.html">Windows7</a> (4)</li><li><a href="../../../categories/アルゴリズム.html">アルゴリズム</a> (1)</li><li><a href="../../../categories/セキュリティ.html">セキュリティ</a> (2)</li><li><a href="../../../categories/ネットワーク.html">ネットワーク</a> (1)</li><li><a href="../../../categories/プログラミング.html">プログラミング</a> (7)</li><li><a href="../../../categories/勉強会.html">勉強会</a> (30)</li><li><a href="../../../categories/応用情報技術者.html">応用情報技術者</a> (10)</li><li><a href="../../../categories/情報処理技術者試験.html">情報処理技術者試験</a> (10)</li><li><a href="../../../categories/本.html">本</a> (29)</li><li><a href="../../../categories/開発環境.html">開発環境</a> (11)</li><li><a href="../../../categories/雑記.html">雑記</a> (38)</li><li><a href="../../../categories/高速化.html">高速化</a> (1)</li></ul>
+    <ul><li><a href="../../../categories/64bit.html">64bit</a> (2)</li><li><a href="../../../categories/android.html">Android</a> (3)</li><li><a href="../../../categories/bouldering.html">bouldering</a> (2)</li><li><a href="../../../categories/bouldering.html">Bouldering</a> (3)</li><li><a href="../../../categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="../../../categories/c_c.html">C/C++</a> (5)</li><li><a href="../../../categories/chrome.html">Chrome</a> (2)</li><li><a href="../../../categories/db.html">DB</a> (1)</li><li><a href="../../../categories/django.html">Django</a> (10)</li><li><a href="../../../categories/facebook.html">Facebook</a> (1)</li><li><a href="../../../categories/firefox.html">Firefox</a> (1)</li><li><a href="../../../categories/git_mercurial.html">Git/Mercurial</a> (8)</li><li><a href="../../../categories/golang.html">Golang</a> (1)</li><li><a href="../../../categories/google.html">Google</a> (5)</li><li><a href="../../../categories/heroku.html">Heroku</a> (6)</li><li><a href="../../../categories/java.html">Java</a> (2)</li><li><a href="../../../categories/javascript.html">JavaScript</a> (4)</li><li><a href="../../../categories/jupyter.html">Jupyter</a> (1)</li><li><a href="../../../categories/kabepy.html">kabepy</a> (2)</li><li><a href="../../../categories/linux.html">Linux</a> (5)</li><li><a href="../../../categories/lt.html">LT</a> (5)</li><li><a href="../../../categories/mac.html">Mac</a> (8)</li><li><a href="../../../categories/pycharm.html">PyCharm</a> (2)</li><li><a href="../../../categories/pyconjp.html">PyConJP</a> (1)</li><li><a href="../../../categories/pyfes.html">pyfes</a> (7)</li><li><a href="../../../categories/python.html">Python</a> (70)</li><li><a href="../../../categories/slack.html">Slack</a> (1)</li><li><a href="../../../categories/sphinx.html">Sphinx</a> (8)</li><li><a href="../../../categories/sqlalchemy.html">SQLAlchemy</a> (1)</li><li><a href="../../../categories/ssd.html">SSD</a> (1)</li><li><a href="../../../categories/tddbc.html">TDDBC</a> (1)</li><li><a href="../../../categories/tinkerer.html">Tinkerer</a> (7)</li><li><a href="../../../categories/tmux.html">tmux</a> (1)</li><li><a href="../../../categories/ubuntu.html">Ubuntu</a> (3)</li><li><a href="../../../categories/vagrant.html">Vagrant</a> (1)</li><li><a href="../../../categories/vim.html">Vim</a> (24)</li><li><a href="../../../categories/vimconf.html">VimConf</a> (3)</li><li><a href="../../../categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="../../../categories/windows.html">Windows</a> (3)</li><li><a href="../../../categories/windows7.html">Windows7</a> (4)</li><li><a href="../../../categories/wsl.html">WSL</a> (1)</li><li><a href="../../../categories/アルゴリズム.html">アルゴリズム</a> (1)</li><li><a href="../../../categories/セキュリティ.html">セキュリティ</a> (2)</li><li><a href="../../../categories/ネットワーク.html">ネットワーク</a> (1)</li><li><a href="../../../categories/プログラミング.html">プログラミング</a> (7)</li><li><a href="../../../categories/勉強会.html">勉強会</a> (30)</li><li><a href="../../../categories/応用情報技術者.html">応用情報技術者</a> (10)</li><li><a href="../../../categories/情報処理技術者試験.html">情報処理技術者試験</a> (10)</li><li><a href="../../../categories/本.html">本</a> (29)</li><li><a href="../../../categories/開発環境.html">開発環境</a> (11)</li><li><a href="../../../categories/雑記.html">雑記</a> (38)</li><li><a href="../../../categories/高速化.html">高速化</a> (1)</li></ul>
 </div></section><section><div class="widget">
     <h1>About Me</h1>
     <div>
@@ -311,7 +310,7 @@ if(typeof(window.NINJA_CO_JP_ONETAG_BUTTON_00eb4412f1c80db8bbc1af50c58e8ee6)=='u
     </div>
 </div></section></aside></div> <!-- #main --></div> <!-- #main-container -->
 
-        <div class="footer-container" role="contentinfo"><footer class="wrapper">&copy; Copyright 2011-2018, Kashun YOSHIDA. Powered by <a href="http://www.tinkerer.me/">Tinkerer</a> and <a href="http://sphinx.pocoo.org/">Sphinx</a>.</footer></div> <!-- footer-container -->
+        <div class="footer-container" role="contentinfo"><footer class="wrapper">&copy; Copyright 2011-2020, Kashun YOSHIDA. Powered by <a href="http://www.tinkerer.me/">Tinkerer</a> and <a href="http://sphinx.pocoo.org/">Sphinx</a>.</footer></div> <!-- footer-container -->
 
       </div> <!--! end of #container --><!--[if lt IE 7 ]>
           <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>

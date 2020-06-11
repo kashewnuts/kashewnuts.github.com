@@ -31,13 +31,13 @@
         <link rel="search" title="Search" href="search.html" /><link rel="next" title="Older" href="page2.html" /><link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/kashew_nuts-blog" /><script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.7.1',
+        VERSION:     '1.7.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         SOURCELINK_SUFFIX: '.txt',
         HAS_SOURCE:  true
       };
-    </script><script type="text/javascript" src="_static/underscore.js"></script><script type="text/javascript" src="_static/doctools.js"></script><script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script><script type="text/javascript" src="_static/disqus.js"></script><script type="text/javascript" src="_static/google_analytics.js"></script>
+    </script><script type="text/javascript" src="_static/underscore.js"></script><script type="text/javascript" src="_static/doctools.js"></script><script type="text/javascript" src="_static/language_data.js"></script><script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script><script type="text/javascript" src="_static/disqus.js"></script><script type="text/javascript" src="_static/google_analytics.js"></script>
     <meta property="fb:admins" content="200170096719194"/>
     
 
@@ -69,6 +69,268 @@
             <a href="http://feeds.feedburner.com/kashew_nuts-blog" title="Subscribe via RSS"><span class="fa fa-lg fa-rss"></span></a>
           </li></ul>
     </nav><div class="main-container" role="main"><div class="main wrapper body clearfix"><article><div class="timestamp postmeta">
+            <span>June 11, 2020</span>
+        </div>
+        <div class="section">
+            <h1><a href="2020/06/11/wsl2.html">WSL2を使ってみている</a></h1>
+<p>個人ではUbuntu Desktopを使っていたのだが、Windows 10 May 2020 Updateがきたので試してみている。Windows Terminalと相まって使い勝手よく試せている。</p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="2020/06/11/wsl2.html#wsl" id="id8">WSLについて</a></p></li>
+<li><p><a class="reference internal" href="2020/06/11/wsl2.html#id1" id="id9">ターミナルアプリケーション</a></p></li>
+<li><p><a class="reference internal" href="2020/06/11/wsl2.html#id2" id="id10">WSL2のインストール</a></p></li>
+<li><p><a class="reference internal" href="2020/06/11/wsl2.html#id3" id="id11">クリップボードどうする</a></p></li>
+<li><p><a class="reference internal" href="2020/06/11/wsl2.html#docker-docker-compose" id="id12">Docker, docker-composeはどうか</a></p></li>
+<li><p><a class="reference internal" href="2020/06/11/wsl2.html#ide" id="id13">エディタやIDE</a></p>
+<ul>
+<li><p><a class="reference internal" href="2020/06/11/wsl2.html#pycharm" id="id14">PyCharm</a></p></li>
+<li><p><a class="reference internal" href="2020/06/11/wsl2.html#vscode" id="id15">VSCode</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="2020/06/11/wsl2.html#id4" id="id16">雑感</a></p>
+<ul>
+<li><p><a class="reference internal" href="2020/06/11/wsl2.html#id5" id="id17">よかった点</a></p></li>
+<li><p><a class="reference internal" href="2020/06/11/wsl2.html#id6" id="id18">気になるところ</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="wsl">
+<h2><a class="toc-backref" href="#id8">WSLについて</a></h2>
+<p>WSL1と2の違いや仕組みを把握するには以下を参照するとよさそう。</p>
+<p><a class="reference external" href="https://roy-n-roy.github.io/Windows/WSL%EF%BC%86%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A/Architecture/">WSLのアーキテクチャ - roy-n-roy メモ</a></p>
+</div>
+<div class="section" id="id1">
+<h2><a class="toc-backref" href="#id9">ターミナルアプリケーション</a></h2>
+<p>WSL2にふれるのに便利なターミナルアプリケーションがほしかったので、先日正式版になった <a class="reference external" href="https://docs.microsoft.com/ja-jp/windows/terminal/">Windows Terminal</a> を使っている。
+Powershell, cmd.exe, WSLとタブを切り替えながら作業できるのがよい。現在の設定は以下。</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span/><span class="c1">// To view the default settings, hold "alt" while clicking on the "Settings" button.</span>
+<span class="c1">// For documentation on these settings, see: https://aka.ms/terminal-documentation</span>
+
+<span class="p">{</span>
+  <span class="s2">"$schema"</span><span class="o">:</span> <span class="s2">"https://aka.ms/terminal-profiles-schema"</span><span class="p">,</span>
+
+  <span class="c1">// 自分が使いたいprofileのguidを指定する</span>
+  <span class="s2">"defaultProfile"</span><span class="o">:</span> <span class="s2">"{61c54bbd-c2c6-5271-96e7-009a87ff44bf}"</span><span class="p">,</span>
+  <span class="s2">"initialCols"</span><span class="o">:</span> <span class="mi">120</span><span class="p">,</span>
+  <span class="s2">"initialRows"</span><span class="o">:</span> <span class="mi">50</span><span class="p">,</span>
+
+  <span class="s2">"profiles"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"defaults"</span><span class="o">:</span> <span class="p">{</span>
+      <span class="c1">// Put settings here that you want to apply to all profiles</span>
+      <span class="s2">"colorScheme"</span><span class="o">:</span> <span class="s2">"Dracula"</span><span class="p">,</span>
+      <span class="s2">"cursorShape"</span><span class="o">:</span> <span class="s2">"filledBox"</span><span class="p">,</span>
+      <span class="s2">"fontFace"</span><span class="o">:</span> <span class="s2">"Ricty Diminished"</span><span class="p">,</span>
+      <span class="s2">"fontSize"</span><span class="o">:</span> <span class="mi">14</span><span class="p">,</span>
+      <span class="s2">"hidden"</span><span class="o">:</span> <span class="kc">false</span>
+    <span class="p">},</span>
+    <span class="s2">"list"</span><span class="o">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="c1">// Make changes here to the powershell.exe profile</span>
+        <span class="s2">"guid"</span><span class="o">:</span> <span class="s2">"{61c54bbd-c2c6-5271-96e7-009a87ff44bf}"</span><span class="p">,</span>
+        <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Windows PowerShell"</span><span class="p">,</span>
+        <span class="s2">"commandline"</span><span class="o">:</span> <span class="s2">"powershell.exe"</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="c1">// Make changes here to the cmd.exe profile</span>
+        <span class="s2">"guid"</span><span class="o">:</span> <span class="s2">"{0caa0dad-35be-5f56-a8ff-afceeeaa6101}"</span><span class="p">,</span>
+        <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"cmd"</span><span class="p">,</span>
+        <span class="s2">"commandline"</span><span class="o">:</span> <span class="s2">"cmd.exe"</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="c1">// Make changes here to the wsl.exe profile</span>
+        <span class="s2">"guid"</span><span class="o">:</span> <span class="s2">"{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}"</span><span class="p">,</span>
+        <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Ubuntu-20.04"</span><span class="p">,</span>
+        <span class="s2">"source"</span><span class="o">:</span> <span class="s2">"Windows.Terminal.Wsl"</span><span class="p">,</span>
+        <span class="c1">// 起動時にHOMEディレクトリで開くようにする</span>
+        <span class="s2">"commandline"</span><span class="o">:</span> <span class="s2">"wsl.exe ~"</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="c1">// Make changes here to the azure profile</span>
+        <span class="s2">"guid"</span><span class="o">:</span> <span class="s2">"{b453ae62-4e3d-5e58-b989-0a998ec441b8}"</span><span class="p">,</span>
+        <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Azure Cloud Shell"</span><span class="p">,</span>
+        <span class="s2">"source"</span><span class="o">:</span> <span class="s2">"Windows.Terminal.Azure"</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+
+  <span class="c1">// Add custom color schemes to this array</span>
+  <span class="s2">"schemes"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Dracula"</span><span class="p">,</span>
+      <span class="s2">"background"</span><span class="o">:</span> <span class="s2">"#282A36"</span><span class="p">,</span>
+      <span class="s2">"black"</span><span class="o">:</span> <span class="s2">"#21222C"</span><span class="p">,</span>
+      <span class="s2">"blue"</span><span class="o">:</span> <span class="s2">"#BD93F9"</span><span class="p">,</span>
+      <span class="s2">"brightBlack"</span><span class="o">:</span> <span class="s2">"#6272A4"</span><span class="p">,</span>
+      <span class="s2">"brightBlue"</span><span class="o">:</span> <span class="s2">"#D6ACFF"</span><span class="p">,</span>
+      <span class="s2">"brightCyan"</span><span class="o">:</span> <span class="s2">"#A4FFFF"</span><span class="p">,</span>
+      <span class="s2">"brightGreen"</span><span class="o">:</span> <span class="s2">"#69FF94"</span><span class="p">,</span>
+      <span class="s2">"brightPurple"</span><span class="o">:</span> <span class="s2">"#FF92DF"</span><span class="p">,</span>
+      <span class="s2">"brightRed"</span><span class="o">:</span> <span class="s2">"#FF6E6E"</span><span class="p">,</span>
+      <span class="s2">"brightWhite"</span><span class="o">:</span> <span class="s2">"#FFFFFF"</span><span class="p">,</span>
+      <span class="s2">"brightYellow"</span><span class="o">:</span> <span class="s2">"#FFFFA5"</span><span class="p">,</span>
+      <span class="s2">"cyan"</span><span class="o">:</span> <span class="s2">"#8BE9FD"</span><span class="p">,</span>
+      <span class="s2">"foreground"</span><span class="o">:</span> <span class="s2">"#F8F8F2"</span><span class="p">,</span>
+      <span class="s2">"green"</span><span class="o">:</span> <span class="s2">"#50FA7B"</span><span class="p">,</span>
+      <span class="s2">"purple"</span><span class="o">:</span> <span class="s2">"#FF79C6"</span><span class="p">,</span>
+      <span class="s2">"red"</span><span class="o">:</span> <span class="s2">"#FF5555"</span><span class="p">,</span>
+      <span class="s2">"white"</span><span class="o">:</span> <span class="s2">"#F8F8F2"</span><span class="p">,</span>
+      <span class="s2">"yellow"</span><span class="o">:</span> <span class="s2">"#F1FA8C"</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+
+  <span class="c1">// Add any keybinding overrides to this array.</span>
+  <span class="c1">// To unbind a default keybinding, set the command to "unbound"</span>
+  <span class="s2">"keybindings"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="s2">"command"</span><span class="o">:</span> <span class="s2">"copy"</span><span class="p">,</span> <span class="s2">"keys"</span><span class="o">:</span> <span class="p">[</span><span class="s2">"ctrl+shift+c"</span><span class="p">]</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="s2">"command"</span><span class="o">:</span> <span class="s2">"paste"</span><span class="p">,</span> <span class="s2">"keys"</span><span class="o">:</span> <span class="p">[</span><span class="s2">"ctrl+shift+v"</span><span class="p">]</span> <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>以下のように日本語の扱いなどでまだ難ありなところはあるが、一旦許容して使っている。
+この辺もクリアになるということなしかなー。</p>
+<ul class="simple">
+<li><p>IMEでインライン補完が効かない</p></li>
+<li><p>少し古いVimを使っていたら記号や濁点付き文字の表示がおかしくなったりした</p></li>
+<li><p>tmuxの描画が乱れるように感じる</p></li>
+<li><p>tigで縦線が表示されない</p></li>
+</ul>
+<blockquote class="twitter-tweet" data-conversation="none"><a href="https://twitter.com/kashew_nuts/status/1269494772349014016">https://twitter.com/kashew_nuts/status/1269494772349014016</a></blockquote></div>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id10">WSL2のインストール</a></h2>
+<p>まず <a class="reference external" href="https://docs.microsoft.com/ja-jp/windows/wsl/wsl2-kernel">WSL 2 Linux カーネルの更新</a> を実施。
+次に <a class="reference external" href="https://docs.microsoft.com/ja-jp/windows/wsl/install-win10">Windows Subsystem for Linux (WSL) を Windows 10 にインストールする</a> に従って、Microsoft StoreからUbuntu 20.04 LTSをインストールした。
+その後普段使うPythonやVim, Git関連のツールをインストール。</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span/>$ sudo apt update -y <span class="o">&amp;&amp;</span> sudo apt upgrade -y
+$ sudo apt install python3-venv python3-dev nodejs npm zip unzip vim-gtk golang xsel hub tig
+$ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+$ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+$ python3 get-pip.py --user
+$ go get github.com/x-motemen/ghq
+</pre></div>
+</div>
+<p>あとは <a class="reference external" href="https://github.com/kashewnuts/dotfiles">dotfiles</a> を落として来て、展開すれば準備OK。</p>
+</div>
+<div class="section" id="id3">
+<h2><a class="toc-backref" href="#id11">クリップボードどうする</a></h2>
+<p>VirtualBoxのようなVMを使っているときも悩みのタネだったが、今回はtmuxでclip.exeを使うようにした。
+普段からターミナルでのコピペはキーボードで完結させていたので、同じようにしたかった。</p>
+<p>調べると <a class="reference external" href="https://github.com/equalsraf/win32yank">equalsraf/win32yank</a> が良いという記事があったが、
+自分の環境では動かなかったのでOS標準で入ってるのを使うことにしました。
+clip.exeはコマンドプロンプトでもPowershellでも使えるので、考えることを減らせていいと思った。
+以下のようにファイルを用意してWSL環境のときだけ読み込むように設定。</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span/><span class="c1"># ~/.tmux.conf</span>
+<span class="k">if</span>-shell <span class="s1">'test "$(uname -a | grep Linux | grep microsoft)" != ""'</span> <span class="s2">"source-file ~/.tmux.conf.wsl"</span> <span class="s2">""</span>
+</pre></div>
+</div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span/><span class="c1"># ~/.tmux.conf.wsl</span>
+bind-key -T copy-mode-vi Enter send-keys -X copy-pipe <span class="s2">"cat | clip.exe"</span>
+bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel <span class="s1">'cat | clip.exe'</span>
+bind-key -T copy-mode-vi Y send-keys -X copy-pipe <span class="s1">'cat | clip.exe'</span>
+</pre></div>
+</div>
+<p>ただこれだとVimでヤンクしたときにクリップボード連携ができていないのでvimrcに以下の設定を追加する。
+<code class="docutils literal notranslate"><span class="pre">+clipboard</span></code> なVimである必要があるので、 <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">vim-gtk</span></code> などして有効にしておくこと。</p>
+<div class="highlight-vim notranslate"><div class="highlight"><pre><span/><span class="c">" ~/.vimrc</span>
+<span class="k">if</span> system<span class="p">(</span><span class="s1">'uname -a | grep microsoft'</span><span class="p">)</span> <span class="p">!=</span> <span class="s1">''</span>
+  augroup myYank
+    autocmd<span class="p">!</span>
+    autocmd TextYankPost * :<span class="k">call</span> system<span class="p">(</span><span class="s1">'clip.exe'</span><span class="p">,</span> @"<span class="p">)</span>
+  augroup END
+<span class="k">endif</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="docker-docker-compose">
+<h2><a class="toc-backref" href="#id12">Docker, docker-composeはどうか</a></h2>
+<p>以下の公式ドキュメントを参照しインストール。</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.docker.com/engine/install/ubuntu/">Install Docker Engine on Ubuntu | Docker Documentation</a></p></li>
+<li><p><a class="reference external" href="https://docs.docker.com/compose/install/">Install Docker Compose | Docker Documentation</a></p></li>
+</ul>
+<p>sudoなしでdockerコマンドが使えるように以下も設定。</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span/><span class="c1"># 現行ユーザをdockerグループに所属させる</span>
+sudo gpasswd -a <span class="nv">$USER</span> docker
+
+<span class="c1"># dockerデーモンを再起動する</span>
+sudo service docker restart
+
+<span class="c1"># exit後、再ログインして反映</span>
+<span class="nb">exit</span>
+</pre></div>
+</div>
+<p>hello-worldは普通にできて、 <a class="reference external" href="https://docs.docker.com/docker-for-windows/wsl/">Docker Desktop WSL 2 backend</a> も問題なく動いたので正直驚いた。しかし <a class="reference external" href="https://qiita.com/yoichiwo7/items/e3e13b6fe2f32c4c6120">WSL2によるホストのメモリ枯渇を防ぐための暫定対処 - Qiita</a> のようにリソース管理から解放されたわけでないので、WSL2のメモリ上限は最低限設定しておいたほうがいいだろう。</p>
+<p>Docker Desktop WSL backendは <a class="reference external" href="https://hub.docker.com/editions/community/docker-ce-desktop-windows/">Docker Desktop for Windows</a> をインストールして、WSL2のセットアップが完了してれば使える。</p>
+<p>「DockerとWSL 2を使用して最高の開発エクスペリエンスを実現するには、デフォルトのLinuxディストリビューションにコードを含めることをお勧めします。」と公式ドキュメントにあったが、これに沿わない使い方をする場合、WSL2を選択すべきでないのだろう。</p>
+</div>
+<div class="section" id="ide">
+<h2><a class="toc-backref" href="#id13">エディタやIDE</a></h2>
+<p>Vimが使えるので問題ない….のだが、一応かんたんに実行できるかは調べた。</p>
+<div class="section" id="pycharm">
+<h3><a class="toc-backref" href="#id14">PyCharm</a></h3>
+<p><a class="reference external" href="https://www.jetbrains.com/ja-jp/pycharm/whatsnew/2019-3/">PyCharm 2019.3</a> 時点でWSL2をサポートしている。(Proのみ)</p>
+<p><a class="reference external" href="https://pleiades.io/help/pycharm/using-wsl-as-a-remote-interpreter.html#">WSLを使用してインタープリターを構成する - 公式ヘルプ | PyCharm</a> にセットアップのしかたが書いてある。</p>
+<p>リンク先にもはWSL内でPythonの仮想環境が作成できない問題があるようだが、WSL2内で手動で作成した仮想環境は指定できた。
+使うときはWSL2上で環境を作ってからPyCharmにパスを教えてあげればよく、インストールしたPythonパッケージもPyCharmで識別できていたので問題なさそうだ。</p>
+<p><a class="reference external" href="https://pleiades.io/help/pycharm/using-docker-as-a-remote-interpreter.html#">Dockerを使用してインタープリターを構成する</a>
+にあるように、 <code class="docutils literal notranslate"><span class="pre">Expose</span> <span class="pre">deamon</span> <span class="pre">on</span> <span class="pre">...</span></code> を有効にした状態でDocker Desktop WSL2 backendを使用したインタープリターの指定もできた。</p>
+<p>まだまだデバッガーの指定をしたり、PyCharmで起動したターミナルの指定をWSL2にしたりなど試せることはあるが実行できるなというところだけ確認してここでは終わりにした。こうゆう凝ったことをしようとするとうまく行かないイメージがあったが、意外とあっさり動いてしまった印象。</p>
+</div>
+<div class="section" id="vscode">
+<h3><a class="toc-backref" href="#id15">VSCode</a></h3>
+<p>Remote Development拡張を入れるとWSLをインタープリターとして指定できる。ただもりもり開発してるとやはりリソースを喰う傾向にあるようだ。</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://tech-lab.sios.jp/archives/18446#Visual_Studio_Code">WSL2で劇的に変わるあなたのWebアプリケーション開発環境【その3：実践編】 | SIOS Tech. Lab</a></p></li>
+<li><p><a class="reference external" href="https://code.visualstudio.com/blogs/2019/09/03/wsl2#_benefits-of-wsl-2">Using WSL 2 with Visual Studio Code</a></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id4">
+<h2><a class="toc-backref" href="#id16">雑感</a></h2>
+<p>凝った使い方をしてないので万人におすすめできるかはわからないが、ひとまずは好印象。Ubuntu DesktopだとAdobe, Kindleが使えないのと、Bluetoothやオーディオ周りで手こずることがあったが、Windowsではそのあたりを気にしなくていいというメリットも得ている。</p>
+<p>WSL2に関連するところで感じたのは以下。いいところも気になるところもありつつ、しばらくは付き合ってみようかなと思ってる。</p>
+<div class="section" id="id5">
+<h3><a class="toc-backref" href="#id17">よかった点</a></h3>
+<ul class="simple">
+<li><p>アプリを立ち上げる感覚でLinux環境が立ち上がるのがよい</p></li>
+<li><p>WSL2内部で限っていえばI/Oが高速</p></li>
+<li><p>Docker for WindowsがWSL2を指定できるので高速</p></li>
+<li><p>壊れたときの復旧が楽になるように、スナップショットが取れ、別名でテンプレートイメージとしてimportできる</p></li>
+<li><p>bash.exe や git.exe, vim.exe が 3~5 つインストールされなくなったのが良い。(どれ使ってるんだっけ問題)</p></li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h3><a class="toc-backref" href="#id18">気になるところ</a></h3>
+<ul class="simple">
+<li><p>WindowsとWSLで環境の差異は意識する必要がある。</p></li>
+<li><p><a class="reference external" href="https://qiita.com/yoichiwo7/items/e3e13b6fe2f32c4c6120">WSL2によるホストのメモリ枯渇を防ぐための暫定対処 - Qiita</a> のようにリソース管理から解放されるわけではない。</p></li>
+<li><p>たまにWSL2が落ちてるときがある</p></li>
+<li><p>VirtualBox の使用時に Hyper-V が有効だと不安定</p></li>
+<li><p>WSL2 から Windows 領域のファイルを扱おうとすると WSL1 より重い</p></li>
+<li><p>IPアドレスが起動ごとに変わるので、外部からスクリプトを使って処理するような処理がしにくい</p></li>
+</ul>
+</div>
+</div>
+
+        </div>
+        <div class="postmeta">
+        <div class="author">
+            <span>Posted by Kashun YOSHIDA</span>
+        </div>
+        <div class="categories">
+            <span>
+                Filed under:
+                <a href="categories/windows.html">Windows</a>, <a href="categories/linux.html">Linux</a>, <a href="categories/wsl.html">WSL</a></span>
+        </div>
+        <div class="tags">
+            <span>
+                Tags:
+                <a href="tags/windows.html">Windows</a>, <a href="tags/linux.html">Linux</a>, <a href="tags/wsl.html">WSL</a></span>
+        </div>
+        <div class="comments">
+            <a href="http://kashewnuts.github.io/2020/06/11/wsl2.html#disqus_thread" data-disqus-identifier="2020/06/11/wsl2">Leave a comment</a>
+        </div></div><div class="separator post_separator"></div><div class="timestamp postmeta">
             <span>May 05, 2020</span>
         </div>
         <div class="section">
@@ -76,17 +338,18 @@
 <p>Ubuntu Desktopがアップデートの影響か音が鳴らなくなり、Windowsに切り替えていましたが、GWでUbuntu 20.04LTSにアップグレードしたのでメモ。</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="2020/05/05/upgrade_ubuntu_20_04_lts.html#ubuntu20-04lts" id="id6">Ubuntu20.04LTSとは</a></li>
-<li><a class="reference internal" href="2020/05/05/upgrade_ubuntu_20_04_lts.html#id1" id="id7">アップグレードの手順について</a></li>
-<li><a class="reference internal" href="2020/05/05/upgrade_ubuntu_20_04_lts.html#id2" id="id8">イントール時間</a></li>
-<li><a class="reference internal" href="2020/05/05/upgrade_ubuntu_20_04_lts.html#id3" id="id9">アップグレード後実施したこと</a><ul>
-<li><a class="reference internal" href="2020/05/05/upgrade_ubuntu_20_04_lts.html#ibus-mozc" id="id10">ibus-mozcのキーボードが英字配列で認識されていたので、設定ファイルを編集</a></li>
+<li><p><a class="reference internal" href="2020/05/05/upgrade_ubuntu_20_04_lts.html#ubuntu20-04lts" id="id6">Ubuntu20.04LTSとは</a></p></li>
+<li><p><a class="reference internal" href="2020/05/05/upgrade_ubuntu_20_04_lts.html#id1" id="id7">アップグレードの手順について</a></p></li>
+<li><p><a class="reference internal" href="2020/05/05/upgrade_ubuntu_20_04_lts.html#id2" id="id8">イントール時間</a></p></li>
+<li><p><a class="reference internal" href="2020/05/05/upgrade_ubuntu_20_04_lts.html#id3" id="id9">アップグレード後実施したこと</a></p>
+<ul>
+<li><p><a class="reference internal" href="2020/05/05/upgrade_ubuntu_20_04_lts.html#ibus-mozc" id="id10">ibus-mozcのキーボードが英字配列で認識されていたので、設定ファイルを編集</a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="2020/05/05/upgrade_ubuntu_20_04_lts.html#id4" id="id11">必要なパッケージのインストール</a></li>
-<li><a class="reference internal" href="2020/05/05/upgrade_ubuntu_20_04_lts.html#vim" id="id12">vimの再インストール</a></li>
-<li><a class="reference internal" href="2020/05/05/upgrade_ubuntu_20_04_lts.html#xsel" id="id13">xselの再インストール</a></li>
-<li><a class="reference internal" href="2020/05/05/upgrade_ubuntu_20_04_lts.html#id5" id="id14">最後に</a></li>
+<li><p><a class="reference internal" href="2020/05/05/upgrade_ubuntu_20_04_lts.html#id4" id="id11">必要なパッケージのインストール</a></p></li>
+<li><p><a class="reference internal" href="2020/05/05/upgrade_ubuntu_20_04_lts.html#vim" id="id12">vimの再インストール</a></p></li>
+<li><p><a class="reference internal" href="2020/05/05/upgrade_ubuntu_20_04_lts.html#xsel" id="id13">xselの再インストール</a></p></li>
+<li><p><a class="reference internal" href="2020/05/05/upgrade_ubuntu_20_04_lts.html#id5" id="id14">最後に</a></p></li>
 </ul>
 </div>
 <div class="section" id="ubuntu20-04lts">
@@ -109,10 +372,10 @@
 <h3><a class="toc-backref" href="#id10">ibus-mozcのキーボードが英字配列で認識されていたので、設定ファイルを編集</a></h3>
 <p>毎回調べてる <a class="reference external" href="http://note.kurodigi.com/ibus-mozc-kbdlayout/">参考URL</a> を見ているので改めてメモ。</p>
 <ul class="simple">
-<li><span class="docutils literal"><span class="pre">sudo</span> <span class="pre">vim</span> <span class="pre">/usr/share/ibus/component/mozc.xml</span></span></li>
-<li><span class="docutils literal"><span class="pre">&lt;layout&gt;default&lt;/layout&gt;</span></span> を <span class="docutils literal"><span class="pre">&lt;layout&gt;jp&lt;/layout&gt;</span></span> に置換</li>
-<li>変更を保存したらログアウトして再ログイン</li>
-<li>キーボードレイアウトを確認して日本語配列になっていればOK</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">vim</span> <span class="pre">/usr/share/ibus/component/mozc.xml</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;layout&gt;default&lt;/layout&gt;</span></code> を <code class="docutils literal notranslate"><span class="pre">&lt;layout&gt;jp&lt;/layout&gt;</span></code> に置換</p></li>
+<li><p>変更を保存したらログアウトして再ログイン</p></li>
+<li><p>キーボードレイアウトを確認して日本語配列になっていればOK</p></li>
 </ul>
 </div>
 </div>
@@ -120,15 +383,15 @@
 <h2><a class="toc-backref" href="#id11">必要なパッケージのインストール</a></h2>
 <p>デフォルトのPythonのバージョンが上がっていたり、nodejsまわりが消えていたので再インストールしました。</p>
 <ul class="simple">
-<li><span class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">python3-venv</span> <span class="pre">python3-pip</span> <span class="pre">nodejs</span> <span class="pre">npm</span></span></li>
-<li><a class="reference external" href="https://launchpad.net/~deadsnakes/+archive/ubuntu/ppa?field.series_filter=focal">deadsnakes</a> から <span class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">python3.7</span> <span class="pre">python3.7-venv</span></span></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">python3-venv</span> <span class="pre">python3-pip</span> <span class="pre">nodejs</span> <span class="pre">npm</span></code></p></li>
+<li><p><a class="reference external" href="https://launchpad.net/~deadsnakes/+archive/ubuntu/ppa?field.series_filter=focal">deadsnakes</a> から <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">python3.7</span> <span class="pre">python3.7-venv</span></code></p></li>
 </ul>
 <p>Ubuntuでどうやってシステム側にpipをいれるかは毎回悩ましいのですが、今回はaptで入れました。</p>
 </div>
 <div class="section" id="vim">
 <h2><a class="toc-backref" href="#id12">vimの再インストール</a></h2>
 <p>自前でビルドしているため、依存関係が変わったあとは再インストールが必要でした。今回はPython3の場所を指定するだけでOKでした。
-vimのリポジトリーはgit clone済みなので、 <span class="docutils literal"><span class="pre">vim/src</span></span> ディレクトリーに移動して以下のコマンドを実行します。</p>
+vimのリポジトリーはgit clone済みなので、 <code class="docutils literal notranslate"><span class="pre">vim/src</span></code> ディレクトリーに移動して以下のコマンドを実行します。</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span/>$ make distclean
 $ ./configure <span class="se">\</span>
     --with-features<span class="o">=</span>huge <span class="se">\</span>
@@ -184,23 +447,25 @@ $ sudo apt install xsel
 <p>以前 <a class="reference external" href="https://kashewnuts.github.io/2019/01/28/move_from_jedivim_to_vimlsp.html">Pythonの補完環境をjedi-vimからvim-lspに移行した話 — kashew_nuts-blog</a> という記事を書きましたが、現在は <a class="reference external" href="https://github.com/neoclide/coc.nvim">neoclide/coc.nvim</a> に完全移行しています。</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="2020/04/08/migrated_lsp_client_to_coc_nvim.html#coc-nvim" id="id10">coc.nvimとは</a></li>
-<li><a class="reference internal" href="2020/04/08/migrated_lsp_client_to_coc_nvim.html#id1" id="id11">移行理由</a><ul>
-<li><a class="reference internal" href="2020/04/08/migrated_lsp_client_to_coc_nvim.html#id2" id="id12">1. 自動補完が「ちょうどいい」感じで補完してくれる</a></li>
-<li><a class="reference internal" href="2020/04/08/migrated_lsp_client_to_coc_nvim.html#lspide" id="id13">2. 拡張が豊富で、LSPに限らずIDEとしての機能を提供してくれる</a></li>
-<li><a class="reference internal" href="2020/04/08/migrated_lsp_client_to_coc_nvim.html#language-servervimrc" id="id14">3. Language Serverの設定でvimrcが膨れない</a></li>
+<li><p><a class="reference internal" href="2020/04/08/migrated_lsp_client_to_coc_nvim.html#coc-nvim" id="id10">coc.nvimとは</a></p></li>
+<li><p><a class="reference internal" href="2020/04/08/migrated_lsp_client_to_coc_nvim.html#id1" id="id11">移行理由</a></p>
+<ul>
+<li><p><a class="reference internal" href="2020/04/08/migrated_lsp_client_to_coc_nvim.html#id2" id="id12">1. 自動補完が「ちょうどいい」感じで補完してくれる</a></p></li>
+<li><p><a class="reference internal" href="2020/04/08/migrated_lsp_client_to_coc_nvim.html#lspide" id="id13">2. 拡張が豊富で、LSPに限らずIDEとしての機能を提供してくれる</a></p></li>
+<li><p><a class="reference internal" href="2020/04/08/migrated_lsp_client_to_coc_nvim.html#language-servervimrc" id="id14">3. Language Serverの設定でvimrcが膨れない</a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="2020/04/08/migrated_lsp_client_to_coc_nvim.html#id3" id="id15">インストール要件</a></li>
-<li><a class="reference internal" href="2020/04/08/migrated_lsp_client_to_coc_nvim.html#id4" id="id16">インストール方法</a></li>
-<li><a class="reference internal" href="2020/04/08/migrated_lsp_client_to_coc_nvim.html#id5" id="id17">使い方</a><ul>
-<li><a class="reference internal" href="2020/04/08/migrated_lsp_client_to_coc_nvim.html#id6" id="id18">よく使うコマンド</a></li>
+<li><p><a class="reference internal" href="2020/04/08/migrated_lsp_client_to_coc_nvim.html#id3" id="id15">インストール要件</a></p></li>
+<li><p><a class="reference internal" href="2020/04/08/migrated_lsp_client_to_coc_nvim.html#id4" id="id16">インストール方法</a></p></li>
+<li><p><a class="reference internal" href="2020/04/08/migrated_lsp_client_to_coc_nvim.html#id5" id="id17">使い方</a></p>
+<ul>
+<li><p><a class="reference internal" href="2020/04/08/migrated_lsp_client_to_coc_nvim.html#id6" id="id18">よく使うコマンド</a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="2020/04/08/migrated_lsp_client_to_coc_nvim.html#popup-window" id="id19">popup-windowについて</a></li>
-<li><a class="reference internal" href="2020/04/08/migrated_lsp_client_to_coc_nvim.html#id7" id="id20">気になるところ</a></li>
-<li><a class="reference internal" href="2020/04/08/migrated_lsp_client_to_coc_nvim.html#id8" id="id21">設定ファイル例</a></li>
-<li><a class="reference internal" href="2020/04/08/migrated_lsp_client_to_coc_nvim.html#id9" id="id22">終わりに</a></li>
+<li><p><a class="reference internal" href="2020/04/08/migrated_lsp_client_to_coc_nvim.html#popup-window" id="id19">popup-windowについて</a></p></li>
+<li><p><a class="reference internal" href="2020/04/08/migrated_lsp_client_to_coc_nvim.html#id7" id="id20">気になるところ</a></p></li>
+<li><p><a class="reference internal" href="2020/04/08/migrated_lsp_client_to_coc_nvim.html#id8" id="id21">設定ファイル例</a></p></li>
+<li><p><a class="reference internal" href="2020/04/08/migrated_lsp_client_to_coc_nvim.html#id9" id="id22">終わりに</a></p></li>
 </ul>
 </div>
 <div class="section" id="coc-nvim">
@@ -211,9 +476,9 @@ $ sudo apt install xsel
 <h2><a class="toc-backref" href="#id11">移行理由</a></h2>
 <p>移行しようと思った理由は以下の3つです。「これなんてVSCode？」となったとかならなかったとか。</p>
 <ul class="simple">
-<li>自動補完が「ちょうどいい」感じで補完してくれる</li>
-<li>拡張が豊富で、LSPに限らずIDEとしての機能を提供してくれる</li>
-<li>Language Serverの設定でvimrcが膨れない</li>
+<li><p>自動補完が「ちょうどいい」感じで補完してくれる</p></li>
+<li><p>拡張が豊富で、LSPに限らずIDEとしての機能を提供してくれる</p></li>
+<li><p>Language Serverの設定でvimrcが膨れない</p></li>
 </ul>
 <div class="section" id="id2">
 <h3><a class="toc-backref" href="#id12">1. 自動補完が「ちょうどいい」感じで補完してくれる</a></h3>
@@ -240,9 +505,9 @@ vimrcにその両方を書いていくとどうしてもvimrcが肥大化して�
 <h2><a class="toc-backref" href="#id15">インストール要件</a></h2>
 <p>現在のインストール要件は以下となっています。</p>
 <ul class="simple">
-<li>Vim &gt;= 8.0.1453</li>
-<li>node.js &gt;= 8.10.0</li>
-<li>npm</li>
+<li><p>Vim &gt;= 8.0.1453</p></li>
+<li><p>node.js &gt;= 8.10.0</p></li>
+<li><p>npm</p></li>
 </ul>
 <p>当初2019年に試したときはVimの場合Python3インターフェイスや <a class="reference external" href="https://github.com/neoclide/vim-node-rpc">neoclide/vim-node-rpc</a>  、yarnに依存していましたが、現在は依存が消えているので使いやすくなりました。(ソースからビルドするときはyarnが必要となります。</p>
 <p>Vimの下限のバージョンはUbuntu 18.04LTSとかならデフォルトで満たしていますが、できればpopup-windowを活用するのに、8.2以上だとよりよいでしょう。
@@ -252,7 +517,7 @@ node.jsも現在のLTSの下限である10.x系にしたほうがよいと思い
 <div class="section" id="id4">
 <h2><a class="toc-backref" href="#id16">インストール方法</a></h2>
 <p>vim-plugを使ってる場合、 vimrcに以下のように記述します。
-その後、Vimを再起動しコマンドラインモードで <span class="docutils literal"><span class="pre">:PlugInstall</span></span> すればOKです。</p>
+その後、Vimを再起動しコマンドラインモードで <code class="docutils literal notranslate"><span class="pre">:PlugInstall</span></code> すればOKです。</p>
 <div class="highlight-vim notranslate"><div class="highlight"><pre><span/>Plug <span class="s1">'neoclide/coc.nvim'</span><span class="p">,</span> {<span class="s1">'branch'</span>: <span class="s1">'release'</span>}
 </pre></div>
 </div>
@@ -263,32 +528,32 @@ node.jsも現在のLTSの下限である10.x系にしたほうがよいと思い
 <p>coc.nvimをインストールしたあとは拡張やLanguage Serverをインストールして使うだけ。
 どんな設定ができるかや、Language Serverの設定をすればいいかは以下のWikiやヘルプを参照するとよいです。</p>
 <ul class="simple">
-<li><a class="reference external" href="https://github.com/neoclide/coc.nvim/wiki">neoclide/coc.nvim Wiki</a></li>
-<li><a class="reference external" href="https://github.com/neoclide/coc.nvim/blob/master/doc/coc.txt">coc.nvim/coc.txt</a></li>
+<li><p><a class="reference external" href="https://github.com/neoclide/coc.nvim/wiki">neoclide/coc.nvim Wiki</a></p></li>
+<li><p><a class="reference external" href="https://github.com/neoclide/coc.nvim/blob/master/doc/coc.txt">coc.nvim/coc.txt</a></p></li>
 </ul>
-<p>まずは自分の使うFileTypeの拡張を入れたり、設定ファイルの記述を便利にするために <span class="docutils literal"><span class="pre">:CocInstall</span> <span class="pre">coc-json</span></span> はしておくとよいでしょう。</p>
+<p>まずは自分の使うFileTypeの拡張を入れたり、設定ファイルの記述を便利にするために <code class="docutils literal notranslate"><span class="pre">:CocInstall</span> <span class="pre">coc-json</span></code> はしておくとよいでしょう。</p>
 <div class="section" id="id6">
 <h3><a class="toc-backref" href="#id18">よく使うコマンド</a></h3>
 <p>個人的によく使うコマンドは以下です。</p>
 <ul class="simple">
-<li>CocInstall &lt;extension-name&gt;: 拡張のインストール</li>
-<li>CocUninstall &lt;extension-name&gt;: 拡張のアンインストール</li>
-<li>CocCommand: インストールした拡張機能の実行</li>
-<li>CocConfig: Language Serverの設定</li>
-<li>CocLocalConfig: プロジェクトごとのLanguage Serverの設定</li>
+<li><p>CocInstall &lt;extension-name&gt;: 拡張のインストール</p></li>
+<li><p>CocUninstall &lt;extension-name&gt;: 拡張のアンインストール</p></li>
+<li><p>CocCommand: インストールした拡張機能の実行</p></li>
+<li><p>CocConfig: Language Serverの設定</p></li>
+<li><p>CocLocalConfig: プロジェクトごとのLanguage Serverの設定</p></li>
 </ul>
 </div>
 </div>
 <div class="section" id="popup-window">
 <h2><a class="toc-backref" href="#id19">popup-windowについて</a></h2>
 <p>coc.nvimに限らずVimのLSPクライアントを活用していくとき、popup-windowが有効になっていると便利です。
-コマンドラインモードで <span class="docutils literal"><span class="pre">:echo</span> <span class="pre">has('popupwin')</span></span> を実行したとき、 <span class="docutils literal"><span class="pre">1</span></span> が返ってくると有効になっています。</p>
+コマンドラインモードで <code class="docutils literal notranslate"><span class="pre">:echo</span> <span class="pre">has('popupwin')</span></code> を実行したとき、 <code class="docutils literal notranslate"><span class="pre">1</span></code> が返ってくると有効になっています。</p>
 <p>Vim8.2を使っていれば問題なくpopup-windowが使えると思いますが、colorschemeが追従しているかも確認しておくとよいかもしれません。
 自分は昔から <a class="reference external" href="https://github.com/tomasr/molokai">tomasr/molokai</a> を使っていますが、popup-windowで使うハイライトの指定がされていません。</p>
 <p>下記のドキュメントを参考に、ハイライトの指定を行いました。</p>
 <ul class="simple">
-<li><a class="reference external" href="https://vim-jp.org/vimdoc-ja/popup.html">popup</a></li>
-<li><a class="reference external" href="https://vim-jp.org/vimdoc-ja/syntax.html#hl-Pmenu">syntax</a></li>
+<li><p><a class="reference external" href="https://vim-jp.org/vimdoc-ja/popup.html">popup</a></p></li>
+<li><p><a class="reference external" href="https://vim-jp.org/vimdoc-ja/syntax.html#hl-Pmenu">syntax</a></p></li>
 </ul>
 <div class="highlight-vim notranslate"><div class="highlight"><pre><span/><span class="c">" 設定したハイライト</span>
 <span class="c">" ~/.vim/colors/molokai.vim</span>
@@ -305,9 +570,9 @@ node.jsも現在のLTSの下限である10.x系にしたほうがよいと思い
 <h2><a class="toc-backref" href="#id20">気になるところ</a></h2>
 <p>良い点もあれば気になるところもあるということでかんたんに書きます。</p>
 <ul class="simple">
-<li>設定ファイルがJSONのため、PATHの設定を書くと異なるOS間で共通化しにくい</li>
-<li>NeoVimでのみサポートとかあるので、coc及び拡張の機能が自分の「Vim」に対応しているか確認する必要がある</li>
-<li>トラブルシューティングにはJavaScript/TypeScriptまわりの知識が必要になる</li>
+<li><p>設定ファイルがJSONのため、PATHの設定を書くと異なるOS間で共通化しにくい</p></li>
+<li><p>NeoVimでのみサポートとかあるので、coc及び拡張の機能が自分の「Vim」に対応しているか確認する必要がある</p></li>
+<li><p>トラブルシューティングにはJavaScript/TypeScriptまわりの知識が必要になる</p></li>
 </ul>
 <p>現状なにか詰まったりしたときに「そういえばそうだったな」と思うぐらいなので、気に留めておくぐらいでいいかもしれません。</p>
 </div>
@@ -316,8 +581,8 @@ node.jsも現在のLTSの下限である10.x系にしたほうがよいと思い
 <p>設定ファイルは <a class="reference external" href="https://github.com/neoclide/coc.nvim#example-vim-configuration">README</a> を参考に自分に必要な記述をすればと思いますが、自分のも一例としてリンクを載せておきます。
 こだわりとしてはcoc.nvimを使わないFileTypeでは、キーマッピングなどを上書きしないようにしています。</p>
 <ul class="simple">
-<li><a class="reference external" href="https://github.com/kashewnuts/dotfiles/blob/1e11a30e48c988a069f9ce20a7d185ab53a36ccd/files/.vim/vimrc#L383-L467">vimrc</a></li>
-<li><a class="reference external" href="https://github.com/kashewnuts/dotfiles/blob/1e11a30e48c988a069f9ce20a7d185ab53a36ccd/files/.vim/coc-settings.json">coc-settings.json</a></li>
+<li><p><a class="reference external" href="https://github.com/kashewnuts/dotfiles/blob/1e11a30e48c988a069f9ce20a7d185ab53a36ccd/files/.vim/vimrc#L383-L467">vimrc</a></p></li>
+<li><p><a class="reference external" href="https://github.com/kashewnuts/dotfiles/blob/1e11a30e48c988a069f9ce20a7d185ab53a36ccd/files/.vim/coc-settings.json">coc-settings.json</a></p></li>
 </ul>
 </div>
 <div class="section" id="id9">
@@ -342,201 +607,6 @@ node.jsも現在のLTSの下限である10.x系にしたほうがよいと思い
         </div>
         <div class="comments">
             <a href="http://kashewnuts.github.io/2020/04/08/migrated_lsp_client_to_coc_nvim.html#disqus_thread" data-disqus-identifier="2020/04/08/migrated_lsp_client_to_coc_nvim">Leave a comment</a>
-        </div></div><div class="separator post_separator"></div><div class="timestamp postmeta">
-            <span>January 28, 2019</span>
-        </div>
-        <div class="section">
-            <h1><a href="2019/01/28/move_from_jedivim_to_vimlsp.html">Pythonの補完環境をjedi-vimからvim-lspに移行した話</a></h1>
-<p>VimでPython書いてますか？</p>
-<p>長らくPythonの補完用プラグインとして <a class="reference external" href="https://github.com/davidhalter/jedi-vim">davidhalter/jedi-vim</a> を使用してきましたが、
-あの <a class="reference external" href="https://twitter.com/mattn_jp">mattn (@mattn_jp)</a> さんがCollaboratorになった <a class="reference external" href="https://github.com/prabirshrestha/vim-lsp">prabirshrestha/vim-lsp</a> や <a class="reference external" href="https://github.com/palantir/python-language-server">palantir/python-language-server</a> がいよいよ実用的になってきたので移行してみました。</p>
-<p>とはいえ実際に使うにはまだ設定するところもちょこちょこあるので、一度まとめておこうと思います。</p>
-<div class="contents local topic" id="contents">
-<ul class="simple">
-<li><a class="reference internal" href="2019/01/28/move_from_jedivim_to_vimlsp.html#id1" id="id8">前提とする環境</a></li>
-<li><a class="reference internal" href="2019/01/28/move_from_jedivim_to_vimlsp.html#lsp-language-server-protocol" id="id9">LSP(Language Server Protocol)とは</a></li>
-<li><a class="reference internal" href="2019/01/28/move_from_jedivim_to_vimlsp.html#lsp" id="id10">LSP導入</a><ul>
-<li><a class="reference internal" href="2019/01/28/move_from_jedivim_to_vimlsp.html#language-server" id="id11">Language Serverの導入</a></li>
-<li><a class="reference internal" href="2019/01/28/move_from_jedivim_to_vimlsp.html#client" id="id12">Clientの導入</a></li>
-<li><a class="reference internal" href="2019/01/28/move_from_jedivim_to_vimlsp.html#vim" id="id13">Vimプラグインの設定</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="2019/01/28/move_from_jedivim_to_vimlsp.html#id4" id="id14">使用感について</a><ul>
-<li><a class="reference internal" href="2019/01/28/move_from_jedivim_to_vimlsp.html#id5" id="id15">メリット</a></li>
-<li><a class="reference internal" href="2019/01/28/move_from_jedivim_to_vimlsp.html#id6" id="id16">デメリット</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="2019/01/28/move_from_jedivim_to_vimlsp.html#id7" id="id17">終わりに</a></li>
-</ul>
-</div>
-<div class="section" id="id1">
-<h2><a class="toc-backref" href="#id8">前提とする環境</a></h2>
-<ul class="simple">
-<li>Vim: 8.0以上、かつコンパイルオプションで <cite>jobs</cite>, <cite>timer</cite>, <cite>channel</cite>, <cite>lambda</cite> が有効になっている</li>
-<li>Python: 2.7もしくは3.4以降 (pyenvやAnacondaでインストールしたPythonは考慮しない)</li>
-</ul>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p><span class="strike">VimでPython/Python3インターフェースを有効にする必要があるかもしれませんが、少なくともドキュメントには記載されていませんでした。もし必要な場合は以前書いたVimとPythonの補完についてのメモを参照してください。</span></p>
-<p class="last">その後Python/Python3インターフェースを無効にした状態で試したところ、問題なく動作しました。外部インターフェイスに依存せず補完や定義ジャンプができるのはいいですね。</p>
-</div>
-</div>
-<div class="section" id="lsp-language-server-protocol">
-<h2><a class="toc-backref" href="#id9">LSP(Language Server Protocol)とは</a></h2>
-<p>ざっくりいうと自動補完や定義ジャンプ、ドキュメントのホバー表示などエディタごとに実装していた機能を、言語Serverを用意して複数の開発ツールで使えるようにしましょうというものです。LSPを活用することでエディタのプラグインなどは最小限の労力で言語をサポートできるようになります。</p>
-<p>各エディタ用にLSPを使うプラグインや機能を用意する必要がありますが、補完機能をサポートするサーバーが共通化できるのでそのServerが便利になると1つのエディタだけでなく複数のエディタで活用できるメリットがあります。</p>
-<p>どのようなプロトコルでどのように通信しているのかは、 <a class="reference external" href="https://microsoft.github.io/language-server-protocol/overview">Microsoftが公開しているドキュメント</a> が詳しいのでそちらを参照してください。
-<a class="reference external" href="http://gihyo.jp/magazine/SD/archive/2018/201803">Software Design 2018年3月号</a> にも詳しく書いています。(残念ながら紙の書籍は2019/01/26現在在庫がないようです)</p>
-</div>
-<div class="section" id="lsp">
-<h2><a class="toc-backref" href="#id10">LSP導入</a></h2>
-<p>Python用のLanguage ServerとClientとなるVimプラグインを導入します。ServerとClientは以下になります。</p>
-<ul class="simple">
-<li>Language Server: <a class="reference external" href="https://github.com/palantir/python-language-server">palantir/python-language-server</a></li>
-<li>Client: <a class="reference external" href="https://github.com/prabirshrestha/vim-lsp">prabirshrestha/vim-lsp</a></li>
-</ul>
-<div class="section" id="language-server">
-<h3><a class="toc-backref" href="#id11">Language Serverの導入</a></h3>
-<p><span class="docutils literal"><span class="pre">python-language-server</span></span> をpipコマンドを使ってインストールします。
-どこからでも使えるようにグローバルな環境に入れますが、macOSやLinuxを使っている人は注意する必要があります。
-OSが使うPythonに様々なライブラリが入っており、無理やりインストールしようとすると後で困る可能性があるからです。</p>
-<p>ここではユーザーディレクトリにインストールすることでその問題を回避します。
-以下のPATHにインストールされるので、予め <span class="docutils literal"><span class="pre">~/.bash_profile</span></span> などに <span class="docutils literal"><span class="pre">PATH</span></span> の設定を追加しておいてください。
-インストールされる箇所は <a class="reference external" href="https://docs.python.org/ja/3/library/site.html#site.USER_BASE">site.USER_BASE</a> によって決まります。</p>
-<ul class="simple">
-<li>Windows: <span class="docutils literal"><span class="pre">%APPDATA%\Python</span></span></li>
-<li>macOSで www.python.org からPythonをインストールした場合: <span class="docutils literal"><span class="pre">~/Library/Python/X.Y/bin</span></span> (X.YはPythonのバージョン)</li>
-<li>macOSでHomebrewを使いPythonをインストールした場合: <span class="docutils literal"><span class="pre">~/.local/bin</span></span></li>
-<li>Ubuntuの場合: <span class="docutils literal"><span class="pre">~/.local/bin</span></span></li>
-</ul>
-<p>ターミナルを開き以下のコマンドを使いインストールします。</p>
-<p><span class="docutils literal"><span class="pre">$</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--user</span> <span class="pre">python-language-server</span></span></p>
-<p>インストールが完了したら  <span class="docutils literal"><span class="pre">$</span> <span class="pre">which</span> <span class="pre">pyls</span></span> などでLanguage ServerにPATHが通っていることを確認してください。
-インストールに失敗したり、whichコマンドで何も出力されない場合、 <span class="docutils literal"><span class="pre">PATH</span></span> の設定がうまく言っていない可能性があるので確認してみてください。</p>
-<p>pipコマンドを実行した結果でもわかりますが、 <span class="docutils literal"><span class="pre">python-language-server</span></span> はこれまでもPythonの自動補完や静的解析で使われていた <a class="reference external" href="https://github.com/davidhalter/jedi">davidhalter/jedi</a> をLSPで使えるようにしたものです。フォースの魂は脈々と受け継がれるようですね。</p>
-</div>
-<div class="section" id="client">
-<h3><a class="toc-backref" href="#id12">Clientの導入</a></h3>
-<p>vim-lspは依存で <a class="reference external" href="https://github.com/prabirshrestha/async.vim">prabirshrestha/async.vim</a> が必要なので合わせてインストールします。
-私は <a class="reference external" href="https://github.com/junegunn/vim-plug">junegunn/vim-plug</a> を使用しているので、以下のようにvimrcに記述します。</p>
-<div class="highlight-vim notranslate"><div class="highlight"><pre><span/><span class="c">" vimrc</span>
-Plug <span class="s1">'prabirshrestha/vim-lsp'</span>
-Plug <span class="s1">'prabirshrestha/async.vim'</span>
-</pre></div>
-</div>
-<p>Vimを開いたまま <cite>:so $MYVIMRC</cite> のようにして設定の変更を読み込み、 <cite>:PlugIntall</cite> するとプラグインをインストールできます。</p>
-</div>
-<div class="section" id="vim">
-<h3><a class="toc-backref" href="#id13">Vimプラグインの設定</a></h3>
-<p>ServerとClientとなるVimプラグインは導入しましたが、実際に連携するには設定が必要です。以下のようにvimrcに追記します。</p>
-<div class="highlight-vim notranslate"><div class="highlight"><pre><span/><span class="c">" vimrc</span>
-<span class="c">" デバッグ用設定</span>
-<span class="k">let</span> <span class="k">g</span>:lsp_log_verbose <span class="p">=</span> <span class="m">1</span>  <span class="c">" デバッグ用ログを出力</span>
-<span class="k">let</span> <span class="k">g</span>:lsp_log_file <span class="p">=</span> expand<span class="p">(</span><span class="s1">'~/.cache/tmp/vim-lsp.log'</span><span class="p">)</span>  <span class="c">" ログ出力のPATHを設定</span>
-
-<span class="c">" 言語用Serverの設定</span>
-augroup MyLsp
-  autocmd<span class="p">!</span>
-<span class="c">  " pip install python-language-server</span>
-  <span class="k">if</span> executable<span class="p">(</span><span class="s1">'pyls'</span><span class="p">)</span>
-<span class="c">    " Python用の設定を記載</span>
-<span class="c">    " workspace_configで以下の設定を記載</span>
-<span class="c">    " - pycodestyleの設定はALEと重複するので無効にする</span>
-<span class="c">    " - jediの定義ジャンプで一部無効になっている設定を有効化</span>
-    autocmd <span class="nb">User</span> lsp_setup <span class="k">call</span> <span class="nb">lsp</span>#register_server<span class="p">(</span>{
-        \ <span class="s1">'name'</span>: <span class="s1">'pyls'</span><span class="p">,</span>
-        \ <span class="s1">'cmd'</span>: { server_info <span class="p">-&gt;</span> [<span class="s1">'pyls'</span>] }<span class="p">,</span>
-        \ <span class="s1">'whitelist'</span>: [<span class="s1">'python'</span>]<span class="p">,</span>
-        \ <span class="s1">'workspace_config'</span>: {<span class="s1">'pyls'</span>: {<span class="s1">'plugins'</span>: {
-        \   <span class="s1">'pycodestyle'</span>: {<span class="s1">'enabled'</span>: <span class="k">v</span>:false}<span class="p">,</span>
-        \   <span class="s1">'jedi_definition'</span>: {<span class="s1">'follow_imports'</span>: <span class="k">v</span>:true<span class="p">,</span> <span class="s1">'follow_builtin_imports'</span>: <span class="k">v</span>:true}<span class="p">,</span>}}}
-        \}<span class="p">)</span>
-    autocmd <span class="nb">FileType</span> python <span class="k">call</span> s:configure_lsp<span class="p">()</span>
-  <span class="k">endif</span>
-augroup END
-<span class="c">" 言語ごとにServerが実行されたらする設定を関数化</span>
-<span class="k">function</span><span class="p">!</span> s:configure_lsp<span class="p">()</span> abort
-  <span class="k">setlocal</span> <span class="nb">omnifunc</span><span class="p">=</span><span class="nb">lsp</span>#<span class="nb">complete</span>   <span class="c">" オムニ補完を有効化</span>
-<span class="c">  " LSP用にマッピング</span>
-  <span class="nb">nnoremap</span> <span class="p">&lt;</span>buffer<span class="p">&gt;</span> <span class="p">&lt;</span>C<span class="p">-</span>]<span class="p">&gt;</span> :<span class="p">&lt;</span>C<span class="p">-</span><span class="k">u</span><span class="p">&gt;</span>LspDefinition<span class="p">&lt;</span>CR<span class="p">&gt;</span>
-  <span class="nb">nnoremap</span> <span class="p">&lt;</span>buffer<span class="p">&gt;</span> <span class="nb">gd</span> :<span class="p">&lt;</span>C<span class="p">-</span><span class="k">u</span><span class="p">&gt;</span>LspDefinition<span class="p">&lt;</span>CR<span class="p">&gt;</span>
-  <span class="nb">nnoremap</span> <span class="p">&lt;</span>buffer<span class="p">&gt;</span> gD :<span class="p">&lt;</span>C<span class="p">-</span><span class="k">u</span><span class="p">&gt;</span>LspReferences<span class="p">&lt;</span>CR<span class="p">&gt;</span>
-  <span class="nb">nnoremap</span> <span class="p">&lt;</span>buffer<span class="p">&gt;</span> gs :<span class="p">&lt;</span>C<span class="p">-</span><span class="k">u</span><span class="p">&gt;</span>LspDocumentSymbol<span class="p">&lt;</span>CR<span class="p">&gt;</span>
-  <span class="nb">nnoremap</span> <span class="p">&lt;</span>buffer<span class="p">&gt;</span> gS :<span class="p">&lt;</span>C<span class="p">-</span><span class="k">u</span><span class="p">&gt;</span>LspWorkspaceSymbol<span class="p">&lt;</span>CR<span class="p">&gt;</span>
-  <span class="nb">nnoremap</span> <span class="p">&lt;</span>buffer<span class="p">&gt;</span> gQ :<span class="p">&lt;</span>C<span class="p">-</span><span class="k">u</span><span class="p">&gt;</span>LspDocumentFormat<span class="p">&lt;</span>CR<span class="p">&gt;</span>
-  <span class="nb">vnoremap</span> <span class="p">&lt;</span>buffer<span class="p">&gt;</span> gQ :LspDocumentRangeFormat<span class="p">&lt;</span>CR<span class="p">&gt;</span>
-  <span class="nb">nnoremap</span> <span class="p">&lt;</span>buffer<span class="p">&gt;</span> K :<span class="p">&lt;</span>C<span class="p">-</span><span class="k">u</span><span class="p">&gt;</span>LspHover<span class="p">&lt;</span>CR<span class="p">&gt;</span>
-  <span class="nb">nnoremap</span> <span class="p">&lt;</span>buffer<span class="p">&gt;</span> <span class="p">&lt;</span>F1<span class="p">&gt;</span> :<span class="p">&lt;</span>C<span class="p">-</span><span class="k">u</span><span class="p">&gt;</span>LspImplementation<span class="p">&lt;</span>CR<span class="p">&gt;</span>
-  <span class="nb">nnoremap</span> <span class="p">&lt;</span>buffer<span class="p">&gt;</span> <span class="p">&lt;</span>F2<span class="p">&gt;</span> :<span class="p">&lt;</span>C<span class="p">-</span><span class="k">u</span><span class="p">&gt;</span>LspRename<span class="p">&lt;</span>CR<span class="p">&gt;</span>
-<span class="k">endfunction</span>
-<span class="k">let</span> <span class="k">g</span>:lsp_diagnostics_enabled <span class="p">=</span> <span class="m">0</span>  <span class="c">" 警告やエラーの表示はALEに任せるのでOFFにする</span>
-</pre></div>
-</div>
-<p>vim-lspは警告やエラーの表示などもできますが、そちらは <a class="reference external" href="https://github.com/w0rp/ale">w0rp/ale</a> に寄せているため機能を無効化しています。
-ALEについては
-<a class="reference external" href="https://kashewnuts.github.io/2018/12/02/bp_advent_calender.html#w0rp-ale-linter-fixer">2018年版Life ChangingだったVimプラグインTOP3</a>
-に書きましたのでそちらを参照してください。</p>
-<p>vimrcに記載したら保存、終了します。</p>
-</div>
-</div>
-<div class="section" id="id4">
-<h2><a class="toc-backref" href="#id14">使用感について</a></h2>
-<p>jedi-vimと比べたときのメリット/デメリットを書いていきます。</p>
-<div class="section" id="id5">
-<h3><a class="toc-backref" href="#id15">メリット</a></h3>
-<p>高速化されたのが一番大きいですね。</p>
-<ul class="simple">
-<li>Vimの起動が高速化できた(Ubuntu環境で100〜150ms、macOS環境でも200〜300ms短縮)</li>
-<li>補完候補がでる時間が高速化できた</li>
-<li>発展途上の技術なので進化を体験していける</li>
-<li>他の言語と使用できるプラグインを共通化できるため、vimrcからプラグインを減らせた</li>
-</ul>
-</div>
-<div class="section" id="id6">
-<h3><a class="toc-backref" href="#id16">デメリット</a></h3>
-<p>まだ発展途上というところからきてると思うのですが、少しだけ今までできていたことができない感じがあります。</p>
-<ul class="simple">
-<li>言語用のServerが別途インストールが必要なので環境を壊さわないようにするのに気を使う。<ul>
-<li>jedi-vimはjediを <span class="docutils literal"><span class="pre">git</span> <span class="pre">submodule</span></span> で独立して入れていたので楽だった。</li>
-</ul>
-</li>
-<li>Vimを起動後に <span class="docutils literal"><span class="pre">:setf</span> <span class="pre">python</span></span> しても補完や定義ジャンプが動かない。<ul>
-<li>既存のPythonファイルを開いたり、 <span class="docutils literal"><span class="pre">$</span> <span class="pre">vim</span> <span class="pre">hoge.py</span></span> などすると動くが、少し気になる。</li>
-</ul>
-</li>
-<li>リネームが不安定(動かない？)<ul>
-<li><a class="reference external" href="https://github.com/palantir/python-language-server/issues/218">Cannot LspRename / Issue #218</a></li>
-<li>動かすには <a class="reference external" href="https://github.com/python-rope/rope">python-rope/rope</a> が必要という情報もあるがそれでも動かない</li>
-<li>jedi-vimはじゃじゃ馬だったり、マルチバイト文字が対象行に混じっていると動かなかったりしたが….</li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-<div class="section" id="id7">
-<h2><a class="toc-backref" href="#id17">終わりに</a></h2>
-<p>自動補完(オムニ補完)や定義ジャンプの使い方は変わらないですし、仮想環境(venv/virtualenv)にも対応しています。
-リネームに関してはropeよりjediに統一したほうがよいのでは？と思ったりしますが、現状リネームに関してはさほど気にしていない感じです。
-今後LSPが進化していって、安定して高速な開発環境ができていくといいなぁと期待しています。</p>
-</div>
-
-        </div>
-        <div class="postmeta">
-        <div class="author">
-            <span>Posted by Kashun YOSHIDA</span>
-        </div>
-        <div class="categories">
-            <span>
-                Filed under:
-                <a href="categories/vim.html">Vim</a>, <a href="categories/python.html">Python</a></span>
-        </div>
-        <div class="tags">
-            <span>
-                Tags:
-                <a href="tags/vim.html">Vim</a>, <a href="tags/python.html">Python</a></span>
-        </div>
-        <div class="comments">
-            <a href="http://kashewnuts.github.io/2019/01/28/move_from_jedivim_to_vimlsp.html#disqus_thread" data-disqus-identifier="2019/01/28/move_from_jedivim_to_vimlsp">Leave a comment</a>
         </div></div><div class="archive_link">
         <a href="archive.html"> &mdash; Blog Archive &mdash; </a>
     </div><ul class="related clearfix">
@@ -555,6 +625,8 @@ ALEについては
 </div></section><section><div class="widget">
     <h1>Recent Posts</h1>
     <ul><li>
+            <a href="2020/06/11/wsl2.html">WSL2を使ってみている</a>
+        </li><li>
             <a href="2020/05/05/upgrade_ubuntu_20_04_lts.html">Ubuntu18.04LTSから20.04LTSにアップグレードした</a>
         </li><li>
             <a href="2020/04/08/migrated_lsp_client_to_coc_nvim.html">LSPクライアントをcoc.nvimにした話</a>
@@ -572,13 +644,11 @@ ALEについては
             <a href="2018/08/22/jedivim_memo.html">VimとPythonの補完についてのメモ</a>
         </li><li>
             <a href="2018/07/15/pycon9shu.html">PyCon Kyushuで登壇してきました #PyCon9shu</a>
-        </li><li>
-            <a href="2018/06/24/pypro3.html">Pythonプロフェッショナルプログラミング第3版 #pypro3 が出版されました</a>
         </li></ul>
 </div>
 </section><section><div class="widget">
     <h1>Categories</h1>
-    <ul><li><a href="categories/64bit.html">64bit</a> (2)</li><li><a href="categories/android.html">Android</a> (3)</li><li><a href="categories/bouldering.html">bouldering</a> (2)</li><li><a href="categories/bouldering.html">Bouldering</a> (3)</li><li><a href="categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="categories/c_c.html">C/C++</a> (5)</li><li><a href="categories/chrome.html">Chrome</a> (2)</li><li><a href="categories/db.html">DB</a> (1)</li><li><a href="categories/django.html">Django</a> (10)</li><li><a href="categories/facebook.html">Facebook</a> (1)</li><li><a href="categories/firefox.html">Firefox</a> (1)</li><li><a href="categories/git_mercurial.html">Git/Mercurial</a> (8)</li><li><a href="categories/golang.html">Golang</a> (1)</li><li><a href="categories/google.html">Google</a> (5)</li><li><a href="categories/heroku.html">Heroku</a> (6)</li><li><a href="categories/java.html">Java</a> (2)</li><li><a href="categories/javascript.html">JavaScript</a> (4)</li><li><a href="categories/jupyter.html">Jupyter</a> (1)</li><li><a href="categories/kabepy.html">kabepy</a> (2)</li><li><a href="categories/linux.html">Linux</a> (4)</li><li><a href="categories/lt.html">LT</a> (5)</li><li><a href="categories/mac.html">Mac</a> (8)</li><li><a href="categories/pycharm.html">PyCharm</a> (2)</li><li><a href="categories/pyconjp.html">PyConJP</a> (1)</li><li><a href="categories/pyfes.html">pyfes</a> (7)</li><li><a href="categories/python.html">Python</a> (70)</li><li><a href="categories/slack.html">Slack</a> (1)</li><li><a href="categories/sphinx.html">Sphinx</a> (8)</li><li><a href="categories/sqlalchemy.html">SQLAlchemy</a> (1)</li><li><a href="categories/ssd.html">SSD</a> (1)</li><li><a href="categories/tddbc.html">TDDBC</a> (1)</li><li><a href="categories/tinkerer.html">Tinkerer</a> (7)</li><li><a href="categories/tmux.html">tmux</a> (1)</li><li><a href="categories/ubuntu.html">Ubuntu</a> (3)</li><li><a href="categories/vagrant.html">Vagrant</a> (1)</li><li><a href="categories/vim.html">Vim</a> (24)</li><li><a href="categories/vimconf.html">VimConf</a> (3)</li><li><a href="categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="categories/windows.html">Windows</a> (2)</li><li><a href="categories/windows7.html">Windows7</a> (4)</li><li><a href="categories/アルゴリズム.html">アルゴリズム</a> (1)</li><li><a href="categories/セキュリティ.html">セキュリティ</a> (2)</li><li><a href="categories/ネットワーク.html">ネットワーク</a> (1)</li><li><a href="categories/プログラミング.html">プログラミング</a> (7)</li><li><a href="categories/勉強会.html">勉強会</a> (30)</li><li><a href="categories/応用情報技術者.html">応用情報技術者</a> (10)</li><li><a href="categories/情報処理技術者試験.html">情報処理技術者試験</a> (10)</li><li><a href="categories/本.html">本</a> (29)</li><li><a href="categories/開発環境.html">開発環境</a> (11)</li><li><a href="categories/雑記.html">雑記</a> (38)</li><li><a href="categories/高速化.html">高速化</a> (1)</li></ul>
+    <ul><li><a href="categories/64bit.html">64bit</a> (2)</li><li><a href="categories/android.html">Android</a> (3)</li><li><a href="categories/bouldering.html">bouldering</a> (2)</li><li><a href="categories/bouldering.html">Bouldering</a> (3)</li><li><a href="categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="categories/c_c.html">C/C++</a> (5)</li><li><a href="categories/chrome.html">Chrome</a> (2)</li><li><a href="categories/db.html">DB</a> (1)</li><li><a href="categories/django.html">Django</a> (10)</li><li><a href="categories/facebook.html">Facebook</a> (1)</li><li><a href="categories/firefox.html">Firefox</a> (1)</li><li><a href="categories/git_mercurial.html">Git/Mercurial</a> (8)</li><li><a href="categories/golang.html">Golang</a> (1)</li><li><a href="categories/google.html">Google</a> (5)</li><li><a href="categories/heroku.html">Heroku</a> (6)</li><li><a href="categories/java.html">Java</a> (2)</li><li><a href="categories/javascript.html">JavaScript</a> (4)</li><li><a href="categories/jupyter.html">Jupyter</a> (1)</li><li><a href="categories/kabepy.html">kabepy</a> (2)</li><li><a href="categories/linux.html">Linux</a> (5)</li><li><a href="categories/lt.html">LT</a> (5)</li><li><a href="categories/mac.html">Mac</a> (8)</li><li><a href="categories/pycharm.html">PyCharm</a> (2)</li><li><a href="categories/pyconjp.html">PyConJP</a> (1)</li><li><a href="categories/pyfes.html">pyfes</a> (7)</li><li><a href="categories/python.html">Python</a> (70)</li><li><a href="categories/slack.html">Slack</a> (1)</li><li><a href="categories/sphinx.html">Sphinx</a> (8)</li><li><a href="categories/sqlalchemy.html">SQLAlchemy</a> (1)</li><li><a href="categories/ssd.html">SSD</a> (1)</li><li><a href="categories/tddbc.html">TDDBC</a> (1)</li><li><a href="categories/tinkerer.html">Tinkerer</a> (7)</li><li><a href="categories/tmux.html">tmux</a> (1)</li><li><a href="categories/ubuntu.html">Ubuntu</a> (3)</li><li><a href="categories/vagrant.html">Vagrant</a> (1)</li><li><a href="categories/vim.html">Vim</a> (24)</li><li><a href="categories/vimconf.html">VimConf</a> (3)</li><li><a href="categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="categories/windows.html">Windows</a> (3)</li><li><a href="categories/windows7.html">Windows7</a> (4)</li><li><a href="categories/wsl.html">WSL</a> (1)</li><li><a href="categories/アルゴリズム.html">アルゴリズム</a> (1)</li><li><a href="categories/セキュリティ.html">セキュリティ</a> (2)</li><li><a href="categories/ネットワーク.html">ネットワーク</a> (1)</li><li><a href="categories/プログラミング.html">プログラミング</a> (7)</li><li><a href="categories/勉強会.html">勉強会</a> (30)</li><li><a href="categories/応用情報技術者.html">応用情報技術者</a> (10)</li><li><a href="categories/情報処理技術者試験.html">情報処理技術者試験</a> (10)</li><li><a href="categories/本.html">本</a> (29)</li><li><a href="categories/開発環境.html">開発環境</a> (11)</li><li><a href="categories/雑記.html">雑記</a> (38)</li><li><a href="categories/高速化.html">高速化</a> (1)</li></ul>
 </div></section><section><div class="widget">
     <h1>About Me</h1>
     <div>
@@ -594,7 +664,7 @@ ALEについては
     </div>
 </div></section></aside></div> <!-- #main --></div> <!-- #main-container -->
 
-        <div class="footer-container" role="contentinfo"><footer class="wrapper">&copy; Copyright 2011-2018, Kashun YOSHIDA. Powered by <a href="http://www.tinkerer.me/">Tinkerer</a> and <a href="http://sphinx.pocoo.org/">Sphinx</a>.</footer></div> <!-- footer-container -->
+        <div class="footer-container" role="contentinfo"><footer class="wrapper">&copy; Copyright 2011-2020, Kashun YOSHIDA. Powered by <a href="http://www.tinkerer.me/">Tinkerer</a> and <a href="http://sphinx.pocoo.org/">Sphinx</a>.</footer></div> <!-- footer-container -->
 
       </div> <!--! end of #container --><script type="text/javascript">    var disqus_shortname = "kashewnutsblog";    disqus_count();</script><!--[if lt IE 7 ]>
           <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
