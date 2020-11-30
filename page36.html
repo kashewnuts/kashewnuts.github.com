@@ -69,6 +69,78 @@
             <a href="http://feeds.feedburner.com/kashew_nuts-blog" title="Subscribe via RSS"><span class="fa fa-lg fa-rss"></span></a>
           </li></ul>
     </nav><div class="main-container" role="main"><div class="main wrapper body clearfix"><article><div class="timestamp postmeta">
+            <span>November 04, 2011</span>
+        </div>
+        <div class="section">
+            <h1><a href="2011/11/04/heroku_install_done.html">Herokuインストールdone…</a></h1>
+<div class="line-block">
+<div class="line">公式にはまずRuby1.9系入れるみたいなこと書いてあったけど、</div>
+<div class="line">そういえばRubyはXcode入れた時に一緒に入っている！</div>
+<div class="line">Rubyはあえてインストールせず、</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span/><span class="go">sudo gem install heroku</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">したらあっさり入れられました。</div>
+<div class="line">バージョンは1.8系なんだね。へー。</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span/><span class="go">Successfully installed term-ansicolor-1.0.7</span>
+<span class="go">Successfully installed mime-types-1.17.2</span>
+<span class="go">Successfully installed rest-client-1.6.7</span>
+<span class="go">Successfully installed addressable-2.2.6</span>
+<span class="go">Successfully installed launchy-2.0.5</span>
+<span class="go">Successfully installed rubyzip-0.9.4</span>
+<span class="go">Successfully installed heroku-2.11.0</span>
+<span class="go">7 gems installed</span>
+<span class="go">Installing ri documentation for term-ansicolor-1.0.7...</span>
+<span class="go">Installing ri documentation for mime-types-1.17.2...</span>
+<span class="go">Installing ri documentation for rest-client-1.6.7...</span>
+<span class="go">Installing ri documentation for addressable-2.2.6...</span>
+<span class="go">Installing ri documentation for launchy-2.0.5...</span>
+<span class="go">Installing ri documentation for rubyzip-0.9.4...</span>
+<span class="go">Installing ri documentation for heroku-2.11.0...</span>
+<span class="go">Installing RDoc documentation for term-ansicolor-1.0.7...</span>
+<span class="go">Installing RDoc documentation for mime-types-1.17.2...</span>
+<span class="go">Installing RDoc documentation for rest-client-1.6.7...</span>
+<span class="go">Installing RDoc documentation for addressable-2.2.6...</span>
+<span class="go">Installing RDoc documentation for launchy-2.0.5...</span>
+<span class="go">Installing RDoc documentation for rubyzip-0.9.4...</span>
+<span class="go">Installing RDoc documentation for heroku-2.11.0...</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">ふむ…とりあえずインストールまで完了したので、</div>
+<div class="line">また公式サイトを探ってちょくちょくいじっていきます。</div>
+<div class="line">次はPythonの環境を整えていかないとな〜。</div>
+</div>
+<div class="line-block">
+<div class="line">p.s.</div>
+<div class="line">sudoつけないでインストールしようとしたら、</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span/><span class="go">ERROR:  While executing gem ... (Gem::FilePermissionError)</span>
+<span class="go">    You don't have write permissions into the /Library/Ruby/Gems/1.8 directory.</span>
+</pre></div>
+</div>
+
+        </div>
+        <div class="postmeta">
+        <div class="author">
+            <span>Posted by Kashun YOSHIDA</span>
+        </div>
+        <div class="categories">
+            <span>
+                Filed under:
+                <a href="categories/開発環境.html">開発環境</a>, <a href="categories/heroku.html">Heroku</a></span>
+        </div>
+        <div class="tags">
+            <span>
+                Tags:
+                <a href="tags/開発環境.html">開発環境</a>, <a href="tags/heroku.html">Heroku</a></span>
+        </div>
+        <div class="comments">
+            <a href="http://kashewnuts.github.io/2011/11/04/heroku_install_done.html#disqus_thread" data-disqus-identifier="2011/11/04/heroku_install_done">Leave a comment</a>
+        </div></div><div class="separator post_separator"></div><div class="timestamp postmeta">
             <span>November 02, 2011</span>
         </div>
         <div class="section">
@@ -177,68 +249,6 @@
         </div>
         <div class="comments">
             <a href="http://kashewnuts.github.io/2011/11/01/git_mercurial_gui_sourcetree.html#disqus_thread" data-disqus-identifier="2011/11/01/git_mercurial_gui_sourcetree">Leave a comment</a>
-        </div></div><div class="separator post_separator"></div><div class="timestamp postmeta">
-            <span>October 31, 2011</span>
-        </div>
-        <div class="section">
-            <h1><a href="2011/10/31/VimVimpart2.html">Vimテクニックバイブルを読んでVimにプラグイン追加してみた part2</a></h1>
-<div class="line-block">
-<div class="line"><a class="reference external" href="http://kashewnuts-tech.blogspot.com/2011/10/vimvim.html">前回</a>は<a class="reference external" href="https://github.com/thinca/vim-quickrun">quickrun.vim</a>について書いたので、</div>
-<div class="line">触れなかった<a class="reference external" href="https://github.com/Shougo/neocomplcache">neocomplcache</a>について書きたいと思う。</div>
-</div>
-<div class="line-block">
-<div class="line">そもそもVimにはデフォルトで補完機能があるらしいのだが、</div>
-<div class="line">EclipseやVisualStudioなどのIDEみたいに</div>
-<div class="line">自動で候補が出てくるわけはないようだ。</div>
-<div class="line">明示的に補完キーを押さないといけないので若干煩わしい。</div>
-<div class="line">そこでneocomplcacheを入れると、</div>
-<div class="line">自分で補完のためにキーを押さなくても良くなる。</div>
-<div class="line">詳しい説明は<a class="reference external" href="http://vim-users.jp/2009/07/hack-49/">こちら</a>。</div>
-<div class="line">プログラムを組んでいて名前を間違えてしまい、</div>
-<div class="line">プログラムが動かないみたいなことはありがちなので非常に助かる。</div>
-<div class="line">さてneocomplecacheはデフォルトでは無効になっているため、</div>
-<div class="line">最初に_vimrcに下記の設定を加える。</div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span/><span class="s2">"neocomplecacheを有効化let g:neocomplcache_enable_at_startup = 1</span>
-</pre></div>
-</div>
-<div class="line-block">
-<div class="line">すると細かい設定をしなくても下記のように、</div>
-<div class="line">すぐに使い始めることができる。</div>
-</div>
-<p><a class="reference external" href="http://2.bp.blogspot.com/-lTMxisqLjyY/Tq17cDXN3sI/AAAAAAAAAZM/o5xXuYlnM94/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588+2011-10-31+1.29.14.png"><img alt="image0" src="http://2.bp.blogspot.com/-lTMxisqLjyY/Tq17cDXN3sI/AAAAAAAAAZM/o5xXuYlnM94/s400/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588+2011-10-31+1.29.14.png"/></a></p>
-<div class="line-block">
-<div class="line">候補はCtrl+Nで次のリスト、Ctrl+Pで前のリストに移動できる。</div>
-<div class="line">矢印キーでもできなくはないけど、こっちのほうが速いと思う。</div>
-<div class="line">標準のVimだとC,C++,Python,XMLが用意されているが、</div>
-<div class="line">neocomplcacheはVimScript,Perl,Ruby,D,Lispなどにも対応してるので、</div>
-<div class="line">捗ること間違い無いと思う。</div>
-</div>
-<div class="line-block">
-<div class="line">p.s.</div>
-<div class="line">Ctrl+Uでも次のリストに移動できるようだが、</div>
-<div class="line">Ctrl+Nとの違いが分からなかった。</div>
-<div class="line">Google先生で調べても見つけられなかったので、</div>
-<div class="line">誰か知ってたら教えてくれると嬉しいです。</div>
-</div>
-
-        </div>
-        <div class="postmeta">
-        <div class="author">
-            <span>Posted by Kashun YOSHIDA</span>
-        </div>
-        <div class="categories">
-            <span>
-                Filed under:
-                <a href="categories/vim.html">Vim</a>, <a href="categories/本.html">本</a></span>
-        </div>
-        <div class="tags">
-            <span>
-                Tags:
-                <a href="tags/vim.html">Vim</a>, <a href="tags/本.html">本</a></span>
-        </div>
-        <div class="comments">
-            <a href="http://kashewnuts.github.io/2011/10/31/VimVimpart2.html#disqus_thread" data-disqus-identifier="2011/10/31/VimVimpart2">Leave a comment</a>
         </div></div><div class="archive_link">
         <a href="archive.html"> &mdash; Blog Archive &mdash; </a>
     </div><ul class="related clearfix">
@@ -257,6 +267,8 @@
 </div></section><section><div class="widget">
     <h1>Recent Posts</h1>
     <ul><li>
+            <a href="2020/11/30/climbing_shoes_history.html">クライミングシューズ遍歴</a>
+        </li><li>
             <a href="2020/06/11/wsl2.html">WSL2を使ってみている</a>
         </li><li>
             <a href="2020/05/05/upgrade_ubuntu_20_04_lts.html">Ubuntu18.04LTSから20.04LTSにアップグレードした</a>
@@ -274,13 +286,11 @@
             <a href="2018/09/22/pyconjp2018.html">PyConJP2018でPyCharmの話をしてきました #pyconjp</a>
         </li><li>
             <a href="2018/08/22/jedivim_memo.html">VimとPythonの補完についてのメモ</a>
-        </li><li>
-            <a href="2018/07/15/pycon9shu.html">PyCon Kyushuで登壇してきました #PyCon9shu</a>
         </li></ul>
 </div>
 </section><section><div class="widget">
     <h1>Categories</h1>
-    <ul><li><a href="categories/64bit.html">64bit</a> (2)</li><li><a href="categories/android.html">Android</a> (3)</li><li><a href="categories/bouldering.html">bouldering</a> (2)</li><li><a href="categories/bouldering.html">Bouldering</a> (3)</li><li><a href="categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="categories/c_c.html">C/C++</a> (5)</li><li><a href="categories/chrome.html">Chrome</a> (2)</li><li><a href="categories/db.html">DB</a> (1)</li><li><a href="categories/django.html">Django</a> (10)</li><li><a href="categories/facebook.html">Facebook</a> (1)</li><li><a href="categories/firefox.html">Firefox</a> (1)</li><li><a href="categories/git_mercurial.html">Git/Mercurial</a> (8)</li><li><a href="categories/golang.html">Golang</a> (1)</li><li><a href="categories/google.html">Google</a> (5)</li><li><a href="categories/heroku.html">Heroku</a> (6)</li><li><a href="categories/java.html">Java</a> (2)</li><li><a href="categories/javascript.html">JavaScript</a> (4)</li><li><a href="categories/jupyter.html">Jupyter</a> (1)</li><li><a href="categories/kabepy.html">kabepy</a> (2)</li><li><a href="categories/linux.html">Linux</a> (5)</li><li><a href="categories/lt.html">LT</a> (5)</li><li><a href="categories/mac.html">Mac</a> (8)</li><li><a href="categories/pycharm.html">PyCharm</a> (2)</li><li><a href="categories/pyconjp.html">PyConJP</a> (1)</li><li><a href="categories/pyfes.html">pyfes</a> (7)</li><li><a href="categories/python.html">Python</a> (70)</li><li><a href="categories/slack.html">Slack</a> (1)</li><li><a href="categories/sphinx.html">Sphinx</a> (8)</li><li><a href="categories/sqlalchemy.html">SQLAlchemy</a> (1)</li><li><a href="categories/ssd.html">SSD</a> (1)</li><li><a href="categories/tddbc.html">TDDBC</a> (1)</li><li><a href="categories/tinkerer.html">Tinkerer</a> (7)</li><li><a href="categories/tmux.html">tmux</a> (1)</li><li><a href="categories/ubuntu.html">Ubuntu</a> (3)</li><li><a href="categories/vagrant.html">Vagrant</a> (1)</li><li><a href="categories/vim.html">Vim</a> (24)</li><li><a href="categories/vimconf.html">VimConf</a> (3)</li><li><a href="categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="categories/windows.html">Windows</a> (3)</li><li><a href="categories/windows7.html">Windows7</a> (4)</li><li><a href="categories/wsl.html">WSL</a> (1)</li><li><a href="categories/アルゴリズム.html">アルゴリズム</a> (1)</li><li><a href="categories/セキュリティ.html">セキュリティ</a> (2)</li><li><a href="categories/ネットワーク.html">ネットワーク</a> (1)</li><li><a href="categories/プログラミング.html">プログラミング</a> (7)</li><li><a href="categories/勉強会.html">勉強会</a> (30)</li><li><a href="categories/応用情報技術者.html">応用情報技術者</a> (10)</li><li><a href="categories/情報処理技術者試験.html">情報処理技術者試験</a> (10)</li><li><a href="categories/本.html">本</a> (29)</li><li><a href="categories/開発環境.html">開発環境</a> (11)</li><li><a href="categories/雑記.html">雑記</a> (38)</li><li><a href="categories/高速化.html">高速化</a> (1)</li></ul>
+    <ul><li><a href="categories/64bit.html">64bit</a> (2)</li><li><a href="categories/android.html">Android</a> (3)</li><li><a href="categories/bouldering.html">bouldering</a> (2)</li><li><a href="categories/bouldering.html">Bouldering</a> (4)</li><li><a href="categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="categories/c_c.html">C/C++</a> (5)</li><li><a href="categories/chrome.html">Chrome</a> (2)</li><li><a href="categories/db.html">DB</a> (1)</li><li><a href="categories/django.html">Django</a> (10)</li><li><a href="categories/facebook.html">Facebook</a> (1)</li><li><a href="categories/firefox.html">Firefox</a> (1)</li><li><a href="categories/git_mercurial.html">Git/Mercurial</a> (8)</li><li><a href="categories/golang.html">Golang</a> (1)</li><li><a href="categories/google.html">Google</a> (5)</li><li><a href="categories/heroku.html">Heroku</a> (6)</li><li><a href="categories/java.html">Java</a> (2)</li><li><a href="categories/javascript.html">JavaScript</a> (4)</li><li><a href="categories/jupyter.html">Jupyter</a> (1)</li><li><a href="categories/kabepy.html">kabepy</a> (2)</li><li><a href="categories/linux.html">Linux</a> (5)</li><li><a href="categories/lt.html">LT</a> (5)</li><li><a href="categories/mac.html">Mac</a> (8)</li><li><a href="categories/pycharm.html">PyCharm</a> (2)</li><li><a href="categories/pyconjp.html">PyConJP</a> (1)</li><li><a href="categories/pyfes.html">pyfes</a> (7)</li><li><a href="categories/python.html">Python</a> (70)</li><li><a href="categories/slack.html">Slack</a> (1)</li><li><a href="categories/sphinx.html">Sphinx</a> (8)</li><li><a href="categories/sqlalchemy.html">SQLAlchemy</a> (1)</li><li><a href="categories/ssd.html">SSD</a> (1)</li><li><a href="categories/tddbc.html">TDDBC</a> (1)</li><li><a href="categories/tinkerer.html">Tinkerer</a> (7)</li><li><a href="categories/tmux.html">tmux</a> (1)</li><li><a href="categories/ubuntu.html">Ubuntu</a> (3)</li><li><a href="categories/vagrant.html">Vagrant</a> (1)</li><li><a href="categories/vim.html">Vim</a> (24)</li><li><a href="categories/vimconf.html">VimConf</a> (3)</li><li><a href="categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="categories/windows.html">Windows</a> (3)</li><li><a href="categories/windows7.html">Windows7</a> (4)</li><li><a href="categories/wsl.html">WSL</a> (1)</li><li><a href="categories/アルゴリズム.html">アルゴリズム</a> (1)</li><li><a href="categories/セキュリティ.html">セキュリティ</a> (2)</li><li><a href="categories/ネットワーク.html">ネットワーク</a> (1)</li><li><a href="categories/プログラミング.html">プログラミング</a> (7)</li><li><a href="categories/勉強会.html">勉強会</a> (30)</li><li><a href="categories/応用情報技術者.html">応用情報技術者</a> (10)</li><li><a href="categories/情報処理技術者試験.html">情報処理技術者試験</a> (10)</li><li><a href="categories/本.html">本</a> (29)</li><li><a href="categories/開発環境.html">開発環境</a> (11)</li><li><a href="categories/雑記.html">雑記</a> (38)</li><li><a href="categories/高速化.html">高速化</a> (1)</li></ul>
 </div></section><section><div class="widget">
     <h1>About Me</h1>
     <div>
