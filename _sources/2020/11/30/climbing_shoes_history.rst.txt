@@ -26,7 +26,7 @@
 Scarpa Force EU39
 -----------------
 
-.. image:: https://dn3pm25xmtlyu.cloudfront.net/photos/large/748539522.gif?Expires=1607943852&Signature=HylFjUWhld8JnfFGrZz4vIu-GsATrhMe6OyXWjGvxmr-usaHTGRq0u4SNYAtzocar0bI~E1RqyjPl2uHOP-p4p5IOI1ZwO27-9UHOpFaf6ZIQGEn9UR9nezu2Mj2fONfo2tU7gBdsCm0SoLNDO2mGLLn5sZU0YlSCRIizYsx~5G85G2p5lRATkxlIWwJvnd8KZmPn~8L~IWLcEmcNZz-BZe9zxygh-~KzfYDvIzFDpaWYJt2vhayB1M1rWYhwk5w1C5qnbAw7aYv6ZCVivDB~reErYiwmZJRyOPLHu1gdVIhwhLDmEcEdynqMr1BybgG25VwQONYvj5nLVJG5Imgig__&Key-Pair-Id=APKAJROXZ7FN26MABHYA
+.. figure:: scarpa_force.jpg
    :align: center
    :width: 50%
 
