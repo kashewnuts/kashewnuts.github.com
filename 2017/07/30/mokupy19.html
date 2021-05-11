@@ -1,0 +1,271 @@
+<!DOCTYPE html><!--[if lt IE 7]>      <html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="https://www.facebook.com/2008/fbml" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="https://www.facebook.com/2008/fbml" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="https://www.facebook.com/2008/fbml" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="https://www.facebook.com/2008/fbml" class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="description" content="Road To Pythonista">
+        <meta name="viewport" content="width=device-width">
+        
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@kashew_nuts" />
+    <meta property="og:site_name" content="kashew_nuts-blog">
+    <meta property="og:title" content="Pythonもくもく会に参加した #mokupy">
+    <meta property="og:description" content="ライフワークのクライミングで怪我をして以来、各種のもくもく会にいくようになっています。 第19回 Pythonもくもく会 - connpass 当日やったことはこんな感じ。執筆多いな―。 経緯 使い方 勘所・制限とか 雑談的な 雑感 参考書籍 当日は「Slackであれこれ」ということで集計スクリプトを作ってました。なんでかというと、 プロジェクトで出勤退勤をSlackにつぶいてる。 勤怠情報...">
+    <meta property='og:url' content="http://kashewnuts.github.io/2017/07/30/mokupy19.html">
+    <meta property="og:image" content="http://kashewnuts.github.io/_images/mokupy19.JPG"><title>Pythonもくもく会に参加した #mokupy &mdash; kashew_nuts-blog</title>
+            <link rel="stylesheet" href="../../../_static/normalize.css" type="text/css">
+            <link rel="stylesheet" href="../../../_static/sphinx.css" type="text/css">
+            <link rel="stylesheet" href="../../../_static/main.css" type="text/css">
+            <link rel="stylesheet" href="../../../_static/flat.css" type="text/css">
+            <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+            <link rel="stylesheet" href="../../../_static/font-awesome.min.css" type="text/css">
+        <link rel="shortcut icon" href="../../../_static/tinkerer.ico" /><!-- Load modernizr and JQuery -->
+        <script src="../../../_static/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="../../../_static/vendor/jquery-1.8.2.min.js"><\/script>')</script>
+        <script src="../../../_static/plugins.js"></script>
+        <script src="../../../_static/main.js"></script>
+        <link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Blogのテーマを変更しました" href="../24/changed_blog_theme.html" /><link rel="prev" title="みんなのPython勉強会#27 #stapy に参加しました" href="../../08/13/stapy27.html" /><link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/kashew_nuts-blog" /><script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.7.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        SOURCELINK_SUFFIX: '.txt',
+        HAS_SOURCE:  true
+      };
+    </script><script type="text/javascript" src="../../../_static/underscore.js"></script><script type="text/javascript" src="../../../_static/doctools.js"></script><script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script><script type="text/javascript" src="../../../_static/disqus.js"></script><script type="text/javascript" src="../../../_static/google_analytics.js"></script>
+    <meta property="fb:admins" content="200170096719194"/>
+    
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Scroll to content if on small screen
+            if (screen.width < 480)
+            {
+                $(document).scrollTop(document.getElementsByTagName("article")[0].offsetTop - 40);
+            }
+        });
+    </script>
+</head>
+    <body role="document">
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+      <div id="container"><header role="banner">
+            <hgroup>
+              <h1><a href="../../../index.html">kashew_nuts-blog</a></h1><h2>Road To Pythonista</h2></hgroup>
+          </header>
+      <nav role="navigation">
+      <ul>
+        <li class="main-nav">
+            <a href="../../../index.html">Home</a>
+          </li>
+        <li class="main-nav"><a href='https://kashewnuts.github.io/archive.html'>Archive</a></li><li class="main-nav">
+            <a href="http://feeds.feedburner.com/kashew_nuts-blog" title="Subscribe via RSS"><span class="fa fa-lg fa-rss"></span></a>
+          </li></ul>
+    </nav><div class="main-container" role="main"><div class="main wrapper body clearfix"><article>
+    <div class="section" id="python-mokupy">
+<h1>Pythonもくもく会に参加した #mokupy<a class="headerlink" href="#python-mokupy" title="Permalink to this headline">¶</a></h1>
+<p>ライフワークのクライミングで怪我をして以来、各種のもくもく会にいくようになっています。</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://mokupy.connpass.com/event/61358/">第19回 Pythonもくもく会 - connpass</a></p></li>
+</ul>
+<p>当日やったことはこんな感じ。執筆多いな―。</p>
+<img alt="../../../_images/mokupy19.JPG" class="align-center" src="../../../_images/mokupy19.JPG" />
+<div class="contents local topic" id="id1">
+<p class="topic-title">目次</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#id2" id="id9">経緯</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id10">使い方</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id11">勘所・制限とか</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id12">雑談的な</a></p></li>
+<li><p><a class="reference internal" href="#id6" id="id13">雑感</a></p></li>
+<li><p><a class="reference internal" href="#id8" id="id14">参考書籍</a></p></li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id9">経緯</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>当日は「Slackであれこれ」ということで集計スクリプトを作ってました。なんでかというと、</p>
+<ul class="simple">
+<li><p>プロジェクトで出勤退勤をSlackにつぶいてる。</p></li>
+<li><p>勤怠情報はGoogleスプレットシートにまとめる必要がある。</p></li>
+<li><p>Slackでもつぶいて、Googleスプレットシートにも書くのダルい。</p></li>
+<li><p>Slackでつぶいた出勤、退勤の時間を1月ごとにファイル出力できるようにしたい。
+(そうすれば後はファイル編集も楽でいいよね)</p></li>
+</ul>
+<p>ということでこれを期にPythonで作ろうとしたのですが、既にGolangで実装されてるバックアップツールはあったorz</p>
+<p><a class="reference external" href="https://blog.pyyoshi.com/2016/10/18/slacknotiyatutoroguwooshou-qing-batukuatupu/">slackのチャットログをお手軽バックアップ</a></p>
+<p>ただ自分は特定の部屋につぶやいている、特定の投稿を習得したいだけだったので自分用に作りました。</p>
+<p>もう一つ欲しい機能があって、取得した勤怠データを自動でGoogleスプレットシートに記載するようにしたらもっと楽かなと思ったのですが、転記する前には目で確認したかったのでやめときました。</p>
+<p>既にそうゆうものがあったのですが、認証が通らず動かなかったりしたので、自分で使うやつでそう言うリスクを減らしたいというものあった。 <a class="reference external" href="http://motemen.hatenablog.com/entry/2015/11/gas-slack-log-spreadsheet">Slack のログを自動で Google Spreadsheet に保存する</a></p>
+</div>
+<div class="section" id="id3">
+<h2><a class="toc-backref" href="#id10">使い方</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Slackのライブラリは <a class="reference external" href="https://github.com/os/slacker">os/slacker</a> を使用。(作成したソースはプライベートリポジトリにしてます。)</p>
+<p><a class="reference external" href="https://api.slack.com/custom-integrations/legacy-tokens">Legacy tokens | Slack</a> で自分が操作したいTeamのTokenを作成し、それを環境変数に渡してCLIで叩く感じです。</p>
+</div>
+<div class="section" id="id4">
+<h2><a class="toc-backref" href="#id11">勘所・制限とか</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>一度に取得できるメッセージのmaxは1000(defaultで100)。→なので一度に一ヶ月分のデータを取りたかったが、1日分ずつ習得。</p>
+<ul>
+<li><p>取得した結果より多くのメッセージがある場合、まだ「データあるよー」という値と、取得できたところまでのUnix timestampが帰ってくるらしいので、より無駄のないメッセージの習得をしたい。</p></li>
+</ul>
+</li>
+<li><p>時間の指定がUnix timestamp。→最初なんの数字かわからず混乱。お陰で日付・時刻操作用のPythonライブラリの学習になった。</p>
+<ul>
+<li><p><a class="reference external" href="https://dateutil.readthedocs.io/en/stable/">dateutil - powerful extensions to datetime</a></p></li>
+<li><p><a class="reference external" href="http://pythonhosted.org/pytz/">pytz - World Timezone Definitions for Python</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h2><a class="toc-backref" href="#id12">雑談的な</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>お昼とか、合間に話したようなことをメモ。</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pyq.jp/">PyQ</a> っていういいPython向け学習サイトがあるらしいよ！</p>
+<ul>
+<li><p>PyQやってるって人と、興味ある人がいたのでPyQ話してきた。</p></li>
+</ul>
+</li>
+<li><p>PCが壊れるときは突然だからバックアップとリカバリープランは作っとこう。</p>
+<ul>
+<li><p>3年間使ってたMacBookが再起不能になった話を聞いた。(結構フル稼働してた上にHDDだったらしい。けどSSDでもそうゆう可能性はあるよね)</p></li>
+<li><p>ヨドバシやAppleStore行っても店頭で手に入るのはメモリ8GBがMax。臨時対応で15万はつらい。←つらい…</p></li>
+<li><p>「TimeMaschineがあったら過去に戻りたい」←たしかに。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.config</span></code>, <code class="docutils literal notranslate"><span class="pre">.ssh_config</span></code> , 秘密鍵とか管理を忘れがち。あとクラウドに置いてるつもりで、データが大きくて放置していたやつとか。←数年前のやつとか取り返せない…</p></li>
+<li><p>あと最近ちょっと触って、ドットなんちゃらができてるのに気づいてなかったり忘れたりしてたやつもありました。(<code class="docutils literal notranslate"><span class="pre">.ansible.cfg</span></code>, <code class="docutils literal notranslate"><span class="pre">.jupyter</span></code>, <code class="docutils literal notranslate"><span class="pre">.ipython</span></code>, あとVM上にあるかもしれないやつとか…)</p></li>
+</ul>
+</li>
+<li><p>数ファイルならVSCodeやAtomでも良いけど、プロジェクトのファイル触るならPyCharmいいですよ！</p>
+<ul>
+<li><p>AtomでPython書いてる方で、「デバッグどうしてるんですか？」って聞いたら <strong>「pdbで頑張ってます！」</strong> とのこと。</p></li>
+<li><p>仕事でもPython触れるようならPyCharm使えば、VM連携・リモートデバッグ・VCS連携とか楽ですよと言う話をしてきました。</p></li>
+<li><p>他にはVSCodeがデバッグ機能がついてるし、リモート接続もできるのでいいらしいですね。(まあ僕はVimやPyCharm使ってるんですが…)</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h2><a class="toc-backref" href="#id13">雑感</a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>仕事だと既に積み上がったプログラムを相手にしてることが多いので、もくもくする時間作って <strong>考えて0から作る</strong> みたいなことはした方がいいですね。 (<a class="reference external" href="http://d.hatena.ne.jp/jflute/20160330/fragramming">この記事</a> を思い出す…)</p>
+</div>
+<div class="section" id="id8">
+<h2><a class="toc-backref" href="#id14">参考書籍</a><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="http://amzn.to/2tNYXHl">Pythonプロフェッショナルプログラミング 第2版</a></p></li>
+<li><p><a class="reference external" href="http://amzn.to/2tNAh1B">Effective Python ―Pythonプログラムを改良する59項目</a></p></li>
+</ul>
+</div>
+</div>
+
+    <br/>
+
+<!-- ninja_omatome -->
+<div class="ninja_onebutton">
+<script type="text/javascript">
+//<![CDATA[
+(function(d){
+if(typeof(window.NINJA_CO_JP_ONETAG_BUTTON_00eb4412f1c80db8bbc1af50c58e8ee6)=='undefined'){
+    document.write("<sc"+"ript type='text\/javascript' src='//omt.shinobi.jp\/b\/00eb4412f1c80db8bbc1af50c58e8ee6'><\/sc"+"ript>");
+}else{
+    window.NINJA_CO_JP_ONETAG_BUTTON_00eb4412f1c80db8bbc1af50c58e8ee6.ONETAGButton_Load();}
+})(document);
+//]]>
+</script><span class="ninja_onebutton_hidden" style="display:none;"></span><span style="display:none;" class="ninja_onebutton_hidden"></span>
+</div>
+<!-- ninja_omatome -->
+
+</div>
+    <div class="postmeta">
+        <div class="author">
+            <span>Posted by Kashun YOSHIDA</span>
+        </div>
+        <div class="categories">
+            <span>
+                Filed under:
+                <a href="../../../categories/python.html">Python</a>, <a href="../../../categories/slack.html">Slack</a>, <a href="../../../categories/pycharm.html">PyCharm</a>, <a href="../../../categories/vim.html">Vim</a>, <a href="../../../categories/mac.html">Mac</a></span>
+        </div>
+        <div class="tags">
+            <span>
+                Tags:
+                <a href="../../../tags/python.html">Python</a>, <a href="../../../tags/slack.html">Slack</a>, <a href="../../../tags/pycharm.html">PyCharm</a>, <a href="../../../tags/vim.html">Vim</a>, <a href="../../../tags/mac.html">Mac</a></span>
+        </div>
+        </div>
+    <div id="disqus_thread"></div><script type="text/javascript">    var disqus_shortname = "kashewnutsblog";    var disqus_identifier = "2017/07/30/mokupy19";    disqus_thread();</script><noscript>Please enable JavaScript to view the    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<ul class="related clearfix">
+            <li class="left"> &laquo; <a href="../../08/13/stapy27.html">みんなのPython勉強会#27 #stapy に参加しました</a></li>
+            <li class="right"><a href="../24/changed_blog_theme.html">Blogのテーマを変更しました</a> &raquo; </li>
+        </ul></article><aside class="sidebar"><section><div class="widget">
+  <div>
+    <a href="//af.moshimo.com/af/c/click?a_id=815168&p_id=1166&pc_id=1793&pl_id=20228&guid=ON" target="_blank" rel="nofollow"><img src="//image.moshimo.com/af-img/0408/000000020228.png" width="300" height="250" style="border:none;"></a><img src="//i.moshimo.com/af/i/impression?a_id=815168&p_id=1166&pc_id=1793&pl_id=20228" width="1" height="1" style="border:none;">
+  </div>
+</div></section><section><div class="widget" id="searchbox" role="search">
+    <h1><a href="#searchbox">Search</a></h1>
+    <form action="../../../search.html" method="get">
+        <input type="text" name="q" />
+        <button type="submit"><span class="fa fa-search"></span></button>
+    </form>
+</div></section><section><div class="widget">
+    <h1>Recent Posts</h1>
+    <ul><li>
+            <a href="../../../2020/11/30/climbing_shoes_history.html">クライミングシューズ遍歴</a>
+        </li><li>
+            <a href="../../../2020/06/11/wsl2.html">WSL2を使ってみている</a>
+        </li><li>
+            <a href="../../../2020/05/05/upgrade_ubuntu_20_04_lts.html">Ubuntu18.04LTSから20.04LTSにアップグレードした</a>
+        </li><li>
+            <a href="../../../2020/04/08/migrated_lsp_client_to_coc_nvim.html">LSPクライアントをcoc.nvimにした話</a>
+        </li><li>
+            <a href="../../../2019/01/28/move_from_jedivim_to_vimlsp.html">Pythonの補完環境をjedi-vimからvim-lspに移行した話</a>
+        </li><li>
+            <a href="../../../2019/01/05/2018and2019.html">2018年の振り返りと2019年抱負</a>
+        </li><li>
+            <a href="../../../2018/12/02/bp_advent_calender.html">2018年版Life ChangingだったVimプラグインTOP3</a>
+        </li><li>
+            <a href="../../../2018/11/06/yosemite_tour.html">ヨセミテツアー日記</a>
+        </li><li>
+            <a href="../../../2018/09/22/pyconjp2018.html">PyConJP2018でPyCharmの話をしてきました #pyconjp</a>
+        </li><li>
+            <a href="../../../2018/08/22/jedivim_memo.html">VimとPythonの補完についてのメモ</a>
+        </li></ul>
+</div>
+</section><section><div class="widget">
+    <h1>Categories</h1>
+    <ul><li><a href="../../../categories/64bit.html">64bit</a> (2)</li><li><a href="../../../categories/android.html">Android</a> (3)</li><li><a href="../../../categories/bouldering.html">bouldering</a> (2)</li><li><a href="../../../categories/bouldering.html">Bouldering</a> (4)</li><li><a href="../../../categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="../../../categories/c_c.html">C/C++</a> (5)</li><li><a href="../../../categories/chrome.html">Chrome</a> (2)</li><li><a href="../../../categories/db.html">DB</a> (1)</li><li><a href="../../../categories/django.html">Django</a> (10)</li><li><a href="../../../categories/facebook.html">Facebook</a> (1)</li><li><a href="../../../categories/firefox.html">Firefox</a> (1)</li><li><a href="../../../categories/git_mercurial.html">Git/Mercurial</a> (8)</li><li><a href="../../../categories/golang.html">Golang</a> (1)</li><li><a href="../../../categories/google.html">Google</a> (5)</li><li><a href="../../../categories/heroku.html">Heroku</a> (6)</li><li><a href="../../../categories/java.html">Java</a> (2)</li><li><a href="../../../categories/javascript.html">JavaScript</a> (4)</li><li><a href="../../../categories/jupyter.html">Jupyter</a> (1)</li><li><a href="../../../categories/kabepy.html">kabepy</a> (2)</li><li><a href="../../../categories/linux.html">Linux</a> (5)</li><li><a href="../../../categories/lt.html">LT</a> (5)</li><li><a href="../../../categories/mac.html">Mac</a> (8)</li><li><a href="../../../categories/pycharm.html">PyCharm</a> (2)</li><li><a href="../../../categories/pyconjp.html">PyConJP</a> (1)</li><li><a href="../../../categories/pyfes.html">pyfes</a> (7)</li><li><a href="../../../categories/python.html">Python</a> (70)</li><li><a href="../../../categories/slack.html">Slack</a> (1)</li><li><a href="../../../categories/sphinx.html">Sphinx</a> (8)</li><li><a href="../../../categories/sqlalchemy.html">SQLAlchemy</a> (1)</li><li><a href="../../../categories/ssd.html">SSD</a> (1)</li><li><a href="../../../categories/tddbc.html">TDDBC</a> (1)</li><li><a href="../../../categories/tinkerer.html">Tinkerer</a> (7)</li><li><a href="../../../categories/tmux.html">tmux</a> (1)</li><li><a href="../../../categories/ubuntu.html">Ubuntu</a> (3)</li><li><a href="../../../categories/vagrant.html">Vagrant</a> (1)</li><li><a href="../../../categories/vim.html">Vim</a> (24)</li><li><a href="../../../categories/vimconf.html">VimConf</a> (3)</li><li><a href="../../../categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="../../../categories/windows.html">Windows</a> (3)</li><li><a href="../../../categories/windows7.html">Windows7</a> (4)</li><li><a href="../../../categories/wsl.html">WSL</a> (1)</li><li><a href="../../../categories/%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0.html">アルゴリズム</a> (1)</li><li><a href="../../../categories/%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3.html">セキュリティ</a> (2)</li><li><a href="../../../categories/%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF.html">ネットワーク</a> (1)</li><li><a href="../../../categories/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0.html">プログラミング</a> (7)</li><li><a href="../../../categories/%E5%8B%89%E5%BC%B7%E4%BC%9A.html">勉強会</a> (30)</li><li><a href="../../../categories/%E5%BF%9C%E7%94%A8%E6%83%85%E5%A0%B1%E6%8A%80%E8%A1%93%E8%80%85.html">応用情報技術者</a> (10)</li><li><a href="../../../categories/%E6%83%85%E5%A0%B1%E5%87%A6%E7%90%86%E6%8A%80%E8%A1%93%E8%80%85%E8%A9%A6%E9%A8%93.html">情報処理技術者試験</a> (10)</li><li><a href="../../../categories/%E6%9C%AC.html">本</a> (29)</li><li><a href="../../../categories/%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83.html">開発環境</a> (11)</li><li><a href="../../../categories/%E9%9B%91%E8%A8%98.html">雑記</a> (38)</li><li><a href="../../../categories/%E9%AB%98%E9%80%9F%E5%8C%96.html">高速化</a> (1)</li></ul>
+</div></section><section><div class="widget">
+    <h1>About Me</h1>
+    <div>
+        <a href="https://about.me/kashew_nuts">
+            <img src="https://pbs.twimg.com/profile_images/378800000438956976/3e61e7ae64d916ba0451a44c3b8ce347.jpeg"
+            width="128px"
+            height="128px" />
+        </a>
+        <h4><a href="https://twitter.com/kashew_nuts">kashew_nuts
+                (KashunYOSHIDA)</a></h4>
+        <p>人生という壁を登るSoftwareDeveloper</p>
+        <a class="twitter-timeline" data-width="300" data-height="800" data-theme="dark" href="https://twitter.com/kashew_nuts">Tweets by kashew_nuts</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+</div></section></aside></div> <!-- #main --></div> <!-- #main-container -->
+
+        <div class="footer-container" role="contentinfo"><footer class="wrapper">&copy; Copyright 2011-2020, Kashun YOSHIDA. Powered by <a href="http://www.tinkerer.me/">Tinkerer</a> and <a href="http://sphinx.pocoo.org/">Sphinx</a>.</footer></div> <!-- footer-container -->
+
+      </div> <!--! end of #container --><!--[if lt IE 7 ]>
+          <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+          <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+        <![endif]-->
+    </body>
+</html>

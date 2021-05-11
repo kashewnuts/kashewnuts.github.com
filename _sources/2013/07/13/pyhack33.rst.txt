@@ -1,0 +1,155 @@
+======================================================
+(第33回)Python mini Hack-a-thon に参加してきた #pyhack
+======================================================
+
+当日のイベントページはこちら→
+`(第33回)Python mini Hack-a-thon - connpass <http://connpass.com/event/2755/>`_
+
+.. image:: 4b51cd58c5480a652524e464cfa709d1.png
+
+同日に `python django 基礎 : ATND <http://atnd.org/events/40589>`_ もあり、
+どちらに参加するか悩みましたが、こちらに参加することにしました。
+
+当日やったこと
+--------------
+
+* +lua 対応した MacVim-KaoriYa 試す
+* Django 環境構築
+
++lua 対応した MacVim-KaoriYa 試す
+---------------------------------
+
+前々から `暗黒美夢王 <https://twitter.com/ShougoMatsu>`_ さん作の `neocomplete.vim <https://github.com/Shougo/neocomplete.vim>`_ を使いたいと思っていました。
+
+neocomplete.vim とは `neocomplcache.vim <https://github.com/Shougo/neocomplcache.vim>`_ の後継で、大きく以下のような特徴があります。
+
+* Vim が +lua かつ、パッチが885以降あてられていることが必要
+* neocomplcache.vim よりも高速に補完できる
+
+これを導入するためには Macports を使用している自分には敷居が高かったのですが、
+(Homebrew ユーザは比較的容易に導入可能) 20130711版でようやくこの条件がそろったので、
+導入してみました。
+
+* .pkg ファイルから lua をインストール
+* NeoBundle.vim で neocomplete.vim を入れる……が、エラーをはきまくってしかたない。
+
+しかしpyhackの日に以下のようなアドバイスを頂きました。
+
+.. tweet:: https://twitter.com/splhack/status/355800024719953922
+.. tweet:: https://twitter.com/splhack/status/355864980580610048
+
+そこで一度やり直して見ることに。
+
+* `pkgutil <http://builder.japan.zdnet.com/os-admin/sp_snow-leopard-09/20412914/>`_ を使用して lua をアンインストール
+* Macports で lua インストールし直すも liblua.dyld が入っていない
+* `Mac OS X で Lua を使う : Sadayuki は こんな人 <http://kurano.jp/sadayuki/text/id/8949153752.html>`_ を参考にようやく liblua.dyld が入る。
+* **これで neocomplete.vim がエラーなく使えるようになる！**
+
+しかしお昼を食べてきた後……
+
+.. tweet:: https://twitter.com/splhack/status/355920403270610944
+
+午前中の苦労は何だったろう…… いや、あれは必要な犠牲だったんだ(遠い目)
+
+現在は `MacVim-KaoriYa 20130713テスト版 <https://code.google.com/p/macvim-kaoriya/downloads/detail?name=macvim-kaoriya-20130713.dmg>`_ を使用して安定稼働しております。
+
+
+Django 環境構築
+---------------
+
+最初は `Simple Django Example | Authomatic <http://peterhudec.github.io/authomatic/examples/django-simple.html>`_ を見ていたのですが、途中で飽きてしまったので、別のことをしました。
+
+これまで Django を試す時は DB は SQLite を使用して、結果は
+
+.. code-block:: console
+
+    python manage.py runserver
+
+とコマンドを打って結果がどうなっているのか確認してきましたが、
+「一度本番環境に近い環境を作ってみたい」と思い試してみました。
+
+Apache2, MySQL を導入し、Hello, Wold! を表示するのを目標にしてスタート。
+
+まずは Macports で以下をイントール。
+
+* apache2
+* mod_wsgi
+* mysql5
+* mysql5-server
+* py27-mysql
+
+途中はまったところは以下。
+
+----------------------------------------------------------------
+「ソケットにアクセスできない」と怒られる。(以下エラーメッセージ)
+----------------------------------------------------------------
+
+.. code-block:: console
+
+    ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/opt/local/var/run/mysql5/mysqld.sock'
+
+解決策
+~~~~~~
+
+`うずら技術メモ <http://webmemo.uzuralife.com/article/2863>`_ を参照
+
+-------------------------------------------------
+MySQLdb がないと怒られる。No module named MySQLdb
+-------------------------------------------------
+
+解決策
+~~~~~~
+
+Macports で入れた py27-mysql をアンインストールし、`How to install MySQLdb (Python data access library to MySQL) on Mac OS X? - Stack Overflow <http://stackoverflow.com/questions/1448429/how-to-install-mysqldb-python-data-access-library-to-mysql-on-mac-os-x>`_ を参考に、 `MySQL for Python <http://sourceforge.net/projects/mysql-python/files/>`_ を入れなおす。
+
+-----------------------------
+mysql_config がないと怒られる
+-----------------------------
+
+解決策
+~~~~~~
+
+`Mac OS X 10.6.4 における mysql-python のインストールと Django のデータベース設定 | 暇人じゃない <http://hima-j.in/python/mac-os-x-mysql-python-django/>`_ を参照
+
+それでも同じエラーがでたので、シンボリックリンクを貼る。
+
+.. code-block:: console
+
+    sudo ln -s /opt/local/bin/mysql_config5 /opt/local/bin/mysql_config
+
+--------------------------------------------
+文字化けしたメッセージがブラウザに表示される
+--------------------------------------------
+
+解決策
+~~~~~~
+
+未解決。
+
+.. code-block:: console
+
+    python manage.py runserver
+
+とコマンドを打つとブラウザに Hello, World! が表示されることは確認しているので、
+Apache2 の設定がうまくいっていないものと思われる。 virtualenv
+を使っていたりするのも関係しているのかな。 Mac と Linux での違いもあるかもしれないがよくわかっていない。
+
+以下を参考にして Apache2 の設定をしたが、結果変わらず……
+
+* `Apache と mod_wsgi 環境で Django を使う方法 — Django 1.4 documentation <http://docs.djangoproject.jp/ja/latest/howto/deployment/wsgi/modwsgi.html>`_
+* `Django1.4環境構築 - i2bsの日記 <http://i2bskn.hateblo.jp/entry/20120410/1334065183>`_
+
+pyhack終了後
+------------
+
+お酒を飲めるような体調ではなかったのと、続きをやりたかったので今回は懇談会には不参加。
+結局目標としていたところまでは行かなかったけど、
+他にも以下のようなリンクを見つけたので、また時間を取って試してみようと思う。
+
+* `すりぷくのミング備忘録 : Djangoとmod_wsgiとapache2とvirtualenvとUbuntuでやってみる　その1 <http://blog.livedoor.jp/ichsod/archives/1672675.html>`_
+
+
+.. author:: default
+.. categories:: Python, Django, Vim
+.. tags:: Python, Django, Vim
+.. comments::

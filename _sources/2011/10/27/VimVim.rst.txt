@@ -1,0 +1,51 @@
+Vimテクニックバイブルを読んでVimにプラグイン追加してみた
+==============================================================
+
+| まだ試行錯誤中なので一部のみ抜粋。
+| \_vimrcと\_gvimrcは逐一変わってるのでまた今度にしようと思う。
+| 今回はVimのプラグインをインストールしてみた。
+| インストールしたのは以下の2つ
+| ■\ `quickrun.vim <https://github.com/thinca/vim-quickrun>`__\ (Vim上でプログラム実行)
+| ■\ `neocomplcache <https://github.com/Shougo/neocomplcache>`__\ (補完)
+| 今回はその中でもquickrun.vimについて書きます。
+| Vimテクニックバイブル持ってない方は、\ `こちら <http://vim-users.jp/2009/05/hack7/>`__\ とかを参考にどうぞ。
+| `以前のPython Developers festa2011.10 <http://kashewnuts-tech.blogspot.com/2011/10/python-developers-festa-201110.html>`__\ では
+| 下記の設定を\_vimrcに追加して実行結果を確かめてた。
+| 点線で囲っているところを追加すれば、
+| <Ctrl+P>でPythonの実行結果をすぐに検証できた。
+
+.. code-block:: bash
+
+    " python実行function! s:Exec()    exe "!" . &ft . " %":endfunctioncommand! Exec call <SID>Exec()map <silent> <C-P> :call <SID>Exec()<CR>
+
+|
+| しかしPython以外のプログラム書く時に
+| 逐一\_vimrcを変更したり、外部プログラムを呼び出すのは大変。
+| ということでquickrun.vimに目をつけた。
+| これは<\\+r>で実行結果を確かめることができる。
+| 実行結果を確かめる時
+| Vimを縦分割か、横分割するのを変更できるらしいと聞いて、
+| 以下の設定を、\_vimrcに追加した。
+
+.. code-block:: bash
+
+    " 横分割をするようにするlet g:quickrun_config={'*': {'split': ''}}
+    " 横分割時は下へ新しいウィンドウが開くようにするset splitbelow
+
+|
+| 実行した結果はこんな感じ。
+
+|image0|
+
+|
+
+| まだPython以外では試してないけど、
+| 他の言語も何種類も対応しているから捗ることは間違いなさそう。
+
+.. |image0| image:: http://1.bp.blogspot.com/-Nd9wi_RWq5Q/TqlcIJcT0yI/AAAAAAAAAY4/1ycRGFQjkJ0/s400/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588+2011-10-27+22.26.35.png
+   :target: http://1.bp.blogspot.com/-Nd9wi_RWq5Q/TqlcIJcT0yI/AAAAAAAAAY4/1ycRGFQjkJ0/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588+2011-10-27+22.26.35.png
+
+.. author:: default
+.. categories:: プログラミング, 開発環境, Vim, 本, Python
+.. tags:: プログラミング, 開発環境, Vim, 本, Python
+.. comments::

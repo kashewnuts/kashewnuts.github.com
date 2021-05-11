@@ -1,0 +1,159 @@
+LSPクライアントをcoc.nvimにした話
+=================================
+
+以前 `Pythonの補完環境をjedi-vimからvim-lspに移行した話 — kashew_nuts-blog <https://kashewnuts.github.io/2019/01/28/move_from_jedivim_to_vimlsp.html>`_ という記事を書きましたが、現在は `neoclide/coc.nvim <https://github.com/neoclide/coc.nvim>`_ に完全移行しています。
+
+.. contents::
+  :local:
+
+coc.nvimとは
+------------
+
+いろんな記事で説明されてますが、Vim8/Neovim向けのインテリセンスエンジンでLSPのフルサポートを謳ったプラグインです。
+
+移行理由
+--------
+
+移行しようと思った理由は以下の3つです。「これなんてVSCode？」となったとかならなかったとか。
+
+* 自動補完が「ちょうどいい」感じで補完してくれる
+* 拡張が豊富で、LSPに限らずIDEとしての機能を提供してくれる
+* Language Serverの設定でvimrcが膨れない
+
+1. 自動補完が「ちょうどいい」感じで補完してくれる
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+vim-lspではオムニ補完、 `prabirshrestha/asyncomplete.vim <https://github.com/prabirshrestha/asyncomplete.vim>`_ も使うと自動補完が使えるようになります。個人的には自動補完はほしい補完ソースを、「期待したタイミングで」動かすのが面倒でした。
+LSP導入以前にも自動補完プラグインを使うのに、「連携のための設定」を書くのに苦労していました。
+
+vim-lspを使ってるときはオムニ補完で自分で補完のタイミングをコントロールして書けてよかったのですが、coc.nvimは「これでいいのでは？」というくらい楽に動いたので一気に虜になりました。
+
+2. 拡張が豊富で、LSPに限らずIDEとしての機能を提供してくれる
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+昨今LSPで各言語ごとに開発環境をインストールするのが楽になってきましたが、インストール自体は手動で行う必要がありました。
+よく知らない言語を触るときにLanguage Serverのセットアップで時間を使うのは大変です。
+
+最近では `mattn/vim-lsp-settings <https://github.com/mattn/vim-lsp-settings>`_ がでてきたので事情が変わってきましたが、
+coc.nvimはcoc.nvim自体がLanguage Serverを含む拡張をインストールできます。
+Gitやエクスプローラーなどの拡張もあるので他のVimプラグインを探す時間も省けます。
+
+
+3. Language Serverの設定でvimrcが膨れない
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+LSPを活用するにはクライアント側の設定だけでなく、Language Serverの設定も書いたりします。
+vimrcにその両方を書いていくとどうしてもvimrcが肥大化していきますが、coc.nvimはLanguage Serverの設定をJSONファイルに書けます。
+キーマッピングやcoc.nvimで使う拡張などはvimrcに書く必要がありますが、設定を分離できるのでvimrcが肥大化しにくいです。
+
+
+
+インストール要件
+----------------
+
+現在のインストール要件は以下となっています。
+
+* Vim >= 8.0.1453
+* node.js >= 8.10.0
+* npm
+
+当初2019年に試したときはVimの場合Python3インターフェイスや `neoclide/vim-node-rpc <https://github.com/neoclide/vim-node-rpc>`_  、yarnに依存していましたが、現在は依存が消えているので使いやすくなりました。(ソースからビルドするときはyarnが必要となります。
+
+Vimの下限のバージョンはUbuntu 18.04LTSとかならデフォルトで満たしていますが、できればpopup-windowを活用するのに、8.2以上だとよりよいでしょう。
+node.jsも現在のLTSの下限である10.x系にしたほうがよいと思います。
+
+詳細は `Install coc.nvim <https://github.com/neoclide/coc.nvim/wiki/Install-coc.nvim#requirements>`_ を参照のこと。
+
+インストール方法
+----------------
+
+vim-plugを使ってる場合、 vimrcに以下のように記述します。
+その後、Vimを再起動しコマンドラインモードで ``:PlugInstall`` すればOKです。
+
+.. code-block:: vim
+
+   Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+`Quick Start <https://github.com/neoclide/coc.nvim#quick-start>`_ の通りですね。
+
+使い方
+------
+
+coc.nvimをインストールしたあとは拡張やLanguage Serverをインストールして使うだけ。
+どんな設定ができるかや、Language Serverの設定をすればいいかは以下のWikiやヘルプを参照するとよいです。
+
+*  `neoclide/coc.nvim Wiki <https://github.com/neoclide/coc.nvim/wiki>`_
+*  `coc.nvim/coc.txt <https://github.com/neoclide/coc.nvim/blob/master/doc/coc.txt>`_
+
+まずは自分の使うFileTypeの拡張を入れたり、設定ファイルの記述を便利にするために ``:CocInstall coc-json`` はしておくとよいでしょう。
+
+よく使うコマンド
+^^^^^^^^^^^^^^^^
+
+個人的によく使うコマンドは以下です。
+
+* CocInstall <extension-name>: 拡張のインストール
+* CocUninstall <extension-name>: 拡張のアンインストール
+* CocCommand: インストールした拡張機能の実行
+* CocConfig: Language Serverの設定
+* CocLocalConfig: プロジェクトごとのLanguage Serverの設定
+
+popup-windowについて
+--------------------
+
+coc.nvimに限らずVimのLSPクライアントを活用していくとき、popup-windowが有効になっていると便利です。
+コマンドラインモードで ``:echo has('popupwin')`` を実行したとき、 ``1`` が返ってくると有効になっています。
+
+Vim8.2を使っていれば問題なくpopup-windowが使えると思いますが、colorschemeが追従しているかも確認しておくとよいかもしれません。
+自分は昔から `tomasr/molokai <https://github.com/tomasr/molokai>`_ を使っていますが、popup-windowで使うハイライトの指定がされていません。
+
+下記のドキュメントを参考に、ハイライトの指定を行いました。
+
+* `popup <https://vim-jp.org/vimdoc-ja/popup.html>`_
+* `syntax <https://vim-jp.org/vimdoc-ja/syntax.html#hl-Pmenu>`_
+
+.. code-block:: vim
+
+   " 設定したハイライト
+   " ~/.vim/colors/molokai.vim
+   hi Pmenu guifg=#f8f6f2 ctermfg=15 guibg=#35322d ctermbg=236
+   hi PmenuSel guifg=#000000 ctermfg=16 gui=bold cterm=bold
+   hi PmenuSbar guibg=#35322d ctermbg=236
+   hi PmenuThumb guifg=#d9cec3 ctermfg=252
+
+他のcolorschemeもいくつか見て、最終的に `sjl/badwolf <https://github.com/sjl/badwolf>`_ を参考にさせていただきました。
+使ったときのイメージはこんな感じです。
+
+.. tweet:: https://twitter.com/kashew_nuts/status/1229781512050003968
+
+気になるところ
+--------------
+
+良い点もあれば気になるところもあるということでかんたんに書きます。
+
+* 設定ファイルがJSONのため、PATHの設定を書くと異なるOS間で共通化しにくい
+* NeoVimでのみサポートとかあるので、coc及び拡張の機能が自分の「Vim」に対応しているか確認する必要がある
+* トラブルシューティングにはJavaScript/TypeScriptまわりの知識が必要になる
+
+現状なにか詰まったりしたときに「そういえばそうだったな」と思うぐらいなので、気に留めておくぐらいでいいかもしれません。
+
+
+設定ファイル例
+--------------
+
+設定ファイルは `README <https://github.com/neoclide/coc.nvim#example-vim-configuration>`_ を参考に自分に必要な記述をすればと思いますが、自分のも一例としてリンクを載せておきます。
+こだわりとしてはcoc.nvimを使わないFileTypeでは、キーマッピングなどを上書きしないようにしています。
+
+* `vimrc <https://github.com/kashewnuts/dotfiles/blob/1e11a30e48c988a069f9ce20a7d185ab53a36ccd/files/.vim/vimrc#L383-L467>`_
+* `coc-settings.json <https://github.com/kashewnuts/dotfiles/blob/1e11a30e48c988a069f9ce20a7d185ab53a36ccd/files/.vim/coc-settings.json>`_
+
+終わりに
+--------
+
+使用感自体は快適です。vim-lspと比べるとnode.jsへの依存が増えていますが、Language Serverによっては関係なく必要なのであまり気にしていません。LSPひとつとっても、Vim界隈はこういった切磋琢磨が目に見えるので使っていても楽しいですね。
+
+
+.. author:: default
+.. categories:: Vim
+.. tags:: Vim
+.. comments::

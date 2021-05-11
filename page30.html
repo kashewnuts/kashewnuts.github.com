@@ -1,0 +1,476 @@
+<!DOCTYPE html><!--[if lt IE 7]>      <html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="https://www.facebook.com/2008/fbml" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="https://www.facebook.com/2008/fbml" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="https://www.facebook.com/2008/fbml" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="https://www.facebook.com/2008/fbml" class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="description" content="Road To Pythonista">
+        <meta name="viewport" content="width=device-width">
+        <title>Page 30 &mdash; kashew_nuts-blog</title>
+            <link rel="stylesheet" href="_static/normalize.css" type="text/css">
+            <link rel="stylesheet" href="_static/sphinx.css" type="text/css">
+            <link rel="stylesheet" href="_static/main.css" type="text/css">
+            <link rel="stylesheet" href="_static/flat.css" type="text/css">
+            <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+            <link rel="stylesheet" href="_static/font-awesome.min.css" type="text/css">
+        <link rel="shortcut icon" href="_static/tinkerer.ico" /><!-- Load modernizr and JQuery -->
+        <script src="_static/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="_static/vendor/jquery-1.8.2.min.js"><\/script>')</script>
+        <script src="_static/plugins.js"></script>
+        <script src="_static/main.js"></script>
+        <link rel="search" title="Search" href="search.html" /><link rel="next" title="Older" href="page31.html" /><link rel="prev" title="Newer" href="page29.html" /><link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/kashew_nuts-blog" /><script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.7.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        SOURCELINK_SUFFIX: '.txt',
+        HAS_SOURCE:  true
+      };
+    </script><script type="text/javascript" src="_static/underscore.js"></script><script type="text/javascript" src="_static/doctools.js"></script><script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script><script type="text/javascript" src="_static/disqus.js"></script><script type="text/javascript" src="_static/google_analytics.js"></script>
+    <meta property="fb:admins" content="200170096719194"/>
+    
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Scroll to content if on small screen
+            if (screen.width < 480)
+            {
+                $(document).scrollTop(document.getElementsByTagName("article")[0].offsetTop - 40);
+            }
+        });
+    </script>
+</head>
+    <body role="document">
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+      <div id="container"><header role="banner">
+            <hgroup>
+              <h1><a href="index.html">kashew_nuts-blog</a></h1><h2>Road To Pythonista</h2></hgroup>
+          </header>
+      <nav role="navigation">
+      <ul>
+        <li class="main-nav">
+            <a href="index.html">Home</a>
+          </li>
+        <li class="main-nav"><a href='https://kashewnuts.github.io/archive.html'>Archive</a></li><li class="main-nav">
+            <a href="http://feeds.feedburner.com/kashew_nuts-blog" title="Subscribe via RSS"><span class="fa fa-lg fa-rss"></span></a>
+          </li></ul>
+    </nav><div class="main-container" role="main"><div class="main wrapper body clearfix"><article><div class="timestamp postmeta">
+            <span>December 30, 2011</span>
+        </div>
+        <div class="section">
+            <h1><a href="2011/12/30/VimVim_part3.html">Vimテクニックバイブルを読んでVimにプラグイン追加してみた part3<a class="headerlink" href="#vimvim-part3" title="Permalink to this headline">¶</a></a></h1>
+<div class="line-block">
+<div class="line"><a class="reference external" href="http://kashewnuts-tech.blogspot.com/2011/10/vimvim.html">part1</a>, <a class="reference external" href="http://kashewnuts-tech.blogspot.com/2011/10/vimvim-part2.html">2</a>に続いてpart3です。しばらく間が空きましたね。</div>
+</div>
+<div class="line-block">
+<div class="line">まあ気にせず行きましょう。</div>
+<div class="line">今まで<a class="reference external" href="http://vim-users.jp/2009/05/hack7/">quickrun.vim</a>と<a class="reference external" href="http://vim-users.jp/tag/neocomplcache/">neocomplcache</a>だけで過ごしてきたものの、</div>
+<div class="line">気になるプラグインがでてきたので</div>
+<div class="line">まずは簡単そうなものから入れてみました。</div>
+</div>
+<div class="line-block">
+<div class="line">今回入れたのは以下の2つ</div>
+<div class="line">- <a class="reference external" href="http://vim-users.jp/2011/04/hack215/">Vundle</a></div>
+<div class="line">- <a class="reference external" href="http://bugrammer.g.hatena.ne.jp/nisemono_san/20111107/1320677380">simplenote.vim</a></div>
+</div>
+<div class="line-block">
+<div class="line">気になるプラグインを入れる際に、</div>
+<div class="line">管理は簡単な方がいいだろうとまずはVundleを導入。</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Vundle</strong></div>
+<div class="line">Vundleはvimがどのディレクトリから設定ファイル、プラグインファイル</div>
+<div class="line">を読み込むのかを決定している「<a class="reference external" href="http://nanasi.jp/articles/howto/config/runtimepath.html">runtimepath</a>」オプションを操作する</div>
+<div class="line">だけなく、インストールや更新なども行うことができます。</div>
+<div class="line">導入の際はgitが必須です。以下のようにインストールします。</div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span/>git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">次に_vimrcに以下のような記述をしました。</div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span/><span class="s2">"Vundle設定</span>
+<span class="s2">filetype off</span>
+
+<span class="s2">set rtp+=~/.vim/bundle/vundle/</span>
+<span class="s2">call vundle#rc()</span>
+
+<span class="s2">"</span>Bundle <span class="s1">'gmarik/vundle'</span>     <span class="s2">"必須</span>
+<span class="s2">"</span>githubにあるプラグイン
+Bundle <span class="s1">'thinca/vim-quickrun'</span>
+Bundle <span class="s1">'Shougo/neocomplcache'</span>
+Bundle <span class="s1">'mrtazz/simplenote.vim'</span>
+
+filetype plugin indent on
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">後はVimを立ち上げて、</div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span/>:BundleInstall
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">と叩けばインストール開始です。</div>
+<div class="line">インストールが完了すると以下のようになります。</div>
+</div>
+<p><a class="reference external" href="http://2.bp.blogspot.com/-kvr-zwmk4Pk/Tv2S8_ymM5I/AAAAAAAAAfg/janoJTwMKOI/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588+2011-12-30+19.21.51.jpg"><img alt="image0" src="http://2.bp.blogspot.com/-kvr-zwmk4Pk/Tv2S8_ymM5I/AAAAAAAAAfg/janoJTwMKOI/s320/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588+2011-12-30+19.21.51.jpg"/></a></p>
+<div class="line-block">
+<div class="line"><strong>simplenote.vim</strong></div>
+<div class="line">SimplenoteはEvernoteのスキマを埋める簡単メモツールです。</div>
+<div class="line">(Vimテクニックバイブルには書いてありません)</div>
+<div class="line">simplenote.vimはvimからそのSimplenoteを扱おうという代物。</div>
+<div class="line">普段から書き慣れているエディタでメモを取りたいと思っていた自分には最適でしたね。</div>
+<div class="line">若干重いようですが許容範囲内かと思っています。</div>
+<div class="line">インストールは先程のVundleの設定に記しているので割愛します。</div>
+<div class="line">_vimrcに以下の設定を書きこむことでログインの手間を減らせます。</div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span/><span class="nb">let</span> g:SimplenoteUsername <span class="o">=</span> <span class="s2">"Enter your username"</span>
+<span class="nb">let</span> g:SimplenotePassword <span class="o">=</span> <span class="s2">"Enter your password"</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">最低限以下の3つのコマンドを覚えておけばOK</div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span/>:Simplenote -l <span class="s2">"Simplenoteにあるデータの一覧</span>
+<span class="s2">:Simplenote -u "</span>Simplenoteのデータを更新する
+:Simplenote -n <span class="s2">"新しいデータを作成する</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">その他・・・</div>
+<div class="line">他にも<a class="reference external" href="https://github.com/Shougo/unite.vim">vimshell</a>, <a class="reference external" href="https://github.com/Shougo/vimshell">unite.vim</a>, <a class="reference external" href="https://github.com/tpope/vim-surround">surround.vim</a>に興味があります。</div>
+<div class="line">会社でWindowsでもシェル使いこなしたいな</div>
+<div class="line">→自分Vim使っている</div>
+<div class="line">→vimshell使ったほうがいいのかな</div>
+<div class="line">という安直な気持ちですが(笑)</div>
+</div>
+<div class="line-block">
+<div class="line">unite.vimは何が何だか分からないから知りたい。</div>
+<div class="line">surround.vimはテキストオブジェクトの操作を身につけたいからです。</div>
+<div class="line">まあPythonだけ弄っていくならそれほど意識する必要がないのかもしれませんが……</div>
+</div>
+
+        </div>
+        <div class="postmeta">
+        <div class="author">
+            <span>Posted by Kashun YOSHIDA</span>
+        </div>
+        <div class="categories">
+            <span>
+                Filed under:
+                <a href="categories/開発環境.html">開発環境</a>, <a href="categories/vim.html">Vim</a>, <a href="categories/本.html">本</a></span>
+        </div>
+        <div class="tags">
+            <span>
+                Tags:
+                <a href="tags/開発環境.html">開発環境</a>, <a href="tags/vim.html">Vim</a>, <a href="tags/本.html">本</a></span>
+        </div>
+        <div class="comments">
+            <a href="http://kashewnuts.github.io/2011/12/30/VimVim_part3.html#disqus_thread" data-disqus-identifier="2011/12/30/VimVim_part3">Leave a comment</a>
+        </div></div><div class="separator post_separator"></div><div class="timestamp postmeta">
+            <span>December 26, 2011</span>
+        </div>
+        <div class="section">
+            <h1><a href="2011/12/26/best_5_books_for_newyear.html">年末年始に向けて読みたい本5選<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></a></h1>
+<div class="line-block">
+<div class="line"><a class="reference external" href="https://connpass.com/series/31/">エキスパートPythonプログラミング読書会</a>だけでなく</div>
+<div class="line">新宿Book-a-thonなど他の読書会にも顔を出すようになったきたので、</div>
+<div class="line">ここいらで読みたい本をまとめてみます。</div>
+</div>
+<p><a class="reference external" href="http://www.amazon.co.jp/exec/obidos/ASIN/4048686291/naoyadyndnsor-22/ref=nosim/"><img alt="エキスパートPythonプログラミング" src="http://ecx.images-amazon.com/images/I/51wSTTIQtgL._SL160_.jpg"/></a></p>
+<div class="line-block">
+<div class="line"><a class="reference external" href="http://www.amazon.co.jp/exec/obidos/ASIN/4048686291/naoyadyndnsor-22/ref=nosim/">エキスパートPythonプログラミング</a></div>
+<div class="line">posted with</div>
+<div class="line"><a class="reference external" href="http://www.amazlet.com/browse/ASIN/4048686291//ref=nosim/">amazlet</a></div>
+<div class="line">at 11.12.26</div>
+<div class="line">Tarek Ziade</div>
+<div class="line">アスキー・メディアワークス</div>
+<div class="line">売り上げランキング: 5309</div>
+<div class="line"><a class="reference external" href="http://www.amazon.co.jp/exec/obidos/ASIN/4048686291/naoyadyndnsor-22/ref=nosim/">Amazon.co.jp で詳細を見る</a></div>
+<div class="line">こちらは言わずもがな。</div>
+</div>
+<p><a class="reference external" href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068560/naoyadyndnsor-22/ref=nosim/"><img alt="アジャイルサムライ−達人開発者への道−" src="http://ecx.images-amazon.com/images/I/51b4P511wTL._SL160_.jpg"/></a></p>
+<div class="line-block">
+<div class="line"><a class="reference external" href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068560/naoyadyndnsor-22/ref=nosim/">アジャイルサムライ−達人開発者への道−</a></div>
+<div class="line">posted with</div>
+<div class="line"><a class="reference external" href="http://www.amazlet.com/browse/ASIN/4274068560//ref=nosim/">amazlet</a></div>
+<div class="line">at 11.12.26</div>
+<div class="line">Jonathan Rasmusson</div>
+<div class="line">オーム社</div>
+<div class="line">売り上げランキング: 966</div>
+<div class="line"><a class="reference external" href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068560/naoyadyndnsor-22/ref=nosim/">Amazon.co.jp で詳細を見る</a></div>
+<div class="line">まだ通して読んでないので一度読み通す。</div>
+<div class="line">その上で本の中にでてくる問も考えていきたい。</div>
+</div>
+<p><a class="reference external" href="http://www.amazon.co.jp/exec/obidos/ASIN/4873114993/naoyadyndnsor-22/ref=nosim/"><img alt="Being Geek ―ギークであり続けるためのキャリア戦略" src="http://ecx.images-amazon.com/images/I/416%2Bo3COOCL._SL160_.jpg"/></a></p>
+<div class="line-block">
+<div class="line"><a class="reference external" href="http://www.amazon.co.jp/exec/obidos/ASIN/4873114993/naoyadyndnsor-22/ref=nosim/">Being Geek ―ギークであり続けるためのキャリア戦略</a></div>
+<div class="line">posted with</div>
+<div class="line"><a class="reference external" href="http://www.amazlet.com/browse/ASIN/4873114993//ref=nosim/">amazlet</a></div>
+<div class="line">at 11.12.26</div>
+<div class="line">Michael Lopp</div>
+<div class="line">オライリージャパン</div>
+<div class="line">売り上げランキング: 76875</div>
+<div class="line"><a class="reference external" href="http://www.amazon.co.jp/exec/obidos/ASIN/4873114993/naoyadyndnsor-22/ref=nosim/">Amazon.co.jp で詳細を見る</a></div>
+<div class="line">評価面談も近いことだし、こちらも一度何が書いてあるのか通し見する。</div>
+</div>
+<p><a class="reference external" href="http://www.amazon.co.jp/exec/obidos/ASIN/447800496X/naoyadyndnsor-22/ref=nosim/"><img alt="グロービスMBAマネジメント・ブック【改訂3版】" src="http://ecx.images-amazon.com/images/I/41qnDFWDFLL._SL160_.jpg"/></a></p>
+<div class="line-block">
+<div class="line"><a class="reference external" href="http://www.amazon.co.jp/exec/obidos/ASIN/447800496X/naoyadyndnsor-22/ref=nosim/">グロービスMBAマネジメント・ブック【改訂3版】</a></div>
+<div class="line">posted with</div>
+<div class="line"><a class="reference external" href="http://www.amazlet.com/browse/ASIN/447800496X//ref=nosim/">amazlet</a></div>
+<div class="line">at 11.12.26</div>
+<div class="line">グロービス経営大学院</div>
+<div class="line">ダイヤモンド社</div>
+<div class="line">売り上げランキング: 3489</div>
+<div class="line"><a class="reference external" href="http://www.amazon.co.jp/exec/obidos/ASIN/447800496X/naoyadyndnsor-22/ref=nosim/">Amazon.co.jp で詳細を見る</a></div>
+<div class="line">情処対策みたいなところがあるけど、読むのが途中になっているので。</div>
+</div>
+<p><a class="reference external" href="http://www.amazon.co.jp/exec/obidos/ASIN/482224816X/naoyadyndnsor-22/ref=nosim/"><img alt="スティーブ・ジョブズ 驚異のプレゼン―人々を惹きつける18の法則" src="http://ecx.images-amazon.com/images/I/41aZDUxd8wL._SL160_.jpg"/></a></p>
+<div class="line-block">
+<div class="line"><a class="reference external" href="http://www.amazon.co.jp/exec/obidos/ASIN/482224816X/naoyadyndnsor-22/ref=nosim/">スティーブ・ジョブズ 驚異のプレゼン―人々を惹きつける18の法則</a></div>
+<div class="line">posted with</div>
+<div class="line"><a class="reference external" href="http://www.amazlet.com/browse/ASIN/482224816X//ref=nosim/">amazlet</a></div>
+<div class="line">at 11.12.26</div>
+<div class="line">カーマイン・ガロ</div>
+<div class="line">日経BP社</div>
+<div class="line">売り上げランキング: 129</div>
+<div class="line"><a class="reference external" href="http://www.amazon.co.jp/exec/obidos/ASIN/482224816X/naoyadyndnsor-22/ref=nosim/">Amazon.co.jp で詳細を見る</a></div>
+<div class="line"><a class="reference external" href="http://kashewnuts-tech.blogspot.com/2011/12/book-thon-6.html">先日の新宿Book-a-thon</a>で読んだ、</div>
+<div class="line">「エバンジェリスト養成講座 究極のプレゼンハック100」</div>
+<div class="line">でもジョブス型みたいな話がでてたので気になって。</div>
+</div>
+<div class="line-block">
+<div class="line">この中から3冊も読み切れれば上出来でしょうか。</div>
+</div>
+
+        </div>
+        <div class="postmeta">
+        <div class="author">
+            <span>Posted by Kashun YOSHIDA</span>
+        </div>
+        <div class="categories">
+            <span>
+                Filed under:
+                <a href="categories/本.html">本</a>, <a href="categories/雑記.html">雑記</a></span>
+        </div>
+        <div class="tags">
+            <span>
+                Tags:
+                <a href="tags/本.html">本</a>, <a href="tags/雑記.html">雑記</a></span>
+        </div>
+        <div class="comments">
+            <a href="http://kashewnuts.github.io/2011/12/26/best_5_books_for_newyear.html#disqus_thread" data-disqus-identifier="2011/12/26/best_5_books_for_newyear">Leave a comment</a>
+        </div></div><div class="separator post_separator"></div><div class="timestamp postmeta">
+            <span>December 23, 2011</span>
+        </div>
+        <div class="section">
+            <h1><a href="2011/12/23/bookathon06.html">新宿 Book-a-thon #6に参加してきました。<a class="headerlink" href="#book-a-thon-6" title="Permalink to this headline">¶</a></a></h1>
+<div class="line-block">
+<div class="line"><a class="reference external" href="http://atnd.org/events/23265">新宿 Book-a-thon #6 : ATND</a> に参加してきました。</div>
+<div class="line">凍えるような寒さの中会場に辿りついたのですが、</div>
+<div class="line">「ルノワールどこよ！」</div>
+<div class="line">ちょっと迷いました。案内板もあれじゃ別のところ指してるって。</div>
+<div class="line">自分がついた時は <a class="reference external" href="https://twitter.com/#!/tk0miya">@tk0miya</a> さんと <a class="reference external" href="https://twitter.com/#!/usaturn">@usaturn</a> さんのお二人だけでした。</div>
+<div class="line">今日やることの紹介をして時間もそろそろってことだったので、</div>
+<div class="line">粛々と作業開始。</div>
+</div>
+<div class="line-block">
+<div class="line">自分は</div>
+<div class="line">「エバンジェリスト養成講座 究極のプレゼンハック100」</div>
+<div class="line">を読みました。</div>
+</div>
+<p><a class="reference external" href="http://www.amazon.co.jp/exec/obidos/ASIN/4798125091/naoyadyndnsor-22/ref=nosim/"><img alt="エバンジェリスト養成講座 究極のプレゼンハック100" src="http://ecx.images-amazon.com/images/I/515JKZ89XEL._SL160_.jpg"/></a></p>
+<div class="line-block">
+<div class="line"><a class="reference external" href="http://www.amazon.co.jp/exec/obidos/ASIN/4798125091/naoyadyndnsor-22/ref=nosim/">エバンジェリスト養成講座 究極のプレゼンハック100</a></div>
+<div class="line">posted with</div>
+<div class="line"><a class="reference external" href="http://www.amazlet.com/browse/ASIN/4798125091//ref=nosim/">amazlet</a></div>
+<div class="line">at 11.12.24</div>
+<div class="line">西脇 資哲</div>
+<div class="line">翔泳社</div>
+<div class="line">売り上げランキング: 13256</div>
+<div class="line"><a class="reference external" href="http://www.amazon.co.jp/exec/obidos/ASIN/4798125091/naoyadyndnsor-22/ref=nosim/">Amazon.co.jp で詳細を見る</a></div>
+</div>
+<div class="line-block">
+<div class="line"><a class="reference external" href="https://twitter.com/#!/dproject21">@dproject21</a> さんにおすすめされてから積ん読になっていたので、</div>
+<div class="line">この機会にと思って一気に読みました。</div>
+<div class="line">ちょこっと書いてあることを抜粋させてもらうと、</div>
+</div>
+<div class="line-block">
+<div class="line">* 私がプレゼンテーションで一番大切にしていることは、「経験」です。プレゼンテーションでまず大切なのは「自分が説明するものを経験しているかどうか」、そして「説明するものを友達や、周りの人にも好きになってほしいかどうか」です。</div>
+<div class="line">* P014-伝われば、成功。伝わらなければ、失敗。</div>
+<div class="line">* P015-一番最初にやらなければいけないのは何を伝えたいのかを決めること。</div>
+</div>
+<div class="line-block">
+<div class="line">* P71-プレゼンテーションの視点</div>
+<div class="line">* 自分視点-〇〇のクラウド版を出荷します</div>
+<div class="line">* 神様視点-〇〇のクラウド版が出荷されました</div>
+<div class="line">* 顧客視点-クラウドで〇〇を手に入れることができます</div>
+<div class="line">* プレゼンテーションは顧客視点にすると、より上質に、より伝わりやすくなります。自分視点、神様視点ですと、製品説明にすぎなくなってしまいます。なるべく顧客しし視点を心がけて下さい。</div>
+</div>
+<div class="line-block">
+<div class="line">* P077-プレゼンは、必ずドラマにする</div>
+<div class="line">* P080-ドラマになったプレゼンテーションは</div>
+<div class="line">◯ 登場人物（会社や製品、自分自身）をいつ紹介するか</div>
+<div class="line">◯ クライマックスr（インパクト）をどこにするか</div>
+<div class="line">◯ 何話構成（何スライド、何分）にするか？</div>
+<div class="line">◯ 最終回（まとめ）は必ず作る</div>
+</div>
+<div class="line-block">
+<div class="line">* P107-比喩を使うことでよけいわかりづらくしない</div>
+<div class="line">* P109-実在しないもの、実在しない現象にたとえてしまう人はけっこう多いんですが、実在しないものはイメージが共有できないので、使わないようにして下さい。簡単なもの、実在するものにたえることを心がけて下さい。</div>
+<div class="line">* P124-数字を入れる</div>
+<div class="line-block">
+<div class="line">1分間に数字を3つ織り交ぜる。説得力を高めるときのテクニックです。これも試してみてください。1分間に3つ以上の数字を織り交ぜると、説得力が増します。</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line">途中 <a class="reference external" href="https://twitter.com/#!/hekyou">@hekyou</a> さん <a class="reference external" href="https://twitter.com/#!/th0x0472">@th0x0472</a> さんがいらっしゃいましたが、</div>
+<div class="line">良かった！本被らなかった！</div>
+<div class="line">「別に被ったっていいんですよ？」</div>
+<div class="line">とのお言葉も頂きましたが、まあこれはこれで。</div>
+<div class="line">当日読まれた本は他に、</div>
+</div>
+<p><a class="reference external" href="http://www.amazon.co.jp/exec/obidos/ASIN/4048686291/naoyadyndnsor-22/ref=nosim/"><img alt="エキスパートPythonプログラミング" src="http://ecx.images-amazon.com/images/I/51wSTTIQtgL._SL160_.jpg"/></a></p>
+<div class="line-block">
+<div class="line"><a class="reference external" href="http://www.amazon.co.jp/exec/obidos/ASIN/4048686291/naoyadyndnsor-22/ref=nosim/">エキスパートPythonプログラミング</a></div>
+<div class="line">posted with</div>
+<div class="line"><a class="reference external" href="http://www.amazlet.com/browse/ASIN/4048686291//ref=nosim/">amazlet</a></div>
+<div class="line">at 11.12.24</div>
+<div class="line">Tarek Ziade</div>
+<div class="line">アスキー・メディアワークス</div>
+<div class="line">売り上げランキング: 11581</div>
+<div class="line"><a class="reference external" href="http://www.amazon.co.jp/exec/obidos/ASIN/4048686291/naoyadyndnsor-22/ref=nosim/">Amazon.co.jp で詳細を見る</a></div>
+</div>
+<p><a class="reference external" href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068560/naoyadyndnsor-22/ref=nosim/"><img alt="アジャイルサムライ−達人開発者への道−" src="http://ecx.images-amazon.com/images/I/51b4P511wTL._SL160_.jpg"/></a></p>
+<div class="line-block">
+<div class="line"><a class="reference external" href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068560/naoyadyndnsor-22/ref=nosim/">アジャイルサムライ−達人開発者への道−</a></div>
+<div class="line">posted with</div>
+<div class="line"><a class="reference external" href="http://www.amazlet.com/browse/ASIN/4274068560//ref=nosim/">amazlet</a></div>
+<div class="line">at 11.12.24</div>
+<div class="line">Jonathan Rasmusson</div>
+<div class="line">オーム社</div>
+<div class="line">売り上げランキング: 2487</div>
+<div class="line"><a class="reference external" href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068560/naoyadyndnsor-22/ref=nosim/">Amazon.co.jp で詳細を見る</a></div>
+</div>
+<p><a class="reference external" href="http://www.amazon.co.jp/exec/obidos/ASIN/4873114993/naoyadyndnsor-22/ref=nosim/"><img alt="Being Geek ―ギークであり続けるためのキャリア戦略" src="http://ecx.images-amazon.com/images/I/416%2Bo3COOCL._SL160_.jpg"/></a></p>
+<div class="line-block">
+<div class="line"><a class="reference external" href="http://www.amazon.co.jp/exec/obidos/ASIN/4873114993/naoyadyndnsor-22/ref=nosim/">Being Geek ―ギークであり続けるためのキャリア戦略</a></div>
+<div class="line">posted with</div>
+<div class="line"><a class="reference external" href="http://www.amazlet.com/browse/ASIN/4873114993//ref=nosim/">amazlet</a></div>
+<div class="line">at 11.12.24</div>
+<div class="line">Michael Lopp</div>
+<div class="line">オライリージャパン</div>
+<div class="line">売り上げランキング: 29707</div>
+<div class="line"><a class="reference external" href="http://www.amazon.co.jp/exec/obidos/ASIN/4873114993/naoyadyndnsor-22/ref=nosim/">Amazon.co.jp で詳細を見る</a></div>
+</div>
+<div class="line-block">
+<div class="line">Blogを書いている方が2名いましたね！</div>
+<div class="line">一人Advent Calendarをしている方々はお忙しいですよね。わかります。</div>
+<div class="line">普段はもっと雑談が多いBook-a-thonらしいですが、</div>
+<div class="line">今回は集中的に自分の持ってきたタスクをしていたようです。</div>
+<div class="line">お陰様で自分も</div>
+<div class="line">「エバンジェリスト養成講座 究極のプレゼンハック100」を</div>
+<div class="line">読破しました！</div>
+<div class="line">次回は1/10(火)だそうです。さ〜て次回は何を読みましょうか……</div>
+<div class="line">（ <a class="reference external" href="http://atnd.org/events/23586">新宿 Book-a-thon #7 -新春スペシャル- : ATND</a> ）</div>
+</div>
+
+        </div>
+        <div class="postmeta">
+        <div class="author">
+            <span>Posted by Kashun YOSHIDA</span>
+        </div>
+        <div class="categories">
+            <span>
+                Filed under:
+                <a href="categories/勉強会.html">勉強会</a>, <a href="categories/本.html">本</a></span>
+        </div>
+        <div class="tags">
+            <span>
+                Tags:
+                <a href="tags/勉強会.html">勉強会</a>, <a href="tags/本.html">本</a></span>
+        </div>
+        <div class="comments">
+            <a href="http://kashewnuts.github.io/2011/12/23/bookathon06.html#disqus_thread" data-disqus-identifier="2011/12/23/bookathon06">Leave a comment</a>
+        </div></div><div class="archive_link">
+        <a href="archive.html"> &mdash; Blog Archive &mdash; </a>
+    </div><ul class="related clearfix">
+            <li class="left"> &laquo; <a href="page29.html">Newer</a></li>
+            <li class="right"><a href="page31.html">Older</a> &raquo; </li>
+        </ul></article><aside class="sidebar"><section><div class="widget">
+  <div>
+    <a href="//af.moshimo.com/af/c/click?a_id=815168&p_id=1166&pc_id=1793&pl_id=20228&guid=ON" target="_blank" rel="nofollow"><img src="//image.moshimo.com/af-img/0408/000000020228.png" width="300" height="250" style="border:none;"></a><img src="//i.moshimo.com/af/i/impression?a_id=815168&p_id=1166&pc_id=1793&pl_id=20228" width="1" height="1" style="border:none;">
+  </div>
+</div></section><section><div class="widget" id="searchbox" role="search">
+    <h1><a href="#searchbox">Search</a></h1>
+    <form action="search.html" method="get">
+        <input type="text" name="q" />
+        <button type="submit"><span class="fa fa-search"></span></button>
+    </form>
+</div></section><section><div class="widget">
+    <h1>Recent Posts</h1>
+    <ul><li>
+            <a href="2020/11/30/climbing_shoes_history.html">クライミングシューズ遍歴</a>
+        </li><li>
+            <a href="2020/06/11/wsl2.html">WSL2を使ってみている</a>
+        </li><li>
+            <a href="2020/05/05/upgrade_ubuntu_20_04_lts.html">Ubuntu18.04LTSから20.04LTSにアップグレードした</a>
+        </li><li>
+            <a href="2020/04/08/migrated_lsp_client_to_coc_nvim.html">LSPクライアントをcoc.nvimにした話</a>
+        </li><li>
+            <a href="2019/01/28/move_from_jedivim_to_vimlsp.html">Pythonの補完環境をjedi-vimからvim-lspに移行した話</a>
+        </li><li>
+            <a href="2019/01/05/2018and2019.html">2018年の振り返りと2019年抱負</a>
+        </li><li>
+            <a href="2018/12/02/bp_advent_calender.html">2018年版Life ChangingだったVimプラグインTOP3</a>
+        </li><li>
+            <a href="2018/11/06/yosemite_tour.html">ヨセミテツアー日記</a>
+        </li><li>
+            <a href="2018/09/22/pyconjp2018.html">PyConJP2018でPyCharmの話をしてきました #pyconjp</a>
+        </li><li>
+            <a href="2018/08/22/jedivim_memo.html">VimとPythonの補完についてのメモ</a>
+        </li></ul>
+</div>
+</section><section><div class="widget">
+    <h1>Categories</h1>
+    <ul><li><a href="categories/64bit.html">64bit</a> (2)</li><li><a href="categories/android.html">Android</a> (3)</li><li><a href="categories/bouldering.html">bouldering</a> (2)</li><li><a href="categories/bouldering.html">Bouldering</a> (4)</li><li><a href="categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="categories/c_c.html">C/C++</a> (5)</li><li><a href="categories/chrome.html">Chrome</a> (2)</li><li><a href="categories/db.html">DB</a> (1)</li><li><a href="categories/django.html">Django</a> (10)</li><li><a href="categories/facebook.html">Facebook</a> (1)</li><li><a href="categories/firefox.html">Firefox</a> (1)</li><li><a href="categories/git_mercurial.html">Git/Mercurial</a> (8)</li><li><a href="categories/golang.html">Golang</a> (1)</li><li><a href="categories/google.html">Google</a> (5)</li><li><a href="categories/heroku.html">Heroku</a> (6)</li><li><a href="categories/java.html">Java</a> (2)</li><li><a href="categories/javascript.html">JavaScript</a> (4)</li><li><a href="categories/jupyter.html">Jupyter</a> (1)</li><li><a href="categories/kabepy.html">kabepy</a> (2)</li><li><a href="categories/linux.html">Linux</a> (5)</li><li><a href="categories/lt.html">LT</a> (5)</li><li><a href="categories/mac.html">Mac</a> (8)</li><li><a href="categories/pycharm.html">PyCharm</a> (2)</li><li><a href="categories/pyconjp.html">PyConJP</a> (1)</li><li><a href="categories/pyfes.html">pyfes</a> (7)</li><li><a href="categories/python.html">Python</a> (70)</li><li><a href="categories/slack.html">Slack</a> (1)</li><li><a href="categories/sphinx.html">Sphinx</a> (8)</li><li><a href="categories/sqlalchemy.html">SQLAlchemy</a> (1)</li><li><a href="categories/ssd.html">SSD</a> (1)</li><li><a href="categories/tddbc.html">TDDBC</a> (1)</li><li><a href="categories/tinkerer.html">Tinkerer</a> (7)</li><li><a href="categories/tmux.html">tmux</a> (1)</li><li><a href="categories/ubuntu.html">Ubuntu</a> (3)</li><li><a href="categories/vagrant.html">Vagrant</a> (1)</li><li><a href="categories/vim.html">Vim</a> (24)</li><li><a href="categories/vimconf.html">VimConf</a> (3)</li><li><a href="categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="categories/windows.html">Windows</a> (3)</li><li><a href="categories/windows7.html">Windows7</a> (4)</li><li><a href="categories/wsl.html">WSL</a> (1)</li><li><a href="categories/%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0.html">アルゴリズム</a> (1)</li><li><a href="categories/%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3.html">セキュリティ</a> (2)</li><li><a href="categories/%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF.html">ネットワーク</a> (1)</li><li><a href="categories/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0.html">プログラミング</a> (7)</li><li><a href="categories/%E5%8B%89%E5%BC%B7%E4%BC%9A.html">勉強会</a> (30)</li><li><a href="categories/%E5%BF%9C%E7%94%A8%E6%83%85%E5%A0%B1%E6%8A%80%E8%A1%93%E8%80%85.html">応用情報技術者</a> (10)</li><li><a href="categories/%E6%83%85%E5%A0%B1%E5%87%A6%E7%90%86%E6%8A%80%E8%A1%93%E8%80%85%E8%A9%A6%E9%A8%93.html">情報処理技術者試験</a> (10)</li><li><a href="categories/%E6%9C%AC.html">本</a> (29)</li><li><a href="categories/%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83.html">開発環境</a> (11)</li><li><a href="categories/%E9%9B%91%E8%A8%98.html">雑記</a> (38)</li><li><a href="categories/%E9%AB%98%E9%80%9F%E5%8C%96.html">高速化</a> (1)</li></ul>
+</div></section><section><div class="widget">
+    <h1>About Me</h1>
+    <div>
+        <a href="https://about.me/kashew_nuts">
+            <img src="https://pbs.twimg.com/profile_images/378800000438956976/3e61e7ae64d916ba0451a44c3b8ce347.jpeg"
+            width="128px"
+            height="128px" />
+        </a>
+        <h4><a href="https://twitter.com/kashew_nuts">kashew_nuts
+                (KashunYOSHIDA)</a></h4>
+        <p>人生という壁を登るSoftwareDeveloper</p>
+        <a class="twitter-timeline" data-width="300" data-height="800" data-theme="dark" href="https://twitter.com/kashew_nuts">Tweets by kashew_nuts</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+</div></section></aside></div> <!-- #main --></div> <!-- #main-container -->
+
+        <div class="footer-container" role="contentinfo"><footer class="wrapper">&copy; Copyright 2011-2020, Kashun YOSHIDA. Powered by <a href="http://www.tinkerer.me/">Tinkerer</a> and <a href="http://sphinx.pocoo.org/">Sphinx</a>.</footer></div> <!-- footer-container -->
+
+      </div> <!--! end of #container --><script type="text/javascript">    var disqus_shortname = "kashewnutsblog";    disqus_count();</script><!--[if lt IE 7 ]>
+          <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+          <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+        <![endif]-->
+    </body>
+</html>

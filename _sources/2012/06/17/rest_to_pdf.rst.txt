@@ -1,0 +1,158 @@
+reST→PDF出力の環境を整備した。
+======================================
+
+| reST→PDF出力する環境を整備してみました。
+
+| 当方の環境はMacOSX 10.7になっております。
+| Windows/Linuxの方はコマンドやディレクトリなどを
+| ご自身の環境に置き換えて作成下さい。
+| また以下のものがインストールされている前提となっています。
+
+-  Python
+-  pip
+
+| **rst2pdfのインストール**
+
+| コマンドラインから
+
+.. code-block:: bash
+
+    $ pip install rst2pdf
+
+|
+
+| **日本語フォントのインストール**
+
+| `VLゴシックフォント <http://vlgothic.dicey.org/>`__\ と\ `IPAフォント <http://ossipedia.ipa.go.jp/ipafont/index.html>`__\ をインストールします。
+| それぞれダウンロード解凍後に、フォントディレクトリにコピーします。
+
+| **日本語出力のためのスタイル設定**
+
+| これより下のファイルはプロジェクトディレクトリ内に作成します。
+
+.. code-block:: bash
+
+    % vi ja.style
+
+| ja.styleに以下のように記述します。
+
+.. code-block:: bash
+
+    {
+        "fontsAlias" : {
+            "stdFont": "VL-PGothic-Regular",
+            "stdBold": "VL-PGothic-Regular",
+            "stdItalic": "VL-PGothic-Regular",
+            "stdBoldItalic": "VL-PGothic-Regular",
+            "stdMono": "VL-Gothic-Regular",
+            "stdMonoBold": "VL-Gothic-Regular",
+            "stdMonoItalic": "VL-Gothic-Regular",
+            "stdMonoBoldItalic": "VL-Gothic-Regular",
+            "stdSans": "VL-Gothic-Regular",
+            "stdSansBold": "VL-Gothic-Regular",
+            "stdSansItalic": "VL-Gothic-Regular",
+            "stdSansBoldItalic": "VL-Gothic-Regular"
+        },
+        "styles" : [
+            ["base" , {
+                "wordWrap": "CJK"
+            }],
+            ["literal" , {
+                "wordWrap": "None"
+            }]
+        ]
+    }
+
+| **フォントの埋め込み**
+
+.. code-block:: bash
+
+    % vi ja.json
+
+| ja.jsonに以下のように記述します。
+
+.. code-block:: bash
+
+    {
+       "embeddedFonts" :
+       [[
+           "VL-Gothic-Regular.ttf",
+           "VL-PGothic-Regular.ttf",
+           "ipam.ttf",
+           "ipag.ttf",
+           "ipagp.ttf",
+           "ipamp.ttf"
+       ]],
+       "fontsAlias" : {
+           "stdFont": "VL-PGothic-Regular",
+           "stdBold": "VL-PGothic-Regular",
+           "stdItalic": "VL-PGothic-Regular",
+           "stdBoldItalic": "VL-PGothic-Regular",
+           "stdMono": "VL-Gothic-Regular",
+           "stdMonoBold": "VL-Gothic-Regular",
+           "stdMonoItalic": "VL-Gothic-Regular",
+           "stdMonoBoldItalic": "VL-Gothic-Regular",
+           "stdSans": "VL-Gothic-Regular",
+           "stdSansBold": "VL-Gothic-Regular",
+           "stdSansItalic": "VL-Gothic-Regular",
+           "stdSansBoldItalic": "VL-Gothic-Regular"
+       },
+       "styles" : [
+           ["base" , {
+               "wordWrap": "CJK"
+           }],
+           ["literal" , {
+               "wordWrap": "None"
+           }]
+        ]
+    }
+
+| **rst2pdfの設定ファイル**
+
+| 以下のように作成
+
+.. code-block:: bash
+
+    $ mkdir ~/.rst2pdf$ vi ~/.rst2pdf/config
+
+| ~/.rst2pdf/configに以下のように記述します。
+
+.. code-block:: bash
+
+    [general]
+    stylesheets="ja"
+    compressed=flase
+    font_path="~/Library/Fonts"
+    header=
+    footer=
+    fit_mode="shrink"
+    break_level=0
+
+| 後は以下のように叩くだけでPDFファイルが出力されます。
+
+.. code-block:: bash
+
+    $ rst2pdf -o output.pdf input.rst
+
+| 完了後は以下のようなフォルダ構成になっているはずです。
+
+.. code-block:: bash
+
+    ~/.rst2pdf/config
+    -project
+    |-input.rst
+    |-ja.json
+    |-ja.style
+    |-output.pdf
+
+| 以上です。お疲れ様でした！
+
+**参考リンク**
+
+-  `rst2pdf拡張を使ったPDFファイル作成 :: ドキュメンテーションツール スフィンクス Sphinx-users.jp <http://sphinx-users.jp/cookbook/pdf/rst2pdf.html>`__
+-  `rst2pdf で reStructuredText から PDF を生成する : 紹介マニア <http://sakito.jp/python/rst2pdf.html#rst2pdf>`__
+
+.. author:: default
+.. categories:: 開発環境, 雑記, Python
+.. tags:: 開発環境, 雑記, Python
+.. comments::

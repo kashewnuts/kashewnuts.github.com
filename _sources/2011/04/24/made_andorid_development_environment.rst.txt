@@ -1,0 +1,33 @@
+仮想環境上にAndorid 開発環境を整えてみた。
+==================================================
+
+| 入れたものは以下の通り。
+
+| ■VirtualBox
+| ■Ubuntu10.04LTS
+| ■Sun-JDK
+| ■Eclipse
+| ■Android SDK
+| ■Eclipse用ADTプラグイン
+| ■VirtualBox Guest Additions
+
+| `ここ <http://www.forest.impress.co.jp/lib/sys/hardcust/virtualpc/virtualbox.html>`__ からVirtualBoxを落として、
+| `Ubuntu10.04 LTS 日本語Remix <http://www.ubuntulinux.jp/News/ubuntu1004-desktop-ja-remix-20100512>`__ のisoから新規作成。
+| 基本デフォルト設定です。
+| その後
+| `[Ubuntu][Android] Ubuntu 10.04 に Android | 開発環境をインストールしてみた <http://d.hatena.ne.jp/OkadaHiroshi/20100505/1273073212>`__
+| に乗っ取ってAndroid開発環境を作成。
+| Windows7 64bitで丸1日+αかけてもできなかったものが
+| 割とあっさりとできあがりました。
+| この後
+| `HelloWorldアプリケーション作成 | Eclipse編 <http://sky.geocities.jp/izeefss/develop/android/hello_eclipse.html>`__ の手順に従って、
+| Hello,World!をエミュレータ上で実行してみました。
+| これでひと通りAndroidを開発できる環境は整いましたね。
+| 最後にモニタの解像度が800×600になっているため、
+| 見やすくするためにをVirtualBox Guest Additionsを用いて
+| 解像度1024×768を上げて基本的な設定は終了です。
+
+.. author:: default
+.. categories:: 開発環境, Java, 64bit, VirtualBox, Android, Windows7
+.. tags:: 開発環境, Java, 64bit, VirtualBox, Android, Windows7
+.. comments::

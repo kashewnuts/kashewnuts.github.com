@@ -1,0 +1,51 @@
+Heroku+Djangoであれこれメモ
+========================================
+
+| Heroku+Djangoを弄ってて分からない単語が
+| たくさんでてきたので一度整理してみます。
+
+| ■syncdb
+| syncdb は、特定のクエリの実行結果を
+| 他のデータベースに保存するためのツール。
+| 元のデータに変更があった際には、
+| その差分だけを効率よく同期できる。
+
+| ■psycopg2
+| PostgreSQLのPythonインターフェース。
+| 似たようなものにpygresqlやpopyがある。
+| Adapterという単語がどうもしっくりきていないのだけど、
+
+| `デザインパターンの一種で、既存のクラスを全く修正せずに、提供するインターフェースを変更する方法。(From wikipedia)`
+
+| ということなので、
+| デザインパターンの知識がないとピンとこないかな。
+
+| ■gunicorn
+| Pythonで作られたWSGIに対応するウェブサーバー。
+| 綴りは'Green Unicorn'を縮めたもの。
+
+| `Web Server Gateway Interface (WSGI; ウイスキー) は、WebアプリケーションとWebサーバを接続するための、簡潔かつ統一されたインタフェース定義である。プログラミング言語Pythonで使われる。(From wikipedia)`
+
+| これにより、対応させたWebアプリケーションは
+| 任意のWebサーバ上で実行することができる。
+
+| ■Procfile
+| Herokuアプリの動作方法（プロセスモデル）を指定するもの。
+| web, worker, clockの3種類がある。
+| とりあえずここまで、
+| 必要の都度書いていきたい。
+
+| 参考リンク
+| * `Debian -- lenny の python-psycopg2 パッケージに関する詳細 <http://packages.debian.org/ja/lenny/python-psycopg2>`__
+| * `Adapter パターン - Wikipedia <http://ja.wikipedia.org/wiki/Adapter_%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3>`__
+| * `Adapterとは - はてなキーワード <http://d.hatena.ne.jp/keyword/Adapter>`__
+| * `Django アプリサーバ、gunicorn と fastcgi の比較 - Ian Lewis <http://www.ianlewis.org/jp/django-gunicorn-fastcgi>`__
+| * `Green Unicorn - Welcome <http://gunicorn.org/>`__
+| * `Web Server Gateway Interface - Wikipedia <http://ja.wikipedia.org/wiki/Web_Server_Gateway_Interface>`__
+| * `HerokuでNode.jsとExpressを使ってHello worldする <http://d.hatena.ne.jp/ruedap/20110619/heroku_node_js_express_hello_world>`__
+| * `アインシュタインの電話番号☎  <http://d.hatena.ne.jp/ruedap/20110619/heroku_node_js_express_hello_world>`__
+
+.. author:: default
+.. categories:: Heroku, Django, 雑記, Python
+.. tags:: Heroku, Django, 雑記, Python
+.. comments::

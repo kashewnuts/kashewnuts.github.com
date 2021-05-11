@@ -1,0 +1,30 @@
+MacBookAirにWindows7を入れてみた[VirtualBox編]
+============================================================================
+
+| 以下参考リンク
+| `【MacBook Air買ってやったこと（その6）】VirtualBoxでWindows7を仮想化する - 読書学 -図書館徹底活用- <http://www.dokushogaku.com/archives/5194>`__
+| `MacとWindowsを同時使用できる無料の仮想化ソフト「VirtualBox」の使い方 / Inforati  <http://inforati.jp/apple/mac-tips-techniques/windows-hints/how-to-install-virtualbox-and-use-windows-software-in-mac.html>`__
+| 入れてみました。
+| 結果は快適快適。
+| 実際に入れてみるとこんな感じです。
+
+|image0|
+
+| 「やった！これでExcel使うのも楽になるぞ！」
+| と思ったのもつかの間、少し気になる問題が発生しました。
+| 当たり前といえば当たり前なのですが、
+| MacとWindowsではキーボードの配置が違います。
+| これはショートカットを多用する自分にとっては作業効率に直結するのです。
+| これは慣れるしかありませんね……
+| Macに搭載されているBoot Campや、
+| 商用の仮想化ソフトウェア\ `Parallels | Desktop <http://www.parallels.com/jp/products/desktop/>`__\ では
+| やりようがありそうなのでVirtualBoxに限界を感じたらそちらに移行、
+| もしくはキーボードを持ち歩くことになりそうです。
+
+.. |image0| image:: http://2.bp.blogspot.com/-hNKvpsrux24/TohozjfRIvI/AAAAAAAAAXk/r5yReGAb9M8/s400/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588+2011-10-02+22.35.38.png
+   :target: http://2.bp.blogspot.com/-hNKvpsrux24/TohozjfRIvI/AAAAAAAAAXk/r5yReGAb9M8/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588+2011-10-02+22.35.38.png
+
+.. author:: default
+.. categories:: Mac, VirtualBox, Windows7
+.. tags:: Mac, VirtualBox, Windows7
+.. comments::

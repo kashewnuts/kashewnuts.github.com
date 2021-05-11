@@ -1,0 +1,40 @@
+SyntaxHighlighter動作テスト
+============================================
+
+| FizzBuzzで試してみます。
+
+.. code-block:: python
+
+    #!/usr/bin/env python
+    # -*- coding:utf-8 -*-
+
+    def fizzbuzz(n):
+        if n % 15 == 0:
+            ans =  'fizzbuzz'
+        elif n % 3 == 0:
+            ans =  'fizz'
+        elif n % 5 == 0:
+            ans =  'buzz'
+        else:
+            ans =  n
+        return ansdef main():
+
+    for i in range(1, 101):
+        print fizzbuzz(i)
+
+    if __name__ == '__main__':
+        main()
+
+| できたみたい。
+| 参考サイトは\ `こちら <http://gogotorotan.blogspot.com/2011/03/syntaxhighlighter.html>`__
+
+| ■追記 2011/11/27 17:54
+| どうもSyntaxHighlighterの読み込みが遅いと思ったら、
+| 一番最後の方に読み込まれているようだ。
+| そりゃ遅く感じるわけだ。
+| なんとかしたいな……
+
+.. author:: default
+.. categories:: プログラミング, 雑記, Python
+.. tags:: プログラミング, 雑記, Python
+.. comments::

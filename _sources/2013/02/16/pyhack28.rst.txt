@@ -1,0 +1,55 @@
+==================================================
+(第28回)Python mini Hack-a-thon に参加してきた。
+==================================================
+
+当日のイベントページはこちら→
+`(第28回)Python mini Hack-a-thon - connpass <http://connpass.com/event/1729/>`_
+
+本当は午前中から参加したかったんですが、午後からの参加でした。
+荷物の受取が午前中に届く予定さえなければ……
+
+
+当日やったこと
+-------------------------
+
+* Django1.4 Tutorial
+* TinkererのRSS設定修正
+
+
+Django1.4 Tutorial
+-------------------------
+
+`Django 1.4 documentation <http://docs.djangoproject.jp/en/latest/contents.html>`_
+
+前日にDjango1.4は家でインストール済みの状態からスタート。
+
+**さあ始めましょう** の「Djangoの概要」から始め、「はじめての Django アプリ作成、その3〜実際に動くビューを作成する」に手をつけた始めた所で時間切れでした。
+
+以前Django1.2の頃、Django1.0の日本語ドキュメントを元にTutorialやった際はDBの設定をいじるあたりでうまくいかなくて投げ出した思い出があります。当時はバージョンの差異を意識してやらないとなと教訓にはなりましたが、やはり固まった情報をネイティブの言語で学べるのは重要ですね……
+
+一番新しい情報を知ろうと思うと英語は必須ですが、その分野に詳しくなかったり初めて学ぶことはネイティブの言語で一度しっかり学ぶと違うと思いました。(そもそも英語で不自由がなければ問題ないのですがね)
+
+
+TinkererのRSSの設定修正
+-------------------------
+
+Django1.4 Tutorialをしている最中に急に思い立ってやりました。
+
+以前BlogのURLを変更した際、RSS( `Google FeedBurner <http://feedburner.google.com/>`_ )の設定を修正するのを忘れていまして、連携しているFacebookアプリ `"RSS Graffiti" <https://apps.facebook.com/rssgraffiti/>`_ から 「Action Required: Your RSS Graffiti Facebook Permissions have expired!」と怒られました。
+
+そこでconf.pyとFeedBurnerの設定を変更して、ちゃんとRSSでBlogの更新を取得出来るようにしまし
+た。(この記事の更新がちゃんと取得できてれば問題ないはず。)
+
+
+pyhack終了後
+-------------------------
+
+懇談会に参加しました。久しぶりにお会いする人、話す人、思わぬローカルネタで盛り上がった人、仕事あるあるネタ、壁の話、某B社ネタ、etc……ただの酔っ払いの集まりになっていた気がしなくもないですが、なんだがあっという間に過ぎ去った3時間でした。
+
+平日に勉強会やコミュニティに参加しにくくなってしばらく立ちまして、その間も色々あったり思ったりとしましたが、やはりこうゆう場にでるのは楽しいですね。また参加できればと思います。
+
+
+.. author:: default
+.. categories:: Python, Django, Tinkerer
+.. tags:: Python, Django, Tinkerer
+.. comments::

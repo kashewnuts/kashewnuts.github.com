@@ -1,0 +1,321 @@
+===================================================
+Python Developers Festa2013.03に参加しました #pyfes
+===================================================
+
+Python Developers Festa2013.03に参加しました
+当日は大きく分けて
+
+* ハンズオン、野良ハンズオン
+* 発表(プレゼン、LT)
+
+が行われました。
+
+既にBlogにまとめられている方がいて二の足を踏んでしまった感じですが、自分の中で恒例になってしまっているのでつらつらと書いてみます。
+
+**あ、ちなみに今回はまだTogetterまとめが作成されていないようですので、今のうちにまとめた方はヒーローになれると思いますよ:D**
+
+
+前回の様子
+`Python Developers Festa 2012.11に参加しました。 #pyfes — kashew_nuts-blog <http://kashewnuts.github.io/2012/11/24/pyfes201211.html>`_
+
+**(2013/03/20 追記)ヒーロー現る。**
+
+`Python Developers Festa 2013.03 #PyFes . - Togetter <http://togetter.com/li/473730>`_
+
+その他スライド資料・参加者Blogを追加しました。
+
+
+
+イベント詳細
+-------------------------
+
+.. image:: 2013-03-16_09.12.20.jpg
+  :width: 300px
+  :height: 200px
+
+* `Python Developers Festa 2013.03 (一般枠) - connpass <http://connpass.com/event/1579/>`_
+* `Python Developers Festa 2013.03 - GitHub <https://github.com/pyspa/pyfes/blob/develop/201303.rst>`_
+* `Python Developers Festa 2013.03 - Google+(写真) <https://plus.google.com/photos/111021918302550652188/albums/5855916382336845985>`_
+
+
+午前中〜プレゼン開始まで
+-------------------------
+
+急遽開催された @tk0miya さんによるChefハンズオン(座談会？)に参加しました。みんながみんな
+ネットワーク環境があるわけではない＆資料なしだったので、Chefってどうゆうもの？というところ
+から始まり、こうゆう風にすればChef使って幸せに近づけるよというお話までしました。
+
+その後お昼をはさみ、プレゼンが始まるまでにパーフェクトPythonの著者サイン会が行われました。
+当日のじゃんけん大会でパーフェクトPythonを勝ち取った人も並んでましたね。自分も貰って来まし
+た。サインくださった方々ありがとうございました。
+
+.. image:: 2013-03-17_00.13.58.jpg
+  :width: 270px
+  :height: 300px
+
+また、 #kabepy ステッカー、2013年限定 #pyfes ステッカーも頂きましたよ
+
+発表(プレゼン, LT)
+-------------------------
+
+15:00過ぎから開始。全体的に順調に進んだ気がします。19:00くらいには終了。
+
+-------------------------
+@inoshiro #kabepy の紹介
+-------------------------
+
+* スライド: `Introduction of kabepy <http://www.slideshare.net/kenjirokosaka/kabepy-lt-pyfes201303>`_
+* kabepyとは何か？
+* ボルダリング→壁を登るスポーツ
+* なぜPython ボルダリングクラブか？→理由は特にない。
+* Pythonと言う名のボルダリングシューズがある。
+* ロープクライミングのロープの名前がPython
+* 2011/12/22発足 `Python ボルダリング部 - connpass <http://connpass.com/series/64/>`_
+* ステッカー作りました。Tシャツ今月末までに出来る予定。
+* お手軽。ジムが多い。楽しい。
+* kabepyサポーターズ `#kabepy Advent Calendar - connpass <http://connpass.com/event/1426/>`_
+
+
+--------------------------------------------------
+@ryu22e PyCon APAC 2013 開催のお知らせ
+--------------------------------------------------
+
+* スライド： `PyCon APAC 開催 & スタッフ募集のお知らせ <http://www.slideshare.net/ryu22e/pycon-17250047>`_
+* Python APACとは
+* 今年のテーマは「The year of Python」12年に1度にふさわしい
+* 8月末〜9月中頃を予定
+* スタッフになりたい人はGoogle Googleで手を上げてみて下さい！
+* `PyCon JP Blog <http://pyconjp.blogspot.jp/>`_
+
+
+--------------------------------------------------
+@ymotongpoo Go言語の何か (仮)
+--------------------------------------------------
+
+* スライド: `20130316 プログラミング言語Go <http://www.slideshare.net/ymotongpoo/20130316-go>`_
+* プログラミング言語Goのご提案
+* 細かい文法を知りたい人は チュートリアルやってみてね。
+  `A Tour of Go <http://tour.golang.org/>`_
+* 更に詳しい資料はスライドシェアで。 `20130228 Goノススメ（BPStudy #66） <http://www.slideshare.net/ymotongpoo/20130228-gobp-study-66-16830134>`_
+* **圧倒的現代感！**
+* 豊富な標準パッケージ `Packages - The Go Programming Language <http://golang.org/pkg/>`_
+* `Go Conference 2013 spring - connpass <http://connpass.com/event/1906/>`_ やります！
+
+--------------------------------------------------
+@torufurukawa Python の Test/Mock (仮)
+--------------------------------------------------
+
+* スライド: `Mock and patch <http://www.slideshare.net/torufurukawa/mock-and-patch>`_
+* Mockとpatch
+* エンジニア足りません。
+* モックモジュールPython3.3は標準ライブラリに同梱 unittest.mock
+* より詳しい話は公式ドキュメントやVさん、ぁっぉさんの資料を見て下さい。
+
+
+-----------------------------------------------------
+@tokoroten MS Surfaceでゲームを作った話
+-----------------------------------------------------
+
+* 「Surface買った人！」「しーん……」
+* 「静電容量方式は滅びますぞ！」
+* デモ動画: `世界最強のタッチパネルディスプレイを買って、ゲームを作ってみた ‐ ニコニコ動画(原宿) <http://www.nicovideo.jp/watch/sm19736358>`_
+* ゲームを作りましょう。
+* 強化人間専用ゲーム鋭意製作中
+
+
+----------------------------------------------------------
+@hagino3000 `Leap Motion <https://www.leapmotion.com/>`_
+----------------------------------------------------------
+
+* スライド: `Introduction of Leap Motion <http://www.slideshare.net/hagino_3000/introduction-of-leap-motion>`_
+* 手の認識に特化したモーションキャプチャデバイス
+* 世紀凱旋センサー、接続はUSBもインターフェース
+* 高分解能(0.01mm)、早い(Over60FPS)、安い！
+* 秘密はSoftware(algorithm)にあるらしいが、それっぽい特許,論文見当たらず。
+* HOW TO GET: 88.98USD(送料込み) 5/13以降発行。開発者登録なら1つ無料。
+* HOW TO develop: windows7or8, MaxOS10.6 or later、C++,C#,Obj-C,Python等
+* 何がおいしいのかが問題→みんなまだ手探り状態。
+
+--------------------------------------------------
+@nonNoise Arduino+Pythonハッキングの宣伝
+--------------------------------------------------
+
+* `Arduino+Pythonハッキング - connpass <http://connpass.com/series/311/>`_
+* 来週の24, 24日にやるのできてね！
+* PythonでArduinoから受け取ったデータをどう操作するか。
+* もう4回くらい実施している。大体20〜30人くらい集まる。
+* 次回はハードウェアの見ている世界と、PC、WEBが見ている世界のお話。
+* 1day Hacking
+
+-------------------------
+@r_rudi Tinkerer
+-------------------------
+
+* スライド: `Tinkerer for pyfes 201303 <http://www.slideshare.net/r_rudi/tinkerer-for-pyfes-201303-17271515>`_
+* 今日のお題「Tinkerer」SphinxをベースにしたBlogの作成ツール
+* Sphinxとは、ドキュメント作成ツール。Pythonの公式ドキュメントにも使われている。
+* コードハイライトが綺麗。pygmentsというのを使用しています。
+* どういう意味？→「MG」鍛冶屋, 修繕屋、読み方は？→「てぃんからー」
+
+* 欠点
+
+  * コマンドラインでしか叩けない。テキストエディタが必要→ブラウザからとかできない。
+  * 記事が多くなるとbuildに時間がかかる。→カテゴリーやRSSなどがあるため。
+
+* ホスティング方法
+
+  * 1. レンタルサーバー、VPS しろうさんが実施している。blog/html/以下を全てコピる。
+  * 2. github, bitbucket 独自ドメインも可能。
+  * 3. S3+ Web hostting MercurialやSphinxもこの方法でやっている。(やろうと思っている)しかし転送料でお金かかる
+  * 4. Dropbox 金額がかからないが、独自ドメインが使えない。→dropbproxというGAEで動くproxy
+
+* おまけ: Amazonで出版とか
+
+
+-------------------------
+@keikubo WebPay
+-------------------------
+
+* プロ仕込みのプレゼン
+* 開発者向けの決済サービス
+* FluxFlex: 1分で使えるホスティング→昨年の6月ぐらいに閉鎖
+* Rackhub: 10秒で使えるVPS→競争激しいですけど使ってみて下さい。
+* WebPay: 1時間で使えるクレカ決済
+* pip install stripe
+* 多種多様な言語、プラットフォームへの対応 Ruby, Python, PHP, iOS, Android, Windows8
+* 湧き上がる「素晴らしい」のコメントの嵐
+* `WebPay: 開発者向けクレカ決済サービス <https://webpay.jp/docs/api>`_
+
+
+-------------------------
+@sawonya 未定
+-------------------------
+
+* マインドマップに関して使ったり、書いたり、
+* 実際に書いているところを即興で書いていく。
+* 実際の出来上がり図は以下の通り。
+
+.. image:: 745330838.jpg
+  :width: 300px
+  :height: 270px
+
+
+------------------------------
+@voluntas Webmachine ノススメ
+------------------------------
+
+* 資料: `Webmachine のススメ <https://gist.github.com/voluntas/f99838001efced196fc0>`_
+* gistプレゼン。レアです。
+* RESTツールキット。chefのホスティングで使われている。
+  ちなみにchefはRubyからアーランに変えてメモリ使用量が21GB→600MBになった。
+* `http-headers-status-v3.png <https://raw.github.com/wiki/basho/webmachine/images/http-headers-status-v3.png>`_
+
+
+-------------------------
+@lab1092 Blender
+-------------------------
+
+* スライド: `20130316 blender <http://www.slideshare.net/lab1092/20130316-blender>`_
+* Blenderイベントの宣伝 春だ一番！Blender祭り 3/23 横浜で開催します。
+* どんなイベント？→Blenderに限らず、デザインとクラウンドファウンディング視点で。
+* 「2013年Blenderの本格的な浸透」
+* `AlternativeTo - Social Software Recommendations <http://alternativeto.net/>`_
+
+
+-----------------------------------------------------------------------------
+@2jhari (痛い目にあいたい人LT枠) Webサービスにどれほどの金銭的価値があるのか
+-----------------------------------------------------------------------------
+
+* 痛い人枠 #kazepy #しみたん
+* インターネットサービスと経済学
+* HOW MUCH VALUE?
+* 細かい所はどうでもいいんじゃい！
+
+-------------------------
+@drillbits fabric
+-------------------------
+
+* スライド: `Fabric Python Developers Festa 2013.03 #pyfes // Speaker Deck <https://speakerdeck.com/drillbits/fabric-python-developers-festa-2013-dot-03-number-pyfes>`_
+* `インターネットの人名鑑2013 <http://anond.hatelabo.jp/20130313214213>`_
+* fablic ネジ、DB
+* CUI, Application Deployment
+* インストール、設定、起動→これをSSHでやる
+
+---------------------------------------------------------------
+@tk0miya 春を先取り！OpsWorks と Chef ではじめる恋色コーデ術！
+---------------------------------------------------------------
+
+* スライド: `春を先取り！Ops works と chef ではじめる恋色コーデ術！ #pyfes 2013.03 <http://www.slideshare.net/TakeshiKomiya/ops-works-chef>`_
+* 環境構築を自動化。オレオレ環境の撲滅。リリース後の土下座を減らす。
+* そうだ、chef使おう。
+* 冪等性(べきとうせい)→あるべき姿を定義しておくと、何度chefを実行しても同じ結果になる。
+* Community Cookbooks→大抵のツール向けの設定が集約。再利用の精神。
+
+  * `Opscode Community <http://community.opscode.com/>`_ でいろんな人が書いたCookbookを紹介している。世の中には書きましょうという記事が多いが、こちらを使ったほうがお得。今800ぐらいのCookbookがある（重複はあると思うが）
+
+* chefの種類: chef server, chef-solo, ホスティング。サーバーが20台ぐらいまでならchef soloでいいらしい。
+* ちょいツール
+
+  * vagrant(ベイグラント)って読むらしい。最近AWSやVMWare Fusionにも対応
+  * librarian Cookbook管理ツール。依存性解決とDL
+  * attribute json形式。各Cookbook用の設定。
+
+* 参考ドキュメント: 公式ドキュメント, naoyaさんによる `書籍 <http://www.amazon.co.jp/dp/B00BSPH158/ref=cm_sw_r_tw_dp_9Bdrrb1TW4NDF>`_ 、 `Blog <http://d.hatena.ne.jp/naoya/>`_ 、 `RyuzeeさんのBlog <http://www.ryuzee.com/contents/blog/>`_ 、 `@tk0miyaさんのBlog <http://tk0miya.hatenablog.com/>`_
+* OpsWorks
+
+  * AWSのアプリ管理ツール。環境構築、アプリのデプロイ、インスタンスの起動、終了 管理。
+  * Rails, PHP, node.jsアプリをサポート
+  * ハマリまくりです。
+
+* `Boxen使わなくても許されるのは2012年までだよね #Mac #Boxen #GitHub - Qiita <http://qiita.com/items/c6f20de0e4f4c352046c>`_
+
+
+-------------------------
+@hiroki_ninuma 未定
+-------------------------
+
+メモは取ったけどここでは書かない。
+
+-------------------------
+@moriyoshi 未定
+-------------------------
+
+* MessagePack
+* Isuue #121
+* cabo インターネットドラフトを提出した。
+* `Msgpack can&apos;t differentiate between raw binary data and text strings · Issue #121 · msgpack/msgpack <https://github.com/msgpack/msgpack/issues/121>`_
+* `MessagePackのIETFへの提案に関する困惑 - たごもりすメモ <http://tagomoris.hatenablog.com/entry/2013/03/01/130433>`_
+* `MessagePack ep.2 〜RFC標準化をめぐる issue 129〜 - Togetter <http://togetter.com/li/467451>`_
+* `Geekなぺーじ:MessagePackがIETF標準化に巻き込まれてる件について <http://www.geekpage.jp/blog/?id=2013/2/26/1>`_
+
+* AnyPack Builder作りました。ソースはその内githubにあげておきます。
+  `moriyoshi/anypackbuilder - GitHub <https://github.com/moriyoshi/anypackbuilder>`_
+
+
+
+懇談会
+-------------------------
+
+Pyfesが終わった後の、有志での懇談会。何だかあっという間にすぎてました。 @aodag 先生のまさかりが飛びまくってたような気がします。楽しかったですね。
+
+
+終わりに
+-------------------------
+
+また参加できてよかった。普段Pyfesに参加してると、無限コーヒー、電源、無線LAN完備、広いスペースなどこれ以上ないと思えるくらいのものが用意されています。今回はトラブルで会場の無線LANが終始使えないというトラブルがありましたが、もとはOracleさんを始め、コミュニティのみなさんのご好意によってなりたっているのだよなと思い起こさせる日になりました。また次回参加できればいいなと思います。
+
+
+参加者Blog
+-------------------------
+
+* `PyFes 2013.3 参加メモ #pyfes - 科学と非科学の迷宮 <http://d.hatena.ne.jp/shiumachi/20130316/1363428311>`_
+* `Sphinx につぶやきを埋め込んでみる — プログラマのネタ帳 二冊目 <http://blog.shomah4a.net/2013/03/16/tweet_embed.html>`_
+* `pyfes 2013に行ってきた - kmn23のコマンド備忘録 <http://d.hatena.ne.jp/kmn23/20130317/1363511436>`_
+* `pyfesでwozozoが良いことを言っていた - ま、そんな日もあるさ <http://d.hatena.ne.jp/flag-boy/20130318/1356091241>`_
+* `ryu22eBlog : Python Developers Festa 2013.03 に参加 &amp; LTしてきました #pyfes <http://blog.livedoor.jp/ryu22e/archives/65737913.html>`_
+
+
+.. author:: default
+.. categories:: Python, pyfes
+.. tags:: Python, pyfes
+.. comments::

@@ -1,0 +1,147 @@
+PyConJP2017に参加しました #pyconjp
+====================================
+
+.. image:: pyconjp2017.jpg
+    :align: center
+
+- `PyCon JP 2017 - connpass <https://pyconjp.connpass.com/event/59412/>`_
+- `PyCon JP 2017 in Tokyo | Sep 7th – Sep 10th <https://pycon.jp/2017/ja/>`_
+- `PyCon JP 2017 - Togetter <https://togetter.com/li/1148836>`_
+- `PyConJP - YouTube <https://www.youtube.com/user/PyConJP/videos>`_
+
+4回目のPyCon参加になりました。今回はいくつか目標を立ててました。
+
+- Keynoteを2つとも聞く
+- Keynote以外の英語のセッションも聞く
+- はじめましての人もお久しぶりの人も話す
+- 2次会に行く
+- セッションに参加するだけでなく、メディア企画やポスターセッションのようなコンテンツも楽しむ
+
+結論としては全部達成できましたかね(o・ω・o)
+
+
+.. contents:: contents
+  :local:
+
+
+RejectConについて
+-----------------
+
+PyConの前夜祭ということで「非公式」で行われました。
+
+- `PyCon JP Reject Conference 2017 <https://techplay.jp/event/630686>`_
+- `PyCon JP Reject Conference 2017 - Togetterまとめ <https://togetter.com/li/1148027>`_
+
+.. image:: pyconjp2017_rejectcon.jpg
+    :align: center
+
+話し終わったたびに「何故Rejectされたのか？」と発表者に分析してもらっていたのですが、全体的に「Python成分が薄い」というのが多かったのが印象的でした。
+人数が少なめなのが残念でしたが、他にも強力な裏番組が2つあったりしたのとちょっと直前だったせいなのかな...と。
+
+発表内容的にはためになる話も多かったです。年々PyConに応募する内容のレベルも上がってるんだなーと思いました。
+
+
+PyConで拝聴したセッション
+-------------------------
+
+感想などは各々のセッションでTwitterにつぶやいたりしてるのでセッションのリンクだけ終えるように書いておきます。
+
+1日目
+~~~~~
+
+- Keynote: Peter Wangさん
+- `ベンリに使おう変数アノテーション - typing.pyとの楽しいお付き合い <https://pycon.jp/2017/ja/schedule/presentation/13/>`_
+- `Pythonとパッケージングと私 <https://pycon.jp/2017/ja/schedule/presentation/41/>`_
+- `メディア会議 <https://pycon.jp/2017/ja/events/media-meeting/>`_
+- `Djangoフレームワークのユーザーモデルと認証 <https://pycon.jp/2017/ja/schedule/presentation/17/>`_
+- `len()関数がオブジェクトの長さを手にいれる仕組み <https://pycon.jp/2017/ja/schedule/presentation/22/>`_
+- `プロダクト開発して分かったDjangoの深～いパーミッション管理の話 <https://pycon.jp/2017/ja/schedule/presentation/25/>`_
+- `Pythonと機械学習によるWebセキュリティの自動化 <https://pycon.jp/2017/ja/schedule/presentation/24/>`_
+- 各種LT, Closing
+
+2日目
+~~~~~
+
+- Keynote: 堀越 真映さん
+- `Pythonで実現する4コマ漫画の分析・評論 2017 <https://pycon.jp/2017/ja/schedule/presentation/27/>`_
+- `Sharding with SQLAlchemy <https://pycon.jp/2017/ja/schedule/presentation/28/>`_
+- `Python におけるドメイン駆動設計(戦術面)の勘どころ <https://pycon.jp/2017/ja/schedule/presentation/31/>`_
+- `機械学習におけるデータの再現性について <https://pycon.jp/2017/ja/schedule/presentation/34/>`_
+- `Clearer Code at Scale: Static Types at Zulip and Dropbox <https://pycon.jp/2017/ja/schedule/presentation/12/>`_
+- `Pythonにおけるデバッグ手法 <https://pycon.jp/2017/ja/schedule/presentation/37/>`_
+- 各種LT, Closing
+
+After Partry
+------------
+
+Day1: Party以降
+~~~~~~~~~~~~~~~
+
+.. image:: pyconjp2017_after_beer.jpg
+    :align: center
+
+- お酒の充実度合いがすごかった。ビールサーバー、クラフトビール、日本酒と充実しまくりで堪能してた。
+- `@y__mattuさん <https://twitter.com/y__mattu>`_ にあった。 `@soogieさん <https://twitter.com/soogie>`_ に紹介してもらったけど、R界隈のホープらしい。曰く「Rでできないことはパンダスにはないとのこと。」でもPythonはPythonでRとかサスにはできないところがあったり、コミュニティがとても楽しいとのこと。これは良かった。
+- `@chezouさん <https://twitter.com/chezou>`_ さんの御尊顔を拝見した。すごい謙遜されていたけど、普段からやってるからあえて言わないんだろうな感あった。
+- `@yaegassyさん <https://twitter.com/yaegassy>`_  とか、 `@lambdalisueさん <https://twitter.com/lambdalisue>`_ とか、
+  `@rokujyouhitomaさん <https://twitter.com/rokujyouhitoma>`_ とか人をつないだり、つなげてもらったり、久しぶりの人に挨拶したりしてた。参加するたびにこうゆう機会増えていくの楽しいしおもしろい。
+- キャリアの話とか、あのときは実はねみたいな話を聞けたりとかセッションを聞く以外の話をできるのは楽しい。
+- 某氏にPEP8 3回読んで自分のコード見てまたPEP8読んでと伝えた
+- 裏PyCon楽しかった
+
+Day2: 有志の二次会
+~~~~~~~~~~~~~~~~~~
+
+.. image:: pyconjp2017_after_meat.jpg
+    :align: center
+
+肉のボリュームがすごかった。翌日のスプリントにいくための活力は得られたかな。
+
+
+感想
+----
+
+- 今回はいろいろと「実は...」みたいな会話をすることが多かったPyConだった。
+
+  - それを聞けるようになったり、言えるようになったのは変化だったり成長だったりするんだろうなと思う。
+
+- 「聞いて」「見た」なら「自分で確かめる・行動する」フェースが必要だと感じた。
+
+  - 自分の知識不足や発表者の意図を意図通りに受け取れずに誤解・誤読することはあると思う。
+  - 先人の知恵は活用しつつも、自分で確かめたり行動する必要が「ある」。
+  - 発表は基準にはなる。一歩先に行ったり、正しく理解するには自分で動くことが必要。
+
+- セッション30分は聞きやすいけど、せっかくのPyConなんだからもっと時間をかけて深いところも聞きたかった。
+
+  - ひとつのテーマについて少し深く話そうとしたら軽く10分20分は使うので、せめて中級者以上のセッションは4〜50分くらいほしい。
+  - 発表者も30分では話しきれないとわかっているのか、発表を通して後日自分で勉強したり情報を探したりすることができるようなキッカケになるような話し方をしてくれる人が多かったのがありがたかった。
+
+
+おわりに
+--------
+
+.. image:: pyconjp2018_notice.jpg
+    :align: center
+
+来年は発表できるといいなーと思いながら、PythonなりDjangoなり手を動かしていきます。
+
+参加者Blog
+----------
+
+見返すように見つけられたBlogを追記しておきます。
+
+- `PyCon JP 2017 1日目 参加ログ #pyconjp — 清水川Web <http://www.freia.jp/taka/blog/pyconjp2017-day1/index.html>`_
+- `PyCon JP 2017 2日目 参加ログ #pyconjp — 清水川Web <http://www.freia.jp/taka/blog/pyconjp2017-day2/index.html>`_
+- `PyCon2017 一日目のれぽーと - Foreverly <http://ozashu.hatenablog.com/entry/2017/09/08/215059>`_
+- `PyCon JP 2017 にさらりと参加してきた #pyconjp - 941::blog <http://blog.kushii.net/archives/2061806.html>`_
+- `PyCon JP 2017に参加しました - 前半 #pyconjp - Stimulator <http://vaaaaaanquish.hatenablog.com/entry/2017/09/08/210000>`_
+- `PyCon JP 2017に参加しました - 後半 #pyconjp - Stimulator <http://vaaaaaanquish.hatenablog.com/entry/2017/09/09/192024>`_
+- `PyCon JP 2017 Day 1 - 蛇ノ目の記 <http://nao-y.hatenablog.com/entry/2017/09/09/022011>`_
+- `PyCon JP 2017 Day 2 - 蛇ノ目の記 <http://nao-y.hatenablog.com/entry/2017/09/10/093339>`_
+- `PyCon JP 2017に参加してきました (1日目) #pyconjp - プログラマ行進曲第二章 <http://takuan-osho.hatenablog.com/entry/2017/09/08/my-thought-about-pyconjp-2017-at-the-1st-day>`_
+
+
+.. author:: default
+.. categories:: Python
+.. tags:: Python
+.. comments::

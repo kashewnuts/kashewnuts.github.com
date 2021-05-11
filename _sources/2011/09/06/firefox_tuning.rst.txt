@@ -1,0 +1,59 @@
+久しぶりにFirefox高速化のネタを見て思うことがあったので書いてみる。
+==========================================================================
+
+| やたらと重い「FireFox」を、馬鹿みたいに高速化する方法まとめ。｜WEBディレクターズマニュアルオンライン (180 users) `http://bit.ly/oU47Aj <http://bit.ly/oU47Aj>`__ を読んで、
+| 久しぶりにFirefox高速化ネタを見て思うことがあったので書いてみる。
+
+| 【結論】
+| `SpeedyFox <http://www.crystalidea.com/speedyfox>`__ 、 `Fireboot <http://aoproj.web.fc2.com/fireboot/>`__ 、 `CCleaner <http://www.filehippo.com/jp/download_ccleaner/>`__ (Macの人は `こちら <http://www.piriform.com/mac/ccleaner>`__ )は
+| 絶対入れたほうがいいよ！
+
+| アドオンがど〜のこ〜の設定がど〜のこ〜のというよりも
+| 3つに絞って使ったほうが即効性があり効果抜群ですよ。
+| 楽だし。(←これは重要でしょう。）
+
+| (注意)
+| ただ、CCleanerを使うときに読んでるタブを消したくない人は
+| 「セッションの削除」のチェックを外すのを忘れないように。
+
+| 【詳細】
+| さて、記事のアドオンを一つ一つ見ていくと…
+| :strike:`まだ確かめてないけど、`
+| :strike:`usr.jsはabout:configと同じこと書いてるのでは…。`
+| usr.jsはabout:configの設定＋αで高速化する記述がしてありました。
+| 2度手間になってしまうので、
+| あえてabout:configを設定する必要ないですね。
+| アドオンは `FasterFox Lite <https://addons.mozilla.org/ja/firefox/addon/fasterfox-9148/>`__ だけで充分。それ以上は余計。
+| SQL optimizerFirefox3.6までは愛用してましたね。
+| 効果がないわけではないですが、
+| 前述のフリーツールで同じことができるのであえて入れません。
+| Memory Foxは多少の効果はあるのかもしれませんが、
+| これを使うのにもメモリを使うので再起動したほうが早いです。
+| 再起動が面倒な人は `こちら <https://addons.mozilla.jp/firefox/details/8462>`__ 。
+| 再起動するだけのシンプルなアドオンです。
+| BarTabは類似機能がFirefox4から搭載されてるから
+| よほどスペック不足が気にならない限りいらないですね。
+| いじろうと思えばabout:configからいじるか、
+| usr.jsに設定を加えるだけで変更できますし。
+| コメントにもあるけど、
+| FirebugはWeb制作のためのコーディング(プログラミング)ツールなので
+| 高速化のために入れるとむしろ逆効果です
+
+| 【番外編】
+| もっと高速化したいと思う人は、内蔵HDDをSSDに変えましょう。
+| SSDの速さに慣れてしまうと、HDDには戻れません。
+| SSDに変えるだけでほとんどの場合2〜6倍の高速化を体感できますよ。
+
+| p.s.
+| 複数のPCでここでやった高速化を共有したいと思うなら、
+| Firefox Syncで設定を共有すると幸せになると思うよ！
+| まだごちゃまぜになるのがいやなら、
+| 自分で設定したusr.jsを記事で書いてあるよう
+| プロファイルにおいてあげるといいかも。
+
+
+.. author:: default
+.. categories:: 高速化, Firefox
+.. tags:: 高速化, Firefox
+.. comments::
+

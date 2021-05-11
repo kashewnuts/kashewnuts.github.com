@@ -1,0 +1,46 @@
+新宿 Book-a-thon #11に参加してきました。
+========================================================
+
+| `kashew\_nuts-tech: 新宿 Book-a-thon #7 -新春スペシャル-に行って来ました。 <http://kashewnuts-tech.blogspot.com/2012/01/book-thon-7.html>`__
+| 以来ずっと仕事が終わらず一向に参加できる気配がなかったのですが、
+| 久しぶりに参加。
+
+| 気づけば\ `connpass-新宿 Book-a-thon #11 <http://connpass.com/event/306/>`__\ と二桁になっております。
+| ATNDからconnpassへとイベントページも移行。
+| 気分一新ですね。
+| 当日の様子は\ `@usaturn <https://twitter.com/#!/usaturn>`__\ さんが以下にまとめてくれています。
+| `新宿 Book-a-thon #11 - Yukarin'Note <https://yukar.in/note/ckFoH1>`__
+
+| 今回自分が読んだ本は
+
+|［改訂新版］ シェルスクリプト基本リファレンス　　－－#!/bin/shで、ここまでできる (WEB+DB PRESS plus)|
+
+| `［改訂新版］ シェルスクリプト基本リファレンス　　－－#!/bin/shで、ここまでできる (WEB+DB PRESS plus) <http://www.amazon.co.jp/exec/obidos/ASIN/4774146439/naoyadyndnsor-22/ref=nosim/>`__
+| posted with
+| `amazlet <http://www.amazlet.com/browse/ASIN/4774146439//ref=nosim/>`__
+| at 12.03.11
+| 山森 丈範
+| 技術評論社
+| 売り上げランキング: 13221
+| `Amazon.co.jp で詳細を見る <http://www.amazon.co.jp/exec/obidos/ASIN/4774146439/naoyadyndnsor-22/ref=nosim/>`__
+
+| 読んだと言うより記述しているスクリプトを、
+| VM上のUbuntuで写経していました。
+| 主催の\ `@tk0miya <https://twitter.com/#!/tk0miya>`__\ さんの学生時代のバイト話で盛り上がっていたお陰で
+| そちらの話が気になりなかなか本に集中できないというおまけも
+| ついてましたが、
+| 区切りのいいところまでは読み終えることができました。
+
+| 次回のBook-a-thonイベントももう日にちが決まっているようです。
+| `connpass-新宿 Book-a-thon #12 <http://connpass.com/event/353/>`__
+| 20日が祝日ということで22日(木)になり、
+| 自分もまさかの補欠になっていますがなんとかなるでしょう。
+| 楽しみです。
+
+.. |［改訂新版］ シェルスクリプト基本リファレンス　　－－#!/bin/shで、ここまでできる (WEB+DB PRESS plus)| image:: http://ecx.images-amazon.com/images/I/41GMyWgQ3cL._SL160_.jpg
+   :target: http://www.amazon.co.jp/exec/obidos/ASIN/4774146439/naoyadyndnsor-22/ref=nosim/
+
+.. author:: default
+.. categories:: プログラミング, 勉強会, 本
+.. tags:: プログラミング, 勉強会, 本
+.. comments::

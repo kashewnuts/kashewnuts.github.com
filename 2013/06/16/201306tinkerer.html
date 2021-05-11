@@ -1,0 +1,347 @@
+<!DOCTYPE html><!--[if lt IE 7]>      <html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="https://www.facebook.com/2008/fbml" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="https://www.facebook.com/2008/fbml" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="https://www.facebook.com/2008/fbml" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="https://www.facebook.com/2008/fbml" class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="description" content="Road To Pythonista">
+        <meta name="viewport" content="width=device-width">
+        
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@kashew_nuts" />
+    <meta property="og:site_name" content="kashew_nuts-blog">
+    <meta property="og:title" content="TinkererでBlogを書こう(Ver1.2)">
+    <meta property="og:description" content="昨年末 Sphinx Advent Calendar 2012 - connpass で Tinkererでブログを書こう — kashew_nuts-blog という記事を書きましたが、
+Tinkerer も Version が1.2になり、運用方法も記事を書いた時と変わってきたので、改めて書き直してみます。 Tinkererとは 事前準備 bitbucketの準備 初期設定 Blog を...">
+    <meta property='og:url' content="http://kashewnuts.github.io/2013/06/16/201306tinkerer.html">
+    <title>TinkererでBlogを書こう(Ver1.2) &mdash; kashew_nuts-blog</title>
+            <link rel="stylesheet" href="../../../_static/normalize.css" type="text/css">
+            <link rel="stylesheet" href="../../../_static/sphinx.css" type="text/css">
+            <link rel="stylesheet" href="../../../_static/main.css" type="text/css">
+            <link rel="stylesheet" href="../../../_static/flat.css" type="text/css">
+            <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+            <link rel="stylesheet" href="../../../_static/font-awesome.min.css" type="text/css">
+        <link rel="shortcut icon" href="../../../_static/tinkerer.ico" /><!-- Load modernizr and JQuery -->
+        <script src="../../../_static/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="../../../_static/vendor/jquery-1.8.2.min.js"><\/script>')</script>
+        <script src="../../../_static/plugins.js"></script>
+        <script src="../../../_static/main.js"></script>
+        <link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Python Developers Festa2013.03に参加しました #pyfes" href="../../03/16/pyfes201303.html" /><link rel="prev" title="(第33回)Python mini Hack-a-thon に参加してきた #pyhack" href="../../07/13/pyhack33.html" /><link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/kashew_nuts-blog" /><script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.7.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        SOURCELINK_SUFFIX: '.txt',
+        HAS_SOURCE:  true
+      };
+    </script><script type="text/javascript" src="../../../_static/underscore.js"></script><script type="text/javascript" src="../../../_static/doctools.js"></script><script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script><script type="text/javascript" src="../../../_static/disqus.js"></script><script type="text/javascript" src="../../../_static/google_analytics.js"></script>
+    <meta property="fb:admins" content="200170096719194"/>
+    
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Scroll to content if on small screen
+            if (screen.width < 480)
+            {
+                $(document).scrollTop(document.getElementsByTagName("article")[0].offsetTop - 40);
+            }
+        });
+    </script>
+</head>
+    <body role="document">
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+      <div id="container"><header role="banner">
+            <hgroup>
+              <h1><a href="../../../index.html">kashew_nuts-blog</a></h1><h2>Road To Pythonista</h2></hgroup>
+          </header>
+      <nav role="navigation">
+      <ul>
+        <li class="main-nav">
+            <a href="../../../index.html">Home</a>
+          </li>
+        <li class="main-nav"><a href='https://kashewnuts.github.io/archive.html'>Archive</a></li><li class="main-nav">
+            <a href="http://feeds.feedburner.com/kashew_nuts-blog" title="Subscribe via RSS"><span class="fa fa-lg fa-rss"></span></a>
+          </li></ul>
+    </nav><div class="main-container" role="main"><div class="main wrapper body clearfix"><article>
+    <div class="section" id="tinkererblog-ver1-2">
+<h1>TinkererでBlogを書こう(Ver1.2)<a class="headerlink" href="#tinkererblog-ver1-2" title="Permalink to this headline">¶</a></h1>
+<p>昨年末 <a class="reference external" href="http://connpass.com/event/1441/">Sphinx Advent Calendar 2012 - connpass</a> で <a class="reference external" href="http://kashewnuts.github.io/2012/12/17/sphinxadventcalender017.html">Tinkererでブログを書こう — kashew_nuts-blog</a> という記事を書きましたが、
+<a class="reference external" href="http://tinkerer.me">Tinkerer</a> も Version が1.2になり、運用方法も記事を書いた時と変わってきたので、改めて書き直してみます。</p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#tinkerer" id="id8">Tinkererとは</a></p></li>
+<li><p><a class="reference internal" href="#id2" id="id9">事前準備</a></p></li>
+<li><p><a class="reference internal" href="#bitbucket" id="id10">bitbucketの準備</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id11">初期設定</a></p></li>
+<li><p><a class="reference internal" href="#blog" id="id12">Blog を書こう</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id13">Blog を公開しよう</a></p></li>
+<li><p><a class="reference internal" href="#next-step" id="id14">NEXT STEP</a></p></li>
+<li><p><a class="reference internal" href="#id6" id="id15">参考</a></p></li>
+</ul>
+</div>
+<div class="section" id="tinkerer">
+<h2><a class="toc-backref" href="#id8">Tinkererとは</a><a class="headerlink" href="#tinkerer" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://tinkerer.me">Tinkerer</a> とはSphinxを使った Blog 作成ツールです。 <a class="reference external" href="http://advent-calendar2012.usaturn.net/">Sphinx Advent Calendar 2012 (全部俺)</a> の <a class="reference external" href="https://twitter.com/usaturn">&#64;usaturn</a> さんや、 <a class="reference external" href="http://connpass.com/event/1441/">Sphinx Advent Calendar 2012</a> 主催の <a class="reference external" href="https://twitter.com/r_rudi">&#64;r_rudi</a> さんもTinkererを使用しています。今回はそのTinkererについて導入から実際に公開するまでの一連の流れを紹介してみたいと思います。</p>
+</div>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id9">事前準備</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>以下が用意されていることを前提としています。</p>
+<ul class="simple">
+<li><p>Python2.7</p></li>
+<li><p>pip</p></li>
+<li><p>mercurial</p></li>
+<li><p>virtualenv, virtualenvwapper(お好みで)</p></li>
+</ul>
+</div>
+<div class="section" id="bitbucket">
+<h2><a class="toc-backref" href="#id10">bitbucketの準備</a><a class="headerlink" href="#bitbucket" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>bitbucketに以下の名前でリポジトリ作成</p>
+<p><strong>&lt;username&gt;.bitbucket.org</strong> (private レポジトリ)</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>&lt;username&gt;には_(アンダーバー)などの記号を含まないほうが無難です。記号が含まれていた場合、Twitterのような外部サービスと連携したい時に問題が発生することがあります。私のアカウント名は通常 kashew_nuts を使用していますが、そのままのアカウントで作成すると、Tweetボタンで Blog のURLが作成されず困りました。</p>
+</div>
+</div>
+<div class="section" id="id3">
+<h2><a class="toc-backref" href="#id11">初期設定</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>以下のようにすると Blog を書くのに必要なファイル類ができあがります。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install tinkerer <span class="c1"># Tinkererのインストール</span>
+$ mkdir myblog
+$ <span class="nb">cd</span> myblog
+$ tinkerer -s <span class="c1"># Tinkererの初期セットアップ</span>
+</pre></div>
+</div>
+<p>次に Blog のタイトルやあなたの名前を登録しましょう。
+お好きなエディタで conf.py を編集します。
+私は普段 Vim を使用しているので Vim で書きます。
+シンタックスハイライトが特別な設定なしで使えるため非常に便利です。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ vim conf.py
+</pre></div>
+</div>
+<p>例として以下に私が設定している conf.py を上げたいと思います。
+‘’でくくられている箇所をお好きな内容に変えて設定して下さい。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Change this to the name of your blog</span>
+<span class="nv">project</span> <span class="o">=</span> <span class="s1">&#39;kashew_nuts-blog&#39;</span>
+
+<span class="c1"># Change this to the tagline of your blog</span>
+<span class="nv">tagline</span> <span class="o">=</span> <span class="s1">&#39;Load To Pythonista&#39;</span>
+
+<span class="c1"># Change this to your name</span>
+<span class="nv">author</span> <span class="o">=</span> <span class="s1">&#39;Kashun YOSHIDA&#39;</span>
+
+<span class="c1"># Change this to your copyright string</span>
+<span class="nv">copyright</span> <span class="o">=</span> <span class="s1">&#39;2011-2013, &#39;</span> + author
+
+<span class="c1"># Change this to your blog root URL (required for RSS feed)</span>
+<span class="nv">website</span> <span class="o">=</span> <span class="s1">&#39;http://kashewnuts.github.io/&#39;</span>
+</pre></div>
+</div>
+<p>これで、Tinkererで Blog を書く初期設定は終了です。</p>
+</div>
+<div class="section" id="blog">
+<h2><a class="toc-backref" href="#id12">Blog を書こう</a><a class="headerlink" href="#blog" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ tinkerer -p <span class="s2">&quot;first post&quot;</span> <span class="c1"># 記事の下書き作成</span>
+$ vim <span class="m">2013</span>/06/16/first_post.rst <span class="c1"># 記事の作成</span>
+$ tinkerer -b <span class="c1"># 記事のHTMLを作成</span>
+</pre></div>
+</div>
+<p>これで、blog/html/ 以下に記事が作成されます。
+どんな記事が作成されたのか、以下のコマンドを打って確認してみましょう。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python -m SimpleHTTPServer
+</pre></div>
+</div>
+<p>ネットワーク受信接続の許可を求められますので、 <strong>許可</strong> を選択して下さい。ブラウザのロケーションバーに <a class="reference external" href="http://127.0.0.1:8000">http://127.0.0.1:8000</a> とタイプすると、あなたが作成した記事を確認することができます。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>SimpleHTTPSererのデフォルトのポート番号は8000ですが、以下のように記述するとポート番号を指定できます。この例ではポート番号を8080に設定しています。</p>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python -m SimpleHTTPServer <span class="m">8080</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2><a class="toc-backref" href="#id13">Blog を公開しよう</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>いくつかあるようですが、ここは私が実際に使用している方法を紹介したいと思います。
+初めに準備した bitbucket リポジトリに以下の内容を上げてしまいましょう。</p>
+<p><a class="reference external" href="http://kashewnuts.github.io/2012/12/17/sphinxadventcalender017.html">前回書いた記事</a> では index.html と blog/ 以下全てと書きましたが、
+これだと Blog を開いた時に、<cite>http://hogehoge.bitbucket.io/blog/html/index.html</cite> と長ったらしいURLになってしまいます。</p>
+<p>そこで今回は “blog/html/ 以下全て” の生成物を上げます。</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>くれぐれも以下の操作を blog/html/ 以下で行わないで下さい。Tinkerer は “tinker -b” で
+ファイルを生成するたびにファイルを全て新しく作り直すので、Mercurial の管理情報が消え、
+新しい記事を挙げることができなくなります！</p>
+<p>これを一番シンプルな方法は、”tinker -b” で生成した “blog/html/” 以下の生成物を
+myblog とは別のディレクトリで管理することです。</p>
+</div>
+<p>Mercurial を使用した方法を記述します。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#  Blog 管理用ディレクトリの準備</span>
+$ mkdir public
+$ cp -R blog/html/ public/.   <span class="c1"># スクリプト化すると便利です。</span>
+$ <span class="nb">cd</span> public
+
+<span class="c1"># Mercurial 初期設定</span>
+$ hg init
+$ vim .hg/hgrc
+
+<span class="o">[</span>paths<span class="o">]</span>
+<span class="nv">default</span><span class="o">=</span>ssh://hg@bitbucket.io/&lt;username&gt;/&lt;username&gt;.bitbucket.org
+
+<span class="c1">#  Blog にpush</span>
+$ hg add .
+$ hg commit -m <span class="s2">&quot;first post&quot;</span>
+$ hg push
+</pre></div>
+</div>
+<p>公開されるまでに数分程度待つかもしれません。数分後 <cite>https://&lt;username&gt;.bitbucket.io</cite> にアクセスすると、 Blog ページが表示できるようになります。</p>
+</div>
+<div class="section" id="next-step">
+<h2><a class="toc-backref" href="#id14">NEXT STEP</a><a class="headerlink" href="#next-step" title="Permalink to this headline">¶</a></h2>
+<p>以上で Blog を書く環境が整ったと思いますが、Tinkerer では他の Blog と同じように色々とカス
+タマイズができます。
+事例を紹介しますので、興味を持たれた方は是非挑戦してみて下さい。</p>
+<ul class="simple">
+<li><p>サイドバーに項目追加</p>
+<ul>
+<li><p>Recent Posts, Tags, Categories</p></li>
+<li><p>Twitter Widget</p></li>
+<li><p>Search Box</p></li>
+</ul>
+</li>
+<li><p>記事へ埋め込み</p>
+<ul>
+<li><p>Twitter のつぶやき</p></li>
+<li><p>gist</p></li>
+</ul>
+</li>
+<li><p>コメント欄の追加(Disqus, Facebook)</p></li>
+<li><p>Google Analytics の設定</p></li>
+<li><p>テーマのカスタマイズ</p></li>
+<li><p>Favicon の設定</p></li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h2><a class="toc-backref" href="#id15">参考</a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="http://tinkerer.me">Tinkerer</a></p></li>
+<li><p><a class="reference external" href="http://d.hatena.ne.jp/rudi/20120106/1325861293">Tinkererを使ってbitbucketでblogはじめました - そこはかとなく書くよ。</a></p></li>
+<li><p><a class="reference external" href="http://kyon-mm.bitbucket.io/blog/html/2013/05/20/start_tinkerer_on_bitbucket.html">BitBucketで無料ブログをつくる方法 -TinkererとMercurialでバージョン管理可能なブログをつくる- — うさぎ組</a></p></li>
+<li><p><a class="reference external" href="http://www.shomah4a.net/2013/03/23/shinx_embed_series.html">Sphinx に色々埋め込んでみる #pyhack — プログラマのネタ帳 二冊目</a></p></li>
+</ul>
+</div>
+</div>
+
+    <br/>
+
+<!-- ninja_omatome -->
+<div class="ninja_onebutton">
+<script type="text/javascript">
+//<![CDATA[
+(function(d){
+if(typeof(window.NINJA_CO_JP_ONETAG_BUTTON_00eb4412f1c80db8bbc1af50c58e8ee6)=='undefined'){
+    document.write("<sc"+"ript type='text\/javascript' src='//omt.shinobi.jp\/b\/00eb4412f1c80db8bbc1af50c58e8ee6'><\/sc"+"ript>");
+}else{
+    window.NINJA_CO_JP_ONETAG_BUTTON_00eb4412f1c80db8bbc1af50c58e8ee6.ONETAGButton_Load();}
+})(document);
+//]]>
+</script><span class="ninja_onebutton_hidden" style="display:none;"></span><span style="display:none;" class="ninja_onebutton_hidden"></span>
+</div>
+<!-- ninja_omatome -->
+
+</div>
+    <div class="postmeta">
+        <div class="author">
+            <span>Posted by Kashun YOSHIDA</span>
+        </div>
+        <div class="categories">
+            <span>
+                Filed under:
+                <a href="../../../categories/python.html">Python</a>, <a href="../../../categories/sphinx.html">Sphinx</a>, <a href="../../../categories/tinkerer.html">Tinkerer</a></span>
+        </div>
+        <div class="tags">
+            <span>
+                Tags:
+                <a href="../../../tags/python.html">Python</a>, <a href="../../../tags/sphinx.html">Sphinx</a>, <a href="../../../tags/tinkerer.html">Tinkerer</a></span>
+        </div>
+        </div>
+    <div id="disqus_thread"></div><script type="text/javascript">    var disqus_shortname = "kashewnutsblog";    var disqus_identifier = "2013/06/16/201306tinkerer";    disqus_thread();</script><noscript>Please enable JavaScript to view the    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<ul class="related clearfix">
+            <li class="left"> &laquo; <a href="../../07/13/pyhack33.html">(第33回)Python mini Hack-a-thon に参加してきた #pyhack</a></li>
+            <li class="right"><a href="../../03/16/pyfes201303.html">Python Developers Festa2013.03に参加しました #pyfes</a> &raquo; </li>
+        </ul></article><aside class="sidebar"><section><div class="widget">
+  <div>
+    <a href="//af.moshimo.com/af/c/click?a_id=815168&p_id=1166&pc_id=1793&pl_id=20228&guid=ON" target="_blank" rel="nofollow"><img src="//image.moshimo.com/af-img/0408/000000020228.png" width="300" height="250" style="border:none;"></a><img src="//i.moshimo.com/af/i/impression?a_id=815168&p_id=1166&pc_id=1793&pl_id=20228" width="1" height="1" style="border:none;">
+  </div>
+</div></section><section><div class="widget" id="searchbox" role="search">
+    <h1><a href="#searchbox">Search</a></h1>
+    <form action="../../../search.html" method="get">
+        <input type="text" name="q" />
+        <button type="submit"><span class="fa fa-search"></span></button>
+    </form>
+</div></section><section><div class="widget">
+    <h1>Recent Posts</h1>
+    <ul><li>
+            <a href="../../../2020/11/30/climbing_shoes_history.html">クライミングシューズ遍歴</a>
+        </li><li>
+            <a href="../../../2020/06/11/wsl2.html">WSL2を使ってみている</a>
+        </li><li>
+            <a href="../../../2020/05/05/upgrade_ubuntu_20_04_lts.html">Ubuntu18.04LTSから20.04LTSにアップグレードした</a>
+        </li><li>
+            <a href="../../../2020/04/08/migrated_lsp_client_to_coc_nvim.html">LSPクライアントをcoc.nvimにした話</a>
+        </li><li>
+            <a href="../../../2019/01/28/move_from_jedivim_to_vimlsp.html">Pythonの補完環境をjedi-vimからvim-lspに移行した話</a>
+        </li><li>
+            <a href="../../../2019/01/05/2018and2019.html">2018年の振り返りと2019年抱負</a>
+        </li><li>
+            <a href="../../../2018/12/02/bp_advent_calender.html">2018年版Life ChangingだったVimプラグインTOP3</a>
+        </li><li>
+            <a href="../../../2018/11/06/yosemite_tour.html">ヨセミテツアー日記</a>
+        </li><li>
+            <a href="../../../2018/09/22/pyconjp2018.html">PyConJP2018でPyCharmの話をしてきました #pyconjp</a>
+        </li><li>
+            <a href="../../../2018/08/22/jedivim_memo.html">VimとPythonの補完についてのメモ</a>
+        </li></ul>
+</div>
+</section><section><div class="widget">
+    <h1>Categories</h1>
+    <ul><li><a href="../../../categories/64bit.html">64bit</a> (2)</li><li><a href="../../../categories/android.html">Android</a> (3)</li><li><a href="../../../categories/bouldering.html">bouldering</a> (2)</li><li><a href="../../../categories/bouldering.html">Bouldering</a> (4)</li><li><a href="../../../categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="../../../categories/c_c.html">C/C++</a> (5)</li><li><a href="../../../categories/chrome.html">Chrome</a> (2)</li><li><a href="../../../categories/db.html">DB</a> (1)</li><li><a href="../../../categories/django.html">Django</a> (10)</li><li><a href="../../../categories/facebook.html">Facebook</a> (1)</li><li><a href="../../../categories/firefox.html">Firefox</a> (1)</li><li><a href="../../../categories/git_mercurial.html">Git/Mercurial</a> (8)</li><li><a href="../../../categories/golang.html">Golang</a> (1)</li><li><a href="../../../categories/google.html">Google</a> (5)</li><li><a href="../../../categories/heroku.html">Heroku</a> (6)</li><li><a href="../../../categories/java.html">Java</a> (2)</li><li><a href="../../../categories/javascript.html">JavaScript</a> (4)</li><li><a href="../../../categories/jupyter.html">Jupyter</a> (1)</li><li><a href="../../../categories/kabepy.html">kabepy</a> (2)</li><li><a href="../../../categories/linux.html">Linux</a> (5)</li><li><a href="../../../categories/lt.html">LT</a> (5)</li><li><a href="../../../categories/mac.html">Mac</a> (8)</li><li><a href="../../../categories/pycharm.html">PyCharm</a> (2)</li><li><a href="../../../categories/pyconjp.html">PyConJP</a> (1)</li><li><a href="../../../categories/pyfes.html">pyfes</a> (7)</li><li><a href="../../../categories/python.html">Python</a> (70)</li><li><a href="../../../categories/slack.html">Slack</a> (1)</li><li><a href="../../../categories/sphinx.html">Sphinx</a> (8)</li><li><a href="../../../categories/sqlalchemy.html">SQLAlchemy</a> (1)</li><li><a href="../../../categories/ssd.html">SSD</a> (1)</li><li><a href="../../../categories/tddbc.html">TDDBC</a> (1)</li><li><a href="../../../categories/tinkerer.html">Tinkerer</a> (7)</li><li><a href="../../../categories/tmux.html">tmux</a> (1)</li><li><a href="../../../categories/ubuntu.html">Ubuntu</a> (3)</li><li><a href="../../../categories/vagrant.html">Vagrant</a> (1)</li><li><a href="../../../categories/vim.html">Vim</a> (24)</li><li><a href="../../../categories/vimconf.html">VimConf</a> (3)</li><li><a href="../../../categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="../../../categories/windows.html">Windows</a> (3)</li><li><a href="../../../categories/windows7.html">Windows7</a> (4)</li><li><a href="../../../categories/wsl.html">WSL</a> (1)</li><li><a href="../../../categories/%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0.html">アルゴリズム</a> (1)</li><li><a href="../../../categories/%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3.html">セキュリティ</a> (2)</li><li><a href="../../../categories/%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF.html">ネットワーク</a> (1)</li><li><a href="../../../categories/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0.html">プログラミング</a> (7)</li><li><a href="../../../categories/%E5%8B%89%E5%BC%B7%E4%BC%9A.html">勉強会</a> (30)</li><li><a href="../../../categories/%E5%BF%9C%E7%94%A8%E6%83%85%E5%A0%B1%E6%8A%80%E8%A1%93%E8%80%85.html">応用情報技術者</a> (10)</li><li><a href="../../../categories/%E6%83%85%E5%A0%B1%E5%87%A6%E7%90%86%E6%8A%80%E8%A1%93%E8%80%85%E8%A9%A6%E9%A8%93.html">情報処理技術者試験</a> (10)</li><li><a href="../../../categories/%E6%9C%AC.html">本</a> (29)</li><li><a href="../../../categories/%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83.html">開発環境</a> (11)</li><li><a href="../../../categories/%E9%9B%91%E8%A8%98.html">雑記</a> (38)</li><li><a href="../../../categories/%E9%AB%98%E9%80%9F%E5%8C%96.html">高速化</a> (1)</li></ul>
+</div></section><section><div class="widget">
+    <h1>About Me</h1>
+    <div>
+        <a href="https://about.me/kashew_nuts">
+            <img src="https://pbs.twimg.com/profile_images/378800000438956976/3e61e7ae64d916ba0451a44c3b8ce347.jpeg"
+            width="128px"
+            height="128px" />
+        </a>
+        <h4><a href="https://twitter.com/kashew_nuts">kashew_nuts
+                (KashunYOSHIDA)</a></h4>
+        <p>人生という壁を登るSoftwareDeveloper</p>
+        <a class="twitter-timeline" data-width="300" data-height="800" data-theme="dark" href="https://twitter.com/kashew_nuts">Tweets by kashew_nuts</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+</div></section></aside></div> <!-- #main --></div> <!-- #main-container -->
+
+        <div class="footer-container" role="contentinfo"><footer class="wrapper">&copy; Copyright 2011-2020, Kashun YOSHIDA. Powered by <a href="http://www.tinkerer.me/">Tinkerer</a> and <a href="http://sphinx.pocoo.org/">Sphinx</a>.</footer></div> <!-- footer-container -->
+
+      </div> <!--! end of #container --><!--[if lt IE 7 ]>
+          <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+          <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+        <![endif]-->
+    </body>
+</html>

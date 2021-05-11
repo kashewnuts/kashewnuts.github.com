@@ -1,0 +1,16 @@
+なんでわざわざVirtualBox上にAndroid開発環境を作ったか。
+========================================================================
+
+| ホストOSにしてるWindows7 64bit HomePremiumでは
+| Androidのエミュレータを起動しようとするとどうやっても、
+| 「AVDがありません」
+| といった内容のエラーが表示され整えられませんでした。
+| なので、
+| いっそまったく別の環境で作ってしまえ！と思いやってみました。
+| 何故自分のWindows7 64bit環境でできなかったのかの検証は
+| 今後時間が取れたときにできればと思います。
+
+.. author:: default
+.. categories:: 64bit, VirtualBox, Android, Windows7
+.. tags:: 64bit, VirtualBox, Android, Windows7
+.. comments::

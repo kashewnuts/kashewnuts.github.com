@@ -1,0 +1,157 @@
+========================
+Tinkererでブログを書こう
+========================
+
+`Sphinx Advent Calendar <http://connpass.com/event/1441/>`_ の17日目を書きます。 `@kashew_nuts <https://twitter.com/kashew_nuts>`_ です。
+
+.. note::
+
+    2013/06/16 この記事に書いてある内容が古くなってきましたので、改めて記事を作成しました。
+    `TinkererでBlogを書こう(Ver1.2) — kashew_nuts-blog <http://kashewnuts.github.io/2013/06/16/201306tinkerer.html>`_
+
+Tinkererとは
+-------------------------
+
+`Tinkerer <http://www.tinkerer.me/>`_ とはSphinxを使ったブログ作成ツールです。 `Sphinx Advent Calendar 2012 (全部俺) <http://advent-calendar2012.usaturn.net/>`_ の `@usaturn <https://twitter.com/usaturn>`_ さんや、 `Sphinx Advent Calendar 2012 <http://connpass.com/event/1441/>`_ 主催の `@r_rudi <https://twitter.com/r_rudi>`_ さんもTinkererを使用しています。今回はそのTinkererについて導入から実際に公開するまでの一連の流れを紹介してみたいと思いま
+す。
+
+**(注意)2012/12/17現在、最新バージョンは1.0.1 ですが、既に0.4.1b以下を使用している方はUpdateは控えたほうが無難かと思います。formatの形式にバグがあるらしく、インストールしてもビルドできないことがあります。**
+
+
+事前準備
+-------------------------
+
+以下が用意されていることを前提としています。
+
+* Python2.x (当方 Python2.7を使用しています)
+* pip
+* mercurial
+* virtualenv, virtualenvwapper(お好みで)
+
+bitbucketの準備
+-------------------------
+
+* bitbucketに以下の名前でリポジトリ作成
+
+  **<username>.bitbucket.org** (private レポジトリ)
+
+  **(注意) <username>には_(アンダーバー)などの記号を含まないほうが無難です。記号が含まれていた場合、Twitterのような外部サービスと連携したい時に問題が発生することがあります。私のアカウント名は通常 kashew_nuts を使用していますが、そのままのアカウントで作成すると、TweetボタンでブログのURLが作成されず困りました。**
+
+
+初期設定
+-------------------------
+
+以下のようにするとブログを書くのに必要なファイル類ができあがります。
+
+.. code-block:: bash
+
+    $ pip install tinkerer==0.4.1b (Tinkererのインストール)
+    $ mkdir myblog
+    $ cd myblog
+    $ tinkerer -s (Tinkererの初期セットアップ)
+
+次にブログのタイトルやあなたの名前を登録しましょう。
+お好きなエディタで conf.py を編集します。
+私は普段 Vim を使用しているので Vim で書きます。
+シンタックスハイライトが特別な設定なしで使えるため非常に便利です。
+
+.. code-block:: bash
+
+  $ vim conf.py
+
+例として以下に私が設定している conf.py を上げたいと思います。
+''でくくられている箇所をお好きな内容に変えて設定して下さい。
+
+.. code-block:: bash
+
+  # Change this to the name of your blog
+  project = 'kashew_nuts-blog'
+
+  # Change this to the tagline of your blog
+  tagline = 'つらつらと'
+
+  # Change this to your name
+  author = 'Kashun Yoshida'
+
+  # Change this to your copyright string
+  copyright = '2012, ' + author
+
+  # Change this to your blog root URL (required for RSS feed)
+  website = 'http://kashewnuts.github.io/blog/html/'
+
+
+**日本語環境用にパッチを当てる**
+
+Version0.4.1bのTinkererをインストールしましたが、日本語環境で使用するとUnicode Errorでビルドに失敗するようです。以下のURLを参照し、パッチを当てて下さい。
+https://bitbucket.org/vladris/tinkerer/issue/47/a-unicode-error-occurred-when-lc_all-is
+
+手元の Mac OSX + virtualenv 環境では、 lib/python2.7/site-packages/tinkerer/cmdline.py にありました。パッチの内容通り import locale と locale.setlocal(... の2行を削除するとビルドできるようになります。
+
+これで、Tinkererでブログを書く初期設定は終了です。
+
+
+ブログを書こう
+-------------------------
+
+.. code-block:: bash
+
+  $ tinkerer -p "first post" (記事の下書き作成)
+  $ vim 2012/12/17/first_post.rst (記事の作成)
+  $ tinkerer -b (記事のHTMLを作成)
+
+これで、blog/html/以下に記事が作成されます。
+どんな記事が作成されたのか、以下のコマンドを打って確認してみましょう。
+
+.. code-block:: bash
+
+  $ pyhton -m SimpleHTTPServer
+
+ネットワーク受信接続の許可を求められますので、 **許可** を選択して下さい。ブラウザのロケーションバーに http://127.0.0.1:8000 とタイプすると、あなたが作成した記事を確認することができます。
+
+**SimpleHTTPSererのデフォルトのポート番号は8000ですが、以下のように記述するとポート番号を指定できます。この例ではポート番号を8080に設定しています。**
+
+.. code-block:: bash
+
+  $ pyhton -m SimpleHTTPServer 8080
+
+ブログを公開しよう
+-------------------------
+
+いくつかあるようですが、ここは私が実際に使用している方法を紹介したいと思います。
+初めに準備した bitbucket リポジトリに以下の2つを上げてしまいましょう。
+
+* index.html
+* blog 以下全て
+
+Mercurial を使用した方法を記述します。
+
+.. code-block:: bash
+
+  $ hg init
+  $ vim .hg/hgrc
+
+  [paths]
+  default=ssh://hg@bitbucket.io/<username>/<username>.bitbucket.org
+
+  $ hg add index.html
+  $ hg add blog/.
+  $ hg commit -m "first post"
+  $ hg push
+
+公開されるまでに数分程度待つかもしれません。数分後 `https://<username>.bitbucket.io` にアクセスすると、ブログページが表示できるようになります。
+
+
+早くVersionからβが外れたTinkererを使用してみたいですね。
+明日(18日)の担当は `@feiz <https://twitter.com/feiz>`_ さんです。よろしくお願い致します。
+
+
+参考
+-------------------------
+
+* `Documentation — Tinkerer <http://tinkerer.me/pages/documentation.html>`_
+
+
+.. author:: default
+.. categories:: Sphinx, Tinkerer
+.. tags:: Sphinx, Tinkerer
+.. comments::

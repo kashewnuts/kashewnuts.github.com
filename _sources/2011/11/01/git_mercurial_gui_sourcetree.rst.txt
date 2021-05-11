@@ -1,0 +1,31 @@
+Mac用Git/MercurialのGUIクライアント-SourceTree-を試してみた
+===============================================================
+
+| `Python Developters Festa 2011.10の時 <http://kashewnuts-tech.blogspot.com/2011/10/python-developers-festa-201110.html>`__\ に入れましたが、
+| 入れっぱなしになってたやつを試してみました。
+
+|image0|
+
+|image1|
+
+| シンプルで良さげですね。
+| さて、\ `以前 <http://kashewnuts-tech.blogspot.com/2011/10/github.html>`__\ ”id\_rsa”とやらがわかんなくて
+| ほったらかしににしてしまった
+
+| Gitの設定を何とかしないと……
+| まだ無料のキャンペーン期間中みたいなので、
+| 興味ある人は入れてみては？
+
+| 無料になる前は7000円(！)してたみたいなので
+| 入れるなら今のうちだと思いますよ。
+| リンクは\ `こちら <http://www.sourcetreeapp.com/>`__\ 。
+
+.. |image0| image:: http://4.bp.blogspot.com/-O9OsSwhvxkA/Tq_3gxJvgUI/AAAAAAAAAZc/kbGAx1S_4_o/s400/sourcetree.png
+   :target: http://4.bp.blogspot.com/-O9OsSwhvxkA/Tq_3gxJvgUI/AAAAAAAAAZc/kbGAx1S_4_o/s1600/sourcetree.png
+.. |image1| image:: http://1.bp.blogspot.com/-CglxpsoLdy8/Tq_193PaqFI/AAAAAAAAAZU/wcTJGKGUtOc/s400/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588+2011-11-01+22.36.23.png
+   :target: http://1.bp.blogspot.com/-CglxpsoLdy8/Tq_193PaqFI/AAAAAAAAAZU/wcTJGKGUtOc/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588+2011-11-01+22.36.23.png
+
+.. author:: default
+.. categories:: Git/Mercurial
+.. tags:: Git/Mercurial
+.. comments::

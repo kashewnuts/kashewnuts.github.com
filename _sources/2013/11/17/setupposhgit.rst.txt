@@ -1,0 +1,78 @@
+========================================
+WindowsでGitを使う時はposh-gitを入れよう
+========================================
+
+以上。……だとさすがに味気無いので導入メモを残しておく。
+
+みなさんWindowsでもCUIでGitするときのシェルは何を使っていますか？
+私はmsysgitを入れた時についてくるGit Bash……ではなく、 **PowerShell** を使っています。
+
+素のPowerShellではGit Bashにかないませんが、
+`posh-git <https://github.com/dahlbyk/posh-git>`_ というモジュールを導入することで、
+**Windows上最高のGit用CUI環境** ができあがります。(言い過ぎ)
+
+
+何ができるか？何が便利か？
+--------------------------
+
+以下を参照してもらえたらいいと思います。
+
+`PowerShell で Git : Developer @ ADJUST <http://devadjust.exblog.jp/17296786/>`_
+
+ひとことでいうと **"補完超便利"**
+
+
+インストール
+------------
+
+以下のコマンドを実行します。
+
+.. code-block:: console
+
+    Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Confirm
+    git clone https://github.com/dahlbyk/posh-git.git
+    .\posh-git\install.ps1
+    . $PROFILE
+
+しかし以下のように怒られてしました。
+
+.. code-block:: console
+
+    WARNING: Could not find ssh-agent
+
+SSH-AGENTをする必要があるので、
+Microsoft.PowerShell_profile.ps1 に以下のように設定を追記します。
+
+この時設定が # Load posh-git example profile の上に来るようにしてください。
+
+.. code-block:: console
+
+    $env:path += ";" + (Get-Item "Env:ProgramFiles(x86)").Value + "\Git\bin"
+
+    # Load posh-git example profile
+    . 'C:\hogehoge\posh-git\profile.example.ps1'
+
+もう一度 . $PROFILE で設定を読み込んだらインストール完了です。
+
+
+設定
+----
+
+さてこれで **PowerShellで最高のGit用CUI環境ができた！** と言いたいのですが、表示が遅い…… 高機能なのはいいですが、表示が遅くては話になりません。
+
+Google先生に聞いても、 *posh git slow* という単語が引っかかります。なんとか速くする方法はないものか。
+
+そこで Microsoft.PowerShell_profile.ps1 に以下のように設定を追記します。
+
+.. code-block:: console
+
+    $GitPromptSettings.EnableFileStatus = $false    # 簡易ステータス非表示
+
+これでインストール前の速度を保ちつつ、
+Gitのコマンド入力時は補完機能を使って快適に操作できるようになりました。
+
+
+.. author:: default
+.. categories:: Git/Mercurial, Windows
+.. tags:: Git/Mercurial, Windows
+.. comments::

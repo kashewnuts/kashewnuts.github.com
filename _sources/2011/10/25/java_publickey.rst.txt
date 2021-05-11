@@ -1,0 +1,38 @@
+「クラウドでのJavaの存在感は高まるか？ － Publickey」を読んで
+============================================================================
+
+| リンクは\ `こちら <http://www.publickey1.jp/blog/11/java_4.html>`__
+
+| Java、かぁ。
+| 新人研修の時にPure Java”らしきもの”を
+| 書いて以来触ってないですな。
+| しかし今度社内のイベントで久しぶりにJava書くことになったから
+| また勉強し直してみましょうか。
+
+| `たのぐちさん(@dproject21) <https://twitter.com/#!/dproject21>`__\ にEffective
+| Java譲って貰ったしね！
+| （その節はありがとうございます！）
+| これはJavaの代表的な書籍だから一度読んでおきたかったんだ。
+
+|Effective Java 第2版 (The Java Series)|
+
+| `Effective Java 第2版 (The Java Series) <http://www.amazon.co.jp/exec/obidos/ASIN/489471499X/naoyadyndnsor-22/ref=nosim/>`__
+| posted with
+| `amazlet <http://www.amazlet.com/browse/ASIN/489471499X//ref=nosim/>`__
+| at 11.10.25
+| Joshua Bloch
+| ピアソンエデュケーション
+| 売り上げランキング: 9684
+| `Amazon.co.jp で詳細を見る <http://www.amazon.co.jp/exec/obidos/ASIN/489471499X/naoyadyndnsor-22/ref=nosim/>`__
+
+| 今年はPythonにJavaにJavaScriptとてんてこ舞いになりそうだから、
+| 自分の持ってるタスクをしっかり把握しないとな〜。
+| その中でもしっかり地力を付けていきたい。
+
+.. |Effective Java 第2版 (The Java Series)| image:: http://ecx.images-amazon.com/images/I/51E1m-weAXL._SL160_.jpg
+   :target: http://www.amazon.co.jp/exec/obidos/ASIN/489471499X/naoyadyndnsor-22/ref=nosim/
+
+.. author:: default
+.. categories:: JavaScript, プログラミング, Java, 本, 雑記, Python
+.. tags:: JavaScript, プログラミング, Java, 本, 雑記, Python
+.. comments::

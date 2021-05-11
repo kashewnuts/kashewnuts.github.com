@@ -1,0 +1,220 @@
+Python Developers Festa2013.11に参加しました #pyfes
+===================================================
+
+.. image:: pyfes201311.jpg
+    :align: center
+
+あろうことかこの画像を貼り忘れていました。いやーうっかりしてた。
+
+前回の様子
+----------
+
+`Python Developers Festa2013.07に参加しました #pyfes — kashew_nuts-blog <http://kashewnuts.github.io/2013/07/27/pyfes201307.html>`_
+
+イベント詳細
+------------
+
+* `Python Developers Festa 2013.11 - connpass <http://connpass.com/event/4273/>`_
+* `pyfes/201311.rst  <https://github.com/pyspa/pyfes/blob/develop/201311.rst>`_
+
+Togetter
+~~~~~~~~
+
+* `Python Developers Festa 2013.11 -前日まで - Togetter <http://togetter.com/li/596691>`_
+* `Python Developers Festa 2013.11 -昼まで - Togetter <http://togetter.com/li/596688>`_
+* `Python Developers Festa 2013.11 -LT - Togetter <http://togetter.com/li/596766>`_
+* `Python Developers Festa 2013.11 -プレゼン１ - Togetter <http://togetter.com/li/596774>`_
+* `Python Developers Festa 2013.11 -プレゼン２ - Togetter <http://togetter.com/li/596781>`_
+* `Python Developers Festa 2013.11 -プレゼン３ - Togetter <http://togetter.com/li/596795>`_
+* `Python Developers Festa 2013.11 -プレゼン４ - Togetter <http://togetter.com/li/596807>`_
+* `Python Developers Festa 2013.11 -プレゼン５ - Togetter <http://togetter.com/li/596816>`_
+* `Python Developers Festa 2013.11 -終了後 - Togetter <http://togetter.com/li/596978>`_
+
+
+午前中～プレゼン開始まで
+------------------------
+
+Go codelab (whispering gopher)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+前々日に `A Tour of Go <http://go-tour-jp.appspot.com/#1>`_ を終わらせ参加しました。
+
+ハンズオン資料はこちら。
+`Whispering Gophers <http://whispering-gophers.appspot.com/talk.slide#1>`_
+
+時間切れでpart8の途中で終わってしまった。無念。
+
+
+発表(LT、プレゼン)
+------------------
+
+時間厳守で進行ということでしたが、結構みなさん時間にきっちりされてましたね。
+
+`原稿募集のお知らせ <https://speakerdeck.com/turky/yuan-gao-mu-ji-falseozhi-rase?slide=1>`_ @turky
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* オライリーさんのことも忘れないで上げてください。
+* オライリー・ジャパンがあなたの現行を電子書籍にします。
+* 数十～200PぐらいでOK。技術テーマは問いません。ピンポイントでも1冊になっています。
+* 今ならAuthorCAP貰えます。
+* 制作環境についてはWebサイトに記事→けど、Sphinxでおk
+* make xmlでxml→ReViewのツール書きました。
+  `turky/sphinx-xml2review-xslt <https://github.com/turky/sphinx-xml2review-xslt>`_
+
+
+`Pythonista も ls を読むべきか？ <http://www.slideshare.net/flying-foozy/should-pythonistareadlssrc>`_ @flyingfoozy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* 書籍: `lsを読まずにプログラマを名乗るな! <http://www.amazon.co.jp/dp/4798039438/>`_
+* Mercurial の hack に特化したなんちゃって Pythonista
+* オライリーじゃないほうからきました。
+* Pythonista も lsを読むべきか。
+* Mercurial の話をしたいからこんな話をしてるわけではないですよ？(棒)
+* ls.c は読まなくても…… mercurial/osutil.c の listdir()の実装は読んだほうがいいかもね
+
+
+PyConJP2014 開催に関するお知らせ @shkumagai
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* Pyconjp2014スタッフ/Mediaチーム
+* Pyconjp2014 開催は2014年の9月頃
+* 開催場所、募集人数：TBD→すべて未定。これから決めていく段階です。
+* スタッフ募集しています。
+
+  - 事務局、会場、プログラム、メディア
+  - イベントの運営に関わってみたい人
+  - アイディアを試したい人
+  - まっさらな状態から携われます
+
+
+`HTTP2 & HPACK <http://www.slideshare.net/Jxck/http2-hpack-pyfes-20131130>`_ @jxck_
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* あるらしいと知っている方。仕様を読んだって方。http2 の仕様は github で管理されているのを知っている方。
+* HTTPとは何だったのか。
+* spdyでチャレンジし、その結果をhttp2を育てていく。その後http2に統一していく方向。
+* 実装したい方はWireshark&TCPdumpでバイナリをいじってごりごり
+
+
+`HTTP2.0 クライアント <https://docs.google.com/presentation/d/1Vg_HH-rHgMJGK8w2S0ZXK-1Aq4N08pZusFXZxKiSxJ4/edit#slide=id.p>`_ @tatsuhiro_t
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* `nghttp2 - HTTP/2.0 C Library <https://github.com/tatsuhiro-t/nghttp2>`_
+* ドキュメントは Sphinx で書かれている。
+* クライアント実装
+
+  - Firefoxはおすすめ。
+  - Chromeiumは専用Patchを当てる必要があるので、敷居が高い。
+  - Rubyはあるが、残念ながらPython実装はない。
+
+
+`mruby_nginx_module <http://www.slideshare.net/cubicdaiya/mrubynginxmodule-at-pyfes-201311>`_ @cubicdaiya
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* `cubicdaiya/mruby_nginx_module <https://github.com/cubicdaiya/mruby_nginx_module>`_
+* ミドルウェアの開発・運用とかやってます。
+* pixiv ではGoをプロダクションコードに使っています。
+  数百行ぐらいだが、止まったらサポートにメールが殺到するレベル。
+  (画像が表示できないということはない。)
+* nginx をいろんなところでつかっています。
+* mruby はリッチな Lua なイメージ
+
+
+`pixiv を支えるインフラの技術 <https://speakerdeck.com/harukasan/the-technology-behind-pixiv-infrastructure>`_ @harukasan
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* お絵かきがもっとたのしくなる場所、クリエイターのためのSNS
+* ログ解析はFluentd
+* 管理ツールは Munin, Nagios, Monit, Cronなど一般的なもの。
+  それにプラスして、Cluster Adminを使用している。
+* Capstrano/Subversionでデプロイ管理
+* 使いやすいツールを自分たちが使いやすいように。
+  PHPの会社だが、Rubyのツールなども使っている。
+* 尖ったことはせず、無理せず運用できる状態にもっていく。
+
+
+`git-flowは死んだ <https://docs.google.com/presentation/d/17s_rcS4E16Tuq-w_TpQ4MtJoGvWvEbQsDgYmoFz8frA/pub?start=false&loop=false&delayms=3000#slide=id.p>`_ @troter
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* べつに、死んでないよね→プロジェクト次第。
+* @tk0miyaの後輩から、@everseの部下に。
+* A Successfull Git Branching Model = git-flow ?→昔からある安定trunkパターンに近い
+* git-flow 日常的に使っている人→けっこういる。
+* git-flow の辛いところ。抽象化されている。実装上の制限がある。ちょっとおおげさ。
+* そもそもブランチ管理よりコードに集中したい。
+* `GitHub Flow (Japanese translation) <https://gist.github.com/Gab-km/3705015>`_
+* みんな忘れていること。→git-flowはpull-requestがないときの運用。
+* pull-requestでもっと軽量にできる。
+* 今こそSubversion UPDATE!
+* Subversion は1.8で A Successfull Git Branching Model が可能になった！
+
+
+nginx + lua @moriyoshi
+~~~~~~~~~~~~~~~~~~~~~~
+
+* :strike:`Pythonistaのための` そもそもluaってなんだろう？
+* Golang 書いた後書くと混乱したりします。
+* nginx使うならlua使えないと損
+
+
+`Ansible入門...? <http://www.slideshare.net/r_rudi/ansible-28755803>`_ @r_rudi
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* `ansible/ansible <https://github.com/ansible/ansible>`_
+* 全体的にAnsibleのデザインは微妙
+* ansibleとは構成管理ツール？→お前がそう思うんならそうなんだろうお前ん中ではな
+* shell module → Python が書けない人も shell でかけるので便利。fabric いらなくない？
+* これからも使うという方は AnsibleWorks AWX を買ってあげるといいかなと。10ユーザーまでは無料。
+* module はスクリプト言語だったらなんでも書ける。残念ながらGolangは無理。
+* YAMLで書きにくいなら、moduleを作成する。
+* 何台ぐらい使えるの？→5000台使用している例がある。
+* ansible は自動実行ツールとしても使える。実行速度は十分速い。
+* ansible 本がでました。
+
+
+業界団体の運営について @aishimau
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* @shiumachi の姉です。
+* 業界団体のお仕事→人・もの・金の管理・運用、事業計画、実行部隊、雑務
+* 職種に関係なく仕事に必要とされること。
+
+  - 人の話を聞くこと。
+  - 理解すること。
+  - 整理してあげること。
+  - 自分でどうゆう答えをだすか。
+  - それを説明する。
+  - ＋α 何を言われてもブレない心。バランス感覚。政治的理解
+
+* おしらせ：コミックマーケットに出展します。
+
+
+`Introduction to Python 3.4 as of beta 1 <http://www.slideshare.net/torufurukawa/python34intro>`_ @torufurukawa
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* 職業はプログラマー(39)です。
+* 来年の2月にFinalリリースがでます。
+* 構文の追加、変更はなし。ライブラリの追加、向上。
+* asyncio シングルスレッドで並行処理するライブラリ→PEP読んで。
+* enum 列挙型が追加。定数を安全に記述できる。
+* ensurepip パッケージインストーラが事実上入ってくる。
+* pathlib パスをオブジェクトっぽく使えるようになる。
+* selectors I/O マルチプレクスを手軽に。
+* statistics 簡単な統計処理
+* tracemalloc メモリのアロケーション
+
+
+参加者・発表者Blog
+------------------
+
+* `#pyfes 2013.11に遊びに行ってきました。 - 納豆ペペロンチーノ日記 <http://matope.hatenablog.com/entry/2013/11/30/220721>`_
+* `Python Developers Festa 2013.11 - 彷徨えるフジワラ <http://d.hatena.ne.jp/flying-foozy/20131130/1385818994>`_
+* `#pyfes 2013.11 で教えてもらった pathlib が python2.6 で使えなくて愕然とした話。 - Hack like a rolling stone <http://tk0miya.hatenablog.com/entry/2013/12/01/122014>`_
+* `ぱいそんにっき • pyfes 2013.11 <http://pydiary.tumblr.com/post/68599411629/pyfes-2013-11>`_
+* `Ansible入門...?という発表をしました — そこはかとなく書くよん。 <http://tdoc.info/blog/2013/12/03/ansible_advent.html>`_
+* `#pyfes 2013.11で発表してきました - BLOG.harukasan.jp <http://blog.harukasan.jp/entry/2013/12/08/003314>`_
+
+
+.. author:: default
+.. categories:: Python, pyfes
+.. tags:: Python, pyfes
+.. comments::

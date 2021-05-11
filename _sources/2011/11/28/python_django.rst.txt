@@ -1,0 +1,28 @@
+Python-Django試行錯誤
+==================================
+
+| まー\ `Djangoのドキュメント <http://djangoproject.jp/doc/ja/1.0/index.html>`__\ を進めているわけです。
+
+| いや正確には”進めようと”しているわけなのですが、
+| 「進まない……」
+
+| 何も考えずに記事の通りにやっていけば進むのかもしれませんが、
+| ただチュートリアルを進めていくだけじゃ
+| あまり身につかないだろうなと思い、
+| 「今はPostgreSQLを立てないでHeroku＋Djangoでやる」
+| という目標を立ててやっています。
+
+| Proclieって何だ。
+| gunicornって何だ。
+| psycopg2って何だ。
+| つーかDjangoが1.0と1.3でどう違うんだ。
+| Herokuはどうゆう動きをしているんだ。
+
+| と知らないことづくしですが、
+| それでこそやり甲斐があるってものですかね。
+| 地道に焦らずやっていこうと思います。
+
+.. author:: default
+.. categories:: Heroku, Django, Python
+.. tags:: Heroku, Django, Python
+.. comments::

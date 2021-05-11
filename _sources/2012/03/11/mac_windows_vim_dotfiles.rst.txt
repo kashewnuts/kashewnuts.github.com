@@ -1,0 +1,64 @@
+MacとWindowsでvimのdotfiles管理してみた。
+==============================================================
+
+| 去る3/3、\ `TokyoVim#4 <http://partake.in/events/ad1f64a2-56fc-4e43-a187-f7a2e6695296>`__\ に行って参りました。
+| 参加登録の〆切は過ぎていたのですが、
+| 主催の\ `@kana1 <https://twitter.com/#!/kana1>`__\ さんに直接連絡することで何とか参加！
+| いや〜きいてみるものですね。
+| 当日の様子は\ `@usaturn <https://twitter.com/#!/usaturn>`__\ さんがまとめてくれています。
+`*TokyoVim*\ #\ *4* - Yukarin'Note <https://yukar.in/note/ckFoME>`__
+
+| 自分が当日やったこととしては以下の3つです。
+| * \ `NeoBundle.vim <http://vim-users.jp/2011/10/hack238/>`__\ を用いてdotfilesの整理
+| * VMに入れているWindows7にNeoBundle.vim導入
+| * バイナリエディタとしてのVimの使い方調べ
+
+| dotfilesについては以下のURLが詳しいです。
+| gitが入っていれば2〜3分でいつも使ってる自分の環境が構築出来ます。
+| `ナウなヤングのためのgithub入門講座　-基本機能からdotfiles管理まで- - 馬鹿と天才は紙一重 <http://d.hatena.ne.jp/shim0mura/20111212/1323660740>`__
+
+| 少し引用させてもらうと、
+| dotfilesはhomeディレクトリにある各種プログラムの設定ファイルです。
+| .vimrcとか.screenrcとか、ああいうやつです。
+| これらがgithubにあると同じ設定ファイルを
+| 例えば会社と自宅のような別環境で使うことができ、
+| どちらかで設定をしなおすという面倒なこともなくなり便利です。
+
+| 以前は下記リンクを参考にvundleでやってみましたが、
+| neobundle.vimでまたやり直してみました。
+
+| 今回移行しようと思った最大の理由は、
+| **Pluginを入れるたびに出てくるDOS窓が煩わしかったから。**
+
+| `そろそろしっかりvimを使う。dotfilesのgithub管理とvundleの導入。 - holyppの日記 <http://d.hatena.ne.jp/holypp/20110515/1305443997>`__
+| `そろそろしっかりvimを使う。github+vundleを利用したWindowsとの同期。 - holyppの日記 <http://d.hatena.ne.jp/holypp/20110516/1305552171>`__
+
+| vimprocという非同期処理を行う
+| Pluginを動かすのに少し手こずりましたが、
+| MBAに入れるときは
+| `30秒で MacVim に VimShell を入れる最速の方法 \| ウェブル <http://weble.org/2011/01/08/macvim-vimshell>`__
+| を参考に\_vimrcに
+
+.. code-block:: bash
+
+    let g:vimproc_dll_path = $VIMRUNTIME . '/autoload/proc.so'
+
+| と記述することであっさり動きました。
+| Windowsでも\ `Windows7 GVim にVimShellをインストールする \| karakaram-blog <http://www.karakaram.com/vim/windows-vimshell/>`__
+| を参考に解決することができました。
+| proc.dllをproc.soにリネームして.vim/autoload/にコピーすることで完了。
+| Vim上で、
+
+.. code-block:: bash
+
+    :Unite neobundle/install:!
+
+| と打つとDOS窓がでることなく次々にUpdateが実行されていきます！
+| これでMacだろうがWindowsだろうが
+| 問題なく自分のVimが使えるようになりました。
+| 参加者のみなさんお疲れ様でした！
+
+.. author:: default
+.. categories:: 開発環境, Git/Mercurial, Vim, Mac, Windows7
+.. tags:: 開発環境, Git/Mercurial, Vim, Mac, Windows7
+.. comments::

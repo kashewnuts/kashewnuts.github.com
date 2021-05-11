@@ -1,0 +1,41 @@
+Python開発環境-virtualenvと-pip-
+======================================================
+
+| virtualenvはPythonの仮想的な開発環境を作るライブラリ。
+| いろいろな実行環境(Pythonのバージョンが違う、モジュールが違う、etc)
+| をごちゃごちゃさせたくない時に便利らしいです。
+| (参考にしたのは `こちら <http://todayspython.blogspot.com/2011/07/virtualenv.html>`__ )
+
+| pipはPythonにおけるバージョン管理システム。
+| 他にもeasy\_installとかdistributeなどがあるらしいのだけど、
+| 将来統合される予定なので好きなモノを使えばいいらしいです。
+| (ソースは `こちら <http://shimizukawa.bitbucket.io/python-distribute-ja/introduction.html#state-of-packaging-info>`__ )
+
+| 今回はHerokuの公式ドキュメントに従ってpipをインストール。
+| virtualenvとpipをインストールするために、
+| 公式ドキュメントを眺めていたのだが全然ピンとこない。
+| そこでGoogle先生で調べていたら、
+| `Virtualenv — 清水川 Docs v1.0 documentation <http://www.freia.jp/taka/docs/pyhack4/virtualenv/index.html>`__ にたどり着きました。
+| 記述の通りに打ち込んだら一発でインストールできました。
+
+.. code-block:: bash
+
+    New python executable in env1/bin/python
+    Installing setuptools............................done.
+    Installing pip.....................done.
+
+| あっという間でした。
+| virtualenv入れるとpipも一緒に入るのね。
+| 今の段階では-distributeオプションをつけていないので、
+| デフォルトのsetuptoolsになっています。
+| (virtualenvはvirtualenvwapperを入れると更に便利らしい)
+
+| 清水川先生のおすすめは
+| virtualenv + distribute 環境下で buildout + distribute
+| らしいけど(ソースは\ `こちら <http://www.freia.jp/taka/blog/691?utm_source=rss&utm_medium=rss>`__)、
+| とりあえずHerokuの公式ドキュメントを見ながら進めてみよう。
+
+.. author:: default
+.. categories:: 開発環境, Heroku, Python
+.. tags:: 開発環境, Heroku, Python
+.. comments::

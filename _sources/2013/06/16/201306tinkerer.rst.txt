@@ -1,0 +1,191 @@
+===================================
+TinkererでBlogを書こう(Ver1.2)
+===================================
+
+昨年末 `Sphinx Advent Calendar 2012 - connpass <http://connpass.com/event/1441/>`_ で `Tinkererでブログを書こう — kashew_nuts-blog <http://kashewnuts.github.io/2012/12/17/sphinxadventcalender017.html>`_ という記事を書きましたが、
+`Tinkerer`_ も Version が1.2になり、運用方法も記事を書いた時と変わってきたので、改めて書き直してみます。
+
+
+.. contents::
+   :local:
+
+Tinkererとは
+-------------------------
+
+`Tinkerer`_ とはSphinxを使った Blog 作成ツールです。 `Sphinx Advent Calendar 2012 (全部俺) <http://advent-calendar2012.usaturn.net/>`_ の `@usaturn <https://twitter.com/usaturn>`_ さんや、 `Sphinx Advent Calendar 2012 <http://connpass.com/event/1441/>`_ 主催の `@r_rudi <https://twitter.com/r_rudi>`_ さんもTinkererを使用しています。今回はそのTinkererについて導入から実際に公開するまでの一連の流れを紹介してみたいと思います。
+
+
+事前準備
+-------------------------
+
+以下が用意されていることを前提としています。
+
+* Python2.7
+* pip
+* mercurial
+* virtualenv, virtualenvwapper(お好みで)
+
+bitbucketの準備
+-------------------------
+
+* bitbucketに以下の名前でリポジトリ作成
+
+  **<username>.bitbucket.org** (private レポジトリ)
+
+.. note::
+
+    <username>には_(アンダーバー)などの記号を含まないほうが無難です。記号が含まれていた場合、Twitterのような外部サービスと連携したい時に問題が発生することがあります。私のアカウント名は通常 kashew_nuts を使用していますが、そのままのアカウントで作成すると、Tweetボタンで Blog のURLが作成されず困りました。
+
+
+初期設定
+-------------------------
+
+以下のようにすると Blog を書くのに必要なファイル類ができあがります。
+
+.. code-block:: bash
+
+    $ pip install tinkerer # Tinkererのインストール
+    $ mkdir myblog
+    $ cd myblog
+    $ tinkerer -s # Tinkererの初期セットアップ
+
+次に Blog のタイトルやあなたの名前を登録しましょう。
+お好きなエディタで conf.py を編集します。
+私は普段 Vim を使用しているので Vim で書きます。
+シンタックスハイライトが特別な設定なしで使えるため非常に便利です。
+
+.. code-block:: bash
+
+  $ vim conf.py
+
+例として以下に私が設定している conf.py を上げたいと思います。
+''でくくられている箇所をお好きな内容に変えて設定して下さい。
+
+.. code-block:: bash
+
+  # Change this to the name of your blog
+  project = 'kashew_nuts-blog'
+
+  # Change this to the tagline of your blog
+  tagline = 'Load To Pythonista'
+
+  # Change this to your name
+  author = 'Kashun YOSHIDA'
+
+  # Change this to your copyright string
+  copyright = '2011-2013, ' + author
+
+  # Change this to your blog root URL (required for RSS feed)
+  website = 'http://kashewnuts.github.io/'
+
+
+これで、Tinkererで Blog を書く初期設定は終了です。
+
+
+Blog を書こう
+-------------------------
+
+.. code-block:: bash
+
+  $ tinkerer -p "first post" # 記事の下書き作成
+  $ vim 2013/06/16/first_post.rst # 記事の作成
+  $ tinkerer -b # 記事のHTMLを作成
+
+これで、blog/html/ 以下に記事が作成されます。
+どんな記事が作成されたのか、以下のコマンドを打って確認してみましょう。
+
+.. code-block:: bash
+
+  $ python -m SimpleHTTPServer
+
+ネットワーク受信接続の許可を求められますので、 **許可** を選択して下さい。ブラウザのロケーションバーに http://127.0.0.1:8000 とタイプすると、あなたが作成した記事を確認することができます。
+
+.. note::
+
+    SimpleHTTPSererのデフォルトのポート番号は8000ですが、以下のように記述するとポート番号を指定できます。この例ではポート番号を8080に設定しています。
+
+.. code-block:: bash
+
+  $ python -m SimpleHTTPServer 8080
+
+Blog を公開しよう
+-------------------------
+
+いくつかあるようですが、ここは私が実際に使用している方法を紹介したいと思います。
+初めに準備した bitbucket リポジトリに以下の内容を上げてしまいましょう。
+
+`前回書いた記事 <http://kashewnuts.github.io/2012/12/17/sphinxadventcalender017.html>`_ では index.html と blog/ 以下全てと書きましたが、
+これだと Blog を開いた時に、`http://hogehoge.bitbucket.io/blog/html/index.html` と長ったらしいURLになってしまいます。
+
+そこで今回は "blog/html/ 以下全て" の生成物を上げます。
+
+.. warning::
+
+    くれぐれも以下の操作を blog/html/ 以下で行わないで下さい。Tinkerer は "tinker -b" で
+    ファイルを生成するたびにファイルを全て新しく作り直すので、Mercurial の管理情報が消え、
+    新しい記事を挙げることができなくなります！
+
+    これを一番シンプルな方法は、"tinker -b" で生成した "blog/html/" 以下の生成物を
+    myblog とは別のディレクトリで管理することです。
+
+Mercurial を使用した方法を記述します。
+
+.. code-block:: bash
+
+  #  Blog 管理用ディレクトリの準備
+  $ mkdir public
+  $ cp -R blog/html/ public/.   # スクリプト化すると便利です。
+  $ cd public
+
+  # Mercurial 初期設定
+  $ hg init
+  $ vim .hg/hgrc
+
+  [paths]
+  default=ssh://hg@bitbucket.io/<username>/<username>.bitbucket.org
+
+  #  Blog にpush
+  $ hg add .
+  $ hg commit -m "first post"
+  $ hg push
+
+公開されるまでに数分程度待つかもしれません。数分後 `https://<username>.bitbucket.io` にアクセスすると、 Blog ページが表示できるようになります。
+
+NEXT STEP
+-------------------------
+
+以上で Blog を書く環境が整ったと思いますが、Tinkerer では他の Blog と同じように色々とカス
+タマイズができます。
+事例を紹介しますので、興味を持たれた方は是非挑戦してみて下さい。
+
+* サイドバーに項目追加
+
+  * Recent Posts, Tags, Categories
+  * Twitter Widget
+  * Search Box
+
+* 記事へ埋め込み
+
+  * Twitter のつぶやき
+  * gist
+
+* コメント欄の追加(Disqus, Facebook)
+* Google Analytics の設定
+* テーマのカスタマイズ
+* Favicon の設定
+
+参考
+-------------------------
+
+* `Tinkerer`_
+* `Tinkererを使ってbitbucketでblogはじめました - そこはかとなく書くよ。 <http://d.hatena.ne.jp/rudi/20120106/1325861293>`_
+* `BitBucketで無料ブログをつくる方法 -TinkererとMercurialでバージョン管理可能なブログをつくる- — うさぎ組 <http://kyon-mm.bitbucket.io/blog/html/2013/05/20/start_tinkerer_on_bitbucket.html>`_
+* `Sphinx に色々埋め込んでみる #pyhack — プログラマのネタ帳 二冊目 <http://www.shomah4a.net/2013/03/23/shinx_embed_series.html>`_
+
+.. _Tinkerer: http://tinkerer.me
+
+.. author:: default
+.. categories:: Python, Sphinx, Tinkerer
+.. tags:: Python, Sphinx, Tinkerer
+.. comments::
+

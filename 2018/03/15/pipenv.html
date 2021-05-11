@@ -1,0 +1,291 @@
+<!DOCTYPE html><!--[if lt IE 7]>      <html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="https://www.facebook.com/2008/fbml" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="https://www.facebook.com/2008/fbml" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="https://www.facebook.com/2008/fbml" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="https://www.facebook.com/2008/fbml" class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="description" content="Road To Pythonista">
+        <meta name="viewport" content="width=device-width">
+        
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@kashew_nuts" />
+    <meta property="og:site_name" content="kashew_nuts-blog">
+    <meta property="og:title" content="Pipenvに移行した話">
+    <meta property="og:description" content="Pipenv がPyPAに移ってからしばらく経ちました。
+以前個人のPC環境は virtualenvwrapper を使用していましたが、折を見て自分も pipenv に移行しました。 理由は次の3つです。 virtualenvwrapper スクリプトが bash 起動を遅くする原因になっていた Windows/macOS/Linux問わず同じように使いたかった peco&ghq でのディ...">
+    <meta property='og:url' content="http://kashewnuts.github.io/2018/03/15/pipenv.html">
+    <title>Pipenvに移行した話 &mdash; kashew_nuts-blog</title>
+            <link rel="stylesheet" href="../../../_static/normalize.css" type="text/css">
+            <link rel="stylesheet" href="../../../_static/sphinx.css" type="text/css">
+            <link rel="stylesheet" href="../../../_static/main.css" type="text/css">
+            <link rel="stylesheet" href="../../../_static/flat.css" type="text/css">
+            <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+            <link rel="stylesheet" href="../../../_static/font-awesome.min.css" type="text/css">
+        <link rel="shortcut icon" href="../../../_static/tinkerer.ico" /><!-- Load modernizr and JQuery -->
+        <script src="../../../_static/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="../../../_static/vendor/jquery-1.8.2.min.js"><\/script>')</script>
+        <script src="../../../_static/plugins.js"></script>
+        <script src="../../../_static/main.js"></script>
+        <link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="tmux導入メモ" href="../04/tmux_memo.html" /><link rel="prev" title="瑞牆でボルダリング&amp;キャンプしてきた話" href="../../05/02/climbing_camp_in_mizugaki.html" /><link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/kashew_nuts-blog" /><script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.7.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        SOURCELINK_SUFFIX: '.txt',
+        HAS_SOURCE:  true
+      };
+    </script><script type="text/javascript" src="../../../_static/underscore.js"></script><script type="text/javascript" src="../../../_static/doctools.js"></script><script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script><script type="text/javascript" src="../../../_static/disqus.js"></script><script type="text/javascript" src="../../../_static/google_analytics.js"></script>
+    <meta property="fb:admins" content="200170096719194"/>
+    
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Scroll to content if on small screen
+            if (screen.width < 480)
+            {
+                $(document).scrollTop(document.getElementsByTagName("article")[0].offsetTop - 40);
+            }
+        });
+    </script>
+</head>
+    <body role="document">
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+      <div id="container"><header role="banner">
+            <hgroup>
+              <h1><a href="../../../index.html">kashew_nuts-blog</a></h1><h2>Road To Pythonista</h2></hgroup>
+          </header>
+      <nav role="navigation">
+      <ul>
+        <li class="main-nav">
+            <a href="../../../index.html">Home</a>
+          </li>
+        <li class="main-nav"><a href='https://kashewnuts.github.io/archive.html'>Archive</a></li><li class="main-nav">
+            <a href="http://feeds.feedburner.com/kashew_nuts-blog" title="Subscribe via RSS"><span class="fa fa-lg fa-rss"></span></a>
+          </li></ul>
+    </nav><div class="main-container" role="main"><div class="main wrapper body clearfix"><article>
+    <div class="section" id="pipenv">
+<h1>Pipenvに移行した話<a class="headerlink" href="#pipenv" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">Pipenv</span></code> がPyPAに移ってからしばらく経ちました。
+以前個人のPC環境は <code class="docutils literal notranslate"><span class="pre">virtualenvwrapper</span></code> を使用していましたが、折を見て自分も <code class="docutils literal notranslate"><span class="pre">pipenv</span></code> に移行しました。</p>
+<p>理由は次の3つです。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">virtualenvwrapper</span></code> スクリプトが <code class="docutils literal notranslate"><span class="pre">bash</span></code> 起動を遅くする原因になっていた</p></li>
+<li><p>Windows/macOS/Linux問わず同じように使いたかった</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">peco&amp;ghq</span></code> でのディレクトリの移動や管理に慣れてきた
+(<code class="docutils literal notranslate"><span class="pre">peco&amp;ghq</span></code> に関する記事は探すと色々あったのでこの記事では割愛します。)</p></li>
+</ul>
+<p>現在主に使う環境はこんな感じでやってます。</p>
+<dl class="field-list simple">
+<dt class="field-odd">OS</dt>
+<dd class="field-odd"><p>macOS Sierra/Ubuntu 17.10</p>
+</dd>
+<dt class="field-even">Python</dt>
+<dd class="field-even"><p>3.6.x</p>
+</dd>
+<dt class="field-odd">pipenv</dt>
+<dd class="field-odd"><p>11.8.0</p>
+</dd>
+</dl>
+<div class="section" id="id1">
+<h2>Pipenvとはなんぞや<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>稲田さんのツイートによるとこうです。</p>
+<blockquote class="twitter-tweet" data-conversation="none"><a href="https://twitter.com/methane/status/823442564556537857">https://twitter.com/methane/status/823442564556537857</a></blockquote><p>要は <code class="docutils literal notranslate"><span class="pre">pip</span></code> と <code class="docutils literal notranslate"><span class="pre">virtualenv</span></code> (と <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>) をいい感じにラップしてくれるツールです。
+インストール方法やどんなことができるか詳しくは <a class="reference external" href="http://pipenv-ja.readthedocs.io/ja/translate-ja/">Pipenv: 人間のためのPython開発ワークフロー</a> を参照してください。</p>
+<p>冒頭にある動画を見るとどんなことができるかイメージがつくと思います。</p>
+</div>
+<div class="section" id="id2">
+<h2>個人的Pipenvとの付き合い方<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>前述の通り、Pipenvは <code class="docutils literal notranslate"><span class="pre">pip</span></code> と <code class="docutils literal notranslate"><span class="pre">virtualenv</span></code> をいい感じにラップしてくれるツールなのですが、以下のルールで使用しています。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">PIPENV_VENV_IN_PROJECT=true</span></code> にしてプロジェクトのディレクトリに <code class="docutils literal notranslate"><span class="pre">.venv</span></code> を作成する</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$HOME</span></code> のようなプロジェクトのディレクトリ以外の場所に <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> や <code class="docutils literal notranslate"><span class="pre">Pipfile</span></code> を残置しない</p></li>
+<li><p>困ったときは <code class="docutils literal notranslate"><span class="pre">pip</span></code> と <code class="docutils literal notranslate"><span class="pre">virtualenv</span></code> の使い方にならう</p></li>
+</ul>
+<div class="section" id="pipenv-venv-in-project-true">
+<h3>PIPENV_VENV_IN_PROJECT=true を設定<a class="headerlink" href="#pipenv-venv-in-project-true" title="Permalink to this headline">¶</a></h3>
+<p>これを <code class="docutils literal notranslate"><span class="pre">bashrc</span></code> などに設定しておくと、プロジェクトディレクトリ(<code class="docutils literal notranslate"><span class="pre">~/projects/hoge</span></code> など)で <code class="docutils literal notranslate"><span class="pre">pipenv</span> <span class="pre">install/shell</span></code> した時に <code class="docutils literal notranslate"><span class="pre">~/projects/hoge/.venv</span></code> となるように仮想環境を作成してくれます。</p>
+<p>デフォルトの挙動だと <code class="docutils literal notranslate"><span class="pre">/Users/&lt;username&gt;/.local/share/virtualenvs/プロジェクトのディレクトリ名+ハッシュ値</span></code> のように仮想環境名が決まるため、どこを指定すればいいのかわかりにくいです。これが <code class="docutils literal notranslate"><span class="pre">PyCharm</span></code> や <code class="docutils literal notranslate"><span class="pre">VSCode</span></code> で仮想環境を設定するときに面倒でした。</p>
+<p>プロジェクトディレクトリに仮想環境が作成されることで、その欠点が解消できます。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>WORKON_HOMEを指定すると、指定した箇所にまとめて仮想環境を作成してくれます。
+仮想環境を作成する場所をまとめたい時は <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">WORKON_HOME=~/.virtualenvs</span></code> などとするとよいです。</p>
+</div>
+</div>
+<div class="section" id="requirements-txt-pipfile">
+<h3>requirements.txt や Pipfile を放置しない<a class="headerlink" href="#requirements-txt-pipfile" title="Permalink to this headline">¶</a></h3>
+<p>ホームディレクトリ ( <code class="docutils literal notranslate"><span class="pre">$HOME</span></code> )に <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> や <code class="docutils literal notranslate"><span class="pre">Pipfile</span></code> を放置していた結果、
+個別のプロジェクトディレクトリ以下で <code class="docutils literal notranslate"><span class="pre">pipenv</span> <span class="pre">install</span></code> するときに意図しないライブラリがインストールされました。</p>
+<p>原因は <code class="docutils literal notranslate"><span class="pre">$HOME</span></code> に放置していた <code class="docutils literal notranslate"><span class="pre">pipenv</span></code> や <code class="docutils literal notranslate"><span class="pre">Pipfile</span></code> を読み込んでいたからでした。
+しかし <code class="docutils literal notranslate"><span class="pre">$HOME</span></code> に置いていたファイルが影響するとは想定していませんでしたので、
+プロジェクトのディレクトリ以外に <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> や <code class="docutils literal notranslate"><span class="pre">Pipfile</span></code> を放置しないようにしました。</p>
+</div>
+<div class="section" id="pip-virtualenv">
+<h3>困ったときは pip と virtualenv に戻る<a class="headerlink" href="#pip-virtualenv" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">pipenv</span></code> に移行しましたが、「 <code class="docutils literal notranslate"><span class="pre">pipenv</span></code> は <code class="docutils literal notranslate"><span class="pre">pip</span></code> と <code class="docutils literal notranslate"><span class="pre">virtualenv</span></code> をいい感じにしたい」から使っています。
+なので個人的には、次のようにコマンドを置き換えて使ってる感じです。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 54%" />
+<col style="width: 46%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>virtualenvの場合</p></th>
+<th class="head"><p>pipenvの場合</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>virtualenv .venv</p></td>
+<td><p>pipenv install/shell</p></td>
+</tr>
+<tr class="row-odd"><td><p>souce .venv/bin/activate</p></td>
+<td><p>pipenv shell</p></td>
+</tr>
+<tr class="row-even"><td><p>deactivate</p></td>
+<td><p>exit</p></td>
+</tr>
+</tbody>
+</table>
+<p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> とかは普通に使ってますし、 <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> も現役です。</p>
+<p>注意すべきところとして、 <code class="docutils literal notranslate"><span class="pre">pipenv</span></code> はそれ自体で単体のツールではなく複数のライブラリを組み合わせて使用するものだということです。
+何かトラブルが起きた時は最低限 <code class="docutils literal notranslate"><span class="pre">pip</span></code> と <code class="docutils literal notranslate"><span class="pre">virtualenv</span></code> の使い方が理解できていないとツラいかもしれません。</p>
+<p>2018/03/15時点での依存関係は次のとおりです。</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(test)</span><span class="gp">kashewnuts@ubuntu:test$ </span>pipenv graph
+
+<span class="go">pipenv==11.8.0</span>
+<span class="go">  - certifi [required: Any, installed: 2018.1.18]</span>
+<span class="go">  - pip [required: &gt;=9.0.1, installed: 9.0.1]</span>
+<span class="go">  - setuptools [required: &gt;=36.2.1, installed: 38.5.2]</span>
+<span class="go">  - virtualenv [required: Any, installed: 15.1.0]</span>
+<span class="go">  - virtualenv-clone [required: &gt;=0.2.5, installed: 0.3.0]</span>
+</pre></div>
+</div>
+<p>触り始めの <code class="docutils literal notranslate"><span class="pre">pipenv==8.2.x</span></code> と比べて依存するライブラリが必要なものに絞られてきて、いい感じになってきました。
+しかし、 <code class="docutils literal notranslate"><span class="pre">virtualenv+pip</span></code> をラップして使うため予期せぬ不具合を踏むこともあります。
+そんなときは <code class="docutils literal notranslate"><span class="pre">pipenv</span></code> の問題なのか、それとも <code class="docutils literal notranslate"><span class="pre">virtualenv</span></code> や <code class="docutils literal notranslate"><span class="pre">pip</span></code> の問題なのかを切り分けて考えるとよいと思います。</p>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>実際どうなのよ<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p><span class="strike">「普通にvirtualenv/venv+pip使えばいいじゃん」という方には不要なものだと思います。</span></p>
+<p>個人的には結構便利です。ただ慣れるまでハマりどころはあるかもしれません。</p>
+<p><code class="docutils literal notranslate"><span class="pre">virtualenvwrapper</span></code> が担っていていたプロジェクトへの移動を <code class="docutils literal notranslate"><span class="pre">peco&amp;ghq</span></code> でできるようにしたので、
+<code class="docutils literal notranslate"><span class="pre">pipenv</span></code> にそれ以外のところを任せられてる感じです。</p>
+<p>Pythonに限った話だと <code class="docutils literal notranslate"><span class="pre">virtualenvwrapper</span></code> の方が「仮想環境の管理」＋「自動activate」とセットで機能が提供されているので楽でした。
+<code class="docutils literal notranslate"><span class="pre">workon</span> <span class="pre">projectname</span></code> で「自動activate」+「プロジェクトディレクトリへの移動」なんかもできましたし安定していました。</p>
+<p>しかし「 <code class="docutils literal notranslate"><span class="pre">.env</span></code> ファイルを自動で読み込んでくれると嬉しいな」とか、Windows/macOS/Linuxと共通の手順で導入できるし、 <code class="docutils literal notranslate"><span class="pre">peco&amp;ghq</span></code> を活用すればディレクトリの移動もお楽にいけそうだと思ったので、「個人でよしなにやるプロジェクトなら <code class="docutils literal notranslate"><span class="pre">pipenv</span></code> の組み合わせでいいかー」と思い移行することにしました。</p>
+<p>今のところ個人の環境でしか試してないので、本番環境で運用したりしてる人はどうしているのかなとは気になりますね。</p>
+</div>
+</div>
+
+    <br/>
+
+<!-- ninja_omatome -->
+<div class="ninja_onebutton">
+<script type="text/javascript">
+//<![CDATA[
+(function(d){
+if(typeof(window.NINJA_CO_JP_ONETAG_BUTTON_00eb4412f1c80db8bbc1af50c58e8ee6)=='undefined'){
+    document.write("<sc"+"ript type='text\/javascript' src='//omt.shinobi.jp\/b\/00eb4412f1c80db8bbc1af50c58e8ee6'><\/sc"+"ript>");
+}else{
+    window.NINJA_CO_JP_ONETAG_BUTTON_00eb4412f1c80db8bbc1af50c58e8ee6.ONETAGButton_Load();}
+})(document);
+//]]>
+</script><span class="ninja_onebutton_hidden" style="display:none;"></span><span style="display:none;" class="ninja_onebutton_hidden"></span>
+</div>
+<!-- ninja_omatome -->
+
+</div>
+    <div class="postmeta">
+        <div class="author">
+            <span>Posted by Kashun YOSHIDA</span>
+        </div>
+        <div class="categories">
+            <span>
+                Filed under:
+                <a href="../../../categories/python.html">Python</a></span>
+        </div>
+        <div class="tags">
+            <span>
+                Tags:
+                <a href="../../../tags/python.html">Python</a></span>
+        </div>
+        </div>
+    <div id="disqus_thread"></div><script type="text/javascript">    var disqus_shortname = "kashewnutsblog";    var disqus_identifier = "2018/03/15/pipenv";    disqus_thread();</script><noscript>Please enable JavaScript to view the    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<ul class="related clearfix">
+            <li class="left"> &laquo; <a href="../../05/02/climbing_camp_in_mizugaki.html">瑞牆でボルダリング&amp;キャンプしてきた話</a></li>
+            <li class="right"><a href="../04/tmux_memo.html">tmux導入メモ</a> &raquo; </li>
+        </ul></article><aside class="sidebar"><section><div class="widget">
+  <div>
+    <a href="//af.moshimo.com/af/c/click?a_id=815168&p_id=1166&pc_id=1793&pl_id=20228&guid=ON" target="_blank" rel="nofollow"><img src="//image.moshimo.com/af-img/0408/000000020228.png" width="300" height="250" style="border:none;"></a><img src="//i.moshimo.com/af/i/impression?a_id=815168&p_id=1166&pc_id=1793&pl_id=20228" width="1" height="1" style="border:none;">
+  </div>
+</div></section><section><div class="widget" id="searchbox" role="search">
+    <h1><a href="#searchbox">Search</a></h1>
+    <form action="../../../search.html" method="get">
+        <input type="text" name="q" />
+        <button type="submit"><span class="fa fa-search"></span></button>
+    </form>
+</div></section><section><div class="widget">
+    <h1>Recent Posts</h1>
+    <ul><li>
+            <a href="../../../2020/11/30/climbing_shoes_history.html">クライミングシューズ遍歴</a>
+        </li><li>
+            <a href="../../../2020/06/11/wsl2.html">WSL2を使ってみている</a>
+        </li><li>
+            <a href="../../../2020/05/05/upgrade_ubuntu_20_04_lts.html">Ubuntu18.04LTSから20.04LTSにアップグレードした</a>
+        </li><li>
+            <a href="../../../2020/04/08/migrated_lsp_client_to_coc_nvim.html">LSPクライアントをcoc.nvimにした話</a>
+        </li><li>
+            <a href="../../../2019/01/28/move_from_jedivim_to_vimlsp.html">Pythonの補完環境をjedi-vimからvim-lspに移行した話</a>
+        </li><li>
+            <a href="../../../2019/01/05/2018and2019.html">2018年の振り返りと2019年抱負</a>
+        </li><li>
+            <a href="../../12/02/bp_advent_calender.html">2018年版Life ChangingだったVimプラグインTOP3</a>
+        </li><li>
+            <a href="../../11/06/yosemite_tour.html">ヨセミテツアー日記</a>
+        </li><li>
+            <a href="../../09/22/pyconjp2018.html">PyConJP2018でPyCharmの話をしてきました #pyconjp</a>
+        </li><li>
+            <a href="../../08/22/jedivim_memo.html">VimとPythonの補完についてのメモ</a>
+        </li></ul>
+</div>
+</section><section><div class="widget">
+    <h1>Categories</h1>
+    <ul><li><a href="../../../categories/64bit.html">64bit</a> (2)</li><li><a href="../../../categories/android.html">Android</a> (3)</li><li><a href="../../../categories/bouldering.html">bouldering</a> (2)</li><li><a href="../../../categories/bouldering.html">Bouldering</a> (4)</li><li><a href="../../../categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="../../../categories/c_c.html">C/C++</a> (5)</li><li><a href="../../../categories/chrome.html">Chrome</a> (2)</li><li><a href="../../../categories/db.html">DB</a> (1)</li><li><a href="../../../categories/django.html">Django</a> (10)</li><li><a href="../../../categories/facebook.html">Facebook</a> (1)</li><li><a href="../../../categories/firefox.html">Firefox</a> (1)</li><li><a href="../../../categories/git_mercurial.html">Git/Mercurial</a> (8)</li><li><a href="../../../categories/golang.html">Golang</a> (1)</li><li><a href="../../../categories/google.html">Google</a> (5)</li><li><a href="../../../categories/heroku.html">Heroku</a> (6)</li><li><a href="../../../categories/java.html">Java</a> (2)</li><li><a href="../../../categories/javascript.html">JavaScript</a> (4)</li><li><a href="../../../categories/jupyter.html">Jupyter</a> (1)</li><li><a href="../../../categories/kabepy.html">kabepy</a> (2)</li><li><a href="../../../categories/linux.html">Linux</a> (5)</li><li><a href="../../../categories/lt.html">LT</a> (5)</li><li><a href="../../../categories/mac.html">Mac</a> (8)</li><li><a href="../../../categories/pycharm.html">PyCharm</a> (2)</li><li><a href="../../../categories/pyconjp.html">PyConJP</a> (1)</li><li><a href="../../../categories/pyfes.html">pyfes</a> (7)</li><li><a href="../../../categories/python.html">Python</a> (70)</li><li><a href="../../../categories/slack.html">Slack</a> (1)</li><li><a href="../../../categories/sphinx.html">Sphinx</a> (8)</li><li><a href="../../../categories/sqlalchemy.html">SQLAlchemy</a> (1)</li><li><a href="../../../categories/ssd.html">SSD</a> (1)</li><li><a href="../../../categories/tddbc.html">TDDBC</a> (1)</li><li><a href="../../../categories/tinkerer.html">Tinkerer</a> (7)</li><li><a href="../../../categories/tmux.html">tmux</a> (1)</li><li><a href="../../../categories/ubuntu.html">Ubuntu</a> (3)</li><li><a href="../../../categories/vagrant.html">Vagrant</a> (1)</li><li><a href="../../../categories/vim.html">Vim</a> (24)</li><li><a href="../../../categories/vimconf.html">VimConf</a> (3)</li><li><a href="../../../categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="../../../categories/windows.html">Windows</a> (3)</li><li><a href="../../../categories/windows7.html">Windows7</a> (4)</li><li><a href="../../../categories/wsl.html">WSL</a> (1)</li><li><a href="../../../categories/%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0.html">アルゴリズム</a> (1)</li><li><a href="../../../categories/%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3.html">セキュリティ</a> (2)</li><li><a href="../../../categories/%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF.html">ネットワーク</a> (1)</li><li><a href="../../../categories/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0.html">プログラミング</a> (7)</li><li><a href="../../../categories/%E5%8B%89%E5%BC%B7%E4%BC%9A.html">勉強会</a> (30)</li><li><a href="../../../categories/%E5%BF%9C%E7%94%A8%E6%83%85%E5%A0%B1%E6%8A%80%E8%A1%93%E8%80%85.html">応用情報技術者</a> (10)</li><li><a href="../../../categories/%E6%83%85%E5%A0%B1%E5%87%A6%E7%90%86%E6%8A%80%E8%A1%93%E8%80%85%E8%A9%A6%E9%A8%93.html">情報処理技術者試験</a> (10)</li><li><a href="../../../categories/%E6%9C%AC.html">本</a> (29)</li><li><a href="../../../categories/%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83.html">開発環境</a> (11)</li><li><a href="../../../categories/%E9%9B%91%E8%A8%98.html">雑記</a> (38)</li><li><a href="../../../categories/%E9%AB%98%E9%80%9F%E5%8C%96.html">高速化</a> (1)</li></ul>
+</div></section><section><div class="widget">
+    <h1>About Me</h1>
+    <div>
+        <a href="https://about.me/kashew_nuts">
+            <img src="https://pbs.twimg.com/profile_images/378800000438956976/3e61e7ae64d916ba0451a44c3b8ce347.jpeg"
+            width="128px"
+            height="128px" />
+        </a>
+        <h4><a href="https://twitter.com/kashew_nuts">kashew_nuts
+                (KashunYOSHIDA)</a></h4>
+        <p>人生という壁を登るSoftwareDeveloper</p>
+        <a class="twitter-timeline" data-width="300" data-height="800" data-theme="dark" href="https://twitter.com/kashew_nuts">Tweets by kashew_nuts</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+</div></section></aside></div> <!-- #main --></div> <!-- #main-container -->
+
+        <div class="footer-container" role="contentinfo"><footer class="wrapper">&copy; Copyright 2011-2020, Kashun YOSHIDA. Powered by <a href="http://www.tinkerer.me/">Tinkerer</a> and <a href="http://sphinx.pocoo.org/">Sphinx</a>.</footer></div> <!-- footer-container -->
+
+      </div> <!--! end of #container --><!--[if lt IE 7 ]>
+          <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+          <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+        <![endif]-->
+    </body>
+</html>

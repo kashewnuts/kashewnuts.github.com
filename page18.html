@@ -1,0 +1,736 @@
+<!DOCTYPE html><!--[if lt IE 7]>      <html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="https://www.facebook.com/2008/fbml" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="https://www.facebook.com/2008/fbml" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="https://www.facebook.com/2008/fbml" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="https://www.facebook.com/2008/fbml" class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="description" content="Road To Pythonista">
+        <meta name="viewport" content="width=device-width">
+        <title>Page 18 &mdash; kashew_nuts-blog</title>
+            <link rel="stylesheet" href="_static/normalize.css" type="text/css">
+            <link rel="stylesheet" href="_static/sphinx.css" type="text/css">
+            <link rel="stylesheet" href="_static/main.css" type="text/css">
+            <link rel="stylesheet" href="_static/flat.css" type="text/css">
+            <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+            <link rel="stylesheet" href="_static/font-awesome.min.css" type="text/css">
+        <link rel="shortcut icon" href="_static/tinkerer.ico" /><!-- Load modernizr and JQuery -->
+        <script src="_static/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="_static/vendor/jquery-1.8.2.min.js"><\/script>')</script>
+        <script src="_static/plugins.js"></script>
+        <script src="_static/main.js"></script>
+        <link rel="search" title="Search" href="search.html" /><link rel="next" title="Older" href="page19.html" /><link rel="prev" title="Newer" href="page17.html" /><link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/kashew_nuts-blog" /><script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.7.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        SOURCELINK_SUFFIX: '.txt',
+        HAS_SOURCE:  true
+      };
+    </script><script type="text/javascript" src="_static/underscore.js"></script><script type="text/javascript" src="_static/doctools.js"></script><script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script><script type="text/javascript" src="_static/disqus.js"></script><script type="text/javascript" src="_static/google_analytics.js"></script>
+    <meta property="fb:admins" content="200170096719194"/>
+    
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Scroll to content if on small screen
+            if (screen.width < 480)
+            {
+                $(document).scrollTop(document.getElementsByTagName("article")[0].offsetTop - 40);
+            }
+        });
+    </script>
+</head>
+    <body role="document">
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+      <div id="container"><header role="banner">
+            <hgroup>
+              <h1><a href="index.html">kashew_nuts-blog</a></h1><h2>Road To Pythonista</h2></hgroup>
+          </header>
+      <nav role="navigation">
+      <ul>
+        <li class="main-nav">
+            <a href="index.html">Home</a>
+          </li>
+        <li class="main-nav"><a href='https://kashewnuts.github.io/archive.html'>Archive</a></li><li class="main-nav">
+            <a href="http://feeds.feedburner.com/kashew_nuts-blog" title="Subscribe via RSS"><span class="fa fa-lg fa-rss"></span></a>
+          </li></ul>
+    </nav><div class="main-container" role="main"><div class="main wrapper body clearfix"><article><div class="timestamp postmeta">
+            <span>June 16, 2013</span>
+        </div>
+        <div class="section">
+            <h1><a href="2013/06/16/201306tinkerer.html">TinkererでBlogを書こう(Ver1.2)<a class="headerlink" href="#tinkererblog-ver1-2" title="Permalink to this headline">¶</a></a></h1>
+<p>昨年末 <a class="reference external" href="http://connpass.com/event/1441/">Sphinx Advent Calendar 2012 - connpass</a> で <a class="reference external" href="http://kashewnuts.github.io/2012/12/17/sphinxadventcalender017.html">Tinkererでブログを書こう — kashew_nuts-blog</a> という記事を書きましたが、
+<a class="reference external" href="http://tinkerer.me">Tinkerer</a> も Version が1.2になり、運用方法も記事を書いた時と変わってきたので、改めて書き直してみます。</p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="2013/06/16/201306tinkerer.html#tinkerer" id="id8">Tinkererとは</a></p></li>
+<li><p><a class="reference internal" href="2013/06/16/201306tinkerer.html#id2" id="id9">事前準備</a></p></li>
+<li><p><a class="reference internal" href="2013/06/16/201306tinkerer.html#bitbucket" id="id10">bitbucketの準備</a></p></li>
+<li><p><a class="reference internal" href="2013/06/16/201306tinkerer.html#id3" id="id11">初期設定</a></p></li>
+<li><p><a class="reference internal" href="2013/06/16/201306tinkerer.html#blog" id="id12">Blog を書こう</a></p></li>
+<li><p><a class="reference internal" href="2013/06/16/201306tinkerer.html#id4" id="id13">Blog を公開しよう</a></p></li>
+<li><p><a class="reference internal" href="2013/06/16/201306tinkerer.html#next-step" id="id14">NEXT STEP</a></p></li>
+<li><p><a class="reference internal" href="2013/06/16/201306tinkerer.html#id6" id="id15">参考</a></p></li>
+</ul>
+</div>
+<div class="section" id="tinkerer">
+<h2><a class="toc-backref" href="#id8">Tinkererとは</a><a class="headerlink" href="#tinkerer" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://tinkerer.me">Tinkerer</a> とはSphinxを使った Blog 作成ツールです。 <a class="reference external" href="http://advent-calendar2012.usaturn.net/">Sphinx Advent Calendar 2012 (全部俺)</a> の <a class="reference external" href="https://twitter.com/usaturn">@usaturn</a> さんや、 <a class="reference external" href="http://connpass.com/event/1441/">Sphinx Advent Calendar 2012</a> 主催の <a class="reference external" href="https://twitter.com/r_rudi">@r_rudi</a> さんもTinkererを使用しています。今回はそのTinkererについて導入から実際に公開するまでの一連の流れを紹介してみたいと思います。</p>
+</div>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id9">事前準備</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>以下が用意されていることを前提としています。</p>
+<ul class="simple">
+<li><p>Python2.7</p></li>
+<li><p>pip</p></li>
+<li><p>mercurial</p></li>
+<li><p>virtualenv, virtualenvwapper(お好みで)</p></li>
+</ul>
+</div>
+<div class="section" id="bitbucket">
+<h2><a class="toc-backref" href="#id10">bitbucketの準備</a><a class="headerlink" href="#bitbucket" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>bitbucketに以下の名前でリポジトリ作成</p>
+<p><strong>&lt;username&gt;.bitbucket.org</strong> (private レポジトリ)</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>&lt;username&gt;には_(アンダーバー)などの記号を含まないほうが無難です。記号が含まれていた場合、Twitterのような外部サービスと連携したい時に問題が発生することがあります。私のアカウント名は通常 kashew_nuts を使用していますが、そのままのアカウントで作成すると、Tweetボタンで Blog のURLが作成されず困りました。</p>
+</div>
+</div>
+<div class="section" id="id3">
+<h2><a class="toc-backref" href="#id11">初期設定</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>以下のようにすると Blog を書くのに必要なファイル類ができあがります。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span/>$ pip install tinkerer <span class="c1"># Tinkererのインストール</span>
+$ mkdir myblog
+$ <span class="nb">cd</span> myblog
+$ tinkerer -s <span class="c1"># Tinkererの初期セットアップ</span>
+</pre></div>
+</div>
+<p>次に Blog のタイトルやあなたの名前を登録しましょう。
+お好きなエディタで conf.py を編集します。
+私は普段 Vim を使用しているので Vim で書きます。
+シンタックスハイライトが特別な設定なしで使えるため非常に便利です。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span/>$ vim conf.py
+</pre></div>
+</div>
+<p>例として以下に私が設定している conf.py を上げたいと思います。
+‘’でくくられている箇所をお好きな内容に変えて設定して下さい。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span/><span class="c1"># Change this to the name of your blog</span>
+<span class="nv">project</span> <span class="o">=</span> <span class="s1">'kashew_nuts-blog'</span>
+
+<span class="c1"># Change this to the tagline of your blog</span>
+<span class="nv">tagline</span> <span class="o">=</span> <span class="s1">'Load To Pythonista'</span>
+
+<span class="c1"># Change this to your name</span>
+<span class="nv">author</span> <span class="o">=</span> <span class="s1">'Kashun YOSHIDA'</span>
+
+<span class="c1"># Change this to your copyright string</span>
+<span class="nv">copyright</span> <span class="o">=</span> <span class="s1">'2011-2013, '</span> + author
+
+<span class="c1"># Change this to your blog root URL (required for RSS feed)</span>
+<span class="nv">website</span> <span class="o">=</span> <span class="s1">'http://kashewnuts.github.io/'</span>
+</pre></div>
+</div>
+<p>これで、Tinkererで Blog を書く初期設定は終了です。</p>
+</div>
+<div class="section" id="blog">
+<h2><a class="toc-backref" href="#id12">Blog を書こう</a><a class="headerlink" href="#blog" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span/>$ tinkerer -p <span class="s2">"first post"</span> <span class="c1"># 記事の下書き作成</span>
+$ vim <span class="m">2013</span>/06/16/first_post.rst <span class="c1"># 記事の作成</span>
+$ tinkerer -b <span class="c1"># 記事のHTMLを作成</span>
+</pre></div>
+</div>
+<p>これで、blog/html/ 以下に記事が作成されます。
+どんな記事が作成されたのか、以下のコマンドを打って確認してみましょう。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span/>$ python -m SimpleHTTPServer
+</pre></div>
+</div>
+<p>ネットワーク受信接続の許可を求められますので、 <strong>許可</strong> を選択して下さい。ブラウザのロケーションバーに <a class="reference external" href="http://127.0.0.1:8000">http://127.0.0.1:8000</a> とタイプすると、あなたが作成した記事を確認することができます。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>SimpleHTTPSererのデフォルトのポート番号は8000ですが、以下のように記述するとポート番号を指定できます。この例ではポート番号を8080に設定しています。</p>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span/>$ python -m SimpleHTTPServer <span class="m">8080</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2><a class="toc-backref" href="#id13">Blog を公開しよう</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>いくつかあるようですが、ここは私が実際に使用している方法を紹介したいと思います。
+初めに準備した bitbucket リポジトリに以下の内容を上げてしまいましょう。</p>
+<p><a class="reference external" href="http://kashewnuts.github.io/2012/12/17/sphinxadventcalender017.html">前回書いた記事</a> では index.html と blog/ 以下全てと書きましたが、
+これだと Blog を開いた時に、<cite>http://hogehoge.bitbucket.io/blog/html/index.html</cite> と長ったらしいURLになってしまいます。</p>
+<p>そこで今回は “blog/html/ 以下全て” の生成物を上げます。</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>くれぐれも以下の操作を blog/html/ 以下で行わないで下さい。Tinkerer は “tinker -b” で
+ファイルを生成するたびにファイルを全て新しく作り直すので、Mercurial の管理情報が消え、
+新しい記事を挙げることができなくなります！</p>
+<p>これを一番シンプルな方法は、”tinker -b” で生成した “blog/html/” 以下の生成物を
+myblog とは別のディレクトリで管理することです。</p>
+</div>
+<p>Mercurial を使用した方法を記述します。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span/><span class="c1">#  Blog 管理用ディレクトリの準備</span>
+$ mkdir public
+$ cp -R blog/html/ public/.   <span class="c1"># スクリプト化すると便利です。</span>
+$ <span class="nb">cd</span> public
+
+<span class="c1"># Mercurial 初期設定</span>
+$ hg init
+$ vim .hg/hgrc
+
+<span class="o">[</span>paths<span class="o">]</span>
+<span class="nv">default</span><span class="o">=</span>ssh://hg@bitbucket.io/&lt;username&gt;/&lt;username&gt;.bitbucket.org
+
+<span class="c1">#  Blog にpush</span>
+$ hg add .
+$ hg commit -m <span class="s2">"first post"</span>
+$ hg push
+</pre></div>
+</div>
+<p>公開されるまでに数分程度待つかもしれません。数分後 <cite>https://&lt;username&gt;.bitbucket.io</cite> にアクセスすると、 Blog ページが表示できるようになります。</p>
+</div>
+<div class="section" id="next-step">
+<h2><a class="toc-backref" href="#id14">NEXT STEP</a><a class="headerlink" href="#next-step" title="Permalink to this headline">¶</a></h2>
+<p>以上で Blog を書く環境が整ったと思いますが、Tinkerer では他の Blog と同じように色々とカス
+タマイズができます。
+事例を紹介しますので、興味を持たれた方は是非挑戦してみて下さい。</p>
+<ul class="simple">
+<li><p>サイドバーに項目追加</p>
+<ul>
+<li><p>Recent Posts, Tags, Categories</p></li>
+<li><p>Twitter Widget</p></li>
+<li><p>Search Box</p></li>
+</ul>
+</li>
+<li><p>記事へ埋め込み</p>
+<ul>
+<li><p>Twitter のつぶやき</p></li>
+<li><p>gist</p></li>
+</ul>
+</li>
+<li><p>コメント欄の追加(Disqus, Facebook)</p></li>
+<li><p>Google Analytics の設定</p></li>
+<li><p>テーマのカスタマイズ</p></li>
+<li><p>Favicon の設定</p></li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h2><a class="toc-backref" href="#id15">参考</a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="http://tinkerer.me">Tinkerer</a></p></li>
+<li><p><a class="reference external" href="http://d.hatena.ne.jp/rudi/20120106/1325861293">Tinkererを使ってbitbucketでblogはじめました - そこはかとなく書くよ。</a></p></li>
+<li><p><a class="reference external" href="http://kyon-mm.bitbucket.io/blog/html/2013/05/20/start_tinkerer_on_bitbucket.html">BitBucketで無料ブログをつくる方法 -TinkererとMercurialでバージョン管理可能なブログをつくる- — うさぎ組</a></p></li>
+<li><p><a class="reference external" href="http://www.shomah4a.net/2013/03/23/shinx_embed_series.html">Sphinx に色々埋め込んでみる #pyhack — プログラマのネタ帳 二冊目</a></p></li>
+</ul>
+</div>
+
+        </div>
+        <div class="postmeta">
+        <div class="author">
+            <span>Posted by Kashun YOSHIDA</span>
+        </div>
+        <div class="categories">
+            <span>
+                Filed under:
+                <a href="categories/python.html">Python</a>, <a href="categories/sphinx.html">Sphinx</a>, <a href="categories/tinkerer.html">Tinkerer</a></span>
+        </div>
+        <div class="tags">
+            <span>
+                Tags:
+                <a href="tags/python.html">Python</a>, <a href="tags/sphinx.html">Sphinx</a>, <a href="tags/tinkerer.html">Tinkerer</a></span>
+        </div>
+        <div class="comments">
+            <a href="http://kashewnuts.github.io/2013/06/16/201306tinkerer.html#disqus_thread" data-disqus-identifier="2013/06/16/201306tinkerer">Leave a comment</a>
+        </div></div><div class="separator post_separator"></div><div class="timestamp postmeta">
+            <span>March 16, 2013</span>
+        </div>
+        <div class="section">
+            <h1><a href="2013/03/16/pyfes201303.html">Python Developers Festa2013.03に参加しました #pyfes<a class="headerlink" href="#python-developers-festa2013-03-pyfes" title="Permalink to this headline">¶</a></a></h1>
+<p>Python Developers Festa2013.03に参加しました
+当日は大きく分けて</p>
+<ul class="simple">
+<li><p>ハンズオン、野良ハンズオン</p></li>
+<li><p>発表(プレゼン、LT)</p></li>
+</ul>
+<p>が行われました。</p>
+<p>既にBlogにまとめられている方がいて二の足を踏んでしまった感じですが、自分の中で恒例になってしまっているのでつらつらと書いてみます。</p>
+<p><strong>あ、ちなみに今回はまだTogetterまとめが作成されていないようですので、今のうちにまとめた方はヒーローになれると思いますよ:D</strong></p>
+<p>前回の様子
+<a class="reference external" href="http://kashewnuts.github.io/2012/11/24/pyfes201211.html">Python Developers Festa 2012.11に参加しました。 #pyfes — kashew_nuts-blog</a></p>
+<p><strong>(2013/03/20 追記)ヒーロー現る。</strong></p>
+<p><a class="reference external" href="http://togetter.com/li/473730">Python Developers Festa 2013.03 #PyFes . - Togetter</a></p>
+<p>その他スライド資料・参加者Blogを追加しました。</p>
+<div class="section" id="id1">
+<h2>イベント詳細<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<a class="reference internal image-reference" href="_images/2013-03-16_09.12.20.jpg"><img alt="../../../_images/2013-03-16_09.12.20.jpg" src="_images/2013-03-16_09.12.20.jpg" style="width: 300px; height: 200px;"/></a>
+<ul class="simple">
+<li><p><a class="reference external" href="http://connpass.com/event/1579/">Python Developers Festa 2013.03 (一般枠) - connpass</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyspa/pyfes/blob/develop/201303.rst">Python Developers Festa 2013.03 - GitHub</a></p></li>
+<li><p><a class="reference external" href="https://plus.google.com/photos/111021918302550652188/albums/5855916382336845985">Python Developers Festa 2013.03 - Google+(写真)</a></p></li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>午前中〜プレゼン開始まで<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>急遽開催された @tk0miya さんによるChefハンズオン(座談会？)に参加しました。みんながみんな
+ネットワーク環境があるわけではない＆資料なしだったので、Chefってどうゆうもの？というところ
+から始まり、こうゆう風にすればChef使って幸せに近づけるよというお話までしました。</p>
+<p>その後お昼をはさみ、プレゼンが始まるまでにパーフェクトPythonの著者サイン会が行われました。
+当日のじゃんけん大会でパーフェクトPythonを勝ち取った人も並んでましたね。自分も貰って来まし
+た。サインくださった方々ありがとうございました。</p>
+<a class="reference internal image-reference" href="_images/2013-03-17_00.13.58.jpg"><img alt="../../../_images/2013-03-17_00.13.58.jpg" src="_images/2013-03-17_00.13.58.jpg" style="width: 270px; height: 300px;"/></a>
+<p>また、 #kabepy ステッカー、2013年限定 #pyfes ステッカーも頂きましたよ</p>
+</div>
+<div class="section" id="lt">
+<h2>発表(プレゼン, LT)<a class="headerlink" href="#lt" title="Permalink to this headline">¶</a></h2>
+<p>15:00過ぎから開始。全体的に順調に進んだ気がします。19:00くらいには終了。</p>
+<div class="section" id="inoshiro-kabepy">
+<h3>@inoshiro #kabepy の紹介<a class="headerlink" href="#inoshiro-kabepy" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>スライド: <a class="reference external" href="http://www.slideshare.net/kenjirokosaka/kabepy-lt-pyfes201303">Introduction of kabepy</a></p></li>
+<li><p>kabepyとは何か？</p></li>
+<li><p>ボルダリング→壁を登るスポーツ</p></li>
+<li><p>なぜPython ボルダリングクラブか？→理由は特にない。</p></li>
+<li><p>Pythonと言う名のボルダリングシューズがある。</p></li>
+<li><p>ロープクライミングのロープの名前がPython</p></li>
+<li><p>2011/12/22発足 <a class="reference external" href="http://connpass.com/series/64/">Python ボルダリング部 - connpass</a></p></li>
+<li><p>ステッカー作りました。Tシャツ今月末までに出来る予定。</p></li>
+<li><p>お手軽。ジムが多い。楽しい。</p></li>
+<li><p>kabepyサポーターズ <a class="reference external" href="http://connpass.com/event/1426/">#kabepy Advent Calendar - connpass</a></p></li>
+</ul>
+</div>
+<div class="section" id="ryu22e-pycon-apac-2013">
+<h3>@ryu22e PyCon APAC 2013 開催のお知らせ<a class="headerlink" href="#ryu22e-pycon-apac-2013" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>スライド： <a class="reference external" href="http://www.slideshare.net/ryu22e/pycon-17250047">PyCon APAC 開催 &amp; スタッフ募集のお知らせ</a></p></li>
+<li><p>Python APACとは</p></li>
+<li><p>今年のテーマは「The year of Python」12年に1度にふさわしい</p></li>
+<li><p>8月末〜9月中頃を予定</p></li>
+<li><p>スタッフになりたい人はGoogle Googleで手を上げてみて下さい！</p></li>
+<li><p><a class="reference external" href="http://pyconjp.blogspot.jp/">PyCon JP Blog</a></p></li>
+</ul>
+</div>
+<div class="section" id="ymotongpoo-go">
+<h3>@ymotongpoo Go言語の何か (仮)<a class="headerlink" href="#ymotongpoo-go" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>スライド: <a class="reference external" href="http://www.slideshare.net/ymotongpoo/20130316-go">20130316 プログラミング言語Go</a></p></li>
+<li><p>プログラミング言語Goのご提案</p></li>
+<li><p>細かい文法を知りたい人は チュートリアルやってみてね。
+<a class="reference external" href="http://tour.golang.org/">A Tour of Go</a></p></li>
+<li><p>更に詳しい資料はスライドシェアで。 <a class="reference external" href="http://www.slideshare.net/ymotongpoo/20130228-gobp-study-66-16830134">20130228 Goノススメ（BPStudy #66）</a></p></li>
+<li><p><strong>圧倒的現代感！</strong></p></li>
+<li><p>豊富な標準パッケージ <a class="reference external" href="http://golang.org/pkg/">Packages - The Go Programming Language</a></p></li>
+<li><p><a class="reference external" href="http://connpass.com/event/1906/">Go Conference 2013 spring - connpass</a> やります！</p></li>
+</ul>
+</div>
+<div class="section" id="torufurukawa-python-test-mock">
+<h3>@torufurukawa Python の Test/Mock (仮)<a class="headerlink" href="#torufurukawa-python-test-mock" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>スライド: <a class="reference external" href="http://www.slideshare.net/torufurukawa/mock-and-patch">Mock and patch</a></p></li>
+<li><p>Mockとpatch</p></li>
+<li><p>エンジニア足りません。</p></li>
+<li><p>モックモジュールPython3.3は標準ライブラリに同梱 unittest.mock</p></li>
+<li><p>より詳しい話は公式ドキュメントやVさん、ぁっぉさんの資料を見て下さい。</p></li>
+</ul>
+</div>
+<div class="section" id="tokoroten-ms-surface">
+<h3>@tokoroten MS Surfaceでゲームを作った話<a class="headerlink" href="#tokoroten-ms-surface" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>「Surface買った人！」「しーん……」</p></li>
+<li><p>「静電容量方式は滅びますぞ！」</p></li>
+<li><p>デモ動画: <a class="reference external" href="http://www.nicovideo.jp/watch/sm19736358">世界最強のタッチパネルディスプレイを買って、ゲームを作ってみた ‐ ニコニコ動画(原宿)</a></p></li>
+<li><p>ゲームを作りましょう。</p></li>
+<li><p>強化人間専用ゲーム鋭意製作中</p></li>
+</ul>
+</div>
+<div class="section" id="hagino3000-leap-motion">
+<h3>@hagino3000 <a class="reference external" href="https://www.leapmotion.com/">Leap Motion</a><a class="headerlink" href="#hagino3000-leap-motion" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>スライド: <a class="reference external" href="http://www.slideshare.net/hagino_3000/introduction-of-leap-motion">Introduction of Leap Motion</a></p></li>
+<li><p>手の認識に特化したモーションキャプチャデバイス</p></li>
+<li><p>世紀凱旋センサー、接続はUSBもインターフェース</p></li>
+<li><p>高分解能(0.01mm)、早い(Over60FPS)、安い！</p></li>
+<li><p>秘密はSoftware(algorithm)にあるらしいが、それっぽい特許,論文見当たらず。</p></li>
+<li><p>HOW TO GET: 88.98USD(送料込み) 5/13以降発行。開発者登録なら1つ無料。</p></li>
+<li><p>HOW TO develop: windows7or8, MaxOS10.6 or later、C++,C#,Obj-C,Python等</p></li>
+<li><p>何がおいしいのかが問題→みんなまだ手探り状態。</p></li>
+</ul>
+</div>
+<div class="section" id="nonnoise-arduino-python">
+<h3>@nonNoise Arduino+Pythonハッキングの宣伝<a class="headerlink" href="#nonnoise-arduino-python" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="http://connpass.com/series/311/">Arduino+Pythonハッキング - connpass</a></p></li>
+<li><p>来週の24, 24日にやるのできてね！</p></li>
+<li><p>PythonでArduinoから受け取ったデータをどう操作するか。</p></li>
+<li><p>もう4回くらい実施している。大体20〜30人くらい集まる。</p></li>
+<li><p>次回はハードウェアの見ている世界と、PC、WEBが見ている世界のお話。</p></li>
+<li><p>1day Hacking</p></li>
+</ul>
+</div>
+<div class="section" id="r-rudi-tinkerer">
+<h3>@r_rudi Tinkerer<a class="headerlink" href="#r-rudi-tinkerer" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>スライド: <a class="reference external" href="http://www.slideshare.net/r_rudi/tinkerer-for-pyfes-201303-17271515">Tinkerer for pyfes 201303</a></p></li>
+<li><p>今日のお題「Tinkerer」SphinxをベースにしたBlogの作成ツール</p></li>
+<li><p>Sphinxとは、ドキュメント作成ツール。Pythonの公式ドキュメントにも使われている。</p></li>
+<li><p>コードハイライトが綺麗。pygmentsというのを使用しています。</p></li>
+<li><p>どういう意味？→「MG」鍛冶屋, 修繕屋、読み方は？→「てぃんからー」</p></li>
+<li><p>欠点</p>
+<ul>
+<li><p>コマンドラインでしか叩けない。テキストエディタが必要→ブラウザからとかできない。</p></li>
+<li><p>記事が多くなるとbuildに時間がかかる。→カテゴリーやRSSなどがあるため。</p></li>
+</ul>
+</li>
+<li><p>ホスティング方法</p>
+<ul>
+<li><ol class="arabic simple">
+<li><p>レンタルサーバー、VPS しろうさんが実施している。blog/html/以下を全てコピる。</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="2">
+<li><p>github, bitbucket 独自ドメインも可能。</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="3">
+<li><p>S3+ Web hostting MercurialやSphinxもこの方法でやっている。(やろうと思っている)しかし転送料でお金かかる</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="4">
+<li><p>Dropbox 金額がかからないが、独自ドメインが使えない。→dropbproxというGAEで動くproxy</p></li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>おまけ: Amazonで出版とか</p></li>
+</ul>
+</div>
+<div class="section" id="keikubo-webpay">
+<h3>@keikubo WebPay<a class="headerlink" href="#keikubo-webpay" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>プロ仕込みのプレゼン</p></li>
+<li><p>開発者向けの決済サービス</p></li>
+<li><p>FluxFlex: 1分で使えるホスティング→昨年の6月ぐらいに閉鎖</p></li>
+<li><p>Rackhub: 10秒で使えるVPS→競争激しいですけど使ってみて下さい。</p></li>
+<li><p>WebPay: 1時間で使えるクレカ決済</p></li>
+<li><p>pip install stripe</p></li>
+<li><p>多種多様な言語、プラットフォームへの対応 Ruby, Python, PHP, iOS, Android, Windows8</p></li>
+<li><p>湧き上がる「素晴らしい」のコメントの嵐</p></li>
+<li><p><a class="reference external" href="https://webpay.jp/docs/api">WebPay: 開発者向けクレカ決済サービス</a></p></li>
+</ul>
+</div>
+<div class="section" id="sawonya">
+<h3>@sawonya 未定<a class="headerlink" href="#sawonya" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>マインドマップに関して使ったり、書いたり、</p></li>
+<li><p>実際に書いているところを即興で書いていく。</p></li>
+<li><p>実際の出来上がり図は以下の通り。</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/745330838.jpg"><img alt="../../../_images/745330838.jpg" src="_images/745330838.jpg" style="width: 300px; height: 270px;"/></a>
+</div>
+<div class="section" id="voluntas-webmachine">
+<h3>@voluntas Webmachine ノススメ<a class="headerlink" href="#voluntas-webmachine" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>資料: <a class="reference external" href="https://gist.github.com/voluntas/f99838001efced196fc0">Webmachine のススメ</a></p></li>
+<li><p>gistプレゼン。レアです。</p></li>
+<li><p>RESTツールキット。chefのホスティングで使われている。
+ちなみにchefはRubyからアーランに変えてメモリ使用量が21GB→600MBになった。</p></li>
+<li><p><a class="reference external" href="https://raw.github.com/wiki/basho/webmachine/images/http-headers-status-v3.png">http-headers-status-v3.png</a></p></li>
+</ul>
+</div>
+<div class="section" id="lab1092-blender">
+<h3>@lab1092 Blender<a class="headerlink" href="#lab1092-blender" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>スライド: <a class="reference external" href="http://www.slideshare.net/lab1092/20130316-blender">20130316 blender</a></p></li>
+<li><p>Blenderイベントの宣伝 春だ一番！Blender祭り 3/23 横浜で開催します。</p></li>
+<li><p>どんなイベント？→Blenderに限らず、デザインとクラウンドファウンディング視点で。</p></li>
+<li><p>「2013年Blenderの本格的な浸透」</p></li>
+<li><p><a class="reference external" href="http://alternativeto.net/">AlternativeTo - Social Software Recommendations</a></p></li>
+</ul>
+</div>
+<div class="section" id="jhari-lt-web">
+<h3>@2jhari (痛い目にあいたい人LT枠) Webサービスにどれほどの金銭的価値があるのか<a class="headerlink" href="#jhari-lt-web" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>痛い人枠 #kazepy #しみたん</p></li>
+<li><p>インターネットサービスと経済学</p></li>
+<li><p>HOW MUCH VALUE?</p></li>
+<li><p>細かい所はどうでもいいんじゃい！</p></li>
+</ul>
+</div>
+<div class="section" id="drillbits-fabric">
+<h3>@drillbits fabric<a class="headerlink" href="#drillbits-fabric" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>スライド: <a class="reference external" href="https://speakerdeck.com/drillbits/fabric-python-developers-festa-2013-dot-03-number-pyfes">Fabric Python Developers Festa 2013.03 #pyfes // Speaker Deck</a></p></li>
+<li><p><a class="reference external" href="http://anond.hatelabo.jp/20130313214213">インターネットの人名鑑2013</a></p></li>
+<li><p>fablic ネジ、DB</p></li>
+<li><p>CUI, Application Deployment</p></li>
+<li><p>インストール、設定、起動→これをSSHでやる</p></li>
+</ul>
+</div>
+<div class="section" id="tk0miya-opsworks-chef">
+<h3>@tk0miya 春を先取り！OpsWorks と Chef ではじめる恋色コーデ術！<a class="headerlink" href="#tk0miya-opsworks-chef" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>スライド: <a class="reference external" href="http://www.slideshare.net/TakeshiKomiya/ops-works-chef">春を先取り！Ops works と chef ではじめる恋色コーデ術！ #pyfes 2013.03</a></p></li>
+<li><p>環境構築を自動化。オレオレ環境の撲滅。リリース後の土下座を減らす。</p></li>
+<li><p>そうだ、chef使おう。</p></li>
+<li><p>冪等性(べきとうせい)→あるべき姿を定義しておくと、何度chefを実行しても同じ結果になる。</p></li>
+<li><p>Community Cookbooks→大抵のツール向けの設定が集約。再利用の精神。</p>
+<ul>
+<li><p><a class="reference external" href="http://community.opscode.com/">Opscode Community</a> でいろんな人が書いたCookbookを紹介している。世の中には書きましょうという記事が多いが、こちらを使ったほうがお得。今800ぐらいのCookbookがある（重複はあると思うが）</p></li>
+</ul>
+</li>
+<li><p>chefの種類: chef server, chef-solo, ホスティング。サーバーが20台ぐらいまでならchef soloでいいらしい。</p></li>
+<li><p>ちょいツール</p>
+<ul>
+<li><p>vagrant(ベイグラント)って読むらしい。最近AWSやVMWare Fusionにも対応</p></li>
+<li><p>librarian Cookbook管理ツール。依存性解決とDL</p></li>
+<li><p>attribute json形式。各Cookbook用の設定。</p></li>
+</ul>
+</li>
+<li><p>参考ドキュメント: 公式ドキュメント, naoyaさんによる <a class="reference external" href="http://www.amazon.co.jp/dp/B00BSPH158/ref=cm_sw_r_tw_dp_9Bdrrb1TW4NDF">書籍</a> 、 <a class="reference external" href="http://d.hatena.ne.jp/naoya/">Blog</a> 、 <a class="reference external" href="http://www.ryuzee.com/contents/blog/">RyuzeeさんのBlog</a> 、 <a class="reference external" href="http://tk0miya.hatenablog.com/">@tk0miyaさんのBlog</a></p></li>
+<li><p>OpsWorks</p>
+<ul>
+<li><p>AWSのアプリ管理ツール。環境構築、アプリのデプロイ、インスタンスの起動、終了 管理。</p></li>
+<li><p>Rails, PHP, node.jsアプリをサポート</p></li>
+<li><p>ハマリまくりです。</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="http://qiita.com/items/c6f20de0e4f4c352046c">Boxen使わなくても許されるのは2012年までだよね #Mac #Boxen #GitHub - Qiita</a></p></li>
+</ul>
+</div>
+<div class="section" id="hiroki-ninuma">
+<h3>@hiroki_ninuma 未定<a class="headerlink" href="#hiroki-ninuma" title="Permalink to this headline">¶</a></h3>
+<p>メモは取ったけどここでは書かない。</p>
+</div>
+<div class="section" id="moriyoshi">
+<h3>@moriyoshi 未定<a class="headerlink" href="#moriyoshi" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>MessagePack</p></li>
+<li><p>Isuue #121</p></li>
+<li><p>cabo インターネットドラフトを提出した。</p></li>
+<li><p><a class="reference external" href="https://github.com/msgpack/msgpack/issues/121">Msgpack can&amp;apos;t differentiate between raw binary data and text strings · Issue #121 · msgpack/msgpack</a></p></li>
+<li><p><a class="reference external" href="http://tagomoris.hatenablog.com/entry/2013/03/01/130433">MessagePackのIETFへの提案に関する困惑 - たごもりすメモ</a></p></li>
+<li><p><a class="reference external" href="http://togetter.com/li/467451">MessagePack ep.2 〜RFC標準化をめぐる issue 129〜 - Togetter</a></p></li>
+<li><p><a class="reference external" href="http://www.geekpage.jp/blog/?id=2013/2/26/1">Geekなぺーじ:MessagePackがIETF標準化に巻き込まれてる件について</a></p></li>
+<li><p>AnyPack Builder作りました。ソースはその内githubにあげておきます。
+<a class="reference external" href="https://github.com/moriyoshi/anypackbuilder">moriyoshi/anypackbuilder - GitHub</a></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>懇談会<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>Pyfesが終わった後の、有志での懇談会。何だかあっという間にすぎてました。 @aodag 先生のまさかりが飛びまくってたような気がします。楽しかったですね。</p>
+</div>
+<div class="section" id="id7">
+<h2>終わりに<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>また参加できてよかった。普段Pyfesに参加してると、無限コーヒー、電源、無線LAN完備、広いスペースなどこれ以上ないと思えるくらいのものが用意されています。今回はトラブルで会場の無線LANが終始使えないというトラブルがありましたが、もとはOracleさんを始め、コミュニティのみなさんのご好意によってなりたっているのだよなと思い起こさせる日になりました。また次回参加できればいいなと思います。</p>
+</div>
+<div class="section" id="id8">
+<h2>参加者Blog<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="http://d.hatena.ne.jp/shiumachi/20130316/1363428311">PyFes 2013.3 参加メモ #pyfes - 科学と非科学の迷宮</a></p></li>
+<li><p><a class="reference external" href="http://blog.shomah4a.net/2013/03/16/tweet_embed.html">Sphinx につぶやきを埋め込んでみる — プログラマのネタ帳 二冊目</a></p></li>
+<li><p><a class="reference external" href="http://d.hatena.ne.jp/kmn23/20130317/1363511436">pyfes 2013に行ってきた - kmn23のコマンド備忘録</a></p></li>
+<li><p><a class="reference external" href="http://d.hatena.ne.jp/flag-boy/20130318/1356091241">pyfesでwozozoが良いことを言っていた - ま、そんな日もあるさ</a></p></li>
+<li><p><a class="reference external" href="http://blog.livedoor.jp/ryu22e/archives/65737913.html">ryu22eBlog : Python Developers Festa 2013.03 に参加 &amp;amp; LTしてきました #pyfes</a></p></li>
+</ul>
+</div>
+
+        </div>
+        <div class="postmeta">
+        <div class="author">
+            <span>Posted by Kashun YOSHIDA</span>
+        </div>
+        <div class="categories">
+            <span>
+                Filed under:
+                <a href="categories/python.html">Python</a>, <a href="categories/pyfes.html">pyfes</a></span>
+        </div>
+        <div class="tags">
+            <span>
+                Tags:
+                <a href="tags/python.html">Python</a>, <a href="tags/pyfes.html">pyfes</a></span>
+        </div>
+        <div class="comments">
+            <a href="http://kashewnuts.github.io/2013/03/16/pyfes201303.html#disqus_thread" data-disqus-identifier="2013/03/16/pyfes201303">Leave a comment</a>
+        </div></div><div class="separator post_separator"></div><div class="timestamp postmeta">
+            <span>March 15, 2013</span>
+        </div>
+        <div class="section">
+            <h1><a href="2013/03/15/perfectpython_setup.html">Python3の開発環境を整えてみた<a class="headerlink" href="#python3" title="Permalink to this headline">¶</a></a></h1>
+<p>パーフフェクトPythonではWindows7, MacOSX, Ubuntu12.04LTSでの例が挙げられています。
+今回はUbuntu12.04LTSを選択してみました。手順は以下。</p>
+<ul class="simple">
+<li><p>VagrantでUbuntuをセットアップ</p></li>
+<li><p>Python3および各ツール類をインストール</p></li>
+<li><p>+α、開発をサポートするツール類をインストール</p></li>
+</ul>
+<div class="section" id="vagrantubuntu">
+<h2>VagrantでUbuntuをセットアップ<a class="headerlink" href="#vagrantubuntu" title="Permalink to this headline">¶</a></h2>
+<p>普通にやるのはおもしろくないので、 <a class="reference external" href="http://www.freia.jp/taka/blog/create-ubuntu-12.04-by-using-vagrant/index.html">2013/02/10 Vagrantで作るUbuntu-12.04環境 - 清水川Web</a> を参考に
+Ubuntu12.04LTSをセットアップ。楽すぎてびびる。
+ここから先はターミナルからsshで接続して操作する形になります。</p>
+</div>
+<div class="section" id="id1">
+<h2>Python3および各ツール類をインストール<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>パーフェクトPythonにある通りに必要なものをインストールしていく。まずはPython3のインストー
+ル。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span/>$ sudo apt-get install python3.3 python3.3-dev
+$ sudo apt-get install zlib1g-dev libssl-dev libreadline-dev libsqlite3-dev tk-dev
+libbz2-dev libgdbm-dev tcl-dev
+$ wget http://www.python.org/ftp/python3.3.0/Python3.3.0.tar.bz2
+$ tar xjf Python-3.3.0.tar.bz2
+$ <span class="nb">cd</span> Python-3.3.0
+$./configure --prefix<span class="o">=</span><span class="nv">$HOME</span>/python3.3
+$ sudo apt-get install make
+$ make <span class="o">&amp;&amp;</span> make install
+</pre></div>
+</div>
+<p>仮想環境の準備とpipのインストール</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span/>$ pyvenv default33
+$ <span class="nb">source</span> default/bin/active
+
+$ python -c <span class="s2">"import urllib.request;urllib.request.urlretrieve('http://python-distribute.org/distribute.py', 'distribute_setup.py')"</span>
+$ python distribute_setup.py
+$ easy_install pip
+</pre></div>
+</div>
+<p>IPython</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span/>$ pip install ipython
+</pre></div>
+</div>
+<p>後は本書で挙げられていたライブラリ類をインストールしていきました。本の中では触れられていなかったけど、途中インストールが必要になったのが以下。</p>
+<ul class="simple">
+<li><p>make(Python3インストール時)</p></li>
+<li><p>g++</p></li>
+<li><p>libxml2-dev, libxslt-dev(lxmlインストール時)  <a class="reference external" href="http://www.isnull.com.ar/2011/10/ubuntu-11-fatal-error-libxmlxmlversionh.html">参考URL</a></p></li>
+</ul>
+<p>4つとも</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span/>$ sudo apt-get install ...
+</pre></div>
+</div>
+<p>でインストールできた。</p>
+<p>さて、ここまでで本に書いてあるものはインストールできたわけだけど、このまま開発するには少し物足りない。というわけで少し+αで加えてみた。</p>
+</div>
+<div class="section" id="id2">
+<h2>+α、開発をサポートするツール類をインストール<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>ipythonで試すのも良いのだけど、普段使っているテキストエディタで編集したい。更に設定も同じにするためにgitも導入してみました。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span/>$ sudo apt-get install vim
+
+$ sudo apt-get install git-core
+$ git config --global user.name <span class="s2">"ユーザー名"</span>
+$ git config --global user.name <span class="s2">"メールアドレス"</span>
+
+$ git clone <span class="s2">"githubに上がっている自分のdotfiles"</span>
+</pre></div>
+</div>
+<p>後はシンボリックリンクを貼って .vimrc, colorschemeを設定します。ちなみに自分が使っているcolorschemeは <a class="reference external" href="http://vim.sourceforge.net/scripts/script.php?script_id=276">これ</a> です。
+更に <a class="reference external" href="http://tekkoc.tumblr.com/post/42845501741/vim-python">VimでPython環境をいい感じに整える | tekkoc’blog</a> を参考にVimのプラグインも導入します。</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/davidhalter/jedi-vim">jedi-vim</a> (補完プラグイン)</p></li>
+<li><p><a class="reference external" href="https://github.com/kevinw/pyflakes-vim">pyflakes-vim</a> (構文エラーの検出)</p></li>
+</ul>
+<p>Vim使いの方はこの2つは入れておいた方がいいかと思います。pathogen.vimやNeobunle.vimを使っている方はすぐにお試しできるかと思いますので是非。</p>
+</div>
+<div class="section" id="id4">
+<h2>終わりに<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>これでPython3で開発する環境は整いました。さあ、あとは実践あるのみです！</p>
+</div>
+
+        </div>
+        <div class="postmeta">
+        <div class="author">
+            <span>Posted by Kashun YOSHIDA</span>
+        </div>
+        <div class="categories">
+            <span>
+                Filed under:
+                <a href="categories/python.html">Python</a></span>
+        </div>
+        <div class="tags">
+            <span>
+                Tags:
+                <a href="tags/python.html">Python</a></span>
+        </div>
+        <div class="comments">
+            <a href="http://kashewnuts.github.io/2013/03/15/perfectpython_setup.html#disqus_thread" data-disqus-identifier="2013/03/15/perfectpython_setup">Leave a comment</a>
+        </div></div><div class="archive_link">
+        <a href="archive.html"> &mdash; Blog Archive &mdash; </a>
+    </div><ul class="related clearfix">
+            <li class="left"> &laquo; <a href="page17.html">Newer</a></li>
+            <li class="right"><a href="page19.html">Older</a> &raquo; </li>
+        </ul></article><aside class="sidebar"><section><div class="widget">
+  <div>
+    <a href="//af.moshimo.com/af/c/click?a_id=815168&p_id=1166&pc_id=1793&pl_id=20228&guid=ON" target="_blank" rel="nofollow"><img src="//image.moshimo.com/af-img/0408/000000020228.png" width="300" height="250" style="border:none;"></a><img src="//i.moshimo.com/af/i/impression?a_id=815168&p_id=1166&pc_id=1793&pl_id=20228" width="1" height="1" style="border:none;">
+  </div>
+</div></section><section><div class="widget" id="searchbox" role="search">
+    <h1><a href="#searchbox">Search</a></h1>
+    <form action="search.html" method="get">
+        <input type="text" name="q" />
+        <button type="submit"><span class="fa fa-search"></span></button>
+    </form>
+</div></section><section><div class="widget">
+    <h1>Recent Posts</h1>
+    <ul><li>
+            <a href="2020/11/30/climbing_shoes_history.html">クライミングシューズ遍歴</a>
+        </li><li>
+            <a href="2020/06/11/wsl2.html">WSL2を使ってみている</a>
+        </li><li>
+            <a href="2020/05/05/upgrade_ubuntu_20_04_lts.html">Ubuntu18.04LTSから20.04LTSにアップグレードした</a>
+        </li><li>
+            <a href="2020/04/08/migrated_lsp_client_to_coc_nvim.html">LSPクライアントをcoc.nvimにした話</a>
+        </li><li>
+            <a href="2019/01/28/move_from_jedivim_to_vimlsp.html">Pythonの補完環境をjedi-vimからvim-lspに移行した話</a>
+        </li><li>
+            <a href="2019/01/05/2018and2019.html">2018年の振り返りと2019年抱負</a>
+        </li><li>
+            <a href="2018/12/02/bp_advent_calender.html">2018年版Life ChangingだったVimプラグインTOP3</a>
+        </li><li>
+            <a href="2018/11/06/yosemite_tour.html">ヨセミテツアー日記</a>
+        </li><li>
+            <a href="2018/09/22/pyconjp2018.html">PyConJP2018でPyCharmの話をしてきました #pyconjp</a>
+        </li><li>
+            <a href="2018/08/22/jedivim_memo.html">VimとPythonの補完についてのメモ</a>
+        </li></ul>
+</div>
+</section><section><div class="widget">
+    <h1>Categories</h1>
+    <ul><li><a href="categories/64bit.html">64bit</a> (2)</li><li><a href="categories/android.html">Android</a> (3)</li><li><a href="categories/bouldering.html">bouldering</a> (2)</li><li><a href="categories/bouldering.html">Bouldering</a> (4)</li><li><a href="categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="categories/c_c.html">C/C++</a> (5)</li><li><a href="categories/chrome.html">Chrome</a> (2)</li><li><a href="categories/db.html">DB</a> (1)</li><li><a href="categories/django.html">Django</a> (10)</li><li><a href="categories/facebook.html">Facebook</a> (1)</li><li><a href="categories/firefox.html">Firefox</a> (1)</li><li><a href="categories/git_mercurial.html">Git/Mercurial</a> (8)</li><li><a href="categories/golang.html">Golang</a> (1)</li><li><a href="categories/google.html">Google</a> (5)</li><li><a href="categories/heroku.html">Heroku</a> (6)</li><li><a href="categories/java.html">Java</a> (2)</li><li><a href="categories/javascript.html">JavaScript</a> (4)</li><li><a href="categories/jupyter.html">Jupyter</a> (1)</li><li><a href="categories/kabepy.html">kabepy</a> (2)</li><li><a href="categories/linux.html">Linux</a> (5)</li><li><a href="categories/lt.html">LT</a> (5)</li><li><a href="categories/mac.html">Mac</a> (8)</li><li><a href="categories/pycharm.html">PyCharm</a> (2)</li><li><a href="categories/pyconjp.html">PyConJP</a> (1)</li><li><a href="categories/pyfes.html">pyfes</a> (7)</li><li><a href="categories/python.html">Python</a> (70)</li><li><a href="categories/slack.html">Slack</a> (1)</li><li><a href="categories/sphinx.html">Sphinx</a> (8)</li><li><a href="categories/sqlalchemy.html">SQLAlchemy</a> (1)</li><li><a href="categories/ssd.html">SSD</a> (1)</li><li><a href="categories/tddbc.html">TDDBC</a> (1)</li><li><a href="categories/tinkerer.html">Tinkerer</a> (7)</li><li><a href="categories/tmux.html">tmux</a> (1)</li><li><a href="categories/ubuntu.html">Ubuntu</a> (3)</li><li><a href="categories/vagrant.html">Vagrant</a> (1)</li><li><a href="categories/vim.html">Vim</a> (24)</li><li><a href="categories/vimconf.html">VimConf</a> (3)</li><li><a href="categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="categories/windows.html">Windows</a> (3)</li><li><a href="categories/windows7.html">Windows7</a> (4)</li><li><a href="categories/wsl.html">WSL</a> (1)</li><li><a href="categories/%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0.html">アルゴリズム</a> (1)</li><li><a href="categories/%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3.html">セキュリティ</a> (2)</li><li><a href="categories/%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF.html">ネットワーク</a> (1)</li><li><a href="categories/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0.html">プログラミング</a> (7)</li><li><a href="categories/%E5%8B%89%E5%BC%B7%E4%BC%9A.html">勉強会</a> (30)</li><li><a href="categories/%E5%BF%9C%E7%94%A8%E6%83%85%E5%A0%B1%E6%8A%80%E8%A1%93%E8%80%85.html">応用情報技術者</a> (10)</li><li><a href="categories/%E6%83%85%E5%A0%B1%E5%87%A6%E7%90%86%E6%8A%80%E8%A1%93%E8%80%85%E8%A9%A6%E9%A8%93.html">情報処理技術者試験</a> (10)</li><li><a href="categories/%E6%9C%AC.html">本</a> (29)</li><li><a href="categories/%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83.html">開発環境</a> (11)</li><li><a href="categories/%E9%9B%91%E8%A8%98.html">雑記</a> (38)</li><li><a href="categories/%E9%AB%98%E9%80%9F%E5%8C%96.html">高速化</a> (1)</li></ul>
+</div></section><section><div class="widget">
+    <h1>About Me</h1>
+    <div>
+        <a href="https://about.me/kashew_nuts">
+            <img src="https://pbs.twimg.com/profile_images/378800000438956976/3e61e7ae64d916ba0451a44c3b8ce347.jpeg"
+            width="128px"
+            height="128px" />
+        </a>
+        <h4><a href="https://twitter.com/kashew_nuts">kashew_nuts
+                (KashunYOSHIDA)</a></h4>
+        <p>人生という壁を登るSoftwareDeveloper</p>
+        <a class="twitter-timeline" data-width="300" data-height="800" data-theme="dark" href="https://twitter.com/kashew_nuts">Tweets by kashew_nuts</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+</div></section></aside></div> <!-- #main --></div> <!-- #main-container -->
+
+        <div class="footer-container" role="contentinfo"><footer class="wrapper">&copy; Copyright 2011-2020, Kashun YOSHIDA. Powered by <a href="http://www.tinkerer.me/">Tinkerer</a> and <a href="http://sphinx.pocoo.org/">Sphinx</a>.</footer></div> <!-- footer-container -->
+
+      </div> <!--! end of #container --><script type="text/javascript">    var disqus_shortname = "kashewnutsblog";    disqus_count();</script><!--[if lt IE 7 ]>
+          <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+          <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+        <![endif]-->
+    </body>
+</html>

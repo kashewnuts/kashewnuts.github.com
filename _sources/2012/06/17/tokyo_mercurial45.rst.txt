@@ -1,0 +1,78 @@
+TokyoMercurial4.5に参加しました。
+==================================================
+
+| `TokyoMercurial#4.5 - connpass <http://connpass.com/event/486/>`__\ に参加しました。
+| 当日の様子はこちら:
+| `TokyoMercurial #4.5 (Mercurial Queue ハンズオン) - Togetter <http://togetter.com/li/319155>`__
+| 課題: `Mercurial Queues ハンズオン (TokyoMercurial#4.5) - Google Docs <https://docs.google.com/presentation/d/1VWUAHAoaxpso5toFD_DHwWYq3bgYmpQ3bpBvmzbJuxM/edit#slide=id.p>`__
+| 解答: `Mercurial Queues ハンズオン 履歴改変編 <https://gist.github.com/2899867>`__
+
+| 当日の深夜に以下のようなやりとりがあり、
+| 多少自分のスキルに不安をいだきながらも突撃参加しました。
+
+|    `#TokyoMercurial <https://twitter.com/search/%2523TokyoMercurial>`__
+|    参加しようと思ったけど、「名前付きブランチのマージとコンフリクトの解決が出来ること」ってところやったことないなー。Beginnerが参加するのは厳しいのかしら……
+|    / TokyoMercurial#4.5
+|    `connpass.com/event/486/ <http://t.co/H0ZHFUXO>`__
+
+|    — 吉田花春さん (@kashew\_nuts) `6月 8, 2012 <https://twitter.com/kashew_nuts/status/211113315257159680>`__
+
+|    @\ `flyingfoozy <https://twitter.com/flyingfoozy>`__
+|    承知致しました！そのあたりのdocument
+|    `troter.jp/scmbc-201111-m… <http://t.co/aW4JUPsn>`__
+|    をさらっと舐めてから参加したいと思います。(＞Д＜)ゝ
+|    `#TokyoMercurial <https://twitter.com/search/%2523TokyoMercurial>`__
+
+|    — 吉田花春さん (@kashew\_nuts) `6月 8, 2012 <https://twitter.com/kashew_nuts/status/211121198048886784>`__
+
+| その日の朝にdocumentを舐めてからの参加です。
+
+| **1.アイスブレイク**
+| 簡単なアイスブレイクの後、@troterさんによるハンズオン開始。
+| 各々どのぐらいMercurialをしようしているのかを紹介したのですが、
+| Gitも使っていますと言う方もちらほら。
+| そうゆう自分もVimのdotfilesやHeroku使うためにGit使っていた頃がありました。
+
+| **2.ハンズオン**
+| 以下のように導入編・ハンズオンとわかれていました。
+
+-  第一部: Mercurial Queues(MQ)の説明、パッチキューの操作
+-  第二部: MQを用いた基本操作のまとめ、歴史改変編のハンズオン
+
+| MQを使いこなすと、
+
+|     「MQが無いMercurial = 残念な子」 by
+|     @\ `troter <https://twitter.com/troter>`__
+|     `#TokyoMercurial <https://twitter.com/search/%2523TokyoMercurial>`__
+
+|     — Yuta SHIMAKAWAさん (@banana\_umai) `6月 9, 2012 <https://twitter.com/banana_umai/status/211316931179978752>`__
+
+| という印象になるらしい。
+| 自分はそこまで使いこなせてなかったからまだ恩恵を受けられていないのが残念。
+
+| 恩恵を受けれられた方の例↓
+
+|     mqすげー、神になった気分。\ `#TokyoMercurial <https://twitter.com/search/%2523TokyoMercurial>`__
+
+|     — 石田 順一さん (@i4djunichi) `6月 9, 2012 <https://twitter.com/i4djunichi/status/211335569643544576>`__
+
+| **3.Tips**
+
+| -  `TortoiseHg <http://tortoisehg.bitbucket.io/ja/>`__\ 2.4.1でたよ！
+| -  GUIでMQ使うならTortoiseHg。
+|     SourceTreeだとリビジョンもパッチも全部丸で表示されるから分かりづらい。
+| -  Gitの機能がMercurialにないとかいってる人はMQ使ってから。
+|    懇談会楽しかった！3時間近くいましたかね？勉強会でこれだけ長時間いたのは初めてだったのでとても新鮮でした。
+|    次回のTokyoMercurial5.5はビギナー向けになるそうなので、
+|    一旦そこで基礎力を鍛えようかとも思っています。
+|    主催者の@troterさんTAの方々、参加者の皆さんお疲れ様でした！
+
+| **参考サイト**
+
+| -  `パッチ管理ツールを用いた開発元のソースコードの修正 <http://www.debian.or.jp/~nori/debian-packaging-guide/ar01s11.html>`__
+| -  `Mercurial Queue の適用事例 - 彷徨えるフジワラ <http://d.hatena.ne.jp/flying-foozy/20120608/1339223976>`__
+
+.. author:: default
+.. categories:: 勉強会, Git/Mercurial
+.. tags:: 勉強会, Git/Mercurial
+.. comments::

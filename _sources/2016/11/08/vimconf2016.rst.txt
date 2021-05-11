@@ -1,0 +1,140 @@
+VimConf2016 に参加しました
+===========================
+
+.. image:: vimconf2016.jpg
+    :align: center
+
+ujihisa.vimを含めると3年ぶり3回目の参加となったVimConf2016。全部は書ききれないのでメモをとれたやつだけ書きます。
+
+例年の傾向を見てると参加者Blogとかは公式の方にまとめられ、動画もYouTubeの `vim-jp <https://www.youtube.com/channel/UCSk7TnXVB0BMtY416dmFMuw>`__ にまとめれるようなので後から振り返りたいかたはそちらをチェックされるとよろしいかと。
+
+- `VimConf 2016 <http://VimConf.vim-jp.org/2016/>`__
+- `VimConf 2016 - connpass <http://VimConf.connpass.com/event/43483/>`__
+- `VimConf 2016 のまとめ - Togetterまとめ <http://togetter.com/li/1045761>`_
+
+`Introduction to Vim 8.0 by Ken Takata <http://www.slideshare.net/k-takata/introduction-to-vim-80>`_
+----------------------------------------------------------------------------------------------------
+
+- Vim 8.0の新機能の紹介および、開発の軌跡について。また、日本人の活躍についても紹介
+- 「vim-jpはあなたのコントリビューションをお待ちしております。」
+- いちばん楽しかったのは？(@ujm)→DirectX、常にONにしてる。後はspellチェックで日本語の検出を除外する機能。
+- `vim-jp » Vim 8.0 新機能解説 <http://vim-jp.org/blog/2016/09/13/vim8.0-features.html>`__
+
+`Vim as the MAIN text editor by bird_nitryn <https://speakerdeck.com/bird_nitryn/vim-as-the-main-text-editor-number-VimConf2016>`_
+----------------------------------------------------------------------------------------------------------------------------------
+
+- 使い始めて1年ぐらい。VSCode→Vimに。Vimはすべてキーボードで操作が完結するのが魅力。
+- とにかくVimの機能を使いまくる→vimrcを育てる
+- 慣れるために→Vimium導入, vimを触る時間を増やす。
+- vimrc: 116行→188行 neobundle→dein。色んな言語を触るようになったのでタブやステータスラインをいじったり。
+- 突如始まったvimrc読書会が面白かった（笑）
+
+- 具体的になぜVSCode→Vimに？
+
+  - ホストPCがWindowsでvagrantでCentOS。node.jsのパッケージマネージャの制限でフォルダ共有してるとコケる。
+  - それを叩くたびに味わっていた。共有やめたいCentOS上でいじりたい。
+  - EmacsかVimか？→じゃあVimだということでVimに。
+
+- これだけは避けた方がいいプラクティスは？
+
+  - 宗教戦争はこだわりなので。vimrcをすごく書き込んでる人と育ててる段階の様々な人がいるので、自分と同じぐらいのレベル、自分が読んでわかりやすいレベルのものからやるといい。
+
+- 転向してきてテンションが上がった機能、プラグインは？
+
+  - VimFiler。カーソル移動ができる。Vimをいじってる人とすればすごく直観的だった。
+
+
+`Denite.nvim ~The next generation of unite~ by Shougo <https://gist.github.com/Shougo/7c78b3a1725f70c1435d004ed14f2558>`_
+-------------------------------------------------------------------------------------------------------------------------
+
+- テキストエディタとは何か？「生きる理由。」
+- deniteとは何か？unite.vimをフルスクラッチで書き直したもの。Python3で書かれていて、neovim/vim8.0+で動作。
+- なぜdenie.nvimを作ろうとした？→"unite.vim slow"
+- とくに遅いといわれていた、grepやfile_recが速くなる。候補のサジェストも。
+
+  - unite grepでは数十秒→denite.nvimとcpsmで1,2秒に
+
+- unitne.vimがdenite.nvimのソースを持っているのでdenite.nvimはunite.vimを呼べる。
+- 次はdeoplete.nvimをVim8.0+に対応予定。
+
+  - 他にneosnippet, vinarise, vimshell, vimfilerも対応予定。一番優先度が高いのはvimshell
+
+- if_python3の拡張、WindowIDの機能、etcの機能を安定して使うのにVim8.0+を選んだ。非同期機能はVim8.0で導入された機能ではなくPython3を使っている。
+
+- `Shougo/denite.nvim: Dark powered asynchronous unite all interfaces for Neovim/Vim8 <https://github.com/Shougo/denite.nvim>`__
+- `Big Sky :: Vim の CtrlP matcher、cpsm がヤバイくらいに速すぎる <http://mattn.kaoriya.net/software/vim/20150605164551.htm>`__
+
+`Go、C、Pythonのためのdeoplete.nvimのソースの紹介と、Neovim専用にpure Goでvim-goをスクラッチした話 by zchee <http://go-talks.appspot.com/github.com/zchee/talks/VimConf2016.slide#1>`_
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+- 「deoplete.nvimのために初めてPythonを触ったのでみなさんもなんとかなります。」
+- deoplete.nvimメッチャ補完速い
+  - 脱ネオコンして<C-n>, <C-p>や<C-x>補完で充分と思ってたけどあの速さは心が揺らぐ……
+
+`エディタの壁を越えるGoの開発ツールの文化と作成法 by tenntenn <http://www.slideshare.net/takuyaueda967/go-68228940>`_
+---------------------------------------------------------------------------------------------------------------------
+
+- 「Golang使ってみたことある人どれぐらいいますか？」→結構いる。
+- vim歴>Golang歴。社内でvimmerは7人ぐらいであとはほとんどIntelliJ
+- GolangのおかげでWindowsでVim使うのが「より」便利になっている印象。(mattn/jvgrep, mattn/files, koron/netupvim, etc...)
+
+
+`vim-mode-plus for Atom editor by t9md <http://qiita.com/t9md/items/0bc7eaff726d099943eb>`_
+-------------------------------------------------------------------------------------------
+
+- エディタ遍歴: Vim(Normal) → Emacs(Advanced) → Vim(Advanced) → Atom(with vim-mode-plus)
+- 「Vimはすごく小指に易しい。(元Emacsユーザーの意見)」
+- あの場にいた誰もが感嘆してたと思う。Vimへの理解はもちろん、それにとどまらず進化させていくのが本当にすごい。
+
+  - いずれVimにも逆輸入されるのではないか。
+
+`Vimの日本語ドキュメント by MURAOKA Taro <https://drive.google.com/file/d/0ByQIX4Ls1SHlZ3JtOWxHUUkwaDA/view>`_
+--------------------------------------------------------------------------------------------------------------
+
+- 翻訳作業にぜひ参加を！比較的簡単なコントリビューションでも手が足りてないので人手がほしい。
+- Vim8.0へのキャッチアップ 助力、お願いします。
+- `vim-jp/vimdoc-ja-working: vimdoc-ja working repository <https://github.com/vim-jp/vimdoc-ja-working>`__
+- `vim-jp/lang-ja: Manage Japanese language files which distributed with vim. <https://github.com/vim-jp/lang-ja>`__
+
+`Vim script parser written in Go by haya14busa <https://docs.google.com/presentation/d/1A6_A7XzPoHv_wG5N_R6zbgYKBX2ycii6BCzR-7b-nOw/pub?start=false&loop=false&slide=id.p>`_
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+- Golangはいいぞ！
+
+
+`僕の友達を紹介するよ by aiya000 <https://aiya000.github.io/Maid/my-vim-friends/my-vim-friends#/>`_
+---------------------------------------------------------------------------------------------------
+
+- いつVimを使い始めたのか覚えてない。学生時代、知らないうちにVimを使い始めていた
+
+  - 具体的にいつだったかといわれると確かに……
+  - 自分の場合はPythonのキラーIDEがなかったから触り始めたのがきっかけだった気がする。
+
+
+`Best practices for building Vim plugins by thinca <https://gist.github.com/thinca/785171e327e66c48d2d293690dc2f65a>`_
+----------------------------------------------------------------------------------------------------------------------
+
+- ドキュメントを書きましょう。
+- READMEはプラグインの紹介、docにvim自体のhelpを書きましょう。
+- vimのnamespaceをしっかりしましょう。 "r"一文字のコマンドにしてたりするプラグインがあったりますが、「そこはお前のものじゃない。」
+- autoloadを使いましょう。プラグインいっぱい入れると、そのユーザーのVimの起動がめっちゃ遅くなったり…plugin/xxx.vimは起動時にすべて読み込まれるので、autoloadを使うと起動時間の鈍化が緩和される。
+- 省略形はスクリプト内ではやめよう。インタラクティブのためにあるので。
+
+懇親会
+------
+
+- 香川の大学生に「udon.vimを定期開催して、来年のVimConfで発表したらいいですよ！」とそそのかしてきた。
+- 大学生3人を含む初参加の人や発表者、スタッフの人と絡んだりお話をきいてこれた。
+
+  - @kaoriya, @supermomonga, @iyuuya, @ujm, @ShougoMatsu, etc...
+
+- Vimをもっと使いこなそうと決意した。ひとまずはuser-manualや実践Vimをもっと理解する。
+- 無限コーヒーおいしかった。
+- 寿司とピザは正義。
+
+.. tweet:: https://twitter.com/kashew_nuts/status/794835544874192896
+
+.. author:: default
+.. categories:: Vim, VimConf
+.. tags:: Vim, VimConf
+.. comments::

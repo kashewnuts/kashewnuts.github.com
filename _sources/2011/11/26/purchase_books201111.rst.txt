@@ -1,0 +1,53 @@
+本ポチった
+==========
+
+| 最近そう言えば本読んでないなーと思い。
+
+|エバンジェリスト養成講座 究極のプレゼンハック100|
+
+| `エバンジェリスト養成講座 究極のプレゼンハック100 <http://www.amazon.co.jp/exec/obidos/ASIN/4798125091/naoyadyndnsor-22/ref=nosim/>`__
+| posted with
+| `amazlet <http://www.amazlet.com/browse/ASIN/4798125091//ref=nosim/>`__
+| at 11.11.26
+| 西脇 資哲
+| 翔泳社
+| 売り上げランキング: 11789
+| `Amazon.co.jp で詳細を見る <http://www.amazon.co.jp/exec/obidos/ASIN/4798125091/naoyadyndnsor-22/ref=nosim/>`__
+
+|人生を最高に楽しむために20代で使ってはいけない100の言葉|
+
+| `人生を最高に楽しむために20代で使ってはいけない100の言葉 <http://www.amazon.co.jp/exec/obidos/ASIN/4761267739/naoyadyndnsor-22/ref=nosim/>`__
+| posted with
+| `amazlet <http://www.amazlet.com/browse/ASIN/4761267739//ref=nosim/>`__
+| at 11.11.26
+| 千田 琢哉
+| かんき出版
+| 売り上げランキング: 2809
+| `Amazon.co.jp で詳細を見る <http://www.amazon.co.jp/exec/obidos/ASIN/4761267739/naoyadyndnsor-22/ref=nosim/>`__
+
+|死ぬまで仕事に困らないために２０代で出逢っておきたい100の言葉|
+
+| `死ぬまで仕事に困らないために２０代で出逢っておきたい100の言葉 <http://www.amazon.co.jp/exec/obidos/ASIN/4761267348/naoyadyndnsor-22/ref=nosim/>`__
+| posted with
+| `amazlet <http://www.amazlet.com/browse/ASIN/4761267348//ref=nosim/>`__
+| at 11.11.26
+| 千田 琢哉
+| かんき出版
+| 売り上げランキング: 564
+| `Amazon.co.jp で詳細を見る <http://www.amazon.co.jp/exec/obidos/ASIN/4761267348/naoyadyndnsor-22/ref=nosim/>`__
+
+| IT関連の本やドキュメントは読んでいるのですが、
+| こうゆうのはさっぱりな気がしたので買ってみました。
+| 年末年始みたいまとめて時間とって読みたいな。
+
+.. |エバンジェリスト養成講座 究極のプレゼンハック100| image:: http://ecx.images-amazon.com/images/I/515JKZ89XEL._SL160_.jpg
+   :target: http://www.amazon.co.jp/exec/obidos/ASIN/4798125091/naoyadyndnsor-22/ref=nosim/
+.. |人生を最高に楽しむために20代で使ってはいけない100の言葉| image:: http://ecx.images-amazon.com/images/I/51LEsSdnbBL._SL160_.jpg
+   :target: http://www.amazon.co.jp/exec/obidos/ASIN/4761267739/naoyadyndnsor-22/ref=nosim/
+.. |死ぬまで仕事に困らないために２０代で出逢っておきたい100の言葉| image:: http://ecx.images-amazon.com/images/I/518OsbklD0L._SL160_.jpg
+   :target: http://www.amazon.co.jp/exec/obidos/ASIN/4761267348/naoyadyndnsor-22/ref=nosim/
+
+.. author:: default
+.. categories:: LT, 本, 雑記
+.. tags:: LT, 本, 雑記
+.. comments::

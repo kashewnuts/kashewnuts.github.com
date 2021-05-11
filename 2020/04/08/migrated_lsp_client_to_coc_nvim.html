@@ -1,0 +1,324 @@
+<!DOCTYPE html><!--[if lt IE 7]>      <html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="https://www.facebook.com/2008/fbml" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="https://www.facebook.com/2008/fbml" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="https://www.facebook.com/2008/fbml" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="https://www.facebook.com/2008/fbml" class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="description" content="Road To Pythonista">
+        <meta name="viewport" content="width=device-width">
+        
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@kashew_nuts" />
+    <meta property="og:site_name" content="kashew_nuts-blog">
+    <meta property="og:title" content="LSPクライアントをcoc.nvimにした話">
+    <meta property="og:description" content="以前 Pythonの補完環境をjedi-vimからvim-lspに移行した話 — kashew_nuts-blog という記事を書きましたが、現在は neoclide/coc.nvim に完全移行しています。 coc.nvimとは 移行理由 1. 自動補完が「ちょうどいい」感じで補完してくれる 2. 拡張が豊富で、LSPに限らずIDEとしての機能を提供してくれる 3. Language Se...">
+    <meta property='og:url' content="http://kashewnuts.github.io/2020/04/08/migrated_lsp_client_to_coc_nvim.html">
+    <title>LSPクライアントをcoc.nvimにした話 &mdash; kashew_nuts-blog</title>
+            <link rel="stylesheet" href="../../../_static/normalize.css" type="text/css">
+            <link rel="stylesheet" href="../../../_static/sphinx.css" type="text/css">
+            <link rel="stylesheet" href="../../../_static/main.css" type="text/css">
+            <link rel="stylesheet" href="../../../_static/flat.css" type="text/css">
+            <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+            <link rel="stylesheet" href="../../../_static/font-awesome.min.css" type="text/css">
+        <link rel="shortcut icon" href="../../../_static/tinkerer.ico" /><!-- Load modernizr and JQuery -->
+        <script src="../../../_static/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="../../../_static/vendor/jquery-1.8.2.min.js"><\/script>')</script>
+        <script src="../../../_static/plugins.js"></script>
+        <script src="../../../_static/main.js"></script>
+        <link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Pythonの補完環境をjedi-vimからvim-lspに移行した話" href="../../../2019/01/28/move_from_jedivim_to_vimlsp.html" /><link rel="prev" title="Ubuntu18.04LTSから20.04LTSにアップグレードした" href="../../05/05/upgrade_ubuntu_20_04_lts.html" /><link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/kashew_nuts-blog" /><script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.7.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        SOURCELINK_SUFFIX: '.txt',
+        HAS_SOURCE:  true
+      };
+    </script><script type="text/javascript" src="../../../_static/underscore.js"></script><script type="text/javascript" src="../../../_static/doctools.js"></script><script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script><script type="text/javascript" src="../../../_static/disqus.js"></script><script type="text/javascript" src="../../../_static/google_analytics.js"></script>
+    <meta property="fb:admins" content="200170096719194"/>
+    
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Scroll to content if on small screen
+            if (screen.width < 480)
+            {
+                $(document).scrollTop(document.getElementsByTagName("article")[0].offsetTop - 40);
+            }
+        });
+    </script>
+</head>
+    <body role="document">
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+      <div id="container"><header role="banner">
+            <hgroup>
+              <h1><a href="../../../index.html">kashew_nuts-blog</a></h1><h2>Road To Pythonista</h2></hgroup>
+          </header>
+      <nav role="navigation">
+      <ul>
+        <li class="main-nav">
+            <a href="../../../index.html">Home</a>
+          </li>
+        <li class="main-nav"><a href='https://kashewnuts.github.io/archive.html'>Archive</a></li><li class="main-nav">
+            <a href="http://feeds.feedburner.com/kashew_nuts-blog" title="Subscribe via RSS"><span class="fa fa-lg fa-rss"></span></a>
+          </li></ul>
+    </nav><div class="main-container" role="main"><div class="main wrapper body clearfix"><article>
+    <div class="section" id="lspcoc-nvim">
+<h1>LSPクライアントをcoc.nvimにした話<a class="headerlink" href="#lspcoc-nvim" title="Permalink to this headline">¶</a></h1>
+<p>以前 <a class="reference external" href="https://kashewnuts.github.io/2019/01/28/move_from_jedivim_to_vimlsp.html">Pythonの補完環境をjedi-vimからvim-lspに移行した話 — kashew_nuts-blog</a> という記事を書きましたが、現在は <a class="reference external" href="https://github.com/neoclide/coc.nvim">neoclide/coc.nvim</a> に完全移行しています。</p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#coc-nvim" id="id10">coc.nvimとは</a></p></li>
+<li><p><a class="reference internal" href="#id1" id="id11">移行理由</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id2" id="id12">1. 自動補完が「ちょうどいい」感じで補完してくれる</a></p></li>
+<li><p><a class="reference internal" href="#lspide" id="id13">2. 拡張が豊富で、LSPに限らずIDEとしての機能を提供してくれる</a></p></li>
+<li><p><a class="reference internal" href="#language-servervimrc" id="id14">3. Language Serverの設定でvimrcが膨れない</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id3" id="id15">インストール要件</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id16">インストール方法</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id17">使い方</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id6" id="id18">よく使うコマンド</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#popup-window" id="id19">popup-windowについて</a></p></li>
+<li><p><a class="reference internal" href="#id7" id="id20">気になるところ</a></p></li>
+<li><p><a class="reference internal" href="#id8" id="id21">設定ファイル例</a></p></li>
+<li><p><a class="reference internal" href="#id9" id="id22">終わりに</a></p></li>
+</ul>
+</div>
+<div class="section" id="coc-nvim">
+<h2><a class="toc-backref" href="#id10">coc.nvimとは</a><a class="headerlink" href="#coc-nvim" title="Permalink to this headline">¶</a></h2>
+<p>いろんな記事で説明されてますが、Vim8/Neovim向けのインテリセンスエンジンでLSPのフルサポートを謳ったプラグインです。</p>
+</div>
+<div class="section" id="id1">
+<h2><a class="toc-backref" href="#id11">移行理由</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>移行しようと思った理由は以下の3つです。「これなんてVSCode？」となったとかならなかったとか。</p>
+<ul class="simple">
+<li><p>自動補完が「ちょうどいい」感じで補完してくれる</p></li>
+<li><p>拡張が豊富で、LSPに限らずIDEとしての機能を提供してくれる</p></li>
+<li><p>Language Serverの設定でvimrcが膨れない</p></li>
+</ul>
+<div class="section" id="id2">
+<h3><a class="toc-backref" href="#id12">1. 自動補完が「ちょうどいい」感じで補完してくれる</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>vim-lspではオムニ補完、 <a class="reference external" href="https://github.com/prabirshrestha/asyncomplete.vim">prabirshrestha/asyncomplete.vim</a> も使うと自動補完が使えるようになります。個人的には自動補完はほしい補完ソースを、「期待したタイミングで」動かすのが面倒でした。
+LSP導入以前にも自動補完プラグインを使うのに、「連携のための設定」を書くのに苦労していました。</p>
+<p>vim-lspを使ってるときはオムニ補完で自分で補完のタイミングをコントロールして書けてよかったのですが、coc.nvimは「これでいいのでは？」というくらい楽に動いたので一気に虜になりました。</p>
+</div>
+<div class="section" id="lspide">
+<h3><a class="toc-backref" href="#id13">2. 拡張が豊富で、LSPに限らずIDEとしての機能を提供してくれる</a><a class="headerlink" href="#lspide" title="Permalink to this headline">¶</a></h3>
+<p>昨今LSPで各言語ごとに開発環境をインストールするのが楽になってきましたが、インストール自体は手動で行う必要がありました。
+よく知らない言語を触るときにLanguage Serverのセットアップで時間を使うのは大変です。</p>
+<p>最近では <a class="reference external" href="https://github.com/mattn/vim-lsp-settings">mattn/vim-lsp-settings</a> がでてきたので事情が変わってきましたが、
+coc.nvimはcoc.nvim自体がLanguage Serverを含む拡張をインストールできます。
+Gitやエクスプローラーなどの拡張もあるので他のVimプラグインを探す時間も省けます。</p>
+</div>
+<div class="section" id="language-servervimrc">
+<h3><a class="toc-backref" href="#id14">3. Language Serverの設定でvimrcが膨れない</a><a class="headerlink" href="#language-servervimrc" title="Permalink to this headline">¶</a></h3>
+<p>LSPを活用するにはクライアント側の設定だけでなく、Language Serverの設定も書いたりします。
+vimrcにその両方を書いていくとどうしてもvimrcが肥大化していきますが、coc.nvimはLanguage Serverの設定をJSONファイルに書けます。
+キーマッピングやcoc.nvimで使う拡張などはvimrcに書く必要がありますが、設定を分離できるのでvimrcが肥大化しにくいです。</p>
+</div>
+</div>
+<div class="section" id="id3">
+<h2><a class="toc-backref" href="#id15">インストール要件</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>現在のインストール要件は以下となっています。</p>
+<ul class="simple">
+<li><p>Vim &gt;= 8.0.1453</p></li>
+<li><p>node.js &gt;= 8.10.0</p></li>
+<li><p>npm</p></li>
+</ul>
+<p>当初2019年に試したときはVimの場合Python3インターフェイスや <a class="reference external" href="https://github.com/neoclide/vim-node-rpc">neoclide/vim-node-rpc</a>  、yarnに依存していましたが、現在は依存が消えているので使いやすくなりました。(ソースからビルドするときはyarnが必要となります。</p>
+<p>Vimの下限のバージョンはUbuntu 18.04LTSとかならデフォルトで満たしていますが、できればpopup-windowを活用するのに、8.2以上だとよりよいでしょう。
+node.jsも現在のLTSの下限である10.x系にしたほうがよいと思います。</p>
+<p>詳細は <a class="reference external" href="https://github.com/neoclide/coc.nvim/wiki/Install-coc.nvim#requirements">Install coc.nvim</a> を参照のこと。</p>
+</div>
+<div class="section" id="id4">
+<h2><a class="toc-backref" href="#id16">インストール方法</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>vim-plugを使ってる場合、 vimrcに以下のように記述します。
+その後、Vimを再起動しコマンドラインモードで <code class="docutils literal notranslate"><span class="pre">:PlugInstall</span></code> すればOKです。</p>
+<div class="highlight-vim notranslate"><div class="highlight"><pre><span></span>Plug <span class="s1">&#39;neoclide/coc.nvim&#39;</span><span class="p">,</span> {<span class="s1">&#39;branch&#39;</span>: <span class="s1">&#39;release&#39;</span>}
+</pre></div>
+</div>
+<p><a class="reference external" href="https://github.com/neoclide/coc.nvim#quick-start">Quick Start</a> の通りですね。</p>
+</div>
+<div class="section" id="id5">
+<h2><a class="toc-backref" href="#id17">使い方</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>coc.nvimをインストールしたあとは拡張やLanguage Serverをインストールして使うだけ。
+どんな設定ができるかや、Language Serverの設定をすればいいかは以下のWikiやヘルプを参照するとよいです。</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/neoclide/coc.nvim/wiki">neoclide/coc.nvim Wiki</a></p></li>
+<li><p><a class="reference external" href="https://github.com/neoclide/coc.nvim/blob/master/doc/coc.txt">coc.nvim/coc.txt</a></p></li>
+</ul>
+<p>まずは自分の使うFileTypeの拡張を入れたり、設定ファイルの記述を便利にするために <code class="docutils literal notranslate"><span class="pre">:CocInstall</span> <span class="pre">coc-json</span></code> はしておくとよいでしょう。</p>
+<div class="section" id="id6">
+<h3><a class="toc-backref" href="#id18">よく使うコマンド</a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>個人的によく使うコマンドは以下です。</p>
+<ul class="simple">
+<li><p>CocInstall &lt;extension-name&gt;: 拡張のインストール</p></li>
+<li><p>CocUninstall &lt;extension-name&gt;: 拡張のアンインストール</p></li>
+<li><p>CocCommand: インストールした拡張機能の実行</p></li>
+<li><p>CocConfig: Language Serverの設定</p></li>
+<li><p>CocLocalConfig: プロジェクトごとのLanguage Serverの設定</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="popup-window">
+<h2><a class="toc-backref" href="#id19">popup-windowについて</a><a class="headerlink" href="#popup-window" title="Permalink to this headline">¶</a></h2>
+<p>coc.nvimに限らずVimのLSPクライアントを活用していくとき、popup-windowが有効になっていると便利です。
+コマンドラインモードで <code class="docutils literal notranslate"><span class="pre">:echo</span> <span class="pre">has('popupwin')</span></code> を実行したとき、 <code class="docutils literal notranslate"><span class="pre">1</span></code> が返ってくると有効になっています。</p>
+<p>Vim8.2を使っていれば問題なくpopup-windowが使えると思いますが、colorschemeが追従しているかも確認しておくとよいかもしれません。
+自分は昔から <a class="reference external" href="https://github.com/tomasr/molokai">tomasr/molokai</a> を使っていますが、popup-windowで使うハイライトの指定がされていません。</p>
+<p>下記のドキュメントを参考に、ハイライトの指定を行いました。</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://vim-jp.org/vimdoc-ja/popup.html">popup</a></p></li>
+<li><p><a class="reference external" href="https://vim-jp.org/vimdoc-ja/syntax.html#hl-Pmenu">syntax</a></p></li>
+</ul>
+<div class="highlight-vim notranslate"><div class="highlight"><pre><span></span><span class="c">&quot; 設定したハイライト</span>
+<span class="c">&quot; ~/.vim/colors/molokai.vim</span>
+<span class="k">hi</span> Pmenu guifg<span class="p">=</span><span class="mh">#f8f6f2</span> ctermfg<span class="p">=</span><span class="m">15</span> guibg<span class="p">=</span><span class="mh">#35322d</span> ctermbg<span class="p">=</span><span class="m">236</span>
+<span class="k">hi</span> PmenuSel guifg<span class="p">=</span><span class="mh">#000000</span> ctermfg<span class="p">=</span><span class="m">16</span> <span class="k">gui</span><span class="p">=</span><span class="nb">bold</span> cterm<span class="p">=</span><span class="nb">bold</span>
+<span class="k">hi</span> PmenuSbar guibg<span class="p">=</span><span class="mh">#35322d</span> ctermbg<span class="p">=</span><span class="m">236</span>
+<span class="k">hi</span> PmenuThumb guifg<span class="p">=</span><span class="mh">#d9cec3</span> ctermfg<span class="p">=</span><span class="m">252</span>
+</pre></div>
+</div>
+<p>他のcolorschemeもいくつか見て、最終的に <a class="reference external" href="https://github.com/sjl/badwolf">sjl/badwolf</a> を参考にさせていただきました。
+使ったときのイメージはこんな感じです。</p>
+<blockquote class="twitter-tweet" data-conversation="none"><a href="https://twitter.com/kashew_nuts/status/1229781512050003968">https://twitter.com/kashew_nuts/status/1229781512050003968</a></blockquote></div>
+<div class="section" id="id7">
+<h2><a class="toc-backref" href="#id20">気になるところ</a><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>良い点もあれば気になるところもあるということでかんたんに書きます。</p>
+<ul class="simple">
+<li><p>設定ファイルがJSONのため、PATHの設定を書くと異なるOS間で共通化しにくい</p></li>
+<li><p>NeoVimでのみサポートとかあるので、coc及び拡張の機能が自分の「Vim」に対応しているか確認する必要がある</p></li>
+<li><p>トラブルシューティングにはJavaScript/TypeScriptまわりの知識が必要になる</p></li>
+</ul>
+<p>現状なにか詰まったりしたときに「そういえばそうだったな」と思うぐらいなので、気に留めておくぐらいでいいかもしれません。</p>
+</div>
+<div class="section" id="id8">
+<h2><a class="toc-backref" href="#id21">設定ファイル例</a><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p>設定ファイルは <a class="reference external" href="https://github.com/neoclide/coc.nvim#example-vim-configuration">README</a> を参考に自分に必要な記述をすればと思いますが、自分のも一例としてリンクを載せておきます。
+こだわりとしてはcoc.nvimを使わないFileTypeでは、キーマッピングなどを上書きしないようにしています。</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/kashewnuts/dotfiles/blob/1e11a30e48c988a069f9ce20a7d185ab53a36ccd/files/.vim/vimrc#L383-L467">vimrc</a></p></li>
+<li><p><a class="reference external" href="https://github.com/kashewnuts/dotfiles/blob/1e11a30e48c988a069f9ce20a7d185ab53a36ccd/files/.vim/coc-settings.json">coc-settings.json</a></p></li>
+</ul>
+</div>
+<div class="section" id="id9">
+<h2><a class="toc-backref" href="#id22">終わりに</a><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<p>使用感自体は快適です。vim-lspと比べるとnode.jsへの依存が増えていますが、Language Serverによっては関係なく必要なのであまり気にしていません。LSPひとつとっても、Vim界隈はこういった切磋琢磨が目に見えるので使っていても楽しいですね。</p>
+</div>
+</div>
+
+    <br/>
+
+<!-- ninja_omatome -->
+<div class="ninja_onebutton">
+<script type="text/javascript">
+//<![CDATA[
+(function(d){
+if(typeof(window.NINJA_CO_JP_ONETAG_BUTTON_00eb4412f1c80db8bbc1af50c58e8ee6)=='undefined'){
+    document.write("<sc"+"ript type='text\/javascript' src='//omt.shinobi.jp\/b\/00eb4412f1c80db8bbc1af50c58e8ee6'><\/sc"+"ript>");
+}else{
+    window.NINJA_CO_JP_ONETAG_BUTTON_00eb4412f1c80db8bbc1af50c58e8ee6.ONETAGButton_Load();}
+})(document);
+//]]>
+</script><span class="ninja_onebutton_hidden" style="display:none;"></span><span style="display:none;" class="ninja_onebutton_hidden"></span>
+</div>
+<!-- ninja_omatome -->
+
+</div>
+    <div class="postmeta">
+        <div class="author">
+            <span>Posted by Kashun YOSHIDA</span>
+        </div>
+        <div class="categories">
+            <span>
+                Filed under:
+                <a href="../../../categories/vim.html">Vim</a></span>
+        </div>
+        <div class="tags">
+            <span>
+                Tags:
+                <a href="../../../tags/vim.html">Vim</a></span>
+        </div>
+        </div>
+    <div id="disqus_thread"></div><script type="text/javascript">    var disqus_shortname = "kashewnutsblog";    var disqus_identifier = "2020/04/08/migrated_lsp_client_to_coc_nvim";    disqus_thread();</script><noscript>Please enable JavaScript to view the    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<ul class="related clearfix">
+            <li class="left"> &laquo; <a href="../../05/05/upgrade_ubuntu_20_04_lts.html">Ubuntu18.04LTSから20.04LTSにアップグレードした</a></li>
+            <li class="right"><a href="../../../2019/01/28/move_from_jedivim_to_vimlsp.html">Pythonの補完環境をjedi-vimからvim-lspに移行した話</a> &raquo; </li>
+        </ul></article><aside class="sidebar"><section><div class="widget">
+  <div>
+    <a href="//af.moshimo.com/af/c/click?a_id=815168&p_id=1166&pc_id=1793&pl_id=20228&guid=ON" target="_blank" rel="nofollow"><img src="//image.moshimo.com/af-img/0408/000000020228.png" width="300" height="250" style="border:none;"></a><img src="//i.moshimo.com/af/i/impression?a_id=815168&p_id=1166&pc_id=1793&pl_id=20228" width="1" height="1" style="border:none;">
+  </div>
+</div></section><section><div class="widget" id="searchbox" role="search">
+    <h1><a href="#searchbox">Search</a></h1>
+    <form action="../../../search.html" method="get">
+        <input type="text" name="q" />
+        <button type="submit"><span class="fa fa-search"></span></button>
+    </form>
+</div></section><section><div class="widget">
+    <h1>Recent Posts</h1>
+    <ul><li>
+            <a href="../../11/30/climbing_shoes_history.html">クライミングシューズ遍歴</a>
+        </li><li>
+            <a href="../../06/11/wsl2.html">WSL2を使ってみている</a>
+        </li><li>
+            <a href="../../05/05/upgrade_ubuntu_20_04_lts.html">Ubuntu18.04LTSから20.04LTSにアップグレードした</a>
+        </li><li>
+            <a href="#">LSPクライアントをcoc.nvimにした話</a>
+        </li><li>
+            <a href="../../../2019/01/28/move_from_jedivim_to_vimlsp.html">Pythonの補完環境をjedi-vimからvim-lspに移行した話</a>
+        </li><li>
+            <a href="../../../2019/01/05/2018and2019.html">2018年の振り返りと2019年抱負</a>
+        </li><li>
+            <a href="../../../2018/12/02/bp_advent_calender.html">2018年版Life ChangingだったVimプラグインTOP3</a>
+        </li><li>
+            <a href="../../../2018/11/06/yosemite_tour.html">ヨセミテツアー日記</a>
+        </li><li>
+            <a href="../../../2018/09/22/pyconjp2018.html">PyConJP2018でPyCharmの話をしてきました #pyconjp</a>
+        </li><li>
+            <a href="../../../2018/08/22/jedivim_memo.html">VimとPythonの補完についてのメモ</a>
+        </li></ul>
+</div>
+</section><section><div class="widget">
+    <h1>Categories</h1>
+    <ul><li><a href="../../../categories/64bit.html">64bit</a> (2)</li><li><a href="../../../categories/android.html">Android</a> (3)</li><li><a href="../../../categories/bouldering.html">bouldering</a> (2)</li><li><a href="../../../categories/bouldering.html">Bouldering</a> (4)</li><li><a href="../../../categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="../../../categories/c_c.html">C/C++</a> (5)</li><li><a href="../../../categories/chrome.html">Chrome</a> (2)</li><li><a href="../../../categories/db.html">DB</a> (1)</li><li><a href="../../../categories/django.html">Django</a> (10)</li><li><a href="../../../categories/facebook.html">Facebook</a> (1)</li><li><a href="../../../categories/firefox.html">Firefox</a> (1)</li><li><a href="../../../categories/git_mercurial.html">Git/Mercurial</a> (8)</li><li><a href="../../../categories/golang.html">Golang</a> (1)</li><li><a href="../../../categories/google.html">Google</a> (5)</li><li><a href="../../../categories/heroku.html">Heroku</a> (6)</li><li><a href="../../../categories/java.html">Java</a> (2)</li><li><a href="../../../categories/javascript.html">JavaScript</a> (4)</li><li><a href="../../../categories/jupyter.html">Jupyter</a> (1)</li><li><a href="../../../categories/kabepy.html">kabepy</a> (2)</li><li><a href="../../../categories/linux.html">Linux</a> (5)</li><li><a href="../../../categories/lt.html">LT</a> (5)</li><li><a href="../../../categories/mac.html">Mac</a> (8)</li><li><a href="../../../categories/pycharm.html">PyCharm</a> (2)</li><li><a href="../../../categories/pyconjp.html">PyConJP</a> (1)</li><li><a href="../../../categories/pyfes.html">pyfes</a> (7)</li><li><a href="../../../categories/python.html">Python</a> (70)</li><li><a href="../../../categories/slack.html">Slack</a> (1)</li><li><a href="../../../categories/sphinx.html">Sphinx</a> (8)</li><li><a href="../../../categories/sqlalchemy.html">SQLAlchemy</a> (1)</li><li><a href="../../../categories/ssd.html">SSD</a> (1)</li><li><a href="../../../categories/tddbc.html">TDDBC</a> (1)</li><li><a href="../../../categories/tinkerer.html">Tinkerer</a> (7)</li><li><a href="../../../categories/tmux.html">tmux</a> (1)</li><li><a href="../../../categories/ubuntu.html">Ubuntu</a> (3)</li><li><a href="../../../categories/vagrant.html">Vagrant</a> (1)</li><li><a href="../../../categories/vim.html">Vim</a> (24)</li><li><a href="../../../categories/vimconf.html">VimConf</a> (3)</li><li><a href="../../../categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="../../../categories/windows.html">Windows</a> (3)</li><li><a href="../../../categories/windows7.html">Windows7</a> (4)</li><li><a href="../../../categories/wsl.html">WSL</a> (1)</li><li><a href="../../../categories/%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0.html">アルゴリズム</a> (1)</li><li><a href="../../../categories/%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3.html">セキュリティ</a> (2)</li><li><a href="../../../categories/%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF.html">ネットワーク</a> (1)</li><li><a href="../../../categories/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0.html">プログラミング</a> (7)</li><li><a href="../../../categories/%E5%8B%89%E5%BC%B7%E4%BC%9A.html">勉強会</a> (30)</li><li><a href="../../../categories/%E5%BF%9C%E7%94%A8%E6%83%85%E5%A0%B1%E6%8A%80%E8%A1%93%E8%80%85.html">応用情報技術者</a> (10)</li><li><a href="../../../categories/%E6%83%85%E5%A0%B1%E5%87%A6%E7%90%86%E6%8A%80%E8%A1%93%E8%80%85%E8%A9%A6%E9%A8%93.html">情報処理技術者試験</a> (10)</li><li><a href="../../../categories/%E6%9C%AC.html">本</a> (29)</li><li><a href="../../../categories/%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83.html">開発環境</a> (11)</li><li><a href="../../../categories/%E9%9B%91%E8%A8%98.html">雑記</a> (38)</li><li><a href="../../../categories/%E9%AB%98%E9%80%9F%E5%8C%96.html">高速化</a> (1)</li></ul>
+</div></section><section><div class="widget">
+    <h1>About Me</h1>
+    <div>
+        <a href="https://about.me/kashew_nuts">
+            <img src="https://pbs.twimg.com/profile_images/378800000438956976/3e61e7ae64d916ba0451a44c3b8ce347.jpeg"
+            width="128px"
+            height="128px" />
+        </a>
+        <h4><a href="https://twitter.com/kashew_nuts">kashew_nuts
+                (KashunYOSHIDA)</a></h4>
+        <p>人生という壁を登るSoftwareDeveloper</p>
+        <a class="twitter-timeline" data-width="300" data-height="800" data-theme="dark" href="https://twitter.com/kashew_nuts">Tweets by kashew_nuts</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+</div></section></aside></div> <!-- #main --></div> <!-- #main-container -->
+
+        <div class="footer-container" role="contentinfo"><footer class="wrapper">&copy; Copyright 2011-2020, Kashun YOSHIDA. Powered by <a href="http://www.tinkerer.me/">Tinkerer</a> and <a href="http://sphinx.pocoo.org/">Sphinx</a>.</footer></div> <!-- footer-container -->
+
+      </div> <!--! end of #container --><!--[if lt IE 7 ]>
+          <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+          <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+        <![endif]-->
+    </body>
+</html>

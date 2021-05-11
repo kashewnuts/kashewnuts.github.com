@@ -1,0 +1,62 @@
+======================================================
+PyCon APAC 2013 に参加しました #pyconapac #pyconjp
+======================================================
+
+昨年はスタッフでもないのに `スライドやリンクをまとめたり <http://kashewnuts.github.io/2012/09/15/pyconjp2012.html>`_ してましたが、
+今年は `PyCon APAC 2013 in Japan - connpass <http://connpass.com/event/2703/>`_ で当日スタッフとして9/14(土)と15(日)の2日間当日スタッフとして受付を担当していました。
+
+発端
+----
+
+`2013年の抱負 — kashew_nuts-blog <http://kashewnuts.github.io/2013/01/01/2013newyearsresolutions.html>`_
+でも述べたのを覚えていて下さったのか、先日参加した
+`Python mini hack-a-thon 夏山合宿 2013 - connpass <http://connpass.com/event/2651/>`_
+にて `@takanory <https://twitter.com/takanory>`_
+さんに、 **「俺の右腕になってくれないか？(ｷﾘｯ」** と言われました。
+それに **「はい。自分で良ければ。」** と二つ返事で引き受け、その場で PyCon APAC 2013 の受付サブリーダーを担当することが決定。
+
+参加当日
+--------
+
+1日目、2日目と受付として動いたり、足りなくなったノベルティの補充したり、Party の準備をしたりと
+"受付" として定められているところ以外のところでも何でもやりました。
+こんなこと言うと「スタッフとして参加したなら忙しくてセッションなんて全然聞けないんじゃないか」
+と思われるかもしれませんが、 **自分の場合しっかりと聞きたいセッションに参加してきました** 。
+参加したセッションは以下の3つ。
+
+* `Programming AWS with Python <http://apac-2013.pycon.jp/ja/program/sessions.html#session-14-1530-rooma0715-ja1-ja>`_
+* `ターミナルの復権:隠れた名ライブラリcursesを使いこなす <http://apac-2013.pycon.jp/ja/program/sessions.html#session-15-1530-rooma0715-ja1-ja>`_
+* `bpmappersの紹介 <http://apac-2013.pycon.jp/ja/program/sessions.html#session-15-1630-rooma0715-ja1-ja>`_
+
+当日スタッフとして申し込む時に、「このセッションは参加したいです！」と伝えていたからでしょうか、
+融通してくださって本当にありがたかったです。
+
+本当は3日目の Sprint も参加するつもりだったのですが、
+緊張の糸が切れたのか1日中泥のように寝てしまったのでこれだけはもったいなかったですね。
+調子に乗って1日目2日目と終わった後Youtubeでセッションの動画を見てしまったりしたのが原因でしょう。
+体調管理大事です。
+
+感想とか
+--------
+
+「楽しかった」とか「疲れた」とか「ここはうまくできた」とか「俺段取り悪すぎ」とかいろいろ思うところはあったけど、一言でいうと **「あっ」という間だった** 。
+去年の参加者として参加した時とはまた別の充実感を味わえた気がします。
+来年も何らかの形でかかわっていきたいですね。
+貴重な経験をさせていただき本当にありがとうございました！
+
+
+参考リンク・参加者Blog
+----------------------
+
+* `PyCon APAC 2013 - PyCon APAC 2013 <http://apac-2013.pycon.jp/ja/index.html>`_
+* `PyConAPAC 2013 に行ってきた - 混沌脳内 <http://d.hatena.ne.jp/blaue_fuchs/20130916/1379322614>`_
+* `PyCon APAC 2013 終わりました - ま、そんな日もあるさ <http://d.hatena.ne.jp/flag-boy/20130917/1306902308>`_
+* `ryu22eBlog:PyCon APAC 2013 in Japan にスタッフとして参加しました #pyconapac #pyconjp <http://blog.livedoor.jp/ryu22e/archives/65763992.html>`_
+* `WLX302 PyCon APAC 2013への機材提供 #pyconapac #pyconjp | ヤマハの音とネットワーク製品を語る <http://projectphone.typepad.jp/blog/2013/09/wlx302-pycon-ap-88cf.html>`_
+* `おいぬま日報: PyCon APAC 2013 1日目に行ってきた(1) #pyconapac <http://blogger.lampetty.net/2013/09/pycon-apac-2013-09-14-1.html>`_
+* `PyCon APAC 2013に行ってきました - ウラガミ・ライフ <http://uragami.hatenablog.jp/entry/2013/09/18/001921>`_
+
+.. author:: default
+.. categories:: Python
+.. tags:: Python
+.. comments::

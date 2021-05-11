@@ -1,0 +1,46 @@
+Vimテクニックバイブルを読んでVimにプラグイン追加してみた part2
+==========================================================================
+
+| `前回 <http://kashewnuts-tech.blogspot.com/2011/10/vimvim.html>`__\ は\ `quickrun.vim <https://github.com/thinca/vim-quickrun>`__\ について書いたので、
+| 触れなかった\ `neocomplcache <https://github.com/Shougo/neocomplcache>`__\ について書きたいと思う。
+
+| そもそもVimにはデフォルトで補完機能があるらしいのだが、
+| EclipseやVisualStudioなどのIDEみたいに
+| 自動で候補が出てくるわけはないようだ。
+| 明示的に補完キーを押さないといけないので若干煩わしい。
+| そこでneocomplcacheを入れると、
+| 自分で補完のためにキーを押さなくても良くなる。
+| 詳しい説明は\ `こちら <http://vim-users.jp/2009/07/hack-49/>`__\ 。
+| プログラムを組んでいて名前を間違えてしまい、
+| プログラムが動かないみたいなことはありがちなので非常に助かる。
+| さてneocomplecacheはデフォルトでは無効になっているため、
+| 最初に\_vimrcに下記の設定を加える。
+
+.. code-block:: bash
+
+    "neocomplecacheを有効化let g:neocomplcache_enable_at_startup = 1
+
+| すると細かい設定をしなくても下記のように、
+| すぐに使い始めることができる。
+
+|image0|
+
+| 候補はCtrl+Nで次のリスト、Ctrl+Pで前のリストに移動できる。
+| 矢印キーでもできなくはないけど、こっちのほうが速いと思う。
+| 標準のVimだとC,C++,Python,XMLが用意されているが、
+| neocomplcacheはVimScript,Perl,Ruby,D,Lispなどにも対応してるので、
+| 捗ること間違い無いと思う。
+
+| p.s.
+| Ctrl+Uでも次のリストに移動できるようだが、
+| Ctrl+Nとの違いが分からなかった。
+| Google先生で調べても見つけられなかったので、
+| 誰か知ってたら教えてくれると嬉しいです。
+
+.. |image0| image:: http://2.bp.blogspot.com/-lTMxisqLjyY/Tq17cDXN3sI/AAAAAAAAAZM/o5xXuYlnM94/s400/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588+2011-10-31+1.29.14.png
+   :target: http://2.bp.blogspot.com/-lTMxisqLjyY/Tq17cDXN3sI/AAAAAAAAAZM/o5xXuYlnM94/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588+2011-10-31+1.29.14.png
+
+.. author:: default
+.. categories:: Vim, 本
+.. tags:: Vim, 本
+.. comments::

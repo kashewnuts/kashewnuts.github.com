@@ -1,0 +1,46 @@
+本読む暇が欲しいです。
+======================
+
+| 本買っても読む時間がない。
+| 応用情報技術者試験受ける前は電車の中でも読んでいたのだけど、
+| 最近はTwitterのTLを追っかけるので精一杯。
+
+| 今日たまたま待ち合わせの時間まで30分ほど余裕があって、
+| 読書することができたけど、
+| インプットの時間が足りてないなーと。
+
+| 今月は読書会が2件入っているのだから、
+| ちょくちょく読み進めて行かないとやばいです。
+| 早くエキPyとアジャイルサムライを読みたいなと……
+
+|エキスパートPythonプログラミング|
+
+| `エキスパートPythonプログラミング <http://www.amazon.co.jp/exec/obidos/ASIN/4048686291/naoyadyndnsor-22/ref=nosim/>`__
+| posted with
+| `amazlet <http://www.amazlet.com/browse/ASIN/4048686291//ref=nosim/>`__
+| at 11.12.05
+| Tarek Ziade
+| アスキー・メディアワークス
+| 売り上げランキング: 8194
+| `Amazon.co.jp で詳細を見る <http://www.amazon.co.jp/exec/obidos/ASIN/4048686291/naoyadyndnsor-22/ref=nosim/>`__
+
+|アジャイルサムライ−達人開発者への道−|
+
+| `アジャイルサムライ−達人開発者への道− <http://www.amazon.co.jp/exec/obidos/ASIN/4274068560/naoyadyndnsor-22/ref=nosim/>`__
+| posted with
+| `amazlet <http://www.amazlet.com/browse/ASIN/4274068560//ref=nosim/>`__
+| at 11.12.05
+| Jonathan Rasmusson
+| オーム社
+| 売り上げランキング: 2371
+| `Amazon.co.jp で詳細を見る <http://www.amazon.co.jp/exec/obidos/ASIN/4274068560/naoyadyndnsor-22/ref=nosim/>`__
+
+.. |エキスパートPythonプログラミング| image:: http://ecx.images-amazon.com/images/I/51wSTTIQtgL._SL160_.jpg
+   :target: http://www.amazon.co.jp/exec/obidos/ASIN/4048686291/naoyadyndnsor-22/ref=nosim/
+.. |アジャイルサムライ−達人開発者への道−| image:: http://ecx.images-amazon.com/images/I/51b4P511wTL._SL160_.jpg
+   :target: http://www.amazon.co.jp/exec/obidos/ASIN/4274068560/naoyadyndnsor-22/ref=nosim/
+
+.. author:: default
+.. categories:: 本, 雑記
+.. tags:: 本, 雑記
+.. comments::

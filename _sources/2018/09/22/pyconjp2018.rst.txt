@@ -1,0 +1,114 @@
+PyConJP2018でPyCharmの話をしてきました #pyconjp
+===============================================
+
+通算5回目のPyCon参加になりました。個人的には今回は例年と少し違った参加のしかたになりました。
+
+発表者として45分間トークしてきたり(New!)、
+チュートリアルの講師・TAをやった(New!)のは良い経験になりましたね。
+
+せっかく参加したのをそのままにするのももったいないので、
+当日の様子とかを振り返っておきたいと思います。
+
+- `PyCon JP 2018 Tutorial - connpass <https://pyconjp.connpass.com/event/94980/>`_
+- `PyCon JP 2018 - connpass <https://pyconjp.connpass.com/event/89163/>`_
+- `PyCon JP 2018 <https://pycon.jp/2018/>`_
+- `PyConJP - YouTube <https://www.youtube.com/user/PyConJP/videos?flow=grid&view=0&sort=dd>`_
+
+
+.. contents:: contents
+  :local:
+
+
+自分の発表について
+------------------
+
+普段自分がPyCharmを使っている中で便利だなと感じるところや、どうゆうところで詰まったりしたかというところを紹介しました。
+
+内容的には `PyCon Kyushu - 2018 Fukuoka <http://kyushu.pycon.jp/>`_ で話したことがベースになっています。始まる前は「裏番組も強力だし、まさか満員になることはないだろう」と思っていましたが、まさかの満員で、しかも立ち見NGなので別会場でライブストリーミングするという話が聞こえてきて「何が起きているんだ！？」とテンパっていました。
+
+.. raw:: html
+
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/sJlyZmbT2xs?start=581" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+   </iframe>
+
+- 資料: https://gitpitch.com/kashewnuts/slides?p=20180917pyconjp#/
+- Toggeterまとめ: https://togetter.com/li/1269343
+
+登壇の機会をいただいたといっても、「聞きに来てくださった方の期待に応えられるかなー」と不安に思ったりもしましたが、概ね好評だったようでホッとしました。45分枠だったので質疑応答の時間も取れてよかったかなと思います。発表したことで自分が知らなかったことも知れたりしました。
+
+
+チュートリアルについて
+----------------------
+
+今回は「DjangoによるWebアプリケーション開発入門」の講師&TA担当でチュートリアルに初参加しました。
+かなり反省点もある時間だったのですが、いい経験になりました。その経験が翌日の発表やその後の講師業にも活かせたかなーと。
+
+いくつかやられたなーと思ったのがあったので今後の自分のためにいくつかメモ。
+
+- Python3.7をサポートしているのはDjango2.0.7以降。Django1.11LTSはサポートしていない。
+
+  - 考えてみたらそうだけど、Django1.11LTSの方がPython3.7より先にリリースされているからサポートされてる保証はなかった。サポートしているバージョンの確認は大事。
+  - Python3.7互換の対応は https://code.djangoproject.com/ticket/28814 でされた様子。
+
+- 忘れたことにやってきたShebang。
+
+  - ``#!/usr/bin/python`` : フルパスで指定されているPythonインタプリタを実行する
+  - ``#!/usr/bin/env python`` :  ``PATH`` の中に含まれるPythonインタプリタを実行する
+
+チュートリアル後に行われたWelcomeパーティは楽しかった！
+
+.. tweet:: https://twitter.com/kashew_nuts/status/1041284540264665088
+
+
+
+PyConで拝聴したセッション
+-------------------------
+
+1日目は自分の発表もあり、他のセッションを聞いてる余裕があまりなかったのですが、2日目のキーノートである `@ransui <https://twitter.com/ransui>`_ さんの `「Pythonでやってみた」：広がるプログラミングの愉しみ <https://www.slideshare.net/RansuiIso/python-115121978>`_ はわくわくしましたね。
+
+他に会場で聞いたり、YouTubeで見てる中で良かったなーと思ったセッションはこんな感じ。現実と戦う話だったり、自分の興味を掘り下げていく話だったりと今回のテーマだった「ひろがるPython」にちなんだ発表だなーと感じました。
+
+- `あなたと私いますぐパッケージン Atsushi Odagiri <https://speakerdeck.com/aodag/anatatopythonjin-sugupatukezingu>`_
+- Interactive Network Visualization using Python 〜 NetworkX + BokehでPEPの参照関係を可視化する Tomoko Furuki
+- Migrating from Py2 application to Py3: first trial in MonotaRO / Python2 から Python3 への移植: MonotaRO での取り組み 増田泰
+- `Pythonでざっくり学ぶUnixプロセス tell-k <https://tell-k.github.io/pyconjp2018/>`_ 
+- `Pythonで始めるウェブスクレイピング実践入門 田中 慎太郎 <https://speakerdeck.com/sin_tanaka_21/pythondeshi-meruuebusukureipingushi-jian-ru-men>`_
+
+
+Tweet振り返り
+-------------
+
+雑多にいくつかピックアップして振り返り
+
+.. tweet:: https://twitter.com/kashew_nuts/status/1041526439923740673
+
+ちょうどコラボイベントをやっていらしかったのでパシャリ。
+
+.. tweet:: https://twitter.com/kashew_nuts/status/1041933375882182658
+
+`@yattom <https://twitter.com/yattom>`_ さんのライブコーディング。
+
+仕事で `pytest <https://pypi.org/project/pytest/>`_ は使っているのですが、
+他の人がどうテストを書くんだろうと見れる機会は多くないので参考になりました。
+
+コードは https://github.com/yattom/tddhome/tree/20180918_pyconjp2018_livedemo/python_pytest に上げていただいているので、見直したいときは役立ちそう。
+
+.. tweet:: https://twitter.com/kashew_nuts/status/1041978613514420224
+
+スタッフの方々おつかれ様でした。参加者の人数が増えていたり、新しい会場だったり、いろいろ大変な役割だと思いますが、おかげで楽しめるました。
+
+.. tweet:: https://twitter.com/kashew_nuts/status/1041984074112413699
+
+
+おわりに
+--------
+
+.. tweet:: https://twitter.com/kashew_nuts/status/1042038613893033984
+
+有志の打ち上げも楽しかった。来年もトークできたらいいなと思うので、発表ネタをしたためておきたいですね。
+
+
+.. author:: default
+.. categories:: Python, PyConJP, PyCharm, Django
+.. tags:: Python, PyConJP, PyCharm, Django
+.. comments::

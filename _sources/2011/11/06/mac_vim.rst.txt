@@ -1,0 +1,31 @@
+ターミナルからMacVimが起動するようにしてみた
+==================================================
+
+| どうやるのだろうと思いつつ面倒くさがって、
+| 手をつけてなかった部分だったのですが
+| いい加減やってみようと思い実行してみました。
+
+| KaoriYaさんの\ `サイト <http://code.google.com/p/macvim-kaoriya/>`__\ に\ `起動用のスクリプト <https://raw.github.com/splhack/macvim/master/src/MacVim/mvim>`__\ がおいてあったので、
+| まずそれをmvimというファイル名にして保存しました。
+| 自分は\ `こちら <http://idita.blog11.fc2.com/blog-entry-646.html>`__\ を参考にして/opt/local/bin/にスクリプトを配置し、
+| 実行権を与えるためにターミナルに以下のコマンドを打ちました。
+
+.. code-block:: bash
+
+  sudo chmod 755 /opt/local/bin/mvim
+
+| 参考にしたBlogではu+xとされてましたが、
+| それだと毎回sudoを付けないと起動できなかったので755としました。
+| これでターミナル上で"mvim"と打つとMacVimが実行されます。
+
+|image0|
+
+| これでターミナルとの行き来が楽になるとほっと一安心です。
+
+.. |image0| image:: http://4.bp.blogspot.com/-qoMny6iPKmo/TrVehJz9YqI/AAAAAAAAAdo/XxR7jyCK6Zk/s320/mvimSetting.jpg
+   :target: http://4.bp.blogspot.com/-qoMny6iPKmo/TrVehJz9YqI/AAAAAAAAAdo/XxR7jyCK6Zk/s1600/mvimSetting.jpg
+
+.. author:: default
+.. categories:: Vim, Mac
+.. tags:: Vim, Mac
+.. comments::

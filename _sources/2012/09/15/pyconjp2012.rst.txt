@@ -1,0 +1,121 @@
+PyConJP2012 スライド・資料まとめ
+============================================
+
+| 公式サイト： `PyCon JP 2012 開催します！ - PyCon JP 2012 <http://2012.pycon.jp/index.html>`__
+| 発表風景： `PyConJP - YouTube <http://www.youtube.com/user/PyConJP/videos?view=0>`__
+| [STRIKEOUT:一日目参加してきました。]
+| [STRIKEOUT:二日目参加中です。]
+| 参加者・発表者のみなさんお疲れ様でした。
+| 見つけられた発表者スライド・資料をまとめてみます。
+| 「これが足りないよ！」というのがあれば、
+| URL付きでTwitterにメンションなり、
+| 連絡いただければ追加します。 というか是非連絡お願いします。
+
+| **Togetter・Twitterまとめ**
+
+-  `PyConJP 2012 1 日目 オープニング 〜 基調講演 - Togetter <http://togetter.com/li/373919>`__
+-  `PyConJP 2012 1 日目 昼まで。 #PyConJP - Togetter <http://togetter.com/li/373922>`__
+-  `PyConJP 2012 1 日目 昼から１コマ目 #PyConJP - Togetter <http://togetter.com/li/373973>`__
+-  `PyConJP 2012 1 日目 14:30 - 15:15 台 #PyConJP - Togetter <http://togetter.com/li/373974>`__
+-  `PyConJP 2012 1 日目 15:30 - LT 前まで #PyConJP - Togetter <http://togetter.com/li/373978>`__
+-  `PyConJP 2012 1 日目 LT - Party #PyConJP - Togetter <http://togetter.com/li/373981>`__
+-  `PyConJP 2012 ２日目 開始 - 午前１コマ目 #PyConJP - Togetter <http://togetter.com/li/373986>`__
+-  `PyConJP 2012 ２日目 11:00-11:45 ぐらい #PyConJP - Togetter <http://togetter.com/li/373990>`__
+-  `PyConJP 2012 ２日目 昼＆オープンスペース #PyConJP - Togetter <http://togetter.com/li/374000>`__
+-  `PyConJP 2012 ２日目 基調講演 #PyConJP - Togetter <http://togetter.com/li/374005>`__
+-  `PyConJP 2012 ２日目 午後２コマ目 15:15 - 16:00 #PyConJP - Togetter <http://togetter.com/li/374048>`__
+-  `PyConJP 2012 ２日目 TeaBreak #PyConJP - Togetter <http://togetter.com/li/374055>`__
+-  `PyConJP 2012 ２日目 午後２コマ目 16:45 - 17:30 #PyConJP - Togetter <http://togetter.com/li/374083>`__
+-  `PyConJP 2012 ２日目 午後３コマ目 17:45-18:30 #PyConJP - Togetter <http://togetter.com/li/374105>`__
+-  `PyConJP 2012 ２日目 Closing から日付変わるまで #PyConJP - Togetter <http://togetter.com/li/374769>`__
+-  `PyConJP 2012 ３日目 Sprint #PyConJP - Togetter <http://togetter.com/li/374777>`__
+-  `世界初のSphinxカンファレンス『SphinxConJP』 - Yukarin Note <https://yukar.in/note/ckFktP>`__
+
+**1日目**
+
+-  `PyCon JP 2012 Opening <http://www.slideshare.net/takanory/pycon-jp-2012-opening>`__
+-  `Happiness Through Ignorance // Speaker Deck <https://speakerdeck.com/u/mitsuhiko/p/happiness-through-ignorance>`__
+   `(PDF版はこちら) <http://dev.pocoo.org/~mitsuhiko/happiness.pdf>`__
+-  `PyCon JP 2012 Pythonプログラミングハンズオン(初級者向け) — documentation <http://pyconjp2012-python-for-beginners.readthedocs.org/en/latest/index.html>`__
+-  `使えるDjango1.4 <http://www.slideshare.net/hirokiky/django14>`__ -  `App Engine Updates 2012 - Google Docs <https://docs.google.com/presentation/d/1yb7DIzKA8agVBNpwWCpttzRwDWgJWI-HFTduTMxcQIE/edit#slide=id.p>`__
+-  `2012.09.15 PyCon JP 2012 「ナウでヤングな17歳のVPS 構築機」 // Speaker Deck <https://speakerdeck.com/u/yosida95/p/2012-dot-09-dot-15-pycon-jp-2012-%5Bnaudeyanguna17sui-falsevps-gou-zhu-ji-%5D>`__
+-  `Python Type and Object <http://www.slideshare.net/hychen/python-type-and-object>`__
+-  `Python Type-based class v.s JavaScript prototype @COSCUP 2012 <http://www.slideshare.net/hychen/python-typebased-class-vs-javascript-prototype-coscup-2012>`__
+-  `20120915 Pythonは本当にBlenderの役に立っているか? <http://www.slideshare.net/lab1092/20120915-pythonblender>`__
+-  `ソフトシンセを作りながら学ぶPythonプログラミング <http://www.slideshare.net/RansuiIso/python-14315727>`__ -  `(分散)バージョン管理システムの組織化 <http://troter.jp/pyconjp-2012-dvcs/#slide1>`__
+-  `SQLALchemyと僕 <http://tell-k.github.com/pyconjp2012/>`__
+-  `NDB - Google App Engine Datastore API - Google Docs <https://docs.google.com/presentation/d/1itvvB_sVJSH30cR479PSeaHjnVDMvy3KNr9R_G5-MEs/edit#slide=id.p>`__
+-  `Beginning Python <http://www.slideshare.net/satokencat/bp2012>`__
+-  `Refactoring A Python Beginner’s Code <http://shimizukawa.bitbucket.io/refactoring-python-beginners-code/index.html>`__
+-  `Pyramid Security <http://www.slideshare.net/jbking/pyramid-security>`__
+-  `Build system written in Python #pyconjp - Google Docs <https://docs.google.com/presentation/d/1-oO3qw9cS5aKApI2wjJwGAj0g0udnbuBp-tkW-90-Uw/edit#slide=id.p>`__
+-  `Django-Celeryで非同期処理 — Django-Celeryで非同期処理 1 documentation <http://hdknr.bitbucket.io/celery/>`__
+-  `#kabepy <http://www.slideshare.net/takanory/kabepy>`__
+-  `Pythonistaの働き方 <http://www.slideshare.net/yutakitagami/pycon-jp2012>`__
+-  `国産 PaaS 、NIFTY Cloud C4SA の中身 <http://www.slideshare.net/oohatatakahiro/paas-nifty-cloud-c4sa>`__
+-  `Excel 方眼紙撲滅委員会 活動報告 2012.09 #pyconjp <http://www.slideshare.net/TakeshiKomiya/excel-201209-pyconjp>`__
+-  `What can meta class do for you? @PyCon Taiwan 2012 <http://www.slideshare.net/hychen/what-can-meta-class-do-for-you-pycon-taiwan-2012>`__
+-  `#himopy Sprint report in Pycon JP Sprints <http://www.slideshare.net/takanory/himopy-sprint-report-in-pycon-jp-sprints>`__
+-  `PyOpenCLによるGPGPU入門 <http://www.slideshare.net/likr/pyopenclgpgpu>`__
+-  `PyOpenCLハンズオン in kyoto.py（2011年9月24日） — pykyoto201109 v1 documentation <http://pykyoto201109-pyopencl.s3-website-ap-northeast-1.amazonaws.com/pyopencl.html>`__
+-  `Encouragement of porting Python 3 <http://nakagami.github.com/PyConJP2012LT/#encouragement-of-porting-python-3>`__
+
+**2日目**
+
+-  `atsuoishimoto/pyconjp\_2012 GitHub <https://github.com/atsuoishimoto/pyconjp_2012/blob/master/PyConJP_2012.pdf>`__
+-  `pyconjp2012slide/master/Fundamental Technologies Used in PyPy JIT Compiler.pptx at master · ryotaro/pyconjp2012slide · GitHub <https://github.com/ryotaro/pyconjp2012slide/blob/master/master/Fundamental%20Technologies%20Used%20in%20PyPy%20JIT%20Compiler.pptx>`__
+-  `続・Python on Windows Azure - Google Docs <https://docs.google.com/presentation/d/1OtpW317WOwc3G2NXjAmFzs5iD66dCDHhpG08lVd9PxU/edit#slide=id.p>`__
+-  `Pythonを取り巻く開発環境（PyCon JP 2012資料 #pyconjp） - YAMAGUCHI::weblog <http://ymotongpoo.hatenablog.com/entry/2012/09/16/090842>`__
+-  `knzm/pyconjp2012 Wiki GitHub <https://github.com/knzm/pyconjp2012/wiki>`__
+-  `dankogai @ 2012.pycon.jp <http://www.dan.co.jp/~dankogai/pyconjp2012/python.html>`__
+-  `methane/pyconjp2012-gevent-slide GitHub <https://github.com/methane/pyconjp2012-gevent-slide>`__
+-  `Sphinx ではじめるドキュメント生活 2012 #pyconjp #sphinxconjp <http://www.slideshare.net/TakeshiKomiya/sphinx-2012-pyconjp-sphinxconjp>`__
+-  `Sphinx拡張 探訪 — SphinxCon 2012 documentation <http://tdoc.info/sphinxcon2012/>`__
+-  `Trying Continuous Delivery - pyconjp 2012 <http://www.slideshare.net/torufurukawa/trying-continuous-delivery-pyconjp-2012>`__
+-  `Try! Sublime Text // Speaker Deck <https://speakerdeck.com/u/kawanoshinobu/p/pyconjp-2012-try-sublime-text>`__
+-  `Sphinxを使って本を書こう #pyconjp 2012 <http://www.slideshare.net/shimizukawa/sphinx-pyconjp-2012>`__
+-  `Sphinx HTML Theme Primer <http://shkumagai.github.com/slides/sphinxcon.jp.201209/#/title>`__
+-  `hekyou Docutilsについて — Gist <https://gist.github.com/3730720>`__
+-  `ミニ四駆でPython on Windows Azure <http://www.slideshare.net/tfmagician/python-on-windows-azure>`__
+-  `Pythonコミュニティが私に与えてくれたもの <http://www.slideshare.net/TomomiK/python-14305984>`__
+-  `Webフレームワークパネル（Django） at PyConJP 2012 <http://www.slideshare.net/everes/web-at-pyconjp-2012>`__
+-  `PyCon JP 2012 Closing <http://www.slideshare.net/takanory/pycon-jp-2012-closing>`__
+
+-  `PyCon JP 2012 Sprints <http://www.slideshare.net/takanory/pycon-jp-2012-sprints>`__
+-  `#himopy Sprint report in Pycon JP Sprints <http://www.slideshare.net/takanory/himopy-sprint-report-in-pycon-jp-sprints>`__
+
+**Pictures**
+
+-  `PyCon JP 2012 準備 - Google+ <https://plus.google.com/photos/111021918302550652188/albums/5788406469050669409?banner=pwa>`__
+-  `PyCon JP 2012 Day1 - Google+ <https://plus.google.com/photos/111021918302550652188/albums/5788406469050669409?banner=pwa>`__
+-  `PyCon JP 2012 Party - Google+ <https://plus.google.com/photos/111021918302550652188/albums/5788426421910287617?banner=pwa>`__
+-  `PyCon JP 2012 Day2 - Google+ <https://plus.google.com/photos/111021918302550652188/albums/5788777355713696849>`__
+-  `PyCon JP 2012 Sprint - Google+ <https://plus.google.com/photos/111021918302550652188/albums/5789162104962575921?banner=pwa>`__
+
+**併設イベントまとめ**
+
+-  `Django Pyramid Con JP 2012 開催しました \| Djangoと日本の仲間たち <http://djangoproject.jp/weblog/2012/09/17/django-pyramid-con-jp-2012-finished/>`__
+-  `SphinxCon JP 2012 開催 (2012/9/16) :: ドキュメンテーションツール スフィンクス Sphinx-users.jp <http://sphinx-users.jp/event/20120916_sphinxconjp/index.html>`__
+
+**参加者Blog**
+
+-  `PyConJP2012一日目 <http://blog.kzfmix.com/entry/1347711071>`__
+-  `PyCon JP 2012に参加して刺激を受けてきた #pyconjp \| Azrael <http://zafiel.wingall.com/archives/5365>`__
+-  `pyconjp2012 行ってきたよ各セッション感想 #pyconjp - AtAsAtAmAtArA <http://d.hatena.ne.jp/atasatamatara/20120916/1347812985>`__
+-  `小飼弾氏の基調講演を聞いて各言語の join と正規表現の実装についてなんかまあ考えた話 #pyconjp - AtAsAtAmAtArA <http://d.hatena.ne.jp/atasatamatara/20120916/1347813137>`__
+-  `PyCon Jp 2012 の「Top of Pythonista」で2位になりました！ - ふゆみけ <http://d.hatena.ne.jp/fuyumi3/20120917/1347850563>`__
+-  `SphinxCon 2012で発表してきました。 — そこはかとなく書くよん。 <http://tdoc.info/blog/2012/09/17/sphinxcon2012.html>`__
+-  `Ars longa, vita brevis: pyconjp で発表してきた #pyconjp <http://kshigeru.blogspot.jp/2012/09/pyconjp2012-presentation.html?spref=tw>`__
+-  `PyCon JP 2012 で発表を聞いたり、当日スタッフをしたりしてきました - 断章10100 <http://d.hatena.ne.jp/naka-06_18/20120918/1347975258?fb_action_ids=4529894766328%2C4529840164963&fb_action_types=og.likes&fb_source=other_multiline&action_object_map=%7B%224529894766328%22%3A104027663087775%2C%224529840164963%22%3A227757840683644%7D&action_type_map=%7B%224529894766328%22%3A%22og.likes%22%2C%224529840164963%22%3A%22og.likes%22%7D&action_ref_map=%5B%5D>`__
+-  `PyCon JP 2012 で広報してきた #pyconjp - プログラマのネタ帳 <http://d.hatena.ne.jp/shomah4a/20120918/1347987799>`__
+-  `ryu22eBlog : PyCon JP 2012に参加しました #pyconjp <http://blog.livedoor.jp/ryu22e/archives/65709074.html>`__
+-  `【レポート】PyCon JP 2012 にスタッフとして参加しました！ #pyconjp : ゼロスタートの広報ブログ <http://pr.zero-start.jp/archives/65708811.html>`__
+-  `SphinxCon JP 2012で発表させて頂きました - へきょのーと <http://d.hatena.ne.jp/hekyou/20120917/p1>`__
+-  `PyCon JP 2012に参加した #pyconjp - YAMAGUCHI::weblog <http://ymotongpoo.hatenablog.com/entry/2012/09/18/222602>`__
+-  `nishimotzの日記 · NVDAワークショップ・意見交換会が終了 <http://d.nishimotz.com/archives/1346>`__
+-  `Fumi's Travelblog: PyCon JP 2012 #pyconjp <http://fumit.blogspot.jp/2012/09/pycon-jp-2012-pyconjp.html>`__
+
+.. author:: default
+.. categories:: プログラミング, 勉強会, Git/Mercurial, Django, Google, Python
+.. tags:: プログラミング, 勉強会, Git/Mercurial, Django, Google, Python
+.. comments::

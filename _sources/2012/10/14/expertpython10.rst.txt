@@ -1,0 +1,115 @@
+エキスパートPythonプログラミング読書会 第二期 10に参加しました。 #expertpython
+===============================================================================
+
+| `エキスパートPythonプログラミング読書会 第二期 10 - connpass <http://connpass.com/event/911/>`__
+| に参加してきました。
+
+|エキスパートPythonプログラミング|
+
+| `エキスパートPythonプログラミング <http://www.amazon.co.jp/exec/obidos/ASIN/4048686291/naoyadyndnsor-22/ref=nosim/>`__
+| posted with
+| `amazlet <http://www.amazlet.com/browse/ASIN/4048686291//ref=nosim/>`__
+| at 11.10.24
+| Tarek Ziade
+| アスキー・メディアワークス
+| 売り上げランキング: 36822
+| `Amazon.co.jp で詳細を見る <http://www.amazon.co.jp/exec/obidos/ASIN/4048686291/naoyadyndnsor-22/ref=nosim/>`__
+
+| 当日の様子はこちら。
+| `エキスパートPythonプログラミング読書会 第二期 10 - Togetter <http://togetter.com/li/387248>`__
+
+| **1.アイスブレイク**
+| 恒例のアイスブレイク、各島ごと(3名程度)で簡単に自己紹介をしました。
+| しかしお互いに見知った顔過ぎて、
+| 自己紹介が茶番臭いというまさかの事態に(笑)。
+
+| **2.「第8章 コードの管理」**
+
+| -  2人以上だといろいろと難しい。
+| -  SCM(software configuration management) = VCS
+| -  中央集権型: サーバーがないとコミットできない
+| -  分散型: 複数の独立したローカルにコミットして同期をとる。
+| -  中央集中か、分散か。 →プロジェクト状況による。
+| -  PythonのVCSはHGに移行済み→\ `hg.python.org <http://hg.python.org/>`__
+| -  DVCSの種類→Git, Mercurial, Bazzar
+| -  ドキュメントとリソースファイルを一緒にするのは無理？
+|    →この辺りに経緯がまとまってたりすので一度目を通すといいかも。
+|    `svnからの切り替え先にbzrを検討するなど（最終的にはhgになった‥） - Togetter <http://togetter.com/li/91517>`__
+|    →SVNは内部をUnicodeオブジェクトから外部に落とす時にエンコーディング返還してくれる。
+|    →bzrはできる。hgは今頑張ってパッチ書いてる。Gitはまだ。
+|    →設定はあるが、Gitはもう一段Windowsの問題がある。UIの件。
+|    →コマンドラインをデザイナーさんに打ってもらうのはハードルが高い。
+|    →日本語使えねーとMLとかにDDOSして下さい。
+| -  unicodeのメソッドを使うと、大文字小文字の判定、濁点の問題チェック、
+|    east\_asian\_widthで文字の幅のチェックとか色々できる。
+| -  GitとHgは用語は対応してない。HgとSVNは似ている。
+|    →簡略化しているように感じるかもしれないが、人に説明するにはこっちの方が楽(らしい)。
+|    →Branchが一番違う。あとはHEADとか。addとか。
+|    →ステージの概念はないので、MQとか使った方がいい。
+|    →標準と拡張。
+|    →Gitだと初めから色々出来るが、Hgだと拡張でやったりする。
+|    →MQを入れると履歴を入れ替えたり、コミットの内容そのものを書き換えたりできる。
+|    →Pythonでやると拡張も楽に書ける。内部のUnicodeとかもいじれる。
+|    →Hookをいじると色々できるよ。
+| -  hg serveと渡すと自分をサーバーにすることができる
+|    →PUSHはできない。もう少し設定が必要。PUSHとかCLONEはできる。
+| -  hgのコマンドは日本語マニュアル化されている。言語設定を日本語に設定すればOK。
+| -  hg help add -v とかすると、コマンドの実行例が見れる！
+|    →オンラインで見るとほとんどわかるよ。でもPythonistaの人ならソース見たほうがはやいかも
+| -  Mercurialでプロジェクト管理→Server立てる人が読めばいいと思うよ！
+| -  なんでHG？
+|    →@shimizukawa hg。やりたいことに対してGitは複雑。
+|    →@hirokiky hg。いざとなったらソース読めるし。安心感。
+|    →@shomah4a
+|    [STRIKEOUT:git。前SVNで。いやで、Hgでやってたのが、なんかのタイミングで壊れたのでGit触ったらいいじゃんと。]
+|    誤解を招く表現になっていたので訂正。
+|    なぜgitを選ばれたのかがご説明されています。
+|    `Expert Python 読書会 第二期 10 #expertpython - プログラマのネタ帳 <http://d.hatena.ne.jp/shomah4a/20121015/1350298801#c>`__
+|    →???
+|    SVNを触っていたが、gitやって、それで壊すのはどうなの？あとはTortoiseHGがいい。わかりやすい。
+|    →@tfmagician
+|    4年ぐらい前からGit。WebDBの初めてのGitの特集を読んで。管理は大変だが、
+|    今更戻れない。あとGitHubが素晴らしい。PG管理のツールとしているので。
+|    →@usaturn
+|    Windowsを使っていたから。Cygwinで使えばそこそこだが、アンインストールできなかったことが…
+|    Yokohama.pyの日にTokyoMercurialに参加することがったのでそれで。
+| -  GitはSCM
+|    bootcampのチューターの人でも「Windowsの人はVMにLinuxにいれた方がいいんじゃね？」
+|    というレベル。
+|    →ポータビリティーや使いやすさを重視するとHg。
+| -  Buildbotは使わない方がいい。普通に使う分はJenkins。
+|    →セットアップが面倒くさい。
+|    →Jenkinsが有名でユーザーが多いし、皆がCIに求めるのはJenkins。
+|    →Buildbotのいいところは、ユーザ参加型であること。(自分の環境でテストしてくれる)
+| -  CIやっている人？→2人
+|    →@shomah4a 会社はJenkins。JavaやPython。趣味はTravis CI
+| -  この本はBuildbotは0.7で書いてあるが、0.8からソースコードが大きく分かられている。
+|    →最新版0.8だとドキュメントを自力で読んだほうがはやい。
+| -  DVCSの戦略 git-flowとか使ってるのか？
+|    →カスタマイズしていたり、組織の文化による。
+|    ex)枝は一本vs枝分かれ上等。Branch戦略について。
+|    hg-flow, bpmercurial-workflowドキュメントなど
+
+| **3.ビアバッシュ＆LT**
+| 今回は仕事の都合で参加できなかったのが残念……
+| 久しぶりのお寿司LTだったのでぜひとも参加したかったところですが、
+| また次回に期待ですね。
+
+| **4.まとめ**
+| 今回は@lincolinnyanさんの代役でTogetterまとめたりしましたが、
+| 実際にその場で参加してないとわからないところがあるなーと思いました。
+| 本は読みなおせばいいけど、LTはその場で聞かないとわからないので、
+| 本編は聞けなくてもLTを聞ける時は迷わず参加したいですね。
+
+| **参考リンク**
+
+-  `PyCon JP 2012 で分散バージョン管理の組織化という話をしてきました - 放牧日記 <http://troter.hatenablog.jp/entry/20120921/1348224166>`__
+-  `bpmercurial-workflow v1.0 documentation <http://beproud.bitbucket.io/bpmercurial-workflow/ja/>`__
+
+.. |エキスパートPythonプログラミング| image:: http://ecx.images-amazon.com/images/I/51wSTTIQtgL._SL160_.jpg
+   :target: http://www.amazon.co.jp/exec/obidos/ASIN/4048686291/naoyadyndnsor-22/ref=nosim/
+
+.. author:: default
+.. categories:: 勉強会, 本, Python
+.. tags:: 勉強会, 本, Python
+.. comments::

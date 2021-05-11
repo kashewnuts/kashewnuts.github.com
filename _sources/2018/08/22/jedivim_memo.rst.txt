@@ -1,0 +1,145 @@
+VimとPythonの補完についてのメモ
+===============================
+
+.. figure:: jedivim.svg
+   :align: center
+
+間をおくとすぐ忘れるので備忘録としてメモ。
+
+前提
+----
+
+- 何かを貶めたりけなすような意図はありません。似たような問題に躓いたときに「そうゆうことだったのか」「こうすれば問題は回避できるんだな」みたいに思ってもらえたら嬉しいです。
+- pyenvやAnacondaの話はしません。
+
+結論
+----
+
+- VimのPython補完は `davidhalter/jedi-vim: Using the jedi autocompletion library for VIM. <https://github.com/davidhalter/jedi-vim/>`_ で事足りる
+- virtualenv/venvを使用していればVimのPython/Python3インターフェースを両方ONにする必要がない(jedi-vimに関しては)
+- jedi-vimの補完で物足りなければPyCharm使うのも検討する
+
+jediとは
+--------
+
+最近LSP(Language Server Protocol)とかもでてきて気になったりしますが、Pythonの自動補完&静的解析ライブラリとして有名かつ定番なのが `davidhalter/jedi: Awesome autocompletion and static analysis library for python. <https://github.com/davidhalter/jedi>`_ です。
+
+これはJupyter NotebookやIPythonのインストール時にも一緒にインストールされますし、Vimに限らずEmacsやVSCode、AtomでもPythonの補完に使われています。
+Vimではjedi-vimというプラグインを活用すると連携できますが、いくつか注意することがあるのでこの記事を書こうと思いました。
+
+jedi-vimのインストール要件
+--------------------------
+
+**VimのPythonインタフェースもしくはPython3インタフェースが有効になっていること** と一点ですがこれが意外と曲者です。
+
+PythonインタフェースもしくはPython3インタフェースを有効にするためには、以下の2つの条件を満たす必要があります。
+
+- Vimで ``:version`` した際に ``+python`` もしくは ``+python3`` になっている
+- Vimが必要としているPython(3)のバージョンをマイクロバージョン単位で合わせる必要がある
+
+マイクロバージョンとはPython3.6.5の場合、3がメジャーバージョン、6がマイナーバージョン、最後の5がマイクロバージョンです (参考: `一般 Python FAQ — Python 3.6.5 ドキュメント <https://docs.python.jp/3/faq/general.html#how-does-the-python-version-numbering-scheme-work>`_ )
+
+たとえばUbuntu18.04LTS サーバー版の場合、Vimを起動すると ``:version`` で ``-python/+python3`` なのが確認できます。Ubuntu18.04LTSの場合はPython3.6.5がデフォルトでインストールされているため、 ``:python3 print('Hello')`` とコマンドラインモードで入力すると ``Hello`` と表示されるのが確認できます。大抵の場合 ``+python3`` になっているVimを使っていれば問題ないでしょう。
+
+しかしUbuntu18.04LTSのデスクトップ版の場合、最初に入っているVimは ``vim.tiny`` と呼ばれVimで使える様々なオプションがOFFになっているため、 ``-python/-python3`` になっています。この場合ターミナルから ``sudo apt install vim`` のようにしてPythonインタフェースもしくはPython3インタフェースが有効になっているVimをインストールする必要があります。
+
+OSが最初から用意しているVimとPythonを使えば問題ないこともあるのですが、次のように自分でVimやPythonを用意した際は問題になることがあります。
+
+- WindowsでVimは香り屋版Vimを使い、Pythonは www.python.org で入手した「最新の」Pythonを使う
+- macOSでVimはmacvim-kaoriyaを使い、PythonはHomebrewで入れている
+
+つまりはVimが要求するPythonのバージョンを導入していないとVimが ``+python/+python3`` になっていても、PythonがインストールされていてもPython/Python3インタフェースが有効にならない場合があります。これを避けるにはVimのリリースノートを見て、Vimが要求するPythonが導入されているか確認する必要があります。以下は一例です。
+
+- Windows版の香り屋Vimの場合: `Releases - koron/vim-kaoriya <https://github.com/koron/vim-kaoriya/releases>`_
+- macvim-kaoriyaの場合: `Releases - splhack/macvim-kaoriya <https://github.com/splhack/macvim-kaoriya/releases>`_
+
+HomebrewでPythonを導入した場合
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+www.python.org から導入したPythonの場合はあまり心配がないのですが、HomebrewでPythonをインストールした場合macvim-kaoriyaが見る場所にPythonのパスが存在しないことがあって期待していた結果と異なる場合があります。そのような場合は `MacVim-KaoriYa 20171221でPython3インターフェースが使えなくなっている · Issue #71 · splhack/macvim-kaoriya <https://github.com/splhack/macvim-kaoriya/issues/71>`_ などを参考にして、シンボリックリンクを貼ると良いかもしれません。
+
+
+jedi-vimのインストール方法
+--------------------------
+
+長々とVimとPythonの組み合わせについて話してきましたが、jedi-vimのインストールはVimのプラグインマネージャーを使用していれば簡単です。この記事では覚えることが少なくて済み、そこそこ高速に使える `junegunn/vim-plug: Minimalist Vim Plugin Manager <https://github.com/junegunn/vim-plug>`_ を使います。vim-plugのインストール方法はURLを参照してください。プラグインは ``~/.cache/plugged`` にインストールするものとします。
+
+以下のようにvimrcでbeginとendの間に一行指定します。
+
+.. code-block:: vim
+
+   call plug#begin('~/.cache/plugged')
+   Plug 'davidhalter/jedi-vim', {'for': 'python'}   " pythonファイルを編集するときだけ起動
+   call plug#end()
+
+記述し終えたらVimを再起動して ``:PlugInstall`` すればjedi-vimがインストールされます。設定できるオプションはいくつかありますが、自分は以下のように設定しています。
+
+.. code-block:: vim
+
+   set completeopt=menuone                        " 補完候補を呼び出すとき常にポップアップメニューを使う
+   autocmd! User jedi-vim call s:jedivim_hook()   " vim-plugの遅延ロード呼び出し
+   function! s:jedivim_hook()              " jedi-vimを使うときだけ呼び出す処理を関数化
+     let g:jedi#auto_initialization    = 0 " 自動で実行される初期化処理を無効
+     let g:jedi#auto_vim_configuration = 0 " 'completeopt' オプションを上書きしない
+     let g:jedi#popup_on_dot           = 0 " ドット(.)を入力したとき自動で補完しない
+     let g:jedi#popup_select_first     = 0 " 補完候補の1番目を選択しない
+     let g:jedi#show_call_signatures   = 0 " 関数の引数表示を無効(ポップアップのバグを踏んだことがあるため)
+     autocmd FileType python setlocal omnifunc=jedi#completions   " 補完エンジンはjediを使う
+   endfunction
+
+補完を使うにしろなるべく入力時の邪魔にならないように、必要なときに自分で呼び出すように設定しました。詳しくは `:h jedi` を参照してください。
+
+
+jedi-vimのvirtuelenv/venvサポートについて
+-----------------------------------------
+
+jedi-vimを入れたVimはデフォルトで有効になっているPython (Ubuntu18.04LTSだとPython3.6.5) に対して補完を行いますが、virtualenv/venvのような仮想環境を使用していると、仮想環境下で使用しているPythonを使用できます。Pythonのバージョンを気にする場合、仮想環境を作成して使うことがほとんどだと思うのでjedi-vimのvirtualenv/venvサポートは嬉しい限りです。
+
+数年前はPython/Python3インタフェースが有効なPythonのバージョンでしか動かなかったようですが、現在はその制限はなくなりました。Python2.7のコードを書くために ``+python`` と ``+python3`` を両立した状態にしようとして自分でビルドする必要はないですし、vimrcに実行したいPythonのパスをPythonの2系と3系でそれぞれ指定する必要もありません。
+
+どうしても ``+python`` と ``+python3`` を両立したいケースがあるとしたら ``+python`` でしか動かない別のVimプラグインを使用したい場合や、すべてのVimのオプションをONにしたいような方だと思われます。普通にVimでPythonの補完を使いたい場合は ``+python3`` になっているVimがあれば十分ですね。
+
+標準のPythonのオムニ補完を使わない理由
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+「virtualenv/venvをサポートをしていないから」というだけで個人的には十分でした。逆にいうとVimがデフォルトで使うPythonだけ使い、標準ライブラリ以外は使わない場合はjedi-vimを入れる理由はないかもしれません。
+
+
+jedi-vimの補完以外の機能
+------------------------
+
+jedi-vimは補完機能以外にもさまざまな機能があります。気になる方はヘルプを見てみてください。
+
+- 定義ジャンプ: ``<Leader>d``
+- 変数リネーム: ``<Leader>r``
+- 単語の使用箇所表示: ``<Leader>n``
+- pydoc表示: ``<K>``
+- モジュール表示: ``:Pyimport {モジュール名}``
+
+PyCharmと比較して
+-----------------
+
+単純に比べられないのですがPyCharmの優位な部分は多いと個人的には思います。PyCharmがVimの補完と比べて使いにくいなと思うのがキーワード補完やファイル名の補完などVim自体の補完が使えない点です。しかしそれ以上に、Pythonの標準ライブラリにとどまらず、PyPIからインストールしたライブラリに対してもヌルヌルと補完候補を絞り込んでくれます。また「あれなんだったっけ？」と思うようなところでもなんでもインクリメンタルに絞り込めるので単純ミスが少なくなるのがいいですね。
+
+とはいえ自分だけで最初から最後まで書くようなときや、さっと何かを書いて試したいときはPyCharmの環境を準備するのが煩わしいときがあるので、そうゆうときはやはりVimを使ってしまいます。
+
+補完だけの話ではなかったり、向き不向きや慣れの部分もあると思うので適材適所で使い分けていきたいです。
+
+
+まとめ
+------
+
+- VimのPython補完は `davidhalter/jedi-vim: Using the jedi autocompletion library for VIM. <https://github.com/davidhalter/jedi-vim/>`_ で事足りる
+- virtualenv/venvを使用していれば、自分でVimをビルドする必要はない
+- jedi-vimの補完で物足りなければPyCharm使うのも検討する
+
+最後に
+------
+
+この記事ではVimとPythonの補完について触れてきました。補完以外にも拡張したい項目があるかもしれませんが、それはひとまず他の記事に譲ることにします。また気が向いたらそのあたりの記事も描くかもしれません。
+
+
+.. author:: default
+.. categories:: Python, Vim
+.. tags:: Python, Vim
+.. comments::

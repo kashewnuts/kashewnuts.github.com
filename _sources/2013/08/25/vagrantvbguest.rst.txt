@@ -1,0 +1,143 @@
+======================================================
+Vagrant で共有フォルダが使用できなくなったので解決メモ
+======================================================
+
+以前 Vagrant を1.0.6から1.2.7にUpdateした時に以下のようなエラーがでるようになり、共有フォルダ(/vagrant) が動作しなくなっていました。
+
+メッセージ内容
+--------------
+
+.. code-block:: bash
+
+    $ vagrant up
+    Bringing machine 'default' up with 'virtualbox' provider...
+    [default] Setting the name of the VM...
+    [default] Clearing any previously set forwarded ports...
+    [default] Creating shared folders metadata...
+    [default] Clearing any previously set network interfaces...
+    [default] Preparing network interfaces based on configuration...
+    [default] Forwarding ports...
+    [default] -- 22 => 2222 (adapter 1)
+    [default] Booting VM...
+    [default] Waiting for VM to boot. This can take a few minutes.
+    [default] VM booted and ready for use!
+    [default] Configuring and enabling network interfaces...
+    [default] Mounting shared folders...
+    [default] -- /vagrant
+    The following SSH command responded with a non-zero exit status.
+    Vagrant assumes that this means the command failed!
+
+    mount -t vboxsf -o uid=`id -u vagrant`,gid=`id -g vagrant` /vagrant /vagrant
+
+    Stdout from the command:
+
+
+
+    Stderr from the command:
+
+    stdin: is not a tty
+    /sbin/mount.vboxsf: mounting failed with the error: No such device
+
+vagrant-vbguest
+---------------
+
+原因を調べたら、以下のリンクを発見。
+
+`VirtualBox共有フォルダ覚書 | dark_greenの日記 | スラッシュドット・ジャパン <http://slashdot.jp/journal/509239/VirtualBox%E5%85%B1%E6%9C%89%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E8%A6%9A%E6%9B%B8>`_
+
+どうやら Guest Additions の Version が古いのが原因らしい。
+なので、自動的にGuest Additionsを更新してくれるプラグインを導入。
+
+`dotless-de/vagrant-vbguest <https://github.com/dotless-de/vagrant-vbguest>`_
+
+以下のようにインストール。
+
+.. code-block:: bash
+
+    $ vagrant plugin install vagrant-vbguest
+
+ここで Vagrantfile に設定を記述しようとしましたが、エラーがでて怒られました。
+~/.vagrant.d/ 以下に Vagrantfile もなかったので、何も設定しないでやってみます。
+
+.. code-block:: bash
+
+    $ vagrant up
+    Bringing machine 'default' up with 'virtualbox' provider...
+    [default] Setting the name of the VM...
+    [default] Clearing any previously set forwarded ports...
+    [default] Creating shared folders metadata...
+    [default] Clearing any previously set network interfaces...
+    [default] Preparing network interfaces based on configuration...
+    [default] Forwarding ports...
+    [default] -- 22 => 2222 (adapter 1)
+    [default] Booting VM...
+    [default] Waiting for VM to boot. This can take a few minutes.
+    [default] VM booted and ready for use!
+    GuestAdditions versions on your host (4.2.16) and guest (4.2.12) do not match.
+    Loaded plugins: fastestmirror
+    Loading mirror speeds from cached hostfile
+     * base: ftp.iij.ad.jp
+     * extras: ftp.iij.ad.jp
+     * updates: ftp.iij.ad.jp
+    Setting up Install Process
+    Package kernel-devel-2.6.32-358.14.1.el6.x86_64 already installed and latest version
+    Package gcc-4.4.7-3.el6.x86_64 already installed and latest version
+    Package 1:make-3.81-20.el6.x86_64 already installed and latest version
+    Package 4:perl-5.10.1-131.el6_4.x86_64 already installed and latest version
+    Nothing to do
+    Copy iso file /Applications/VirtualBox.app/Contents/MacOS/VBoxGuestAdditions.iso into the box /tmp/VBoxGuestAdditions.iso
+    Installing Virtualbox Guest Additions 4.2.16 - guest version is 4.2.12
+    Verifying archive integrity... All good.
+    Uncompressing VirtualBox 4.2.16 Guest Additions for Linux............
+    VirtualBox Guest Additions installer
+    Removing installed version 4.2.12 of VirtualBox Guest Additions...
+    Copying additional installer modules ...
+    Installing additional modules ...
+    Removing existing VirtualBox DKMS kernel modules[  OK  ]
+    Removing existing VirtualBox non-DKMS kernel modules[  OK  ]
+    Building the VirtualBox Guest Additions kernel modules[  OK  ]
+    Doing non-kernel setup of the Guest Additions[  OK  ]
+    You should restart your guest to make sure the new modules are actually used
+
+    Installing the Window System drivers[FAILED]
+    (Could not find the X.Org or XFree86 Window System.)
+    An error occurred during installation of VirtualBox Guest Additions 4.2.16. Some functionality may not work as intended.
+    [default] Configuring and enabling network interfaces...
+    [default] Mounting shared folders...
+    [default] -- /vagrant
+
+
+念のため vagrant ssh でログインして確認します。
+
+.. code-block:: bash
+
+    $ ls /opt/
+    VBoxGuestAdditions-4.2.16
+
+新しい Version の Guest Additions をインストールできました。
+
+さて本題の共有フォルダが使えるようになっているか確認します。
+
+.. code-block:: bash
+
+    $ touch /vagrant/test
+
+ログアウトして、プロジェクトにファイルが作成されているか確認します。
+
+.. code-block:: bash
+
+    $ ls
+    Vagrantfile	test.py
+
+無事共有フォルダが使用できるようになりました。
+
+参考
+----
+
+* `[Vagrant] VirtualBoxのバージョンとGuest additionsのバージョンが合わない場合の対処法 - Code Life <http://blog.code-life.net/blog/2013/06/10/the-guest-additions-on-this-vm-do-not-match-the-installed-version-of-virtualbox-on-vagrant/>`_
+
+
+.. author:: default
+.. categories:: Vagrant
+.. tags:: Vagrant
+.. comments::

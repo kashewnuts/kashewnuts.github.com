@@ -1,0 +1,121 @@
+Sphinx+翻訳 Hack-a-thon 2012.04に行ってきました。
+============================================================================
+
+| `connpass-Sphinx+翻訳 Hack-a-thon 2012.04 <http://connpass.com/event/379/>`__\ に行ってきました。
+| [追記](2012/04/30 16:05)
+| 当日の様子はこちら
+| `Sphinx+翻訳 Hack-a-thon 2012.04 - Yukarin'Note <https://yukar.in/note/ckFnxm>`__
+
+| 当日やったことリスト
+| * Sphinxテーマのimpress.js弄った。
+| * Sphinxプラグインのblockdiag触った。
+| * MacにMercurial入れた。
+| * bitbucket試した。
+
+| Sphinxテーマのimpress.js弄った。
+| 今まではs6触ってて「これはシンプルでいいなー」と思ってましたが、
+| "impress.js"っていうのもアニメーションが効いてて良さそうと思ったので試しました。
+| `sphinxjp.themes.impressjs 0.1.0 : Python Package Index <http://pypi.python.org/pypi/sphinxjp.themes.impressjs/0.1.0>`__
+| を参考にして、
+
+.. code-block:: bash
+
+    pip install sphinxjp.themes.impressjs
+
+| した後、conf.pyに以下の設定を記述しました。
+
+.. code-block:: bash
+
+    extensions = ['sphinxjp.themecore']html_theme = 'impressjs'
+
+|
+| そしたら何故か以下のようなエラーがでる……
+
+.. code-block:: bash
+
+    Exception occurred:
+      File "/Users/***/.virtualenvs/impressjs/lib/python2.7/site-packages/sphinx/jinja2glue.py", line 149, in get_source
+        raise TemplateNotFound(template)
+    TemplateNotFound: genindex.html
+    The full traceback has been saved in /var/folders/cg/8n8k9bvj5vgbp65py_kxf52r0000gn/T/sphinx-err-l8t7JZ.log, if you want to report the issue to the developers.
+    Please also report this if it was a user error, so that a better error message can be provided next time.
+    Either send bugs to the mailing list at ,
+    or report them in the tracker at . Thanks!
+    make: *** [html] Error 1
+
+| エラーのログを見てみると以下のようになっているので、
+| 「どこか設定ファイルの記述が間違っているのでは？」と予想。
+
+.. code-block:: bash
+
+    exception jinja2.TemplateNotFound(name, message=None)
+    Raised if a template does not exist.
+
+| もう一つ出てきたサイト、
+| `shkumagai/sphinxjp.themes.impressjs <https://github.com/shkumagai/sphinxjp.themes.impressjs>`__
+| を参考にして見ると、先の2行に加えて以下の1行を加える必要があることが判明。
+
+.. code-block:: bash
+
+    html_use_index = False
+
+| 設定を追記したら、あっさりmakeできました。
+| その後は、先のサイトの\ `output <http://packages.python.org/sphinxjp.themes.impressjs/#/title>`__\ と、\ `input <http://packages.python.org/sphinxjp.themes.impressjs/_sources/index.txt>`__\ を見比べながら進めて行きました。
+| 他に参考にしたサイトは以下になります。
+| `use No::Name; [log][sphinx][python][document]sphinxjp.themes.impressjs 0.1.2 リリースしました。 <http://d.hatena.ne.jp/navyfox_sh/>`__
+| `百式年賀状 powered by impress.js <http://www.100shiki.com/nenga2012/#/step-1>`__
+| その時四苦八苦している様子を@usaturnさんがまとめてくれています。
+| `Sphinxのかっこいいスライド作成拡張「sphinxjp.themes.impressjs」 - Yukarin'Note <https://yukar.in/note/ckFnAq>`__
+| impress.jsでは以下の設定を記述して、魅せ方の調整を行うようです。
+
+.. code-block:: bash
+
+    .. impressjs:: title
+        :data-x: 0           横軸の設定
+        :data-y: 0           縦軸の設定
+        :data-z: -1000       奥行きの設定
+        :data-rotate-x: -90  回転する角度の設定
+        :data-scale: 4       表示するスライドの大きさの設定
+
+| これの意味が最初ちんぷんかんぷんで、
+| 適当に数値を変えてみたら複数のスライドが重なって表示されました。
+| しっかりと意味あるものにするのには微妙な調整が必要のようです。
+| 実際に試してみないと感覚がつかめないなと思いました。
+
+| Sphinxプラグインのblockdiag触った。
+
+.. code-block:: bash
+
+    pip install sphinxcontrib-blockdiag
+
+| して、
+| `Sphinx 拡張：sphinxcontrib-blockdiag — blockdiag 1.0 documentation <http://blockdiag.com/ja/blockdiag/sphinxcontrib.html>`__
+| を一通り試して終了。
+
+| MacにMercurial入れた。
+| `Mercurial binary packages for Mac OS X <http://mercurial.berkwood.com/>`__
+| から最新版をインストール。
+| ターミナルからhgを打ったら起動……しない。
+| あれ？と思って調べてみると、どうやらPATHが通っていない。
+| 更に調べてみるとインストールされたはずの、
+| /usr/local/bin/以下にアクセスできなくなっていました。
+| アクセス権限を設定し直したらうまく行きましたが、
+| 以前システム設定の共有の設定を弄った時に変えてからかな……
+| Mercurialに原因があったわけではありませんが少し気になります。
+
+| bitbucket試した。
+| 完全に忘れていましたがアカウントは以前に作成してため、
+| まずはgithubと同様にdotfilesを上げてみました。
+| これからはちょくちょくこちらも弄っていきたいです。
+| まとめ
+
+| 今月一回も勉強会にこれてなかったので、まずはこれてよかった。
+
+| やっぱりmake一発でプレゼン式のPDFなりPPTなりの出力する仕組みが欲しい。
+
+| 来月もHack-a-thon参加します。
+
+.. author:: default
+.. categories:: 開発環境, 勉強会, Python
+.. tags:: 開発環境, 勉強会, Python
+.. comments::

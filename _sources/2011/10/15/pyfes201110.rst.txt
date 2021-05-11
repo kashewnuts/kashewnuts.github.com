@@ -1,0 +1,66 @@
+Python Developers Festa 2011.10に行って来ました
+==============================================================================
+
+| 詳細は\ `こちら <http://d.hatena.ne.jp/Voluntas/20110828/1314542601>`__
+| 前半（10：15〜14：00）はハンズオンでPython学習、
+| 後半（14：00〜19：00）はプレゼン発表を聞いて来ました。
+
+| ■Oracleの様子
+| 場所は\ `Oracle青山センター <http://www.oracle.co.jp/aoyamacenter/>`__\ 。
+| 流石は世界のOracle。
+| 建物とか設備とか綺麗だな〜。
+| まさか移動できる机にコンセントをしまっているとは……
+| 無限コーヒーとかもあって飲み物にも困らない感じ。
+| いいところでした。
+
+| ■ハンズオンについて
+| 今回は初心者向けのものに参加。
+| Pythonへのとっかかりとして良かったと思う。
+| 詳しいところまではできなかったから、そこのところは要学習。
+| 使用した資料は\ `こちら <http://__aita__.bitbucket.io/python_hack-a-thon-201110/index.html>`__\ 。
+| 基本的なPythonの文法なんかはわかったので、
+| 次回は中級者向け以上のものに参加しようと思う。
+
+| ■プレゼンについて
+| 本当にPythonと関係ない話多いなという印象。
+| でも同時に幅広い分野の話を聞けて面白かった。
+| バージョン管理ツール（Git,Mercurial,etc）、
+| Hadoop、OpenFlow、PyPy、機械学習、
+| 女性にモテるための、IT系男子的部屋の片付け術（ツリ）
+| などがあったけど、
+| 一番印象に来たのはやはり最後にやった3.11の津波の話か。
+| ついついあの時の光景を思い出してしまった。
+| 後で写真も上げてみようかな。
+
+| ■全体のまとめ
+| ・後半の置いてけぼり感が半端ない。
+| （それでも今日のPyfesは残っていた人が多かったみたいだけど）
+| ・来れなくなってもしっかりキャンセルしてくれる人ばっかですごい
+| （おかげさまで補欠からの繰り上がりで参加できました）
+| ・Pythonに興味なくても楽しめる。
+| （むしろ後半はPythonまったく関係ないものも多い）
+| 次回のPyfesの予定もプレゼンの最中に決まったようで、
+| 既に100名近い参加希望者が…
+| 早速申し込ませて頂きました。次回も参加したいと思います。
+| ありがとうございます。
+
+| ■追記：
+| 上が実家だったもので、下が実家だったところから見えるものです。
+| 実家だったものは津波で流された後、火事で焼けてしまったようです。
+| 実家は海からもそれなりに離れてたけど、
+| 下の写真のようなバカでかい船が陸地まで襲ってくるのだから
+| 津波の力って本当に恐ろしいですよ。
+
+|image0|
+
+|image1|
+
+.. |image0| image:: http://4.bp.blogspot.com/-UfUMkbBFj3A/Tpl6sNhP30I/AAAAAAAAAYQ/VQGYSxbJTEs/s400/%25E5%2586%2599%25E7%259C%259F.JPG
+   :target: http://4.bp.blogspot.com/-UfUMkbBFj3A/Tpl6sNhP30I/AAAAAAAAAYQ/VQGYSxbJTEs/s1600/%25E5%2586%2599%25E7%259C%259F.JPG
+.. |image1| image:: http://4.bp.blogspot.com/-Kh3ARDimAjI/Tpl6uoogQCI/AAAAAAAAAYY/ocSL5gYl71U/s400/image.jpeg
+   :target: http://4.bp.blogspot.com/-Kh3ARDimAjI/Tpl6uoogQCI/AAAAAAAAAYY/ocSL5gYl71U/s1600/image.jpeg
+
+.. author:: default
+.. categories:: 勉強会, Python, pyfes
+.. tags:: 勉強会, Python, pyfes
+.. comments::

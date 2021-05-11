@@ -1,0 +1,99 @@
+Pythonもくもく会に参加した #mokupy
+==================================
+
+ライフワークのクライミングで怪我をして以来、各種のもくもく会にいくようになっています。
+
+- `第19回 Pythonもくもく会 - connpass <https://mokupy.connpass.com/event/61358/>`_
+
+当日やったことはこんな感じ。執筆多いな―。
+
+.. image:: mokupy19.JPG
+  :align: center
+
+
+.. contents:: 目次
+  :local:
+
+
+経緯
+----
+
+当日は「Slackであれこれ」ということで集計スクリプトを作ってました。なんでかというと、
+
+- プロジェクトで出勤退勤をSlackにつぶいてる。
+- 勤怠情報はGoogleスプレットシートにまとめる必要がある。
+- Slackでもつぶいて、Googleスプレットシートにも書くのダルい。
+- Slackでつぶいた出勤、退勤の時間を1月ごとにファイル出力できるようにしたい。
+  (そうすれば後はファイル編集も楽でいいよね)
+
+ということでこれを期にPythonで作ろうとしたのですが、既にGolangで実装されてるバックアップツールはあったorz
+
+`slackのチャットログをお手軽バックアップ <https://blog.pyyoshi.com/2016/10/18/slacknotiyatutoroguwooshou-qing-batukuatupu/>`_
+
+ただ自分は特定の部屋につぶやいている、特定の投稿を習得したいだけだったので自分用に作りました。
+
+もう一つ欲しい機能があって、取得した勤怠データを自動でGoogleスプレットシートに記載するようにしたらもっと楽かなと思ったのですが、転記する前には目で確認したかったのでやめときました。
+
+既にそうゆうものがあったのですが、認証が通らず動かなかったりしたので、自分で使うやつでそう言うリスクを減らしたいというものあった。 `Slack のログを自動で Google Spreadsheet に保存する <http://motemen.hatenablog.com/entry/2015/11/gas-slack-log-spreadsheet>`_
+
+
+使い方
+------
+
+Slackのライブラリは `os/slacker <https://github.com/os/slacker>`_ を使用。(作成したソースはプライベートリポジトリにしてます。)
+
+`Legacy tokens | Slack <https://api.slack.com/custom-integrations/legacy-tokens>`_ で自分が操作したいTeamのTokenを作成し、それを環境変数に渡してCLIで叩く感じです。
+
+
+勘所・制限とか
+--------------
+
+- 一度に取得できるメッセージのmaxは1000(defaultで100)。→なので一度に一ヶ月分のデータを取りたかったが、1日分ずつ習得。
+
+  - 取得した結果より多くのメッセージがある場合、まだ「データあるよー」という値と、取得できたところまでのUnix timestampが帰ってくるらしいので、より無駄のないメッセージの習得をしたい。
+
+- 時間の指定がUnix timestamp。→最初なんの数字かわからず混乱。お陰で日付・時刻操作用のPythonライブラリの学習になった。
+
+  - `dateutil - powerful extensions to datetime <https://dateutil.readthedocs.io/en/stable/>`_
+  - `pytz - World Timezone Definitions for Python <http://pythonhosted.org/pytz/>`_
+
+雑談的な
+--------
+
+お昼とか、合間に話したようなことをメモ。
+
+- `PyQ <https://pyq.jp/>`_ っていういいPython向け学習サイトがあるらしいよ！
+
+  - PyQやってるって人と、興味ある人がいたのでPyQ話してきた。
+
+- PCが壊れるときは突然だからバックアップとリカバリープランは作っとこう。
+
+  - 3年間使ってたMacBookが再起不能になった話を聞いた。(結構フル稼働してた上にHDDだったらしい。けどSSDでもそうゆう可能性はあるよね)
+  - ヨドバシやAppleStore行っても店頭で手に入るのはメモリ8GBがMax。臨時対応で15万はつらい。←つらい...
+  - 「TimeMaschineがあったら過去に戻りたい」←たしかに。
+  - ``.config``, ``.ssh_config`` , 秘密鍵とか管理を忘れがち。あとクラウドに置いてるつもりで、データが大きくて放置していたやつとか。←数年前のやつとか取り返せない...
+  - あと最近ちょっと触って、ドットなんちゃらができてるのに気づいてなかったり忘れたりしてたやつもありました。(``.ansible.cfg``, ``.jupyter``, ``.ipython``, あとVM上にあるかもしれないやつとか...)
+
+- 数ファイルならVSCodeやAtomでも良いけど、プロジェクトのファイル触るならPyCharmいいですよ！
+
+  - AtomでPython書いてる方で、「デバッグどうしてるんですか？」って聞いたら **「pdbで頑張ってます！」** とのこと。
+  - 仕事でもPython触れるようならPyCharm使えば、VM連携・リモートデバッグ・VCS連携とか楽ですよと言う話をしてきました。
+  - 他にはVSCodeがデバッグ機能がついてるし、リモート接続もできるのでいいらしいですね。(まあ僕はVimやPyCharm使ってるんですが...)
+
+
+雑感
+----
+
+仕事だと既に積み上がったプログラムを相手にしてることが多いので、もくもくする時間作って **考えて0から作る** みたいなことはした方がいいですね。 (`この記事 <http://d.hatena.ne.jp/jflute/20160330/fragramming>`_ を思い出す...)
+
+
+参考書籍
+--------
+
+- `Pythonプロフェッショナルプログラミング 第2版 <http://amzn.to/2tNYXHl>`_
+- `Effective Python ―Pythonプログラムを改良する59項目 <http://amzn.to/2tNAh1B>`_
+
+.. author:: default
+.. categories:: Python, Slack, PyCharm, Vim, Mac
+.. tags:: Python, Slack, PyCharm, Vim, Mac
+.. comments::

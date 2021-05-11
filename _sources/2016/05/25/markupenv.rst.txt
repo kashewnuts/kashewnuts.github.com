@@ -1,0 +1,105 @@
+私的マークアップ言語編集環境
+============================
+
+基本的には標準のVimセットで事足りるのだけど、バリバリ書こうとすると「コレ欲しいな」ということがあったので整理してみる。 `dotfilesはこちら <https://github.com/kashewnuts/dotfiles>`_ 。
+
+一応 `riv.vim <https://github.com/Rykka/riv.vim>`_ というオールインワンなプラグインがあるのだけど、いかんせん重いし、勝手に折りたたみが入ったりとデフォルトの設定がなじまないので個別に上げてます。 
+
+前提
+----
+
+* エディタはVim
+* restructuredtextメインだがmarkdownもちょっと書く
+
+
+共通
+----
+
+補完、スニペット
+~~~~~~~~~~~~~~~~
+
+- `neocomplete.vim <https://github.com/Shougo/neocomplete.vim>`_
+- `neosnippet.vim <https://github.com/Shougo/neosnippet.vim>`_
+- `neosnippet-snippets <https://github.com/Shougo/neosnippet-snippets>`_
+
+説明不要。設定は基本ドキュメントに書いてあるものをそのまま使わせてもらっている。
+
+コメントアウト
+~~~~~~~~~~~~~~
+
+- `caw.vim <https://github.com/tyru/caw.vim>`_
+
+気軽にコメントアウトと解除をするため以下の設定をvimrcに記述。
+
+.. code-block:: vim
+
+    " \cで行の先頭にコメントをつけたり外したりできる
+    nmap <Leader>c <Plug>(caw:i:toggle)
+    vmap <Leader>c <Plug>(caw:i:toggle)
+
+マークアップ言語専用
+--------------------
+
+プレビュー
+----------
+
+- `previm <https://github.com/kannokanno/previm>`_
+- (`open-browser.vim <https://github.com/tyru/open-browser.vim>`_)
+
+reStructuredTextだけでなく、Markdownでも使える。自分は以下をvimrcに設定している。 `:PreVimOpen` で普段使っているブラウザでリアルタイムプレビューできる。
+
+.. code-block:: bash
+
+    # reStructuredTextをプレビューするにはdocutilsは必須。
+    # pygmentsはreStructuredTextでSyntaxHighlightを有効にするのに使用。
+
+    $ pip install docutils  pygments
+    $ rst2html.py --version
+    rst2html.py (Docutils 0.12 [release], Python 2.7.5, on darwin)
+
+.. code-block:: vim
+
+    " ヘッダー情報を表示させない。
+    let g:previm_show_header = 0
+    " vimproc使用時にでるエラー抑制する。
+    let g:previm_disable_vimproc = 1
+    " 拡張子をmarkdownとして認識させる。
+    augroup PrevimSettings
+      autocmd!
+      autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+    augroup END
+
+自動見出しレベル設定
+~~~~~~~~~~~~~~~~~~~~
+
+- `vim-ft-rst_header <https://github.com/thinca/vim-ft-rst_header>`_
+
+お好みで見出しに使用する文字をvimrcに設定。詳しくは `Re: reStructuredText のヘッダを書く - 永遠に未完成 <http://thinca.hatenablog.com/entry/20100312/1268329134>`_ を参照のこと。
+
+.. code-block:: vim
+
+    " \h+数字で見出しを設定できる。
+    let g:rst_header_chars = '#*=-^~"'
+
+テーブル記述
+~~~~~~~~~~~~
+
+- `Unicode-RST-Tables <https://github.com/vim-scripts/Unicode-RST-Tables>`_
+
+あまり使っていないのだけど新しくテーブルを作ったり、テーブルのカラムを直したりするのに便利。
+`RST-Tables <https://github.com/vim-scripts/RST-Tables>`_ がオリジナルだけど、こちらは `Python3` 対応してないのと、
+`RST-Tables-CJK <https://github.com/vim-scripts/RST-Tables-CJK>`_ もいくつの言語で動かないとかでこっちを使うのが良さそうだ。
+
+あとがき
+--------
+
+基本みんな普段自分が使っているエディタを使っていることが多いと思うのでそのまま使えばいいと思ってる。良さそうだなと思ったら参考にしてもらえたら幸いだ。
+
+Emacsなら `rst-mode <http://ymotongpoo.hatenablog.com/entry/20101106/1289007403>`_ があるし、SublimeText、Atom、VSCode、サクラエディタ(!?)でもプラグインを入れるとSyntaxHighlightなり、補完・スニペットなりが効くらしい。
+
+
+参考
+----
+
+- `reStructuredText入門 — Sphinx 1.4.1 ドキュメント <http://docs.sphinx-users.jp/rest.html>`_
+- `[Sphinx-Users 230] reST の編集にどんなエディタを使っていますか？ <http://www.python.jp/pipermail/sphinx-users/2012-March/000229.html>`_

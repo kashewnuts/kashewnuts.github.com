@@ -1,0 +1,124 @@
+Python Developers Festa 2012.07 に参加しました。
+================================================================================
+
+| Python Developers Festa 2012.07に参加しました。
+| 当日は大きく分けて
+| ・ハンズオン(もしくは自分で持ってきた課題)
+| ・プレゼンテーション
+| が行われました。
+| 下手すると第一回目に参加した時より置いてけぼりだったかもしれない。
+| 9割Pythonと関係ないことやってました。
+| 早く知識のレベルから抜けだして、次のレベルに進みたいな。
+
+| **Python Developers Festa 2012.07 開催概要**
+| -  `Python Developers Festa 2012.07 (一般枠) on Zusaar <http://www.zusaar.com/event/243008>`__
+| -  `pyfes/201207.rst at develop · pyspa/pyfes · GitHub <https://github.com/pyspa/pyfes/blob/develop/201207.rst>`__
+
+| **前回の様子**
+
+| -  `kashew\_nuts-tech: Python Developer Festa 2012.03行って来ました。 <http://kashewnuts-tech.blogspot.jp/2012/03/python-developer-festa-201203.html>`__
+
+| **Togetterまとめ**
+
+-  `Python Developers Festa 2012.07 #PyFes 〜開始まで - Togetter <http://togetter.com/li/346165>`__
+-  `Python Developers Festa 2012.07 #PyFes 〜 ハンズオン - Togetter <http://togetter.com/li/346166>`__
+-  `Python Developers Festa 2012.07 #PyFes 〜 LT part.1 - Togetter <http://togetter.com/li/346242>`__
+-  `Python Developers Festa 2012.07 #PyFes 〜 LT part.2 - Togetter <http://togetter.com/li/346270?utm_source=dlvr.it&utm_medium=twitter>`__
+-  `Python Developers Festa 2012.07 #PyFes 〜 LT part.3 - Togetter <http://togetter.com/li/346294>`__
+-  `Python Developers Festa 2012.07 #PyFes 〜 終了後 - Togetter <http://togetter.com/li/346758>`__
+
+| **ハンズオン(10:00~15:00)**
+| Sphinxハンズオンとひとりでもくもくのどちらにしようか迷った挙句、
+| ひとりでもくもくしていました。
+| 三回目の参加になりますが、ハンズオンに参加しなかったのは初です。
+| 仕事捗らせるためにずっと↓の本を読んでました。
+
+|C++クラスと継承完全制覇 (標準プログラマーズライブラリ)|
+
+`C++クラスと継承完全制覇 (標準プログラマーズライブラリ) <http://www.amazon.co.jp/exec/obidos/ASIN/4774115738/naoyadyndnsor-22/ref=nosim/>`__
+
+posted with
+`amazlet <http://www.amazlet.com/browse/ASIN/4774115738//ref=nosim/>`__
+at 12.07.28
+
+| 矢沢 久雄
+| 技術評論社
+| 売り上げランキング: 162990
+
+`Amazon.co.jp で詳細を見る <http://www.amazon.co.jp/exec/obidos/ASIN/4774115738/naoyadyndnsor-22/ref=nosim/>`__
+
+| それとハンズオンが開催している間にステッカーもらいました。
+| 防水加工とかしてあるいいやつだそうです。
+| キラキラしているステッカーもありましたが、
+| そちらは講師陣・発表者のみだったのが残念…
+
+|image1|
+
+|  **LT、プレゼン(15:00~)**
+
+| -  @shomah4a - `PyCon JP 2012 参加者募集のお知らせ的な何か <http://shomah4a.net/slides/2012/pyfes-2012-07/>`__
+|    Python使いのためのPython使いによるイベント 9/15~17
+|    併設イベント…Django、Sphinx、App Engine、NVDA
+|    #kabepyもよろしく。
+| -  @johtani - `Elasticsearch入門 pyfes 201207 <http://www.slideshare.net/JunOhtani/elasticsearch-pyfes-201207>`__
+|    Blog: `@johtani の日記 <http://johtani.jugem.jp/>`__
+|    キラキラシールが欲しくて頑張ってスライド作りました。
+|    ■elasticsearch って何？
+|    (1)分散型でRESTfulな検索エンジン
+|    (2)OSS - GitHubで公開されている
+|    (3)Apache Lucenseベース
+|    (4)スキーマレスでドキュメント指向
+|    (5)マルチテナント指向
+|    (6)なぜか盆栽がトレードマーク
+| -  @tokoroten -
+|    `たのしいうぇっぶくろーら <http://www.slideshare.net/TokorotenNakayama/ss-13783613>`__
+|    社畜してます。 9:30-1:30
+|
+|    シャチクミイ作りました。\ `please.shachiku.me <http://please.shachiku.me/>`__
+|    元Googleから３文字短い検索エンジンの中の人
+|    るbyの会社で蛇書いてます。
+|    データ欲しい方お声がけ下さい。
+|    ソースコードはGitHubに上がっています。
+|    `tiny\_web\_crawler — Gist <https://gist.github.com/3192217>`__
+| -  @ymotongpoo -
+|    `Sphinxで翻訳してたら本が出てた話 <http://www.slideshare.net/ymotongpoo/sphinx-13784014>`__
+|    自己紹介と、お願いと、宣伝をしにきました。
+|    Tornadono翻訳で初めてSphinx触った。
+|    「ドキュメント翻訳でもOSSに貢献できる！」
+|    Python界隈ではまだまだ翻訳していないものがたくさんある。
+|    是非翻訳しましょう。
+|    例：\ `django-docs-ja/django-docs-ja · GitHub <https://github.com/django-docs-ja/django-docs-ja>`__
+|    SphinxCon JP来て下さい。
+| -  @Seasons - `iOS app hacks~バイナリを解析し、知識をつけるための方法~ <http://www.slideshare.net/seasons/ios-app-hacks>`__
+|    Blog: `Seasons.NET <http://blog.seasons.cc/>`__
+|    cocos2dのエバンジェリストやってます。
+|    逆アセンブラはあくまで趣味です。
+|    楽しい発見をして、正しい使用法で活用しましょう。
+| -  @shiumachi - `20分でわかるHBase <http://www.slideshare.net/shiumachi/20hbase>`__
+|    アーキテクチャの観点から概要だけでも掴んでもらえば。
+
+| **参加者・発表者Blog**
+
+-  `2012 7/28 Pyfes で空気を読まずにiOSの発表をしてきました - Seasons.NET <http://blog.seasons.cc/entry/2012/07/28/171706>`__
+-  `Python Developers Festa 2012.07に参加した - YAMAGUCHI::weblog <http://ymotongpoo.hatenablog.com/entry/2012/07/28/173435>`__
+-  `「勉強会を成長させる参加者になろう！」プレゼンしてきました 【 マインドマップ１年生 plus ライフハック！
+   】 <http://milk200ml.blog73.fc2.com/blog-entry-683.html>`__
+-  `Python Developers Festa 2012.07に参加してしゃべってきました #pyfes \| @johtani の日記 <http://johtani.jugem.jp/?eid=101>`__
+-  `『Python Developers Festa 2012.07』に参加してきました - 牌語備忘録 - pygo <http://d.hatena.ne.jp/CortYuming/20120728/p1>`__
+-  `Python Developers Festa 2012.07 でGitの話をしてきました。 — ペンギンと愉快な機械の日々 <http://d.palmtb.net/2012/07/28/git_pyfes201207.html?utm_source=twitterfeed&utm_medium=twitter>`__
+-  `#pyfes に参加してきました - hokorobiの日記 <http://d.hatena.ne.jp/hokorobi/20120728/1343479408>`__
+-  `Python Developers Festa ( #pyfes )に参加してきました \| Azrael <http://zafiel.wingall.com/archives/4744>`__
+
+.. |C++クラスと継承完全制覇 (標準プログラマーズライブラリ)| image:: http://ecx.images-amazon.com/images/I/5141FTV3NRL._SL160_.jpg
+   :target: http://www.amazon.co.jp/exec/obidos/ASIN/4774115738/naoyadyndnsor-22/ref=nosim/
+.. |image1| image:: http://2.bp.blogspot.com/--YnaGlr_cs0/UBP_iAMkRkI/AAAAAAAAAiM/dBWt6Qzmg1I/s320/2012-07-28%2B10.29.14.jpg
+   :target: http://2.bp.blogspot.com/--YnaGlr_cs0/UBP_iAMkRkI/AAAAAAAAAiM/dBWt6Qzmg1I/s1600/2012-07-28%2B10.29.14.jpg
+.. |Gitによるバージョン管理| image:: http://ecx.images-amazon.com/images/I/51WQ7GsnOZL._SL160_.jpg
+   :target: http://www.amazon.co.jp/exec/obidos/ASIN/4274068641/naoyadyndnsor-22/ref=nosim/
+.. |image3| image:: http://2.bp.blogspot.com/-IF0lcvxJMDY/UBQBFyqo5YI/AAAAAAAAAiY/L49Y_P6rPTQ/s320/2012-07-28%2B16.47.34.jpg
+   :target: http://2.bp.blogspot.com/-IF0lcvxJMDY/UBQBFyqo5YI/AAAAAAAAAiY/L49Y_P6rPTQ/s1600/2012-07-28%2B16.47.34.jpg
+
+.. author:: default
+.. categories:: 勉強会, C/C++, Python, pyfes
+.. tags:: 勉強会, C/C++, Python, pyfes
+.. comments::

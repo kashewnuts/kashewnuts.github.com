@@ -1,0 +1,72 @@
+Pythonの仮想開発環境作成ツール-virtualenv1.7-での変更点
+============================================================================
+
+| 気がついたら `virtualenv <http://pypi.python.org/pypi/virtualenv>`__ が1.6.4から1.7にバージョンアップしていた。
+| (virtualenvについては `こちら <http://kashewnuts-tech.blogspot.com/2011/11/python-virtualenv-pip.html>`__ でも書いてみた。)
+
+| 以下変更点。
+
+.. code-block:: bash
+
+    -  Updated embedded Distribute release to 0.6.24. Thanks Alex Grönholm.
+    -  Made  `--no-site-packages` behavior the default behavior.
+       The  `--no-site-packages` flag is still permitted, but displays a
+       warning when used. Thanks Chris McDonough.
+    -  New flag:  `--system-site-packages`; this flag should be passed to
+       get the previous default global-site-package-including behavior back.
+    -  Added ability to set command options as environment variables and
+       options in a  `virtualenv.ini` file.
+    -  Fixed various encoding related issues with paths. Thanks Gunnlaugur
+       Thor Briem.
+    -  Made  `virtualenv.py` script executable.
+
+| 特に大きいなと思ったのが2つ目の変更点
+| virtualenv1.7は指定しなくても
+| --no-site-packagesを勝手に指定してくれるようになった。
+| --no-site-packagesはインストール済みのモジュールを、
+| 全て外した状態で仮想環境を作成できるオプション。
+| これをつければ、
+| virtualenv内のパッケージのみのリストを得ることができる。
+| しかし今までは、
+
+.. code-block:: bash
+
+    python virtualenv.py --no-site-packages env1
+
+| といちいち指定しなければならないので面倒だった。
+| これが
+
+.. code-block:: bash
+
+    python virtualenv.py env1
+
+| で済むのだから快適と言わざるを得ない。
+| 人によっては、
+
+-  インストールするPythonのバージョン(2.5, 2.6, 2.7, etc)
+-  パッケージ管理ツール `distribute <http://pypi.python.org/pypi/distribute>`__
+
+| など指定するオプションも多いはず。
+| (例)
+
+.. code-block:: bash
+
+    python virtualenv.py --distribute --python=python2.5 --no-site-packages env2
+
+| distributeは既にデフォルトで設定する方法もあるようなので、
+| virtualenv1.7で--no-site-packagesもデフォルトにできるようになったのは大きいと思う。
+| ちなみに確認のため--no-site-packagesを付けて試してみたところ、
+| インストールが始まる前に
+
+.. code-block:: bash
+
+    The --no-site-packages flag is deprecated; it is now the default behavior.
+
+| と表示された。
+| 確かにインストールしてくれているようだ。
+| より使いやすく便利になったね！
+
+.. author:: default
+.. categories:: 開発環境, Python
+.. tags:: 開発環境, Python
+.. comments::

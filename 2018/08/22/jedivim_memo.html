@@ -1,0 +1,292 @@
+<!DOCTYPE html><!--[if lt IE 7]>      <html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="https://www.facebook.com/2008/fbml" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="https://www.facebook.com/2008/fbml" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="https://www.facebook.com/2008/fbml" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="https://www.facebook.com/2008/fbml" class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="description" content="Road To Pythonista">
+        <meta name="viewport" content="width=device-width">
+        
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@kashew_nuts" />
+    <meta property="og:site_name" content="kashew_nuts-blog">
+    <meta property="og:title" content="VimとPythonの補完についてのメモ">
+    <meta property="og:description" content="間をおくとすぐ忘れるので備忘録としてメモ。 何かを貶めたりけなすような意図はありません。似たような問題に躓いたときに「そうゆうことだったのか」「こうすれば問題は回避できるんだな」みたいに思ってもらえたら嬉しいです。 pyenvやAnacondaの話はしません。">
+    <meta property='og:url' content="http://kashewnuts.github.io/2018/08/22/jedivim_memo.html">
+    <meta property="og:image" content="http://kashewnuts.github.io/_images/jedivim.svg"><title>VimとPythonの補完についてのメモ &mdash; kashew_nuts-blog</title>
+            <link rel="stylesheet" href="../../../_static/normalize.css" type="text/css">
+            <link rel="stylesheet" href="../../../_static/sphinx.css" type="text/css">
+            <link rel="stylesheet" href="../../../_static/main.css" type="text/css">
+            <link rel="stylesheet" href="../../../_static/flat.css" type="text/css">
+            <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+            <link rel="stylesheet" href="../../../_static/font-awesome.min.css" type="text/css">
+        <link rel="shortcut icon" href="../../../_static/tinkerer.ico" /><!-- Load modernizr and JQuery -->
+        <script src="../../../_static/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="../../../_static/vendor/jquery-1.8.2.min.js"><\/script>')</script>
+        <script src="../../../_static/plugins.js"></script>
+        <script src="../../../_static/main.js"></script>
+        <link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="PyCon Kyushuで登壇してきました #PyCon9shu" href="../../07/15/pycon9shu.html" /><link rel="prev" title="PyConJP2018でPyCharmの話をしてきました #pyconjp" href="../../09/22/pyconjp2018.html" /><link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/kashew_nuts-blog" /><script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.7.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        SOURCELINK_SUFFIX: '.txt',
+        HAS_SOURCE:  true
+      };
+    </script><script type="text/javascript" src="../../../_static/underscore.js"></script><script type="text/javascript" src="../../../_static/doctools.js"></script><script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script><script type="text/javascript" src="../../../_static/disqus.js"></script><script type="text/javascript" src="../../../_static/google_analytics.js"></script>
+    <meta property="fb:admins" content="200170096719194"/>
+    
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Scroll to content if on small screen
+            if (screen.width < 480)
+            {
+                $(document).scrollTop(document.getElementsByTagName("article")[0].offsetTop - 40);
+            }
+        });
+    </script>
+</head>
+    <body role="document">
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+      <div id="container"><header role="banner">
+            <hgroup>
+              <h1><a href="../../../index.html">kashew_nuts-blog</a></h1><h2>Road To Pythonista</h2></hgroup>
+          </header>
+      <nav role="navigation">
+      <ul>
+        <li class="main-nav">
+            <a href="../../../index.html">Home</a>
+          </li>
+        <li class="main-nav"><a href='https://kashewnuts.github.io/archive.html'>Archive</a></li><li class="main-nav">
+            <a href="http://feeds.feedburner.com/kashew_nuts-blog" title="Subscribe via RSS"><span class="fa fa-lg fa-rss"></span></a>
+          </li></ul>
+    </nav><div class="main-container" role="main"><div class="main wrapper body clearfix"><article>
+    <div class="section" id="vimpython">
+<h1>VimとPythonの補完についてのメモ<a class="headerlink" href="#vimpython" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-center">
+<img alt="../../../_images/jedivim.svg" src="../../../_images/jedivim.svg" /></div>
+<p>間をおくとすぐ忘れるので備忘録としてメモ。</p>
+<div class="section" id="id1">
+<h2>前提<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>何かを貶めたりけなすような意図はありません。似たような問題に躓いたときに「そうゆうことだったのか」「こうすれば問題は回避できるんだな」みたいに思ってもらえたら嬉しいです。</p></li>
+<li><p>pyenvやAnacondaの話はしません。</p></li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>結論<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>VimのPython補完は <a class="reference external" href="https://github.com/davidhalter/jedi-vim/">davidhalter/jedi-vim: Using the jedi autocompletion library for VIM.</a> で事足りる</p></li>
+<li><p>virtualenv/venvを使用していればVimのPython/Python3インターフェースを両方ONにする必要がない(jedi-vimに関しては)</p></li>
+<li><p>jedi-vimの補完で物足りなければPyCharm使うのも検討する</p></li>
+</ul>
+</div>
+<div class="section" id="jedi">
+<h2>jediとは<a class="headerlink" href="#jedi" title="Permalink to this headline">¶</a></h2>
+<p>最近LSP(Language Server Protocol)とかもでてきて気になったりしますが、Pythonの自動補完&amp;静的解析ライブラリとして有名かつ定番なのが <a class="reference external" href="https://github.com/davidhalter/jedi">davidhalter/jedi: Awesome autocompletion and static analysis library for python.</a> です。</p>
+<p>これはJupyter NotebookやIPythonのインストール時にも一緒にインストールされますし、Vimに限らずEmacsやVSCode、AtomでもPythonの補完に使われています。
+Vimではjedi-vimというプラグインを活用すると連携できますが、いくつか注意することがあるのでこの記事を書こうと思いました。</p>
+</div>
+<div class="section" id="jedi-vim">
+<h2>jedi-vimのインストール要件<a class="headerlink" href="#jedi-vim" title="Permalink to this headline">¶</a></h2>
+<p><strong>VimのPythonインタフェースもしくはPython3インタフェースが有効になっていること</strong> と一点ですがこれが意外と曲者です。</p>
+<p>PythonインタフェースもしくはPython3インタフェースを有効にするためには、以下の2つの条件を満たす必要があります。</p>
+<ul class="simple">
+<li><p>Vimで <code class="docutils literal notranslate"><span class="pre">:version</span></code> した際に <code class="docutils literal notranslate"><span class="pre">+python</span></code> もしくは <code class="docutils literal notranslate"><span class="pre">+python3</span></code> になっている</p></li>
+<li><p>Vimが必要としているPython(3)のバージョンをマイクロバージョン単位で合わせる必要がある</p></li>
+</ul>
+<p>マイクロバージョンとはPython3.6.5の場合、3がメジャーバージョン、6がマイナーバージョン、最後の5がマイクロバージョンです (参考: <a class="reference external" href="https://docs.python.jp/3/faq/general.html#how-does-the-python-version-numbering-scheme-work">一般 Python FAQ — Python 3.6.5 ドキュメント</a> )</p>
+<p>たとえばUbuntu18.04LTS サーバー版の場合、Vimを起動すると <code class="docutils literal notranslate"><span class="pre">:version</span></code> で <code class="docutils literal notranslate"><span class="pre">-python/+python3</span></code> なのが確認できます。Ubuntu18.04LTSの場合はPython3.6.5がデフォルトでインストールされているため、 <code class="docutils literal notranslate"><span class="pre">:python3</span> <span class="pre">print('Hello')</span></code> とコマンドラインモードで入力すると <code class="docutils literal notranslate"><span class="pre">Hello</span></code> と表示されるのが確認できます。大抵の場合 <code class="docutils literal notranslate"><span class="pre">+python3</span></code> になっているVimを使っていれば問題ないでしょう。</p>
+<p>しかしUbuntu18.04LTSのデスクトップ版の場合、最初に入っているVimは <code class="docutils literal notranslate"><span class="pre">vim.tiny</span></code> と呼ばれVimで使える様々なオプションがOFFになっているため、 <code class="docutils literal notranslate"><span class="pre">-python/-python3</span></code> になっています。この場合ターミナルから <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">vim</span></code> のようにしてPythonインタフェースもしくはPython3インタフェースが有効になっているVimをインストールする必要があります。</p>
+<p>OSが最初から用意しているVimとPythonを使えば問題ないこともあるのですが、次のように自分でVimやPythonを用意した際は問題になることがあります。</p>
+<ul class="simple">
+<li><p>WindowsでVimは香り屋版Vimを使い、Pythonは www.python.org で入手した「最新の」Pythonを使う</p></li>
+<li><p>macOSでVimはmacvim-kaoriyaを使い、PythonはHomebrewで入れている</p></li>
+</ul>
+<p>つまりはVimが要求するPythonのバージョンを導入していないとVimが <code class="docutils literal notranslate"><span class="pre">+python/+python3</span></code> になっていても、PythonがインストールされていてもPython/Python3インタフェースが有効にならない場合があります。これを避けるにはVimのリリースノートを見て、Vimが要求するPythonが導入されているか確認する必要があります。以下は一例です。</p>
+<ul class="simple">
+<li><p>Windows版の香り屋Vimの場合: <a class="reference external" href="https://github.com/koron/vim-kaoriya/releases">Releases - koron/vim-kaoriya</a></p></li>
+<li><p>macvim-kaoriyaの場合: <a class="reference external" href="https://github.com/splhack/macvim-kaoriya/releases">Releases - splhack/macvim-kaoriya</a></p></li>
+</ul>
+<div class="section" id="homebrewpython">
+<h3>HomebrewでPythonを導入した場合<a class="headerlink" href="#homebrewpython" title="Permalink to this headline">¶</a></h3>
+<p>www.python.org から導入したPythonの場合はあまり心配がないのですが、HomebrewでPythonをインストールした場合macvim-kaoriyaが見る場所にPythonのパスが存在しないことがあって期待していた結果と異なる場合があります。そのような場合は <a class="reference external" href="https://github.com/splhack/macvim-kaoriya/issues/71">MacVim-KaoriYa 20171221でPython3インターフェースが使えなくなっている · Issue #71 · splhack/macvim-kaoriya</a> などを参考にして、シンボリックリンクを貼ると良いかもしれません。</p>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>jedi-vimのインストール方法<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>長々とVimとPythonの組み合わせについて話してきましたが、jedi-vimのインストールはVimのプラグインマネージャーを使用していれば簡単です。この記事では覚えることが少なくて済み、そこそこ高速に使える <a class="reference external" href="https://github.com/junegunn/vim-plug">junegunn/vim-plug: Minimalist Vim Plugin Manager</a> を使います。vim-plugのインストール方法はURLを参照してください。プラグインは <code class="docutils literal notranslate"><span class="pre">~/.cache/plugged</span></code> にインストールするものとします。</p>
+<p>以下のようにvimrcでbeginとendの間に一行指定します。</p>
+<div class="highlight-vim notranslate"><div class="highlight"><pre><span></span><span class="k">call</span> plug#begin<span class="p">(</span><span class="s1">&#39;~/.cache/plugged&#39;</span><span class="p">)</span>
+Plug <span class="s1">&#39;davidhalter/jedi-vim&#39;</span><span class="p">,</span> {<span class="s1">&#39;for&#39;</span>: <span class="s1">&#39;python&#39;</span>}   <span class="c">&quot; pythonファイルを編集するときだけ起動</span>
+<span class="k">call</span> plug#<span class="k">end</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>記述し終えたらVimを再起動して <code class="docutils literal notranslate"><span class="pre">:PlugInstall</span></code> すればjedi-vimがインストールされます。設定できるオプションはいくつかありますが、自分は以下のように設定しています。</p>
+<div class="highlight-vim notranslate"><div class="highlight"><pre><span></span><span class="k">set</span> <span class="nb">completeopt</span><span class="p">=</span>menuone                        <span class="c">&quot; 補完候補を呼び出すとき常にポップアップメニューを使う</span>
+autocmd<span class="p">!</span> <span class="nb">User</span> jedi<span class="p">-</span><span class="k">vim</span> <span class="k">call</span> s:jedivim_hook<span class="p">()</span>   <span class="c">&quot; vim-plugの遅延ロード呼び出し</span>
+<span class="k">function</span><span class="p">!</span> s:jedivim_hook<span class="p">()</span>              <span class="c">&quot; jedi-vimを使うときだけ呼び出す処理を関数化</span>
+  <span class="k">let</span> <span class="k">g</span>:jedi#auto_initialization    <span class="p">=</span> <span class="m">0</span> <span class="c">&quot; 自動で実行される初期化処理を無効</span>
+  <span class="k">let</span> <span class="k">g</span>:jedi#auto_vim_configuration <span class="p">=</span> <span class="m">0</span> <span class="c">&quot; &#39;completeopt&#39; オプションを上書きしない</span>
+  <span class="k">let</span> <span class="k">g</span>:jedi#popup_on_dot           <span class="p">=</span> <span class="m">0</span> <span class="c">&quot; ドット(.)を入力したとき自動で補完しない</span>
+  <span class="k">let</span> <span class="k">g</span>:jedi#popup_select_first     <span class="p">=</span> <span class="m">0</span> <span class="c">&quot; 補完候補の1番目を選択しない</span>
+  <span class="k">let</span> <span class="k">g</span>:jedi#show_call_signatures   <span class="p">=</span> <span class="m">0</span> <span class="c">&quot; 関数の引数表示を無効(ポップアップのバグを踏んだことがあるため)</span>
+  autocmd <span class="nb">FileType</span> python <span class="k">setlocal</span> <span class="nb">omnifunc</span><span class="p">=</span>jedi#completions   <span class="c">&quot; 補完エンジンはjediを使う</span>
+<span class="k">endfunction</span>
+</pre></div>
+</div>
+<p>補完を使うにしろなるべく入力時の邪魔にならないように、必要なときに自分で呼び出すように設定しました。詳しくは <cite>:h jedi</cite> を参照してください。</p>
+</div>
+<div class="section" id="jedi-vimvirtuelenv-venv">
+<h2>jedi-vimのvirtuelenv/venvサポートについて<a class="headerlink" href="#jedi-vimvirtuelenv-venv" title="Permalink to this headline">¶</a></h2>
+<p>jedi-vimを入れたVimはデフォルトで有効になっているPython (Ubuntu18.04LTSだとPython3.6.5) に対して補完を行いますが、virtualenv/venvのような仮想環境を使用していると、仮想環境下で使用しているPythonを使用できます。Pythonのバージョンを気にする場合、仮想環境を作成して使うことがほとんどだと思うのでjedi-vimのvirtualenv/venvサポートは嬉しい限りです。</p>
+<p>数年前はPython/Python3インタフェースが有効なPythonのバージョンでしか動かなかったようですが、現在はその制限はなくなりました。Python2.7のコードを書くために <code class="docutils literal notranslate"><span class="pre">+python</span></code> と <code class="docutils literal notranslate"><span class="pre">+python3</span></code> を両立した状態にしようとして自分でビルドする必要はないですし、vimrcに実行したいPythonのパスをPythonの2系と3系でそれぞれ指定する必要もありません。</p>
+<p>どうしても <code class="docutils literal notranslate"><span class="pre">+python</span></code> と <code class="docutils literal notranslate"><span class="pre">+python3</span></code> を両立したいケースがあるとしたら <code class="docutils literal notranslate"><span class="pre">+python</span></code> でしか動かない別のVimプラグインを使用したい場合や、すべてのVimのオプションをONにしたいような方だと思われます。普通にVimでPythonの補完を使いたい場合は <code class="docutils literal notranslate"><span class="pre">+python3</span></code> になっているVimがあれば十分ですね。</p>
+<div class="section" id="python">
+<h3>標準のPythonのオムニ補完を使わない理由<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h3>
+<p>「virtualenv/venvをサポートをしていないから」というだけで個人的には十分でした。逆にいうとVimがデフォルトで使うPythonだけ使い、標準ライブラリ以外は使わない場合はjedi-vimを入れる理由はないかもしれません。</p>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>jedi-vimの補完以外の機能<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>jedi-vimは補完機能以外にもさまざまな機能があります。気になる方はヘルプを見てみてください。</p>
+<ul class="simple">
+<li><p>定義ジャンプ: <code class="docutils literal notranslate"><span class="pre">&lt;Leader&gt;d</span></code></p></li>
+<li><p>変数リネーム: <code class="docutils literal notranslate"><span class="pre">&lt;Leader&gt;r</span></code></p></li>
+<li><p>単語の使用箇所表示: <code class="docutils literal notranslate"><span class="pre">&lt;Leader&gt;n</span></code></p></li>
+<li><p>pydoc表示: <code class="docutils literal notranslate"><span class="pre">&lt;K&gt;</span></code></p></li>
+<li><p>モジュール表示: <code class="docutils literal notranslate"><span class="pre">:Pyimport</span> <span class="pre">{モジュール名}</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="pycharm">
+<h2>PyCharmと比較して<a class="headerlink" href="#pycharm" title="Permalink to this headline">¶</a></h2>
+<p>単純に比べられないのですがPyCharmの優位な部分は多いと個人的には思います。PyCharmがVimの補完と比べて使いにくいなと思うのがキーワード補完やファイル名の補完などVim自体の補完が使えない点です。しかしそれ以上に、Pythonの標準ライブラリにとどまらず、PyPIからインストールしたライブラリに対してもヌルヌルと補完候補を絞り込んでくれます。また「あれなんだったっけ？」と思うようなところでもなんでもインクリメンタルに絞り込めるので単純ミスが少なくなるのがいいですね。</p>
+<p>とはいえ自分だけで最初から最後まで書くようなときや、さっと何かを書いて試したいときはPyCharmの環境を準備するのが煩わしいときがあるので、そうゆうときはやはりVimを使ってしまいます。</p>
+<p>補完だけの話ではなかったり、向き不向きや慣れの部分もあると思うので適材適所で使い分けていきたいです。</p>
+</div>
+<div class="section" id="id5">
+<h2>まとめ<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>VimのPython補完は <a class="reference external" href="https://github.com/davidhalter/jedi-vim/">davidhalter/jedi-vim: Using the jedi autocompletion library for VIM.</a> で事足りる</p></li>
+<li><p>virtualenv/venvを使用していれば、自分でVimをビルドする必要はない</p></li>
+<li><p>jedi-vimの補完で物足りなければPyCharm使うのも検討する</p></li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h2>最後に<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>この記事ではVimとPythonの補完について触れてきました。補完以外にも拡張したい項目があるかもしれませんが、それはひとまず他の記事に譲ることにします。また気が向いたらそのあたりの記事も描くかもしれません。</p>
+</div>
+</div>
+
+    <br/>
+
+<!-- ninja_omatome -->
+<div class="ninja_onebutton">
+<script type="text/javascript">
+//<![CDATA[
+(function(d){
+if(typeof(window.NINJA_CO_JP_ONETAG_BUTTON_00eb4412f1c80db8bbc1af50c58e8ee6)=='undefined'){
+    document.write("<sc"+"ript type='text\/javascript' src='//omt.shinobi.jp\/b\/00eb4412f1c80db8bbc1af50c58e8ee6'><\/sc"+"ript>");
+}else{
+    window.NINJA_CO_JP_ONETAG_BUTTON_00eb4412f1c80db8bbc1af50c58e8ee6.ONETAGButton_Load();}
+})(document);
+//]]>
+</script><span class="ninja_onebutton_hidden" style="display:none;"></span><span style="display:none;" class="ninja_onebutton_hidden"></span>
+</div>
+<!-- ninja_omatome -->
+
+</div>
+    <div class="postmeta">
+        <div class="author">
+            <span>Posted by Kashun YOSHIDA</span>
+        </div>
+        <div class="categories">
+            <span>
+                Filed under:
+                <a href="../../../categories/python.html">Python</a>, <a href="../../../categories/vim.html">Vim</a></span>
+        </div>
+        <div class="tags">
+            <span>
+                Tags:
+                <a href="../../../tags/python.html">Python</a>, <a href="../../../tags/vim.html">Vim</a></span>
+        </div>
+        </div>
+    <div id="disqus_thread"></div><script type="text/javascript">    var disqus_shortname = "kashewnutsblog";    var disqus_identifier = "2018/08/22/jedivim_memo";    disqus_thread();</script><noscript>Please enable JavaScript to view the    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<ul class="related clearfix">
+            <li class="left"> &laquo; <a href="../../09/22/pyconjp2018.html">PyConJP2018でPyCharmの話をしてきました #pyconjp</a></li>
+            <li class="right"><a href="../../07/15/pycon9shu.html">PyCon Kyushuで登壇してきました #PyCon9shu</a> &raquo; </li>
+        </ul></article><aside class="sidebar"><section><div class="widget">
+  <div>
+    <a href="//af.moshimo.com/af/c/click?a_id=815168&p_id=1166&pc_id=1793&pl_id=20228&guid=ON" target="_blank" rel="nofollow"><img src="//image.moshimo.com/af-img/0408/000000020228.png" width="300" height="250" style="border:none;"></a><img src="//i.moshimo.com/af/i/impression?a_id=815168&p_id=1166&pc_id=1793&pl_id=20228" width="1" height="1" style="border:none;">
+  </div>
+</div></section><section><div class="widget" id="searchbox" role="search">
+    <h1><a href="#searchbox">Search</a></h1>
+    <form action="../../../search.html" method="get">
+        <input type="text" name="q" />
+        <button type="submit"><span class="fa fa-search"></span></button>
+    </form>
+</div></section><section><div class="widget">
+    <h1>Recent Posts</h1>
+    <ul><li>
+            <a href="../../../2020/11/30/climbing_shoes_history.html">クライミングシューズ遍歴</a>
+        </li><li>
+            <a href="../../../2020/06/11/wsl2.html">WSL2を使ってみている</a>
+        </li><li>
+            <a href="../../../2020/05/05/upgrade_ubuntu_20_04_lts.html">Ubuntu18.04LTSから20.04LTSにアップグレードした</a>
+        </li><li>
+            <a href="../../../2020/04/08/migrated_lsp_client_to_coc_nvim.html">LSPクライアントをcoc.nvimにした話</a>
+        </li><li>
+            <a href="../../../2019/01/28/move_from_jedivim_to_vimlsp.html">Pythonの補完環境をjedi-vimからvim-lspに移行した話</a>
+        </li><li>
+            <a href="../../../2019/01/05/2018and2019.html">2018年の振り返りと2019年抱負</a>
+        </li><li>
+            <a href="../../12/02/bp_advent_calender.html">2018年版Life ChangingだったVimプラグインTOP3</a>
+        </li><li>
+            <a href="../../11/06/yosemite_tour.html">ヨセミテツアー日記</a>
+        </li><li>
+            <a href="../../09/22/pyconjp2018.html">PyConJP2018でPyCharmの話をしてきました #pyconjp</a>
+        </li><li>
+            <a href="#">VimとPythonの補完についてのメモ</a>
+        </li></ul>
+</div>
+</section><section><div class="widget">
+    <h1>Categories</h1>
+    <ul><li><a href="../../../categories/64bit.html">64bit</a> (2)</li><li><a href="../../../categories/android.html">Android</a> (3)</li><li><a href="../../../categories/bouldering.html">bouldering</a> (2)</li><li><a href="../../../categories/bouldering.html">Bouldering</a> (4)</li><li><a href="../../../categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="../../../categories/c_c.html">C/C++</a> (5)</li><li><a href="../../../categories/chrome.html">Chrome</a> (2)</li><li><a href="../../../categories/db.html">DB</a> (1)</li><li><a href="../../../categories/django.html">Django</a> (10)</li><li><a href="../../../categories/facebook.html">Facebook</a> (1)</li><li><a href="../../../categories/firefox.html">Firefox</a> (1)</li><li><a href="../../../categories/git_mercurial.html">Git/Mercurial</a> (8)</li><li><a href="../../../categories/golang.html">Golang</a> (1)</li><li><a href="../../../categories/google.html">Google</a> (5)</li><li><a href="../../../categories/heroku.html">Heroku</a> (6)</li><li><a href="../../../categories/java.html">Java</a> (2)</li><li><a href="../../../categories/javascript.html">JavaScript</a> (4)</li><li><a href="../../../categories/jupyter.html">Jupyter</a> (1)</li><li><a href="../../../categories/kabepy.html">kabepy</a> (2)</li><li><a href="../../../categories/linux.html">Linux</a> (5)</li><li><a href="../../../categories/lt.html">LT</a> (5)</li><li><a href="../../../categories/mac.html">Mac</a> (8)</li><li><a href="../../../categories/pycharm.html">PyCharm</a> (2)</li><li><a href="../../../categories/pyconjp.html">PyConJP</a> (1)</li><li><a href="../../../categories/pyfes.html">pyfes</a> (7)</li><li><a href="../../../categories/python.html">Python</a> (70)</li><li><a href="../../../categories/slack.html">Slack</a> (1)</li><li><a href="../../../categories/sphinx.html">Sphinx</a> (8)</li><li><a href="../../../categories/sqlalchemy.html">SQLAlchemy</a> (1)</li><li><a href="../../../categories/ssd.html">SSD</a> (1)</li><li><a href="../../../categories/tddbc.html">TDDBC</a> (1)</li><li><a href="../../../categories/tinkerer.html">Tinkerer</a> (7)</li><li><a href="../../../categories/tmux.html">tmux</a> (1)</li><li><a href="../../../categories/ubuntu.html">Ubuntu</a> (3)</li><li><a href="../../../categories/vagrant.html">Vagrant</a> (1)</li><li><a href="../../../categories/vim.html">Vim</a> (24)</li><li><a href="../../../categories/vimconf.html">VimConf</a> (3)</li><li><a href="../../../categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="../../../categories/windows.html">Windows</a> (3)</li><li><a href="../../../categories/windows7.html">Windows7</a> (4)</li><li><a href="../../../categories/wsl.html">WSL</a> (1)</li><li><a href="../../../categories/%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0.html">アルゴリズム</a> (1)</li><li><a href="../../../categories/%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3.html">セキュリティ</a> (2)</li><li><a href="../../../categories/%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF.html">ネットワーク</a> (1)</li><li><a href="../../../categories/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0.html">プログラミング</a> (7)</li><li><a href="../../../categories/%E5%8B%89%E5%BC%B7%E4%BC%9A.html">勉強会</a> (30)</li><li><a href="../../../categories/%E5%BF%9C%E7%94%A8%E6%83%85%E5%A0%B1%E6%8A%80%E8%A1%93%E8%80%85.html">応用情報技術者</a> (10)</li><li><a href="../../../categories/%E6%83%85%E5%A0%B1%E5%87%A6%E7%90%86%E6%8A%80%E8%A1%93%E8%80%85%E8%A9%A6%E9%A8%93.html">情報処理技術者試験</a> (10)</li><li><a href="../../../categories/%E6%9C%AC.html">本</a> (29)</li><li><a href="../../../categories/%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83.html">開発環境</a> (11)</li><li><a href="../../../categories/%E9%9B%91%E8%A8%98.html">雑記</a> (38)</li><li><a href="../../../categories/%E9%AB%98%E9%80%9F%E5%8C%96.html">高速化</a> (1)</li></ul>
+</div></section><section><div class="widget">
+    <h1>About Me</h1>
+    <div>
+        <a href="https://about.me/kashew_nuts">
+            <img src="https://pbs.twimg.com/profile_images/378800000438956976/3e61e7ae64d916ba0451a44c3b8ce347.jpeg"
+            width="128px"
+            height="128px" />
+        </a>
+        <h4><a href="https://twitter.com/kashew_nuts">kashew_nuts
+                (KashunYOSHIDA)</a></h4>
+        <p>人生という壁を登るSoftwareDeveloper</p>
+        <a class="twitter-timeline" data-width="300" data-height="800" data-theme="dark" href="https://twitter.com/kashew_nuts">Tweets by kashew_nuts</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+</div></section></aside></div> <!-- #main --></div> <!-- #main-container -->
+
+        <div class="footer-container" role="contentinfo"><footer class="wrapper">&copy; Copyright 2011-2020, Kashun YOSHIDA. Powered by <a href="http://www.tinkerer.me/">Tinkerer</a> and <a href="http://sphinx.pocoo.org/">Sphinx</a>.</footer></div> <!-- footer-container -->
+
+      </div> <!--! end of #container --><!--[if lt IE 7 ]>
+          <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+          <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+        <![endif]-->
+    </body>
+</html>

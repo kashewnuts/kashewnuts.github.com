@@ -1,0 +1,172 @@
+WindowsでGolang開発環境構築
+===========================
+
+Golangインストール
+------------------
+
+`インストーラー <http://golang-jp.org/doc/install>`_ をダウンロードしてインストール(C:\Go)
+
+環境変数設定
+~~~~~~~~~~~~
+
+以下の環境変数を追加
+
+:GOROOT: C:\\Go
+:GOPATH: C:\\Go\\goprojects
+:PATH: %GOROOT%\\bin;%GOPATH%\\bin
+
+GOROOTはGolangをインストールした場所、GOPATHはユーザーのワーキングディレクトリ(好きな場所で良い)を指定。
+
+
+セットアップできたら動作確認をする。
+
+.. code-block:: bash
+
+  $ go version
+  go version go1.6 windows/amd64
+
+
+Vim設定
+-------
+
+GolangはAtom, Eclipse, Emacs, Gedit, IntelliJ IDEA, LiteIDE, Notepad++, SublimeText, VisualStudio(Code)と様々なエディタ、IDEでサポートされていますが、ここではVimを使います。
+
+インデントの設定
+~~~~~~~~~~~~~~~~
+
+Golangはハードタブなのでvimrcに下記を設定
+~/.vim/after/ftplugin/<filetype>.vimに書くことでFileTypeごとの設定を記述できる．
+
+.. code-block:: vim
+
+  " .vim/after/ftplugin/go.vim
+  set noexpandtab
+  set tabstop=4
+  set shiftwidth=4
+  set softtabstop=4
+
+わざわざファイルを新しく用意するのが面倒という人はvimrcに以下のように書くといい。記述している内容は一緒だ。
+
+.. code-block:: vim
+
+  " vimrc
+  autocmd FileType go         setl ts=4 sw=4 sts=4 noet
+
+
+プラグイン導入
+~~~~~~~~~~~~~~
+
+`fatih/vim-go <https://github.com/fatih/vim-go>`_ をお好みのPluginManagerでインストール(ここでは
+`Shougo/dein.vim <https://github.com/Shougo/dein.vim>`_ を使用)
+
+.. code-block:: vim
+
+  " vimrcに記述する場合
+  call dein#add('fatih/vim-go', {'on_ft': 'go'})
+
+.. code-block:: text
+
+  # tomlに記述する場合
+  [[plugins]]
+  repo = 'fatih/vim-go'
+  on_ft = 'go'
+
+コード補完やSyntaxHighlightを有効にするには下記をvimrcに記載するのをお忘れなく。
+
+.. code-block:: vim
+
+  " vimrc
+  filetype plugin indent on
+  syntax on
+
+設定ファイルに記述しプラグインをインストールしたら、vimのコマンドラインより下記のコマンドを叩く。
+
+.. code-block:: bash
+
+  :GoInstallBinaries
+
+2016-05-16時点でfatih/vim-goを導入すると下記がインストールされる。
+
+* asmfmt.exe
+* errcheck.exe
+* gocode.exe
+* godef.exe
+* gogetdoc.exe
+* goimports.exe
+* golint.exe
+* gometalinter.exe
+* gorename.exe
+* gotags.exe
+* guru.exe
+* impl.exe
+* motion.exe
+* oracle.exe
+
+自分のvimrcをご覧になりたい方は `こちら <https://github.com/kashewnuts/dotfiles/blob/master/files/.vim/vimrc>`_
+
+
+Hello, Golang World!
+--------------------
+
+プログラムを書いてみる。
+コード補完(<C-x><C-o>)やリントツール、フォーマッタなど豊富なサポートが得られることが確認できる。
+
+.. code-block:: go
+
+  package main
+
+  import "fmt"
+
+  func main() {
+      fmt.Printf("Hello, Golang world!\n")
+  }
+
+.. code-block:: bash
+
+  $ go run hello.go
+  Hello, Golang world!
+
+
+おまけ
+------
+
+よくag(the_silver_searcher)を使ってgrepを高速実行しようという記事が見受けられるが、ここではGolang製の
+`mattn/jvgrep <https://github.com/mattn/jvgrep>`_
+を使ってみる。
+動作が高速でマルチエンコーディングに対応しており、Windowsでのインストールも簡単なので入れておいて損はない。
+
+.. code-block:: bash
+
+  $ go get github.com/mattn/jvgrep
+
+.. code-block:: vim
+
+  " vimrcに記述
+  if executable('jvgrep')
+    set grepprg=jvgrep
+  endif
+
+`Shougo/unite.vim <https://github.com/Shougo/unite.vim>`_
+のgrep処理でもjvgrepを使用できるよう設定できるので、興味がある人は設定してみるといいかもしれない。
+
+.. code-block:: vim
+
+  " vimrcに記述
+  if executable('jvgrep')
+    let g:unite_source_grep_command = 'jvgrep'
+    let g:unite_source_grep_default_opts = '-i --exclude ""\.(git|svn|hg|bzr)""'
+    let g:unite_source_grep_recursive_opt = '-R'
+  endif
+
+
+参考
+----
+
+* `【Go × Vim】 VimでGoを書く - 2015 Spring - Qiita <http://qiita.com/izumin5210/items/1f3c312edd7f0075b09c#%E6%AF%8E%E5%9B%9E%E5%85%A5%E3%82%8C%E3%82%8B%E3%83%97%E3%83%A9%E3%82%B0%E3%82%A4%E3%83%B3%E3%81%A8%E3%81%8B>`_
+* `弱Vim使いが中途半端な予備知識でGoを書き始めたら - muo-notes <http://www.muo.jp/2015/06/vim-and-go.html>`_
+* `Big Sky :: 日本語grepが出来るjvgrepというのを作った。 <http://mattn.kaoriya.net/software/lang/go/20110819203649.htm>`_
+
+.. author:: default
+.. categories:: Windows, Golang, Vim
+.. tags:: Windows, Golang, Vim
+.. comments::

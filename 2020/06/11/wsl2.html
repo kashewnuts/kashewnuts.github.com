@@ -1,0 +1,418 @@
+<!DOCTYPE html><!--[if lt IE 7]>      <html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="https://www.facebook.com/2008/fbml" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="https://www.facebook.com/2008/fbml" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="https://www.facebook.com/2008/fbml" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="https://www.facebook.com/2008/fbml" class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="description" content="Road To Pythonista">
+        <meta name="viewport" content="width=device-width">
+        
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@kashew_nuts" />
+    <meta property="og:site_name" content="kashew_nuts-blog">
+    <meta property="og:title" content="WSL2を使ってみている">
+    <meta property="og:description" content="個人ではUbuntu Desktopを使っていたのだが、Windows 10 May 2020 Updateがきたので試してみている。Windows Terminalと相まって使い勝手よく試せている。 WSLについて ターミナルアプリケーション WSL2のインストール クリップボードどうする Docker, docker-composeはどうか エディタやIDE PyCharm VSCode...">
+    <meta property='og:url' content="http://kashewnuts.github.io/2020/06/11/wsl2.html">
+    <title>WSL2を使ってみている &mdash; kashew_nuts-blog</title>
+            <link rel="stylesheet" href="../../../_static/normalize.css" type="text/css">
+            <link rel="stylesheet" href="../../../_static/sphinx.css" type="text/css">
+            <link rel="stylesheet" href="../../../_static/main.css" type="text/css">
+            <link rel="stylesheet" href="../../../_static/flat.css" type="text/css">
+            <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+            <link rel="stylesheet" href="../../../_static/font-awesome.min.css" type="text/css">
+        <link rel="shortcut icon" href="../../../_static/tinkerer.ico" /><!-- Load modernizr and JQuery -->
+        <script src="../../../_static/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="../../../_static/vendor/jquery-1.8.2.min.js"><\/script>')</script>
+        <script src="../../../_static/plugins.js"></script>
+        <script src="../../../_static/main.js"></script>
+        <link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Ubuntu18.04LTSから20.04LTSにアップグレードした" href="../../05/05/upgrade_ubuntu_20_04_lts.html" /><link rel="prev" title="クライミングシューズ遍歴" href="../../11/30/climbing_shoes_history.html" /><link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/kashew_nuts-blog" /><script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.7.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        SOURCELINK_SUFFIX: '.txt',
+        HAS_SOURCE:  true
+      };
+    </script><script type="text/javascript" src="../../../_static/underscore.js"></script><script type="text/javascript" src="../../../_static/doctools.js"></script><script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script><script type="text/javascript" src="../../../_static/disqus.js"></script><script type="text/javascript" src="../../../_static/google_analytics.js"></script>
+    <meta property="fb:admins" content="200170096719194"/>
+    
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Scroll to content if on small screen
+            if (screen.width < 480)
+            {
+                $(document).scrollTop(document.getElementsByTagName("article")[0].offsetTop - 40);
+            }
+        });
+    </script>
+</head>
+    <body role="document">
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+      <div id="container"><header role="banner">
+            <hgroup>
+              <h1><a href="../../../index.html">kashew_nuts-blog</a></h1><h2>Road To Pythonista</h2></hgroup>
+          </header>
+      <nav role="navigation">
+      <ul>
+        <li class="main-nav">
+            <a href="../../../index.html">Home</a>
+          </li>
+        <li class="main-nav"><a href='https://kashewnuts.github.io/archive.html'>Archive</a></li><li class="main-nav">
+            <a href="http://feeds.feedburner.com/kashew_nuts-blog" title="Subscribe via RSS"><span class="fa fa-lg fa-rss"></span></a>
+          </li></ul>
+    </nav><div class="main-container" role="main"><div class="main wrapper body clearfix"><article>
+    <div class="section" id="wsl2">
+<h1>WSL2を使ってみている<a class="headerlink" href="#wsl2" title="Permalink to this headline">¶</a></h1>
+<p>個人ではUbuntu Desktopを使っていたのだが、Windows 10 May 2020 Updateがきたので試してみている。Windows Terminalと相まって使い勝手よく試せている。</p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#wsl" id="id8">WSLについて</a></p></li>
+<li><p><a class="reference internal" href="#id1" id="id9">ターミナルアプリケーション</a></p></li>
+<li><p><a class="reference internal" href="#id2" id="id10">WSL2のインストール</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id11">クリップボードどうする</a></p></li>
+<li><p><a class="reference internal" href="#docker-docker-compose" id="id12">Docker, docker-composeはどうか</a></p></li>
+<li><p><a class="reference internal" href="#ide" id="id13">エディタやIDE</a></p>
+<ul>
+<li><p><a class="reference internal" href="#pycharm" id="id14">PyCharm</a></p></li>
+<li><p><a class="reference internal" href="#vscode" id="id15">VSCode</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id4" id="id16">雑感</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id5" id="id17">よかった点</a></p></li>
+<li><p><a class="reference internal" href="#id6" id="id18">気になるところ</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="wsl">
+<h2><a class="toc-backref" href="#id8">WSLについて</a><a class="headerlink" href="#wsl" title="Permalink to this headline">¶</a></h2>
+<p>WSL1と2の違いや仕組みを把握するには以下を参照するとよさそう。</p>
+<p><a class="reference external" href="https://roy-n-roy.github.io/Windows/WSL%EF%BC%86%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A/Architecture/">WSLのアーキテクチャ - roy-n-roy メモ</a></p>
+</div>
+<div class="section" id="id1">
+<h2><a class="toc-backref" href="#id9">ターミナルアプリケーション</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>WSL2にふれるのに便利なターミナルアプリケーションがほしかったので、先日正式版になった <a class="reference external" href="https://docs.microsoft.com/ja-jp/windows/terminal/">Windows Terminal</a> を使っている。
+Powershell, cmd.exe, WSLとタブを切り替えながら作業できるのがよい。現在の設定は以下。</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// To view the default settings, hold &quot;alt&quot; while clicking on the &quot;Settings&quot; button.</span>
+<span class="c1">// For documentation on these settings, see: https://aka.ms/terminal-documentation</span>
+
+<span class="p">{</span>
+  <span class="s2">&quot;$schema&quot;</span><span class="o">:</span> <span class="s2">&quot;https://aka.ms/terminal-profiles-schema&quot;</span><span class="p">,</span>
+
+  <span class="c1">// 自分が使いたいprofileのguidを指定する</span>
+  <span class="s2">&quot;defaultProfile&quot;</span><span class="o">:</span> <span class="s2">&quot;{61c54bbd-c2c6-5271-96e7-009a87ff44bf}&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;initialCols&quot;</span><span class="o">:</span> <span class="mf">120</span><span class="p">,</span>
+  <span class="s2">&quot;initialRows&quot;</span><span class="o">:</span> <span class="mf">50</span><span class="p">,</span>
+
+  <span class="s2">&quot;profiles&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;defaults&quot;</span><span class="o">:</span> <span class="p">{</span>
+      <span class="c1">// Put settings here that you want to apply to all profiles</span>
+      <span class="s2">&quot;colorScheme&quot;</span><span class="o">:</span> <span class="s2">&quot;Dracula&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;cursorShape&quot;</span><span class="o">:</span> <span class="s2">&quot;filledBox&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;fontFace&quot;</span><span class="o">:</span> <span class="s2">&quot;Ricty Diminished&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;fontSize&quot;</span><span class="o">:</span> <span class="mf">14</span><span class="p">,</span>
+      <span class="s2">&quot;hidden&quot;</span><span class="o">:</span> <span class="kc">false</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;list&quot;</span><span class="o">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="c1">// Make changes here to the powershell.exe profile</span>
+        <span class="s2">&quot;guid&quot;</span><span class="o">:</span> <span class="s2">&quot;{61c54bbd-c2c6-5271-96e7-009a87ff44bf}&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Windows PowerShell&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;commandline&quot;</span><span class="o">:</span> <span class="s2">&quot;powershell.exe&quot;</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="c1">// Make changes here to the cmd.exe profile</span>
+        <span class="s2">&quot;guid&quot;</span><span class="o">:</span> <span class="s2">&quot;{0caa0dad-35be-5f56-a8ff-afceeeaa6101}&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;cmd&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;commandline&quot;</span><span class="o">:</span> <span class="s2">&quot;cmd.exe&quot;</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="c1">// Make changes here to the wsl.exe profile</span>
+        <span class="s2">&quot;guid&quot;</span><span class="o">:</span> <span class="s2">&quot;{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Ubuntu-20.04&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;source&quot;</span><span class="o">:</span> <span class="s2">&quot;Windows.Terminal.Wsl&quot;</span><span class="p">,</span>
+        <span class="c1">// 起動時にHOMEディレクトリで開くようにする</span>
+        <span class="s2">&quot;commandline&quot;</span><span class="o">:</span> <span class="s2">&quot;wsl.exe ~&quot;</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="c1">// Make changes here to the azure profile</span>
+        <span class="s2">&quot;guid&quot;</span><span class="o">:</span> <span class="s2">&quot;{b453ae62-4e3d-5e58-b989-0a998ec441b8}&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Azure Cloud Shell&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;source&quot;</span><span class="o">:</span> <span class="s2">&quot;Windows.Terminal.Azure&quot;</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+
+  <span class="c1">// Add custom color schemes to this array</span>
+  <span class="s2">&quot;schemes&quot;</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Dracula&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;background&quot;</span><span class="o">:</span> <span class="s2">&quot;#282A36&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;black&quot;</span><span class="o">:</span> <span class="s2">&quot;#21222C&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;blue&quot;</span><span class="o">:</span> <span class="s2">&quot;#BD93F9&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;brightBlack&quot;</span><span class="o">:</span> <span class="s2">&quot;#6272A4&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;brightBlue&quot;</span><span class="o">:</span> <span class="s2">&quot;#D6ACFF&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;brightCyan&quot;</span><span class="o">:</span> <span class="s2">&quot;#A4FFFF&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;brightGreen&quot;</span><span class="o">:</span> <span class="s2">&quot;#69FF94&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;brightPurple&quot;</span><span class="o">:</span> <span class="s2">&quot;#FF92DF&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;brightRed&quot;</span><span class="o">:</span> <span class="s2">&quot;#FF6E6E&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;brightWhite&quot;</span><span class="o">:</span> <span class="s2">&quot;#FFFFFF&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;brightYellow&quot;</span><span class="o">:</span> <span class="s2">&quot;#FFFFA5&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;cyan&quot;</span><span class="o">:</span> <span class="s2">&quot;#8BE9FD&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;foreground&quot;</span><span class="o">:</span> <span class="s2">&quot;#F8F8F2&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;green&quot;</span><span class="o">:</span> <span class="s2">&quot;#50FA7B&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;purple&quot;</span><span class="o">:</span> <span class="s2">&quot;#FF79C6&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;red&quot;</span><span class="o">:</span> <span class="s2">&quot;#FF5555&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;white&quot;</span><span class="o">:</span> <span class="s2">&quot;#F8F8F2&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;yellow&quot;</span><span class="o">:</span> <span class="s2">&quot;#F1FA8C&quot;</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+
+  <span class="c1">// Add any keybinding overrides to this array.</span>
+  <span class="c1">// To unbind a default keybinding, set the command to &quot;unbound&quot;</span>
+  <span class="s2">&quot;keybindings&quot;</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="s2">&quot;command&quot;</span><span class="o">:</span> <span class="s2">&quot;copy&quot;</span><span class="p">,</span> <span class="s2">&quot;keys&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;ctrl+shift+c&quot;</span><span class="p">]</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="s2">&quot;command&quot;</span><span class="o">:</span> <span class="s2">&quot;paste&quot;</span><span class="p">,</span> <span class="s2">&quot;keys&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;ctrl+shift+v&quot;</span><span class="p">]</span> <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>以下のように日本語の扱いなどでまだ難ありなところはあるが、一旦許容して使っている。
+この辺もクリアになるということなしかなー。</p>
+<ul class="simple">
+<li><p>IMEでインライン補完が効かない</p></li>
+<li><p>少し古いVimを使っていたら記号や濁点付き文字の表示がおかしくなったりした</p></li>
+<li><p>tmuxの描画が乱れるように感じる</p></li>
+<li><p>tigで縦線が表示されない</p></li>
+</ul>
+<blockquote class="twitter-tweet" data-conversation="none"><a href="https://twitter.com/kashew_nuts/status/1269494772349014016">https://twitter.com/kashew_nuts/status/1269494772349014016</a></blockquote></div>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id10">WSL2のインストール</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>まず <a class="reference external" href="https://docs.microsoft.com/ja-jp/windows/wsl/wsl2-kernel">WSL 2 Linux カーネルの更新</a> を実施。
+次に <a class="reference external" href="https://docs.microsoft.com/ja-jp/windows/wsl/install-win10">Windows Subsystem for Linux (WSL) を Windows 10 にインストールする</a> に従って、Microsoft StoreからUbuntu 20.04 LTSをインストールした。
+その後普段使うPythonやVim, Git関連のツールをインストール。</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo apt update -y <span class="o">&amp;&amp;</span> sudo apt upgrade -y
+$ sudo apt install python3-venv python3-dev nodejs npm zip unzip vim-gtk golang xsel hub tig
+$ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+$ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+$ python3 get-pip.py --user
+$ go get github.com/x-motemen/ghq
+</pre></div>
+</div>
+<p>あとは <a class="reference external" href="https://github.com/kashewnuts/dotfiles">dotfiles</a> を落として来て、展開すれば準備OK。</p>
+</div>
+<div class="section" id="id3">
+<h2><a class="toc-backref" href="#id11">クリップボードどうする</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>VirtualBoxのようなVMを使っているときも悩みのタネだったが、今回はtmuxでclip.exeを使うようにした。
+普段からターミナルでのコピペはキーボードで完結させていたので、同じようにしたかった。</p>
+<p>調べると <a class="reference external" href="https://github.com/equalsraf/win32yank">equalsraf/win32yank</a> が良いという記事があったが、
+自分の環境では動かなかったのでOS標準で入ってるのを使うことにしました。
+clip.exeはコマンドプロンプトでもPowershellでも使えるので、考えることを減らせていいと思った。
+以下のようにファイルを用意してWSL環境のときだけ読み込むように設定。</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># ~/.tmux.conf</span>
+<span class="k">if</span>-shell <span class="s1">&#39;test &quot;$(uname -a | grep Linux | grep microsoft)&quot; != &quot;&quot;&#39;</span> <span class="s2">&quot;source-file ~/.tmux.conf.wsl&quot;</span> <span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># ~/.tmux.conf.wsl</span>
+bind-key -T copy-mode-vi Enter send-keys -X copy-pipe <span class="s2">&quot;cat | clip.exe&quot;</span>
+bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel <span class="s1">&#39;cat | clip.exe&#39;</span>
+bind-key -T copy-mode-vi Y send-keys -X copy-pipe <span class="s1">&#39;cat | clip.exe&#39;</span>
+</pre></div>
+</div>
+<p>ただこれだとVimでヤンクしたときにクリップボード連携ができていないのでvimrcに以下の設定を追加する。
+<code class="docutils literal notranslate"><span class="pre">+clipboard</span></code> なVimである必要があるので、 <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">vim-gtk</span></code> などして有効にしておくこと。</p>
+<div class="highlight-vim notranslate"><div class="highlight"><pre><span></span><span class="c">&quot; ~/.vimrc</span>
+<span class="k">if</span> system<span class="p">(</span><span class="s1">&#39;uname -a | grep microsoft&#39;</span><span class="p">)</span> <span class="p">!=</span> <span class="s1">&#39;&#39;</span>
+  augroup myYank
+    autocmd<span class="p">!</span>
+    autocmd TextYankPost * :<span class="k">call</span> system<span class="p">(</span><span class="s1">&#39;clip.exe&#39;</span><span class="p">,</span> @&quot;<span class="p">)</span>
+  augroup END
+<span class="k">endif</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="docker-docker-compose">
+<h2><a class="toc-backref" href="#id12">Docker, docker-composeはどうか</a><a class="headerlink" href="#docker-docker-compose" title="Permalink to this headline">¶</a></h2>
+<p>以下の公式ドキュメントを参照しインストール。</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.docker.com/engine/install/ubuntu/">Install Docker Engine on Ubuntu | Docker Documentation</a></p></li>
+<li><p><a class="reference external" href="https://docs.docker.com/compose/install/">Install Docker Compose | Docker Documentation</a></p></li>
+</ul>
+<p>sudoなしでdockerコマンドが使えるように以下も設定。</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># 現行ユーザをdockerグループに所属させる</span>
+sudo gpasswd -a <span class="nv">$USER</span> docker
+
+<span class="c1"># dockerデーモンを再起動する</span>
+sudo service docker restart
+
+<span class="c1"># exit後、再ログインして反映</span>
+<span class="nb">exit</span>
+</pre></div>
+</div>
+<p>hello-worldは普通にできて、 <a class="reference external" href="https://docs.docker.com/docker-for-windows/wsl/">Docker Desktop WSL 2 backend</a> も問題なく動いたので正直驚いた。しかし <a class="reference external" href="https://qiita.com/yoichiwo7/items/e3e13b6fe2f32c4c6120">WSL2によるホストのメモリ枯渇を防ぐための暫定対処 - Qiita</a> のようにリソース管理から解放されたわけでないので、WSL2のメモリ上限は最低限設定しておいたほうがいいだろう。</p>
+<p>Docker Desktop WSL backendは <a class="reference external" href="https://hub.docker.com/editions/community/docker-ce-desktop-windows/">Docker Desktop for Windows</a> をインストールして、WSL2のセットアップが完了してれば使える。</p>
+<p>「DockerとWSL 2を使用して最高の開発エクスペリエンスを実現するには、デフォルトのLinuxディストリビューションにコードを含めることをお勧めします。」と公式ドキュメントにあったが、これに沿わない使い方をする場合、WSL2を選択すべきでないのだろう。</p>
+</div>
+<div class="section" id="ide">
+<h2><a class="toc-backref" href="#id13">エディタやIDE</a><a class="headerlink" href="#ide" title="Permalink to this headline">¶</a></h2>
+<p>Vimが使えるので問題ない….のだが、一応かんたんに実行できるかは調べた。</p>
+<div class="section" id="pycharm">
+<h3><a class="toc-backref" href="#id14">PyCharm</a><a class="headerlink" href="#pycharm" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://www.jetbrains.com/ja-jp/pycharm/whatsnew/2019-3/">PyCharm 2019.3</a> 時点でWSL2をサポートしている。(Proのみ)</p>
+<p><a class="reference external" href="https://pleiades.io/help/pycharm/using-wsl-as-a-remote-interpreter.html#">WSLを使用してインタープリターを構成する - 公式ヘルプ | PyCharm</a> にセットアップのしかたが書いてある。</p>
+<p>リンク先にもはWSL内でPythonの仮想環境が作成できない問題があるようだが、WSL2内で手動で作成した仮想環境は指定できた。
+使うときはWSL2上で環境を作ってからPyCharmにパスを教えてあげればよく、インストールしたPythonパッケージもPyCharmで識別できていたので問題なさそうだ。</p>
+<p><a class="reference external" href="https://pleiades.io/help/pycharm/using-docker-as-a-remote-interpreter.html#">Dockerを使用してインタープリターを構成する</a>
+にあるように、 <code class="docutils literal notranslate"><span class="pre">Expose</span> <span class="pre">deamon</span> <span class="pre">on</span> <span class="pre">...</span></code> を有効にした状態でDocker Desktop WSL2 backendを使用したインタープリターの指定もできた。</p>
+<p>まだまだデバッガーの指定をしたり、PyCharmで起動したターミナルの指定をWSL2にしたりなど試せることはあるが実行できるなというところだけ確認してここでは終わりにした。こうゆう凝ったことをしようとするとうまく行かないイメージがあったが、意外とあっさり動いてしまった印象。</p>
+</div>
+<div class="section" id="vscode">
+<h3><a class="toc-backref" href="#id15">VSCode</a><a class="headerlink" href="#vscode" title="Permalink to this headline">¶</a></h3>
+<p>Remote Development拡張を入れるとWSLをインタープリターとして指定できる。ただもりもり開発してるとやはりリソースを喰う傾向にあるようだ。</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://tech-lab.sios.jp/archives/18446#Visual_Studio_Code">WSL2で劇的に変わるあなたのWebアプリケーション開発環境【その3：実践編】 | SIOS Tech. Lab</a></p></li>
+<li><p><a class="reference external" href="https://code.visualstudio.com/blogs/2019/09/03/wsl2#_benefits-of-wsl-2">Using WSL 2 with Visual Studio Code</a></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id4">
+<h2><a class="toc-backref" href="#id16">雑感</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>凝った使い方をしてないので万人におすすめできるかはわからないが、ひとまずは好印象。Ubuntu DesktopだとAdobe, Kindleが使えないのと、Bluetoothやオーディオ周りで手こずることがあったが、Windowsではそのあたりを気にしなくていいというメリットも得ている。</p>
+<p>WSL2に関連するところで感じたのは以下。いいところも気になるところもありつつ、しばらくは付き合ってみようかなと思ってる。</p>
+<div class="section" id="id5">
+<h3><a class="toc-backref" href="#id17">よかった点</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>アプリを立ち上げる感覚でLinux環境が立ち上がるのがよい</p></li>
+<li><p>WSL2内部で限っていえばI/Oが高速</p></li>
+<li><p>Docker for WindowsがWSL2を指定できるので高速</p></li>
+<li><p>壊れたときの復旧が楽になるように、スナップショットが取れ、別名でテンプレートイメージとしてimportできる</p></li>
+<li><p>bash.exe や git.exe, vim.exe が 3~5 つインストールされなくなったのが良い。(どれ使ってるんだっけ問題)</p></li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h3><a class="toc-backref" href="#id18">気になるところ</a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>WindowsとWSLで環境の差異は意識する必要がある。</p></li>
+<li><p><a class="reference external" href="https://qiita.com/yoichiwo7/items/e3e13b6fe2f32c4c6120">WSL2によるホストのメモリ枯渇を防ぐための暫定対処 - Qiita</a> のようにリソース管理から解放されるわけではない。</p></li>
+<li><p>たまにWSL2が落ちてるときがある</p></li>
+<li><p>VirtualBox の使用時に Hyper-V が有効だと不安定</p></li>
+<li><p>WSL2 から Windows 領域のファイルを扱おうとすると WSL1 より重い</p></li>
+<li><p>IPアドレスが起動ごとに変わるので、外部からスクリプトを使って処理するような処理がしにくい</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+    <br/>
+
+<!-- ninja_omatome -->
+<div class="ninja_onebutton">
+<script type="text/javascript">
+//<![CDATA[
+(function(d){
+if(typeof(window.NINJA_CO_JP_ONETAG_BUTTON_00eb4412f1c80db8bbc1af50c58e8ee6)=='undefined'){
+    document.write("<sc"+"ript type='text\/javascript' src='//omt.shinobi.jp\/b\/00eb4412f1c80db8bbc1af50c58e8ee6'><\/sc"+"ript>");
+}else{
+    window.NINJA_CO_JP_ONETAG_BUTTON_00eb4412f1c80db8bbc1af50c58e8ee6.ONETAGButton_Load();}
+})(document);
+//]]>
+</script><span class="ninja_onebutton_hidden" style="display:none;"></span><span style="display:none;" class="ninja_onebutton_hidden"></span>
+</div>
+<!-- ninja_omatome -->
+
+</div>
+    <div class="postmeta">
+        <div class="author">
+            <span>Posted by Kashun YOSHIDA</span>
+        </div>
+        <div class="categories">
+            <span>
+                Filed under:
+                <a href="../../../categories/windows.html">Windows</a>, <a href="../../../categories/linux.html">Linux</a>, <a href="../../../categories/wsl.html">WSL</a></span>
+        </div>
+        <div class="tags">
+            <span>
+                Tags:
+                <a href="../../../tags/windows.html">Windows</a>, <a href="../../../tags/linux.html">Linux</a>, <a href="../../../tags/wsl.html">WSL</a></span>
+        </div>
+        </div>
+    <div id="disqus_thread"></div><script type="text/javascript">    var disqus_shortname = "kashewnutsblog";    var disqus_identifier = "2020/06/11/wsl2";    disqus_thread();</script><noscript>Please enable JavaScript to view the    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<ul class="related clearfix">
+            <li class="left"> &laquo; <a href="../../11/30/climbing_shoes_history.html">クライミングシューズ遍歴</a></li>
+            <li class="right"><a href="../../05/05/upgrade_ubuntu_20_04_lts.html">Ubuntu18.04LTSから20.04LTSにアップグレードした</a> &raquo; </li>
+        </ul></article><aside class="sidebar"><section><div class="widget">
+  <div>
+    <a href="//af.moshimo.com/af/c/click?a_id=815168&p_id=1166&pc_id=1793&pl_id=20228&guid=ON" target="_blank" rel="nofollow"><img src="//image.moshimo.com/af-img/0408/000000020228.png" width="300" height="250" style="border:none;"></a><img src="//i.moshimo.com/af/i/impression?a_id=815168&p_id=1166&pc_id=1793&pl_id=20228" width="1" height="1" style="border:none;">
+  </div>
+</div></section><section><div class="widget" id="searchbox" role="search">
+    <h1><a href="#searchbox">Search</a></h1>
+    <form action="../../../search.html" method="get">
+        <input type="text" name="q" />
+        <button type="submit"><span class="fa fa-search"></span></button>
+    </form>
+</div></section><section><div class="widget">
+    <h1>Recent Posts</h1>
+    <ul><li>
+            <a href="../../11/30/climbing_shoes_history.html">クライミングシューズ遍歴</a>
+        </li><li>
+            <a href="#">WSL2を使ってみている</a>
+        </li><li>
+            <a href="../../05/05/upgrade_ubuntu_20_04_lts.html">Ubuntu18.04LTSから20.04LTSにアップグレードした</a>
+        </li><li>
+            <a href="../../04/08/migrated_lsp_client_to_coc_nvim.html">LSPクライアントをcoc.nvimにした話</a>
+        </li><li>
+            <a href="../../../2019/01/28/move_from_jedivim_to_vimlsp.html">Pythonの補完環境をjedi-vimからvim-lspに移行した話</a>
+        </li><li>
+            <a href="../../../2019/01/05/2018and2019.html">2018年の振り返りと2019年抱負</a>
+        </li><li>
+            <a href="../../../2018/12/02/bp_advent_calender.html">2018年版Life ChangingだったVimプラグインTOP3</a>
+        </li><li>
+            <a href="../../../2018/11/06/yosemite_tour.html">ヨセミテツアー日記</a>
+        </li><li>
+            <a href="../../../2018/09/22/pyconjp2018.html">PyConJP2018でPyCharmの話をしてきました #pyconjp</a>
+        </li><li>
+            <a href="../../../2018/08/22/jedivim_memo.html">VimとPythonの補完についてのメモ</a>
+        </li></ul>
+</div>
+</section><section><div class="widget">
+    <h1>Categories</h1>
+    <ul><li><a href="../../../categories/64bit.html">64bit</a> (2)</li><li><a href="../../../categories/android.html">Android</a> (3)</li><li><a href="../../../categories/bouldering.html">bouldering</a> (2)</li><li><a href="../../../categories/bouldering.html">Bouldering</a> (4)</li><li><a href="../../../categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="../../../categories/c_c.html">C/C++</a> (5)</li><li><a href="../../../categories/chrome.html">Chrome</a> (2)</li><li><a href="../../../categories/db.html">DB</a> (1)</li><li><a href="../../../categories/django.html">Django</a> (10)</li><li><a href="../../../categories/facebook.html">Facebook</a> (1)</li><li><a href="../../../categories/firefox.html">Firefox</a> (1)</li><li><a href="../../../categories/git_mercurial.html">Git/Mercurial</a> (8)</li><li><a href="../../../categories/golang.html">Golang</a> (1)</li><li><a href="../../../categories/google.html">Google</a> (5)</li><li><a href="../../../categories/heroku.html">Heroku</a> (6)</li><li><a href="../../../categories/java.html">Java</a> (2)</li><li><a href="../../../categories/javascript.html">JavaScript</a> (4)</li><li><a href="../../../categories/jupyter.html">Jupyter</a> (1)</li><li><a href="../../../categories/kabepy.html">kabepy</a> (2)</li><li><a href="../../../categories/linux.html">Linux</a> (5)</li><li><a href="../../../categories/lt.html">LT</a> (5)</li><li><a href="../../../categories/mac.html">Mac</a> (8)</li><li><a href="../../../categories/pycharm.html">PyCharm</a> (2)</li><li><a href="../../../categories/pyconjp.html">PyConJP</a> (1)</li><li><a href="../../../categories/pyfes.html">pyfes</a> (7)</li><li><a href="../../../categories/python.html">Python</a> (70)</li><li><a href="../../../categories/slack.html">Slack</a> (1)</li><li><a href="../../../categories/sphinx.html">Sphinx</a> (8)</li><li><a href="../../../categories/sqlalchemy.html">SQLAlchemy</a> (1)</li><li><a href="../../../categories/ssd.html">SSD</a> (1)</li><li><a href="../../../categories/tddbc.html">TDDBC</a> (1)</li><li><a href="../../../categories/tinkerer.html">Tinkerer</a> (7)</li><li><a href="../../../categories/tmux.html">tmux</a> (1)</li><li><a href="../../../categories/ubuntu.html">Ubuntu</a> (3)</li><li><a href="../../../categories/vagrant.html">Vagrant</a> (1)</li><li><a href="../../../categories/vim.html">Vim</a> (24)</li><li><a href="../../../categories/vimconf.html">VimConf</a> (3)</li><li><a href="../../../categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="../../../categories/windows.html">Windows</a> (3)</li><li><a href="../../../categories/windows7.html">Windows7</a> (4)</li><li><a href="../../../categories/wsl.html">WSL</a> (1)</li><li><a href="../../../categories/%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0.html">アルゴリズム</a> (1)</li><li><a href="../../../categories/%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3.html">セキュリティ</a> (2)</li><li><a href="../../../categories/%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF.html">ネットワーク</a> (1)</li><li><a href="../../../categories/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0.html">プログラミング</a> (7)</li><li><a href="../../../categories/%E5%8B%89%E5%BC%B7%E4%BC%9A.html">勉強会</a> (30)</li><li><a href="../../../categories/%E5%BF%9C%E7%94%A8%E6%83%85%E5%A0%B1%E6%8A%80%E8%A1%93%E8%80%85.html">応用情報技術者</a> (10)</li><li><a href="../../../categories/%E6%83%85%E5%A0%B1%E5%87%A6%E7%90%86%E6%8A%80%E8%A1%93%E8%80%85%E8%A9%A6%E9%A8%93.html">情報処理技術者試験</a> (10)</li><li><a href="../../../categories/%E6%9C%AC.html">本</a> (29)</li><li><a href="../../../categories/%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83.html">開発環境</a> (11)</li><li><a href="../../../categories/%E9%9B%91%E8%A8%98.html">雑記</a> (38)</li><li><a href="../../../categories/%E9%AB%98%E9%80%9F%E5%8C%96.html">高速化</a> (1)</li></ul>
+</div></section><section><div class="widget">
+    <h1>About Me</h1>
+    <div>
+        <a href="https://about.me/kashew_nuts">
+            <img src="https://pbs.twimg.com/profile_images/378800000438956976/3e61e7ae64d916ba0451a44c3b8ce347.jpeg"
+            width="128px"
+            height="128px" />
+        </a>
+        <h4><a href="https://twitter.com/kashew_nuts">kashew_nuts
+                (KashunYOSHIDA)</a></h4>
+        <p>人生という壁を登るSoftwareDeveloper</p>
+        <a class="twitter-timeline" data-width="300" data-height="800" data-theme="dark" href="https://twitter.com/kashew_nuts">Tweets by kashew_nuts</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+</div></section></aside></div> <!-- #main --></div> <!-- #main-container -->
+
+        <div class="footer-container" role="contentinfo"><footer class="wrapper">&copy; Copyright 2011-2020, Kashun YOSHIDA. Powered by <a href="http://www.tinkerer.me/">Tinkerer</a> and <a href="http://sphinx.pocoo.org/">Sphinx</a>.</footer></div> <!-- footer-container -->
+
+      </div> <!--! end of #container --><!--[if lt IE 7 ]>
+          <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+          <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+        <![endif]-->
+    </body>
+</html>

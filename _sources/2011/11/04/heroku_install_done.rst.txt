@@ -1,0 +1,55 @@
+Herokuインストールdone…
+==================================
+
+| 公式にはまずRuby1.9系入れるみたいなこと書いてあったけど、
+| そういえばRubyはXcode入れた時に一緒に入っている！
+| Rubyはあえてインストールせず、
+
+.. code-block:: console
+
+    sudo gem install heroku
+
+| したらあっさり入れられました。
+| バージョンは1.8系なんだね。へー。
+
+.. code-block:: console
+
+    Successfully installed term-ansicolor-1.0.7
+    Successfully installed mime-types-1.17.2
+    Successfully installed rest-client-1.6.7
+    Successfully installed addressable-2.2.6
+    Successfully installed launchy-2.0.5
+    Successfully installed rubyzip-0.9.4
+    Successfully installed heroku-2.11.0
+    7 gems installed
+    Installing ri documentation for term-ansicolor-1.0.7...
+    Installing ri documentation for mime-types-1.17.2...
+    Installing ri documentation for rest-client-1.6.7...
+    Installing ri documentation for addressable-2.2.6...
+    Installing ri documentation for launchy-2.0.5...
+    Installing ri documentation for rubyzip-0.9.4...
+    Installing ri documentation for heroku-2.11.0...
+    Installing RDoc documentation for term-ansicolor-1.0.7...
+    Installing RDoc documentation for mime-types-1.17.2...
+    Installing RDoc documentation for rest-client-1.6.7...
+    Installing RDoc documentation for addressable-2.2.6...
+    Installing RDoc documentation for launchy-2.0.5...
+    Installing RDoc documentation for rubyzip-0.9.4...
+    Installing RDoc documentation for heroku-2.11.0...
+
+| ふむ…とりあえずインストールまで完了したので、
+| また公式サイトを探ってちょくちょくいじっていきます。
+| 次はPythonの環境を整えていかないとな〜。
+
+| p.s.
+| sudoつけないでインストールしようとしたら、
+
+.. code-block:: console
+
+    ERROR:  While executing gem ... (Gem::FilePermissionError)
+        You don't have write permissions into the /Library/Ruby/Gems/1.8 directory.
+
+.. author:: default
+.. categories:: 開発環境, Heroku
+.. tags:: 開発環境, Heroku
+.. comments::

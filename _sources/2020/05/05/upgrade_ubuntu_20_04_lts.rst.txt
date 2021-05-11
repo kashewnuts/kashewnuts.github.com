@@ -1,0 +1,98 @@
+Ubuntu18.04LTSから20.04LTSにアップグレードした
+==============================================
+
+Ubuntu Desktopがアップデートの影響か音が鳴らなくなり、Windowsに切り替えていましたが、GWでUbuntu 20.04LTSにアップグレードしたのでメモ。
+
+.. contents::
+  :local:
+
+
+Ubuntu20.04LTSとは
+------------------
+
+2年に一度リリースされる長期サポート版です。サポート期間が5年間提供されます。
+それまで使っていたUbuntu18.04LTSのあと、18.10, 19.04, 19.10を一気に飛ばしてのアップグレードでした。
+ちょっとドキドキしながらでしたが無事アップグレードできました。
+
+アップグレードの手順について
+----------------------------
+
+`Upgrade Ubuntu desktop <https://ubuntu.com/tutorials/tutorial-upgrading-ubuntu-desktop#1-before-you-start>`_ を参照して実施しました。
+
+イントール時間
+--------------
+
+インターネットの回線速度が200Mbpsとかでている朝に実施したので、1時間足らずで完了しました。
+
+アップグレード後実施したこと
+----------------------------
+
+ibus-mozcのキーボードが英字配列で認識されていたので、設定ファイルを編集
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+毎回調べてる `参考URL <http://note.kurodigi.com/ibus-mozc-kbdlayout/>`_ を見ているので改めてメモ。
+
+* ``sudo vim /usr/share/ibus/component/mozc.xml``
+* ``<layout>default</layout>`` を ``<layout>jp</layout>`` に置換
+* 変更を保存したらログアウトして再ログイン
+* キーボードレイアウトを確認して日本語配列になっていればOK
+
+必要なパッケージのインストール
+------------------------------
+
+デフォルトのPythonのバージョンが上がっていたり、nodejsまわりが消えていたので再インストールしました。
+
+* ``sudo apt install python3-venv python3-pip nodejs npm``
+* `deadsnakes <https://launchpad.net/~deadsnakes/+archive/ubuntu/ppa?field.series_filter=focal>`_ から ``sudo apt install python3.7 python3.7-venv``
+
+Ubuntuでどうやってシステム側にpipをいれるかは毎回悩ましいのですが、今回はaptで入れました。
+
+vimの再インストール
+-------------------
+
+自前でビルドしているため、依存関係が変わったあとは再インストールが必要でした。今回はPython3の場所を指定するだけでOKでした。
+vimのリポジトリーはgit clone済みなので、 ``vim/src`` ディレクトリーに移動して以下のコマンドを実行します。
+
+.. code-block:: sh
+
+  $ make distclean
+  $ ./configure \
+      --with-features=huge \
+      --enable-gui=auto \
+      --enable-python3interp \
+      --with-python3-config-dir=/usr/lib/python3.8/config-3.8-x86_64-linux-gnu/ \
+      --enable-fail-if-missing
+  $ make
+  $ sudo make install
+
+ビルド方法については `vim-jp » Linuxでのビルド方法 <https://vim-jp.org/docs/build_linux.html>`_ も参考にしてください。
+
+
+xselの再インストール
+--------------------
+
+ここまでで一応必要なパッケージは揃っていたのですが、以下の現象が再発しました。
+
+.. tweet:: https://twitter.com/kashew_nuts/status/1028169590965121024
+
+Ubuntu18.04LTSのときにインストール済みだったのですが、下記手順でインストールし直したところ改善されました。
+
+.. code-block:: sh
+
+   $ sudo apt remove xsel
+   $ sudo apt install xsel
+
+最後に
+------
+
+アップデート自体はすんなり行えました。ひとまずまたUbuntuの民に戻ろうと思います。
+
+ただUbuntu18.04LTS時代はオーディオ関連に悩まされていたので、使っていってどうなるかは気になっています。
+有線でイヤホンを使っているときは問題なかったですが、AirPods Proとは接続がなかなかできなくてペアリングし直したりしてました。
+さすがにmacOSほど親和性はないと思うので、うまく付き合っていけたらいいなー。
+
+
+.. author:: default
+.. categories:: Ubuntu, Linux
+.. tags:: Ubuntu, Linux
+.. comments::

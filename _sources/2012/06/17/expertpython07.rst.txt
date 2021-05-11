@@ -1,0 +1,119 @@
+エキスパートPythonプログラミング読書会 第二期 07に参加しました。
+==========================================================================
+
+| `エキスパートPythonプログラミング読書会 第二期 07 - connpass <http://connpass.com/event/535/>`__
+| に参加してきました。
+
+|エキスパートPythonプログラミング|
+
+| `エキスパートPythonプログラミング <http://www.amazon.co.jp/exec/obidos/ASIN/4048686291/naoyadyndnsor-22/ref=nosim/>`__
+| posted with
+| `amazlet <http://www.amazlet.com/browse/ASIN/4048686291//ref=nosim/>`__
+| at 11.10.24
+| Tarek Ziade
+| アスキー・メディアワークス
+| 売り上げランキング: 36822
+| `Amazon.co.jp で詳細を見る <http://www.amazon.co.jp/exec/obidos/ASIN/4048686291/naoyadyndnsor-22/ref=nosim/>`__
+
+| 最近Blog書いてないなーということで書きます。
+| 遅刻かと思ったけど、何とか時間までについて良かった。
+| 当日の様子はこちら。
+| `エキスパートPythonプログラミング読書会 第二期 07 - Togetter <http://togetter.com/li/319753>`__
+
+| **1.アイスブレイク**
+| 恒例のアイスブレイク、各島ごと(4名程度)で簡単に自己紹介をしました。
+| 以下自己紹介順に、
+
+| -  @usaturn 面談したら実は同じ会社だったと言うオチ
+| -  @taison PHPゴリゴリからDjango git wiki google document活用してる。
+| -  @shimizukawa 台湾行って来ました。最近はSencha Touchとかやってる。
+
+**2.「5章 パッケージを作る」**
+
+| -  setuptoolsとdistribute使える環境があったらdistributeを使いましょう。
+| -  いままで
+|
+|    -  distutils: Python3.2までの標準
+|    -  setuptools: 業界標準(ez\_setupで入れる)
+|    -  distribute: setuptools上位互換
+|       (distribute\_setup.pyで入れる)
+|    -  pip: setuptools/distributeを活用して使いやすいコマンドライン
+|    -  buildout: setuptoolsを活用した環境構築ツール
+|    -  virtualenv: Pythonのユーザーランド仮想環境作成ツール
+|
+| -  これから↓
+|
+|    -  Distutils2:
+|       packagingと同じものでPyhton2.4-3.2で使えるようにしたもの。
+|       (実際はPython2.6-3.2。シンタックス対応が大変だねという話)
+|       →しかしこれによってパッケージの手法が必ずしも綺麗になるわけでないと関係者が頭抱えてる。
+|    -  packaging: Python3.3からの標準
+|    -  pip?:
+|       packaging上で動くようになる？(virtualenvはどうだかわからない)
+|    -  pythonv:
+|       virtualenvをPython3.2から標準でできるようにしたもの(実装別)
+|
+| -  パッケージング:
+|    「パッケージを作ろう」と「Python3.3のパッケージ」がある。
+|
+|    -  PyPIの配布物(PYPIにもpackagingという名前で登録されているものがある)
+|    -  Python言語自体のパッケージ(import……の,名前空間パッケージ←応用)
+|    -  Python言語自体のパッケージは\_とつけてれば安心と理解した。手を動かして理解しよう！
+|
+| -  sdist = soure distribution
+| -  eggの圧縮はPython3.3では圧縮される？
+|    →eggがありません。eggみたいなものは今議論されていない(すげー困る。ほとんどの環境で動かなくなる)
+| -  python setup.py check というコマンドがある。
+|    setup.pyの構文チェックができる。
+| -  buildとbdist: バイナリ配布用のパッケージを作ってくれる。
+|    あんま使わないほうがいい → bdistを拡張したbdist\_eggを使おう。
+| -  bdist\_egg: どのPythonでbuildされたかわかるものが作られる。
+|    eggも出来る。素直な、依存関係のないeggが生成される。
+|    install\_requiresで、依存関係のパッケージもPyPIから見つけてインストールしてくれる。
+| -  アンインストールについてはpipにお任せしましょう。
+| -  develop: -linkだとPython PATHに自動的に追加されるので、どこにいても
+|    import aodag
+|    とかいうことが出来るようになる。-uオプションで削除ができる。
+| -  test: test\_suite, tests\_requireを確認してくれる。
+|    python setup.py sでオプションが全部出てくる
+| -  PyPIはbasic認証で大変いけてない。
+|    .pypircのPasswordの行を削除すると、毎回Passwordをきいてくれる仕様にできる。
+| -  list printerとかPyPIで調べるといっぱいできる。
+|    →テストで登録したものはちゃんと消しましょう。
+| -  alias: setup.cfgに追記してくれる。
+| -  最近はまだまともですが、この本の読んでからじゃないとdistutilsガイド、setuptoolsガイドが読みにくいと思われます。
+| -  テンプレートベースのアプローチは有用ではあるが、
+|    大抵がその内メンテしなくなる。
+|
+| **3.ビアバッシュ＆LT**
+|
+| -  @shomah4a: PyConTW行って来ました。
+|    写真: `PyCon TW 2012 <https://t.co/JDn3U43O>`__
+|    スライド:\ `Welcome to PyCon JP <http://t.co/zYjCCsq7>`__
+| -  @aodag: 写真取るのに夢中で何やったのか記憶が朧
+|    (すみません…)
+| -  @michiyata: Windows AzureでPython対応！
+|    スライド: `続・Python on Windows Azure <%20https://t.co/N7vheEIg>`__
+
+| **4.まとめ**
+|  パッケージ管理は今のところ distribute + virtualenv(pip)安定ですかね。
+|  エキpyに書いてある内容で2〜3年は使えるそうです。
+| Python2.7は最低でも2017年までメンテナンスされる見込み(source→\ `Python3と向かい合ってみる <http://www.slideshare.net/atsuoishimoto/python3-12044061>`__)なので、
+|  最新の状況に乗り遅れないようにしつつ、
+| Pythonと向い合って行きたいです。
+|
+| **参考リンク**
+
+| -  `ryu22eBlog : エキスパートPythonプログラミング読書会 第二期 07 に参加しました #expertpython <http://blog.livedoor.jp/ryu22e/archives/65683919.html>`__
+| -  `エキPy読書会07 (2011/1/18) - 清水川Web <http://www.freia.jp/taka/docs/expertpython/reading/07.html#id2>`__
+| -  `PYTHON PACKAGING （PyFes 2012.03 発表資料） <http://www.slideshare.net/shimizukawa/python-packaging-pyfes-201203>`__
+| -  `distutilsガイド <http://docs.python.org/distutils/index.html>`__
+| -  `setuptoolsガイド <http://peak.telecommunity.com/DevCenter/setuptools>`__
+
+.. |エキスパートPythonプログラミング| image:: http://ecx.images-amazon.com/images/I/51wSTTIQtgL._SL160_.jpg
+   :target: http://www.amazon.co.jp/exec/obidos/ASIN/4048686291/naoyadyndnsor-22/ref=nosim/
+
+.. author:: default
+.. categories:: 勉強会, 本, Python
+.. tags:: 勉強会, 本, Python
+.. comments::

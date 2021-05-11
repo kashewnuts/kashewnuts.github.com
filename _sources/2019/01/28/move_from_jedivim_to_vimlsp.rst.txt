@@ -1,0 +1,192 @@
+Pythonの補完環境をjedi-vimからvim-lspに移行した話
+=================================================
+
+VimでPython書いてますか？
+
+長らくPythonの補完用プラグインとして `davidhalter/jedi-vim <https://github.com/davidhalter/jedi-vim>`_ を使用してきましたが、
+あの `mattn (@mattn_jp) <https://twitter.com/mattn_jp>`_ さんがCollaboratorになった `prabirshrestha/vim-lsp <https://github.com/prabirshrestha/vim-lsp>`_ や `palantir/python-language-server <https://github.com/palantir/python-language-server>`_ がいよいよ実用的になってきたので移行してみました。
+
+とはいえ実際に使うにはまだ設定するところもちょこちょこあるので、一度まとめておこうと思います。
+
+
+.. contents::
+   :local:
+
+
+前提とする環境
+--------------
+
+* Vim: 8.0以上、かつコンパイルオプションで `jobs`, `timer`, `channel`, `lambda` が有効になっている
+* Python: 2.7もしくは3.4以降 (pyenvやAnacondaでインストールしたPythonは考慮しない)
+
+.. note::
+
+   :strike:`VimでPython/Python3インターフェースを有効にする必要があるかもしれませんが、少なくともドキュメントには記載されていませんでした。もし必要な場合は以前書いたVimとPythonの補完についてのメモを参照してください。`
+
+   その後Python/Python3インターフェースを無効にした状態で試したところ、問題なく動作しました。外部インターフェイスに依存せず補完や定義ジャンプができるのはいいですね。
+
+
+LSP(Language Server Protocol)とは
+---------------------------------
+
+ざっくりいうと自動補完や定義ジャンプ、ドキュメントのホバー表示などエディタごとに実装していた機能を、言語Serverを用意して複数の開発ツールで使えるようにしましょうというものです。LSPを活用することでエディタのプラグインなどは最小限の労力で言語をサポートできるようになります。
+
+各エディタ用にLSPを使うプラグインや機能を用意する必要がありますが、補完機能をサポートするサーバーが共通化できるのでそのServerが便利になると1つのエディタだけでなく複数のエディタで活用できるメリットがあります。
+
+どのようなプロトコルでどのように通信しているのかは、 `Microsoftが公開しているドキュメント <https://microsoft.github.io/language-server-protocol/overview>`_ が詳しいのでそちらを参照してください。
+`Software Design 2018年3月号 <http://gihyo.jp/magazine/SD/archive/2018/201803>`_ にも詳しく書いています。(残念ながら紙の書籍は2019/01/26現在在庫がないようです)
+
+LSP導入
+-------
+
+Python用のLanguage ServerとClientとなるVimプラグインを導入します。ServerとClientは以下になります。
+
+- Language Server: `palantir/python-language-server <https://github.com/palantir/python-language-server>`_
+- Client: `prabirshrestha/vim-lsp <https://github.com/prabirshrestha/vim-lsp>`_ 
+
+
+Language Serverの導入
+^^^^^^^^^^^^^^^^^^^^^
+
+``python-language-server`` をpipコマンドを使ってインストールします。
+どこからでも使えるようにグローバルな環境に入れますが、macOSやLinuxを使っている人は注意する必要があります。
+OSが使うPythonに様々なライブラリが入っており、無理やりインストールしようとすると後で困る可能性があるからです。
+
+ここではユーザーディレクトリにインストールすることでその問題を回避します。
+以下のPATHにインストールされるので、予め ``~/.bash_profile`` などに ``PATH`` の設定を追加しておいてください。
+インストールされる箇所は `site.USER_BASE <https://docs.python.org/ja/3/library/site.html#site.USER_BASE>`_ によって決まります。
+
+- Windows: ``%APPDATA%\Python``
+- macOSで www.python.org からPythonをインストールした場合: ``~/Library/Python/X.Y/bin`` (X.YはPythonのバージョン)
+- macOSでHomebrewを使いPythonをインストールした場合: ``~/.local/bin``
+- Ubuntuの場合: ``~/.local/bin``
+
+ターミナルを開き以下のコマンドを使いインストールします。
+
+``$ pip install --user python-language-server``
+
+インストールが完了したら  ``$ which pyls`` などでLanguage ServerにPATHが通っていることを確認してください。
+インストールに失敗したり、whichコマンドで何も出力されない場合、 ``PATH`` の設定がうまく言っていない可能性があるので確認してみてください。
+
+pipコマンドを実行した結果でもわかりますが、 ``python-language-server`` はこれまでもPythonの自動補完や静的解析で使われていた `davidhalter/jedi <https://github.com/davidhalter/jedi>`_ をLSPで使えるようにしたものです。フォースの魂は脈々と受け継がれるようですね。
+
+
+Clientの導入
+^^^^^^^^^^^^
+
+vim-lspは依存で `prabirshrestha/async.vim <https://github.com/prabirshrestha/async.vim>`_ が必要なので合わせてインストールします。
+私は `junegunn/vim-plug <https://github.com/junegunn/vim-plug>`_ を使用しているので、以下のようにvimrcに記述します。
+
+.. code-block:: vim
+
+   " vimrc
+   Plug 'prabirshrestha/vim-lsp'
+   Plug 'prabirshrestha/async.vim'
+
+Vimを開いたまま `:so $MYVIMRC` のようにして設定の変更を読み込み、 `:PlugIntall` するとプラグインをインストールできます。
+
+
+Vimプラグインの設定
+^^^^^^^^^^^^^^^^^^^
+
+ServerとClientとなるVimプラグインは導入しましたが、実際に連携するには設定が必要です。以下のようにvimrcに追記します。
+
+.. code-block:: vim
+
+   " vimrc
+   " デバッグ用設定
+   let g:lsp_log_verbose = 1  " デバッグ用ログを出力
+   let g:lsp_log_file = expand('~/.cache/tmp/vim-lsp.log')  " ログ出力のPATHを設定
+
+   " 言語用Serverの設定
+   augroup MyLsp
+     autocmd!
+     " pip install python-language-server
+     if executable('pyls')
+       " Python用の設定を記載
+       " workspace_configで以下の設定を記載
+       " - pycodestyleの設定はALEと重複するので無効にする
+       " - jediの定義ジャンプで一部無効になっている設定を有効化
+       autocmd User lsp_setup call lsp#register_server({
+           \ 'name': 'pyls',
+           \ 'cmd': { server_info -> ['pyls'] },
+           \ 'whitelist': ['python'],
+           \ 'workspace_config': {'pyls': {'plugins': {
+           \   'pycodestyle': {'enabled': v:false},
+           \   'jedi_definition': {'follow_imports': v:true, 'follow_builtin_imports': v:true},}}}
+           \})
+       autocmd FileType python call s:configure_lsp()
+     endif
+   augroup END
+   " 言語ごとにServerが実行されたらする設定を関数化
+   function! s:configure_lsp() abort
+     setlocal omnifunc=lsp#complete   " オムニ補完を有効化
+     " LSP用にマッピング
+     nnoremap <buffer> <C-]> :<C-u>LspDefinition<CR>
+     nnoremap <buffer> gd :<C-u>LspDefinition<CR>
+     nnoremap <buffer> gD :<C-u>LspReferences<CR>
+     nnoremap <buffer> gs :<C-u>LspDocumentSymbol<CR>
+     nnoremap <buffer> gS :<C-u>LspWorkspaceSymbol<CR>
+     nnoremap <buffer> gQ :<C-u>LspDocumentFormat<CR>
+     vnoremap <buffer> gQ :LspDocumentRangeFormat<CR>
+     nnoremap <buffer> K :<C-u>LspHover<CR>
+     nnoremap <buffer> <F1> :<C-u>LspImplementation<CR>
+     nnoremap <buffer> <F2> :<C-u>LspRename<CR>
+   endfunction
+   let g:lsp_diagnostics_enabled = 0  " 警告やエラーの表示はALEに任せるのでOFFにする
+
+vim-lspは警告やエラーの表示などもできますが、そちらは `w0rp/ale <https://github.com/w0rp/ale>`_ に寄せているため機能を無効化しています。
+ALEについては 
+`2018年版Life ChangingだったVimプラグインTOP3  <https://kashewnuts.github.io/2018/12/02/bp_advent_calender.html#w0rp-ale-linter-fixer>`_
+に書きましたのでそちらを参照してください。
+
+vimrcに記載したら保存、終了します。
+
+
+使用感について
+--------------
+
+jedi-vimと比べたときのメリット/デメリットを書いていきます。
+
+メリット
+^^^^^^^^
+
+高速化されたのが一番大きいですね。
+
+- Vimの起動が高速化できた(Ubuntu環境で100〜150ms、macOS環境でも200〜300ms短縮)
+- 補完候補がでる時間が高速化できた
+- 発展途上の技術なので進化を体験していける
+- 他の言語と使用できるプラグインを共通化できるため、vimrcからプラグインを減らせた
+
+デメリット
+^^^^^^^^^^
+
+まだ発展途上というところからきてると思うのですが、少しだけ今までできていたことができない感じがあります。
+
+- 言語用のServerが別途インストールが必要なので環境を壊さわないようにするのに気を使う。
+
+  - jedi-vimはjediを ``git submodule`` で独立して入れていたので楽だった。
+
+- Vimを起動後に ``:setf python`` しても補完や定義ジャンプが動かない。
+
+  - 既存のPythonファイルを開いたり、 ``$ vim hoge.py`` などすると動くが、少し気になる。
+
+- リネームが不安定(動かない？)
+
+  - `Cannot LspRename / Issue #218 <https://github.com/palantir/python-language-server/issues/218>`_ 
+  - 動かすには `python-rope/rope <https://github.com/python-rope/rope>`_ が必要という情報もあるがそれでも動かない
+  - jedi-vimはじゃじゃ馬だったり、マルチバイト文字が対象行に混じっていると動かなかったりしたが....
+
+
+終わりに
+--------
+
+自動補完(オムニ補完)や定義ジャンプの使い方は変わらないですし、仮想環境(venv/virtualenv)にも対応しています。
+リネームに関してはropeよりjediに統一したほうがよいのでは？と思ったりしますが、現状リネームに関してはさほど気にしていない感じです。
+今後LSPが進化していって、安定して高速な開発環境ができていくといいなぁと期待しています。
+
+
+.. author:: default
+.. categories:: Vim, Python
+.. tags:: Vim, Python
+.. comments::

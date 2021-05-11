@@ -1,0 +1,790 @@
+<!DOCTYPE html><!--[if lt IE 7]>      <html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="https://www.facebook.com/2008/fbml" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="https://www.facebook.com/2008/fbml" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="https://www.facebook.com/2008/fbml" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="https://www.facebook.com/2008/fbml" class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="description" content="Road To Pythonista">
+        <meta name="viewport" content="width=device-width">
+        <title>Page 3 &mdash; kashew_nuts-blog</title>
+            <link rel="stylesheet" href="_static/normalize.css" type="text/css">
+            <link rel="stylesheet" href="_static/sphinx.css" type="text/css">
+            <link rel="stylesheet" href="_static/main.css" type="text/css">
+            <link rel="stylesheet" href="_static/flat.css" type="text/css">
+            <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+            <link rel="stylesheet" href="_static/font-awesome.min.css" type="text/css">
+        <link rel="shortcut icon" href="_static/tinkerer.ico" /><!-- Load modernizr and JQuery -->
+        <script src="_static/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="_static/vendor/jquery-1.8.2.min.js"><\/script>')</script>
+        <script src="_static/plugins.js"></script>
+        <script src="_static/main.js"></script>
+        <link rel="search" title="Search" href="search.html" /><link rel="next" title="Older" href="page4.html" /><link rel="prev" title="Newer" href="page2.html" /><link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/kashew_nuts-blog" /><script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.7.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        SOURCELINK_SUFFIX: '.txt',
+        HAS_SOURCE:  true
+      };
+    </script><script type="text/javascript" src="_static/underscore.js"></script><script type="text/javascript" src="_static/doctools.js"></script><script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script><script type="text/javascript" src="_static/disqus.js"></script><script type="text/javascript" src="_static/google_analytics.js"></script>
+    <meta property="fb:admins" content="200170096719194"/>
+    
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Scroll to content if on small screen
+            if (screen.width < 480)
+            {
+                $(document).scrollTop(document.getElementsByTagName("article")[0].offsetTop - 40);
+            }
+        });
+    </script>
+</head>
+    <body role="document">
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+      <div id="container"><header role="banner">
+            <hgroup>
+              <h1><a href="index.html">kashew_nuts-blog</a></h1><h2>Road To Pythonista</h2></hgroup>
+          </header>
+      <nav role="navigation">
+      <ul>
+        <li class="main-nav">
+            <a href="index.html">Home</a>
+          </li>
+        <li class="main-nav"><a href='https://kashewnuts.github.io/archive.html'>Archive</a></li><li class="main-nav">
+            <a href="http://feeds.feedburner.com/kashew_nuts-blog" title="Subscribe via RSS"><span class="fa fa-lg fa-rss"></span></a>
+          </li></ul>
+    </nav><div class="main-container" role="main"><div class="main wrapper body clearfix"><article><div class="timestamp postmeta">
+            <span>December 02, 2018</span>
+        </div>
+        <div class="section">
+            <h1><a href="2018/12/02/bp_advent_calender.html">2018年版Life ChangingだったVimプラグインTOP3<a class="headerlink" href="#life-changingvimtop3" title="Permalink to this headline">¶</a></a></h1>
+<p>これは <a class="reference external" href="https://adventar.org/calendars/3338">BeProud Advent Calendar</a> 2日目の記事です。</p>
+<p>こんにちは。がっつりPythonで開発するにはPyCharmがほしいけど、テキストの編集時にはやはりVimを使うkashew_nutsです。</p>
+<p>今回は2018年に使い始めてLife ChangingだったVimプラグインを3つに絞って紹介します。</p>
+<div class="figure align-center">
+<img alt="../../../_images/vimlogo-564x564.png" src="_images/vimlogo-564x564.png"/>
+</div>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="2018/12/02/bp_advent_calender.html#id1" id="id11">前提とする環境</a></p></li>
+<li><p><a class="reference internal" href="2018/12/02/bp_advent_calender.html#junegunn-fzf-vim-fuzzy-finder" id="id12">junegunn/fzf.vim: Fuzzy Finder</a></p>
+<ul>
+<li><p><a class="reference internal" href="2018/12/02/bp_advent_calender.html#fzf-vim" id="id13"><code class="docutils literal notranslate"><span class="pre">fzf.vim</span></code> を使う理由</a></p></li>
+<li><p><a class="reference internal" href="2018/12/02/bp_advent_calender.html#id2" id="id14">実行に必要な環境</a></p></li>
+<li><p><a class="reference internal" href="2018/12/02/bp_advent_calender.html#id3" id="id15">インストール方法</a></p></li>
+<li><p><a class="reference internal" href="2018/12/02/bp_advent_calender.html#id4" id="id16">よく使うコマンド</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="2018/12/02/bp_advent_calender.html#w0rp-ale-linter-fixer" id="id17">w0rp/ale: 非同期Linter/Fixerエンジン</a></p>
+<ul>
+<li><p><a class="reference internal" href="2018/12/02/bp_advent_calender.html#id5" id="id18">実行に必要な環境</a></p></li>
+<li><p><a class="reference internal" href="2018/12/02/bp_advent_calender.html#id6" id="id19">インストール方法・使い方</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="2018/12/02/bp_advent_calender.html#id7" id="id20">airblade/vim-gitgutter: 追加・変更・削除された箇所のマーカー表示</a></p>
+<ul>
+<li><p><a class="reference internal" href="2018/12/02/bp_advent_calender.html#id8" id="id21">実行に必要な環境</a></p></li>
+<li><p><a class="reference internal" href="2018/12/02/bp_advent_calender.html#id9" id="id22">設定方法</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="2018/12/02/bp_advent_calender.html#id10" id="id23">終わりに</a></p></li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h2><a class="toc-backref" href="#id11">前提とする環境</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>自分が普段使っている以下の環境が前提としています。</p>
+<ul class="simple">
+<li><p>OS: macOS (Sierra)、Ubuntu18.04LTS</p></li>
+<li><p>Vimのバージョン: 8.0以上</p></li>
+<li><p>Pythonのバージョン: 3.6.x</p></li>
+<li><p>Vimプラグインマネージャー: <a class="reference external" href="https://github.com/junegunn/vim-plug">junegunn/vim-plug: Minimalist Vim Plugin Manager</a></p></li>
+</ul>
+</div>
+<div class="section" id="junegunn-fzf-vim-fuzzy-finder">
+<h2><a class="reference external" href="https://github.com/junegunn/fzf.vim">junegunn/fzf.vim</a>: Fuzzy Finder<a class="headerlink" href="#junegunn-fzf-vim-fuzzy-finder" title="Permalink to this headline">¶</a></h2>
+<p>インタラクティブ(対話的)にファイル・タグ・文字列を一覧に出力して、あいまい検索してくれるツールです。
+他によく聞くツールだと <a class="reference external" href="https://github.com/ctrlpvim/ctrlp.vim">ctrlpvim/ctrlp.vim</a> やより汎用なツールを謳う <a class="reference external" href="https://github.com/Shougo/denite.nvim">Shougo/denite.nvim</a> があります。</p>
+<div class="figure align-center">
+<img alt="../../../_images/fzf_files.png" src="_images/fzf_files.png"/>
+</div>
+<div class="section" id="fzf-vim">
+<h3><a class="toc-backref" href="#id13"><code class="docutils literal notranslate"><span class="pre">fzf.vim</span></code> を使う理由</a><a class="headerlink" href="#fzf-vim" title="Permalink to this headline">¶</a></h3>
+<p>個人的に <code class="docutils literal notranslate"><span class="pre">fzf.vim</span></code> を使う理由は以下の3つです。</p>
+<ul class="simple">
+<li><p>Vim scriptとGolangで動くため、Vimの外部インターフェイスの依存がない</p></li>
+<li><p>検索処理をGolang製のコマンドラインツール(<a class="reference external" href="https://github.com/junegunn/fzf">junegunn/fzf</a> )を使うので速い</p></li>
+<li><p>grepやctagsのようなVimがよく使う外部コマンドを拡張した使い方ができる</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">fzf.vim</span></code> は同作者が作る <code class="docutils literal notranslate"><span class="pre">fzf</span></code> を使う上でのラッパーなので、 fzfのみを使うことも可能です。しかしデフォルトの設定があると便利なので使用しています。</p>
+</div>
+<div class="section" id="id2">
+<h3><a class="toc-backref" href="#id14">実行に必要な環境</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>サポートしてるバージョンはVim7.4以上です。</p>
+</div>
+<div class="section" id="id3">
+<h3><a class="toc-backref" href="#id15">インストール方法</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>vim-plugを使用していれば以下のように追加します。</p>
+<div class="highlight-vim notranslate"><div class="highlight"><pre><span/><span class="c">" Windowsの場合は別途手動インストール</span>
+Plug <span class="s1">'junegunn/fzf'</span><span class="p">,</span> has<span class="p">(</span><span class="s1">'win32'</span><span class="p">)</span> ? {} : {<span class="s1">'dir'</span>: <span class="s1">'~/.fzf'</span><span class="p">,</span> <span class="s1">'do'</span>: <span class="s1">'./install --all'</span> }
+Plug <span class="s1">'junegunn/fzf.vim'</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3><a class="toc-backref" href="#id16">よく使うコマンド</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>最初は <cite>Files</cite> を使うだけでも快適さの一片を味わえるかと思いますが、現在よく使うのは次の5つです。</p>
+<ul class="simple">
+<li><p>Files: カレントディレクトリ以下のファイル一覧を表示。一覧から選択したファイルを表示できる。</p></li>
+</ul>
+<div class="figure align-center">
+<img alt="../../../_images/fzf_files.png" src="_images/fzf_files.png"/>
+</div>
+<p>そのままでも便利ですがプレビュー画面を有効にするため、vimrcに以下の設定を記述しています。</p>
+<div class="highlight-vim notranslate"><div class="highlight"><pre><span/><span class="c">" ファイル一覧を出すときにプレビュー表示</span>
+command<span class="p">!</span> <span class="p">-</span>bang <span class="p">-</span>nargs<span class="p">=</span>? <span class="p">-</span><span class="nb">complete</span><span class="p">=</span><span class="k">dir</span> Files
+\ <span class="k">call</span> fzf#<span class="k">vim</span>#<span class="k">files</span><span class="p">(&lt;</span><span class="k">q</span><span class="p">-</span>args<span class="p">&gt;,</span> fzf#<span class="k">vim</span>#with_preview<span class="p">(),</span> <span class="p">&lt;</span>bang<span class="p">&gt;</span><span class="m">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Grep: 自分で定義したgrepコマンドの拡張。プレビューしながらインタラクティブにgrep検索できる。</p></li>
+</ul>
+<div class="figure align-center">
+<img alt="../../../_images/fzf_grep.png" src="_images/fzf_grep.png"/>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">ag</span></code> は や <code class="docutils literal notranslate"><span class="pre">Ag</span></code> コマンド、 <code class="docutils literal notranslate"><span class="pre">ripgrep</span></code> は <code class="docutils literal notranslate"><span class="pre">Rg</span></code> コマンドをデフォルトで持っているのですが、
+自分が普段使う <code class="docutils literal notranslate"><span class="pre">pt</span></code> はコマンドを持っていないので以下のように定義して使っています。</p>
+<div class="highlight-vim notranslate"><div class="highlight"><pre><span/><span class="c">" https://blog.fakiyer.com/entry/2017/08/06/222936</span>
+<span class="k">function</span><span class="p">!</span> s:find_git_root<span class="p">()</span>
+  <span class="k">return</span> system<span class="p">(</span><span class="s1">'git rev-parse --show-toplevel 2&gt; /dev/null'</span><span class="p">)</span>[:<span class="m">-2</span>]
+<span class="k">endfunction</span>
+<span class="c">" 外部コマンドptを使用してプレビューしながらgrep検索する</span>
+command<span class="p">!</span> <span class="p">-</span>bang <span class="p">-</span>nargs<span class="p">=</span>* Grep
+\ <span class="k">call</span> fzf#<span class="k">vim</span>#<span class="k">grep</span><span class="p">(</span>
+\   <span class="s1">'pt --column --ignore=.git --global-gitignore '</span>.shellescape<span class="p">(&lt;</span><span class="k">q</span><span class="p">-</span>args<span class="p">&gt;),</span> <span class="m">1</span><span class="p">,</span>
+\   <span class="p">&lt;</span>bang<span class="p">&gt;</span><span class="m">0</span> ? fzf#<span class="k">vim</span>#with_preview<span class="p">(</span><span class="s1">'up:60%'</span><span class="p">)</span>
+\           : fzf#<span class="k">vim</span>#with_preview<span class="p">(</span>{ <span class="s1">'dir'</span>: s:find_git_root<span class="p">()</span> }<span class="p">),</span>
+\   <span class="p">&lt;</span>bang<span class="p">&gt;</span><span class="m">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>History: 最近開いたファイルと現在開いているバッファを表示できる。</p></li>
+</ul>
+<div class="figure align-center">
+<img alt="../../../_images/fzf_history.png" src="_images/fzf_history.png"/>
+</div>
+<ul class="simple">
+<li><p>Buffers: 現在開いているバッファを表示できる。</p></li>
+</ul>
+<div class="figure align-center">
+<img alt="../../../_images/fzf_buffer.png" src="_images/fzf_buffer.png"/>
+</div>
+<ul class="simple">
+<li><p>Tags: プロジェクト内でタグ生成から検索までできる。</p></li>
+</ul>
+<div class="figure align-center">
+<img alt="../../../_images/fzf_tags.png" src="_images/fzf_tags.png"/>
+</div>
+</div>
+</div>
+<div class="section" id="w0rp-ale-linter-fixer">
+<h2><a class="reference external" href="https://github.com/w0rp/ale">w0rp/ale</a>: 非同期Linter/Fixerエンジン<a class="headerlink" href="#w0rp-ale-linter-fixer" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">ALE</span></code> は <code class="docutils literal notranslate"><span class="pre">Asynchronous</span> <span class="pre">Lint</span> <span class="pre">Engine</span></code> の略です。Vimの快適な編集を邪魔することなく、コードチェックができます。
+ALEは2018/12/01時点で110もの言語に対応しているので、Pythonに限らずBashやMarkdown、JSONなどにも使えます。</p>
+<p>実際に使用しているイメージは以下の図のようになります。</p>
+<div class="figure align-center">
+<img alt="../../../_images/ale.png" src="_images/ale.png"/>
+</div>
+<p>CI実行時にFlake8やmypyのようなツールを使うよう環境は整えたりはよくすると思いますが、
+CIの実行を待たずにVimで編集中に実行できるようにしたかったのでALEを導入しました。</p>
+<div class="section" id="id5">
+<h3><a class="toc-backref" href="#id18">実行に必要な環境</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>サポートしてるバージョンはVim8以上です。
+またVimコンパイルオプションで <code class="docutils literal notranslate"><span class="pre">job</span></code>, <code class="docutils literal notranslate"><span class="pre">channel</span></code>, <code class="docutils literal notranslate"><span class="pre">timers</span></code> が有効になっている必要があります。</p>
+<p>自分のVimが対応してるかどうかはVimを立ち上げて <code class="docutils literal notranslate"><span class="pre">:version</span></code> コマンドを実行し、
+各オプションが <code class="docutils literal notranslate"><span class="pre">+(有効)</span></code> になっていることを確認してください。</p>
+</div>
+<div class="section" id="id6">
+<h3><a class="toc-backref" href="#id19">インストール方法・使い方</a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>vim-plugを使用していれば以下のように追加します。</p>
+<div class="highlight-vim notranslate"><div class="highlight"><pre><span/>Plug <span class="s1">'w0rp/ale'</span>
+</pre></div>
+</div>
+<p>しかしALEはこれだけでは真価を発揮できません。自分が使いたいコードチェックやフォーマット用のツールを用意します。
+普段自分はPythonを書くときに <code class="docutils literal notranslate"><span class="pre">Flake8</span></code> や <code class="docutils literal notranslate"><span class="pre">mypy</span></code> でチェックするのでこちらをPythonの仮想環境上にインストールします。</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span/>$ python3.6 -m venv venv
+$ <span class="nb">source</span> venv/bin/activate
+<span class="o">(</span>venv<span class="o">)</span> $ pip install flake8 mypy
+Collecting flake8
+
+.... <span class="c1">#  Flake8やmypyの関連パッケージがインストールされる</span>
+
+Installing collected packages: mccabe, pyflakes, pycodestyle, flake8, typed-ast, mypy-extensions, mypy
+Successfully installed flake8-3.6.0 mccabe-0.6.1 mypy-0.641 mypy-extensions-0.4.1 pycodestyle-2.4.0 pyflakes-2.0.0 typed-ast-1.1.0
+</pre></div>
+</div>
+<p>次にALEにPythonのLinterにFlake8とmypyを使うよう指定します。次のようにvimrcに記述します。</p>
+<div class="highlight-vim notranslate"><div class="highlight"><pre><span/><span class="k">let</span> <span class="k">g</span>:ale_linters <span class="p">=</span> {
+\   <span class="s1">'python'</span>: [<span class="s1">'flake8'</span><span class="p">,</span> <span class="s1">'mypy'</span>]<span class="p">,</span>
+\}
+</pre></div>
+</div>
+<p>Linterが実行できる環境を用意し、vimrcにLinterの指定をすると以下のようにチェックしてくれます。
+設定により更に強調することもできますが、自分は編集中は編集に集中してLinterはそのアシストをしてほしいので控えめな表示にしています。</p>
+<p>ここではLinterで実行するツールの設定だけ行いましたが、実行するタイミングを選べたりVimのQuickFixと連携できたりなどカスタマイズができるので自分好みに設定してみてください。以下に自分が設定している内容の一部を抜粋します。</p>
+<div class="highlight-vim notranslate"><div class="highlight"><pre><span/><span class="c">" ファイル保存時にLinterを実行する</span>
+<span class="k">let</span> <span class="k">g</span>:ale_lint_on_save <span class="p">=</span> <span class="m">1</span>
+<span class="c">" テキスト変更時にはLinterを実行しない</span>
+<span class="k">let</span> <span class="k">g</span>:ale_lint_on_text_changed <span class="p">=</span> <span class="s1">'never'</span>
+<span class="c">" Linter(コードチェックツール)の設定</span>
+<span class="k">let</span> <span class="k">g</span>:ale_linters <span class="p">=</span> {
+\   <span class="s1">'python'</span>: [<span class="s1">'flake8'</span><span class="p">,</span> <span class="s1">'mypy'</span>]<span class="p">,</span>
+\}
+<span class="c">" ファイル保存時にはFixerを時刻しない</span>
+<span class="k">let</span> <span class="k">g</span>:ale_fix_on_save <span class="p">=</span> <span class="m">0</span>
+<span class="c">" テキスト変更時にはFixerを実行しない</span>
+<span class="k">let</span> <span class="k">g</span>:ale_fix_on_text_changed <span class="p">=</span> <span class="s1">'never'</span>
+<span class="c">" Fixer(コード整形ツール)の設定</span>
+<span class="k">let</span> <span class="k">b</span>:ale_fixers <span class="p">=</span> {
+\   <span class="s1">'python'</span>: [<span class="s1">'autopep8'</span><span class="p">,</span> <span class="s1">'isort'</span>]<span class="p">,</span>
+\}
+<span class="c">" 余分な空白があるときは警告表示</span>
+<span class="k">let</span> <span class="k">b</span>:ale_warn_about_trailing_whitespace <span class="p">=</span> <span class="m">0</span>
+<span class="c">" ALE実行時にでる目印行を常に表示</span>
+<span class="k">let</span> <span class="k">g</span>:ale_sign_column_always <span class="p">=</span> <span class="m">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id7">
+<h2><a class="reference external" href="https://github.com/airblade/vim-gitgutter">airblade/vim-gitgutter</a>: 追加・変更・削除された箇所のマーカー表示<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>ALEでコードチェックができるようにしたら、Gitでバージョン管理してるコードに変更があったのかもできるようにしたくなりました。</p>
+<p>以下はvim-gitgutter作者が公開している使用イメージ画面です。</p>
+<div class="figure align-center">
+<img alt="https://camo.githubusercontent.com/f88161827e0cbb3144455b9e5c7582fdd5b5fc83/68747470733a2f2f7261772e6769746875622e636f6d2f616972626c6164652f76696d2d6769746775747465722f6d61737465722f73637265656e73686f742e706e67" src="https://camo.githubusercontent.com/f88161827e0cbb3144455b9e5c7582fdd5b5fc83/68747470733a2f2f7261772e6769746875622e636f6d2f616972626c6164652f76696d2d6769746775747465722f6d61737465722f73637265656e73686f742e706e67"/>
+</div>
+<p>15行目が変更され、21-24行目が新規に追加、25-26行目の間の行が削除されています。
+vim-gitgutterを導入して自分がどこを変更をしたのか、意図していない変更はないかがすぐわかるようになりました。</p>
+<div class="section" id="id8">
+<h3><a class="toc-backref" href="#id21">実行に必要な環境</a><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>Vimのコンパイルオプションで <code class="docutils literal notranslate"><span class="pre">signs</span></code> が有効になっている必要があります。</p>
+</div>
+<div class="section" id="id9">
+<h3><a class="toc-backref" href="#id22">設定方法</a><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>vim-gitgutterはインストールしただけで使えるのですが、変更のあるなしで目印行が表示されたり、非表示になったりするのが煩わしかったので、常に表示するようにだけ設定しています。</p>
+<div class="highlight-vim notranslate"><div class="highlight"><pre><span/>Plug <span class="s1">'airblade/vim-gitgutter'</span>
+<span class="c">" 目印行を常に表示する</span>
+<span class="k">if</span> exists<span class="p">(</span><span class="s1">'&amp;signcolumn'</span><span class="p">)</span>  <span class="c">" Vim 7.4.2201</span>
+  <span class="k">set</span> signcolumn<span class="p">=</span>yes
+<span class="k">else</span>
+  <span class="k">let</span> <span class="k">g</span>:gitgutter_sign_column_always <span class="p">=</span> <span class="m">1</span>
+<span class="k">endif</span>
+</pre></div>
+</div>
+<p>マーカーが表示されるタイミングを変えるためにvimrcで <code class="docutils literal notranslate"><span class="pre">updatetime</span></code> の値を変更するのは有効なので、お好みで設定してみてください。</p>
+</div>
+</div>
+<div class="section" id="id10">
+<h2><a class="toc-backref" href="#id23">終わりに</a><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<p>fzf.vim, ALE, vim-gitgutterと3つのプラグインを紹介してきました。
+今回は紹介しきれなかったプラグインも <a class="reference external" href="https://github.com/kashewnuts/dotfiles/blob/b1d20f2543613dcc78222ee3e9b20cf51dc5f243/files/.vim/vimrc">dotfiles/vimrc</a> にあるので興味があれば見てみてください。</p>
+</div>
+
+        </div>
+        <div class="postmeta">
+        <div class="author">
+            <span>Posted by Kashun YOSHIDA</span>
+        </div>
+        <div class="categories">
+            <span>
+                Filed under:
+                <a href="categories/vim.html">Vim</a>, <a href="categories/python.html">Python</a></span>
+        </div>
+        <div class="tags">
+            <span>
+                Tags:
+                <a href="tags/vim.html">Vim</a>, <a href="tags/python.html">Python</a></span>
+        </div>
+        <div class="comments">
+            <a href="http://kashewnuts.github.io/2018/12/02/bp_advent_calender.html#disqus_thread" data-disqus-identifier="2018/12/02/bp_advent_calender">Leave a comment</a>
+        </div></div><div class="separator post_separator"></div><div class="timestamp postmeta">
+            <span>November 06, 2018</span>
+        </div>
+        <div class="section">
+            <h1><a href="2018/11/06/yosemite_tour.html">ヨセミテツアー日記<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></a></h1>
+<p>去る10/19〜26日にアメリカのヨセミテにクライミング旅行に行ってきた。
+また行くことになったときの自分用のメモとして記録して起きたいと思う。</p>
+<blockquote class="twitter-tweet" data-conversation="none"><a href="https://twitter.com/kashew_nuts/status/1053747499951771648">https://twitter.com/kashew_nuts/status/1053747499951771648</a></blockquote><div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="2018/11/06/yosemite_tour.html#id2" id="id13">スケジュール感</a></p></li>
+<li><p><a class="reference internal" href="2018/11/06/yosemite_tour.html#id3" id="id14">宿とか食事とか</a></p></li>
+<li><p><a class="reference internal" href="2018/11/06/yosemite_tour.html#id4" id="id15">移動とか</a></p></li>
+<li><p><a class="reference internal" href="2018/11/06/yosemite_tour.html#id5" id="id16">持ち物</a></p></li>
+<li><p><a class="reference internal" href="2018/11/06/yosemite_tour.html#id7" id="id17">お財布事情</a></p></li>
+<li><p><a class="reference internal" href="2018/11/06/yosemite_tour.html#id8" id="id18">通信網について</a></p></li>
+<li><p><a class="reference internal" href="2018/11/06/yosemite_tour.html#id9" id="id19">動画撮影とか</a></p></li>
+<li><p><a class="reference internal" href="2018/11/06/yosemite_tour.html#id10" id="id20">登った(トライした)課題</a></p>
+<ul>
+<li><p><a class="reference internal" href="2018/11/06/yosemite_tour.html#camp4-columbia-boulders-p114-115" id="id21">Camp4 - Columbia Boulders [P114-115]</a></p></li>
+<li><p><a class="reference internal" href="2018/11/06/yosemite_tour.html#camp4-east-p116-120" id="id22">Camp4 - East [P116-120]</a></p></li>
+<li><p><a class="reference internal" href="2018/11/06/yosemite_tour.html#camp4-west-p128" id="id23">Camp4 - West [P128-]</a></p></li>
+<li><p><a class="reference internal" href="2018/11/06/yosemite_tour.html#curry-village-half-dome-village-p76-81" id="id24">Curry Village(Half Dome Village) [P76-81]</a></p></li>
+<li><p><a class="reference internal" href="2018/11/06/yosemite_tour.html#sentinel-boulders-p62-66" id="id25">Sentinel Boulders [P62-66]</a></p></li>
+<li><p><a class="reference internal" href="2018/11/06/yosemite_tour.html#cathedral-boulders-p42-48" id="id26">Cathedral Boulders [P42-48]</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="2018/11/06/yosemite_tour.html#id11" id="id27">最後に</a></p></li>
+<li><p><a class="reference internal" href="2018/11/06/yosemite_tour.html#id12" id="id28">おまけ</a></p></li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id13">スケジュール感</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>書き出すときりがないのでざっくりと書くとこんな感じ。</p>
+<ul class="simple">
+<li><p>10/19[Day0]: 移動</p></li>
+<li><p>10/20-25[Day1-5]: クライミング</p></li>
+<li><p>10/26[Day6]: 移動</p></li>
+</ul>
+<p>初日と最終日の移動は本当に疲れたので、次回いくとしたらフレズノから行きたい….
+成田→サンフランシスコの直行便でいったが、渋滞にハマったおかげで初日宿についたのは0時を回ってた。</p>
+<p>「レスト日どうする？」なんて会話もしていたけど、結局ヨセミテにいた5日中5日とも登ってた。
+明確なレスト日はなかったけど毎日12-18時間ぐらいずつレストしてたのと、ワクワク感が尽きなくて今回は必要なかった。
+だいたい10-12時から18時ぐらいしかエリアにいなかったり、移動も車で数十分かかることもあり登ってる時間もそこまで多くなかったのかな。</p>
+<p>V7, V8以上の課題を完登しようと思ったら、 <strong>2週間ぐらいまとめていかないと足りない</strong> と感じた。</p>
+</div>
+<div class="section" id="id3">
+<h2><a class="toc-backref" href="#id14">宿とか食事とか</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center">
+<img alt="../../../_images/lodge.png" src="_images/lodge.png"/>
+</div>
+<p>今回止まったのはCamp4…じゃなくてヨセミテ園内にあるロッジ。
+Airbnbで宿を取った。通信網は事前情報から諦めていたのでそれ以外の洗濯機や乾燥機、暖房もあるしすごいなーと思っていたら階段がヤバかった。</p>
+<p>食事はDay0の行きがけに1週間分の食料を買ってから行ったのだけど、0時過ぎに着いて水やスーツケース、食べ物類を抱えて何往復もした。
+「他の宿より安いのはこれが理由か….」とメンバー全員が思ったとか。</p>
+<p>自炊力の高いメンバーが居てくれたおかげで食事に苦労することはなかった。感謝しかない。</p>
+</div>
+<div class="section" id="id4">
+<h2><a class="toc-backref" href="#id15">移動とか</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>レンタカーを2台体制で行きました。自分が運転の経験値が浅いこともあり、ほとんどお任せする形になってしまったが、 <strong>ヨセミテ園内で海外で運転する実績は解除できた</strong> 。</p>
+<p>日本から海外にいって運転するときは国際運転免許証が必要らしいのだが、今回はレンタカー会社がやっていた運転免許証翻訳フォームから発行できたのでそちらを使用した。必要な条件は満たしている上に、発行の手間も非常に少なかったので便利。</p>
+</div>
+<div class="section" id="id5">
+<h2><a class="toc-backref" href="#id16">持ち物</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>宿に洗濯機があるのがわかっていたので服とかも3,4日分の荷物でいったけど十分足りた。</p>
+<ul class="simple">
+<li><p>航空会社にANAを使ったので手荷物1つと預け荷物2つを持っていけた。</p></li>
+<li><p>今回は手荷物をノースフェースのフューズボックスにして、預け荷物をスーツケースとクラッシュパッド(以下マット)にした。</p></li>
+<li><p>現地で購入する手段もあったが、パモも持って行きたかったので自前で持っていった。</p></li>
+<li><p>パモのような細いものはマットの間に挟んでも抜けて紛失する恐れがあったので、行きは空港の <a class="reference external" href="https://www.narita-airport.jp/jp/service/svc_80">バゲージラッピングサービス</a> を活用していった。一緒に行ったメンバーは車用のラゲージネットで包んでいっていた。ラッピングしてもらうのもよかったが、空港である程度時間も使うので次回はこっちを検討しようと思う。</p></li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h2><a class="toc-backref" href="#id17">お財布事情</a><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>今回はカード1枚しかもっていかなかったけど、2,3枚+50~100ドルの現金があればベストかなと。
+(1ヶ所なかなかカードの認証が通らなくて焦ったりしたのでバックアップ大事)</p>
+<ul class="simple">
+<li><p>基本カード(クレジットなりデビット)があればそれで足りる、というかないと不便。</p></li>
+<li><p>しかし例外的に1グループごとに現金は50〜100ドルぐらいは持っていないと慌てる可能性がある。ただ100ドル札があっても断れることがあるらしいので、10ドル札とかを何枚か持っておく感じ。</p></li>
+<li><p>以下は今回現金が必要だった場所</p>
+<ul>
+<li><p>ヨセミテ園内にあるガソリンスタンド (日本のカードってアメリカのガソリンスタンドで通らないのを知った)</p></li>
+<li><p>通行料がある橋</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id8">
+<h2><a class="toc-backref" href="#id18">通信網について</a><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center">
+<img alt="../../../_images/speedtest.PNG" src="_images/speedtest.PNG"/>
+</div>
+<p>サンフランシスコあたりでは快適につながったが、ヨセミテ全体ではエリアによる感じでした。</p>
+<ul class="simple">
+<li><p>今回はAT&amp;TのMVNOであるMOST SIMをAmazonで購入して行った。</p></li>
+<li><p>Sprintだとヨセミテ園内では電波が入らなくないらしい(電波を掴んでもつながらなかったり)</p></li>
+<li><p>空港から途中まではしっかりつながっていたが、ヨセミテ園内に入るとつながる場所はつながるが、つながらないところはどうしてもあった。</p></li>
+<li><p>観光スポットになっていたり、Camp4やCurry Villageではつながりやすかったが、常にiPhoneのアンテナが4本立っているというわけではなかった。(これは予め知らないとわからないことだったので、ちゃんとSIMフリーiPhoneを持って、つながるSIMを選んで行けてよかった)</p></li>
+</ul>
+</div>
+<div class="section" id="id9">
+<h2><a class="toc-backref" href="#id19">動画撮影とか</a><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<p>iPhone6sの空き容量を40GBぐらい空けて行ったけど、撮りっぱなしで撮影することもあったので全然足りなかった。
+次の機種は128GBか256GBにするかな……それか、撮りっぱなし用途ならGoProみたいなのを持ち歩いたほうがよいのかも。</p>
+</div>
+<div class="section" id="id10">
+<h2><a class="toc-backref" href="#id20">登った(トライした)課題</a><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<p>登れた課題も登れなかった課題もいくつもあって、思い出深いので今回使用したトポ <a class="reference external" href="https://www.amazon.co.jp/SuperTopo-Yosemite-Valley-Bouldering-Wilder/dp/0976523523">SuperTopo Yosemite Valley Bouldering</a> のエリア名、ページ数、課題番号とともにメモしておく。</p>
+<div class="section" id="camp4-columbia-boulders-p114-115">
+<h3><a class="toc-backref" href="#id21">Camp4 - Columbia Boulders [P114-115]</a><a class="headerlink" href="#camp4-columbia-boulders-p114-115" title="Permalink to this headline">¶</a></h3>
+<p>ヨセミテに来たら触らないわけにはいかない、世界で最も有名なボルダリング課題がある岩。</p>
+<blockquote class="twitter-tweet" data-conversation="none"><a href="midnight_lightning.">midnight_lightning.</a></blockquote><ol class="arabic" start="2">
+<li><p><strong>Midnight Lightning V8(★★★★)</strong>: 未完登。</p>
+<p>最初は怖気づいて触る気もしなかったのだけど、次どこ行こうかみたいな話を岩の近くでしていたら、オーストリア？の兄さんに「10分だけマット貸してくれないか？」と言われて出した流れでトライ。
+(ちなみにそのお兄さん3撃で完登してた。いいもの見れた。ムーブもめっちゃ教えてくれたしいい人だった。)
+今回はマントル前の飛び出しの姿勢をうまく作れず終了。二段の実力つけて登りたいですなー。</p>
+</li>
+</ol>
+<blockquote class="twitter-tweet" data-conversation="none"><a href="https://twitter.com/kashew_nuts/status/1053825491533090817">https://twitter.com/kashew_nuts/status/1053825491533090817</a></blockquote></div>
+<div class="section" id="camp4-east-p116-120">
+<h3><a class="toc-backref" href="#id22">Camp4 - East [P116-120]</a><a class="headerlink" href="#camp4-east-p116-120" title="Permalink to this headline">¶</a></h3>
+<blockquote class="twitter-tweet" data-conversation="none"><a href="https://twitter.com/kashew_nuts/status/1054154662901764096">https://twitter.com/kashew_nuts/status/1054154662901764096</a></blockquote><p>低グレードでもマントル返すのが慎重になるような課題がちらほらあって、凹まされたエリア。</p>
+<ol class="arabic" start="15">
+<li><p>The Largo Lunge V0-(★★★): 完登。意外とマントルがスローピーなので怖い課題。でもV0だなーと思える。</p></li>
+<li><p>The Jimi Hendrix Experience V0(★): 完登。</p></li>
+<li><p>Bachar Cracker V4(★★★★): 未完登。クラック課題。</p>
+<p>ジャミングができないとできなそうだなという気持ちと、落ちたら背中を岩に強打しそうな雰囲気がバンバンしたので、そんなに頑張らず終了。</p>
+</li>
+<li><p>Unnamed V1(★★): 未完登。Bachar Crackerの抜けの部分。</p>
+<p>意外とできそうだったのだけど、草が積りすぎて、足を滑らせ怖い落ち方をしそうになったので、1回で終了。</p>
+</li>
+<li><p>Unnamed V1(★★): 未完登。</p>
+<p>ガバホールドでのトラバースなのだけど、良すぎて手に刺さって痛いし、足場が悪い、途中の下地が悪いの3連コンボでやる気をなくして終了。</p>
+</li>
+</ol>
+<ol class="arabic" start="40">
+<li><p>Unnamed V3(★): 未完登。苦手が詰まった課題だった。</p>
+<p>両手カチからの微妙に踏みにくい右足に乗り込んで1手目を取り、マッチしたらマントルを返す課題。1手目取りが安定せずよれて終了。ロックとカチと悪い足が揃うととたんに弱くなるな….</p>
+</li>
+</ol>
+<ol class="arabic" start="44">
+<li><p>The Force V9(★★★): 登ってない。40. Unnamedをやった後見に行った課題。かっこいい課題なので次回行くときはちゃんとトライしたい。</p>
+<blockquote class="twitter-tweet" data-conversation="none"><a href="https://twitter.com/kashew_nuts/status/1054513308546420736">https://twitter.com/kashew_nuts/status/1054513308546420736</a></blockquote></li>
+<li><p>Thriller  V11(★★★★): 44. The Forceと同様。</p></li>
+</ol>
+</div>
+<div class="section" id="camp4-west-p128">
+<h3><a class="toc-backref" href="#id23">Camp4 - West [P128-]</a><a class="headerlink" href="#camp4-west-p128" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-center">
+<img alt="../../../_images/camp4_west.png" src="_images/camp4_west.png"/>
+</div>
+<p>乗り込みにくかったり、ホールディングにコツが必要だったりとグレード関係なく試される感じがしたエリア。</p>
+<ol class="arabic">
+<li><p>Unnamed V3(★): 未完登。</p>
+<p>狭くて悪くて「これ本当にV3！？」って課題だった。</p>
+</li>
+</ol>
+<ol class="arabic" start="3">
+<li><p>Unnamed V3(★): 未完登。</p>
+<p>これも保持感が悪くて木にぶつかりそうで1回で諦めてしまった。</p>
+</li>
+<li><p>Battle of the Bulge V6(★★★): 未完登。</p>
+<p>上部でマッチした後飛び出すのが確信らしいが、マッチできずに終了。
+次回行くときは完登したい。</p>
+</li>
+<li><p>The Titanic V5(★★): 未完登。</p>
+<p>エリアの名前になってる看板課題。
+初手取りが全然できなかったけど、コツ物かな。。。</p>
+</li>
+</ol>
+<ol class="arabic" start="35">
+<li><p><strong>Initial Friction V1(★★)</strong>: 完登。</p>
+<p>V1だと思ってなめてかかるとスタートすらできない課題。
+登れたときはテンション上がりました。</p>
+</li>
+</ol>
+<ol class="arabic simple" start="40">
+<li><p>Marco’s Traverse V1(★): 完登</p></li>
+<li><p>Unnamed VB(★★): 完登</p></li>
+</ol>
+<ol class="arabic simple" start="53">
+<li><p>Unnamed V0(★★): 完登</p></li>
+<li><p>Unnamed VB(★★): 完登</p></li>
+</ol>
+</div>
+<div class="section" id="curry-village-half-dome-village-p76-81">
+<h3><a class="toc-backref" href="#id24">Curry Village(Half Dome Village) [P76-81]</a><a class="headerlink" href="#curry-village-half-dome-village-p76-81" title="Permalink to this headline">¶</a></h3>
+<p>Camp4に比べると小さめな岩(とはいえ5〜6mくらいはある)が多く、取り付きやすい課題が多かった。</p>
+<blockquote class="twitter-tweet" data-conversation="none"><a href="https://twitter.com/kashew_nuts/status/1054179629538304000">https://twitter.com/kashew_nuts/status/1054179629538304000</a></blockquote><ol class="arabic" start="2">
+<li><p>Circuit Breaker V2(★★★): たどり着けず。</p>
+<p>どうやらCurry Villageの他の課題と違うところから行く必要があるらしく、ふらっと探しに行ける場所ではなかったらしい。クラック課題なのでジャミングができるかできないかでレベル感も変わりそう。</p>
+</li>
+</ol>
+<ol class="arabic" start="4">
+<li><p>Root Canal V7(★★★): 未完登。</p>
+<p>カチが多い課題だが、ムーブが選べて女性にも人気な課題らしい。実際セッションしてた強強女性クライマーが完登してた。左手のロックとかカチを耐えてしっかり持つところができないとつらそうなので次回行くときまでに鍛えたい。</p>
+</li>
+</ol>
+<ol class="arabic simple" start="8">
+<li><p>Unnamed VB(★★): 完登</p></li>
+<li><p>Unnamed V1(★★): 未完登</p></li>
+<li><p>Unnamed V0(★★): 未完登</p></li>
+<li><p>Unnamed V2(★★): 完登</p></li>
+<li><p>Unnamed V2(★★): 完登</p></li>
+</ol>
+<ol class="arabic" start="15">
+<li><p>The Angler V3(★★★): 未完登</p>
+<p>カチ具合に気が引けて3回でやめてしまった….自分はロースタートxカチx横移動の組み合わせだと極端に弱いらしい…..</p>
+</li>
+</ol>
+<ol class="arabic" start="32">
+<li><p><strong>Zorro V4(★★★)</strong>: 完登。</p>
+<p>「Yosemite’s Best」に選ばれているだけあって良い課題だった。飛び出しも初見だとすごく遠く感じるけど、右手人差し指と中指をしっかりホールドして、右足の置き場所を定めるとバチッとハマる課題。楽しかった。</p>
+<blockquote class="twitter-tweet" data-conversation="none"><a href="https://twitter.com/kashew_nuts/status/1054173983464075265">https://twitter.com/kashew_nuts/status/1054173983464075265</a></blockquote></li>
+<li><p><strong>Unnamed V5(★★)</strong>: 完登。</p>
+<p>Zorroの右横にある課題。スタートから右手を送るのが遠いが、左手の持ち感を変えたらあっさりできてしまった課題。個人的には好きなタイプの課題だったのでできて嬉しい。</p>
+<blockquote class="twitter-tweet" data-conversation="none"><a href="https://twitter.com/kashew_nuts/status/1054863324045692928">https://twitter.com/kashew_nuts/status/1054863324045692928</a></blockquote></li>
+</ol>
+<p>登った後のピザはおいしかった。</p>
+<div class="figure align-center">
+<img alt="../../../_images/curry_village_pizza.png" src="_images/curry_village_pizza.png"/>
+</div>
+</div>
+<div class="section" id="sentinel-boulders-p62-66">
+<h3><a class="toc-backref" href="#id25">Sentinel Boulders [P62-66]</a><a class="headerlink" href="#sentinel-boulders-p62-66" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-center">
+<img alt="../../../_images/sentinel_boulder.png" src="_images/sentinel_boulder.png"/>
+</div>
+<p>同行者も初めていったエリアだったが、駐車場からのアクセスもよく課題も見つけやすかった。</p>
+<p>しかしリーチ感が非常に遠い課題があったり、ホールディングやムーブの質が求められている感じがした。
+<code class="docutils literal notranslate"><span class="pre">5.</span> <span class="pre">Flake</span> <span class="pre">Out</span> <span class="pre">V7(★★)</span></code> にも目をつけていたのに、ここにあることを忘れていたのがもったいなかったので次回行くときは触りたい。</p>
+<ol class="arabic" start="3">
+<li><p>No Holds Bard V7(★★★): 未完登。</p>
+<p>一手一手が遠いとは聞いていたが、本当に遠かった。初手取りのムーブが起こせず消沈して終えてしまったが、動画ムーブに縛られなかったらまた別のやりようがあったのでは….とも思う。</p>
+</li>
+</ol>
+<ol class="arabic simple" start="19">
+<li><p>Unnamed VB(★): 完登</p></li>
+<li><p>Unnamed V1(★): 完登</p></li>
+<li><p>Unnamed V0-(★): 完登</p></li>
+<li><p>Door Knocker Traverse V3(★): 完登</p></li>
+</ol>
+<ol class="arabic" start="28">
+<li><p>Mr. Pink Eyes V0(★★★): 未完登。ひたすらスローパーで「これは本当にV0なのか！？」と衝撃を覚えたライン。</p></li>
+<li><p>Unnamed V4(★★): 未完登。スタートの仕方がわからず….</p></li>
+<li><p>Midget Traverse V3(★★): 未完登。</p>
+<p>トポに書いてあるラインだけ見ると「これV3？」と思うのですが、実は岩を半周するほど長いライン。最後のマントル時にはよれている上、足場もなく「なるほどこれはV3だ」というライン。</p>
+</li>
+</ol>
+</div>
+<div class="section" id="cathedral-boulders-p42-48">
+<h3><a class="toc-backref" href="#id26">Cathedral Boulders [P42-48]</a><a class="headerlink" href="#cathedral-boulders-p42-48" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-center">
+<img alt="../../../_images/cathedral_boulder.png" src="_images/cathedral_boulder.png"/>
+</div>
+<p>ここも同行者含めて初のエリア。途中迷ったが、偶然の出会いもあったりして印象的。Fish Headは次回いくときは落としたい。</p>
+<ol class="arabic" start="7">
+<li><p>Fish Head V7(★★): 未完登。</p>
+<p>撤収する30分くらい前に良さそうと思って手をつけたが、流石に厳しかった。
+3手目出しをどうしたらいいかわからなかったけど、1手目ポケットと2手目の引けない向きについているカチからだと動けなかったからなー。
+もうちょい格闘する時間ほしかった。</p>
+</li>
+</ol>
+<ol class="arabic" start="12">
+<li><p>The Octagon V6(★★★): 未完登。一手一手がかなり遠かった。完敗。</p></li>
+<li><p>Ladder Detail V5(★★): 完登。</p>
+<p>Youtubeでムーブを見てたから結局それで完登したけど、トポに書いてあるルートや記述とは違うので完登といって良いものか悩むけど、登れたものは登れたということにしておく。次はトポに書いてあるやり方で登りたいところ。</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="id11">
+<h2><a class="toc-backref" href="#id27">最後に</a><a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<p>ヨセミテ最高だった！誘ってくれたTKBや一緒にいってくれたメンバーには感謝です。</p>
+<p>次が来年再来年になるか、いつになるかわからないけどもまた行きたいなー。</p>
+<div class="figure align-center">
+<img alt="../../../_images/yosemite_beers.png" src="_images/yosemite_beers.png"/>
+</div>
+</div>
+<div class="section" id="id12">
+<h2><a class="toc-backref" href="#id28">おまけ</a><a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+<p>今のところアメリカいるときしかあたってない。(わかる人だけわかる)</p>
+<blockquote class="twitter-tweet" data-conversation="none"><a href="https://twitter.com/kashew_nuts/status/1054113786506883072">https://twitter.com/kashew_nuts/status/1054113786506883072</a></blockquote></div>
+
+        </div>
+        <div class="postmeta">
+        <div class="author">
+            <span>Posted by Kashun YOSHIDA</span>
+        </div>
+        <div class="categories">
+            <span>
+                Filed under:
+                <a href="categories/bouldering.html">Bouldering</a></span>
+        </div>
+        <div class="tags">
+            <span>
+                Tags:
+                <a href="tags/bouldering.html">Bouldering</a></span>
+        </div>
+        <div class="comments">
+            <a href="http://kashewnuts.github.io/2018/11/06/yosemite_tour.html#disqus_thread" data-disqus-identifier="2018/11/06/yosemite_tour">Leave a comment</a>
+        </div></div><div class="separator post_separator"></div><div class="timestamp postmeta">
+            <span>September 22, 2018</span>
+        </div>
+        <div class="section">
+            <h1><a href="2018/09/22/pyconjp2018.html">PyConJP2018でPyCharmの話をしてきました #pyconjp<a class="headerlink" href="#pyconjp2018pycharm-pyconjp" title="Permalink to this headline">¶</a></a></h1>
+<p>通算5回目のPyCon参加になりました。個人的には今回は例年と少し違った参加のしかたになりました。</p>
+<p>発表者として45分間トークしてきたり(New!)、
+チュートリアルの講師・TAをやった(New!)のは良い経験になりましたね。</p>
+<p>せっかく参加したのをそのままにするのももったいないので、
+当日の様子とかを振り返っておきたいと思います。</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pyconjp.connpass.com/event/94980/">PyCon JP 2018 Tutorial - connpass</a></p></li>
+<li><p><a class="reference external" href="https://pyconjp.connpass.com/event/89163/">PyCon JP 2018 - connpass</a></p></li>
+<li><p><a class="reference external" href="https://pycon.jp/2018/">PyCon JP 2018</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/user/PyConJP/videos?flow=grid&amp;view=0&amp;sort=dd">PyConJP - YouTube</a></p></li>
+</ul>
+<div class="contents local topic" id="contents">
+<p class="topic-title">contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="2018/09/22/pyconjp2018.html#id1" id="id5">自分の発表について</a></p></li>
+<li><p><a class="reference internal" href="2018/09/22/pyconjp2018.html#id2" id="id6">チュートリアルについて</a></p></li>
+<li><p><a class="reference internal" href="2018/09/22/pyconjp2018.html#pycon" id="id7">PyConで拝聴したセッション</a></p></li>
+<li><p><a class="reference internal" href="2018/09/22/pyconjp2018.html#tweet" id="id8">Tweet振り返り</a></p></li>
+<li><p><a class="reference internal" href="2018/09/22/pyconjp2018.html#id4" id="id9">おわりに</a></p></li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h2><a class="toc-backref" href="#id5">自分の発表について</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>普段自分がPyCharmを使っている中で便利だなと感じるところや、どうゆうところで詰まったりしたかというところを紹介しました。</p>
+<p>内容的には <a class="reference external" href="http://kyushu.pycon.jp/">PyCon Kyushu - 2018 Fukuoka</a> で話したことがベースになっています。始まる前は「裏番組も強力だし、まさか満員になることはないだろう」と思っていましたが、まさかの満員で、しかも立ち見NGなので別会場でライブストリーミングするという話が聞こえてきて「何が起きているんだ！？」とテンパっていました。</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sJlyZmbT2xs?start=581" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="">
+</iframe><ul class="simple">
+<li><p>資料: <a class="reference external" href="https://gitpitch.com/kashewnuts/slides?p=20180917pyconjp#/">https://gitpitch.com/kashewnuts/slides?p=20180917pyconjp#/</a></p></li>
+<li><p>Toggeterまとめ: <a class="reference external" href="https://togetter.com/li/1269343">https://togetter.com/li/1269343</a></p></li>
+</ul>
+<p>登壇の機会をいただいたといっても、「聞きに来てくださった方の期待に応えられるかなー」と不安に思ったりもしましたが、概ね好評だったようでホッとしました。45分枠だったので質疑応答の時間も取れてよかったかなと思います。発表したことで自分が知らなかったことも知れたりしました。</p>
+</div>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id6">チュートリアルについて</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>今回は「DjangoによるWebアプリケーション開発入門」の講師&amp;TA担当でチュートリアルに初参加しました。
+かなり反省点もある時間だったのですが、いい経験になりました。その経験が翌日の発表やその後の講師業にも活かせたかなーと。</p>
+<p>いくつかやられたなーと思ったのがあったので今後の自分のためにいくつかメモ。</p>
+<ul class="simple">
+<li><p>Python3.7をサポートしているのはDjango2.0.7以降。Django1.11LTSはサポートしていない。</p>
+<ul>
+<li><p>考えてみたらそうだけど、Django1.11LTSの方がPython3.7より先にリリースされているからサポートされてる保証はなかった。サポートしているバージョンの確認は大事。</p></li>
+<li><p>Python3.7互換の対応は <a class="reference external" href="https://code.djangoproject.com/ticket/28814">https://code.djangoproject.com/ticket/28814</a> でされた様子。</p></li>
+</ul>
+</li>
+<li><p>忘れたことにやってきたShebang。</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">#!/usr/bin/python</span></code> : フルパスで指定されているPythonインタプリタを実行する</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#!/usr/bin/env</span> <span class="pre">python</span></code> :  <code class="docutils literal notranslate"><span class="pre">PATH</span></code> の中に含まれるPythonインタプリタを実行する</p></li>
+</ul>
+</li>
+</ul>
+<p>チュートリアル後に行われたWelcomeパーティは楽しかった！</p>
+<blockquote class="twitter-tweet" data-conversation="none"><a href="https://twitter.com/kashew_nuts/status/1041284540264665088">https://twitter.com/kashew_nuts/status/1041284540264665088</a></blockquote></div>
+<div class="section" id="pycon">
+<h2><a class="toc-backref" href="#id7">PyConで拝聴したセッション</a><a class="headerlink" href="#pycon" title="Permalink to this headline">¶</a></h2>
+<p>1日目は自分の発表もあり、他のセッションを聞いてる余裕があまりなかったのですが、2日目のキーノートである <a class="reference external" href="https://twitter.com/ransui">@ransui</a> さんの <a class="reference external" href="https://www.slideshare.net/RansuiIso/python-115121978">「Pythonでやってみた」：広がるプログラミングの愉しみ</a> はわくわくしましたね。</p>
+<p>他に会場で聞いたり、YouTubeで見てる中で良かったなーと思ったセッションはこんな感じ。現実と戦う話だったり、自分の興味を掘り下げていく話だったりと今回のテーマだった「ひろがるPython」にちなんだ発表だなーと感じました。</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://speakerdeck.com/aodag/anatatopythonjin-sugupatukezingu">あなたと私いますぐパッケージン Atsushi Odagiri</a></p></li>
+<li><p>Interactive Network Visualization using Python 〜 NetworkX + BokehでPEPの参照関係を可視化する Tomoko Furuki</p></li>
+<li><p>Migrating from Py2 application to Py3: first trial in MonotaRO / Python2 から Python3 への移植: MonotaRO での取り組み 増田泰</p></li>
+<li><p><a class="reference external" href="https://tell-k.github.io/pyconjp2018/">Pythonでざっくり学ぶUnixプロセス tell-k</a></p></li>
+<li><p><a class="reference external" href="https://speakerdeck.com/sin_tanaka_21/pythondeshi-meruuebusukureipingushi-jian-ru-men">Pythonで始めるウェブスクレイピング実践入門 田中 慎太郎</a></p></li>
+</ul>
+</div>
+<div class="section" id="tweet">
+<h2><a class="toc-backref" href="#id8">Tweet振り返り</a><a class="headerlink" href="#tweet" title="Permalink to this headline">¶</a></h2>
+<p>雑多にいくつかピックアップして振り返り</p>
+<blockquote class="twitter-tweet" data-conversation="none"><a href="https://twitter.com/kashew_nuts/status/1041526439923740673">https://twitter.com/kashew_nuts/status/1041526439923740673</a></blockquote><p>ちょうどコラボイベントをやっていらしかったのでパシャリ。</p>
+<blockquote class="twitter-tweet" data-conversation="none"><a href="https://twitter.com/kashew_nuts/status/1041933375882182658">https://twitter.com/kashew_nuts/status/1041933375882182658</a></blockquote><p><a class="reference external" href="https://twitter.com/yattom">@yattom</a> さんのライブコーディング。</p>
+<p>仕事で <a class="reference external" href="https://pypi.org/project/pytest/">pytest</a> は使っているのですが、
+他の人がどうテストを書くんだろうと見れる機会は多くないので参考になりました。</p>
+<p>コードは <a class="reference external" href="https://github.com/yattom/tddhome/tree/20180918_pyconjp2018_livedemo/python_pytest">https://github.com/yattom/tddhome/tree/20180918_pyconjp2018_livedemo/python_pytest</a> に上げていただいているので、見直したいときは役立ちそう。</p>
+<blockquote class="twitter-tweet" data-conversation="none"><a href="https://twitter.com/kashew_nuts/status/1041978613514420224">https://twitter.com/kashew_nuts/status/1041978613514420224</a></blockquote><p>スタッフの方々おつかれ様でした。参加者の人数が増えていたり、新しい会場だったり、いろいろ大変な役割だと思いますが、おかげで楽しめるました。</p>
+<blockquote class="twitter-tweet" data-conversation="none"><a href="https://twitter.com/kashew_nuts/status/1041984074112413699">https://twitter.com/kashew_nuts/status/1041984074112413699</a></blockquote></div>
+<div class="section" id="id4">
+<h2><a class="toc-backref" href="#id9">おわりに</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<blockquote class="twitter-tweet" data-conversation="none"><a href="https://twitter.com/kashew_nuts/status/1042038613893033984">https://twitter.com/kashew_nuts/status/1042038613893033984</a></blockquote><p>有志の打ち上げも楽しかった。来年もトークできたらいいなと思うので、発表ネタをしたためておきたいですね。</p>
+</div>
+
+        </div>
+        <div class="postmeta">
+        <div class="author">
+            <span>Posted by Kashun YOSHIDA</span>
+        </div>
+        <div class="categories">
+            <span>
+                Filed under:
+                <a href="categories/python.html">Python</a>, <a href="categories/pyconjp.html">PyConJP</a>, <a href="categories/pycharm.html">PyCharm</a>, <a href="categories/django.html">Django</a></span>
+        </div>
+        <div class="tags">
+            <span>
+                Tags:
+                <a href="tags/python.html">Python</a>, <a href="tags/pyconjp.html">PyConJP</a>, <a href="tags/pycharm.html">PyCharm</a>, <a href="tags/django.html">Django</a></span>
+        </div>
+        <div class="comments">
+            <a href="http://kashewnuts.github.io/2018/09/22/pyconjp2018.html#disqus_thread" data-disqus-identifier="2018/09/22/pyconjp2018">Leave a comment</a>
+        </div></div><div class="archive_link">
+        <a href="archive.html"> &mdash; Blog Archive &mdash; </a>
+    </div><ul class="related clearfix">
+            <li class="left"> &laquo; <a href="page2.html">Newer</a></li>
+            <li class="right"><a href="page4.html">Older</a> &raquo; </li>
+        </ul></article><aside class="sidebar"><section><div class="widget">
+  <div>
+    <a href="//af.moshimo.com/af/c/click?a_id=815168&p_id=1166&pc_id=1793&pl_id=20228&guid=ON" target="_blank" rel="nofollow"><img src="//image.moshimo.com/af-img/0408/000000020228.png" width="300" height="250" style="border:none;"></a><img src="//i.moshimo.com/af/i/impression?a_id=815168&p_id=1166&pc_id=1793&pl_id=20228" width="1" height="1" style="border:none;">
+  </div>
+</div></section><section><div class="widget" id="searchbox" role="search">
+    <h1><a href="#searchbox">Search</a></h1>
+    <form action="search.html" method="get">
+        <input type="text" name="q" />
+        <button type="submit"><span class="fa fa-search"></span></button>
+    </form>
+</div></section><section><div class="widget">
+    <h1>Recent Posts</h1>
+    <ul><li>
+            <a href="2020/11/30/climbing_shoes_history.html">クライミングシューズ遍歴</a>
+        </li><li>
+            <a href="2020/06/11/wsl2.html">WSL2を使ってみている</a>
+        </li><li>
+            <a href="2020/05/05/upgrade_ubuntu_20_04_lts.html">Ubuntu18.04LTSから20.04LTSにアップグレードした</a>
+        </li><li>
+            <a href="2020/04/08/migrated_lsp_client_to_coc_nvim.html">LSPクライアントをcoc.nvimにした話</a>
+        </li><li>
+            <a href="2019/01/28/move_from_jedivim_to_vimlsp.html">Pythonの補完環境をjedi-vimからvim-lspに移行した話</a>
+        </li><li>
+            <a href="2019/01/05/2018and2019.html">2018年の振り返りと2019年抱負</a>
+        </li><li>
+            <a href="2018/12/02/bp_advent_calender.html">2018年版Life ChangingだったVimプラグインTOP3</a>
+        </li><li>
+            <a href="2018/11/06/yosemite_tour.html">ヨセミテツアー日記</a>
+        </li><li>
+            <a href="2018/09/22/pyconjp2018.html">PyConJP2018でPyCharmの話をしてきました #pyconjp</a>
+        </li><li>
+            <a href="2018/08/22/jedivim_memo.html">VimとPythonの補完についてのメモ</a>
+        </li></ul>
+</div>
+</section><section><div class="widget">
+    <h1>Categories</h1>
+    <ul><li><a href="categories/64bit.html">64bit</a> (2)</li><li><a href="categories/android.html">Android</a> (3)</li><li><a href="categories/bouldering.html">bouldering</a> (2)</li><li><a href="categories/bouldering.html">Bouldering</a> (4)</li><li><a href="categories/bpstudy.html">BPStudy</a> (1)</li><li><a href="categories/c_c.html">C/C++</a> (5)</li><li><a href="categories/chrome.html">Chrome</a> (2)</li><li><a href="categories/db.html">DB</a> (1)</li><li><a href="categories/django.html">Django</a> (10)</li><li><a href="categories/facebook.html">Facebook</a> (1)</li><li><a href="categories/firefox.html">Firefox</a> (1)</li><li><a href="categories/git_mercurial.html">Git/Mercurial</a> (8)</li><li><a href="categories/golang.html">Golang</a> (1)</li><li><a href="categories/google.html">Google</a> (5)</li><li><a href="categories/heroku.html">Heroku</a> (6)</li><li><a href="categories/java.html">Java</a> (2)</li><li><a href="categories/javascript.html">JavaScript</a> (4)</li><li><a href="categories/jupyter.html">Jupyter</a> (1)</li><li><a href="categories/kabepy.html">kabepy</a> (2)</li><li><a href="categories/linux.html">Linux</a> (5)</li><li><a href="categories/lt.html">LT</a> (5)</li><li><a href="categories/mac.html">Mac</a> (8)</li><li><a href="categories/pycharm.html">PyCharm</a> (2)</li><li><a href="categories/pyconjp.html">PyConJP</a> (1)</li><li><a href="categories/pyfes.html">pyfes</a> (7)</li><li><a href="categories/python.html">Python</a> (70)</li><li><a href="categories/slack.html">Slack</a> (1)</li><li><a href="categories/sphinx.html">Sphinx</a> (8)</li><li><a href="categories/sqlalchemy.html">SQLAlchemy</a> (1)</li><li><a href="categories/ssd.html">SSD</a> (1)</li><li><a href="categories/tddbc.html">TDDBC</a> (1)</li><li><a href="categories/tinkerer.html">Tinkerer</a> (7)</li><li><a href="categories/tmux.html">tmux</a> (1)</li><li><a href="categories/ubuntu.html">Ubuntu</a> (3)</li><li><a href="categories/vagrant.html">Vagrant</a> (1)</li><li><a href="categories/vim.html">Vim</a> (24)</li><li><a href="categories/vimconf.html">VimConf</a> (3)</li><li><a href="categories/virtualbox.html">VirtualBox</a> (4)</li><li><a href="categories/windows.html">Windows</a> (3)</li><li><a href="categories/windows7.html">Windows7</a> (4)</li><li><a href="categories/wsl.html">WSL</a> (1)</li><li><a href="categories/%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0.html">アルゴリズム</a> (1)</li><li><a href="categories/%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3.html">セキュリティ</a> (2)</li><li><a href="categories/%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF.html">ネットワーク</a> (1)</li><li><a href="categories/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0.html">プログラミング</a> (7)</li><li><a href="categories/%E5%8B%89%E5%BC%B7%E4%BC%9A.html">勉強会</a> (30)</li><li><a href="categories/%E5%BF%9C%E7%94%A8%E6%83%85%E5%A0%B1%E6%8A%80%E8%A1%93%E8%80%85.html">応用情報技術者</a> (10)</li><li><a href="categories/%E6%83%85%E5%A0%B1%E5%87%A6%E7%90%86%E6%8A%80%E8%A1%93%E8%80%85%E8%A9%A6%E9%A8%93.html">情報処理技術者試験</a> (10)</li><li><a href="categories/%E6%9C%AC.html">本</a> (29)</li><li><a href="categories/%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83.html">開発環境</a> (11)</li><li><a href="categories/%E9%9B%91%E8%A8%98.html">雑記</a> (38)</li><li><a href="categories/%E9%AB%98%E9%80%9F%E5%8C%96.html">高速化</a> (1)</li></ul>
+</div></section><section><div class="widget">
+    <h1>About Me</h1>
+    <div>
+        <a href="https://about.me/kashew_nuts">
+            <img src="https://pbs.twimg.com/profile_images/378800000438956976/3e61e7ae64d916ba0451a44c3b8ce347.jpeg"
+            width="128px"
+            height="128px" />
+        </a>
+        <h4><a href="https://twitter.com/kashew_nuts">kashew_nuts
+                (KashunYOSHIDA)</a></h4>
+        <p>人生という壁を登るSoftwareDeveloper</p>
+        <a class="twitter-timeline" data-width="300" data-height="800" data-theme="dark" href="https://twitter.com/kashew_nuts">Tweets by kashew_nuts</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+</div></section></aside></div> <!-- #main --></div> <!-- #main-container -->
+
+        <div class="footer-container" role="contentinfo"><footer class="wrapper">&copy; Copyright 2011-2020, Kashun YOSHIDA. Powered by <a href="http://www.tinkerer.me/">Tinkerer</a> and <a href="http://sphinx.pocoo.org/">Sphinx</a>.</footer></div> <!-- footer-container -->
+
+      </div> <!--! end of #container --><script type="text/javascript">    var disqus_shortname = "kashewnutsblog";    disqus_count();</script><!--[if lt IE 7 ]>
+          <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+          <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+        <![endif]-->
+    </body>
+</html>

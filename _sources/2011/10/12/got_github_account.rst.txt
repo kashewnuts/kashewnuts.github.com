@@ -1,0 +1,45 @@
+GitHubアカ作ってみた!
+============================
+
+| `GitHub - Social Coding <https://github.com/>`__\ よりアカウントを作ってみました。
+
+|image0|
+
+| 順調に進めていったのですが、
+| Dashboardに表示されたSet up Gitより
+| Gitのインストールをしようとしていたところ挫折orz
+
+|image1|
+
+| 以下の画像の5.Test everything out.で
+| SSHが動いているか確認しようとしましたのですが、
+
+|image2|
+
+| 確認しようとしたところ以下のメッセージが表示
+
+|image3|
+
+| Permission denied (publickey).
+| 適当な値を入れようとしても、
+| コピペが効かないようなのでどうしたものやら。
+| 「そんなの登録したかな？」
+| 「もしかしてGitと別でつくるようだったりするのか？」
+| 「3.Generate a new SSH key.で作成したのかな。でも何か違う？」
+| などと思いながらも今日のところはタイムアップで終了……
+| 誰か教えてくださると”すごく”助かります(汗)
+
+.. |image0| image:: http://1.bp.blogspot.com/-z8jBa1s9Rpg/TpW9JaS1vwI/AAAAAAAAAXw/RNgwdjIsQac/s320/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588+2011-10-13+1.14.38.png
+   :target: http://1.bp.blogspot.com/-z8jBa1s9Rpg/TpW9JaS1vwI/AAAAAAAAAXw/RNgwdjIsQac/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588+2011-10-13+1.14.38.png
+.. |image1| image:: http://1.bp.blogspot.com/-vegI5SgG1qM/TpW9VkwxKfI/AAAAAAAAAX4/W7opW0PoLec/s320/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588+2011-10-13+1.13.48.png
+   :target: http://1.bp.blogspot.com/-vegI5SgG1qM/TpW9VkwxKfI/AAAAAAAAAX4/W7opW0PoLec/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588+2011-10-13+1.13.48.png
+.. |image2| image:: http://3.bp.blogspot.com/-pY3dycHKcEs/TpW-NJJKScI/AAAAAAAAAYA/2_LsIaU3EwM/s320/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588+2011-10-13+1.18.55.png
+   :target: http://3.bp.blogspot.com/-pY3dycHKcEs/TpW-NJJKScI/AAAAAAAAAYA/2_LsIaU3EwM/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588+2011-10-13+1.18.55.png
+.. |image3| image:: http://1.bp.blogspot.com/-r3nBMIGJjxo/TpW_ajFI4ZI/AAAAAAAAAYI/VUKdptJnVx4/s320/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588+2011-10-13+1.22.44.png
+   :target: http://1.bp.blogspot.com/-r3nBMIGJjxo/TpW_ajFI4ZI/AAAAAAAAAYI/VUKdptJnVx4/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588+2011-10-13+1.22.44.png
+
+
+.. author:: default
+.. categories:: プログラミング, Git/Mercurial
+.. tags:: プログラミング, Git/Mercurial
+.. comments::

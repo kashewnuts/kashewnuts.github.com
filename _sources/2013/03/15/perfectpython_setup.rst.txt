@@ -1,0 +1,108 @@
+======================================
+Python3の開発環境を整えてみた
+======================================
+
+パーフフェクトPythonではWindows7, MacOSX, Ubuntu12.04LTSでの例が挙げられています。
+今回はUbuntu12.04LTSを選択してみました。手順は以下。
+
+* VagrantでUbuntuをセットアップ
+* Python3および各ツール類をインストール
+* +α、開発をサポートするツール類をインストール
+
+
+VagrantでUbuntuをセットアップ
+--------------------------------------------------
+
+普通にやるのはおもしろくないので、 `2013/02/10 Vagrantで作るUbuntu-12.04環境 - 清水川Web
+<http://www.freia.jp/taka/blog/create-ubuntu-12.04-by-using-vagrant/index.html>`_ を参考に
+Ubuntu12.04LTSをセットアップ。楽すぎてびびる。
+ここから先はターミナルからsshで接続して操作する形になります。
+
+
+Python3および各ツール類をインストール
+--------------------------------------------------
+
+パーフェクトPythonにある通りに必要なものをインストールしていく。まずはPython3のインストー
+ル。
+
+.. code-block:: bash
+
+  $ sudo apt-get install python3.3 python3.3-dev
+  $ sudo apt-get install zlib1g-dev libssl-dev libreadline-dev libsqlite3-dev tk-dev
+  libbz2-dev libgdbm-dev tcl-dev
+  $ wget http://www.python.org/ftp/python3.3.0/Python3.3.0.tar.bz2
+  $ tar xjf Python-3.3.0.tar.bz2
+  $ cd Python-3.3.0
+  $./configure --prefix=$HOME/python3.3
+  $ sudo apt-get install make
+  $ make && make install
+
+仮想環境の準備とpipのインストール
+
+.. code-block:: bash
+
+  $ pyvenv default33
+  $ source default/bin/active
+
+  $ python -c "import urllib.request;urllib.request.urlretrieve('http://python-distribute.org/distribute.py', 'distribute_setup.py')"
+  $ python distribute_setup.py
+  $ easy_install pip
+
+IPython
+
+.. code-block:: bash
+
+  $ pip install ipython
+
+
+後は本書で挙げられていたライブラリ類をインストールしていきました。本の中では触れられていなかったけど、途中インストールが必要になったのが以下。
+
+* make(Python3インストール時)
+* g++
+* libxml2-dev, libxslt-dev(lxmlインストール時)  `参考URL <http://www.isnull.com.ar/2011/10/ubuntu-11-fatal-error-libxmlxmlversionh.html>`_
+
+4つとも
+
+.. code-block:: bash
+
+  $ sudo apt-get install ...
+
+でインストールできた。
+
+さて、ここまでで本に書いてあるものはインストールできたわけだけど、このまま開発するには少し物足りない。というわけで少し+αで加えてみた。
+
+
++α、開発をサポートするツール類をインストール
+--------------------------------------------------
+
+ipythonで試すのも良いのだけど、普段使っているテキストエディタで編集したい。更に設定も同じにするためにgitも導入してみました。
+
+.. code-block:: bash
+
+  $ sudo apt-get install vim
+
+  $ sudo apt-get install git-core
+  $ git config --global user.name "ユーザー名"
+  $ git config --global user.name "メールアドレス"
+
+  $ git clone "githubに上がっている自分のdotfiles"
+
+後はシンボリックリンクを貼って .vimrc, colorschemeを設定します。ちなみに自分が使っているcolorschemeは `これ <http://vim.sourceforge.net/scripts/script.php?script_id=276>`_ です。
+更に `VimでPython環境をいい感じに整える | tekkoc'blog <http://tekkoc.tumblr.com/post/42845501741/vim-python>`_ を参考にVimのプラグインも導入します。
+
+* `jedi-vim <https://github.com/davidhalter/jedi-vim>`_ (補完プラグイン)
+* `pyflakes-vim <https://github.com/kevinw/pyflakes-vim>`_ (構文エラーの検出)
+
+Vim使いの方はこの2つは入れておいた方がいいかと思います。pathogen.vimやNeobunle.vimを使っている方はすぐにお試しできるかと思いますので是非。
+
+
+終わりに
+-------------------------
+
+これでPython3で開発する環境は整いました。さあ、あとは実践あるのみです！
+
+
+.. author:: default
+.. categories:: Python
+.. tags:: Python
+.. comments::

@@ -1,0 +1,81 @@
+Sphinx+翻訳 Hack-a-thon 2017.3に参加しました #sphinxjp
+======================================================
+
+ここ数年で最多の人数だったようです。自分も3年4カ月ぶりくらいの参加らしいです。
+
+当日のイベントページ
+
+- `Sphinx+翻訳 Hack-a-thon 2017.3 - connpass <https://sphinxjp.connpass.com/event/52079/>`_
+
+やったこと
+----------
+
+- BitBucket.orgでホスティングしてたBlogをGitHub.ioに移行
+- Blogの細々としたUpdate作業
+
+BitBucket.org→GitHub.ioに移行
+------------------------------
+
+いつの間にか **bitbucket.org** ではなく、 **bitbucket.io** に移行してました。
+そのため既存のhogehoge.bitbucket.orgのリンクを踏むと、
+bitbucket.orgのトップページにリダイレクトされるようになってしまいました。(悲しい……)
+
+そこでBlogの全部のリンクを直すくらいならいっそのことGitHubに移行してしまおうと思い立ち、
+この機会に全て移行しました。
+
+具体的にした作業としては以下になります。
+
+- .nojekyllファイルの作成(空ファイル)
+- URLがbitbuketになっているものをgithubに変更する。
+- RSS対応(feedburner)
+- google analytics対応
+
+単純作業なので面倒でしたが、 `Documentation — Tinkerer <http://tinkerer.me/pages/documentation.html>`_ を見ながら行けば普通にいけますね。
+
+:strike:`注意点としては.nojekyllファイルを作成し忘れないようにすることですね。`
+.nojekyllファイルがないとGitHubはTinkererでなくJekillを実行してしまい、
+_staticのようにアンダースコアで始まるファイルやフォルダを無視してしまいます。
+
+(2017/03/20追記)
+
+.. tweet:: https://twitter.com/shimizukawa/status/843130656204836864
+
+Sphinx1.4の頃から、conf.pyのextensionsにsphinx.ext.githubpagesを追加するだけで済むようになっていたようです。清水川せんせーご指導いただきありがとうございます！
+
+
+Blogの細々としたUpdate作業
+--------------------------
+
+GitHubには移行できたので、前々から気にはなっていたのですが放置してしまっていた点を対応しました。
+
+- リンク先変更(about.meなど)
+- 検索システムをJanomeに変更→日本語検索もいい感じに！
+- レイアウト整える。(画像の比率や反転など)
+
+  - CSSの調整
+  - "image"ディレクティブでscaleオプションの使い方に一部誤りがあったので修正
+  - 元画像に不備があるものが混じっていたので修正
+
+おかげでスマホでBlogを閲覧時に出ていた不備が改善できました。
+
+
+成果発表
+--------
+
+- `@usaturn <https://twitter.com/usaturn>`_ :
+  Sphinxのissue対応。Sphinx本の改定作業(Sphinxのインストール方法について)
+- nskgch : Sphinx 1.6の翻訳
+- `@jbking <https://twitter.com/jbking>`_ :
+  Blogシステムをアップデートして日本語検索をJanomeに対応。ビルドシステム(gulp)の直し。
+- `@kashew_nuts <https://twitter.com/kashew_nuts>`_ : 上記参照 
+- `@shimizukawa <https://twitter.com/shimizukawa>`_ : Sphinx本の改定。文法マニュアル作成。
+- `@tk0miya <https://twitter.com/tk0miya>`_ : Sphinxのバグを直してました。
+- `@youske <https://www.facebook.com/yosuke.nakabayashi>`_ :
+  前回Sphinx-user.jpでmake.htmlでホームページのひな形を作ったので、
+  ドキュメントを強化(リストや罫線,強調,写真,etc)するためのあれこれを試してた。
+- `@pashango <https://twitter.com/pashango2>`_ : Qtを使ってSphinxのGUIツールを作ってた。
+
+.. author:: default
+.. categories:: Python, Sphinx, Tinkerer
+.. tags:: Python, Sphinx, Tinkerer
+.. comments::

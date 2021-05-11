@@ -1,0 +1,112 @@
+tmux導入メモ
+============
+
+自宅PC環境でLinuxデスクトップを導入するのに合わせて、tmuxを使うようになったので自分用にメモ。
+
+.. contents::
+  :local:
+
+
+使い方
+------
+
+`tmuxを使い始めたので基本的な機能の使い方とかを整理してみた - 完熟トマト <http://kanjuku-tomato.blogspot.jp/2014/02/tmux.html>`_ を熟読した。自分の使っている環境をイメージできるくらいには読んで試しておさえてみました。
+
+
+tmux.conf
+---------
+
+今のところ設定にはそんなにこだわっていないので、行数も割と少ないのかなと感じています。
+
+.. code-block:: sh
+  :caption: ~/.tmux.conf 設定
+
+  # -----------------------
+  # Basic Config
+  # -----------------------
+  # <prefix>キーを<C-b>から<C-s>に変更
+  unbind C-b
+  set -g prefix C-s
+  bind-key C-s send-prefix
+  # 256カラー&バッファスクロールを有効化
+  set -g default-terminal screen-256color
+  set -g terminal-overrides 'xterm:colors=256:smcup@:rmcup@'
+  # Escapeキーを押したときの遅延をなくす
+  set -sg escape-time 0
+  # マウスを有効化
+  setw -g mouse on
+  # ヒストリのサイズを大きくする
+  set -g history-limit 5000
+  # インターバルの間隔を空けておく
+  set -g status-interval 10
+  # ステータスラインを変更
+  set -g status-right '"#H" %Y-%m-%d(%a) %H:%M'
+
+  # -----------------------
+  # プラグイン設定
+  # -----------------------
+  # tmuxのplugin manager
+  set -g @plugin 'tmux-plugins/tpm'
+  # PCを再起動してもセッションを復帰できるようにする
+  set -g @plugin 'tmux-plugins/tmux-resurrect'
+  # tmux-resurrectを自動で操作する
+  set -g @plugin 'tmux-plugins/tmux-continuum'
+  # tmuxのヤンクをOSのクリップボードと共有する
+  set -g @plugin 'tmux-plugins/tmux-yank'
+  # tmux実行時に自動的セッションをリストア
+  set -g @continuum-restore 'on'
+
+  # tmuxのプラグインマネージャーを有効化
+  run '~/.tmux/plugins/tpm/tpm'
+
+設定を変更したら ``<prefix> + d`` でデタッチした後、 ``$ tmux source ~/.tmux.conf`` で反映させます。
+
+
+tmuxのprefixキーをどうするのか問題
+--------------------------------------
+
+前提としてVimのキーバインドに影響を及ぼしたくないので、tmuxデフォルトのprefixである ``<C-b>`` は変更する必要がありました。
+
+そこでまずVimで ``<Ctrl>`` キーを使う操作は何があるか調べました。
+GitHubのdotfilesを見たり、Twitterを眺めたりしているといくつか候補は挙げられていましたが、
+実質的に候補となるのは次の3つしかありませんでした。
+
+- ``<C-j>``
+- ``<C-k>``
+- ``<C-s>``
+
+この中で自分が選択できたのは ``<C-s>`` です。
+前の2つはすでにVimのプラグインや、pecoのキーバインドとして設定していたからです。
+
+既存の設定をつぶしてよければ ``<C-a>``, ``<C-t>`` が押しやすそうではありましたが、
+ターミナルでの移動やVimのタグスタックの使用に影響がでるので断念。
+
+いざ ``<C-s>`` に設定してみたところ、どこにもぶつかってないようなのでいい感じです。
+(Emacsのことは知らないのですが、自分の知ってるEmacs使いはターミナル上でEmacsは使わないらしいので問題なさそう)
+
+prefixを設定するにあたり `Vim で使える Ctrl を使うキーバインドまとめ - 反省はしても後悔はしない <http://cohama.hateblo.jp/entry/20121023/1351003586>`_ はすごく参考になりました。 `@c0hama <https://twitter.com/c0hama>`_ さんありがとうございます。
+
+
+prefixキー変更に伴い端末ロックを無効化
+--------------------------------------
+
+ターミナルで ``<C-s>`` を押すと、ターミナルの出力がロックされました。
+しかし出力がとまっているだけで、キー入力自体は受け付けていて紛らわしいので無効化しておきます。
+無効化しなくても ``<C-q>`` を押すと解除されますが、忘れていたことにまた戸惑いそうなので設定。
+
+.. code-block:: bash
+  :caption: ~/.bashrc 設定
+
+  stty stop undef   # <C-s> によるターミナルロックを無効にする
+
+所感
+----
+
+CLIのツールを導入するときはGUIのツールとは別の覚えることがあるけど、自分の手にしっくりくるようにいじれるのがいいよなーと。
+ただ設定やプラグインは必要なものに絞っておかないと余計なところにハマったりするので、そのへんはよしなにしたいところです。
+
+
+.. author:: default
+.. categories:: Linux, tmux
+.. tags:: Linux, tmux
+.. comments::
